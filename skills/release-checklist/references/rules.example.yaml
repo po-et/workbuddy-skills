@@ -1,0 +1,95 @@
+# 上线检查规则。复制成项目自己的 rules.yaml 后按实际目录结构修改。
+# 用默认规则跑出来的清单只能算及格 —— 路径模式必须对上你的项目。
+#
+# 字段:
+#   pattern  glob 模式，匹配改动文件路径（fnmatch 语法）
+#   status   可选，只在特定改动类型触发: A 新增 / M 修改 / D 删除 / R 重命名
+#   level    high | normal
+#   category 风险类别，用于分组
+#   why      为什么有风险
+#   verify   验证方式，必须是可执行的具体动作
+#   rollback 回滚方案
+
+rules:
+  - pattern: "*migrations/*"
+    level: high
+    category: 数据库变更
+    why: 数据库结构变更通常不可逆，且大表 DDL 可能锁表
+    verify: 在预发执行迁移并确认目标表行数不变；用 EXPLAIN 确认无全表扫描；记录 DDL 实际耗时
+    rollback: 确认 down 迁移脚本存在且已在预发验证；确认已有发布前数据备份
+
+  - pattern: "*.sql"
+    level: high
+    category: 数据库变更
+    why: SQL 变更可能影响数据完整性
+    verify: 在预发执行并核对影响行数是否与预期一致
+    rollback: 准备反向 SQL 或确认可从备份恢复
+
+  - pattern: "*config/*"
+    level: high
+    category: 配置变更
+    why: 配置生效快、灰度手段少、回滚记录往往缺失
+    verify: 确认配置支持灰度；在预发验证新旧配置行为差异
+    rollback: 记录变更前的原始值，确认可一键回退
+
+  - pattern: "*.env*"
+    level: high
+    category: 配置变更
+    why: 环境变量改动不经过代码评审，容易被忽略
+    verify: 逐项 diff 环境变量，确认无凭证被误提交
+    rollback: 保留变更前快照
+
+  - pattern: "*requirements*.txt"
+    level: normal
+    category: 依赖变更
+    why: 传递依赖可能引入不兼容或协议风险
+    verify: 对比依赖树 diff，检查新增依赖的开源协议与体积
+    rollback: 锁定回原版本号
+
+  - pattern: "package.json"
+    level: normal
+    category: 依赖变更
+    why: 同上
+    verify: 对比 lockfile diff，确认无意外的大版本跳跃
+    rollback: 恢复 lockfile
+
+  - pattern: "*api/*"
+    level: high
+    category: 接口变更
+    why: 接口签名变化会直接影响上下游
+    verify: 确认向后兼容；灰度期新旧版本可共存；已通知上下游并确认收到
+    rollback: 确认回滚后老接口仍可用
+
+  - pattern: "*.proto"
+    level: high
+    category: 接口变更
+    why: 协议文件变更影响所有使用方
+    verify: 确认字段只增不删不改编号；已同步生成代码给使用方
+    rollback: 协议回退需所有使用方配合，确认回退路径
+
+  - pattern: "*"
+    status: D
+    level: high
+    category: 文件删除
+    why: 删除的文件可能仍被引用，包括反射、配置、外部调用
+    verify: 全仓库搜索引用；确认无外部系统依赖该路径
+    rollback: 从 base 版本恢复文件
+
+  - pattern: "*cron*"
+    level: normal
+    category: 定时任务
+    why: 执行时间冲突或非幂等会造成重复处理
+    verify: 确认执行时间不与其他任务冲突；确认任务幂等
+    rollback: 停用新任务并恢复旧调度
+
+  - pattern: "*auth*"
+    level: high
+    category: 权限鉴权
+    why: 鉴权逻辑改动可能造成越权或误拒
+    verify: 覆盖越权测试用例；确认最小权限原则
+    rollback: 确认可快速回退到旧鉴权逻辑
+
+# 改动面阈值：超过则提示考虑拆分批次
+thresholds:
+  files_changed: 50
+  deleted_files: 5

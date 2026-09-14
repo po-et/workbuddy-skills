@@ -1,0 +1,5 @@
+timestamp,source,kind,event,url
+2026-09-14T14:25:10Z,告警平台,alert,order-api 5xx 错误率告警触发 阈值 1% 实际 4.2%,https://example.com/alert/123
+2026-09-14T14:27:00Z,客服,user_report,用户反馈下单失败,
+2026-09-14T14:31:00Z,值班群,ops,手动重启 order-api 2 个实例,
+2026-09-14T14:23:00Z,配置中心,config,order-api 超时时间 3000ms 改为 300ms,https://example.com/config/456

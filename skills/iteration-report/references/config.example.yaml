@@ -1,0 +1,37 @@
+# 复制为 config.yaml 后使用。config.yaml 已在 .gitignore 中，不会入库。
+#
+# 安全约定：
+#   1. 凭证只写「环境变量名」，绝不写凭证本身。
+#   2. 内网系统一律用 provider: file，不要把内网地址写进任何入库文件。
+
+provider: github      # github | file | gitlab | jira
+
+since: 2026-09-08
+until: 2026-09-14
+
+# --- provider: github （默认）---------------------------------------
+# 需要环境变量 GITHUB_TOKEN，只读权限即可。
+
+# --- provider: file （推荐给内网系统）-------------------------------
+# 从内部工单系统导出 CSV 或 JSON，字段名对齐下面的契约即可。
+# 契约字段: id,title,status,assignee,created,updated,closed,url,labels,reopened_count
+file:
+  path: ./issues-export.csv
+
+github:
+  repo: owner/name
+  token_env: GITHUB_TOKEN      # 环境变量名，不是 token 本身
+
+# --- provider: gitlab （含自建实例）---------------------------------
+gitlab:
+  base_url: https://gitlab.example.com
+  project: group/project
+  token_env: GITLAB_TOKEN
+
+# --- provider: jira -------------------------------------------------
+jira:
+  base_url: https://your.atlassian.net
+  user: you@example.com
+  token_env: JIRA_TOKEN
+  project: PROJ
+  # jql: project = PROJ AND updated >= "2026-09-08"

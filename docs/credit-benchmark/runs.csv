@@ -1,0 +1,2 @@
+run_id,date,time_slot,wb_version,task_id,mode,context_state,model_tier,model_name,repeat,credits_before,credits_after,wall_seconds,completed,quality_score,output_file,notes
+EXAMPLE-001,2026-09-15,day,5.5.1,T3,Ask,fresh,standard,,1,4820,4795,142,yes,4,outputs/EXAMPLE-001.md,示例行，正式记录时删除
