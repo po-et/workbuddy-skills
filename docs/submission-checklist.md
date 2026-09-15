@@ -2,12 +2,14 @@
 
 日期：2026-09-15。以下动作都需要你的账号，我无法代做。按顺序，前一步是后一步的前提。
 
-## 0. 前提：开发者注册（未确认是否已完成）
+## 0. 前提：开发者注册 ✅ 2026-09-15 个人认证已通过
 
 - [ ] open.workbuddy.cn → 个人认证。**操作步骤与资料包见 [onboarding-walkthrough.md](onboarding-walkthrough.md)**。这一步卡住后面所有平台侧动作。
 - [ ] SkillHub 发布需实名认证，同一账号体系
 
-## 1. SkillHub 上架 3 + 1 个原创技能
+## 1. 开放平台发布 3 + 1 个原创技能（主渠道；SkillHub 为补充）
+
+官方 Q&A 第 12 条：开放平台技能经严格审核与质量评测，端内主页品牌更完整，市场展示与 Agent 自动调用权重更高。入口 `/skill/publish`，仅 .zip ≤3MB，三步：配置技能 → 确认信息 → 提交审核。规则详见 [platform-notes.md](platform-notes.md)。
 
 打包好的 zip 在本机 scratchpad `dist/` 目录（不入库）。每个包已剔除 `__pycache__`、`.keep`、LICENSE。
 
@@ -18,13 +20,12 @@
 | `incident-brief.zip` | 线上排查简报：日志、监控、变更、工单对齐成一条时间线，候选按可疑度排序，不下结论给证据链 | 开发辅助 |
 | `build-workbuddy-connector.zip` | 为 WorkBuddy 做连接器：规范速查、脚手架、校验脚本、CLI-Anything 桥 | AI Agent 优化 |
 
-- [ ] 提交前用官方 skill-vetter 过一遍（客户端内）
-- [ ] 审核 1–3 个工作日；记录审核意见到 `docs/review-feedback.md`
+- [ ] 审核承诺 7 个工作日，当前积压有延迟；结果走邮箱/平台/客户端通知。审核意见记录到 `docs/review-feedback.md`
 
 ## 2. 开放平台提交 mermaid 连接器
 
 - [ ] `dist/mermaid-connector.zip`（含 LICENSE 与 ATTRIBUTION，连接器包需要）
-- [ ] 审核约 10–15 分钟。**重点看审核意见里是否指出以下三个待确认项**，回来告诉我：
+- [ ] 审核约 7 个工作日；**发布后不自动上架，需运营代上架**（Q&A Q4）。重点看审核意见里是否指出以下三个待确认项：
   - `cli.json.runtime.type: "python"` 取值是否被接受
   - `minWorkbuddyVersion: "5.0.0"` 是否合适
   - git 子目录安装命令在他们环境的耗时/成功率
