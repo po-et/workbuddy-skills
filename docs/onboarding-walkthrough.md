@@ -47,7 +47,7 @@
 
 ## 简介（复制其一）
 
-A（推荐，117 字符）：
+A（推荐，118 字符）：
 > 研发效能 Agent 技能与基建作者。开源仓库 workbuddy-skills：迭代周报、上线检查、线上排查；移植 Anthropic hookify 为 Hooks 规则引擎；CLI-Anything→WorkBuddy 连接器桥。
 
 B（短版，119 字符）：
