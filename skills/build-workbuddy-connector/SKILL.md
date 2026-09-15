@@ -6,6 +6,16 @@ display_name: "连接器构建助手"
 display_name_en: "WorkBuddy Connector Builder"
 description_zh: "按 WorkBuddy 开放平台规范构建连接器：规范速查、骨架生成、目录校验，支持从 CLI-Anything 一键封装。"
 description_en: "Build WorkBuddy connectors to the official spec: quick reference, scaffolding, validation, and one-command wrapping of CLI-Anything harnesses."
+examples_zh:
+  - "帮我把这个命令行工具做成 WorkBuddy 连接器"
+  - "校验一下这个连接器目录符不符合开放平台规范"
+  - "把 CLI-Anything 的 drawio 封装成连接器"
+  - "连接器的 cli.json 应该怎么写"
+examples_en:
+  - "Turn this CLI tool into a WorkBuddy connector"
+  - "Validate this connector directory against the open platform spec"
+  - "Wrap CLI-Anything's drawio harness as a connector"
+  - "How should I write cli.json for a connector"
 metadata:
   {
     "openclaw":

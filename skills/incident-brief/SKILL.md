@@ -6,6 +6,16 @@ display_name: "线上排查简报"
 display_name_en: "Incident Brief"
 description_zh: "把变更、指标异常与人工观察对齐成一条时间线，按可疑度排序候选变更并给出反证与可验证推论，不下根因结论。"
 description_en: "Align changes, metric anomalies and manual observations on one timeline; rank suspect changes with counter-evidence and a testable prediction, without asserting root cause."
+examples_zh:
+  - "线上错误率 14:23 开始上涨，帮我出一份排查简报"
+  - "把这段时间的变更、告警和指标对齐成时间线"
+  - "哪次变更最可疑？给我证据和反证"
+  - "根据这个告警整理故障复盘材料"
+examples_en:
+  - "Error rate started climbing at 14:23, draft an incident brief"
+  - "Align changes, alerts and metrics from this window on one timeline"
+  - "Which change is the most suspicious? Give evidence and counter-evidence"
+  - "Prepare a postmortem brief from this alert"
 metadata:
   {
     "openclaw":

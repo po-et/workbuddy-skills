@@ -6,6 +6,16 @@ display_name: "迭代周报生成器"
 display_name_en: "Iteration Report"
 description_zh: "从 Git 提交与工单记录生成可溯源的迭代周报：按交付价值重组，风险与遗留单列，提交信息不规范时从 diff 反推。"
 description_en: "Generate traceable iteration reports from Git history and issue trackers: grouped by delivered value, with risks and leftovers, and diff-based inference when commit messages are poor."
+examples_zh:
+  - "帮我生成上周的迭代周报"
+  - "根据这个仓库最近两周的提交写一份迭代报告"
+  - "把这个迭代的交付、风险、遗留整理成向上汇报材料"
+  - "我们的提交信息写得很烂，能从改动里推断出做了什么吗"
+examples_en:
+  - "Generate last week's iteration report"
+  - "Write a sprint report from this repo's commits in the last two weeks"
+  - "Summarize this iteration's deliverables, risks and leftovers for a management update"
+  - "Our commit messages are poor, infer what was done from the diffs"
 metadata:
   {
     "openclaw":
