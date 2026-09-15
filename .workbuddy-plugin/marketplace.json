@@ -1,0 +1,32 @@
+{
+  "name": "workbuddy-skills",
+  "owner": {"name": "Captain", "url": "https://github.com/po-et"},
+  "metadata": {
+    "description": "研发效能技能体系 + WorkBuddy 生态基建（Hooks 规则引擎、连接器构建）。同一套东西在 WorkBuddy / CodeBuddy / Claude Code 通用。",
+    "version": "0.2.0"
+  },
+  "plugins": [
+    {
+      "name": "workbuddy-skills",
+      "source": "./",
+      "description": "研发效能 Agent 技能体系：迭代周报、上线检查、线上排查简报、连接器构建。脚本做事实，模型做判断；结论可溯源，缺口不隐瞒。",
+      "category": "productivity",
+      "tags": ["devops", "engineering", "incident", "release", "report", "connector"],
+      "author": {"name": "Captain", "url": "https://github.com/po-et"},
+      "homepage": "https://github.com/po-et/workbuddy-skills",
+      "repository": "https://github.com/po-et/workbuddy-skills",
+      "license": "MIT"
+    },
+    {
+      "name": "hookify-workbuddy",
+      "source": "./ported/hookify-workbuddy",
+      "description": "用 Markdown 文件定义 Hooks：拦截危险命令、提醒敏感文件、强制完成检查、自动注入上下文。同一份规则三个运行时通用。修改自 Anthropic hookify（Apache-2.0）。",
+      "category": "safety",
+      "tags": ["hooks", "guardrails", "safety", "hookify"],
+      "author": {"name": "Captain", "url": "https://github.com/po-et"},
+      "homepage": "https://github.com/po-et/workbuddy-skills/tree/main/ported/hookify-workbuddy",
+      "repository": "https://github.com/po-et/workbuddy-skills",
+      "license": "Apache-2.0"
+    }
+  ]
+}

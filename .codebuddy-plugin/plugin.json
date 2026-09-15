@@ -1,0 +1,10 @@
+{
+  "name": "workbuddy-skills",
+  "version": "0.2.0",
+  "description": "研发效能 Agent 技能体系：迭代周报 / 上线检查 / 线上排查 / 连接器构建。CodeBuddy 写代码，WorkBuddy 干剩下的。",
+  "author": {"name": "Captain", "url": "https://github.com/po-et"},
+  "homepage": "https://github.com/po-et/workbuddy-skills",
+  "repository": "https://github.com/po-et/workbuddy-skills",
+  "license": "MIT",
+  "keywords": ["workbuddy", "codebuddy", "claude-code", "agent-skills", "devops", "engineering-productivity"]
+}

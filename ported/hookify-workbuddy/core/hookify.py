@@ -308,8 +308,17 @@ class RuleEngine:
         return None
 
 
-def event_for_tool(tool: str) -> Optional[str]:
+OTHER_EVENT = "other"   # Read / Glob / Grep / WebFetch / mcp__* 等非 bash、非 file 工具
+
+
+def event_for_tool(tool: str) -> str:
+    """工具名 -> 事件别名。未知工具返回 OTHER_EVENT，而不是 None。
+
+    上游 hookify 在这里返回 None，而 load_rules(event=None) 等于不过滤，
+    导致 event:file 的 block 规则会误拦 Read（issue #4787），
+    event:stop 的规则在每次 PreToolUse 都触发（issue #3712）。
+    返回 OTHER_EVENT 后，只有 event: all 的规则会对这类工具生效。"""
     for ev, names in TOOL_EVENTS.items():
         if tool in names:
             return ev
-    return None
+    return OTHER_EVENT

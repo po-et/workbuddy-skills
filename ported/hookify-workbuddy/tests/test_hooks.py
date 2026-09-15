@@ -191,3 +191,57 @@ class HookifyTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+ALL_WARN_SECRET = """---
+name: warn-any-secret-path
+enabled: true
+event: all
+action: warn
+conditions:
+  - field: file_path
+    operator: contains
+    pattern: secret
+---
+
+任何工具触碰含 secret 的路径都提醒一下。
+"""
+
+
+class UpstreamIssueRegressionTests(unittest.TestCase):
+    """回归上游 hookify 的 open issue（anthropics/claude-plugins-official）。"""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.project = self.tmp.name
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def test_issue_4787_file_block_rule_must_not_deny_read(self):
+        """#4787: event:file 的 block 规则不应拦截 Read/Glob/Grep。"""
+        write_rule(self.project, ".codebuddy", "env",
+                   WARN_ENV.replace("action: warn", "action: block"))
+        for tool in ("Read", "Glob", "Grep"):
+            out = run_hook("pretooluse.py", {"hook_event_name": "PreToolUse", "tool_name": tool,
+                                             "tool_input": {"file_path": "/p/.env"}}, self.project)
+            self.assertEqual(out, {"continue": True}, f"{tool} 被 file 规则误拦")
+
+    def test_issue_3712_stop_rule_must_not_fire_on_pretooluse(self):
+        """#3712: event:stop 的规则不应在 PreToolUse/PostToolUse 触发。"""
+        write_rule(self.project, ".codebuddy", "tests", STOP_TESTS)
+        tp = os.path.join(self.project, "t.txt")
+        with open(tp, "w") as f:
+            f.write("no tests here")
+        for script, tool in (("pretooluse.py", "WebFetch"), ("posttooluse.py", "Glob")):
+            out = run_hook(script, {"hook_event_name": script.replace(".py", "").replace("pretooluse", "PreToolUse").replace("posttooluse", "PostToolUse"),
+                                    "tool_name": tool, "tool_input": {}, "transcript_path": tp}, self.project)
+            self.assertEqual(out, {"continue": True}, f"stop 规则在 {tool} 上误触发")
+
+    def test_event_all_rules_still_apply_to_other_tools(self):
+        """event: all 是有意为之的全局规则，对 Read 等工具仍应生效（提醒，不拦截）。"""
+        write_rule(self.project, ".codebuddy", "any", ALL_WARN_SECRET)
+        out = run_hook("pretooluse.py", {"hook_event_name": "PreToolUse", "tool_name": "Read",
+                                         "tool_input": {"file_path": "/x/secret.txt"}}, self.project)
+        self.assertTrue(out["continue"])
+        self.assertIn("secret", out["systemMessage"])

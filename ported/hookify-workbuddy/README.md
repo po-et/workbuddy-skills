@@ -62,7 +62,7 @@ claude plugin add /path/to/hookify-workbuddy
 python3 -m unittest tests.test_hooks -v
 ```
 
-13 个端到端用例：以 stdin JSON 驱动真实入口脚本，覆盖 4 个事件 × 拒绝/提醒/放行、两套字段名兼容、目录优先级、坏规则文件不卡死 Agent。
+16 个端到端用例：以 stdin JSON 驱动真实入口脚本，覆盖 4 个事件 × 拒绝/提醒/放行、两套字段名兼容、目录优先级、坏规则文件不卡死 Agent。
 
 ## 安全设计
 

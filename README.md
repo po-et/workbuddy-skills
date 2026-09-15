@@ -57,7 +57,7 @@ iteration-report ──迭代区间──> release-checklist ──高风险项�
 
 | 项目 | 来源 | 状态 | 一句话 |
 |---|---|---|---|
-| [`hookify-workbuddy`](ported/hookify-workbuddy/) | Anthropic hookify（Apache-2.0） | ✅ 13 测试通过 | 用 Markdown 文件定义 Hooks。同一份规则在 WorkBuddy / CodeBuddy / Claude Code 通用。修了上游一个 bug |
+| [`hookify-workbuddy`](ported/hookify-workbuddy/) | Anthropic hookify（Apache-2.0） | ✅ 16 测试通过 | 用 Markdown 文件定义 Hooks。同一份规则在 WorkBuddy / CodeBuddy / Claude Code 通用。修了上游一个 bug |
 | [`connectors/mermaid`](ported/connectors/mermaid/) | CLI-Anything（港大，Apache-2.0） | ✅ 规范校验通过，CLI 实测通过 | 零依赖画流程图/时序图/架构图，渲染 SVG/PNG。首个 CLI-Anything → WorkBuddy 连接器 |
 
 不做的事：第 6 个 superpowers 中文版、第 6 个 awesome-workbuddy、无改动的批量上架。原因写在缺口分析里。
