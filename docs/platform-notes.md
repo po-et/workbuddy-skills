@@ -42,3 +42,21 @@ Buddy 应用、硬件接入需企业认证；个人可发专家、技能、连�
 ## 控制台路径
 
 `/dashboard`、`/skill/publish`、`/expert/publish`、`/connector/publish`、`/settings/cert-info`、`/settings/developer`、`/operations`、`/application/all/credit`（积分兑换）
+
+## 技能包 SKILL.md 的平台专有必填字段（2026-09-15 上传实测）
+
+上传按 Agent Skills 公开规范编写的技能包，平台解析失败，逐条报缺：
+
+```
+缺少 Skill 版本号（version），请在 SKILL.md frontmatter 中填写
+缺少 Skill 中文展示名（display_name），请在 SKILL.md frontmatter 中填写
+缺少 Skill 英文展示名（display_name_en），请在 SKILL.md frontmatter 中填写
+缺少 Skill 中文描述（description_zh），请在 SKILL.md frontmatter 中填写
+缺少 Skill 英文描述（description_en），请在 SKILL.md frontmatter 中填写
+```
+
+即开放平台在 `name` / `description` 之外**额外要求 5 个字段**：`version`、`display_name`、`display_name_en`、`description_zh`、`description_en`。公开文档与 Agent Skills 规范均未提及。
+
+- zip 内 `<技能名>/SKILL.md` 的目录布局被接受（解析器找到了文件，只报字段缺失）
+- 加上这 5 个字段后 `claude plugin validate` 仍通过，未知字段不影响 Claude Code 兼容性
+- 本仓库四个技能已全部补齐；`CONTRIBUTING.md` 同步要求

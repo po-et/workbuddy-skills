@@ -1,6 +1,11 @@
 ---
 name: incident-brief
 description: 生成线上问题排查简报。把日志、监控、GitHub 变更记录和工单对齐成一条统一时间线，定位指标异常起点，输出按可疑度排序的候选变更，每个候选带支持证据、反证和一句可在两分钟内验证的推论。当用户在排查线上故障、告警、服务异常、错误率或延迟上涨、接口报错、发布后出问题，或说「线上炸了」「什么时候开始的」「是哪次变更导致的」「帮我看下这个告警」「出个排查简报」「故障复盘材料」时使用。本技能不下根因结论，只提供排序过的候选与证据链，判断权保留给工程师。需要明确的时间窗；时间窗不明确时必须先问，不要猜。
+version: 0.1.0
+display_name: "线上排查简报"
+display_name_en: "Incident Brief"
+description_zh: "把变更、指标异常与人工观察对齐成一条时间线，按可疑度排序候选变更并给出反证与可验证推论，不下根因结论。"
+description_en: "Align changes, metric anomalies and manual observations on one timeline; rank suspect changes with counter-evidence and a testable prediction, without asserting root cause."
 metadata:
   {
     "openclaw":

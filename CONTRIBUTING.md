@@ -11,6 +11,7 @@
 4. 逻辑优先写成 `scripts/` 下的脚本，不要写成长篇提示词
    - 脚本可复现、可测试、省额度
 5. 声明依赖：`metadata.openclaw.requires.bins`
+6. **要上开放平台的技能，frontmatter 还必须有**：`version`、`display_name`、`display_name_en`、`description_zh`、`description_en`（平台解析器硬性要求，实测见 docs/platform-notes.md）
 
 ## 硬性红线
 
