@@ -4,7 +4,7 @@
 
 ## 0. 前提：开发者注册（未确认是否已完成）
 
-- [ ] open.workbuddy.cn → 个人开发者认证（审核约 7 个工作日）。**这一步卡住后面所有平台侧动作。**
+- [ ] open.workbuddy.cn → 个人认证。**操作步骤与资料包见 [onboarding-walkthrough.md](onboarding-walkthrough.md)**。这一步卡住后面所有平台侧动作。
 - [ ] SkillHub 发布需实名认证，同一账号体系
 
 ## 1. SkillHub 上架 3 + 1 个原创技能
