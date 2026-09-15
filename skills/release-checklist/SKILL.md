@@ -10,12 +10,10 @@ examples_zh:
   - "对比 v1.4.2 和 v1.5.0，生成上线检查清单"
   - "这次发布改了哪些高风险的东西，怎么验证、怎么回滚"
   - "上线前帮我过一遍检查项"
-  - "这个版本需要通知哪些上下游"
 examples_en:
   - "Compare v1.4.2 and v1.5.0 and produce a release checklist"
   - "What high-risk changes are in this release, and how do I verify and roll back"
   - "Walk me through pre-release checks"
-  - "Which upstream and downstream teams should be notified for this release"
 metadata:
   {
     "openclaw":

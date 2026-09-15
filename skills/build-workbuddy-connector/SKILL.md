@@ -10,12 +10,10 @@ examples_zh:
   - "帮我把这个命令行工具做成 WorkBuddy 连接器"
   - "校验一下这个连接器目录符不符合开放平台规范"
   - "把 CLI-Anything 的 drawio 封装成连接器"
-  - "连接器的 cli.json 应该怎么写"
 examples_en:
   - "Turn this CLI tool into a WorkBuddy connector"
   - "Validate this connector directory against the open platform spec"
   - "Wrap CLI-Anything's drawio harness as a connector"
-  - "How should I write cli.json for a connector"
 metadata:
   {
     "openclaw":

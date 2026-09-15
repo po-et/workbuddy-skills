@@ -10,12 +10,10 @@ examples_zh:
   - "线上错误率 14:23 开始上涨，帮我出一份排查简报"
   - "把这段时间的变更、告警和指标对齐成时间线"
   - "哪次变更最可疑？给我证据和反证"
-  - "根据这个告警整理故障复盘材料"
 examples_en:
   - "Error rate started climbing at 14:23, draft an incident brief"
   - "Align changes, alerts and metrics from this window on one timeline"
   - "Which change is the most suspicious? Give evidence and counter-evidence"
-  - "Prepare a postmortem brief from this alert"
 metadata:
   {
     "openclaw":

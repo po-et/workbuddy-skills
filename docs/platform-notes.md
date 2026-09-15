@@ -60,3 +60,14 @@ Buddy 应用、硬件接入需企业认证；个人可发专家、技能、连�
 - zip 内 `<技能名>/SKILL.md` 的目录布局被接受（解析器找到了文件，只报字段缺失）
 - 加上这 5 个字段后 `claude plugin validate` 仍通过，未知字段不影响 Claude Code 兼容性
 - 本仓库四个技能已全部补齐；`CONTRIBUTING.md` 同步要求
+
+### 示例提问字段（第二次上传实测）
+
+提交总览页的「试试这样问我」来自 frontmatter 的 **`examples_zh` / `examples_en`**（字符串数组），可选但强烈建议填；解析器校验：
+
+```
+examples_zh 最多 3 个示例，当前 4 个
+examples_en 最多 3 个示例，当前 4 个
+```
+
+即**每种语言最多 3 条**。字段命名与连接器 `connector-meta.json` 一致。

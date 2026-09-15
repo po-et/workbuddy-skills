@@ -10,12 +10,10 @@ examples_zh:
   - "帮我生成上周的迭代周报"
   - "根据这个仓库最近两周的提交写一份迭代报告"
   - "把这个迭代的交付、风险、遗留整理成向上汇报材料"
-  - "我们的提交信息写得很烂，能从改动里推断出做了什么吗"
 examples_en:
   - "Generate last week's iteration report"
   - "Write a sprint report from this repo's commits in the last two weeks"
   - "Summarize this iteration's deliverables, risks and leftovers for a management update"
-  - "Our commit messages are poor, infer what was done from the diffs"
 metadata:
   {
     "openclaw":
