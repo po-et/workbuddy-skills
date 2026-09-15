@@ -1,0 +1,10 @@
+{
+  "name": "hookify-workbuddy",
+  "version": "0.1.0",
+  "description": "用 Markdown 规则文件定义 Hooks：拦截危险命令、提醒敏感文件、强制完成检查。同一份规则在 WorkBuddy / CodeBuddy / Claude Code 通用。修改自 Anthropic hookify。",
+  "author": {"name": "Captain", "url": "https://github.com/po-et"},
+  "homepage": "https://github.com/po-et/workbuddy-skills/tree/main/ported/hookify-workbuddy",
+  "repository": "https://github.com/po-et/workbuddy-skills",
+  "license": "Apache-2.0",
+  "keywords": ["hooks", "safety", "guardrails", "hookify", "workbuddy", "codebuddy"]
+}

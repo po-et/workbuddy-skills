@@ -1,0 +1,17 @@
+{
+  "runtime": {
+    "type": "python",
+    "version": "3.10"
+  },
+  "init": {
+    "darwin": "pip3 install \"git+https://github.com/HKUDS/CLI-Anything.git#subdirectory=mermaid/agent-harness\"",
+    "linux": "pip3 install \"git+https://github.com/HKUDS/CLI-Anything.git#subdirectory=mermaid/agent-harness\"",
+    "win32": "pip install \"git+https://github.com/HKUDS/CLI-Anything.git#subdirectory=mermaid/agent-harness\""
+  },
+  "status": {
+    "darwin": "cli-anything-mermaid --help",
+    "linux": "cli-anything-mermaid --help",
+    "win32": "cli-anything-mermaid --help"
+  },
+  "statusMatch": "CLI harness for Mermaid"
+}

@@ -2,9 +2,15 @@
 
 > **CodeBuddy 写代码，WorkBuddy 干剩下的。**
 >
-> 面向研发团队的 Agent 技能集：把「不写代码但必须有人干」的活交出去 —— 迭代周报、上线检查、线上排查、技术方案。
+> 面向研发团队的 Agent 技能体系，加上 WorkBuddy 生态缺的基础设施：Hooks 规则引擎、连接器构建工具、把成熟外部 CLI 接进来的桥。
 
 遵循 [Agent Skills 开放标准](https://docs.openclaw.ai/tools/skills)（SKILL.md），可在 **WorkBuddy / OpenClaw / Claude Code** 等支持该标准的 Agent 中直接使用。
+
+```
+skills/     原创：研发效能技能体系 + 连接器构建
+ported/     精选移植：成熟外部项目，保留署名，有实质改造，附测试
+docs/       生态缺口分析、额度实测协议、设计稿
+```
 
 ---
 
@@ -31,6 +37,7 @@ AI 编程工具已经解决了「写代码」。但一个研发团队里，真�
 | [`incident-brief`](skills/incident-brief/) | ✅ v0.1 | 线上排查简报。时间线对齐 + 候选排序，**不下结论，给证据链** |
 | [`release-checklist`](skills/release-checklist/) | ✅ 可用 | 上线检查清单。从实际改了什么倒推该检查什么 |
 | `tech-design-draft` | 🚧 规划中 | 需求转技术方案骨架 |
+| [`build-workbuddy-connector`](skills/build-workbuddy-connector/) | ✅ 可用 | 为 WorkBuddy 做连接器：规范速查、脚手架、校验脚本、CLI-Anything 桥 |
 
 ### 它们是一个体系，不是三个独立工具
 
@@ -43,6 +50,17 @@ iteration-report ──迭代区间──> release-checklist ──高风险项�
 一个技能的产出可以直接作为下一个的输入 —— 这是「技能体系」与「技能合集」的区别。
 
 ---
+
+## 精选移植（ported/）
+
+不是搬运，是补缺口。每一项都满足：原项目成熟且开源、WorkBuddy 生态没有、保留原协议与署名、有实质改造、附测试。判断依据见 [生态缺口分析](docs/ecosystem-gap-analysis.md)。
+
+| 项目 | 来源 | 状态 | 一句话 |
+|---|---|---|---|
+| [`hookify-workbuddy`](ported/hookify-workbuddy/) | Anthropic hookify（Apache-2.0） | ✅ 13 测试通过 | 用 Markdown 文件定义 Hooks。同一份规则在 WorkBuddy / CodeBuddy / Claude Code 通用。修了上游一个 bug |
+| [`connectors/mermaid`](ported/connectors/mermaid/) | CLI-Anything（港大，Apache-2.0） | ✅ 规范校验通过，CLI 实测通过 | 零依赖画流程图/时序图/架构图，渲染 SVG/PNG。首个 CLI-Anything → WorkBuddy 连接器 |
+
+不做的事：第 6 个 superpowers 中文版、第 6 个 awesome-workbuddy、无改动的批量上架。原因写在缺口分析里。
 
 ## 快速开始
 
@@ -94,16 +112,14 @@ Git 侧走本地 `git log`，**不需要任何 token**，内网 GitLab / 自建 
 
 ---
 
-## 协议
-
-- 代码（`scripts/` 及 `*.py`）：[MIT](LICENSE)
-- 文档、SKILL.md 正文、模板：[CC BY 4.0](LICENSE-CONTENT)
-
-移植或改编自其他项目的内容，会在对应技能目录的 `SKILL.md` 底部注明出处与原协议。
-
----
-
 ## 相关文档
 
+- [生态缺口分析](docs/ecosystem-gap-analysis.md) —— 什么值得搬、什么不值得，带证据
 - [额度实测协议](docs/credit-benchmark/) —— 可复现的 WorkBuddy 额度对比实验设计
 - [incident-brief 设计稿](docs/design/incident-brief.md)
+- [Skills 策略](docs/skills-strategy.md) —— 为什么不做"技能合集"而做"技能体系"
+
+## 协议
+
+- 原创部分：代码 [MIT](LICENSE)，文档 [CC BY 4.0](LICENSE-CONTENT)
+- `ported/` 下各项目：沿用原项目协议（目前均为 Apache-2.0），各目录自带 LICENSE 与 ATTRIBUTION.md

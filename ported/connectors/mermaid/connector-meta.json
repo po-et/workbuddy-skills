@@ -1,0 +1,24 @@
+{
+  "name": "Mermaid 图表",
+  "name_zh": "Mermaid 图表",
+  "name_en": "Mermaid Diagrams",
+  "description": "用自然语言生成流程图、时序图、架构图，渲染为 SVG/PNG 并可分享编辑链接。零外部依赖。",
+  "description_zh": "用自然语言生成流程图、时序图、架构图，渲染为 SVG/PNG 并可分享编辑链接。零外部依赖。",
+  "description_en": "Flowcharts, sequence and architecture diagrams from text; render SVG/PNG, share editable links.",
+  "source": "cli-anything-mermaid",
+  "type": "cli",
+  "version": "0.1.0",
+  "minWorkbuddyVersion": "5.0.0",
+  "examples_zh": [
+    "把这个需求画成流程图，导出 SVG",
+    "根据这段接口调用描述生成时序图",
+    "画一张服务架构图：网关 → 订单服务 → 库存服务 → 数据库",
+    "把刚才的图改成从左到右布局，再给我一个可编辑的分享链接"
+  ],
+  "examples_en": [
+    "Turn this requirement into a flowchart and export it as SVG",
+    "Generate a sequence diagram from this API call description",
+    "Draw an architecture diagram: gateway → order service → inventory service → database",
+    "Switch the last diagram to left-to-right layout and give me an editable share link"
+  ]
+}

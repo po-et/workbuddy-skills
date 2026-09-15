@@ -1,0 +1,8 @@
+hookify-workbuddy
+Copyright 2026 Captain (https://github.com/po-et)
+
+This product includes software developed by Anthropic, PBC:
+  hookify — https://github.com/anthropics/claude-plugins-official/tree/main/plugins/hookify
+  Licensed under the Apache License, Version 2.0.
+
+Modifications are described in ATTRIBUTION.md.
