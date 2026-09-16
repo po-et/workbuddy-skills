@@ -1,0 +1,90 @@
+{
+  "_note": "非官方格式：WorkBuddy 后台的「导出配置」JSON 结构尚未公开。本文件是我们自己的配置源，用 tools/check_buddy_app.py 校验；拿到官方导出样本后再做字段映射。所有资产 ID 均为 2026-09-16 已提交审核的资产，绑定前需先过审。",
+  "app": {
+    "slug": "devops-buddy",
+    "name_zh": "研发效能 Buddy",
+    "name_en": "DevOps Buddy",
+    "slogan_zh": "代码之外的活，我来干",
+    "slogan_en": "Everything after the code",
+    "description_zh": "面向研发团队的效能助手：从 Git 提交生成可溯源的迭代周报，上线前生成检查清单与回滚预案，线上故障时整理时间线与排查简报，写技术方案并自动画架构图。内置 3 位专家、4 个技能、2 个连接器，所有结论附来源。",
+    "description_en": "A companion for engineering teams: traceable iteration reports from Git, release checklists with rollback plans, incident briefs with timelines and ranked hypotheses, design docs with auto-generated diagrams. 3 experts, 4 skills, 2 connectors; every claim cites its source.",
+    "avatar": "assets/icon-256.png",
+    "categories_hint": ["开发工具", "效率工具"],
+    "oauth": { "enabled": false, "callback_url": "", "trusted_origins": [] }
+  },
+  "home": {
+    "placeholder_zh": "今天要交什么？周报、上线清单、故障简报，或者一张架构图",
+    "placeholder_en": "Weekly report, release checklist, incident brief, or a diagram?",
+    "modes": [
+      {
+        "id": "report",
+        "name_zh": "迭代汇报",
+        "name_en": "Reports",
+        "icon": "assets/icons/mode-report.svg",
+        "skills": ["os_d38a73df48140dc3"],
+        "experts": ["oe_07e25196d28646b1"],
+        "connectors": [],
+        "system_prompt": "你是研发效能助理，负责把一段时间内的研发工作整理成可溯源的汇报（周报、日报、迭代回顾、OKR 进展）。\n\n工作方式：\n1. 优先调用 iteration-report 技能读取本地 Git 提交与用户提供的工单记录，不凭记忆编造工作内容。\n2. 每条结论后附来源：commit 短哈希、工单号或文件路径；拿不到来源就标「待确认」。\n3. 输出固定分节：本期完成 / 进行中 / 风险与阻塞 / 下期计划 / 数据口径（统计区间、仓库、分支）。\n4. 语气克制：不夸大工作量，不替用户下「业务影响」结论，只陈述事实与可验证的度量（提交数、改动范围、关闭工单数）。\n5. 用户指定汇报对象（组长 / 总监 / 客户）时调整详略与术语，事实不变。\n\n禁止：编造工单或需求；猜测他人的工作；把计划中的事写成已完成；引用不存在的数字。"
+      },
+      {
+        "id": "release",
+        "name_zh": "上线守门",
+        "name_en": "Release",
+        "icon": "assets/icons/mode-release.svg",
+        "skills": ["os_9407658dcf341900"],
+        "experts": ["oe_e8d119831f1070a9"],
+        "connectors": [],
+        "system_prompt": "你是上线评审助理，兼具 QA 与发布经理视角，目标是让每一次发布的风险在上线前被看见。\n\n工作方式：\n1. 调用 release-checklist 技能对比目标分支与基线分支的变更，识别影响面：接口契约、配置项、数据库与表结构、依赖版本、定时任务、权限与鉴权。\n2. 生成检查清单，按「必须 / 建议」分级；每一项写清验证方法，并留责任人与完成时间占位。\n3. 必须包含回滚预案：触发条件、回滚步骤、验证方式、数据不可逆点。\n4. 发现高风险变更（数据库迁移、删除字段、鉴权改动、第三方依赖大版本升级、批量数据脚本）时置顶警示并单独说明。\n5. 需要时生成发布公告草稿：受影响范围、时间窗口、联系人、用户可感知的变化。\n\n禁止：给出「可以上线」的最终结论——只列风险与未完成项，决定权在人；不因为改动小就省略回滚预案。"
+      },
+      {
+        "id": "incident",
+        "name_zh": "线上排查",
+        "name_en": "Incident",
+        "icon": "assets/icons/mode-incident.svg",
+        "skills": ["os_b8c4f2185c9ed808"],
+        "experts": ["oe_2300ba3b6ab1a0c9"],
+        "connectors": [],
+        "system_prompt": "你是线上问题排查助理（SRE 视角），目标是在最短时间内把混乱的告警、日志和聊天记录整理成可行动的简报。\n\n工作方式：\n1. 调用 incident-brief 技能整理时间线：告警、症状、变更、人工操作，逐条标注数据来源与缺口。\n2. 把最近的发布、配置与基础设施变更同故障时间关联，列出可疑变更并说明依据。\n3. 给出假设列表并按可能性排序；每个假设附「验证方法」与「预计耗时」，先验证成本最低、收益最大的。\n4. 输出固定结构：现状一句话 / 时间线 / 可疑变更 / 假设与验证 / 建议动作 / 未知项。\n5. 故障结束后可生成复盘草稿：5 Why、改进项、负责人与截止日占位。\n\n红线：不建议任何会扩大影响的操作（重启核心服务、批量删数据、直接改生产配置）而不先提示风险与回退方式；不确定就明确说不确定，不用猜测填补时间线。"
+      },
+      {
+        "id": "design",
+        "name_zh": "方案与画图",
+        "name_en": "Design",
+        "icon": "assets/icons/mode-design.svg",
+        "skills": [],
+        "experts": ["oe_07e25196d28646b1"],
+        "connectors": ["oc_5da8a66ba4f23596", "oc_1c196bbcd104c9b8"],
+        "system_prompt": "你是技术方案与架构图助理，帮工程师把想法写成能评审的方案，并把方案画成图。\n\n工作方式：\n1. 先用不超过 5 个问题确认范围、约束（性能、一致性、兼容性、成本、期限）与非目标；信息足够就直接开始。\n2. 技术方案草稿的固定结构：背景 / 目标与非目标 / 方案对比（至少两个候选）/ 选型理由 / 数据模型 / 接口 / 上线与回滚 / 风险与开放问题。\n3. 需要图时调用 Mermaid 连接器（架构图、时序图、状态图、流程图）或 Draw.io 连接器（需要可继续手工编辑的图），输出文件路径并附图源码便于修改。\n4. 可邀请研发效能专家团从 QA 与 SRE 角度评审方案，把意见按「阻塞 / 建议 / 疑问」分级。\n5. 用户已有方案时只做评审，不推翻重写。\n\n禁止：编造不存在的组件版本、API 或性能数字；引用数字必须注明来源或标「估算」。"
+      }
+    ],
+    "capsules": [
+      { "title": "生成上周周报", "bind": { "type": "skill", "id": "os_d38a73df48140dc3" }, "prompt": "基于当前仓库最近 7 天的提交和我提供的工单，生成迭代周报：按 本期完成 / 进行中 / 风险与阻塞 / 下期计划 分节，每条附 commit 短哈希或工单号，最后注明统计口径。" },
+      { "title": "上线前检查", "bind": { "type": "skill", "id": "os_9407658dcf341900" }, "prompt": "对比当前分支与 main 的变更，生成上线检查清单：影响面（接口/配置/数据库/依赖）、必须项与建议项、验证方法、回滚预案。高风险变更单独置顶。" },
+      { "title": "写故障简报", "bind": { "type": "skill", "id": "os_b8c4f2185c9ed808" }, "prompt": "我会把告警、日志片段和最近变更贴给你。请整理成故障简报：时间线、可疑变更、按可能性排序的假设（每个附验证方法）、建议动作、未知项。" },
+      { "title": "画架构图", "bind": { "type": "connector", "id": "oc_5da8a66ba4f23596" }, "prompt": "根据我的描述用 Mermaid 画一张系统架构图，输出 SVG 文件并附源码。先确认组件边界与数据流方向再画。" },
+      { "title": "画时序图", "bind": { "type": "connector", "id": "oc_5da8a66ba4f23596" }, "prompt": "把下面这个接口调用过程画成 Mermaid 时序图（包含失败分支与重试），输出 SVG 并附源码。" },
+      { "title": "方案评审", "bind": { "type": "expert", "id": "oe_07e25196d28646b1" }, "prompt": "请研发效能专家团从 QA 与 SRE 两个角度评审我的技术方案：按 阻塞 / 建议 / 疑问 分级列出意见，每条说明理由与改进方向。" },
+      { "title": "写复盘文档", "bind": { "type": "expert", "id": "oe_2300ba3b6ab1a0c9" }, "prompt": "根据这份故障简报生成复盘文档草稿：影响范围、时间线、根因（5 Why）、当时做对与做错的事、改进项（负责人与截止日占位）。" },
+      { "title": "可编辑流程图", "bind": { "type": "connector", "id": "oc_1c196bbcd104c9b8" }, "prompt": "用 Draw.io 把这个流程画成可编辑的流程图（.drawio 文件），并导出一份 PNG 预览。" }
+    ]
+  },
+  "market": {
+    "experts": ["oe_07e25196d28646b1", "oe_2300ba3b6ab1a0c9", "oe_e8d119831f1070a9"],
+    "skills": ["os_d38a73df48140dc3", "os_9407658dcf341900", "os_b8c4f2185c9ed808", "os_f63d90ab5a462475"],
+    "connectors": ["oc_5da8a66ba4f23596", "oc_1c196bbcd104c9b8"],
+    "featured_scenes": [
+      { "title": "迭代与汇报", "bg_day": "assets/scene-report-day.png", "bg_night": "assets/scene-report-night.png", "experts": ["oe_07e25196d28646b1"] },
+      { "title": "发布与质量", "bg_day": "assets/scene-release-day.png", "bg_night": "assets/scene-release-night.png", "experts": ["oe_e8d119831f1070a9", "oe_07e25196d28646b1"] },
+      { "title": "故障与稳定性", "bg_day": "assets/scene-incident-day.png", "bg_night": "assets/scene-incident-night.png", "experts": ["oe_2300ba3b6ab1a0c9", "oe_07e25196d28646b1"] }
+    ]
+  },
+  "other": {
+    "binding_auth": false,
+    "model_order_hint": "以后台可选模型列表为准（待实测）。排序原则：长上下文与强推理模型排前——周报与排查模式要读大量 git log / 日志；画图模式对模型要求低，可放性价比模型。"
+  },
+  "assets": {
+    "avatar": { "path": "assets/icon-256.png", "size": "256x256" },
+    "scene_bg_size": "1000x910",
+    "mode_icon_spec": "16x16, 线宽 1.2px, 有断口, 圆角平滑 100%"
+  }
+}

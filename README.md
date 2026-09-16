@@ -123,3 +123,14 @@ Git 侧走本地 `git log`，**不需要任何 token**，内网 GitLab / 自建 
 
 - 原创部分：代码 [MIT](LICENSE)，文档 [CC BY 4.0](LICENSE-CONTENT)
 - `ported/` 下各项目：沿用原项目协议（目前均为 Apache-2.0），各目录自带 LICENSE 与 ATTRIBUTION.md
+
+## Buddy 应用（`buddy-apps/`）
+
+Buddy 应用是开放平台里"可独立分发、面向终端用户"的品牌工作台，本质是一份网页表单配置（工作模式 + 场景胶囊 + 市场绑定 + 品牌资源），**个人开发者不能创建，需企业认证**。
+`buddy-apps/devops-buddy/` 是首个应用「研发效能 Buddy」的完整配置包：把本仓库的 4 个技能、3 个专家、2 个连接器组装成 4 个工作模式与 8 个场景胶囊，图标与底图按官方设计规范生成。校验：
+
+```bash
+python3 tools/check_buddy_app.py buddy-apps/devops-buddy
+```
+
+调研与路线见 `docs/buddy-app-plan.md`。
