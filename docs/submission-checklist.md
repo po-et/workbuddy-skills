@@ -102,3 +102,19 @@ CLI 已装（`~/.local/bin/skillhub`，2026.8.5）；发布副本由 `tools/skil
 - [ ] 案例 #1：`docs/articles/02-案例-…迭代周报.md`（缺 4 张客户端过程截图 + 积分消耗）
 - [ ] 案例 #2：上线检查清单（release-checklist）；案例 #3：故障简报（incident-brief）—— 满 3 篇触发阶梯奖
 - [ ] 每篇：发布到腾讯云开发者社区（话题 #WorkBuddy #AI办公）→ 填「WorkBuddy 行业应用指南共创投稿问卷」→ 同稿 PR 到 AlephAITech/WorkBuddyGuide `docs/cases/submissions/<slug>/index.md` → 加共创群（备注 workbuddy共创）
+
+### SkillHub 第一批（2026-09-17 19:32–19:43 发布，审核中）
+
+| slug | skillId | 类型 |
+|---|---|---|
+| dev-workflow-pro | 203361 | 伞形入口 |
+| commit-message-cc | 203362 | 原创+脚本 |
+| changelog-keep | 203363 | 原创+脚本 |
+| dep-vuln-check-osv | 203365 | 原创+脚本（OSV） |
+| log-anomaly-3sigma | 203366 | 原创+脚本 |
+| grill-me-zh | 203367 | MIT 复刻增强 |
+| diagnosing-bugs-zh | 203368 | MIT 复刻增强 |
+| merge-conflicts-zh | 203369 | MIT 复刻增强 |
+| spec-and-tickets-zh | 203370 | MIT 复刻增强 |
+
+第二批（待发布）：code-review-zh、license-check-offline、api-diff-test、ci-config-review、tech-design-review。

@@ -34,6 +34,11 @@ SLUGS = {
     "diagnosing-bugs-zh": "diagnosing-bugs-zh",
     "merge-conflicts-zh": "merge-conflicts-zh",
     "spec-and-tickets-zh": "spec-and-tickets-zh",
+    "code-review-zh": "code-review-zh",
+    "license-check": "license-check-offline",
+    "api-diff": "api-diff-test",
+    "ci-config-review": "ci-config-review",
+    "tech-design-review": "tech-design-review",
 }
 # 源目录：默认 skills/<name>，复刻的在 ported/skills/<name>
 def source_dir(name: str) -> Path:
@@ -55,6 +60,11 @@ TAGS = {
     "diagnosing-bugs-zh": ["debug", "调试", "bug", "诊断", "复现", "性能回退", "排查", "回归测试"],
     "merge-conflicts-zh": ["git", "合并冲突", "merge", "rebase", "cherry-pick", "conflict", "冲突解决"],
     "spec-and-tickets-zh": ["需求文档", "spec", "PRD", "拆任务", "工单", "用户故事", "排期", "issue", "任务拆解"],
+    "code-review-zh": ["代码评审", "code review", "PR", "代码审查", "坏味道", "code smell", "重构", "合并前检查"],
+    "license-check": ["开源协议", "license", "许可证", "合规", "GPL", "AGPL", "SSPL", "NOTICE", "依赖审计"],
+    "api-diff": ["接口测试", "回归测试", "api diff", "差分测试", "环境对比", "发布验证", "灰度", "接口对比"],
+    "ci-config-review": ["CI", "GitHub Actions", "GitLab CI", "流水线", "workflow", "安全审查", "供应链安全", "DevOps"],
+    "tech-design-review": ["技术方案", "架构评审", "设计评审", "方案评审", "架构设计", "SRE", "QA", "安全评审"],
 }
 
 

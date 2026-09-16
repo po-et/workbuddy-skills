@@ -1,0 +1,5 @@
+[
+  {"name": "仓库信息", "method": "GET", "path": "/repos/po-et/workbuddy-skills"},
+  {"name": "同路径两环境", "method": "GET", "path": "/repos/anthropics/skills", "path_b": "/repos/anthropics/skills"},
+  {"name": "不同仓库对比（演示差异）", "method": "GET", "path": "/repos/po-et/workbuddy-skills", "path_b": "/repos/anthropics/skills"}
+]
