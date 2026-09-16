@@ -25,12 +25,36 @@ SLUGS = {
     "release-checklist": "release-checklist-git",
     "incident-brief": "incident-brief-sre",
     "build-workbuddy-connector": "build-workbuddy-connector",
+    "commit-message": "commit-message-cc",
+    "changelog": "changelog-keep",
+    "dep-vuln-check": "dep-vuln-check-osv",
+    "log-anomaly": "log-anomaly-3sigma",
+    "dev-workflow-pro": "dev-workflow-pro",
+    "grill-me-zh": "grill-me-zh",
+    "diagnosing-bugs-zh": "diagnosing-bugs-zh",
+    "merge-conflicts-zh": "merge-conflicts-zh",
+    "spec-and-tickets-zh": "spec-and-tickets-zh",
 }
+# 源目录：默认 skills/<name>，复刻的在 ported/skills/<name>
+def source_dir(name: str) -> Path:
+    for base in (ROOT / "skills", ROOT / "ported" / "skills"):
+        if (base / name / "SKILL.md").exists():
+            return base / name
+    sys.exit(f"找不到技能目录: {name}")
 TAGS = {
     "iteration-report": ["周报", "迭代汇报", "Git", "研发效能"],
     "release-checklist": ["上线检查", "发布评审", "回滚", "研发效能"],
     "incident-brief": ["故障排查", "SRE", "复盘", "研发效能"],
     "build-workbuddy-connector": ["连接器", "WorkBuddy", "脚手架", "开发者工具"],
+    "commit-message": ["commit", "提交信息", "Conventional Commits", "git", "commit message", "提交规范", "研发效能"],
+    "changelog": ["changelog", "发布说明", "release notes", "更新日志", "版本说明", "git", "研发效能"],
+    "dep-vuln-check": ["漏洞", "CVE", "依赖安全", "OSV", "供应链安全", "npm audit", "pip-audit", "SCA", "安全审计"],
+    "log-anomaly": ["日志分析", "异常检测", "突变", "错误率", "故障定位", "时间序列", "SRE", "监控"],
+    "dev-workflow-pro": ["研发效能", "周报", "上线", "故障排查", "commit", "changelog", "代码评审", "需求", "spec", "拆任务", "冲突", "漏洞", "复盘", "DevOps"],
+    "grill-me-zh": ["需求澄清", "盘问", "grill", "方案评审", "决策", "设计", "追问", "需求分析"],
+    "diagnosing-bugs-zh": ["debug", "调试", "bug", "诊断", "复现", "性能回退", "排查", "回归测试"],
+    "merge-conflicts-zh": ["git", "合并冲突", "merge", "rebase", "cherry-pick", "conflict", "冲突解决"],
+    "spec-and-tickets-zh": ["需求文档", "spec", "PRD", "拆任务", "工单", "用户故事", "排期", "issue", "任务拆解"],
 }
 
 
@@ -56,7 +80,7 @@ def yaml_list(key: str, items):
 
 
 def prep(name: str, out: Path) -> Path:
-    src = ROOT / "skills" / name
+    src = source_dir(name)
     fm, body = split_frontmatter((src / "SKILL.md").read_text("utf-8"))
     slug = SLUGS.get(name, name)
     summary = get(fm, "description_zh") or get(fm, "description")
