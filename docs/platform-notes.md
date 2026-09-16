@@ -85,3 +85,11 @@ examples_en 最多 3 个示例，当前 4 个
 - 分类下拉为多选且选后不关闭，此时点击页面其他控件会被浮层截胡；关闭需点空白处
 - 「创建」流程的客户端草稿存于 sessionStorage，按标签页隔离；同一标签页连续发布会带出上一个包，**每个新技能用新标签页**最省事
 - 提交后列表状态：草稿 → 审核中，可「撤回」
+
+### 连接器上传实测（2026-09-16）
+
+- 入口 `/connector/all` → 创建 → `/connector/publish?action=create&step=1`；仅 .zip，**≤ 20MB**（技能是 3MB）
+- 包内顶层目录布局（`mermaid-connector/connector-meta.json` …）、`LICENSE`、`ATTRIBUTION.md` 均被接受，未报多余文件
+- 第二步：市场展示名称（由 `name_zh` 带出）/ 头像（`icon.svg` 直接生效）/ **服务类目\***（唯一必填下拉）/ 能力介绍（`description_zh`）/ 试试这样问我（`examples_zh`，4 条全部显示，未报上限）
+- 无「市场展示分类」字段
+- 提交后列表状态「审核中」，可「撤回」；官方 Q&A：过审后需运营代上架，约 7 个工作日
