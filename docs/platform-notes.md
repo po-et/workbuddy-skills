@@ -140,3 +140,11 @@ examples_en 最多 3 个示例，当前 4 个
 - 企业认证三条快速路径：腾讯云账号 / 微信公众号 / 企业法人实名（营业执照 + 法人人脸）。个体工商户可做腾讯云企业实名；
   WorkBuddy 是否接受个体工商户主体——待确认。
 - 配置包与校验器：`buddy-apps/devops-buddy/`、`tools/check_buddy_app.py`。
+
+## SkillHub（skillhub.cn）发布实测（2026-09-17）
+
+- 登录：`skillhub login --key <skh_…> --host https://api.skillhub.cn`；`skillhub auth whoami` 输出 userId / handle / role，个人 handle 形如 `user_xxxxxxxx`（技能 URL 为 `/skills/<handle>/<slug>`）。
+- **无扩展名文件被拒**：上传含 `LICENSE` 的目录报 `400 不允许的文件类型: LICENSE`。许可证只写 frontmatter `license: MIT`；`tools/skillhub_prep.py` 生成副本时会删掉 LICENSE / NOTICE / ATTRIBUTION。实测可通过的类型：md / py / yaml / csv。
+- **限频**：连续 3 次请求（含失败的）后第 4 次即 `发布频率过高`；发布脚本每次间隔 75 秒。
+- `--dry-run` 不需要登录即可做格式校验；frontmatter 必填 `slug`（kebab，全网唯一）、`version`（SemVer）、`displayName`。
+- 与开放平台字段（`name` / `display_name` / `description_zh` …）并存在同一 frontmatter 里，dry-run 与上传均未报错；副本里去掉了重复的 `version` 键。

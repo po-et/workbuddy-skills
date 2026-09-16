@@ -77,8 +77,10 @@ def prep(name: str, out: Path) -> Path:
     shutil.copytree(src, dst, ignore=shutil.ignore_patterns("__pycache__", ".DS_Store", "*.pyc"))
     fm_rest = re.sub(r"^version:.*\n?", "", fm, flags=re.M)  # 避免与 SkillHub 头部的 version 重复
     (dst / "SKILL.md").write_text(f"---\n{head}\n{fm_rest}\n---\n{body}", "utf-8")
-    if not (dst / "LICENSE").exists() and (ROOT / "LICENSE").exists():
-        shutil.copy(ROOT / "LICENSE", dst / "LICENSE")
+    # SkillHub 上传拒绝无扩展名文件（实测 400「不允许的文件类型: LICENSE」），许可证只写 frontmatter 的 license 字段
+    for junk in ("LICENSE", "NOTICE", "ATTRIBUTION"):
+        if (dst / junk).exists():
+            (dst / junk).unlink()
     return dst
 
 
