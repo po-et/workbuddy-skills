@@ -88,13 +88,13 @@ CLI 已装（`~/.local/bin/skillhub`，2026.8.5）；发布副本由 `tools/skil
 
 | slug | 源 | 版本 | 状态 |
 |---|---|---|---|
-| iteration-report-git | skills/iteration-report | 0.1.2 | dry-run ✓，待发布 |
-| release-checklist-git | skills/release-checklist | 0.1.0 | dry-run ✓，待发布 |
-| incident-brief-sre | skills/incident-brief | 0.1.0 | dry-run ✓，待发布 |
-| build-workbuddy-connector | skills/build-workbuddy-connector | 0.1.0 | dry-run ✓，待发布 |
+| iteration-report-git | skills/iteration-report | 0.1.2 | **已发布** skillId 203311，2026-09-17 18:37，审核中 |
+| release-checklist-git | skills/release-checklist | 0.1.0 | **已发布** skillId 203312，审核中 |
+| incident-brief-sre | skills/incident-brief | 0.1.0 | **已发布** skillId 203313，审核中 |
+| build-workbuddy-connector | skills/build-workbuddy-connector | 0.1.0 | **已发布** skillId 203315，审核中 |
 
-- [ ] 用户：skillhub.cn 登录 + 人脸实名 + 个人中心创建 API key，在自己终端执行 `skillhub login --key … --host https://api.skillhub.cn`
-- [ ] 发布：`skillhub publish dist/skillhub/<slug> --host https://api.skillhub.cn --changelog "首次发布"`（409 则改 `tools/skillhub_prep.py` 里的 slug）
+- [x] 用户已实名并登录（handle `user_a3a2e24a`）
+- [x] 2026-09-17 四个技能发布完成（`skillhub publish … --changelog "首次发布"`，间隔 75 秒）；技能页 `https://skillhub.cn/skills/user_a3a2e24a/<slug>`，审核中时详情页显示未找到
 - [ ] 上架后把 URL 与下载数记回这里；开放平台在审的 iteration-report 仍是 0.1.1，过审后再用 0.1.2 更新
 
 ## 腾讯云开发者社区《WorkBuddy 行业应用指南》有奖征集 — 截止 2026-10-08 23:59
