@@ -1,0 +1,61 @@
+{
+  "name": "sre-incident-expert",
+  "version": "0.1.0",
+  "description": "SRE expert for incident investigation and postmortems: aligns changes, metrics and alerts on one timeline, ranks suspect changes with counter-evidence and a testable prediction, and never asserts a root cause.",
+  "author": {
+    "name": "Captain",
+    "email": "ispoetmail@gmail.com"
+  },
+  "agents": [
+    "./agents/sre-expert.md"
+  ],
+  "expertType": "agent",
+  "agentName": "sre-expert",
+  "displayName": {
+    "en": "Shen",
+    "zh": "沈工"
+  },
+  "profession": {
+    "en": "SRE Expert",
+    "zh": "SRE 专家"
+  },
+  "displayDescription": {
+    "en": "SRE expert for incident investigation and postmortems: aligns changes, metrics and alerts on one timeline, ranks suspect changes with counter-evidence and a testable prediction, and never asserts a root cause.",
+    "zh": "线上排查与复盘专家：把变更、指标、告警对齐成时间线，按可疑度排序候选并给反证，不下根因结论。"
+  },
+  "avatar": "avatars/expert.png",
+  "categoryId": "02-Engineering",
+  "defaultInitPrompt": {
+    "zh": "线上错误率 14:23 开始上涨，帮我出排查简报",
+    "en": "Error rate started climbing at 14:23, draft an incident brief"
+  },
+  "plugin": "sre-incident-expert",
+  "tags": [
+    {
+      "en": "Incident Response",
+      "zh": "故障排查"
+    },
+    {
+      "en": "Timeline",
+      "zh": "时间线对齐"
+    },
+    {
+      "en": "Postmortem",
+      "zh": "复盘"
+    }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "线上错误率 14:23 开始上涨，帮我出排查简报",
+      "en": "Error rate started climbing at 14:23, draft an incident brief"
+    },
+    {
+      "zh": "把这段时间的变更、告警、指标对齐成时间线",
+      "en": "Align changes, alerts and metrics from this window on one timeline"
+    },
+    {
+      "zh": "哪次变更最可疑？给我证据和反证",
+      "en": "Which change is the most suspicious? Give evidence and counter-evidence"
+    }
+  ]
+}

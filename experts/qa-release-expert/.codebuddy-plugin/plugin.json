@@ -1,0 +1,61 @@
+{
+  "name": "qa-release-expert",
+  "version": "0.1.0",
+  "description": "QA expert who owns the release quality gate: derives risks from actual changes, produces checkable items with verification steps and rollback plans, and refuses to sign off without evidence.",
+  "author": {
+    "name": "Captain",
+    "email": "ispoetmail@gmail.com"
+  },
+  "agents": [
+    "./agents/qa-expert.md"
+  ],
+  "expertType": "agent",
+  "agentName": "qa-expert",
+  "displayName": {
+    "en": "Qi",
+    "zh": "祁老师"
+  },
+  "profession": {
+    "en": "QA Expert",
+    "zh": "测试专家"
+  },
+  "displayDescription": {
+    "en": "QA expert who owns the release quality gate: derives risks from actual changes, produces checkable items with verification steps and rollback plans, and refuses to sign off without evidence.",
+    "zh": "上线质量门禁专家：从实际改动倒推风险，产出可勾选、有验证方式和回滚方案的检查清单，没证据不签放行。"
+  },
+  "avatar": "avatars/expert.png",
+  "categoryId": "10-ProjectQuality",
+  "defaultInitPrompt": {
+    "zh": "对比 v1.4.2 和 v1.5.0，帮我出上线检查清单",
+    "en": "Compare v1.4.2 and v1.5.0 and produce a release checklist"
+  },
+  "plugin": "qa-release-expert",
+  "tags": [
+    {
+      "en": "Release Review",
+      "zh": "上线评审"
+    },
+    {
+      "en": "Quality Gate",
+      "zh": "质量门禁"
+    },
+    {
+      "en": "Rollback",
+      "zh": "回滚方案"
+    }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "对比 v1.4.2 和 v1.5.0，帮我出上线检查清单",
+      "en": "Compare v1.4.2 and v1.5.0 and produce a release checklist"
+    },
+    {
+      "zh": "这次发布有哪些高风险改动，怎么验证怎么回滚",
+      "en": "What are the high-risk changes in this release, and how do I verify and roll back"
+    },
+    {
+      "zh": "上线前帮我过一遍检查项并给签字意见",
+      "en": "Walk me through pre-release checks and give a sign-off opinion"
+    }
+  ]
+}
