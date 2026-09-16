@@ -1,5 +1,5 @@
 ---
-name: tech-lead
+name: devops-team-lead
 description: Tech lead who coordinates the team, turns requirements into designs, and owns iteration reports and release reviews. Delegates quality gates to qa-expert and incident work to sre-expert.
 displayName:
   en: "Lin"

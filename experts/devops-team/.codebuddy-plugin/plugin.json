@@ -7,18 +7,60 @@
     "email": "ispoetmail@gmail.com"
   },
   "agents": [
-    "./agents/tech-lead.md",
+    "./agents/devops-team-lead.md",
     "./agents/qa-expert.md",
     "./agents/sre-expert.md"
   ],
   "expertType": "team",
+  "agentName": "devops-team-lead",
   "teamInfo": {
-    "leadAgent": "tech-lead",
+    "leadAgent": "devops-team-lead",
     "memberAgents": [
       "qa-expert",
       "sre-expert"
     ]
   },
+  "members": [
+    {
+      "id": "devops-team-lead",
+      "name": {
+        "en": "Lin",
+        "zh": "林工"
+      },
+      "profession": {
+        "en": "Tech Lead",
+        "zh": "技术负责人"
+      },
+      "avatar": "avatars/lead.png",
+      "role": "lead"
+    },
+    {
+      "id": "qa-expert",
+      "name": {
+        "en": "Qi",
+        "zh": "祁老师"
+      },
+      "profession": {
+        "en": "QA Expert",
+        "zh": "测试专家"
+      },
+      "avatar": "avatars/qa.png",
+      "role": "member"
+    },
+    {
+      "id": "sre-expert",
+      "name": {
+        "en": "Shen",
+        "zh": "沈工"
+      },
+      "profession": {
+        "en": "SRE Expert",
+        "zh": "SRE 专家"
+      },
+      "avatar": "avatars/sre.png",
+      "role": "member"
+    }
+  ],
   "displayName": {
     "en": "DevOps Team",
     "zh": "研发效能专家团"

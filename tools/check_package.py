@@ -285,16 +285,52 @@ def check_expert(root):
             fail(f"agentName={an!r} 不在 agents 的 name 集合中 {sorted(names)}")
     if pj.get("expertType") == "team":
         ti = pj.get("teamInfo") or {}
-        lead, members = ti.get("leadAgent"), ti.get("memberAgents") or []
+        lead, mem = ti.get("leadAgent"), ti.get("memberAgents") or []
         if not lead:
             fail("expertType=team 时须有 teamInfo.leadAgent")
         elif names and lead not in names:
             fail(f"leadAgent={lead!r} 不在 agents 的 name 集合中")
-        if not members:
+        if not mem:
             fail("teamInfo.memberAgents 不能为空")
-        for m in members:
+        for m in mem:
             if names and m not in names:
                 fail(f"memberAgent={m!r} 不在 agents 的 name 集合中")
+        if not pj.get("agentName"):
+            fail("expertType=team 时须有 agentName（主理人 agent 名）")
+        elif lead and pj["agentName"] != lead:
+            warn("agentName 与 teamInfo.leadAgent 不一致")
+        # 解析器要求的 members 数组（/docs/expert-team）：Go 结构 upload.teamMemberJSON
+        members = pj.get("members")
+        if not isinstance(members, list) or not members:
+            fail("members 为必填数组（解析器原文：members 为必填数组；元素为对象，字符串会报 cannot unmarshal）")
+        else:
+            leads = 0
+            for i, m in enumerate(members):
+                if not isinstance(m, dict):
+                    fail(f"members[{i}] 必须是对象 {{id,name,profession,avatar,role}}"); continue
+                for k in ("id", "name", "profession", "avatar", "role"):
+                    if k not in m:
+                        fail(f"members[{i}] 缺少 {k}")
+                for k in ("name", "profession"):
+                    v = m.get(k)
+                    if not isinstance(v, dict) or not v.get("en") or not v.get("zh"):
+                        fail(f"members[{i}].{k} 必须是 {{en, zh}}")
+                if m.get("role") not in ("lead", "member"):
+                    fail(f"members[{i}].role 须为 lead 或 member: {m.get('role')!r}")
+                leads += m.get("role") == "lead"
+                if names and m.get("id") not in names:
+                    fail(f"members[{i}].id={m.get('id')!r} 不在 agents 的 name 集合中（id = agent 文件名去 .md）")
+                av2 = m.get("avatar")
+                if av2 and not os.path.isfile(os.path.join(root, av2)):
+                    fail(f"members[{i}].avatar 文件不存在: {av2}")
+            if leads != 1:
+                fail(f"members 中 role=lead 须恰好 1 个，当前 {leads}")
+        # 主理人文件名须含专家团前缀，且不可用通用 team-lead（/docs/expert-team）
+        if lead:
+            if lead == "team-lead":
+                fail("主理人不可用通用名 team-lead")
+            elif n and not lead.startswith(n.split("-")[0]):
+                warn(f"主理人 {lead!r} 建议以专家团前缀开头（文档：名称须加专家团前缀）")
     ok("专家 plugin.json 与 agents 检查完成")
 
 
