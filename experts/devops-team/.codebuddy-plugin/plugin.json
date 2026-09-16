@@ -1,0 +1,69 @@
+{
+  "name": "devops-team",
+  "version": "0.1.0",
+  "description": "A three-expert engineering efficiency team: tech lead, QA expert and SRE expert working in parallel on iteration reports, release checklists and incident briefs.",
+  "author": {
+    "name": "Captain",
+    "email": "ispoetmail@gmail.com"
+  },
+  "agents": [
+    "./agents/tech-lead.md",
+    "./agents/qa-expert.md",
+    "./agents/sre-expert.md"
+  ],
+  "expertType": "team",
+  "teamInfo": {
+    "leadAgent": "tech-lead",
+    "memberAgents": [
+      "qa-expert",
+      "sre-expert"
+    ]
+  },
+  "displayName": {
+    "en": "DevOps Team",
+    "zh": "研发效能专家团"
+  },
+  "profession": {
+    "en": "Engineering Efficiency Team",
+    "zh": "研发效能专家团"
+  },
+  "displayDescription": {
+    "en": "A three-expert team for engineering teams: the tech lead owns designs and releases, the QA expert guards quality gates, and the SRE expert leads incident investigation and postmortems. Every conclusion is traceable to commits, tickets or timelines; data gaps are stated, never hidden.",
+    "zh": "研发效能三人专家团：技术负责人统筹方案与上线，测试专家把守质量门禁，SRE 专家主导线上排查与复盘。"
+  },
+  "avatar": "avatars/team.png",
+  "categoryId": "02-Engineering",
+  "defaultInitPrompt": {
+    "zh": "帮我们这个迭代出周报、上线清单和排查预案",
+    "en": "Produce this iteration's report, release checklist and incident playbook"
+  },
+  "plugin": "devops-team",
+  "tags": [
+    {
+      "en": "Dev Efficiency",
+      "zh": "研发效能"
+    },
+    {
+      "en": "Release Review",
+      "zh": "上线评审"
+    },
+    {
+      "en": "Incident Response",
+      "zh": "故障排查"
+    }
+  ],
+  "quickPrompts": [
+    {
+      "zh": "帮我们这个迭代出周报、上线清单和排查预案",
+      "en": "Produce this iteration's report, release checklist and incident playbook"
+    },
+    {
+      "zh": "对比 v1.4 和 v1.5，评审这次上线的风险",
+      "en": "Review the release risks between v1.4 and v1.5"
+    },
+    {
+      "zh": "线上错误率突然上涨，帮我排查",
+      "en": "Error rate just spiked, help me investigate"
+    }
+  ]
+}
