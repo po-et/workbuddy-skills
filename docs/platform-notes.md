@@ -117,3 +117,9 @@ examples_en 最多 3 个示例，当前 4 个
 - **专家的「市场展示分类」是另一套 17 项**，与技能的 13 项不同：开学季、高校新生攻略、腾讯专家、产品设计、技术工程、金融投资、全球发展、教育学习、游戏空间、数据智能、营销增长、内容创作、销售商务、运营人力、项目质量、法务安全、行业顾问（前两项为当季活动类目）
 - 总览页会显示「擅长领域」= plugin.json 的 tags；「试试这样问我」= quickPrompts
 - 解析器对 agent .md 的 frontmatter 用**严格 YAML**：未加引号的值含 `: ` 直接报 `mapping values are not allowed in this context`
+
+### 第二批提交（2026-09-16 下午）
+
+- 独立专家 sre-incident-expert（分类 技术工程）、qa-release-expert（分类 项目质量）、连接器 drawio（类目 工具-办公）一次解析通过，得益于 `tools/check_package.py` 已编码全部实测规则
+- drawio 连接器：PyPI 安装（`pip3 install cli-anything-drawio`），本机 draw.io 桌面版实测 shape add / connect add / export png+svg 通过；空白图导出报错是 draw.io 行为
+- 同一浏览器标签页连续「创建」会带出上一个包的客户端状态，**每个资产开一个新标签页**最稳
