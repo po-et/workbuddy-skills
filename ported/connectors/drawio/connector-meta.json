@@ -4,7 +4,7 @@
   "name_en": "draw.io Diagrams",
   "description": "用自然语言在 draw.io 里画架构图、流程图：加图形、连线、导出 PNG/SVG/PDF，产出可继续编辑的 .drawio 文件。",
   "description_zh": "用自然语言在 draw.io 里画架构图、流程图：加图形、连线、导出 PNG/SVG/PDF，产出可继续编辑的 .drawio 文件。",
-  "description_en": "Build architecture and flow diagrams in draw.io from text: add shapes, connect them, export PNG/SVG/PDF.",
+  "description_en": "Draw architecture and flow diagrams in draw.io from text: add shapes, connect, export PNG/SVG/PDF.",
   "source": "cli-anything-drawio",
   "type": "cli",
   "version": "0.1.0",
