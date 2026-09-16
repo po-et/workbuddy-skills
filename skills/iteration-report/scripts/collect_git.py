@@ -149,7 +149,15 @@ def main():
     ap.add_argument("--until", required=True, help="YYYY-MM-DD")
     ap.add_argument("--branch", default=None, help="指定分支，默认当前 HEAD")
     ap.add_argument("--out", default="out/git.json")
+    ap.add_argument("--issue-pattern", action="append", default=None,
+                    help="工单号正则（可重复，需含一个捕获组）。指定后替换默认的 #123 / PROJ-123 / !123")
+    ap.add_argument("--no-issues", action="store_true",
+                    help="不从提交信息提取工单号：没有工单系统，或提交里常引用外部仓库 issue（如 #1234）时使用")
     a = ap.parse_args()
+    if a.no_issues:
+        ISSUE_PATTERNS[:] = []
+    elif a.issue_pattern:
+        ISSUE_PATTERNS[:] = a.issue_pattern
 
     all_commits, errors = [], []
     for r in a.repo:

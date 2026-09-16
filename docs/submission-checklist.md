@@ -81,3 +81,24 @@
 | 应用 | 状态 | 配置包 | 备注 |
 |---|---|---|---|
 | 研发效能 Buddy（DevOps Buddy） | 未创建——个人开发者无法创建，需企业认证 | `buddy-apps/devops-buddy/`（app.md 粘贴稿 + config.json + assets） | 绑定的 9 个资产须先过审；企业认证通过后走 创建审核 → 配置审核 |
+
+## SkillHub（skillhub.cn，个人技能市场）— 2026-09-16 就绪，等实名
+
+CLI 已装（`~/.local/bin/skillhub`，2026.8.5）；发布副本由 `tools/skillhub_prep.py` 生成到 scratchpad `dist/skillhub/`，四个全部 `--dry-run` 通过。
+
+| slug | 源 | 版本 | 状态 |
+|---|---|---|---|
+| iteration-report-git | skills/iteration-report | 0.1.2 | dry-run ✓，待发布 |
+| release-checklist-git | skills/release-checklist | 0.1.0 | dry-run ✓，待发布 |
+| incident-brief-sre | skills/incident-brief | 0.1.0 | dry-run ✓，待发布 |
+| build-workbuddy-connector | skills/build-workbuddy-connector | 0.1.0 | dry-run ✓，待发布 |
+
+- [ ] 用户：skillhub.cn 登录 + 人脸实名 + 个人中心创建 API key，在自己终端执行 `skillhub login --key … --host https://api.skillhub.cn`
+- [ ] 发布：`skillhub publish dist/skillhub/<slug> --host https://api.skillhub.cn --changelog "首次发布"`（409 则改 `tools/skillhub_prep.py` 里的 slug）
+- [ ] 上架后把 URL 与下载数记回这里；开放平台在审的 iteration-report 仍是 0.1.1，过审后再用 0.1.2 更新
+
+## 腾讯云开发者社区《WorkBuddy 行业应用指南》有奖征集 — 截止 2026-10-08 23:59
+
+- [ ] 案例 #1：`docs/articles/02-案例-…迭代周报.md`（缺 4 张客户端过程截图 + 积分消耗）
+- [ ] 案例 #2：上线检查清单（release-checklist）；案例 #3：故障简报（incident-brief）—— 满 3 篇触发阶梯奖
+- [ ] 每篇：发布到腾讯云开发者社区（话题 #WorkBuddy #AI办公）→ 填「WorkBuddy 行业应用指南共创投稿问卷」→ 同稿 PR 到 AlephAITech/WorkBuddyGuide `docs/cases/submissions/<slug>/index.md` → 加共创群（备注 workbuddy共创）

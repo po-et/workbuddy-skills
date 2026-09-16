@@ -134,3 +134,7 @@ python3 tools/check_buddy_app.py buddy-apps/devops-buddy
 ```
 
 调研与路线见 `docs/buddy-app-plan.md`。
+
+## 渠道
+
+个人开发者能走的全部提交/曝光渠道与当前状态见 `docs/channels.md`（SkillHub、开放平台、腾讯云征集、蓝皮书、ClawHub 等）。
