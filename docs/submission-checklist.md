@@ -117,4 +117,12 @@ CLI 已装（`~/.local/bin/skillhub`，2026.8.5）；发布副本由 `tools/skil
 | merge-conflicts-zh | 203369 | MIT 复刻增强 |
 | spec-and-tickets-zh | 203370 | MIT 复刻增强 |
 
-第二批（待发布）：code-review-zh、license-check-offline、api-diff-test、ci-config-review、tech-design-review。
+### SkillHub 第二批（2026-09-17 发布，审核中）
+
+| slug | skillId | 类型 |
+|---|---|---|
+| code-review-zh | 203374 | 第二批 |
+| tech-design-review | 203376 | 第二批 |
+| license-check-offline | 203377 | 第二批 |
+| api-diff-test | 203378 | 第二批 |
+| ci-config-review | 203379 | 第二批 |
