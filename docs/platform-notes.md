@@ -105,7 +105,7 @@ examples_en 最多 3 个示例，当前 4 个
 
 - 文档 `/docs/expert` 只写 `teamInfo{leadAgent,memberAgents}`；解析器实测报 `members 为必填数组`，且元素须为对象（Go 结构 `teamMemberJSON`：`id / name{en,zh} / profession{en,zh} / avatar / role∈{lead,member}`），完整结构在 `/docs/expert-team`
 - Team 型专家须在根目录提供 **settings.json**（解析器原文），文档仅标「设置主理人（必须）」；**官方模板 trading-team.zip 里文件名是 `setting.json`（单数）**——两个都放
-- 官方专家团模板 `categoryId` 为 `00-ExpertTeam`，不在文档 15 项表中；单专家模板用 `01-Design` 也不在表中（表写 `01-ProductDesign`）——文档、模板、解析器三方不一致
+- 官方专家团模板 `categoryId` 为 `00-ExpertTeam`，单专家模板用 `01-Design`，两者都不在文档 15 项表中；**解析器实测拒绝 `00-ExpertTeam`**（"不在合法分类列表中，请参考开发规范第八节"），即两份官方模板的分类值均已过时，以文档表为准（专家团用 `02-Engineering` 通过）
 - 主理人文件名须含专家团前缀，不可用通用 `team-lead`
 - 官方模板本身过不了文档规则：中文简介超 40–50、头像文件缺失、主理人 .md 无 frontmatter、成员 displayName/profession 为普通字符串——说明解析器对 agent frontmatter 宽松
 - 专家包可内置 `skills/`（模板自带），可内置 `rules/`；`tools/pack.py` 会把 agents 引用的仓库技能自动打进包

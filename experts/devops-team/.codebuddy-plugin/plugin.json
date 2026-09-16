@@ -74,7 +74,7 @@
     "zh": "研发效能三人专家团：技术负责人统筹方案与上线，测试专家把守质量门禁，SRE 专家主导线上排查与复盘。"
   },
   "avatar": "avatars/team.png",
-  "categoryId": "00-ExpertTeam",
+  "categoryId": "02-Engineering",
   "defaultInitPrompt": {
     "zh": "帮我们这个迭代出周报、上线清单和排查预案",
     "en": "Produce this iteration's report, release checklist and incident playbook"

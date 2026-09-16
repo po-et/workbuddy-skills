@@ -28,8 +28,8 @@ SECRETS = [(r"ghp_[A-Za-z0-9]{20,}", "GitHub token"), (r"sk-[A-Za-z0-9]{20,}", "
 CATEGORY_IDS = {"01-ProductDesign", "02-Engineering", "03-GameSpatial", "04-DataAI", "05-MarketingGrowth",
                 "06-ContentCreative", "07-SalesCommerce", "08-FinanceInvestment", "09-OperationsHR",
                 "10-ProjectQuality", "11-SecurityCompliance", "12-IndustryConsultant", "13-TencentZone",
-                "14-WorldWise", "15-Education",
-                "00-ExpertTeam"}   # 00-ExpertTeam：官方专家团模板所用，文档 15 项表未列
+                "14-WorldWise", "15-Education"}
+# 注意：官方 trading-team.zip 模板用 "00-ExpertTeam"，但解析器实测拒绝（"不在合法分类列表中"），以文档 15 项为准
 SKILL_ZIP_MAX, CONNECTOR_ZIP_MAX, AVATAR_MAX = 3 * 1024 * 1024, 20 * 1024 * 1024, 500 * 1024
 
 issues = []
