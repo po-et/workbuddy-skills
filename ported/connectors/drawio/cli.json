@@ -1,0 +1,14 @@
+{
+  "runtime": { "type": "python", "version": "3.10" },
+  "init": {
+    "darwin": "pip3 install cli-anything-drawio",
+    "linux": "pip3 install cli-anything-drawio",
+    "win32": "pip install cli-anything-drawio"
+  },
+  "status": {
+    "darwin": "cli-anything-drawio --help",
+    "linux": "cli-anything-drawio --help",
+    "win32": "cli-anything-drawio --help"
+  },
+  "statusMatch": "Draw.io CLI"
+}

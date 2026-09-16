@@ -1,0 +1,24 @@
+{
+  "name": "draw.io 架构图",
+  "name_zh": "draw.io 架构图",
+  "name_en": "draw.io Diagrams",
+  "description": "用自然语言在 draw.io 里画架构图、流程图：加图形、连线、导出 PNG/SVG/PDF，产出可继续编辑的 .drawio 文件。",
+  "description_zh": "用自然语言在 draw.io 里画架构图、流程图：加图形、连线、导出 PNG/SVG/PDF，产出可继续编辑的 .drawio 文件。",
+  "description_en": "Build architecture and flow diagrams in draw.io from natural language: add shapes, connect them, export PNG/SVG/PDF.",
+  "source": "cli-anything-drawio",
+  "type": "cli",
+  "version": "0.1.0",
+  "minWorkbuddyVersion": "5.0.0",
+  "examples_zh": [
+    "画一张服务架构图：网关 → 订单服务 → 库存服务 → MySQL，导出 PNG",
+    "把这段需求描述画成流程图，用菱形表示判断",
+    "在刚才的图上加一个 Redis 缓存，连到订单服务",
+    "把图导出成 SVG 和可编辑的 .drawio 文件"
+  ],
+  "examples_en": [
+    "Draw a service architecture: gateway → order service → inventory service → MySQL, export PNG",
+    "Turn this requirement into a flowchart with diamonds for decisions",
+    "Add a Redis cache to the last diagram and connect it to the order service",
+    "Export the diagram as SVG and an editable .drawio file"
+  ]
+}
