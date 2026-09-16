@@ -37,6 +37,7 @@
 | 连接器 | 连接器 ID | 版本 | 类目 | 状态 |
 |---|---|---|---|---|
 | Mermaid 图表 | `oc_5da8a66ba4f23596` | 0.1.0 | 工具 - 办公 | 审核中 |
+| draw.io 架构图 | `oc_1c196bbcd104c9b8` | 0.1.0 | 工具 - 办公 | 总览页待提交 |
 
 连接器包实测：仅 .zip ≤ **20MB**；`mermaid-connector/` 目录布局、`LICENSE`、`ATTRIBUTION.md` 均被解析器接受；`icon.svg` 直接作为头像；`examples_zh` 4 条全部带出；第二步只有「服务类目」一个必填下拉（无「市场展示分类」）。
 
@@ -52,6 +53,8 @@
 | 专家 | 专家 ID | 版本 | 市场展示分类 | 类目 | 状态 |
 |---|---|---|---|---|---|
 | 研发效能专家团（devops-team） | `oe_07e25196d28646b1` | 0.1.0 | 技术工程 | 工具 - 办公 | 审核中 ✅ |
+| SRE 专家 沈工（sre-incident-expert） | `oe_2300ba3b6ab1a0c9` | 0.1.0 | 技术工程 | 工具 - 办公 | 总览页待提交 |
+| 测试专家 祁老师（qa-release-expert） | `oe_e8d119831f1070a9` | 0.1.0 | 项目质量 | 工具 - 办公 | 总览页待提交 |
 
 包内内置 iteration-report / release-checklist / incident-brief 三个技能；上传共 6 次才通过，踩出的规则见 platform-notes「专家（Expert）包实测」。
 
