@@ -55,6 +55,11 @@ def parse_frontmatter(text):
         pass
     except Exception as e:  # noqa: BLE001
         fail(f"frontmatter 不是合法 YAML: {e}"); return {}
+    # 平台用严格 YAML 解析器：未加引号的标量里出现 ": " 会报 "mapping values are not allowed in this context"
+    for ln, raw in enumerate(body.split("\n"), 1):
+        m = re.match(r"^\s*[\w-]+:\s+(?![\"'\[{|>])(.+)$", raw)
+        if m and ": " in m.group(1):
+            fail(f"frontmatter 第 {ln} 行：未加引号的值含 ': '，严格 YAML 会解析失败，请用双引号包住整个值")
     root = {}; stack = [[-1, root, None]]
     lines = [l for l in body.split("\n") if l.strip() and not l.lstrip().startswith("#")]
     for i, raw in enumerate(lines):
