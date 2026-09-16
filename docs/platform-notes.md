@@ -110,3 +110,10 @@ examples_en 最多 3 个示例，当前 4 个
 - 官方模板本身过不了文档规则：中文简介超 40–50、头像文件缺失、主理人 .md 无 frontmatter、成员 displayName/profession 为普通字符串——说明解析器对 agent frontmatter 宽松
 - 专家包可内置 `skills/`（模板自带），可内置 `rules/`；`tools/pack.py` 会把 agents 引用的仓库技能自动打进包
 - 专家包 ≤ 20MB
+
+### 专家发布第二步实测（2026-09-16）
+
+- 字段：识别信息 / 专家职称（由 profession.zh 带出）/ 专家花名（由 displayName.zh 带出）/ **市场展示分类\*** / 头像（由 avatar 带出）/ **服务类目\***（同技能，级联）/ 能力介绍（由 displayDescription.zh 带出）
+- **专家的「市场展示分类」是另一套 17 项**，与技能的 13 项不同：开学季、高校新生攻略、腾讯专家、产品设计、技术工程、金融投资、全球发展、教育学习、游戏空间、数据智能、营销增长、内容创作、销售商务、运营人力、项目质量、法务安全、行业顾问（前两项为当季活动类目）
+- 总览页会显示「擅长领域」= plugin.json 的 tags；「试试这样问我」= quickPrompts
+- 解析器对 agent .md 的 frontmatter 用**严格 YAML**：未加引号的值含 `: ` 直接报 `mapping values are not allowed in this context`
