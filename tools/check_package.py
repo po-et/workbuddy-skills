@@ -28,7 +28,8 @@ SECRETS = [(r"ghp_[A-Za-z0-9]{20,}", "GitHub token"), (r"sk-[A-Za-z0-9]{20,}", "
 CATEGORY_IDS = {"01-ProductDesign", "02-Engineering", "03-GameSpatial", "04-DataAI", "05-MarketingGrowth",
                 "06-ContentCreative", "07-SalesCommerce", "08-FinanceInvestment", "09-OperationsHR",
                 "10-ProjectQuality", "11-SecurityCompliance", "12-IndustryConsultant", "13-TencentZone",
-                "14-WorldWise", "15-Education"}
+                "14-WorldWise", "15-Education",
+                "00-ExpertTeam"}   # 00-ExpertTeam：官方专家团模板所用，文档 15 项表未列
 SKILL_ZIP_MAX, CONNECTOR_ZIP_MAX, AVATAR_MAX = 3 * 1024 * 1024, 20 * 1024 * 1024, 500 * 1024
 
 issues = []
@@ -325,6 +326,18 @@ def check_expert(root):
                     fail(f"members[{i}].avatar 文件不存在: {av2}")
             if leads != 1:
                 fail(f"members 中 role=lead 须恰好 1 个，当前 {leads}")
+        # 解析器实测：Team 型专家必须在 plugin root 提供 settings.json（文档仅标注「设置主理人（必须）」）
+        present = [fn for fn in ("settings.json", "setting.json") if os.path.isfile(os.path.join(root, fn))]
+        if not present:
+            fail("Team 型专家必须在 plugin root 下提供 settings.json（解析器原文；官方模板文件名为 setting.json，建议两个都放）")
+        else:
+            for fn in present:
+                try:
+                    json.load(open(os.path.join(root, fn), encoding="utf-8"))
+                except json.JSONDecodeError as e:
+                    fail(f"{fn} 不是合法 JSON: {e}")
+            if len(present) == 1:
+                warn(f"只有 {present[0]}：解析器报错写 settings.json，官方模板用 setting.json，建议两者都提供")
         # 主理人文件名须含专家团前缀，且不可用通用 team-lead（/docs/expert-team）
         if lead:
             if lead == "team-lead":
