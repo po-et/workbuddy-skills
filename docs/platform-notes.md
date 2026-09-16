@@ -43,7 +43,7 @@ Buddy 应用、硬件接入需企业认证；个人可发专家、技能、连�
 
 `/dashboard`、`/skill/publish`、`/expert/publish`、`/connector/publish`、`/settings/cert-info`、`/settings/developer`、`/operations`、`/application/all/credit`（积分兑换）
 
-## 技能包 SKILL.md 的平台专有必填字段（2026-09-15 上传实测）
+## 技能包 SKILL.md 的平台必填字段（2026-09-15 上传实测 + 2026-09-16 核对官方文档）
 
 上传按 Agent Skills 公开规范编写的技能包，平台解析失败，逐条报缺：
 
@@ -55,11 +55,18 @@ Buddy 应用、硬件接入需企业认证；个人可发专家、技能、连�
 缺少 Skill 英文描述（description_en），请在 SKILL.md frontmatter 中填写
 ```
 
-即开放平台在 `name` / `description` 之外**额外要求 5 个字段**：`version`、`display_name`、`display_name_en`、`description_zh`、`description_en`。公开文档与 Agent Skills 规范均未提及。
+对照官方 `/docs/skill`（2026-09-16 核对）：
 
-- zip 内 `<技能名>/SKILL.md` 的目录布局被接受（解析器找到了文件，只报字段缺失）
-- 加上这 5 个字段后 `claude plugin validate` 仍通过，未知字段不影响 Claude Code 兼容性
-- 本仓库四个技能已全部补齐；`CONTRIBUTING.md` 同步要求
+| 字段 | 官方文档 | 解析器 | 备注 |
+|---|---|---|---|
+| `version` | 必填 | 必填 | 重传须递增（文档未写） |
+| `description_zh` / `description_en` | 必填 | 必填 | 文档要求"简洁介绍" |
+| `author` | 必填 | **未强制**（缺失仍解析通过） | 建议填开发者昵称 |
+| `display_name` / `display_name_en` | **未记载** | 必填 | 市场展示名由此带出 |
+| `examples_zh` / `examples_en` | **未记载** | 可选，各≤3 | 显示为「试试这样问我」 |
+| `allowed-tools` / `disable-model-invocation` / `user-invocable` | 可选 | — | 与 Claude Code 同名字段 |
+
+结论：**按公开规范或按官方文档写都会解析失败**，必须同时满足文档字段 + 解析器额外要求。zip 内 `<技能名>/SKILL.md` 目录布局被接受；加上这些字段后 `claude plugin validate` 仍通过。
 
 ### 示例提问字段（第二次上传实测）
 

@@ -58,6 +58,19 @@ action: block
 
 **build-workbuddy-connector**：让别人也能做。规范速查逐字抄官方文档，一个校验脚本按规范检查连接器目录，一个脚手架带 `--from-cli-anything` 模式读 registry 一键生成骨架。
 
+## 顺手：把五个包传上开放平台踩出的规则
+
+这一段是 9 月 15、16 两天真实上传五个包（4 个技能 + 1 个连接器）踩出来的，公开文档和 Agent Skills 规范都不全：
+
+- 技能 `SKILL.md` 的 frontmatter，官方文档要求 `version`、`description_zh`、`description_en`、`author`；解析器**另外**硬性要求 `display_name`、`display_name_en`，文档没写。两边都得满足
+- `examples_zh` / `examples_en` 各最多 3 条，显示为市场页的"试试这样问我"，文档没写
+- 一次解析成功就在服务端建了草稿并占用技能名；重传必须走草稿「编辑」，且 `version` 必须递增——草稿也算版本
+- 第二步两个必填下拉：市场展示分类（13 项多选，选完不自动关）、服务类目（微信小程序式级联，研发工具选「工具 → 办公」）
+- 技能包 ≤3MB，连接器包 ≤20MB；连接器包里带 LICENSE 和 ATTRIBUTION 也能过解析
+- 审核承诺 7 个工作日，9 月 4 日公告说已积压
+
+这些都写在仓库 `docs/platform-notes.md`，随审核反馈持续更新。
+
 ## 诚实的边界
 
 - hookify 的行为验证靠的是我自己的测试夹具（stdin JSON 驱动真实入口脚本），**还没在 WorkBuddy 客户端里跑过**
