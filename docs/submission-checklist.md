@@ -143,3 +143,34 @@ CLI 已装（`~/.local/bin/skillhub`，2026.8.5）；发布副本由 `tools/skil
 | planning-tasks-zh | 204529 |
 
 观察：skillId 从昨晚 203379 到今天 204529，平台约 1100 个/天的发布量。第一批 24 小时后仍未进入搜索索引（审核中）。
+
+### SkillHub 第五/六批（2026-09-17 18:25–18:58，26 个，机器审核中）
+
+| slug | skillId | 发布时间 |
+|---|---|---|
+| engineering-skills-index-zh | 204558 | 18:23:58 |
+| interview-me-zh | 204562 | 18:25:13 |
+| idea-refine-zh | 204563 | 18:26:29 |
+| spec-driven-zh | 204565 | 18:27:44 |
+| source-driven-zh | 204566 | 18:29:00 |
+| tdd-zh | 204570 | 18:30:16 |
+| debug-triage-zh | 204572 | 18:31:31 |
+| observability-zh | 204575 | 18:32:47 |
+| security-hardening-zh | 204578 | 18:34:02 |
+| performance-optimization-zh | 204582 | 18:35:18 |
+| shipping-launch-zh | 204584 | 18:36:34 |
+| code-review-five-axis-zh | 204587 | 18:37:49 |
+| context-engineering-zh | 204589 | 18:39:05 |
+| constraints-md-zh | 204591 | 18:40:21 |
+| doubt-driven-zh | 204593 | 18:41:37 |
+| browser-testing-devtools-zh | 204595 | 18:42:52 |
+| frontend-ui-zh | 204598 | 18:44:08 |
+| skillhub-publish-helper | 204604 | 18:46:51 |
+| skill-lint-scorecard | 204607 | 18:48:06 |
+| teach-workspace-zh | 204610 | 18:49:22 |
+| deep-module-design-zh | 204613 | 18:50:38 |
+| writing-for-agents-zh | 204615 | 18:51:53 |
+| wayfinder-zh | 204618 | 18:53:09 |
+| wizard-zh | 204621 | 18:54:25 |
+| research-primary-zh | 204624 | 18:55:40 |
+| handoff-doc-zh | 204626 | 18:56:56 |
