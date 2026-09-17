@@ -174,3 +174,14 @@ CLI 已装（`~/.local/bin/skillhub`，2026.8.5）；发布副本由 `tools/skil
 | wizard-zh | 204621 | 18:54:25 |
 | research-primary-zh | 204624 | 18:55:40 |
 | handoff-doc-zh | 204626 | 18:56:56 |
+
+### SkillHub 第七批（2026-09-17 19:07–19:16，7 个，机器审核中）
+
+| slug | skillId | 发布时间 |
+|---|---|---|
+| triage-zh | 204663 | 19:07:47 |
+| prototype-zh | 204689 | 19:10:18 |
+| tdd-seams-zh | 204717 | 19:11:34 |
+| architecture-deepening-zh | 204740 | 19:12:49 |
+| to-questionnaire-zh | 204742 | 19:14:05 |
+| re-pitch-zh | 204744 | 19:15:21 |
