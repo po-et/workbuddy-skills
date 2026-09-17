@@ -50,3 +50,11 @@
 - **发布节奏**：每个技能 75 s 间隔的后台队列串行发布；slug 冲突两例（triage-zh → issue-triage-zh，context-compression-zh → context-compression-strategies-zh）说明热门英文词的 -zh 形式已开始被抢注，后续 slug 尽量带限定词。
 - **累计**：约 80 个技能已 Published，全部处于机器审核中；skillId 明细见 submission-checklist.md。
 - **下一步候选**：dep-outdated 私有源支持、k8s 检查补 PDB/HPA、把「五分钟体检」系列（Dockerfile / K8s / SQL / OpenAPI / .env）做成一个 umbrella 技能互相引流；审核通过后开始记录 查看/下载 周指标。
+
+## 进展（2026-09-17 深夜，委派执行模式）
+
+- 工作方式切换：Fable 只做规划与决策，执行交给 Opus/Sonnet 子代理并行完成（总入口技能、4 个原创工具、superpowers 10 个复刻、全仓质量巡检、审核状态核对、登记发布收尾）。
+- 审核结论：82 个已发布技能 81 个进入搜索索引（=上架），无拒绝；AI 评测像定时批处理，先只覆盖了 26 个。账号真实 handle 为 indiv-captain。
+- 第十二批 15 个发布完成（累计 97 个）；superpowers 系列 10 个里 8 个 -zh slug 已被他人抢注，说明中文复刻赛道已有竞争者，差异化必须靠原创脚本工具（现 22 个）+ 系列化入口（release-readiness-check）+ 描述/标签质量。
+- 质量巡检把 34 个低分技能修到 ≥ 80 并升 0.1.1 重发（更新沿用原 skillId）；发布限流比之前更敏感，75 s 间隔偶发「频率过高」，重试用 120 s。
+- 待办：审核通过后开始每日抓取查看/下载指标（Sonnet 定时任务）；docs-and-adr-zh 的 skillId 仍待从后台补记。

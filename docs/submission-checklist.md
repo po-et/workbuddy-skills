@@ -260,3 +260,4 @@ CLI 已装（`~/.local/bin/skillhub`，2026.8.5）；发布副本由 `tools/skil
 ## 更新记录
 
 - 2026-09-17：30 个技能升至 0.1.1 重发（补标签、描述与小节，无功能变更）：api-design-zh、architecture-deepening-zh、ci-cd-zh、code-review-five-axis-zh、code-simplification-zh、constraints-md-zh、context-compression-strategies-zh、context-degradation-zh、context-engineering-zh、context-fundamentals-zh、deep-module-design-zh、deprecation-migration-zh、diagnosing-bugs-zh、doc-coauthoring-zh、domain-modeling-zh、engineering-skills-index-zh、frontend-ui-zh、handoff-doc-zh、incremental-implementation-zh、observability-zh、performance-optimization-zh、prototype-zh、re-pitch-zh、research-primary-zh、security-hardening-zh、tdd-seams-zh、tdd-zh、teach-workspace-zh、to-questionnaire-zh、writing-for-agents-zh
+- 同日重试（间隔 120 s）：成功 0 个（）；仍失败 4 个（codeowners-suggest、git-branch-cleanup、git-hotspots、tech-design-review），待下次重发
