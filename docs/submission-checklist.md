@@ -185,3 +185,18 @@ CLI 已装（`~/.local/bin/skillhub`，2026.8.5）；发布副本由 `tools/skil
 | architecture-deepening-zh | 204740 | 19:12:49 |
 | to-questionnaire-zh | 204742 | 19:14:05 |
 | re-pitch-zh | 204744 | 19:15:21 |
+
+### SkillHub 第八/九批（Context-Engineering、doc-coauthoring、原创脚本）（2026-09-17，8 个，机器审核中）
+
+| slug | skillId | 发布时间 |
+|---|---|---|
+| tool-design-zh | 204748 | 19:20:31 |
+| context-fundamentals-zh | 204750 | 19:21:47 |
+| context-degradation-zh | 204752 | 19:23:02 |
+| memory-systems-zh | 204754 | 19:25:34 |
+| doc-coauthoring-zh | 204755 | 19:26:49 |
+| issue-triage-zh | 204759 | 19:29:34 |
+| dockerfile-check | 204761 | 19:30:50 |
+| sql-migration-check | 204763 | 19:32:05 |
+
+冲突（需换 slug 重发）：context-compression-zh

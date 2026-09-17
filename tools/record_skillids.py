@@ -3,8 +3,9 @@
 用法：python3 tools/record_skillids.py <日志文件...> [--title "第 N 批"]
 """
 import re, sys, pathlib, datetime
-args = [a for a in sys.argv[1:] if not a.startswith("--")]
-title = sys.argv[sys.argv.index("--title") + 1] if "--title" in sys.argv else "增量记录"
+import argparse
+_ap = argparse.ArgumentParser(); _ap.add_argument("files", nargs="+"); _ap.add_argument("--title", default="增量记录")
+_a = _ap.parse_args(); args, title = _a.files, _a.title
 p = pathlib.Path(__file__).resolve().parents[1] / "docs" / "submission-checklist.md"
 existing = set(re.findall(r"\|\s*(\d{6})\s*\|", p.read_text()))
 rows, conflicts = [], []
