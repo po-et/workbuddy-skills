@@ -207,3 +207,22 @@ CLI 已装（`~/.local/bin/skillhub`，2026.8.5）；发布副本由 `tools/skil
 |---|---|---|
 | cron-explain | 204770 | 19:34:52 |
 | openapi-breaking-diff | 204772 | 19:36:08 |
+
+### SkillHub 第十一批（原创脚本技能 + context-compression 改名）（2026-09-17，14 个，机器审核中）
+
+| slug | skillId | 发布时间 |
+|---|---|---|
+| env-sync-check | 204775 | 19:38:56 |
+| flaky-test-finder | 204777 | 19:40:12 |
+| k8s-manifest-check | 204780 | 19:42:51 |
+| pr-description | 204782 | 19:44:06 |
+| context-compression-strategies-zh | 204784 | 19:45:22 |
+| todo-debt-scan | 204788 | 19:48:07 |
+| git-branch-cleanup | 204791 | 19:49:22 |
+| http-health-check | 204794 | 19:52:01 |
+| log-pattern-cluster | 204795 | 19:53:18 |
+| access-log-stats | 204799 | 19:55:55 |
+| git-hotspots | 204801 | 19:57:11 |
+| json-schema-infer | 204805 | 20:00:01 |
+| codeowners-suggest | 204807 | 20:01:17 |
+| dep-outdated-check | 204810 | 20:04:04 |
