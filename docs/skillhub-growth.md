@@ -42,3 +42,11 @@
 | 9 | 研发全能助手 `dev-workflow-pro` | 伞形入口 | 覆盖全部关键词，路由到 1–8 与已发布 4 个 |
 
 指标记录：`docs/submission-checklist.md`（每周记一次下载/收藏/评分）。
+
+## 进展（2026-09-17 晚）
+
+- **复刻**：mattpocock 19 个（含 wave B/C）、addyosmani 25 个、Context-Engineering 5 个、Anthropic doc-coauthoring 1 个，全部中文化并附 ATTRIBUTION。
+- **原创脚本技能（新一波，全部本地测试通过）**：dockerfile-check、sql-migration-check、cron-explain、openapi-breaking-diff、env-sync-check、flaky-test-finder、k8s-manifest-check（自带最小 YAML 解析）、pr-description、todo-debt-scan、git-branch-cleanup、http-health-check、log-pattern-cluster、access-log-stats、git-hotspots、json-schema-infer、codeowners-suggest、dep-outdated-check。选题原则：研发效能 / SRE 高频搜索词 + 纯标准库零依赖 + 一条命令出结果 + 可作 CI 门禁。
+- **发布节奏**：每个技能 75 s 间隔的后台队列串行发布；slug 冲突两例（triage-zh → issue-triage-zh，context-compression-zh → context-compression-strategies-zh）说明热门英文词的 -zh 形式已开始被抢注，后续 slug 尽量带限定词。
+- **累计**：约 80 个技能已 Published，全部处于机器审核中；skillId 明细见 submission-checklist.md。
+- **下一步候选**：dep-outdated 私有源支持、k8s 检查补 PDB/HPA、把「五分钟体检」系列（Dockerfile / K8s / SQL / OpenAPI / .env）做成一个 umbrella 技能互相引流；审核通过后开始记录 查看/下载 周指标。
