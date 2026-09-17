@@ -226,3 +226,25 @@ CLI 已装（`~/.local/bin/skillhub`，2026.8.5）；发布副本由 `tools/skil
 | json-schema-infer | 204805 | 20:00:01 |
 | codeowners-suggest | 204807 | 20:01:17 |
 | dep-outdated-check | 204810 | 20:04:04 |
+
+### SkillHub 第十二批（上线体检 + 原创工具 + superpowers）（2026-09-17，15 个，机器审核中）
+
+| slug | skillId | 发布时间 |
+|---|---|---|
+| release-readiness-check | 204909 | 21:54:03 |
+| secrets-scan | 204911 | 21:55:19 |
+| config-env-diff | 204942 | 21:56:34 |
+| i18n-missing-keys | 204944 | 21:57:50 |
+| test-coverage-gap | 204947 | 21:59:06 |
+| brainstorming-spec-zh | 204970 | 22:27:38 |
+| systematic-debugging-zh | 204972 | 22:28:54 |
+| writing-impl-plans-zh | 204973 | 22:31:25 |
+| executing-dev-plans-zh | 204976 | 22:33:56 |
+| pre-completion-verification-zh | 204981 | 22:36:28 |
+| subagent-driven-development-zh | 204983 | 22:37:43 |
+| parallel-agent-dispatch-zh | 204984 | 22:40:15 |
+| git-worktree-workflow-zh | 204987 | 22:42:46 |
+| code-review-response-zh | 204991 | 22:45:17 |
+| dev-branch-finishing-zh | 204994 | 22:47:49 |
+
+冲突（需换 slug 重发）：brainstorming-zh, writing-plans-zh, executing-plans-zh, verification-before-completion-zh, dispatching-parallel-agents-zh, using-git-worktrees-zh, receiving-code-review-zh, finishing-a-development-branch-zh
