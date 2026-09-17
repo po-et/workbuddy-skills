@@ -39,6 +39,10 @@ SLUGS = {
     "api-diff": "api-diff-test",
     "ci-config-review": "ci-config-review",
     "tech-design-review": "tech-design-review",
+    "code-simplification-zh": "code-simplification-zh",
+    "deprecation-migration-zh": "deprecation-migration-zh",
+    "api-design-zh": "api-design-zh",
+    "docs-and-adr-zh": "docs-and-adr-zh",
 }
 # 源目录：默认 skills/<name>，复刻的在 ported/skills/<name>
 def source_dir(name: str) -> Path:
@@ -65,6 +69,10 @@ TAGS = {
     "api-diff": ["接口测试", "回归测试", "api diff", "差分测试", "环境对比", "发布验证", "灰度", "接口对比"],
     "ci-config-review": ["CI", "GitHub Actions", "GitLab CI", "流水线", "workflow", "安全审查", "供应链安全", "DevOps"],
     "tech-design-review": ["技术方案", "架构评审", "设计评审", "方案评审", "架构设计", "SRE", "QA", "安全评审"],
+    "code-simplification-zh": ["重构", "代码化简", "可读性", "代码整洁", "refactor", "简化代码", "clean code", "代码质量"],
+    "deprecation-migration-zh": ["迁移", "下线", "废弃", "数据库迁移", "expand contract", "不停机", "灰度", "绞杀者模式", "deprecation"],
+    "api-design-zh": ["API 设计", "接口设计", "REST", "幂等", "接口规范", "分页", "错误码", "向后兼容", "OpenAPI"],
+    "docs-and-adr-zh": ["ADR", "架构决策", "技术文档", "README", "注释规范", "文档", "documentation", "决策记录"],
 }
 
 
