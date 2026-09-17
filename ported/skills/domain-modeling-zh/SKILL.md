@@ -1,12 +1,19 @@
 ---
 name: domain-modeling-zh
-description: 领域建模、统一语言、术语表、CONTEXT.md 编写与维护、ADR 架构决策记录、限界上下文与 CONTEXT-MAP.md。当用户讨论代码库术语、说「这个概念到底叫什么」「我们的术语表在哪」「写一份 CONTEXT.md」「把这个决定记成 ADR」「订单和账单是不是两个上下文」时使用。规则：用户用词与术语表冲突时立刻指出；模糊或重载的词提出精确的规范术语；用具体场景压测概念边界；对照代码核实用户的说法；术语一确定就当场写进 CONTEXT.md（不攒批）；CONTEXT.md 只做术语表、不含实现细节；ADR 只在「难以逆转 + 没有上下文会令人费解 + 真实权衡」三条同时成立时才提议。附 CONTEXT.md 与 ADR 的极简格式。改编自 Matt Pocock 的 domain-modeling（MIT）。
+description: 领域建模、统一语言、术语表、CONTEXT.md 编写与维护、ADR 架构决策记录、限界上下文与 CONTEXT-MAP.md。当用户讨论代码库术语、说「这个概念到底叫什么」「我们的术语表在哪」「写一份 CONTEXT.md」「把这个决定记成 ADR」「订单和账单是不是两个上下文」时使用。规则：用户用词与术语表冲突时立刻指出；模糊或重载的词提出精确的规范术语；用具体场景压测概念边界；对照代码核实用户的说法；术语一确定就当场写进 CONTEXT.md（不攒批）；CONTEXT.md 只做术语表、不含实现细节；ADR 只在「难以逆转 + 没有上下文会令人费解 + 真实权衡」三条同时成立时才提议。附 CONTEXT.md 与 ADR 的极简格式。也覆盖「术语表」「到底指用户还是客户」「领域事件通信」这类说法。改编自 Matt Pocock 的 domain-modeling（MIT）。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "领域建模与术语表"
 display_name_en: "Domain Modeling (zh)"
 description_zh: "在设计过程中主动打磨项目的领域模型：挑战与术语表冲突的用词、把模糊词磨成规范术语、用场景压测边界、术语落定就写进 CONTEXT.md；ADR 只记难逆转的真实权衡。附 CONTEXT.md / CONTEXT-MAP.md / ADR 格式。"
 description_en: "Actively build and sharpen a project's domain model while designing: challenge terms that conflict with the glossary, sharpen fuzzy words into canonical terms, stress-test boundaries with scenarios, write resolved terms into CONTEXT.md immediately; ADRs only for hard-to-reverse real trade-offs. Includes CONTEXT.md / CONTEXT-MAP.md / ADR formats."
+tags:
+  - "领域建模"
+  - "统一语言"
+  - "CONTEXT.md"
+  - "ADR"
+  - "限界上下文"
+  - "术语表"
 examples_zh:
   - "帮我给这个项目写一份 CONTEXT.md 术语表"
   - "「账户」在我们代码里到底指用户还是客户？"
@@ -54,6 +61,15 @@ metadata:
 ```
 
 文件**按需惰性创建**：有东西要写才建。没有 `CONTEXT.md` 就在第一个术语落定时创建；没有 `docs/adr/` 就在第一份 ADR 需要时创建。
+
+## 流程
+对照术语表挑战冲突用词 → 磨尖模糊语言 → 用具体场景压测边界 → 与代码交叉核对 → 术语一落定当场更新 CONTEXT.md（不攒批）→ 满足三条件才谨慎提议 ADR。
+
+## 产出
+本技能不产出实现代码，产出的是随对话更新的 `CONTEXT.md` 术语条目，以及（仅当难以逆转 + 没有上下文会令人费解 + 真实权衡三条同时成立时）一份符合 `ADR-FORMAT.md` 的 ADR 文件。
+
+## 边界
+禁止把 `CONTEXT.md` 当 spec、草稿纸或实现决策仓库——它必须完全不含实现细节，只做术语表。三条件（难以逆转、没有上下文会令人费解、真实权衡）缺任何一条就不提议 ADR。术语一确定就当场写入，不攒成一批事后补。
 
 ## 会话进行中
 

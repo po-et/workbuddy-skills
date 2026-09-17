@@ -1,12 +1,19 @@
 ---
 name: diagnosing-bugs-zh
-description: 疑难 Bug 诊断、性能回退排查、系统化调试方法。当用户说「帮我 debug」「诊断一下这个问题」「这个 bug 我查了三天」「偶现问题怎么复现」「接口突然变慢了」「报错但不知道哪里出的」「怎么定位性能退化」，或任何报错、失败、崩溃、变慢、结果不对的场景使用。六个阶段：先造一个"能变红"的反馈回路（失败测试 / curl 脚本 / 回放 / 二分），再复现并最小化，再列 3–5 个可证伪假设，按假设打探针，写回归测试后修，最后清理探针。没有反馈回路不许猜。改编自 Matt Pocock 的 diagnosing-bugs（MIT），中文化并衔接线上排查简报。
+description: 疑难 Bug 诊断、性能回退排查、系统化调试方法。当用户说「帮我 debug」「诊断一下这个问题」「这个 bug 我查了三天」「偶现问题怎么复现」「接口突然变慢了」「报错但不知道哪里出的」「怎么定位性能退化」，或任何报错、失败、崩溃、变慢、结果不对的场景使用。六个阶段：先造一个"能变红"的反馈回路（失败测试 / curl 脚本 / 回放 / 二分），再复现并最小化，再列 3–5 个可证伪假设，按假设打探针，写回归测试后修，最后清理探针。没有反馈回路不许猜。也覆盖「偶现的空指针」「怎么定位」「数据不一致问题」这类说法。改编自 Matt Pocock 的 diagnosing-bugs（MIT），中文化并衔接线上排查简报。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "Bug 诊断法"
 display_name_en: "Diagnosing Bugs (zh)"
 description_zh: "六阶段调试纪律：先造能变红的反馈回路，再复现最小化、列可证伪假设、定向探针、先写回归测试再修、最后清理；拒绝无回路的猜测。"
 description_en: "A six-phase debugging discipline: build a red-capable feedback loop first, then reproduce and minimise, rank falsifiable hypotheses, probe, write the regression test before the fix, clean up; no guessing without a loop."
+tags:
+  - "Bug 诊断"
+  - "调试"
+  - "debugging"
+  - "性能回退"
+  - "反馈回路"
+  - "根因分析"
 examples_zh:
   - "这个偶现的空指针帮我系统地查一下"
   - "接口 P99 从 200ms 涨到 2s，怎么定位"
@@ -20,6 +27,12 @@ metadata:
 ---
 
 # Bug 诊断法
+
+## 何时用
+报错、失败、崩溃、变慢、结果不对，且第一次看不出哪里错的时候用；简单明显的 bug（看一眼堆栈就知道哪一行错了）不需要走六个阶段，直接修。
+
+## 边界
+没有反馈回路（阶段 1）不许进入假设阶段——盯代码盯到天亮也没用。回归测试必须在 bug 真实发生的调用点重现，缝太浅就是假信心而不是验证。清理阶段不做完不算完成：所有 `[DEBUG-…]` 探针必须删除，一次性原型必须移到明确标记的目录或删除。
 
 对付疑难 Bug 与性能回退的一套纪律。**只有明确说明理由才能跳过某个阶段。**
 线上正在冒烟、需要先出简报稳住局面时，先用「线上排查简报」技能整理时间线，再回到这里找根因。
@@ -86,11 +99,13 @@ metadata:
 
 ## 阶段 6：清理
 
+```
 - [ ] 原始复现不再复现（重跑阶段 1 回路）
 - [ ] 回归测试通过（或已记录"无缝"）
 - [ ] 所有 `[DEBUG-…]` 探针已删（grep 前缀）
 - [ ] 一次性原型已删或移到明确标记的 debug 目录
 - [ ] 提交信息里写明最终成立的假设，让下一个人少走弯路
+```
 
 ---
 改编自 [mattpocock/skills](https://github.com/mattpocock/skills) 的 `diagnosing-bugs`（MIT）。改动见 ATTRIBUTION.md。

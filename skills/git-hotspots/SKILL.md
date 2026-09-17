@@ -1,12 +1,19 @@
 ---
 name: git-hotspots
-description: 代码热点分析、从 git 历史找改动最频繁的高风险文件、知识集中度与 bus factor、只有一个人懂的模块、总是一起改的文件（隐性耦合）、重构优先级、技术债定位、团队知识风险。当用户说「这个仓库哪些文件最容易出问题」「哪些模块只有一个人在维护」「改 A 总要改 B 是不是耦合了」「重构从哪开始」「出一份代码热点报告」时使用。附纯标准库脚本 scripts/git_hotspots.py：只读 git log，按「改动次数 × log2 行数」给出热点文件（含作者数与主要作者占比）、目录级 bus factor（覆盖一半改动所需人数）、跨目录共同修改的文件对与耦合率；支持 --since、--path、Markdown 报告与 --json。
+description: 代码热点分析、从 git 历史找改动最频繁的高风险文件、知识集中度与 bus factor、只有一个人懂的模块、总是一起改的文件（隐性耦合）、重构优先级、技术债定位、团队知识风险。当用户说「这个仓库哪些文件最容易出问题」「哪些模块只有一个人在维护」「改 A 总要改 B 是不是耦合了」「重构从哪开始」「出一份代码热点报告」时使用。附纯标准库脚本 scripts/git_hotspots.py：只读 git log，按「改动次数 × log2 行数」给出热点文件（含作者数与主要作者占比）、目录级 bus factor（覆盖一半改动所需人数）、跨目录共同修改的文件对与耦合率；支持 --since、--path、Markdown 报告与 --json。也覆盖「找出代码热点」「哪些目录的」「总是一起改」这类说法。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "代码热点与知识集中度"
 display_name_en: "Git Hotspots"
 description_zh: "用 git 历史回答三个问题：哪些文件改得多又大（缺陷高发）、哪些目录只有一个人在改（bus factor）、哪些文件总是一起改（隐性耦合）；输出 Markdown 报告；纯 Python 标准库，只读。"
 description_en: "Answer three questions from git history: which files change often and are large (defect-prone), which directories depend on one person (bus factor), which files always change together (hidden coupling); Markdown report; pure Python stdlib, read-only."
+tags:
+  - "代码热点"
+  - "bus factor"
+  - "隐性耦合"
+  - "git 历史分析"
+  - "重构优先级"
+  - "知识集中度"
 examples_zh:
   - "分析最近一年的 git 历史，找出代码热点"
   - "哪些目录的 bus factor 是 1"
@@ -22,6 +29,12 @@ metadata:
 # 代码热点与知识集中度
 
 git 历史里藏着代码库的体温：改得最勤的大文件是缺陷高发区，只有一个人改的目录是离职风险，总是一起改的文件是画错的边界。脚本只读 git log，几秒出报告。
+
+## 何时用
+要定重构优先级、评估知识集中度风险（bus factor）、或怀疑某些文件存在隐性耦合时用。已经知道要重构哪个具体文件、只是缺时间去改时，不需要先跑分析。
+
+## 产出
+一份 Markdown（或 JSON）报告，含三部分：热点文件排行（分数、作者数、主要作者占比）、目录级 bus factor、跨目录高耦合文件对；`--md` 落盘为文件，`--json` 输出结构化数据供脚本消费。
 
 ## 用法
 

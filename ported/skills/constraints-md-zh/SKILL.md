@@ -1,12 +1,21 @@
 ---
 name: constraints-md-zh
-description: 约束驱动开发、把项目质量标准写成可机械检查的 CONSTRAINTS.md、防止 Agent 悄悄降低标准。当用户说「定一下我们的质量标准」「加质量门禁」「覆盖率定多少合适」「AI 老是加 ts-ignore / 跳过测试来变绿」「怎么防止代理为了通过而放水」「性能/无障碍预算怎么定」时使用。流程：先探测（栈、测试器、linter、现有覆盖率、CI、代理框架）再问；四个带默认值的问题；写 CONSTRAINTS.md（底线：不新增抑制注释、不留桩、不跳测、无密钥、本文件不为通过而被削弱；带数字与检查命令的维度；只测量不强制的棘轮；带负责人与到期日的例外）；每个维度装事实标准工具；按 BUILD/VERIFY/REVIEW/SHIP 阶段与成本分配；守住标准本身的五种放水动作；至少一个外部约束；没数字就棘轮；合理默认值表；三级升级。改编自 addyosmani/agent-skills 的 constraint-driven-development（MIT）。
+description: 约束驱动开发、把项目质量标准写成可机械检查的 CONSTRAINTS.md、防止 Agent 悄悄降低标准。当用户说「定一下我们的质量标准」「加质量门禁」「覆盖率定多少合适」「AI 老是加 ts-ignore / 跳过测试来变绿」「怎么防止代理为了通过而放水」「性能/无障碍预算怎么定」时使用。流程：先探测（栈、测试器、linter、现有覆盖率、CI、代理框架）再问；四个带默认值的问题；写 CONSTRAINTS.md（底线：不新增抑制注释、不留桩、不跳测、无密钥、本文件不为通过而被削弱；带数字与检查命令的维度；只测量不强制的棘轮；带负责人与到期日的例外）；每个维度装事实标准工具；按 BUILD/VERIFY/REVIEW/SHIP 阶段与成本分配；守住标准本身的五种放水动作；至少一个外部约束；没数字就棘轮；合理默认值表；三级升级。也覆盖「质量约束」「覆盖率」「删了测试」这类说法。改编自 addyosmani/agent-skills 的 constraint-driven-development（MIT）。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "约束驱动开发（CONSTRAINTS.md）"
 display_name_en: "Constraint-Driven Development (zh)"
 description_zh: "把质量标准写成能机械检查的 CONSTRAINTS.md：底线 + 带数字与命令的维度 + 棘轮 + 有期限的例外；按阶段与成本分配检查；盯住 Agent 放水的五种动作；至少一个外部约束。"
 description_en: "Write the quality bar as a mechanically checkable CONSTRAINTS.md: a floor, dimensions with numbers and commands, ratchets, expiring exceptions; place checks by phase and cost; watch the five ways agents lower the bar; keep at least one external constraint."
+tags:
+  - "约束驱动开发"
+  - "CONSTRAINTS.md"
+  - "质量门禁"
+  - "CI"
+  - "覆盖率"
+  - "coverage"
+  - "linter"
+  - "质量标准"
 examples_zh:
   - "给这个项目定一份质量约束，AI 写的代码必须过"
   - "覆盖率现在 62%，标准定 80% 合理吗"
@@ -62,9 +71,11 @@ metadata:
 访谈超过四问或产出用户解释不了的配置；定了今天就过不了且没有达成计划的预算；有数字没工具；有事实标准却手搓检查器；所有约束都由项目自己的测试裁决；CONSTRAINTS.md 与它拦下的功能在同一提交里被改；例外无负责人或到期超过一年；Agent 提议放宽阈值而不是修代码；慢检查进了编辑循环且有人开始 `--no-verify`；写完没人再打开过。
 
 ## 验收
+```
 - [ ] CONSTRAINTS.md 存在且每个数字有理由　- [ ] 底线在当前代码库上无改动即可通过　- [ ] 选中的每个维度装了工具且命令今天能跑
 - [ ] 每条约束写明运行时机，快速阶段几秒内　- [ ] 至少一个外部约束　- [ ] 只测量指标记录今日值与方向　- [ ] 例外有负责人与到期日
 - [ ] AGENTS.md / CLAUDE.md 指向该文件　- [ ] 在当前分支试跑没有用户不同意的失败
+```
 
 ---
 改编自 [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) 的 `constraint-driven-development`（MIT）。改动见 ATTRIBUTION.md。

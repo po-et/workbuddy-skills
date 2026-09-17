@@ -1,12 +1,22 @@
 ---
 name: observability-zh
-description: 可观测性与埋点、结构化日志、RED/USE 指标、分布式追踪、告警与 runbook。当用户说「怎么打日志」「加监控指标」「接入 OpenTelemetry」「告警怎么配才不吵」「线上出问题看不出发生了什么」「写 runbook」「上线前埋点该埋什么」时使用。流程：先写下值班会问的 2–4 个问题 → 为每个问题选信号（指标说"有没有问题"、追踪说"在哪"、日志说"为什么"）→ 结构化日志（事件名 + 字段，级别一致，关联 ID 必须，多入口写同一日志要标入口，绝不记密钥/PII）→ RED/USE 指标（标签低基数、只看百分位不看平均）→ OpenTelemetry 追踪 → 只对用户感受到的症状告警、每条可行动、链 runbook、只分 page/ticket 两级 → 验证埋点本身。改编自 addyosmani/agent-skills 的 observability-and-instrumentation（MIT）。
+description: 可观测性与埋点、结构化日志、RED/USE 指标、分布式追踪、告警与 runbook。当用户说「怎么打日志」「加监控指标」「接入 OpenTelemetry」「告警怎么配才不吵」「线上出问题看不出发生了什么」「写 runbook」「上线前埋点该埋什么」时使用。流程：先写下值班会问的 2–4 个问题 → 为每个问题选信号（指标说"有没有问题"、追踪说"在哪"、日志说"为什么"）→ 结构化日志（事件名 + 字段，级别一致，关联 ID 必须，多入口写同一日志要标入口，绝不记密钥/PII）→ RED/USE 指标（标签低基数、只看百分位不看平均）→ OpenTelemetry 追踪 → 只对用户感受到的症状告警、每条可行动、链 runbook、只分 page/ticket 两级 → 验证埋点本身。也覆盖「支付重试功能」「天天响没人理」「最少要改什么」这类说法。改编自 addyosmani/agent-skills 的 observability-and-instrumentation（MIT）。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "可观测性与埋点"
 display_name_en: "Observability & Instrumentation (zh)"
 description_zh: "先写值班会问的问题再埋点：结构化日志 + 关联 ID + 入口标识、RED/USE 指标与低基数标签、OpenTelemetry 追踪、只对症状告警并链 runbook、最后验证埋点本身。"
 description_en: "Write the on-call questions first, then instrument: structured logs with correlation ids and entry-point fields, RED/USE metrics with bounded labels, OpenTelemetry traces, symptom-based alerts with runbooks, and verify the telemetry itself."
+tags:
+  - "可观测性"
+  - "observability"
+  - "日志"
+  - "指标"
+  - "metrics"
+  - "分布式追踪"
+  - "tracing"
+  - "告警"
+  - "runbook"
 examples_zh:
   - "给支付重试功能设计日志、指标和告警"
   - "我们的告警天天响没人理，帮我重新设计"
@@ -74,9 +84,11 @@ Runbook 最小三行：`意味着 / 先查 / 升级给`，存 `docs/runbooks/` �
 带重试/队列/外部调用的 PR 零新遥测；字符串拼接的日志；没有关联 ID；多入口写一份日志却没有入口字段；用户 ID/原始 URL/错误文本当指标标签；时延只有平均；每天响却被直接确认的告警；对原因（CPU、内存）page 人而用户可见错误率没人管；日志里有密钥或整个请求体；"我机器上好的"是生产健康的唯一证据。
 
 ## 验收
+```
 - [ ] 值班问题已写下且每个信号对应其一　- [ ] 日志全部结构化、事件名稳定、每行有关联 ID　- [ ] 多入口日志有入口字段且随关联 ID 传播
 - [ ] 抽查实际日志无密钥/PII　- [ ] 每个新端点与外部依赖有 RED 指标且标签有界　- [ ] 时延是直方图、p95/p99 可查
 - [ ] 一个请求能在追踪 UI 端到端跟完　- [ ] 每条新告警基于症状、链 runbook、测发过一次　- [ ] 预发注入的故障仅凭遥测就能定位
+```
 
 ---
 改编自 [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) 的 `observability-and-instrumentation`（MIT）。改动见 ATTRIBUTION.md。

@@ -1,12 +1,21 @@
 ---
 name: code-simplification-zh
-description: 代码化简、可读性重构、行为不变的整理。当用户说「这段代码太绕了帮我理顺」「功能能跑但太乱」「简化一下这个函数」「嵌套太深」「去掉没用的抽象」「重构但别改行为」「让新人能看懂」时使用。五条原则：行为一字不改、跟随项目约定、清晰优先于聪明、别过度化简、只动改过的代码；流程：先懂（切斯特顿的栅栏）→ 按信号清单找机会（深嵌套/长函数/嵌套三元/布尔参数/泛名/死代码）→ 一次一改跑测试 → 复核；附 TS/Python/React 示例与合理化借口对照表。改编自 addyosmani/agent-skills 的 code-simplification（MIT）。
+description: 代码化简、可读性重构、行为不变的整理。当用户说「这段代码太绕了帮我理顺」「功能能跑但太乱」「简化一下这个函数」「嵌套太深」「去掉没用的抽象」「重构但别改行为」「让新人能看懂」时使用。五条原则：行为一字不改、跟随项目约定、清晰优先于聪明、别过度化简、只动改过的代码；流程：先懂（切斯特顿的栅栏）→ 按信号清单找机会（深嵌套/长函数/嵌套三元/布尔参数/泛名/死代码）→ 一次一改跑测试 → 复核；附 TS/Python/React 示例与合理化借口对照表。也覆盖「别改行为」「嵌套三元」「可读性差」这类说法。改编自 addyosmani/agent-skills 的 code-simplification（MIT）。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "代码化简（行为不变）"
 display_name_en: "Code Simplification (zh)"
 description_zh: "在不改变行为的前提下让代码更好读：五原则、信号清单、一次一改跑测试、复核；含 TS/Python/React 示例。"
 description_en: "Make code easier to read without changing behaviour: five principles, a signal checklist, one change at a time with tests, and a final review; TS/Python/React examples."
+tags:
+  - "代码化简"
+  - "重构"
+  - "refactoring"
+  - "可读性"
+  - "code review"
+  - "TypeScript"
+  - "Python"
+  - "React"
 examples_zh:
   - "把这个 200 行的函数理顺，别改行为"
   - "这段嵌套三元太绕了，帮我简化"
@@ -108,10 +117,12 @@ React：分支返回两个几乎一样的 JSX → 先算 `variant`/`label` 再�
 
 ## 验收
 
+```
 - [ ] 现有测试不改一行全部通过 　- [ ] 构建无新警告 　- [ ] lint/格式化通过
 - [ ] 每处化简都是可评审的小改动 　- [ ] diff 里没有无关改动 　- [ ] 遵循项目约定
 - [ ] 没有删除或削弱错误处理 　- [ ] 没留下死代码（未用 import、不可达分支）
 - [ ] 同事或评审 agent 会认为这是净改进
+```
 
 ---
 改编自 [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) 的 `code-simplification`（MIT）。改动见 ATTRIBUTION.md。

@@ -1,12 +1,19 @@
 ---
 name: context-fundamentals-zh
-description: 上下文工程基础概念、什么是上下文、上下文窗口的构成、注意力预算、U 形注意力曲线（中间迷失）、渐进式披露、上下文质量优于数量、系统提示词分段与「指令高度」。当用户问「什么是上下文工程」「为什么长上下文反而效果差」「系统提示词怎么组织」「工具定义占多少 token」「什么是渐进式披露」，或需要给新同事讲清楚 Agent 上下文的心智模型时使用。这是概念性技能：解释与入门；具体操作路由到专门技能——诊断注意力失效用 context-degradation-zh，压缩长会话用 context-compression-zh，工具描述与 schema 用 tool-design-zh，跨会话记忆用 memory-systems-zh。改编自 Agent Skills for Context Engineering 的 context-fundamentals（MIT）。
+description: 上下文工程基础概念、什么是上下文、上下文窗口的构成、注意力预算、U 形注意力曲线（中间迷失）、渐进式披露、上下文质量优于数量、系统提示词分段与「指令高度」。当用户问「什么是上下文工程」「为什么长上下文反而效果差」「系统提示词怎么组织」「工具定义占多少 token」「什么是渐进式披露」，或需要给新同事讲清楚 Agent 上下文的心智模型时使用。这是概念性技能：解释与入门；具体操作路由到专门技能——诊断注意力失效用 context-degradation-zh，压缩长会话用 context-compression-zh，工具描述与 schema 用 tool-design-zh，跨会话记忆用 memory-systems-zh。也覆盖「心智模型」「塞进提示词」「关键约束放哪」这类说法。改编自 Agent Skills for Context Engineering 的 context-fundamentals（MIT）。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "上下文工程基础"
 display_name_en: "Context Engineering Fundamentals (zh)"
 description_zh: "上下文是推理时模型可见的全部状态：系统提示、工具定义、检索文档、消息历史、工具输出。把上下文当有限的注意力预算而不是储物箱：信息量优先于穷举、关键约束放首尾、渐进式披露、持续策展。附各组件的技术参考。"
 description_en: "Context is everything the model sees at inference time. Treat it as a finite attention budget, not a storage bin: informativity over exhaustiveness, critical constraints at the edges, progressive disclosure, iterative curation. With a per-component technical reference."
+tags:
+  - "上下文工程"
+  - "context window"
+  - "注意力预算"
+  - "渐进式披露"
+  - "系统提示词"
+  - "概念入门"
 examples_zh:
   - "给我讲讲上下文工程的基本概念和心智模型"
   - "为什么我把所有文档都塞进提示词效果反而变差了"
@@ -75,7 +82,7 @@ metadata:
 
 ## 示例：分段的系统提示词
 
-```markdown
+```
 <BACKGROUND_INFORMATION>
 你是帮助一个开发团队的 Python 专家。
 当前项目：Python 3.9+ 的数据处理流水线。

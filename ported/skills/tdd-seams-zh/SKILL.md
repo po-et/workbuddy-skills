@@ -1,12 +1,19 @@
 ---
 name: tdd-seams-zh
-description: 接缝驱动的测试驱动开发、红绿循环、集成风格测试、只在约定的接缝上写测试、什么时候该 mock、避免实现耦合测试与同义反复测试、垂直切片而非横向切片。当用户说「用 TDD 做这个功能」「先写测试」「红绿重构」「这个测试是不是测到实现细节了」「该不该 mock 数据库」「测试一重构就挂」时使用。核心规则：测试只验公开接口的行为，不碰内部；写任何测试前先列出要测的接缝并与用户确认；先红后绿、一次一片；重构不在红绿循环里、属于评审阶段；mock 只在系统边界（外部 API、时间/随机、有时是数据库/文件系统），永不 mock 自己的模块；期望值必须来自独立的真相来源（已知字面量、算例、规格）。附好坏测试对照与可 mock 性设计（依赖注入、SDK 式接口）。改编自 Matt Pocock 的 tdd（MIT）；与 addyosmani 版 tdd-zh 互补。
+description: 接缝驱动的测试驱动开发、红绿循环、集成风格测试、只在约定的接缝上写测试、什么时候该 mock、避免实现耦合测试与同义反复测试、垂直切片而非横向切片。当用户说「用 TDD 做这个功能」「先写测试」「红绿重构」「这个测试是不是测到实现细节了」「该不该 mock 数据库」「测试一重构就挂」时使用。核心规则：测试只验公开接口的行为，不碰内部；写任何测试前先列出要测的接缝并与用户确认；先红后绿、一次一片；重构不在红绿循环里、属于评审阶段；mock 只在系统边界（外部 API、时间/随机、有时是数据库/文件系统），永不 mock 自己的模块；期望值必须来自独立的真相来源（已知字面量、算例、规格）。附好坏测试对照与可 mock 性设计（依赖注入、SDK 式接口）。也覆盖「购物车结算」「是不是测偏了」「还是用测试库」这类说法。改编自 Matt Pocock 的 tdd（MIT）；与 addyosmani 版 tdd-zh 互补。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "接缝驱动 TDD"
 display_name_en: "TDD at Seams (zh)"
 description_zh: "红→绿循环的参考手册：什么是好测试、测试写在哪（预先约定的接缝）、三大反模式（实现耦合、同义反复、横向切片）、循环规则（先红后绿、一次一片、重构不在循环里）；附好坏测试对照与系统边界 mock 指南。"
 description_en: "Reference for the red→green loop: what a good test is, where tests go (pre-agreed seams), three anti-patterns (implementation-coupled, tautological, horizontal slicing), loop rules (red before green, one slice at a time, refactoring outside the loop); with good/bad test examples and boundary-only mocking guidance."
+tags:
+  - "TDD"
+  - "接缝"
+  - "测试驱动开发"
+  - "红绿循环"
+  - "mock 边界"
+  - "垂直切片测试"
 examples_zh:
   - "用 TDD 实现购物车结算，先跟我确认要测哪些接缝"
   - "这个测试 mock 了内部的 paymentService，是不是测偏了"
@@ -52,6 +59,14 @@ TDD 是红 → 绿的循环。本技能是让这个循环产出**值得保留的
 - **先红后绿。** 先写会失败的测试，再写刚好够让它通过的代码。不预支未来的测试，不加投机的功能。
 - **一次一片。** 每个循环：一个接缝、一个测试、一个最小实现。
 - **重构不在循环里。** 它属于评审阶段（见代码评审技能），不属于红 → 绿的实现循环。
+
+## 循环前自检
+```
+- [ ] 已列出要测的接缝并与用户确认，没有确认的接缝不写测试
+- [ ] 期望值来自独立真相来源（字面量/算例/规格），不是同义反复
+- [ ] 只在系统边界 mock（外部 API、时间/随机、有时是数据库/文件系统），没有 mock 自己的模块
+- [ ] 按垂直切片推进：一个测试 → 一个实现 → 重复，不是横向切片
+```
 
 ---
 改编自 [mattpocock/skills](https://github.com/mattpocock/skills) 的 `tdd`（MIT）。改动见 ATTRIBUTION.md。

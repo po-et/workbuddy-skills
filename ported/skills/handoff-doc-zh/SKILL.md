@@ -1,12 +1,18 @@
 ---
 name: handoff-doc-zh
-description: 会话交接文档、把当前对话压缩成下一个 Agent 能接手的交接单、上下文太长要换会话、把任务交给同事或另一个模型。当用户说「写个交接文档」「把现在的进度整理一下给下一个会话」「上下文快满了帮我总结」「我要把这个交给别人继续」「换个模型接着做」时使用。规则：存到系统临时目录而不是工作区（除非用户指定）；不重复已有产物（spec、计划、ADR、工单、提交、diff）的内容，只按路径或 URL 引用；脱敏一切密钥、密码与个人信息；用户说明了下一会话的用途就据此裁剪；必含「建议技能」一节。附交接模板：目标与当前状态、已定决策、未完成项与下一步、涉及文件与验证命令、坑与未知、建议技能。改编自 Matt Pocock 的 handoff（MIT），补充了完整模板。
+description: 会话交接文档、把当前对话压缩成下一个 Agent 能接手的交接单、上下文太长要换会话、把任务交给同事或另一个模型。当用户说「写个交接文档」「把现在的进度整理一下给下一个会话」「上下文快满了帮我总结」「我要把这个交给别人继续」「换个模型接着做」时使用。规则：存到系统临时目录而不是工作区（除非用户指定）；不重复已有产物（spec、计划、ADR、工单、提交、diff）的内容，只按路径或 URL 引用；脱敏一切密钥、密码与个人信息；用户说明了下一会话的用途就据此裁剪；必含「建议技能」一节。附交接模板：目标与当前状态、已定决策、未完成项与下一步、涉及文件与验证命令、坑与未知、建议技能。也覆盖「继续做接口联调」「整理成交接单」「写个接手说明」这类说法。改编自 Matt Pocock 的 handoff（MIT），补充了完整模板。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "会话交接单"
 display_name_en: "Handoff Document (zh)"
 description_zh: "把当前对话压缩成下一个 Agent 或同事能直接接手的交接单：只引用不重复已有产物、脱敏、按下一会话的用途裁剪、附建议技能；模板含状态/决策/下一步/文件/验证/坑。"
 description_en: "Compress the current conversation into a handoff a fresh agent or teammate can pick up: reference existing artifacts instead of duplicating, redact secrets, tailor to the next session's purpose, list suggested skills; template with state/decisions/next steps/files/verification/gotchas."
+tags:
+  - "会话交接"
+  - "handoff"
+  - "交接文档"
+  - "上下文管理"
+  - "任务交接"
 examples_zh:
   - "写一份交接文档，下个会话要继续做接口联调"
   - "上下文快满了，把进度整理成交接单"
@@ -29,6 +35,9 @@ metadata:
 3. **按用途裁剪**：用户说明了下一会话的用途（"继续联调接口""写测试"），就围绕它组织，无关历史一句带过。
 4. **必含「建议技能」**：点名下一个 Agent 该调用哪些技能、各用来干什么。
 5. **状态要能核对**：写"测试 12/12 通过（`pytest tests/`）"而不是"测试都过了"；写 `git status` 的实际情况（哪些未提交）。
+
+## 边界
+禁止事项：不把交接单当第二份 spec/计划/工单——那些内容只引用路径，重复写就是两份要同步维护的文档，谁改了都要记得同步；不省略脱敏检查，密钥、密码、令牌、个人身份信息一律 `<REDACTED>`，写完成后要专门 grep 一遍再交付；不用"测试都过了"这类无法核对的状态描述，要写成可重跑的命令与结果；没有用户指定路径就不放进工作区，默认落到系统临时目录，避免半成品文档混进仓库历史。
 
 ## 模板
 ```

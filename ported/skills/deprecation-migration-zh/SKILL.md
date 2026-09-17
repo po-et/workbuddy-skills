@@ -1,12 +1,20 @@
 ---
 name: deprecation-migration-zh
-description: 系统下线、功能废弃、迁移方案、数据库字段改名不停机（expand/contract 扩展-收缩）。当用户说「怎么把老系统下掉」「这个接口要废弃」「用户还在用老版本怎么迁」「生产库改字段名怎么不停机」「删列会不会出事」「两套系统并行多久」「僵尸代码要不要删」时使用。核心：代码是负债、Hyrum 定律让删除变难、下线要在设计时规划；下线决策五问、劝导式 vs 强制式、迁移四步、绞杀者/适配器/特性开关三种模式、schema 迁移的扩展→回填→收缩、僵尸代码处理。改编自 addyosmani/agent-skills 的 deprecation-and-migration（MIT）。
+description: 系统下线、功能废弃、迁移方案、数据库字段改名不停机（expand/contract 扩展-收缩）。当用户说「怎么把老系统下掉」「这个接口要废弃」「用户还在用老版本怎么迁」「生产库改字段名怎么不停机」「删列会不会出事」「两套系统并行多久」「僵尸代码要不要删」时使用。核心：代码是负债、Hyrum 定律让删除变难、下线要在设计时规划；下线决策五问、劝导式 vs 强制式、迁移四步、绞杀者/适配器/特性开关三种模式、schema 迁移的扩展→回填→收缩、僵尸代码处理。也覆盖「不停机」「支付接口」「没人维护」这类说法。改编自 addyosmani/agent-skills 的 deprecation-and-migration（MIT）。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "下线与迁移（扩展-收缩）"
 display_name_en: "Deprecation & Migration (zh)"
 description_zh: "把老系统、旧接口、旧字段安全下线：决策五问、迁移四步、绞杀者/适配器/开关模式、数据库 expand/contract 不停机改名、僵尸代码处理。"
 description_en: "Retire old systems, APIs and columns safely: five decision questions, a four-step migration, strangler/adapter/flag patterns, zero-downtime expand/contract schema changes, zombie-code handling."
+tags:
+  - "系统下线"
+  - "deprecation"
+  - "迁移"
+  - "migration"
+  - "expand-contract"
+  - "数据库迁移"
+  - "僵尸代码"
 examples_zh:
   - "生产库要把 name 改成 full_name，怎么做到不停机"
   - "老的支付接口要废弃，给我一个迁移计划"
@@ -98,6 +106,12 @@ schema 变更是最危险的迁移，因为数据不能靠回滚部署来回退�
 
 下线完成后：替代品已在生产验证并覆盖关键用例；迁移指南有具体步骤；所有活跃消费者已迁（指标/日志证明）；老代码、测试、文档、配置全部删除；仓库不再引用；下线公告已删。
 schema 迁移后：按扩展→回填→收缩分阶段发布；每一步新老代码都合法；每个迁移有测试过的 down、回填分批限速；破坏性步骤单独发布且已无代码引用旧结构。
+
+```
+- [ ] 替代品已在生产验证并覆盖关键用例　- [ ] 迁移指南有具体步骤　- [ ] 所有活跃消费者已迁（指标/日志证明）
+- [ ] 老代码、测试、文档、配置全部删除，仓库不再引用　- [ ] schema 迁移按扩展→回填→收缩分阶段发布
+- [ ] 每个迁移有测试过的 down、回填分批限速　- [ ] 破坏性步骤单独发布且已无代码引用旧结构
+```
 
 ---
 改编自 [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) 的 `deprecation-and-migration`（MIT）。改动见 ATTRIBUTION.md。

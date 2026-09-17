@@ -1,12 +1,18 @@
 ---
 name: research-primary-zh
-description: 一手来源研究、把一个问题查清并写成带引用的 Markdown、文档与 API 事实核查、把阅读苦活交给后台任务。当用户说「帮我查一下 X 到底怎么回事」「这个 API 的行为查官方文档确认」「做个调研写成文档」「把这几篇规范读了给我要点」「后台去查，别耽误手头的事」时使用。规则：只信一手来源（官方文档、源码、规范、第一方 API），不信二手转述；每个主张追溯到拥有它的来源并逐条引用；写成一个 Markdown 文件，放在仓库已有的笔记约定位置，没有约定就放合理的地方并说明；能起后台任务就起，主线继续工作；附研究文档模板（问题、结论、逐条发现与引用、未解决、来源清单）。改编自 Matt Pocock 的 research（MIT），补充了模板与来源层级。
+description: 一手来源研究、把一个问题查清并写成带引用的 Markdown、文档与 API 事实核查、把阅读苦活交给后台任务。当用户说「帮我查一下 X 到底怎么回事」「这个 API 的行为查官方文档确认」「做个调研写成文档」「把这几篇规范读了给我要点」「后台去查，别耽误手头的事」时使用。规则：只信一手来源（官方文档、源码、规范、第一方 API），不信二手转述；每个主张追溯到拥有它的来源并逐条引用；写成一个 Markdown 文件，放在仓库已有的笔记约定位置，没有约定就放合理的地方并说明；能起后台任务就起，主线继续工作；附研究文档模板（问题、结论、逐条发现与引用、未解决、来源清单）。也覆盖「写成笔记」「重试语义」「和我们相关的要点」这类说法。改编自 Matt Pocock 的 research（MIT），补充了模板与来源层级。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "一手来源研究"
 display_name_en: "Primary-Source Research (zh)"
 description_zh: "针对一个问题只查一手来源（官方文档、源码、规范），每个主张附引用，写成仓库约定位置的 Markdown；能后台跑就后台跑；附研究文档模板与来源层级。"
 description_en: "Investigate a question against primary sources only (official docs, source, specs), cite every claim, write a Markdown note where the repo keeps such notes; run in the background when possible; template and source hierarchy included."
+tags:
+  - "一手来源研究"
+  - "research"
+  - "事实核查"
+  - "技术调研"
+  - "引用规范"
 examples_zh:
   - "查一下 Postgres 的 CREATE INDEX CONCURRENTLY 有哪些限制，写成笔记"
   - "后台研究一下这个 SDK 的重试语义，我先继续写代码"

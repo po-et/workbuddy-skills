@@ -1,12 +1,19 @@
 ---
 name: engineering-skills-index-zh
-description: 工程实践技能系列的总入口与路由：按研发阶段选技能——需求访谈、创意打磨、规格驱动、约束驱动、任务拆解、增量实现、源驱动、质疑驱动、上下文工程、前端工程、API 设计、测试驱动、浏览器测试、系统化排错、五轴评审、代码化简、安全加固、性能优化、Git 工作流、CI/CD、下线迁移、文档 ADR、可观测性、上线发布。当用户说「我该用哪个技能」「按流程走一遍这个功能」「从需求到上线该怎么做」「有哪些工程实践技能」，或任务刚到手需要判断处于哪个阶段时使用。附六条始终生效的操作行为：亮出假设、主动管理困惑、有理由就反对、强制简单、范围纪律、验证不假设。改编自 addyosmani/agent-skills 的 using-agent-skills（MIT），指向本系列的中文版技能。
+description: 工程实践技能系列的总入口与路由：按研发阶段选技能——需求访谈、创意打磨、规格驱动、约束驱动、任务拆解、增量实现、源驱动、质疑驱动、上下文工程、前端工程、API 设计、测试驱动、浏览器测试、系统化排错、五轴评审、代码化简、安全加固、性能优化、Git 工作流、CI/CD、下线迁移、文档 ADR、可观测性、上线发布。当用户说「我该用哪个技能」「按流程走一遍这个功能」「从需求到上线该怎么做」「有哪些工程实践技能」，或任务刚到手需要判断处于哪个阶段时使用。附六条始终生效的操作行为：亮出假设、主动管理困惑、有理由就反对、强制简单、范围纪律、验证不假设。也覆盖「按什么顺序用哪些技能」「有哪些工程实践技能可以装」「该走哪几步」这类说法。改编自 addyosmani/agent-skills 的 using-agent-skills（MIT），指向本系列的中文版技能。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "工程实践技能系列·总入口"
 display_name_en: "Engineering Skills Index (zh)"
 description_zh: "25 个工程实践技能（Addy Osmani 系列中文版）的路由表：任务到手先判断阶段→选技能；六条始终生效的行为：亮假设、管困惑、敢反对、要简单、守范围、重验证。"
 description_en: "Router for the 25-skill engineering series (Chinese edition of Addy Osmani's agent-skills): identify the phase, pick the skill; six always-on behaviours: surface assumptions, manage confusion, push back, enforce simplicity, keep scope, verify."
+tags:
+  - "技能路由"
+  - "工程实践"
+  - "研发流程"
+  - "index"
+  - "SDLC"
+  - "技能总入口"
 examples_zh:
   - "我要做一个新功能，从头到尾该按什么顺序用哪些技能"
   - "有哪些工程实践技能可以装"
@@ -53,6 +60,11 @@ metadata:
 
 ## 十种看似高效实则埋雷的错误
 错误假设不核实；迷路了还往前冲；发现不一致不说；非显然决策不摆取舍；对有明显问题的方案说"好的"；把代码和 API 做复杂；改动与任务无关的代码或注释；删掉没完全理解的东西；"显然该做什么"所以不写 spec；"看起来对"所以跳过验证。
+
+## 自检口诀
+```
+拿到任务：1) 判断处于哪个阶段 → 2) 查表选技能（slug）→ 3) 按技能流程执行、不跳验证 → 4) 有假设先亮出来
+```
 
 ## 技能规则
 开工前先查有没有适用技能；技能是工作流不是建议——按顺序做、不跳验证；多个技能可串联；拿不准就从 spec 开始。

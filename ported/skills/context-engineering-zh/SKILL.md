@@ -1,12 +1,20 @@
 ---
 name: context-engineering-zh
-description: 上下文工程、给 Agent 喂对的信息、项目规则文件（CLAUDE.md / AGENTS.md / .cursorrules）、上下文预算管理、会话重启边界、困惑处理。当用户说「怎么写 CLAUDE.md」「AI 老不按我们的约定来」「输出质量越聊越差」「上下文太长了怎么办」「换任务要不要新开会话」「规则文件里该写什么」「AI 编造了不存在的 API」时使用。要点：五层上下文（规则文件 > spec > 相关源文件 > 错误输出 > 对话历史）；规则文件模板（技术栈、命令、约定、边界、一个范例）；只加载相关 spec 段落；改文件前先读并找一个同类范例；加载文件的信任分级；75% 就开始修剪、先压缩再删除、关键内容放最后（lost-in-the-middle）；可重启的会话边界要持久化五项；困惑与缺失需求要摆出来不猜；行内计划模式；反模式表。改编自 addyosmani/agent-skills 的 context-engineering（MIT）。
+description: 上下文工程、给 Agent 喂对的信息、项目规则文件（CLAUDE.md / AGENTS.md / .cursorrules）、上下文预算管理、会话重启边界、困惑处理。当用户说「怎么写 CLAUDE.md」「AI 老不按我们的约定来」「输出质量越聊越差」「上下文太长了怎么办」「换任务要不要新开会话」「规则文件里该写什么」「AI 编造了不存在的 API」时使用。要点：五层上下文（规则文件 > spec > 相关源文件 > 错误输出 > 对话历史）；规则文件模板（技术栈、命令、约定、边界、一个范例）；只加载相关 spec 段落；改文件前先读并找一个同类范例；加载文件的信任分级；75% 就开始修剪、先压缩再删除、关键内容放最后（lost-in-the-middle）；可重启的会话边界要持久化五项；困惑与缺失需求要摆出来不猜；行内计划模式；反模式表。也覆盖「这个项目写一份」「命名约定」「不掉质量」这类说法。改编自 addyosmani/agent-skills 的 context-engineering（MIT）。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "上下文工程（规则文件与预算）"
 display_name_en: "Context Engineering (zh)"
 description_zh: "让 Agent 在对的时候看到对的信息：五层上下文与规则文件模板、只加载相关内容、信任分级、75% 开始修剪并先压缩后删、关键内容放末尾、可重启的会话边界、困惑显式化。"
 description_en: "Feed agents the right information at the right time: five-level hierarchy and rules-file template, selective loading, trust levels, trim at 75% (compress before drop), task-critical content last, restartable session boundaries, explicit confusion handling."
+tags:
+  - "上下文工程"
+  - "context engineering"
+  - "CLAUDE.md"
+  - "AGENTS.md"
+  - "规则文件"
+  - "上下文预算"
+  - "prompt"
 examples_zh:
   - "帮我给这个项目写一份 CLAUDE.md"
   - "AI 总是不按我们的命名约定来，怎么解决"
@@ -63,8 +71,10 @@ metadata:
 输出不合项目约定；编造不存在的 API 或 import；重复实现已有工具；会话中途质量下降而失败尝试、旧草稿、冗长输出没被修剪；项目没有规则文件；外部数据或配置未经核实被当作可信指令。
 
 ## 验收
+```
 - [ ] 规则文件覆盖技术栈、命令、约定、边界　- [ ] 输出遵循规则文件里的模式　- [ ] 引用的是真实文件与 API
 - [ ] 切换大任务时刷新上下文　- [ ] 长会话主动修剪：失败尝试与旧草稿已删、当前错误与任务定义受保护　- [ ] 任务关键内容在末尾而非埋在背景里
+```
 
 ---
 改编自 [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) 的 `context-engineering`（MIT）。改动见 ATTRIBUTION.md。

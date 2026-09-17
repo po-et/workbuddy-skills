@@ -1,12 +1,18 @@
 ---
 name: context-degradation-zh
-description: 上下文退化诊断与缓解、中间迷失（lost in the middle）、上下文投毒、上下文干扰、上下文混淆、上下文冲突、长对话后 Agent 变笨、明明给了信息模型却无视、纠正后仍反复引用错误事实。当用户说「对话越长 Agent 越不听话」「我明明写了它为什么忽略」「它一直重复一个错的结论怎么纠正都没用」「RAG 检索了两份矛盾的文档」「多个任务混在一个会话里串了」时使用。五种退化模式各有信号与对策：中间迷失→关键信息放首尾；投毒→截断到投毒点之前重来而不是叠加纠正；干扰→单个无关文档就会显著拖累、加载前先过滤；混淆→任务隔离与显式上下文重置标记；冲突→事先定来源优先级并标注矛盾。附四桶缓解框架（写出 / 筛选 / 压缩 / 隔离）与阈值、恢复流程参考。改编自 Agent Skills for Context Engineering 的 context-degradation（MIT）。
+description: 上下文退化诊断与缓解、中间迷失（lost in the middle）、上下文投毒、上下文干扰、上下文混淆、上下文冲突、长对话后 Agent 变笨、明明给了信息模型却无视、纠正后仍反复引用错误事实。当用户说「对话越长 Agent 越不听话」「我明明写了它为什么忽略」「它一直重复一个错的结论怎么纠正都没用」「RAG 检索了两份矛盾的文档」「多个任务混在一个会话里串了」时使用。五种退化模式各有信号与对策：中间迷失→关键信息放首尾；投毒→截断到投毒点之前重来而不是叠加纠正；干扰→单个无关文档就会显著拖累、加载前先过滤；混淆→任务隔离与显式上下文重置标记；冲突→事先定来源优先级并标注矛盾。附四桶缓解框架（写出 / 筛选 / 压缩 / 隔离）与阈值、恢复流程参考。也覆盖「忽略我一开始定的规则」「纠正了也没用」「说法矛盾」这类说法。改编自 Agent Skills for Context Engineering 的 context-degradation（MIT）。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "上下文退化诊断"
 display_name_en: "Context Degradation (zh)"
 description_zh: "在级联之前诊断并修复上下文失效。退化不是二值而是连续体，表现为五种可预测模式：中间迷失、投毒、干扰、混淆、冲突。每种都有检测信号与缓解策略，把退化当成有可测阈值的工程问题。"
 description_en: "Diagnose and fix context failures before they cascade. Degradation is a continuum with five predictable patterns: lost-in-middle, poisoning, distraction, confusion, clash. Each has detection signals and mitigations; treat it as an engineering problem with measurable thresholds."
+tags:
+  - "上下文退化"
+  - "context degradation"
+  - "中间迷失"
+  - "上下文投毒"
+  - "Agent 调试"
 examples_zh:
   - "对话到后面 Agent 就开始忽略我一开始定的规则，怎么办"
   - "它一直引用一个错误的检索结果，纠正了也没用"
@@ -32,6 +38,9 @@ metadata:
 - 排查「中间迷失」现象
 
 相邻工作归别的技能：没有具体失效、只是解释机制→「上下文工程基础」；失效模式已知、要做 token 效率优化→压缩与遮蔽类技能；设计压缩或交接摘要→「上下文压缩」。
+
+## 流程
+监控上下文长度与表现的相关性，发现异常 → 对照五种模式详解定位是哪一种（或几种叠加）→ 按四桶缓解框架选策略并执行 → 在模型专属退化阈值之前重新设置压缩触发，不等症状复现。
 
 ## 核心概念
 

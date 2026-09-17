@@ -1,12 +1,19 @@
 ---
 name: incremental-implementation-zh
-description: 增量实现、薄切片交付、按计划逐个任务落地。当用户说「这个功能怎么一步步做」「别一次写太多」「按任务清单开始实现」「先做哪一片」「特性开关下逐步合并」「一个任务太大不知从哪下手」时，或者你即将一口气写超过 100 行代码时使用。核心：实现→测试→验证→提交→下一片的循环；垂直切片优先，契约先行切片、风险优先切片；规则 0 简单优先、0.5 范围纪律、一次一件事、随时可编译、未完成功能用开关、安全默认、可回滚。改编自 addyosmani/agent-skills 的 incremental-implementation（MIT）。
+description: 增量实现、薄切片交付、按计划逐个任务落地。当用户说「这个功能怎么一步步做」「别一次写太多」「按任务清单开始实现」「先做哪一片」「特性开关下逐步合并」「一个任务太大不知从哪下手」时，或者你即将一口气写超过 100 行代码时使用。核心：实现→测试→验证→提交→下一片的循环；垂直切片优先，契约先行切片、风险优先切片；规则 0 简单优先、0.5 范围纪律、一次一件事、随时可编译、未完成功能用开关、安全默认、可回滚。也覆盖「开始实现」「各自验证的几片」「按增量方式推进」这类说法。改编自 addyosmani/agent-skills 的 incremental-implementation（MIT）。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "增量实现（薄切片）"
 display_name_en: "Incremental Implementation (zh)"
 description_zh: "把功能切成可独立验证的薄片，实现→测试→验证→提交循环推进；垂直/契约先行/风险优先三种切法；简单优先与范围纪律；未完成功能放开关后面。"
 description_en: "Slice features into thin, independently verifiable increments and loop implement→test→verify→commit; vertical, contract-first and risk-first slicing; simplicity and scope discipline; unfinished work behind flags."
+tags:
+  - "增量实现"
+  - "薄切片"
+  - "incremental"
+  - "垂直切片"
+  - "特性开关"
+  - "范围纪律"
 examples_zh:
   - "按计划里的任务 3 开始实现，先只做 schema 和接口"
   - "这个功能太大，帮我切成能各自验证的几片"
@@ -51,8 +58,10 @@ metadata:
 
 ## 每个增量后的检查
 
+```
 - [ ] 这一片做了一件事并做完整　- [ ] 现有测试全过（用仓库自己的命令）　- [ ] 构建成功
 - [ ] 类型检查通过（如有）　- [ ] lint 通过　- [ ] 新功能按预期工作　- [ ] 已提交且信息清楚
+```
 一次成功的运行后，代码没变就别重复跑同一条命令——重复跑不增加信息。
 
 ## 合理化借口对照

@@ -1,12 +1,19 @@
 ---
 name: architecture-deepening-zh
-description: 代码库架构体检、找出可以「加深」的浅模块、重构机会扫描、架构评审可视化 HTML 报告、前后对比图、模块深度与接缝分析、提升可测试性与 AI 可导航性。当用户说「帮我看看这个代码库哪里该重构」「架构上有什么问题」「哪些模块太薄」「出一份架构评审报告」「测试为什么这么难写」时使用。流程：先定范围（用户点名的方向，或从 git log 找热点，YAGNI）→ 读 CONTEXT.md 与 ADR → 派子代理有机地走代码库、记录摩擦（在多个小模块间跳来跳去、接口几乎和实现一样复杂、为可测试性抽出纯函数但 bug 藏在调用处、跨接缝泄漏、难测）→ 对可疑处做删除测试 → 写一个自包含 HTML 报告到系统临时目录（Tailwind + Mermaid CDN，每个候选一张卡：文件/问题/方案/收益/前后对比图/推荐强度 Strong·Worth exploring·Speculative）→ 报告结尾给首推 → 用户选一个后进入拷问循环并同步更新 CONTEXT.md / ADR。改编自 Matt Pocock 的 improve-codebase-architecture（MIT）。
+description: 代码库架构体检、找出可以「加深」的浅模块、重构机会扫描、架构评审可视化 HTML 报告、前后对比图、模块深度与接缝分析、提升可测试性与 AI 可导航性。当用户说「帮我看看这个代码库哪里该重构」「架构上有什么问题」「哪些模块太薄」「出一份架构评审报告」「测试为什么这么难写」时使用。流程：先定范围（用户点名的方向，或从 git log 找热点，YAGNI）→ 读 CONTEXT.md 与 ADR → 派子代理有机地走代码库、记录摩擦（在多个小模块间跳来跳去、接口几乎和实现一样复杂、为可测试性抽出纯函数但 bug 藏在调用处、跨接缝泄漏、难测）→ 对可疑处做删除测试 → 写一个自包含 HTML 报告到系统临时目录（Tailwind + Mermaid CDN，每个候选一张卡：文件/问题/方案/收益/前后对比图/推荐强度 Strong·Worth exploring·Speculative）→ 报告结尾给首推 → 用户选一个后进入拷问循环并同步更新 CONTEXT.md / ADR。也覆盖「该合并加深」「测试特别难写」「有没有重构空间」这类说法。改编自 Matt Pocock 的 improve-codebase-architecture（MIT）。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "架构加深体检（HTML 报告）"
 display_name_en: "Improve Codebase Architecture (zh)"
 description_zh: "扫描代码库找出把浅模块变深的重构机会，输出带前后对比图的自包含 HTML 架构评审报告（写到系统临时目录），用户选一个候选后进入拷问循环并同步维护 CONTEXT.md / ADR。目标是可测试性与 AI 可导航性。"
 description_en: "Scan a codebase for deepening opportunities (shallow → deep modules), present them as a self-contained HTML report with before/after diagrams (written to the OS temp dir), then grill through the candidate the user picks while keeping CONTEXT.md / ADRs current. Aim: testability and AI-navigability."
+tags:
+  - "架构体检"
+  - "重构机会"
+  - "深模块"
+  - "架构评审"
+  - "HTML 报告"
+  - "技术债"
 examples_zh:
   - "扫一遍这个仓库，告诉我哪些模块该合并加深，出份报告"
   - "订单模块测试特别难写，看看是不是架构的问题"
@@ -22,6 +29,18 @@ metadata:
 # 架构加深体检
 
 找出架构摩擦，提出**加深机会**：把浅模块变成深模块的重构。目标是可测试性和 AI 可导航性。
+
+## 何时用
+用户点名某个模块/子系统有摩擦、测试特别难写、或想要一份系统性的架构体检报告时用；日常小重构、已经知道要改哪几行代码时不需要这套流程，直接改就好。
+
+每个候选卡片：
+```
+- [ ] 文件：涉及哪些文件/模块
+- [ ] 问题：当前架构为什么造成摩擦
+- [ ] 方案：会改什么
+- [ ] 收益：局部性与杠杆，测试会怎样变好
+- [ ] 前后对比图 + 推荐强度（Strong / Worth exploring / Speculative）
+```
 
 这项工作*以*项目的领域模型为依据，建立在一套共享的设计词汇上：
 - 配合「深模块设计」技能的架构词汇（**模块、接口、深度、接缝、适配器、杠杆、局部性**）及其原则（删除测试、「接口就是测试面」、「一个适配器 = 假想接缝，两个 = 真接缝」）。每条建议都精确使用这些词，不滑向「组件」「服务」「API」「边界」。

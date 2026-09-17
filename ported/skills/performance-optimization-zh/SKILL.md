@@ -1,12 +1,19 @@
 ---
 name: performance-optimization-zh
-description: 性能优化、先测量再优化、Core Web Vitals、N+1 查询、索引与执行计划、连接池、缓存设计、包体积、React 重渲染、回归防护。当用户说「页面太慢」「接口 P95 太高」「LCP 不达标」「这个查询要不要加索引」「连接池耗尽」「要不要加缓存」「怎么防性能回退」时使用。流程：测量（合成 + 真实用户）→ 按症状树定位瓶颈 → 修常见反模式（N+1、无界抓取、索引不匹配查询形状、连接池、图片、重渲染、包体积、缓存的层/键/失效/雪崩）→ 验证（同法重测、一次一改、超过噪声才算；中性即回退；记录所有尝试含回退的）→ 守护（CI 预算 + 真实用户监控）。改编自 addyosmani/agent-skills 的 performance-optimization（MIT）。
+description: 性能优化、先测量再优化、Core Web Vitals、N+1 查询、索引与执行计划、连接池、缓存设计、包体积、React 重渲染、回归防护。当用户说「页面太慢」「接口 P95 太高」「LCP 不达标」「这个查询要不要加索引」「连接池耗尽」「要不要加缓存」「怎么防性能回退」时使用。流程：测量（合成 + 真实用户）→ 按症状树定位瓶颈 → 修常见反模式（N+1、无界抓取、索引不匹配查询形状、连接池、图片、重渲染、包体积、缓存的层/键/失效/雪崩）→ 验证（同法重测、一次一改、超过噪声才算；中性即回退；记录所有尝试含回退的）→ 守护（CI 预算 + 真实用户监控）。也覆盖「系统地优化」「加个索引就行」「所有端点一起变慢」这类说法。改编自 addyosmani/agent-skills 的 performance-optimization（MIT）。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "性能优化（先测量再优化）"
 display_name_en: "Performance Optimization (zh)"
 description_zh: "测量→定位→修→验证→守护：Web Vitals 目标、症状树、N+1/索引形状/连接池/缓存键与雪崩/包体积/重渲染的修法；中性改动一律回退并记录尝试台账。"
 description_en: "Measure → identify → fix → verify → guard: Web Vitals targets, a symptom tree, fixes for N+1, index shape, pool exhaustion, cache keys and stampedes, bundles and re-renders; neutral changes are reverted and every attempt is logged."
+tags:
+  - "性能优化"
+  - "performance"
+  - "Core Web Vitals"
+  - "N+1"
+  - "缓存"
+  - "索引优化"
 examples_zh:
   - "首页 LCP 4 秒，帮我系统地优化"
   - "这个查询慢，是不是加个索引就行"
@@ -22,6 +29,9 @@ metadata:
 # 性能优化（先测量再优化）
 
 没有测量的性能工作是猜，猜会变成过早优化——加复杂度却不改善要紧的东西。先剖析、找真瓶颈、修、再测；只优化测量证明重要的部分。没有问题证据之前不要优化。
+
+## 何时用
+页面或接口有具体变慢的症状（LCP/INP 不达标、P95 涨了、查询变慢、高峰期集体变慢）时用；没有测量数据、只是「感觉可能慢」时，先测量拿到数字再回来。不用于没有症状的预防性调优——那是过早优化。
 
 ## Core Web Vitals 目标
 LCP ≤ 2.5s 好 / ≤ 4.0s 需改进 / > 4.0s 差；INP ≤ 200ms / ≤ 500ms / > 500ms；CLS ≤ 0.1 / ≤ 0.25 / > 0.25。
@@ -71,9 +81,11 @@ LCP ≤ 2.5s 好 / ≤ 4.0s 需改进 / > 4.0s 差；INP ≤ 200ms / ≤ 500ms /
 没有剖析数据的优化；N+1；加索引没有前后执行计划；缓存键漏了响应依赖的输入；缓存没有陈旧窗口与失效策略；耗尽就调大池而不找谁占着连接；列表无分页；图片无尺寸/懒加载/响应式；包体积无人评审地增长；生产无性能监控；到处 memo；未重测就保留的优化；多项优化捆成一次测量；靠改/跳/删测试赢来的"收益"；同一个失败的优化被重复尝试因为没人记录。
 
 ## 验收
+```
 - [ ] 有前后具体数字　- [ ] 与基线同法重测　- [ ] 改善超过运行间方差　- [ ] 没打败基线的已回退　- [ ] 尝试台账含回退项
 - [ ] 具体瓶颈已识别处理　- [ ] Web Vitals 在"好"区间　- [ ] 包体积未明显增长　- [ ] 新代码无 N+1　- [ ] 新索引有前后计划且考虑写成本
 - [ ] 新缓存写明键与失效　- [ ] 该指标有 CI 预算或真实用户监控　- [ ] 现有测试通过
+```
 
 ---
 改编自 [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) 的 `performance-optimization`（MIT）。改动见 ATTRIBUTION.md。

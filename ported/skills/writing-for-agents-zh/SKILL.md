@@ -1,12 +1,20 @@
 ---
 name: writing-for-agents-zh
-description: 给 Agent 写文档、写 SKILL.md、写 AGENTS.md / CLAUDE.md、写规则文件、让 Agent 每次跑都稳定。当用户说「怎么写一个好的 SKILL.md」「AGENTS.md 该写什么」「技能描述怎么写才会被触发」「文档太长 Agent 不看」「同一个技能每次表现不一样」「什么时候该拆成两个技能」时使用。核心概念：上下文指针（描述与规则行的措辞决定 Agent 何时去读）；两种负担（上下文负担 vs 认知负担）；信息层级（文件内步骤 > 文件内参考 > 披露到外部的参考）与渐进披露、同处放置、蔓延；每步的完成标准（清晰度与要求度、过早完成、后续步骤的拉力）；何时拆分（按序列、按调用方式）；引导词（用模型预训练里已有的紧凑概念锚定行为，正面表述优于禁止）；修剪（单一事实来源、环境即缓存、相关性、空操作句）。技能专属：模型调用 vs 用户调用、路由技能。改编自 Matt Pocock 的 writing-for-agents（MIT）。
+description: 给 Agent 写文档、写 SKILL.md、写 AGENTS.md / CLAUDE.md、写规则文件、让 Agent 每次跑都稳定。当用户说「怎么写一个好的 SKILL.md」「AGENTS.md 该写什么」「技能描述怎么写才会被触发」「文档太长 Agent 不看」「同一个技能每次表现不一样」「什么时候该拆成两个技能」时使用。核心概念：上下文指针（描述与规则行的措辞决定 Agent 何时去读）；两种负担（上下文负担 vs 认知负担）；信息层级（文件内步骤 > 文件内参考 > 披露到外部的参考）与渐进披露、同处放置、蔓延；每步的完成标准（清晰度与要求度、过早完成、后续步骤的拉力）；何时拆分（按序列、按调用方式）；引导词（用模型预训练里已有的紧凑概念锚定行为，正面表述优于禁止）；修剪（单一事实来源、环境即缓存、相关性、空操作句）。技能专属：模型调用 vs 用户调用、路由技能。也覆盖「改得更容易被正确触发」「别写成一本手册」「老是漏掉后面的步骤」这类说法。改编自 Matt Pocock 的 writing-for-agents（MIT）。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "给 Agent 写文档（技能与规则文件）"
 display_name_en: "Writing for Agents (zh)"
 description_zh: "让技能、AGENTS.md、规则文件每次都被正确读取与执行：上下文指针措辞、两种负担、信息层级与渐进披露、完成标准、何时拆分、引导词与正面表述、修剪空操作句；附技能的调用方式选择与路由技能。"
 description_en: "Make skills, AGENTS.md and rules files read and executed reliably: pointer wording, the two loads, information hierarchy and progressive disclosure, completion criteria, when to split, leading words and positive phrasing, pruning no-ops; skill invocation choice and router skills."
+tags:
+  - "SKILL.md"
+  - "AGENTS.md"
+  - "CLAUDE.md"
+  - "prompt engineering"
+  - "文档设计"
+  - "上下文指针"
+  - "Agent 文档"
 examples_zh:
   - "帮我把这个 SKILL.md 改得更容易被正确触发"
   - "写一份 AGENTS.md，别写成一本手册"
@@ -58,6 +66,15 @@ metadata:
 两种选择，换的是两种负担：**模型调用**的技能保留 description，Agent 能自主触发它、其他技能能引用它；你仍能手动输入名字（模型调用总是包含人的触达）。description 是技能的顶层指针，被迫始终加载：以永久上下文负担换可发现性。一个内容全是参考的模型调用技能也是共享参考的家：别的技能能调它，多个技能需要的参考住在一处。写法：不设 `disable-model-invocation`，写面向模型的、带触发分支的描述。**用户调用**的技能把 description 剥离出 Agent 的触达：只有人输入名字才能调，任何技能都调不了。零上下文负担，但花认知负担：你是必须记得它存在的索引。写法：`disable-model-invocation: true`，description 变成面向人的一行摘要，去掉触发列表。只在 Agent 必须自己触达它、或别的技能必须触达它时选模型调用；只由人手动触发的就做成用户调用、不付上下文负担。两个用户调用技能都需要的共享参考不能住在任一方（没有描述就互相触达不了），推到技能系统之外的普通文件。
 **按调用方式拆分**：有一个该独自触发的独特引导词（你在提示里真会用的触发词）、或别的技能必须触达时，拆出一个模型调用技能——为新的始终加载的描述付上下文负担，所以那份独立触达得值。
 **路由技能**：用户调用技能多到记不住时，用一个用户调用的**路由技能**：点名其他技能与各自何时用，人只需记住一个。它只能提示不能触发它们：用户调用技能没有描述，除了人没有东西能触达它们。
+
+## 改一份文档前自检
+```
+- [ ] description 把触发分支的引导词放在最前
+- [ ] 每一步都有清晰、可核对的完成标准
+- [ ] 只在真正的上下文边界才把内容拆到指针之后
+- [ ] 每个意思只有一处权威来源，没有散落的复述
+- [ ] 逐句过了一遍空操作测试，删掉了模型默认就会做的句子
+```
 
 ---
 改编自 [mattpocock/skills](https://github.com/mattpocock/skills) 的 `writing-for-agents`（MIT）。改动见 ATTRIBUTION.md。

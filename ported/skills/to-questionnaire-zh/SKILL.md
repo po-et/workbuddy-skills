@@ -1,12 +1,18 @@
 ---
 name: to-questionnaire-zh
-description: 把自己答不了的决策变成一份给别人填的问卷、异步收集信息、向领域专家或上游团队提问、需求澄清问卷、访谈提纲、调研问卷、会前问题清单。当用户说「这个我自己定不了，得问 XX」「帮我列一份要问产品/后端/运维的问题」「做一份问卷让对方填」「写个访谈提纲」时使用。核心：只拷问「发送」本身（发给谁、要拿回什么），不拷问用户答不了的主题；问题瞄准「对方知道而用户不知道」的缺口；最重要的问题放最前（异步可能只有一轮）；每题一个意思、带答案占位，必要时一行「为什么问」；输出 to-questionnaire-<slug>.md。改编自 Matt Pocock 的 to-questionnaire（MIT）。
+description: 把自己答不了的决策变成一份给别人填的问卷、异步收集信息、向领域专家或上游团队提问、需求澄清问卷、访谈提纲、调研问卷、会前问题清单。当用户说「这个我自己定不了，得问 XX」「帮我列一份要问产品/后端/运维的问题」「做一份问卷让对方填」「写个访谈提纲」时使用。核心：只拷问「发送」本身（发给谁、要拿回什么），不拷问用户答不了的主题；问题瞄准「对方知道而用户不知道」的缺口；最重要的问题放最前（异步可能只有一轮）；每题一个意思、带答案占位，必要时一行「为什么问」；输出 to-questionnaire-<slug>.md。也覆盖「得问网关团队」「客户成功经理」「准备要问的问题」这类说法。改编自 Matt Pocock 的 to-questionnaire（MIT）。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "决策问卷生成"
 display_name_en: "To Questionnaire (zh)"
 description_zh: "把用户独自答不了的决策变成一份 Markdown 问卷，交给掌握信息的那个人异步填写或开会一起过：先问清发给谁、要拿回什么，再把问题对准双方的信息差。"
 description_en: "Turn a decision the user can't answer alone into a Markdown questionnaire for the person who holds the knowledge, to fill in async or walk through in a meeting: settle who it goes to and what must come back, then aim questions at the gap."
+tags:
+  - "问卷生成"
+  - "需求澄清"
+  - "访谈提纲"
+  - "异步收集信息"
+  - "调研问卷"
 examples_zh:
   - "这个接口的限流策略我定不了，得问网关团队，帮我列问题"
   - "做一份问卷给客户成功经理填，我想知道客户实际怎么用导出功能"
@@ -20,6 +26,9 @@ metadata:
 ---
 
 # 决策问卷生成
+
+## 何时用
+用户自己定不了某个决策、需要问领域专家或上游团队时用；用户自己就能回答、只是没想清楚时，不需要问卷，直接帮他想清楚。
 
 把用户独自答不了的事变成一份**问卷**：一份 Markdown 文档，交给一个人异步填写，或在会上一起过。收件人掌握用户缺的知识，问卷负责把它掏出来。
 

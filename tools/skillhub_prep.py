@@ -92,16 +92,16 @@ SLUGS = {
     "config-env-diff": "config-env-diff",
     "i18n-missing-keys": "i18n-missing-keys",
     "test-coverage-gap": "test-coverage-gap",
-    "brainstorming-zh": "brainstorming-zh",
+    "brainstorming-zh": "brainstorming-spec-zh",
     "systematic-debugging-zh": "systematic-debugging-zh",
-    "writing-plans-zh": "writing-plans-zh",
-    "executing-plans-zh": "executing-plans-zh",
-    "verification-before-completion-zh": "verification-before-completion-zh",
+    "writing-plans-zh": "writing-impl-plans-zh",
+    "executing-plans-zh": "executing-dev-plans-zh",
+    "verification-before-completion-zh": "pre-completion-verification-zh",
     "subagent-driven-development-zh": "subagent-driven-development-zh",
-    "dispatching-parallel-agents-zh": "dispatching-parallel-agents-zh",
-    "using-git-worktrees-zh": "using-git-worktrees-zh",
-    "receiving-code-review-zh": "receiving-code-review-zh",
-    "finishing-a-development-branch-zh": "finishing-a-development-branch-zh",
+    "dispatching-parallel-agents-zh": "parallel-agent-dispatch-zh",
+    "using-git-worktrees-zh": "git-worktree-workflow-zh",
+    "receiving-code-review-zh": "code-review-response-zh",
+    "finishing-a-development-branch-zh": "dev-branch-finishing-zh",
 }
 # 源目录：默认 skills/<name>，复刻的在 ported/skills/<name>
 def source_dir(name: str) -> Path:
@@ -215,6 +215,41 @@ def yaml_list(key: str, items):
     return key + ":\n" + "".join(f"  - {i}\n" for i in items)
 
 
+def parse_tags(fm: str) -> list:
+    """从原 frontmatter 解析已有 tags：块形式（tags:\n  - x）或单行形式（tags: [a, b]）。"""
+    m = re.search(r"^tags:[ \t]*\n((?:[ \t]*-[ \t]*.+\n?)+)", fm, re.M)
+    if m:
+        items = []
+        for line in m.group(1).splitlines():
+            line = line.strip()
+            if not line.startswith("-"):
+                continue
+            v = line[1:].strip()
+            if v[:1] in "\"'" and v[-1:] == v[:1] and len(v) >= 2:
+                v = v[1:-1]
+            if v:
+                items.append(v)
+        return items
+    m = re.search(r"^tags:[ \t]*\[(.*)\][ \t]*$", fm, re.M)
+    if m:
+        items = []
+        for part in m.group(1).split(","):
+            v = part.strip()
+            if v[:1] in "\"'" and v[-1:] == v[:1] and len(v) >= 2:
+                v = v[1:-1]
+            if v:
+                items.append(v)
+        return items
+    return []
+
+
+def strip_tags(fm: str) -> str:
+    """去掉原 frontmatter 里已有的 tags 字段（块形式或单行形式），避免与 SkillHub 头部的 tags 重复。"""
+    fm = re.sub(r"^tags:[ \t]*\n(?:[ \t]*-[ \t]*.+\n?)+", "", fm, flags=re.M)
+    fm = re.sub(r"^tags:.*\n?", "", fm, flags=re.M)
+    return fm
+
+
 def prep(name: str, out: Path) -> Path:
     src = source_dir(name)
     fm, body = split_frontmatter((src / "SKILL.md").read_text("utf-8"))
@@ -222,6 +257,7 @@ def prep(name: str, out: Path) -> Path:
     summary = get(fm, "description_zh") or get(fm, "description")
     if len(summary) > 200:
         summary = summary[:197] + "…"
+    tags = TAGS[name] if name in TAGS else parse_tags(fm)
     head = "\n".join([
         f"slug: {slug}",
         f'displayName: "{get(fm, "display_name") or name}"',
@@ -229,13 +265,14 @@ def prep(name: str, out: Path) -> Path:
         f'summary: "{summary}"',
         f"license: {LICENSE}",
         f"homepage: {HOMEPAGE}",
-        yaml_list("tags", TAGS.get(name, [])).rstrip(),
+        yaml_list("tags", tags).rstrip(),
     ])
     dst = out / slug
     if dst.exists():
         shutil.rmtree(dst)
     shutil.copytree(src, dst, ignore=shutil.ignore_patterns("__pycache__", ".DS_Store", "*.pyc"))
     fm_rest = re.sub(r"^version:.*\n?", "", fm, flags=re.M)  # 避免与 SkillHub 头部的 version 重复
+    fm_rest = strip_tags(fm_rest)  # 避免与 SkillHub 头部的 tags 重复
     (dst / "SKILL.md").write_text(f"---\n{head}\n{fm_rest}\n---\n{body}", "utf-8")
     # SkillHub 上传拒绝无扩展名文件（实测 400「不允许的文件类型: LICENSE」），许可证只写 frontmatter 的 license 字段
     for junk in ("LICENSE", "NOTICE", "ATTRIBUTION"):

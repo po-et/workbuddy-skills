@@ -1,12 +1,21 @@
 ---
 name: security-hardening-zh
-description: 安全加固、威胁建模、OWASP Top 10 防护、输入校验、SSRF、依赖审计分诊、供应链卫生、限流、密钥管理、隐私合规、LLM 应用安全。当用户说「这个登录流程安全吗」「审一下输入处理有没有漏洞」「文件上传怎么做安全」「npm audit 报了一堆怎么办」「要接 LLM，安全上注意什么」「用户数据怎么合规存」「密钥泄露了怎么办」时使用。流程：先五分钟威胁建模（信任边界、资产、STRIDE、滥用用例）→ 三层边界（总是做/先问/绝不）→ OWASP 防护模式（注入、鉴权、XSS、越权、配置、数据暴露、SSRF）→ 边界处 schema 校验、上传限制、派生路径上的破坏性操作三重检查 → 依赖审计按可达性分诊与供应链规则 → 限流要用共享存储 → 密钥泄露立刻轮换 → 数据最小化与保留期 → LLM 输出视为不可信输入。改编自 addyosmani/agent-skills 的 security-and-hardening（MIT）。
+description: 安全加固、威胁建模、OWASP Top 10 防护、输入校验、SSRF、依赖审计分诊、供应链卫生、限流、密钥管理、隐私合规、LLM 应用安全。当用户说「这个登录流程安全吗」「审一下输入处理有没有漏洞」「文件上传怎么做安全」「npm audit 报了一堆怎么办」「要接 LLM，安全上注意什么」「用户数据怎么合规存」「密钥泄露了怎么办」时使用。流程：先五分钟威胁建模（信任边界、资产、STRIDE、滥用用例）→ 三层边界（总是做/先问/绝不）→ OWASP 防护模式（注入、鉴权、XSS、越权、配置、数据暴露、SSRF）→ 边界处 schema 校验、上传限制、派生路径上的破坏性操作三重检查 → 依赖审计按可达性分诊与供应链规则 → 限流要用共享存储 → 密钥泄露立刻轮换 → 数据最小化与保留期 → LLM 输出视为不可信输入。也覆盖「注册登录流程」「哪些必须现在修」「接大模型做客服」这类说法。改编自 addyosmani/agent-skills 的 security-and-hardening（MIT）。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "安全加固（威胁建模到 LLM 安全）"
 display_name_en: "Security & Hardening (zh)"
 description_zh: "先威胁建模再加固：三层边界、OWASP 防护模式、边界校验与 SSRF、派生路径破坏性操作三重检查、依赖审计分诊与供应链卫生、共享存储限流、密钥轮换、隐私最小化、LLM 输出当不可信输入。"
 description_en: "Threat-model first, then harden: three-tier boundaries, OWASP prevention patterns, boundary validation and SSRF, triple checks for destructive ops on derived paths, dependency audit triage and supply-chain hygiene, shared-store rate limiting, secret rotation, data minimization, LLM output as untrusted input."
+tags:
+  - "安全加固"
+  - "security"
+  - "OWASP"
+  - "威胁建模"
+  - "SSRF"
+  - "依赖审计"
+  - "LLM 安全"
+  - "密钥管理"
 examples_zh:
   - "审一下这个注册登录流程的安全问题"
   - "npm audit 报了 40 个漏洞，哪些必须现在修"
@@ -83,9 +92,11 @@ API 通用限制 + 鉴权端点更严格。**多于一个进程就要用共享�
 用户输入直接进查询/命令/HTML；删除/移动/覆盖的目标来自载荷、配置或别的进程的命令行却只做了形状检查；源码或历史里有密钥；端点没有认证或授权；CORS 通配；鉴权端点没限流或多实例前用内存限流器；向用户暴露堆栈；已知严重漏洞的依赖、竞争锁文件、不可复现安装、一揽子批准的脚本；服务端抓用户 URL 无白名单；LLM 输出进查询/DOM/shell/eval；密钥、PII 或完整系统提示进了 LLM 上下文；个人数据无目的、无保留期、无删除路径；PII 发给第三方无同意；"删除账号"只翻标志而数据仍在。
 
 ## 验收
+```
 - [ ] 原生审计无未处理的可达严重/高危；CI 保留权威锁文件并阻断未评审脚本　- [ ] 源码与历史无密钥　- [ ] 外部输入在边界校验
 - [ ] 破坏性文件操作先解析符号链接再验根/深度/所有权　- [ ] 每个受保护端点有认证与授权　- [ ] 响应带安全头　- [ ] 错误不暴露内部
 - [ ] 鉴权端点限流且多实例用共享存储　- [ ] 服务端 URL 抓取有白名单　- [ ] LLM 输出用前校验编码　- [ ] 个人数据已分类、最小化、有保留期　- [ ] 删除与导出端到端可用（含备份、缓存、分析）
+```
 
 ---
 改编自 [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) 的 `security-and-hardening`（MIT）。改动见 ATTRIBUTION.md。

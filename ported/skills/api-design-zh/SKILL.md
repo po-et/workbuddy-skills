@@ -1,12 +1,20 @@
 ---
 name: api-design-zh
-description: API 设计、接口设计、REST 接口规范、模块边界契约、幂等键实现。当用户说「帮我设计这组接口」「REST 怎么命名」「错误码怎么统一」「分页怎么做」「PATCH 还是 PUT」「接口怎么向后兼容」「幂等键怎么实现才不重复扣款」「第三方返回要不要校验」时使用。原则：Hyrum 定律（一切可观察行为都会被依赖）、单版本规则、契约先行、统一错误语义、只在边界校验、只加不改、可预测命名、真正兑现幂等键（意图派生的键、原子占位、载荷校验、在途重复的处理、三态结果、保留期覆盖最长重试链）；附 REST 资源/分页/过滤/PATCH 模式与 TS 可辨识联合、输入输出分离、品牌类型。改编自 addyosmani/agent-skills 的 api-and-interface-design（MIT）。
+description: API 设计、接口设计、REST 接口规范、模块边界契约、幂等键实现。当用户说「帮我设计这组接口」「REST 怎么命名」「错误码怎么统一」「分页怎么做」「PATCH 还是 PUT」「接口怎么向后兼容」「幂等键怎么实现才不重复扣款」「第三方返回要不要校验」时使用。原则：Hyrum 定律（一切可观察行为都会被依赖）、单版本规则、契约先行、统一错误语义、只在边界校验、只加不改、可预测命名、真正兑现幂等键（意图派生的键、原子占位、载荷校验、在途重复的处理、三态结果、保留期覆盖最长重试链）；附 REST 资源/分页/过滤/PATCH 模式与 TS 可辨识联合、输入输出分离、品牌类型。也覆盖「分页和错误格式」「怎么生成和存储」「不破坏老客户端」这类说法。改编自 addyosmani/agent-skills 的 api-and-interface-design（MIT）。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "API 与接口设计"
 display_name_en: "API & Interface Design (zh)"
 description_zh: "设计难以误用的稳定接口：Hyrum 定律、契约先行、统一错误、边界校验、只加不改、可预测命名，以及幂等键的完整实现要点；含 REST 与 TypeScript 模式。"
 description_en: "Design stable interfaces that are hard to misuse: Hyrum's law, contract first, consistent errors, boundary validation, additive change, predictable naming, and a complete idempotency-key implementation; REST and TypeScript patterns."
+tags:
+  - "API 设计"
+  - "接口设计"
+  - "REST"
+  - "幂等键"
+  - "idempotency"
+  - "契约先行"
+  - "错误码"
 examples_zh:
   - "给任务系统设计一套 REST 接口，含分页和错误格式"
   - "支付接口的幂等键应该怎么生成和存储"
@@ -57,6 +65,12 @@ metadata:
 
 可辨识联合表达状态变体（每个变体自带该状态才有的字段，消费者获得类型收窄）；输入类型与输出类型分离（输出含服务端生成字段）；ID 用品牌类型防止把 UserId 传给要 TaskId 的函数。
 
+## 流程
+1. 先写契约：每个方法的语义、状态码与统一错误体。
+2. 检查改动：新字段只加不改、只在边界校验、命名可预测。
+3. 涉及状态变更或扣款类写操作时，按「幂等键的实现要点」实现并落库。
+4. 对照下面的红灯与验收清单自查。
+
 ## 合理化借口对照
 
 | 借口 | 现实 |
@@ -78,10 +92,12 @@ metadata:
 
 ## 验收
 
+```
 - [ ] 每个端点有类型化的输入输出 schema 　- [ ] 错误响应单一格式 　- [ ] 只在边界校验
 - [ ] 列表接口分页 　- [ ] 新字段可选、向后兼容 　- [ ] 命名一致 　- [ ] 类型/文档随实现一起提交
 - [ ] 改状态的端点要么兑现幂等键，要么文档写明不可重试
 - [ ] 键靠唯一约束原子占位 　- [ ] 同键不同体大声失败 　- [ ] 在途重复的响应是有意选择 　- [ ] 保留期覆盖最长重试路径
+```
 
 ---
 改编自 [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) 的 `api-and-interface-design`（MIT）。改动见 ATTRIBUTION.md。

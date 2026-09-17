@@ -1,12 +1,20 @@
 ---
 name: tdd-zh
-description: 测试驱动开发、红-绿-重构、先写失败测试再修 bug（Prove-It）、测试金字塔、怎么写好测试。当用户说「用 TDD 做这个」「先写测试」「修 bug 前先复现」「测试怎么分层」「mock 太多了」「测试老是抖动」「怎么给这个功能写测试」时使用。要点：先发现仓库自己的测试命令（不要默认 npm test）；RED 写失败测试 → GREEN 最少代码通过 → REFACTOR；修 bug 先写复现测试；金字塔单元 80% / 集成 15% / E2E 5%；小中大三种测试尺寸；测状态不测交互；测试里 DAMP 优于 DRY；真实现 > fake > stub > mock；AAA；一测一概念；描述性命名；反模式表；浏览器改动配 DevTools 验证；复现测试可交给子代理写。改编自 addyosmani/agent-skills 的 test-driven-development（MIT）。
+description: 测试驱动开发、红-绿-重构、先写失败测试再修 bug（Prove-It）、测试金字塔、怎么写好测试。当用户说「用 TDD 做这个」「先写测试」「修 bug 前先复现」「测试怎么分层」「mock 太多了」「测试老是抖动」「怎么给这个功能写测试」时使用。要点：先发现仓库自己的测试命令（不要默认 npm test）；RED 写失败测试 → GREEN 最少代码通过 → REFACTOR；修 bug 先写复现测试；金字塔单元 80% / 集成 15% / E2E 5%；小中大三种测试尺寸；测状态不测交互；测试里 DAMP 优于 DRY；真实现 > fake > stub > mock；AAA；一测一概念；描述性命名；反模式表；浏览器改动配 DevTools 验证；复现测试可交给子代理写。也覆盖「实现任务创建接口」「先写个复现测试再修」「帮我重构测试策略」这类说法。改编自 addyosmani/agent-skills 的 test-driven-development（MIT）。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "测试驱动开发（红-绿-重构）"
 display_name_en: "Test-Driven Development (zh)"
 description_zh: "先写失败的测试再写代码，修 bug 先复现；先发现仓库自己的测试命令；金字塔与测试尺寸；测状态不测交互、DAMP、少 mock、AAA、一测一概念；反模式与验收清单。"
 description_en: "Write the failing test first, reproduce bugs before fixing, discover the repo's own test commands, pyramid and test sizes, test state not interactions, DAMP, minimal mocks, AAA, one concept per test; anti-patterns and verification."
+tags:
+  - "测试驱动开发"
+  - "TDD"
+  - "红绿重构"
+  - "单元测试"
+  - "unit test"
+  - "bug 复现"
+  - "测试金字塔"
 examples_zh:
   - "用 TDD 实现任务创建接口"
   - "这个 bug 先写个复现测试再修"
@@ -69,8 +77,10 @@ bug 报告到了，**不要先修**。先写一个复现它的测试 → 看它�
 写代码没有对应测试；不看仓库用什么就默认 `npm test`；测试第一次就通过（可能没测到你以为的东西）；说"测试全过"但根本没跑；修 bug 没有复现测试；测框架行为；测试名不描述行为；为了绿灯跳过测试；代码没变连跑两次同一命令。
 
 ## 验收
+```
 - [ ] 每个新行为有测试　- [ ] 全量通过，且用的是仓库自己的命令（`npm test` / `./gradlew test` / `pytest` / `go test ./...`…）
 - [ ] bug 修复含修前失败的复现测试　- [ ] 测试名描述行为　- [ ] 没有跳过或禁用的测试　- [ ] 覆盖率未下降（如追踪）
+```
 
 ---
 改编自 [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) 的 `test-driven-development`（MIT）。改动见 ATTRIBUTION.md。

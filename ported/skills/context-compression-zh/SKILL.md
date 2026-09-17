@@ -1,12 +1,20 @@
 ---
 name: context-compression-zh
-description: 上下文压缩、长会话压缩、结构化摘要、compaction、按任务而非按请求优化 token、可持久的交接摘要（保留决策/文件/风险/下一步）、Agent 忘了自己改过哪些文件、压缩质量评估。当用户说「会话太长要压缩一下」「怎么设计对话摘要策略」「压缩之后 Agent 就忘了改过什么文件」「怎么评估摘要有没有丢关键信息」「大代码库超出上下文怎么办」时使用。核心：优化「每任务 token」而不是「每请求 token」（压缩丢了路径/报错/理由会逼 Agent 重新探索，反而更贵）；三种方法——锚定迭代摘要（长会话、需要文件追踪，首选）、不透明压缩（短会话、极致压缩、不可审计）、全量再生摘要（可读性优先、有清晰阶段边界）；先解决「产物轨迹」这个最弱维度；带强制章节的结构化摘要；用探针而不是 ROUGE 评估；六维评分。附评估框架参考。改编自 Agent Skills for Context Engineering 的 context-compression（MIT）。
+description: 上下文压缩、长会话压缩、结构化摘要、compaction、按任务而非按请求优化 token、可持久的交接摘要（保留决策/文件/风险/下一步）、Agent 忘了自己改过哪些文件、压缩质量评估。当用户说「会话太长要压缩一下」「怎么设计对话摘要策略」「压缩之后 Agent 就忘了改过什么文件」「怎么评估摘要有没有丢关键信息」「大代码库超出上下文怎么办」时使用。核心：优化「每任务 token」而不是「每请求 token」（压缩丢了路径/报错/理由会逼 Agent 重新探索，反而更贵）；三种方法——锚定迭代摘要（长会话、需要文件追踪，首选）、不透明压缩（短会话、极致压缩、不可审计）、全量再生摘要（可读性优先、有清晰阶段边界）；先解决「产物轨迹」这个最弱维度；带强制章节的结构化摘要；用探针而不是 ROUGE 评估；六维评分。附评估框架参考。也覆盖「改过的文件」「对话摘要策略」「关键信息」这类说法。改编自 Agent Skills for Context Engineering 的 context-compression（MIT）。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "上下文压缩策略"
 display_name_en: "Context Compression (zh)"
 description_zh: "长会话必须压缩时怎么压才不丢关键信息：优化每任务 token 而非每请求 token；三种生产可用方法与适用场景；结构化强制章节摘要；先保产物轨迹（文件、函数名、报错）；用探针评估六个维度；触发策略与压缩比校准。"
 description_en: "How to compress long agent sessions without losing what matters: optimize tokens-per-task not per-request; three production methods and when to use each; structured summaries with mandatory sections; protect the artifact trail first; probe-based evaluation across six dimensions; trigger strategies and ratio calibration."
+tags:
+  - "上下文压缩"
+  - "context compression"
+  - "长会话"
+  - "摘要"
+  - "token 优化"
+  - "compaction"
+  - "Agent 记忆"
 examples_zh:
   - "会话到 80% 了，帮我按结构化模板压缩一下，别丢改过的文件"
   - "设计一个编码 Agent 的对话摘要策略"
@@ -52,7 +60,7 @@ Agent 会话产生数百万 token 的历史时，压缩是必修课。天真的�
 
 ### 带强制章节的结构化摘要
 
-```markdown
+```
 ## 会话意图
 [用户要完成什么]
 

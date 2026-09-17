@@ -1,12 +1,19 @@
 ---
 name: ci-cd-zh
-description: CI/CD 流水线搭建与自动化质量门禁。当用户说「帮我配一下 CI」「GitHub Actions 怎么写」「流水线太慢」「加个自动化测试门禁」「部署流程怎么自动化」「预览环境」「特性开关怎么用」「回滚流程」「CI 挂了怎么反馈给 AI 修」时使用。核心：左移（越早发现越便宜）、小批量更安全；门禁流水线 lint → 类型 → 单测 → 构建 → 集成 → E2E → 安全审计 → 体积；一个门都不能跳；CI 失败喂回 Agent 的闭环；预览部署、特性开关生命周期、分阶段发布与回滚工作流；环境与密钥管理；Dependabot；Build Cop；超过 10 分钟的优化顺序。改编自 addyosmani/agent-skills 的 ci-cd-and-automation（MIT）。
+description: CI/CD 流水线搭建与自动化质量门禁。当用户说「帮我配一下 CI」「GitHub Actions 怎么写」「流水线太慢」「加个自动化测试门禁」「部署流程怎么自动化」「预览环境」「特性开关怎么用」「回滚流程」「CI 挂了怎么反馈给 AI 修」时使用。核心：左移（越早发现越便宜）、小批量更安全；门禁流水线 lint → 类型 → 单测 → 构建 → 集成 → E2E → 安全审计 → 体积；一个门都不能跳；CI 失败喂回 Agent 的闭环；预览部署、特性开关生命周期、分阶段发布与回滚工作流；环境与密钥管理；Dependabot；Build Cop；超过 10 分钟的优化顺序。也覆盖「项目配一套」「按优先级帮我提速」「预览环境和回滚」这类说法。改编自 addyosmani/agent-skills 的 ci-cd-and-automation（MIT）。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "CI/CD 与自动化门禁"
 display_name_en: "CI/CD & Automation (zh)"
 description_zh: "把质量门禁自动化：lint→类型→测试→构建→集成→E2E→审计→体积一个都不跳；CI 失败喂回 Agent；预览部署、特性开关、分阶段发布与回滚；密钥管理与流水线提速顺序。"
 description_en: "Automate quality gates end to end, feed CI failures back to the agent, use preview deploys, feature flags, staged rollouts and rollback workflows, manage secrets, and speed up pipelines in the right order."
+tags:
+  - "CI/CD"
+  - "持续集成"
+  - "自动化门禁"
+  - "GitHub Actions"
+  - "特性开关"
+  - "部署流程"
 examples_zh:
   - "给这个 Node 项目配一套 GitHub Actions 门禁"
   - "CI 要 20 分钟，按优先级帮我提速"
@@ -20,6 +27,9 @@ metadata:
 ---
 
 # CI/CD 与自动化门禁
+
+## 何时用
+项目还没有 CI、门禁不全、流水线太慢、要接特性开关或预览环境、或 CI 失败需要喂回 Agent 修复时用。已经有一套跑得好的流水线、只是单次调试某次失败，直接看报错即可，不必整套重搭。
 
 CI/CD 是其他所有工程实践的**执行机制**：人和 Agent 漏掉的，它在每一次改动上稳定地抓出来。
 
@@ -73,9 +83,11 @@ Dependabot/Renovate 每周开依赖 PR（限制同时打开数）；**Build Cop*
 
 ## 验收
 
+```
 - [ ] 门禁齐全（lint、类型、测试、构建、审计）　- [ ] 每个 PR 与主干 push 都跑
 - [ ] 失败阻止合并（分支保护）　- [ ] CI 结果回流到开发循环　- [ ] 密钥在密钥管理器里
 - [ ] 部署有回滚机制　- [ ] 测试流水线 10 分钟内
+```
 
 ---
 改编自 [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) 的 `ci-cd-and-automation`（MIT）。改动见 ATTRIBUTION.md。

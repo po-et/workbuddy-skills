@@ -1,12 +1,20 @@
 ---
 name: teach-workspace-zh
-description: 私人教练式学习工作台、系统学一门技能或概念、跨多次会话的教学。当用户说「教我 X」「我想系统学一下 Y」「给我做课程」「帮我制定学习计划并带我练」「我在学 Z 但没章法」时使用，适用于编程、语言、健身、瑜伽、任何有术语体系的领域。把当前目录当学习工作台：MISSION.md（为什么学，一切教学决策的锚）、RESOURCES.md（高信任来源，知识与社区）、GLOSSARY.md（只收录已掌握的术语）、learning-records/（学习记录，等同 ADR，用来算最近发展区）、lessons/（每课一个自包含 HTML，短小、有一个可建立的小胜利）、reference/（速查卡）、assets/（复用组件）、NOTES.md。哲学：知识来自高信任来源，技能来自有反馈回路的互动练习，智慧来自社区；用检索、间隔、交错建立长期记忆。改编自 Matt Pocock 的 teach（MIT）。
+description: 私人教练式学习工作台、系统学一门技能或概念、跨多次会话的教学。当用户说「教我 X」「我想系统学一下 Y」「给我做课程」「帮我制定学习计划并带我练」「我在学 Z 但没章法」时使用，适用于编程、语言、健身、瑜伽、任何有术语体系的领域。把当前目录当学习工作台：MISSION.md（为什么学，一切教学决策的锚）、RESOURCES.md（高信任来源，知识与社区）、GLOSSARY.md（只收录已掌握的术语）、learning-records/（学习记录，等同 ADR，用来算最近发展区）、lessons/（每课一个自包含 HTML，短小、有一个可建立的小胜利）、reference/（速查卡）、assets/（复用组件）、NOTES.md。哲学：知识来自高信任来源，技能来自有反馈回路的互动练习，智慧来自社区；用检索、间隔、交错建立长期记忆。也覆盖「团队交付一个」「我已经会基本查询」「力量训练的基础动作」这类说法。改编自 Matt Pocock 的 teach（MIT）。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "学习工作台（教我一门技能）"
 display_name_en: "Teach Workspace (zh)"
 description_zh: "把一个目录变成学习工作台：任务书、资源清单、术语表、学习记录、每课一个 HTML 小课与速查卡；知识靠高信任来源，技能靠反馈回路，智慧靠社区，按最近发展区推进。"
 description_en: "Turn a directory into a learning workspace: mission, resources, glossary, learning records, one-HTML lessons and reference cards; knowledge from trusted sources, skills from feedback loops, wisdom from communities, paced by the zone of proximal development."
+tags:
+  - "学习工作台"
+  - "teaching"
+  - "coaching"
+  - "间隔重复"
+  - "spaced repetition"
+  - "课程设计"
+  - "最近发展区"
 examples_zh:
   - "教我 Rust，目标是三个月内给团队交付一个 CLI 工具"
   - "系统学一下 SQL 性能优化，我已经会基本查询"
@@ -50,6 +58,14 @@ MISSION 不清或没填，第一件事是问用户为什么学；否则知识不
 
 ## 一次会话怎么做
 1. 读 MISSION、NOTES、最近的学习记录与术语表。2. 没有任务书就访谈并写它；RESOURCES 薄就先找来源。3. 定这次课的目标（最近发展区内、紧扣任务）。4. 读 assets/，写课（知识 → 练习 → 反馈 → 推荐一手来源 → 提醒追问），需要时补速查卡。5. 观察用户表现；有真正的理解或纠正就写学习记录、把掌握的术语收进术语表。6. 记下偏好到 NOTES。
+
+## 收尾自检
+```
+- [ ] MISSION.md 已存在或本次已写清「为什么学」
+- [ ] 这次课的目标落在最近发展区内，不是随便挑的
+- [ ] 课里至少推荐了一个高信任的一手来源
+- [ ] 出现真正的理解或纠正时，已写学习记录 / 更新术语表
+```
 
 ---
 改编自 [mattpocock/skills](https://github.com/mattpocock/skills) 的 `teach`（MIT）。改动见 ATTRIBUTION.md。

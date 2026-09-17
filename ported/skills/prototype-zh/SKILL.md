@@ -1,12 +1,18 @@
 ---
 name: prototype-zh
-description: 用一次性原型回答设计问题、验证状态机或业务逻辑是否合理、快速做几个 UI 方案对比、可分享的单文件 HTML 演示、状态模型演练、界面多方案切换。当用户说「先做个原型试试」「这个状态机对不对我想点一点看看」「给这个页面出三个版本比较一下」「做个 demo 给产品经理感受一下」时使用。两条分支：逻辑原型（单个自包含 HTML：自由按钮 + 分页引导剧本，纯逻辑模块可直接移植进真实代码）与 UI 原型（同一路由上通过 ?variant= 切换的多个结构迥异方案 + 浮动切换条，优先挂在已有页面里）。六条通用规则：一开始就标明是原型；一条命令能跑；默认不持久化；不打磨（无测试无抽象）；每步暴露状态；完成后把结论并入真实代码、原型进一次性分支作一手资料。改编自 Matt Pocock 的 prototype（MIT）。
+description: 用一次性原型回答设计问题、验证状态机或业务逻辑是否合理、快速做几个 UI 方案对比、可分享的单文件 HTML 演示、状态模型演练、界面多方案切换。当用户说「先做个原型试试」「这个状态机对不对我想点一点看看」「给这个页面出三个版本比较一下」「做个 demo 给产品经理感受一下」时使用。两条分支：逻辑原型（单个自包含 HTML：自由按钮 + 分页引导剧本，纯逻辑模块可直接移植进真实代码）与 UI 原型（同一路由上通过 ?variant= 切换的多个结构迥异方案 + 浮动切换条，优先挂在已有页面里）。六条通用规则：一开始就标明是原型；一条命令能跑；默认不持久化；不打磨（无测试无抽象）；每步暴露状态；完成后把结论并入真实代码、原型进一次性分支作一手资料。也覆盖「试各种顺序」「完全不同的布局」「感受一下审批流程」这类说法。改编自 Matt Pocock 的 prototype（MIT）。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "一次性原型（逻辑 / UI）"
 display_name_en: "Prototype (zh)"
 description_zh: "原型是回答一个问题的一次性代码。逻辑问题→单文件 HTML 演示（自由按钮 + 引导剧本，纯逻辑模块可移植）；外观问题→同一路由上 ?variant= 切换的多个结构迥异 UI 方案。附两条分支的完整流程与反模式。"
 description_en: "A prototype is throwaway code that answers one question. Logic question → single-file HTML demo (free-play buttons + guided walkthroughs, liftable pure module); look question → several structurally different UI variants on one route switched via ?variant=. Full process and anti-patterns for both branches."
+tags:
+  - "原型设计"
+  - "prototype"
+  - "一次性代码"
+  - "UI 方案对比"
+  - "状态机验证"
 examples_zh:
   - "退款状态机我拿不准，做个能点的 demo 让我试各种顺序"
   - "设置页出三个完全不同的布局让我挑"
@@ -22,6 +28,19 @@ metadata:
 # 一次性原型
 
 原型是**回答一个问题的一次性代码**。问题决定形状。
+
+## 何时用
+拿不准一个状态机/业务逻辑对不对、或想让人在几个截然不同的 UI 方案里挑一个时用。已经确定要怎么做、只是要正式实现，不需要先做原型。
+
+## 流程
+选分支（逻辑 → LOGIC.md；外观 → UI.md）→ 按对应分支产出可分享的一次性代码 → 应用六条通用规则 → 完成后把验证过的决策并入真实代码、原型归档到一次性分支。
+
+## 产出
+```
+逻辑原型 → 单文件 HTML（自由按钮 + 分页引导剧本，纯逻辑模块可直接移植进真实代码）
+UI 原型   → 同一路由上 ?variant= 切换的多个结构迥异方案 + 浮动切换条
+```
+两者都必须在顶部明确标出"这是原型"，且完成后把结论并入真实代码、原型本身进一次性分支存档。
 
 ## 选分支
 

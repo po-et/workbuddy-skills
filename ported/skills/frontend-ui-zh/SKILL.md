@@ -1,12 +1,20 @@
 ---
 name: frontend-ui-zh
-description: 前端 UI 工程、生产级组件、无障碍（WCAG 2.1 AA）、响应式、状态管理选型、去掉"AI 味"的界面。当用户说「做个像样的页面别一股 AI 味」「组件怎么拆」「状态放哪」「要过无障碍」「响应式怎么做」「加载态和空态怎么设计」时使用。要点：组件同目录（实现/测试/stories/hook/类型）；组合优于配置；容器与展示分离；状态选最简单的（本地 → 提升 → Context → URL → 服务端状态 → 全局 store），prop 穿透不超三层；避免 AI 默认审美的八种表现（紫色渐变、全圆角、通用 hero、假文案、大留白、卡片网格、重阴影）；间距用刻度、标题不跳级、语义色 token；键盘可达、ARIA 标签、焦点管理、有意义的空态与错误态；移动优先四断点；骨架屏与乐观更新。改编自 addyosmani/agent-skills 的 frontend-ui-engineering（MIT）。
+description: 前端 UI 工程、生产级组件、无障碍（WCAG 2.1 AA）、响应式、状态管理选型、去掉"AI 味"的界面。当用户说「做个像样的页面别一股 AI 味」「组件怎么拆」「状态放哪」「要过无障碍」「响应式怎么做」「加载态和空态怎么设计」时使用。要点：组件同目录（实现/测试/stories/hook/类型）；组合优于配置；容器与展示分离；状态选最简单的（本地 → 提升 → Context → URL → 服务端状态 → 全局 store），prop 穿透不超三层；避免 AI 默认审美的八种表现（紫色渐变、全圆角、通用 hero、假文案、大留白、卡片网格、重阴影）；间距用刻度、标题不跳级、语义色 token；键盘可达、ARIA 标签、焦点管理、有意义的空态与错误态；移动优先四断点；骨架屏与乐观更新。也覆盖「过无障碍」「按设计系统改」「这些状态该放」这类说法。改编自 addyosmani/agent-skills 的 frontend-ui-engineering（MIT）。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "前端 UI 工程（生产级·无障碍）"
 display_name_en: "Frontend UI Engineering (zh)"
 description_zh: "做出像设计感工程师做的界面：组件架构与组合、最简状态选型、避开八种 AI 默认审美、设计系统刻度、WCAG 2.1 AA 无障碍、移动优先响应式、骨架屏与乐观更新。"
 description_en: "Build UI that looks intentionally designed, not generated: component architecture and composition, simplest-state selection, avoiding eight AI-default aesthetics, design-system scales, WCAG 2.1 AA accessibility, mobile-first responsiveness, skeletons and optimistic updates."
+tags:
+  - "前端工程"
+  - "UI 设计"
+  - "无障碍"
+  - "accessibility"
+  - "响应式"
+  - "React"
+  - "设计系统"
 examples_zh:
   - "做一个任务列表页面，要生产质量、过无障碍"
   - "这个页面看起来很 AI，帮我按设计系统改"
@@ -22,6 +30,12 @@ metadata:
 # 前端 UI 工程
 
 目标：界面像顶级公司里有设计意识的工程师做的，而不是生成出来的——真正遵守设计系统、正经的无障碍、深思的交互、没有通用的"AI 审美"。
+
+## 何时用
+做生产级页面或组件、要过无障碍审查、界面看起来"很 AI"要改、或不确定状态该放哪一层时用。纯脚本、没有界面的改动不需要它。
+
+## 流程
+先定组件划分与容器/展示分离 → 按状态管理表选最简单能用的方案 → 对照「避开 AI 默认审美」表调间距/圆角/配色 → 补键盘可达、ARIA、焦点管理 → 补加载态/空态/错误态与断点验证 → 对照红灯与验收清单自查。
 
 ## 组件架构
 **同目录**：`TaskList/` 下放实现、测试、stories（如用）、复杂状态的自定义 hook、组件专属类型。
@@ -68,8 +82,10 @@ metadata:
 组件超过 200 行（拆）；行内样式或任意像素值；缺错误态、加载态、空态；没测过键盘导航；颜色是状态的唯一指示（红/绿无文字或图标）；通用 AI 外观（紫色渐变、大卡片、模板布局）。
 
 ## 验收
+```
 - [ ] 渲染无 console 错误　- [ ] 全部可交互元素键盘可达（Tab 一遍）　- [ ] 读屏能传达内容与结构　- [ ] 320/768/1024/1440 都正常
 - [ ] 加载、错误、空态齐全　- [ ] 遵循项目设计系统（间距、颜色、排版）　- [ ] 开发工具或 axe 无无障碍警告
+```
 
 ---
 改编自 [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) 的 `frontend-ui-engineering`（MIT）。改动见 ATTRIBUTION.md。
