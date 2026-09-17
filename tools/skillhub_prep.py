@@ -47,6 +47,7 @@ SLUGS = {
     "git-workflow-zh": "git-workflow-zh",
     "incremental-implementation-zh": "incremental-implementation-zh",
     "planning-tasks-zh": "planning-tasks-zh",
+    "interview-me-zh": "interview-me-zh",
 }
 # 源目录：默认 skills/<name>，复刻的在 ported/skills/<name>
 def source_dir(name: str) -> Path:
@@ -81,6 +82,7 @@ TAGS = {
     "git-workflow-zh": ["git", "分支策略", "主干开发", "原子提交", "语义化版本", "semver", "tag", "changelog", "worktree"],
     "incremental-implementation-zh": ["增量开发", "垂直切片", "小步提交", "特性开关", "实现", "迭代", "敏捷", "范围纪律"],
     "planning-tasks-zh": ["任务拆解", "实施计划", "依赖图", "排期", "估算", "检查点", "任务清单", "plan", "todo"],
+    "interview-me-zh": ["需求访谈", "意图澄清", "需求分析", "访谈", "interview", "产品需求", "一次一问"],
 }
 
 
