@@ -126,3 +126,20 @@ CLI 已装（`~/.local/bin/skillhub`，2026.8.5）；发布副本由 `tools/skil
 | license-check-offline | 203377 | 第二批 |
 | api-diff-test | 203378 | 第二批 |
 | ci-config-review | 203379 | 第二批 |
+
+### SkillHub 第四批（2026-09-16 21:07 前后发布，审核中）— skillId 待补（会话中断丢失输出）
+
+| slug | 来源 |
+|---|---|
+| api-design-zh / code-simplification-zh / deprecation-migration-zh / docs-and-adr-zh | addyosmani/agent-skills（MIT） |
+
+### SkillHub 第五批（2026-09-17 17:50–17:54 发布，审核中）
+
+| slug | skillId |
+|---|---|
+| ci-cd-zh | 204519 |
+| git-workflow-zh | 204525 |
+| incremental-implementation-zh | 204526 |
+| planning-tasks-zh | 204529 |
+
+观察：skillId 从昨晚 203379 到今天 204529，平台约 1100 个/天的发布量。第一批 24 小时后仍未进入搜索索引（审核中）。

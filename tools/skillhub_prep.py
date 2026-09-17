@@ -43,6 +43,10 @@ SLUGS = {
     "deprecation-migration-zh": "deprecation-migration-zh",
     "api-design-zh": "api-design-zh",
     "docs-and-adr-zh": "docs-and-adr-zh",
+    "ci-cd-zh": "ci-cd-zh",
+    "git-workflow-zh": "git-workflow-zh",
+    "incremental-implementation-zh": "incremental-implementation-zh",
+    "planning-tasks-zh": "planning-tasks-zh",
 }
 # 源目录：默认 skills/<name>，复刻的在 ported/skills/<name>
 def source_dir(name: str) -> Path:
@@ -73,6 +77,10 @@ TAGS = {
     "deprecation-migration-zh": ["迁移", "下线", "废弃", "数据库迁移", "expand contract", "不停机", "灰度", "绞杀者模式", "deprecation"],
     "api-design-zh": ["API 设计", "接口设计", "REST", "幂等", "接口规范", "分页", "错误码", "向后兼容", "OpenAPI"],
     "docs-and-adr-zh": ["ADR", "架构决策", "技术文档", "README", "注释规范", "文档", "documentation", "决策记录"],
+    "ci-cd-zh": ["CI/CD", "GitHub Actions", "流水线", "自动化", "质量门禁", "部署", "特性开关", "回滚", "DevOps"],
+    "git-workflow-zh": ["git", "分支策略", "主干开发", "原子提交", "语义化版本", "semver", "tag", "changelog", "worktree"],
+    "incremental-implementation-zh": ["增量开发", "垂直切片", "小步提交", "特性开关", "实现", "迭代", "敏捷", "范围纪律"],
+    "planning-tasks-zh": ["任务拆解", "实施计划", "依赖图", "排期", "估算", "检查点", "任务清单", "plan", "todo"],
 }
 
 
