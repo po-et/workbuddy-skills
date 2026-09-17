@@ -200,3 +200,10 @@ CLI 已装（`~/.local/bin/skillhub`，2026.8.5）；发布副本由 `tools/skil
 | sql-migration-check | 204763 | 19:32:05 |
 
 冲突（需换 slug 重发）：context-compression-zh
+
+### SkillHub 第十批（cron / OpenAPI）（2026-09-17，2 个，机器审核中）
+
+| slug | skillId | 发布时间 |
+|---|---|---|
+| cron-explain | 204770 | 19:34:52 |
+| openapi-breaking-diff | 204772 | 19:36:08 |
