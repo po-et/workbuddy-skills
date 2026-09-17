@@ -87,6 +87,21 @@ SLUGS = {
     "skill-lint": "skill-lint-scorecard",
     "skillhub-publish-helper": "skillhub-publish-helper",
     "interview-me-zh": "interview-me-zh",
+    "release-readiness-check": "release-readiness-check",
+    "secrets-scan": "secrets-scan",
+    "config-env-diff": "config-env-diff",
+    "i18n-missing-keys": "i18n-missing-keys",
+    "test-coverage-gap": "test-coverage-gap",
+    "brainstorming-zh": "brainstorming-zh",
+    "systematic-debugging-zh": "systematic-debugging-zh",
+    "writing-plans-zh": "writing-plans-zh",
+    "executing-plans-zh": "executing-plans-zh",
+    "verification-before-completion-zh": "verification-before-completion-zh",
+    "subagent-driven-development-zh": "subagent-driven-development-zh",
+    "dispatching-parallel-agents-zh": "dispatching-parallel-agents-zh",
+    "using-git-worktrees-zh": "using-git-worktrees-zh",
+    "receiving-code-review-zh": "receiving-code-review-zh",
+    "finishing-a-development-branch-zh": "finishing-a-development-branch-zh",
 }
 # 源目录：默认 skills/<name>，复刻的在 ported/skills/<name>
 def source_dir(name: str) -> Path:
@@ -161,6 +176,21 @@ TAGS = {
     "skill-lint": ["SKILL.md", "技能质量", "打分", "lint", "技能开发", "可发现性", "发布前检查", "skill creator"],
     "skillhub-publish-helper": ["SkillHub", "发布", "publish", "CLI", "批量发布", "技能发布", "skillhub publish", "上架"],
     "interview-me-zh": ["需求访谈", "意图澄清", "需求分析", "访谈", "interview", "产品需求", "一次一问"],
+    "release-readiness-check": ["上线检查", "上线体检", "发布门禁", "release readiness", "Dockerfile", "Kubernetes", "SQL 迁移", "OpenAPI", ".env"],
+    "secrets-scan": ["密钥扫描", "泄密自查", "secret scanning", "硬编码密钥", "token 泄露", "提交历史", "安全审计", "CI 门禁"],
+    "config-env-diff": ["配置对比", "多环境", "配置漂移", "env diff", "YAML", "properties", "上线核对", "配置管理"],
+    "i18n-missing-keys": ["国际化", "i18n", "多语言", "缺失 key", "locales", "占位符", "翻译检查", "前端"],
+    "test-coverage-gap": ["测试覆盖", "coverage", "测试缺口", "补测试", "Cobertura", "lcov", "测试债", "质量门禁"],
+    "brainstorming-zh": ["头脑风暴", "需求澄清", "方案设计", "spec", "设计文档", "探针", "YAGNI", "动手前对齐"],
+    "systematic-debugging-zh": ["系统化调试", "根因分析", "debug", "复现", "假设验证", "纵深防御", "抖动测试", "排查"],
+    "writing-plans-zh": ["实施计划", "任务拆解", "plan", "TDD", "文件结构", "占位符", "验收标准", "交接执行"],
+    "executing-plans-zh": ["执行计划", "逐任务实现", "检查点", "验证步骤", "遇阻即停", "待办", "落地", "研发效能"],
+    "verification-before-completion-zh": ["完成前验证", "证据优先", "测试通过", "提交前检查", "自检门禁", "红绿往返", "回归测试", "质量门禁"],
+    "subagent-driven-development-zh": ["子代理", "Agent 编排", "任务评审", "修复循环", "进度账本", "选模型", "上下文压缩", "并发调度"],
+    "dispatching-parallel-agents-zh": ["并行代理", "子代理派发", "并发排查", "问题域切分", "提示词设计", "结果合并", "冲突检查", "Agent 编排"],
+    "using-git-worktrees-zh": ["git worktree", "工作树", "隔离工作区", "分支保护", "基线测试", "gitignore", "子模块", "并行开发"],
+    "receiving-code-review-zh": ["代码评审", "评审意见", "code review", "技术反驳", "YAGNI", "PR 评论", "逐条修复", "澄清提问"],
+    "finishing-a-development-branch-zh": ["分支收尾", "合并", "Pull Request", "工作树清理", "基线分支", "上线落地", "git", "发布"],
 }
 
 
