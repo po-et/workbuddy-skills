@@ -1,6 +1,6 @@
 ---
 name: json-schema-infer
-description: 从样例 JSON 推断 JSON Schema、根据接口返回生成 schema、给没有文档的 API 补契约、JSONL 事件样本推断结构、识别可选字段与可空字段、枚举候选与格式（日期时间/邮箱/UUID/URL）、生成校验用 schema。当用户说「根据这几条返回帮我生成 JSON Schema」「这个接口没文档，从样例推一下结构」「哪些字段是可选的哪些可能为 null」「给这批事件数据生成校验 schema」时使用。附纯标准库脚本 scripts/schema_infer.py：合并多条样例（数组或 JSONL），输出 draft 2020-12 schema，含 required（可调阈值）、可空类型、嵌套对象与数组、枚举候选、format 识别，可选 minimum/maximum、maxLength、examples、additionalProperties: false。
+description: 从样例 JSON 推断 JSON Schema、根据接口返回生成 schema、给没有文档的 API 补契约、JSONL 事件样本推断结构、识别可选字段与可空字段、枚举候选与格式（日期时间/邮箱/UUID/URL）、生成校验用 schema。当用户说「根据这几条返回帮我生成 JSON Schema」「这个接口没文档，从样例推一下结构」「哪些字段是可选的哪些可能为 null」「给这批事件数据生成校验 schema」时使用。附纯标准库脚本 scripts/schema_infer.py：合并多条样例（数组或 JSONL），输出 draft 2020-12 schema，含 required（可调阈值）、可空类型、嵌套对象与数组、枚举候选、format 识别，可选 minimum/maximum、maxLength、examples、additionalProperties=false 严格模式。
 author: Captain
 version: 0.1.0
 display_name: "JSON Schema 推断"
