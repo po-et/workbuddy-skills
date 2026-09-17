@@ -248,3 +248,15 @@ CLI 已装（`~/.local/bin/skillhub`，2026.8.5）；发布副本由 `tools/skil
 | dev-branch-finishing-zh | 204994 | 22:47:49 |
 
 冲突（需换 slug 重发）：brainstorming-zh, writing-plans-zh, executing-plans-zh, verification-before-completion-zh, dispatching-parallel-agents-zh, using-git-worktrees-zh, receiving-code-review-zh, finishing-a-development-branch-zh
+
+### SkillHub 34 个更新版（0.1.1）重发（2026-09-17，3 个，机器审核中）
+
+| slug | skillId | 发布时间 |
+|---|---|---|
+| api-design-zh | 203418 | 23:00:14 |
+| code-simplification-zh | 203420 | 23:05:16 |
+| deprecation-migration-zh | 203421 | 23:14:06 |
+
+## 更新记录
+
+- 2026-09-17：30 个技能升至 0.1.1 重发（补标签、描述与小节，无功能变更）：api-design-zh、architecture-deepening-zh、ci-cd-zh、code-review-five-axis-zh、code-simplification-zh、constraints-md-zh、context-compression-strategies-zh、context-degradation-zh、context-engineering-zh、context-fundamentals-zh、deep-module-design-zh、deprecation-migration-zh、diagnosing-bugs-zh、doc-coauthoring-zh、domain-modeling-zh、engineering-skills-index-zh、frontend-ui-zh、handoff-doc-zh、incremental-implementation-zh、observability-zh、performance-optimization-zh、prototype-zh、re-pitch-zh、research-primary-zh、security-hardening-zh、tdd-seams-zh、tdd-zh、teach-workspace-zh、to-questionnaire-zh、writing-for-agents-zh
