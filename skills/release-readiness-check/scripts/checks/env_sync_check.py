@@ -7,7 +7,8 @@
   python3 env_sync_check.py --json --strict      # 有缺失必填变量则退出码 1
 检查项：示例里有、环境文件缺（缺配置）；环境文件有、示例没有（未登记）；代码读取但示例没有（漏文档）；示例定义但代码从未读取（僵尸变量）；环境文件里的疑似真实密钥；重复定义。
 """
-import argparse, json, os, re, sys
+import argparse, json, math, os, re, sys
+from collections import Counter
 
 ENV_LINE = re.compile(r"^\s*(?:export\s+)?([A-Za-z_][A-Za-z0-9_]*)\s*=\s*(.*)$")
 READ_PATTERNS = [
@@ -25,8 +26,54 @@ READ_PATTERNS = [
     re.compile(r"env::var\s*\(\s*\"([A-Z][A-Z0-9_]+)\""),                            # rust
     re.compile(r"Env\.get\(['\"]([A-Z][A-Z0-9_]+)['\"]"),
 ]
-SECRET_KEY = re.compile(r"(PASSWORD|PASSWD|SECRET|TOKEN|API_?KEY|PRIVATE_?KEY|ACCESS_?KEY|CREDENTIAL|DSN|DATABASE_URL)", re.I)
-PLACEHOLDER = re.compile(r"^(|\$\{.*\}|<.*>|xxx+|your[-_].*|change[-_]?me|placeholder|todo|\*+|example|dummy|redacted)$", re.I)
+# ---- 密钥启发式：名字 + 值 双重判定；名字像密钥还不够，值也要真的像密钥才报 ----
+# 连接串类命名：以 _URL 结尾但确实带凭据，要先于下面的「非敏感命名」排除
+DSN_NAME = re.compile(r"(?:^|_)(?:DSN|DATABASE_URL|DB_URL|CONNECTION_STRING|CONN_STR(?:ING)?)(?:_|$)", re.I)
+# 命中即认为名字指向密钥
+SECRET_NAME = re.compile(r"""(?xi)
+      PASSWORD | PASSWD | (?:^|_)PWD(?:_|$)
+    | SECRET | CREDENTIALS? | PASSPHRASE | TOKEN
+    | (?:API|ACCESS|PRIVATE|SECRET|SIGNING|SIGN|CIPHER|ENCRYPT(?:ION)?|DECRYPT(?:ION)?|
+       MASTER|APP|CLIENT|AUTH|SESSION|HMAC|JWT|LICENSE|WEBHOOK)_?KEYS?
+    | SIGNING | SIGNATURE | CIPHER | SALT | PEPPER | PRIVATE | CERT(?:IFICATE)?
+    | KEYSTORE | TRUSTSTORE | (?:^|_)AUTH(?:_|$) | (?:^|_)KEY(?:_|$)
+""")
+# 名字里带这些词的一律不当密钥：*_KEY_ID、PUBLIC_KEY、KEY_PREFIX、*_KEYS_COUNT、各种 URL/ID/开关/超时
+NON_SECRET_NAME = re.compile(r"""(?xi)
+      PUBLIC
+    | (?:^|_)KEYS?_(?:ID|IDS|NAME|NAMES|PREFIX|SUFFIX|PATH|FILE|DIR|COUNT|NUM|NUMBER|TOTAL|SIZE|
+       LEN|LENGTH|VERSION|ALGO(?:RITHM)?|TTL|ROTATION|REF|ARN|URI|URL|ENABLED?)(?:_|$)
+    | (?:^|_)(?:SECRET|TOKEN|PASSWORD|CERT|KEYSTORE|SALT)_(?:NAME|NAMES|ID|IDS|REF|ARN|PATH|FILE|DIR|
+       MANAGER|PROVIDER|BACKEND|STORE|TTL|EXPIRES?(?:_IN)?|EXPIRY|EXPIRATION|TIMEOUT|LENGTH|LEN|SIZE|
+       COUNT|PREFIX|SUFFIX|HEADER|ISSUER|AUDIENCE|ALGO(?:RITHM)?|ROTATION|VERSION|URL|URI|ENDPOINT|
+       ENABLED?|REQUIRED|MODE|TYPE|SCOPE|SCOPES|ROUNDS)(?:_|$)
+    | _(?:URL|URI|ENDPOINT|HOST|HOSTNAME|DOMAIN|PORT|ADDR|ADDRESS|ID|IDS|NAME|PATH|FILE|DIR|FOLDER|
+       ENABLED|ENABLE|DISABLED|MODE|TYPE|KIND|FORMAT|ALGO|ALGORITHM|TTL|TIMEOUT|EXPIRY|EXPIRES|
+       EXPIRATION|COUNT|NUM|NUMBER|TOTAL|SIZE|LEN|LENGTH|LIMIT|VERSION|REGION|ZONE|ISSUER|AUDIENCE|
+       SUBJECT|PROVIDER|STRATEGY|REALM|SCOPE|SCOPES|METHOD|HEADER|HEADERS|ROTATION|REF|ARN|PREFIX|
+       SUFFIX|PATTERN|REGEX|TEMPLATE|SCHEMA|SCHEME|LEVEL|POLICY|ROLE|USER|USERNAME|OWNER|SECONDS|
+       MS|MINUTES|HOURS|DAYS)$
+""")
+# 一眼是占位符的整值：空、<...>、***、${VAR}、changeme、your-...、xxx、REPLACE_ME、TODO 等
+PLACEHOLDER = re.compile(r"""(?xi)^\s*(
+      | -+ | n/?a | none | null | nil | undefined | \*+ | x+ | \?+ | _+ | \.+
+    | \$\{[^}]*\} | \$[A-Za-z_][A-Za-z0-9_]* | %[A-Za-z_]+% | \{\{[^}]*\}\} | <[^>]*> | \[[^\]]*\]
+    | (?:change|replace|update|set|fill|insert|put|paste)[-_ ]?(?:me|it|this|here|your)[-_ ]?\w*
+    | your[-_. ].* | my[-_ ]?(?:secret|password|passwd|key|token|dsn).*
+    | place[-_ ]?holder\w* | example\w* | sample\w* | dummy\w* | fake\w* | mock\w* | demo\w*
+    | todo\w* | fixme\w* | tbd | redacted\w* | masked\w* | hidden | omitted | unset | disabled
+    | secret | password | passwd | token | api[-_ ]?key | key | credential | value | string
+    )\s*$""")
+# 值里任意位置出现这些词就当占位符（CHANGE_THIS_TO_A_REAL_SECRET 这种）
+PLACEHOLDER_WORD = re.compile(r"""(?xi)(?:^|[^A-Za-z0-9])(
+      change[-_]?(?:me|this|it)? | replace[-_]?(?:me|this|it)? | your[-_] | place[-_]?holder
+    | example | sample | dummy | fake | mock | redacted | masked | todo | fixme | tbd
+    | not[-_]?set | fill[-_]?(?:me|in) | set[-_]?me | insert[-_]?your | xxxx+
+    | real[-_]?secret | secret[-_]?here | key[-_]?here | value[-_]?here | goes[-_]?here
+    )(?:[^A-Za-z0-9]|$)""")
+URL_LIKE = re.compile(r"^[A-Za-z][A-Za-z0-9+.\-]*://")
+URL_CRED = re.compile(r"^[A-Za-z][A-Za-z0-9+.\-]*://[^:@/\s]*:(?P<pw>[^@/\s]*)@")
+NUMERIC = re.compile(r"^[\d.,:_+\-]+$")
 SRC_EXT = {".py", ".js", ".ts", ".tsx", ".jsx", ".mjs", ".cjs", ".go", ".java", ".kt", ".rb", ".php", ".rs", ".sh", ".bash", ".yml", ".yaml", ".toml", ".cfg", ".ini", ".env"}
 
 
@@ -69,10 +116,45 @@ def scan_src(root):
     return found
 
 
-def looks_real_secret(k, v):
-    if not SECRET_KEY.search(k) or PLACEHOLDER.match(v):
+def secret_name(k):
+    """变量名是否指向密钥：先认连接串，再排除 *_KEY_ID / PUBLIC_KEY / KEY_PREFIX / *_KEYS_COUNT 这类命名。"""
+    u = (k or "").upper()
+    if DSN_NAME.search(u):
+        return True
+    if NON_SECRET_NAME.search(u):
         return False
-    return len(v) >= 12 and not v.startswith("${")
+    return bool(SECRET_NAME.search(u))
+
+
+def entropy(v):
+    """Shannon 熵（bit/字符）：随机密钥通常 ≥ 3，重复串与纯数字远低于此。"""
+    n = len(v)
+    if n < 2:
+        return 0.0
+    return -sum((c / n) * math.log2(c / n) for c in Counter(v).values())
+
+
+def strong_value(v):
+    """值本身像不像密钥：长度 ≥ 12、不是占位形态、熵/字符类混排够高。"""
+    v = (v or "").strip()
+    if len(v) < 12 or PLACEHOLDER.match(v) or PLACEHOLDER_WORD.search(v) or NUMERIC.match(v):
+        return False
+    classes = sum(bool(re.search(p, v)) for p in (r"[a-z]", r"[A-Z]", r"\d", r"[^A-Za-z0-9]"))
+    e = entropy(v)
+    return e >= 3.0 or (e >= 2.5 and classes >= 3)
+
+
+def looks_real_secret(k, v):
+    """名字像密钥且值也像密钥才算真密钥；连接串只看内嵌的密码部分。"""
+    v = (v or "").strip()
+    if not v:
+        return False
+    m = URL_CRED.match(v)
+    if m:                                  # postgresql://user:pass@host/db：只判断 pass 那一段
+        return strong_value(m.group("pw"))
+    if URL_LIKE.match(v):                  # 是 URL 但没内嵌凭据，不算密钥
+        return False
+    return secret_name(k) and strong_value(v)
 
 
 def main():
@@ -108,9 +190,9 @@ def main():
         for k, (v, ln) in vars_.items():
             if looks_real_secret(k, v):
                 add("warn", "secret", f"{name} 第 {ln} 行的 {k} 看起来是真实密钥；确认该文件在 .gitignore 中且未被提交", name)
-        for k, (v, ln) in ex_vars.items():
-            if looks_real_secret(k, v):
-                add("high", "secret-in-example", f"示例文件第 {ln} 行的 {k} 看起来是真实密钥，示例文件会被提交到仓库", example)
+    for k, (v, ln) in ex_vars.items():
+        if looks_real_secret(k, v):
+            add("high", "secret-in-example", f"示例文件第 {ln} 行的 {k} 看起来是真实密钥，示例文件会被提交到仓库", example)
     if example:
         for k in sorted(set(code_vars) - set(ex_vars)):
             files = sorted(code_vars[k])[:3]

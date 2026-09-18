@@ -72,6 +72,16 @@ class Spec:
         return props, required
 
 
+def enum_removed(old_enum, new_enum):
+    """返回新规范里被去掉的枚举取值；任一侧没有 enum 就认为没有收窄。"""
+    if not isinstance(old_enum, list) or not isinstance(new_enum, list) or not old_enum or not new_enum:
+        return []
+    def key(v):
+        return v if isinstance(v, (str, int, float, bool, type(None))) else json.dumps(v, sort_keys=True, ensure_ascii=False)
+    kept = {key(v) for v in new_enum}
+    return sorted((v for v in old_enum if key(v) not in kept), key=str)
+
+
 def type_of(s):
     if not isinstance(s, dict):
         return None
@@ -109,9 +119,9 @@ def diff(old, new):
             ot, nt = type_of(old.resolve(p.get("schema", {}))), type_of(new.resolve(q.get("schema", {})))
             if ot and nt and ot != nt:
                 b("param-type-changed", where, f"参数 {pk[0]}:{pk[1]} 类型 {ot} → {nt}")
-            oe, ne = old.resolve(p.get("schema", {})).get("enum"), new.resolve(q.get("schema", {})).get("enum")
-            if oe and ne and set(oe) - set(ne):
-                b("param-enum-narrowed", where, f"参数 {pk[1]} 枚举移除了 {sorted(set(oe) - set(ne))}")
+            gone = enum_removed(old.resolve(p.get("schema", {})).get("enum"), new.resolve(q.get("schema", {})).get("enum"))
+            if gone:
+                b("param-enum-narrowed", where, f"参数 {pk[1]} 枚举移除了 {gone}")
         for pk, q in n["_params"].items():
             if pk not in o["_params"]:
                 if q.get("required"):
@@ -138,9 +148,9 @@ def diff(old, new):
                 ot, nt = type_of(op_[name]), type_of(np_[name])
                 if ot and nt and ot != nt:
                     b("body-field-type-changed", where, f"请求字段 {name} 类型 {ot} → {nt}")
-                oe, ne = (op_[name] or {}).get("enum"), (np_[name] or {}).get("enum")
-                if oe and ne and set(oe) - set(ne):
-                    b("body-enum-narrowed", where, f"请求字段 {name} 枚举移除了 {sorted(set(oe) - set(ne))}")
+                gone = enum_removed((op_[name] or {}).get("enum"), (np_[name] or {}).get("enum"))
+                if gone:
+                    b("body-enum-narrowed", where, f"请求字段 {name} 枚举移除了 {gone}")
             for name in sorted(set(np_) - set(op_)):
                 if name not in nreq:
                     a("body-field-added", where, f"新增可选请求字段 {name}")
@@ -166,6 +176,10 @@ def diff(old, new):
                         b("response-field-type-changed", where, f"响应 {code} 字段 {name} 类型 {ot} → {nt}")
                     if (op_[name] or {}).get("nullable") is False and (np_[name] or {}).get("nullable") is True:
                         b("response-field-nullable", where, f"响应 {code} 字段 {name} 变为可空")
+                    gone = enum_removed((op_[name] or {}).get("enum"), (np_[name] or {}).get("enum"))
+                    if gone:
+                        b("response-enum-narrowed", where,
+                          f"响应 {code} 字段 {name} 枚举移除了 {gone}（客户端可能依赖这些取值）")
                 for name in sorted(oreq - nreq):
                     b("response-field-no-longer-required", where, f"响应 {code} 字段 {name} 不再保证返回")
                 for name in sorted(set(np_) - set(op_)):
