@@ -1,17 +1,14 @@
 ---
 title: 上线前五分钟体检：把 Dockerfile / K8s / SQL / OpenAPI / .env 五项检查串成一条 CI 门禁
 summary: 用一个零依赖的「上线体检」Skill 让 WorkBuddy 一条命令跑完五类发布风险检查，第一次跑出 13 个 high，按报告的「→ 改法」逐条收敛到 0，最后把同一条命令接进 CI 当发布门禁；含一次误报、一次漏报和一次「修 warn 修出新 high」的真实过程。
-author: Captain
+author: po-et
 date: "2026-09-18"
 category: 研发效能
 difficulty: 进阶
+aside: false
+outline: false
 skills:
   - release-readiness-check
-  - dockerfile-check
-  - k8s-manifest-check
-  - sql-migration-check
-  - openapi-breaking-diff
-  - env-sync-check
 tags:
   - 上线检查
   - CI 门禁
@@ -21,20 +18,34 @@ tags:
   - 研发效能
 ---
 
-# 上线前五分钟体检：把五项检查串成一条 CI 门禁
+# 上线前五分钟体检：把 Dockerfile / K8s / SQL / OpenAPI / .env 五项检查串成一条 CI 门禁
 
-## 一、场景
+## 场景描述
 
 后端服务发版前的风险排查。复盘过去几次线上问题，事后看**全都能在提交代码之前静态查出来**：镜像 `ENV` 里留了一行数据库密码（镜像层永久保留，换密码也删不掉历史层）；Deployment 没配 `resources`，高峰期把节点内存吃满；迁移脚本里一条没有 DEFAULT 的 `ADD COLUMN ... NOT NULL` 在有数据的表上直接失败，发布卡在一半；响应字段 `total_fee` 改名成 `amount`，两个下游调用方不知道；`.env.production` 少一个回调地址，服务起来了但回调静默丢弃。
 
 这五类问题分属五个工具、五个人的习惯，没人会在发版前依次跑五遍，所以真实结局是都不跑。需要的不是更全的工具，而是**一条命令、一个结论、一个能塞进 CI 的退出码**。
 
-## 二、WorkBuddy 侧的配置
+## 想要完成的任务
 
-- **Skill**：`release-readiness-check`（上线体检，总入口）。五个检查器已内置在 `scripts/checks/` 里，装这一个就够；需要更细参数时再单独装 `dockerfile-check`、`k8s-manifest-check`、`sql-migration-check`、`openapi-breaking-diff`、`env-sync-check`。
-- **模式**：普通任务模式即可，脚本本身不到一秒，模型负责读报告、判断真伪、给改法。
-- **权限**：默认权限（只读本地目录 + 执行 `python3`）。
-- **不需要**专家、连接器或 MCP，**不联网**。
+输入：一个准备发布的后端服务代码仓库，本地已有（或部分已有）`Dockerfile`、K8s 部署清单（YAML）、SQL 迁移脚本、新旧两版 OpenAPI 规范、`.env.example` / `.env.production`。
+
+目标和交付物：
+
+1. 一条命令跑完五类发布风险检查：Dockerfile、K8s 清单、SQL 迁移、OpenAPI 兼容性、`.env` 配置一致性。
+2. 一份 Markdown 报告：总览表 → 各项 top 问题 → 门禁结论，每条问题带「文件:行号 / 对象名 / 方法+路径」定位、规则号和「→ 改法」。
+3. 一个可读的门禁结论（「不建议上线」/「可以上线，但先看 warn」）。
+4. 同一条命令能接进 CI（`--strict`），有 high 时退出码 1，直接当发布门禁用。
+
+这是演示项目 `orders-api` 的具体化目标，背后是一个更通用的任务：把「发版前应该做但没人会记得依次做五遍」的检查，压缩成「一条命令、一个结论、一个退出码」。
+
+## 使用的 Skill
+
+| Skill | 用途 | 来源或安装方式 |
+| --- | --- | --- |
+| `release-readiness-check` | 总入口。扫描目标目录，发现 Dockerfile、K8s 清单、SQL 迁移、OpenAPI 规范、`.env` 文件，逐项调用内置检查器并汇总成报告与门禁结论 | 开源（MIT），仓库 `https://github.com/po-et/workbuddy-skills`，技能目录 `skills/release-readiness-check/`。**尚未上架 WorkBuddy 或 SkillHub 应用市场**，需要把该目录复制到本地 Skill 目录后使用 |
+
+`release-readiness-check` 内置五个检查器，装总入口这一个就够；需要单独调参数时可以只装对应的一个，来源与安装方式同上：`dockerfile-check`、`k8s-manifest-check`、`sql-migration-check`、`openapi-breaking-diff`、`env-sync-check`。
 
 技能做四件事：**发现 → 执行 → 汇总 → 判门禁**。它走一遍目标目录（跳过 `.git`、`node_modules`、`vendor`、`dist` 等），按特征归类文件：`Dockerfile*`、同时含 `apiVersion:` 与 `kind:` 的 YAML、`*.sql`、`openapi*/swagger*` 规范、根目录 `.env*`；逐项用子进程调用内置检查器（统一加 `--json`），把五种结果归一成 `severity / code / where / message / fix`；最后一条硬规则给结论：**有 high 就是「不建议上线」**。某一项挂了只标「执行失败」，其余四项照跑，并在结论里写明「结论只覆盖跑通的部分」。
 
@@ -46,24 +57,77 @@ tags:
 | OpenAPI 兼容 | 新旧两份规范的破坏性变更 | 删接口、响应字段不再保证返回 |
 | .env 配置 | 示例文件、环境文件、代码三方对齐 | 环境文件缺了示例中登记的变量 |
 
-## 三、操作步骤与真实输出
+## 前置条件
+
+- WorkBuddy 可正常使用，普通任务模式即可（脚本本身执行不到一秒，模型负责读报告、判断真伪、给改法）。
+- 权限：默认权限即可——只读本地目标目录 + 执行 `python3`；不需要专家、连接器或 MCP，全程不联网。
+- 操作系统：本文命令与终端回显为 macOS 本机实跑；检查器本身不依赖操作系统特性，Linux CI 环境同样适用——未在 Windows 上验证，**需确认**。
+- 需要一个准备发布的目标项目，本地已有（或部分已有）`Dockerfile`、K8s 部署清单、SQL 迁移脚本、新旧两版 OpenAPI 规范、`.env.example` / `.env.production`；只覆盖其中几类也可以，未覆盖的检查项会显示「跳过」而不是报错。
+- 不需要任何外部账号、API Key 或付费服务。
+
+## 在 WorkBuddy 中的操作
 
 演示对象是一个按真实项目常见写法构造的最小服务 `orders-api`（11 个文件，域名统一 `example.com`）：`Dockerfile` 里 `ENV DB_PASSWORD=...`、`RUN apt-get update` 与 `install` 分开、`COPY . .` 在依赖安装之前；`k8s/deployment.yaml` 用 `:latest`、无 `resources`、无探针、`env` 明文密码；`migrations/0042_add_channel.sql` 一次性做了「加 NOT NULL 列 + 无 WHERE 回填 + DROP COLUMN + 建索引」；`api/openapi.json` 相对上一版删了 `DELETE /orders/{id}`、把 `page_size` 改必填、把 `total_fee` 改名成 `amount`；`.env.production` 比 `.env.example` 少一个 `ORDER_CALLBACK_URL`。
 
-**第 1 步：发任务。**
+**第 1 步：发任务。** 提示词见下一节「提示词或任务指令」。WorkBuddy 执行的命令：
+
+```bash
+python3 scripts/release_check.py . --openapi-base api/openapi.v1.json --out ./release-report.md
+```
+
+**第 2 步：第一次体检。** 五项检查逐项给出 high/warn/info 计数，合计 13 个 high，门禁结论「不建议上线」。完整回显见下一节「在 WorkBuddy 中的效果」。
+
+**第 3 步：按报告里每条的「→ 改法」逐条改。** 报告每条都带改法，WorkBuddy 按项给出 diff，我判断哪几条是真问题：
+
+- `DF006`：删掉 `ENV DB_PASSWORD`，改运行时注入。
+- `K010`：`value:` 换成 `valueFrom.secretKeyRef`。
+- `SM001/SM003/SM006`：一次性迁移拆成扩展-收缩两阶段，本次只做扩展：
+
+```sql
+-- 0042 扩展阶段：只加可空列 + 分批回填，不删旧列
+ALTER TABLE orders ADD COLUMN channel VARCHAR(32);
+UPDATE orders SET channel = 'web' WHERE channel IS NULL AND id <= 100000;
+CREATE INDEX CONCURRENTLY idx_orders_channel ON orders (channel);
+-- 收缩阶段（0044，等代码不再读写 source_legacy 且上线一周后）：
+--   ALTER TABLE orders ALTER COLUMN channel SET NOT NULL;
+--   ALTER TABLE orders DROP COLUMN source_legacy;
+```
+
+- OpenAPI 六条：不改设计，改兼容方式——接口加回来、`page_size` 恢复可选、`total_fee` 与 `amount` 同时保留且同时必返（`total_fee` 标 `deprecated`）、被收窄的 `status` 枚举值 `cancelled` 加回去，版本号 1.5.0 → 1.5.1。
+- `.env` 两条：生产补 `ORDER_CALLBACK_URL`；示例里的 `DB_DSN` 换成 `<postgresql://user:pass@host:5432/orders>` 这种一眼是占位符的写法。
+
+**第 4 步：复跑，确认收敛。** 复跑过程中出现的插曲见「遇到的问题」；终态回显见「在 WorkBuddy 中的效果」。
+
+**第 5 步：接进 CI。** `--strict` 在有 high 时退出码 1。GitHub Actions 写法（两个分支都在 bash 下实跑验证过）：
+
+```yaml
+- name: 上线体检
+  run: |
+    # 技能目录 vendor 进仓库里，路径按你自己的放法改
+    SCRIPT=vendor/release-readiness-check/scripts/release_check.py
+    BASE_REF="${GITHUB_BASE_REF:-main}"
+    if git show "origin/$BASE_REF:api/openapi.json" > /tmp/openapi-base.json 2>/dev/null; then
+      python3 "$SCRIPT" . --openapi-base /tmp/openapi-base.json --out release-report.md --strict
+    else
+      echo "[warn] 取不到 origin/$BASE_REF 的 api/openapi.json，本次跳过 OpenAPI 比对"
+      python3 "$SCRIPT" . --skip openapi --out release-report.md --strict
+    fi
+```
+
+这一步踩的坑（空规范当 base 会制造假绿灯）见「遇到的问题」。
+
+## 提示词或任务指令
 
 ```text
 用上线体检给 ~/code/orders-api 做一次发布前检查，OpenAPI 的旧版本用 api/openapi.v1.json，
 报告写到项目根目录，有 high 的逐条告诉我怎么改。
 ```
 
-WorkBuddy 执行的命令：
+WorkBuddy 把这句自然语言指令翻译成「在 WorkBuddy 中的操作」第 1 步里 `release-readiness-check` 的那次调用。CI 里的调用是写死在 workflow 里的脚本命令，不是对话指令，见第 5 步的 YAML 片段。
 
-```bash
-python3 scripts/release_check.py . --openapi-base api/openapi.v1.json --out ./release-report.md
-```
+## 在 WorkBuddy 中的效果
 
-**第 2 步：第一次体检。** 真实回显（2026-09-18 本机实跑）：
+**第一次体检，真实回显**（2026-09-18 本机实跑）：
 
 ```text
 上线体检 · /.../orders-api
@@ -99,26 +163,7 @@ python3 scripts/release_check.py . --openapi-base api/openapi.v1.json --out ./re
 
 报告每项最多列 10 条，K8s 实际 14 条，单跑 `python3 scripts/k8s_check.py k8s/` 看到多出来的是 `K011`（未指定 namespace）、`K012`（NodePort 对外暴露）、`K019`（default ServiceAccount 自动挂载 token）。
 
-**第 3 步：按「→ 改法」逐条改。** 报告每条都带改法，WorkBuddy 按项给出 diff，我判断哪几条是真问题：
-
-- `DF006`：删掉 `ENV DB_PASSWORD`，改运行时注入。
-- `K010`：`value:` 换成 `valueFrom.secretKeyRef`。
-- `SM001/SM003/SM006`：一次性迁移拆成扩展-收缩两阶段，本次只做扩展：
-
-```sql
--- 0042 扩展阶段：只加可空列 + 分批回填，不删旧列
-ALTER TABLE orders ADD COLUMN channel VARCHAR(32);
-UPDATE orders SET channel = 'web' WHERE channel IS NULL AND id <= 100000;
-CREATE INDEX CONCURRENTLY idx_orders_channel ON orders (channel);
--- 收缩阶段（0044，等代码不再读写 source_legacy 且上线一周后）：
---   ALTER TABLE orders ALTER COLUMN channel SET NOT NULL;
---   ALTER TABLE orders DROP COLUMN source_legacy;
-```
-
-- OpenAPI 六条：不改设计，改兼容方式——接口加回来、`page_size` 恢复可选、`total_fee` 与 `amount` 同时保留且同时必返（`total_fee` 标 `deprecated`）、被收窄的 `status` 枚举值 `cancelled` 加回去，版本号 1.5.0 → 1.5.1。
-- `.env` 两条：生产补 `ORDER_CALLBACK_URL`；示例里的 `DB_DSN` 换成 `<postgresql://user:pass@host:5432/orders>` 这种一眼是占位符的写法。
-
-**第 4 步：复跑，遇到「修 warn 修出一个新 high」。** high 从 13 掉到 1，而这个 1 是我自己造出来的：为了消掉「代码读了但示例没登记」的 warn，我把 `PAYMENT_TIMEOUT_MS` 写进了 `.env.example`，于是 `.env.production` 立刻变成 `missing`。这个检查器的语义很硬——**示例登记的变量，每个环境文件都必须有**，它不认「代码里有默认值所以可以不配」。我认同这个取向（靠默认值兜底的超时参数正是最容易在某个环境被忘掉的），所以补进 `.env.production` 而不是从示例里删。终态：
+**终态**（按「→ 改法」逐条改完并处理完插曲后复跑）：
 
 ```text
   Dockerfile 体检         high 0 / warn 2 / info 7
@@ -133,27 +178,9 @@ CREATE INDEX CONCURRENTLY idx_orders_channel ON orders (channel);
 
 OpenAPI 剩下的 5 条 info 全是纯新增（新增可选参数 `channel`、响应新增 `amount` 与 `channel`），可以直接抄进变更日志发给调用方。
 
-**第 5 步：接进 CI。** `--strict` 在有 high 时退出码 1（实测：修之前 `echo $?` 得 1，修完得 0）。GitHub Actions 写法（两个分支都在 bash 下实跑验证过）：
+**CI 门禁验证**：`--strict` 退出码随 high 计数变化——修之前 `echo $?` 得 1，修完得 0（本机实测）。
 
-```yaml
-- name: 上线体检
-  run: |
-    # 技能目录 vendor 进仓库里，路径按你自己的放法改
-    SCRIPT=vendor/release-readiness-check/scripts/release_check.py
-    BASE_REF="${GITHUB_BASE_REF:-main}"
-    if git show "origin/$BASE_REF:api/openapi.json" > /tmp/openapi-base.json 2>/dev/null; then
-      python3 "$SCRIPT" . --openapi-base /tmp/openapi-base.json --out release-report.md --strict
-    else
-      echo "[warn] 取不到 origin/$BASE_REF 的 api/openapi.json，本次跳过 OpenAPI 比对"
-      python3 "$SCRIPT" . --skip openapi --out release-report.md --strict
-    fi
-```
-
-**这里有个坑值得单独说**：一开始我把「取不到旧规范」的兜底写成 `|| echo '{}' > /tmp/openapi-base.json`。实测空规范当 base，所有接口都被算成「新增」，该项返回 `high 0 / warn 0 / info 3`，**给出一个漂亮的假绿灯**。兜底必须是 `--skip openapi`（报告会明写「跳过」，门禁结论也会注明覆盖范围），不能喂空文件。
-
-## 四、产出物
-
-一份 Markdown 报告（总览表 → 各项 top 问题 → 门禁结论）+ 一个退出码 + 可选 JSON（`{target, generated, report, total, items[]}`，`items[]` 每项含 `status / reason / targets / counts / findings`，可直接喂给机器人）。报告能贴进上线单，因为它满足评审要的三件事：**每条有位置（文件:行号 / 对象名 / 方法+路径）、有规则号、有改法**。
+**产出物**：一份 Markdown 报告（总览表 → 各项 top 问题 → 门禁结论）+ 一个退出码 + 可选 JSON（`{target, generated, report, total, items[]}`，`items[]` 每项含 `status / reason / targets / counts / findings`，可直接喂给机器人）。报告能贴进上线单，因为它满足评审要的三件事：**每条有位置（文件:行号 / 对象名 / 方法+路径）、有规则号、有改法**。
 
 | | 第一次 | 修完 high | 终态 |
 |---|---:|---:|---:|
@@ -165,7 +192,20 @@ OpenAPI 剩下的 5 条 info 全是纯新增（新增可选参数 `channel`、�
 
 13 个 high 里，靠人工 checklist 能稳定抓住的大概只有 Dockerfile 那条明文密码（因为它最出名）。`SM003`、`param-now-required`、`missing` 这三类是典型的「上线当晚才发现」。
 
-## 五、边界（这部分请一定读完）
+## 验收标准
+
+- 报告 summary 五项检查逐项给出 high/warn/info 计数（没有「执行失败」项），版式与 CLI 回显一致。
+- 门禁结论文本随 high 计数变化：13 个 high → 「不建议上线」；high 清零后 → 「可以上线，但先看 warn」。
+- `--strict` 退出码随 high 计数变化：有 high 时 `echo $?` 为 1，high 清零后为 0（本机实测）。
+- 报告中每条 high/warn 都带「文件:行号 / 对象名 / 方法+路径」定位 + 规则号 + 「→ 改法」，可以直接抄进上线单或变更日志。
+- CI 用空 JSON 兜底 OpenAPI base 会把所有接口误判为「新增」（`high 0 / warn 0 / info 3`），正确兜底必须是 `--skip openapi` 并在报告里显式注明「跳过」。
+
+## 遇到的问题
+
+- **「修 warn 修出一个新 high」**：high 从 13 掉到 1，而这个 1 是自己造出来的——为了消掉「代码读了但示例没登记」的 warn，把 `PAYMENT_TIMEOUT_MS` 写进了 `.env.example`，于是 `.env.production` 立刻变成 `missing`。这个检查器的语义很硬——**示例登记的变量，每个环境文件都必须有**，它不认「代码里有默认值所以可以不配」。这个取向是合理的（靠默认值兜底的超时参数正是最容易在某个环境被忘掉的），所以最终选择补进 `.env.production`，而不是从示例里删。
+- **CI 假绿灯**：一开始把「取不到旧规范」的兜底写成 `|| echo '{}' > /tmp/openapi-base.json`。实测空规范当 base，所有接口都被算成「新增」，该项返回 `high 0 / warn 0 / info 3`，给出一个漂亮的假绿灯。兜底必须是 `--skip openapi`（报告会明写「跳过」，门禁结论也会注明覆盖范围），不能喂空文件。
+
+## 安全与限制
 
 1. **误报真实存在。** `.env.example` 里 `DB_DSN=postgresql://user:pass@localhost:5432/orders` 被判成 `secret-in-example`（high），其实是占位符。密钥启发式看的是「变量名命中 PASSWORD/SECRET/TOKEN/API_KEY/PRIVATE_KEY/ACCESS_KEY/CREDENTIAL/DSN/DATABASE_URL，且值不是 `${...}`/`<...>`/`xxx`/`your-*`/`changeme`/`placeholder`/`example`/`dummy`/`redacted` 这些占位形态，且长度 ≥ 12」。**不要为了清零去改坏配置**，这是这类工具最容易被用错的地方。
 2. **漏报更危险。** 同一份示例里 `JWT_SIGNING_KEY=8f14e45fceea167a5a36dedd4bea2543`（32 位十六进制，非常像真密钥）**没有**被判成密钥——名字匹配的是 `API_KEY / PRIVATE_KEY / ACCESS_KEY` 这几种带前缀的写法，`JWT_SIGNING_KEY` 不在名单里。同理，把响应字段 `status` 的枚举值 `cancelled` 删掉属于响应枚举收窄，工具也没报——枚举收窄规则只覆盖参数与请求字段。**报告干净 ≠ 没问题**，密钥扫描要另配专门工具，接口语义变化仍要靠评审。
@@ -173,9 +213,9 @@ OpenAPI 剩下的 5 条 info 全是纯新增（新增可选参数 `channel`、�
 4. **几个硬限制**，否则会「跑了但其实没查」：OpenAPI 项必须给 `--openapi-base`，只有一份规范时会跳过；Helm/Kustomize 模板不展开，带 `{{ }}` 的 YAML 会被标为模板跳过，要先 `helm template` 渲染；`.env` 只看目标目录根部，`deploy/prod/.env` 要单独跑一次；YAML 格式的 OpenAPI 需要 PyYAML，没有就先转 JSON；K8s 的最小 YAML 解析不支持锚点合并 `<<: *x` 与多行 flow 集合。
 5. **分级取舍由团队定。** high 必须清零并作为 CI 门禁；warn 每条有人认领；info（如 `K011` 未指定 namespace、`K019` default SA、`DF015` CMD shell 形式）每季度扫一次，挑几条升级成团队基线，不要每次发布都纠结。
 
-## 六、怎么复用
+## 可以怎样复用
 
-1. **装技能**：SkillHub 搜索 `release-readiness-check`（总入口，五个检查器已内置）；单项技能 slug：`dockerfile-check`、`k8s-manifest-check`、`sql-migration-check`、`openapi-breaking-diff`、`env-sync-check`。也可以直接从开源仓库取目录放进本地技能目录。
+1. **装技能**：目前从开源仓库 `https://github.com/po-et/workbuddy-skills` 的 `skills/release-readiness-check/` 目录复制到本地 Skill 目录即可（总入口，五个检查器已内置）；单项技能同理，从对应子目录复制：`dockerfile-check`、`k8s-manifest-check`、`sql-migration-check`、`openapi-breaking-diff`、`env-sync-check`。尚未上架 WorkBuddy 或 SkillHub 应用市场。
 2. **第一次跑别开 `--strict`**：存量项目大概率一片红，先出报告、把 high 列成表、分两三个迭代清掉，清零后再挂 CI，从此只拦新增。
 3. **三条命令够用**：
 
