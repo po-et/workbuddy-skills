@@ -262,3 +262,75 @@ CLI 已装（`~/.local/bin/skillhub`，2026.8.5）；发布副本由 `tools/skil
 - 2026-09-17：30 个技能升至 0.1.1 重发（补标签、描述与小节，无功能变更）：api-design-zh、architecture-deepening-zh、ci-cd-zh、code-review-five-axis-zh、code-simplification-zh、constraints-md-zh、context-compression-strategies-zh、context-degradation-zh、context-engineering-zh、context-fundamentals-zh、deep-module-design-zh、deprecation-migration-zh、diagnosing-bugs-zh、doc-coauthoring-zh、domain-modeling-zh、engineering-skills-index-zh、frontend-ui-zh、handoff-doc-zh、incremental-implementation-zh、observability-zh、performance-optimization-zh、prototype-zh、re-pitch-zh、research-primary-zh、security-hardening-zh、tdd-seams-zh、tdd-zh、teach-workspace-zh、to-questionnaire-zh、writing-for-agents-zh
 - 同日重试（间隔 120 s）：成功 0 个（）；仍失败 4 个（codeowners-suggest、git-branch-cleanup、git-hotspots、tech-design-review），待下次重发
 - 09-18 00:54 第二次重试（等满一小时后）：成功 0 个（无）；仍失败 4 个（codeowners-suggest、git-branch-cleanup、git-hotspots、tech-design-review）
+
+## 内容渠道投稿
+
+仓库根：`/Users/limit/AI/My-Research/workbuddy-skills`。下面的相对路径都从这里算。
+
+### 两篇文章
+
+| # | 文章 | 路径 | 字数 | 状态 |
+|---|---|---|---:|---|
+| 案例 #1 | 用 WorkBuddy 把一周的 Git 提交整理成可溯源的迭代周报 | `docs/articles/02-案例-用-WorkBuddy-把一周提交整理成可溯源的迭代周报.md` | ≈1,700 中文字 | 正文定稿，缺 4 张截图 + 积分实测 |
+| 案例 #2 | 上线前五分钟：把 Dockerfile / K8s / SQL / OpenAPI / .env 五项检查串成一条 CI 门禁 | `docs/articles/03-案例-上线前五分钟体检-把五项检查串成一条-CI-门禁.md` | ≈4,500 中文字 | 正文定稿，**所有命令与输出已在本机实跑（2026-09-18）**，缺 5 张截图 + 积分实测 |
+
+案例 #2 用到的真实素材：`release-readiness-check`（总入口）+ `dockerfile-check` / `k8s-manifest-check` / `sql-migration-check` / `openapi-breaking-diff` / `env-sync-check`。真实跑出来的数字：第一次 high 13 / warn 9 / info 22（门禁「不建议上线」，`--strict` 退出码 1）→ 修完 high 0 / warn 8 / info 21（门禁「可以上线，但先看 warn」，退出码 0）；三次运行耗时 0.19s / 0.16s / 0.15s。演示项目 `orders-api` 的全部文件内容写在文章第三节，可逐字复现（脚本产物只在本机 scratchpad，不入库）。
+
+### 还缺什么
+
+**案例 #1（4 张图，清单见 `docs/articles/02-assets/README.md`）**
+
+- [ ] 你截 4 张客户端过程图：技能详情页 / 前置确认问答 / 第一版报告里的假工单 + 带 `--no-issues` 的重跑 / 最终周报第一与第六节
+- [ ] 你补 Ask 模式一次任务的积分消耗实测值（文中现为「待补」）
+
+**案例 #2（5 张图，清单见 `docs/articles/03-assets/README.md`，含谁截/截哪/要出现什么）**
+
+- [ ] 图 2（最关键）：WorkBuddy 任务对话 + 脚本回显，画面里要能看到 `合计：high 13 / warn 9 / info 22` 与 `门禁：不建议上线（有 high）`
+- [ ] 图 4：WorkBuddy 给 SQL 三条 high 的「扩展-收缩」改法那段对话
+- [ ] 图 1 / 图 3：技能详情页（未上架就截本地 SKILL.md）/ 报告的总览表 + 门禁结论
+- [ ] 图 5（可选）：CI 上门禁拦住 PR 的运行记录；没有现成 CI 就删掉文章里图 5 的占位行，别留空图
+- [ ] 需要我把演示项目 `orders-api` 落到 `~/code/orders-api` 供你截图？说一声即可
+- [ ] 你确认一件事：文中六个技能在 SkillHub 的上架状态。2026-09-17 发布时均为机器审核中（`release-readiness-check` 204909、`dockerfile-check` 204761、`k8s-manifest-check` 204780、`sql-migration-check` 204763、`openapi-breaking-diff` 204772、`env-sync-check` 204775）；`docs/skillhub-growth.md` 记录 82 个已发布技能中 81 个已进搜索索引，但**这六个的具体上架状态与技能页 URL 需确认**（文章现在只列 slug + 开源仓库链接，不写平台 URL，就是为了不写没核实的东西）
+
+### 腾讯云开发者社区《WorkBuddy 行业应用指南》有奖征集
+
+- **窗口**：2026-09-02 10:00 → **2026-10-08 23:59**（距今约 3 周）。发布平台不限，投完稿要填「WorkBuddy 行业应用指南共创投稿问卷」。
+- **完整案例门槛**：≥800 字、≥3 张过程截图、四段（输入材料 / WorkBuddy 配置 / 操作步骤 / 产出物）。两篇都满足字数，**只差截图**。
+- **奖励**（依据 `docs/channels.md`，可兼得、同一作者可累积）：投稿奖 200–500 积分；阶段奖 1000 积分 + 100 元代金券（每周 10 名）；指南收录奖每篇 2,000 积分 + 500 元代金券 + 周边 + 共创者权益；满 3 / 6 篇有阶梯。
+- **加分项**：写明用到的专家/专家团/Skill/连接器的具体层级 + 公开 Skill 配置（我们本来就开源）。**不予收录**：未脱敏的公司材料、只有成品无过程、AI 编造——所以两篇都只用公开仓库与 `example.com`。
+- [ ] 满 3 篇触发阶梯奖：案例 #3 建议写 `incident-brief`（线上排查简报），10-08 前发出去
+
+### 蓝皮书 PR 的下一步命令
+
+投稿包已备好：`docs/articles/bluebook-submission/release-readiness-gate/index.md`（≈2,350 中文字，蓝皮书体例，**不引用图片**，所以不等截图就能提）+ `docs/articles/bluebook-submission/PR-BODY.md`（PR 描述草稿）。完整七步命令序列见 `docs/articles/bluebook-submission/README.md`。
+
+先跑第 0 步（只读，核对上游约定，**frontmatter 字段集目前只有我们案例 #1 的写法作依据，需确认**）：
+
+```bash
+gh auth status
+gh api repos/AlephAITech/WorkBuddyGuide --jq '.default_branch'
+gh api repos/AlephAITech/WorkBuddyGuide/contents/docs/cases/submissions --jq '.[].name'
+gh api repos/AlephAITech/WorkBuddyGuide/contents/CONTRIBUTING.md --jq '.content' | base64 -d | head -80
+```
+
+核对无误后（`SLUG=release-readiness-gate`、`SRC=/Users/limit/AI/My-Research/workbuddy-skills/docs/articles/bluebook-submission`、`WORK=~/code/WorkBuddyGuide`）：
+
+```bash
+gh repo fork AlephAITech/WorkBuddyGuide --clone=false
+git clone https://github.com/po-et/WorkBuddyGuide.git "$WORK" && cd "$WORK"
+git remote add upstream https://github.com/AlephAITech/WorkBuddyGuide.git && git fetch upstream
+BASE=$(gh api repos/AlephAITech/WorkBuddyGuide --jq '.default_branch')
+git checkout -B "case/$SLUG" "upstream/$BASE"
+mkdir -p "docs/cases/submissions/$SLUG" && cp -R "$SRC/$SLUG/." "docs/cases/submissions/$SLUG/"
+git add "docs/cases/submissions/$SLUG" && git commit -F- <<'MSG'
+docs(cases): 新增案例「上线前五分钟体检——把五项检查串成一条 CI 门禁」
+MSG
+git push -u origin "case/$SLUG"
+gh pr create --repo AlephAITech/WorkBuddyGuide --base "$BASE" --head "po-et:case/$SLUG" \
+  --title "docs(cases): 新增案例「上线前五分钟体检——把五项检查串成一条 CI 门禁」" \
+  --body-file "$SRC/PR-BODY.md"
+```
+
+- [ ] 提 PR 后在维护者微信群说一句（依据 `docs/channels.md`：刘聪NLP、袋鼠帝、甲木、Joy）
+- [ ] 合并后把案例页 URL 回填到本节，并加进仓库 README
+- [ ] 案例 #1 的蓝皮书版还没做（上游 slug 计划 `git-iteration-report`）；等截图到位、腾讯云那边定稿后一起改格式
