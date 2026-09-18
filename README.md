@@ -178,7 +178,7 @@ iteration-report ──迭代区间──> release-readiness-check ──高风�
 | [`dep-outdated-check`](skills/dep-outdated-check/) | 七种依赖清单查落后多少版本，按主/次/补丁分级并给升级顺序建议 | ✅ 零依赖 |
 | [`dep-vuln-check`](skills/dep-vuln-check/) | 解析六种锁文件查 OSV.dev 已知漏洞（免 API Key），给严重度与建议升级版本 | ✅ 零依赖 |
 | [`docker-compose-check`](skills/docker-compose-check/) | docker-compose.yml 上线前体检：特权、docker.sock、明文密钥、镜像未固定、缺健康检查 | ✅ 零依赖 |
-| [`dockerfile-check`](skills/dockerfile-check/) | Dockerfile 18 条最佳实践与安全规则体检，分级输出并附具体改法 | ✅ 零依赖 |
+| [`dockerfile-check`](skills/dockerfile-check/) | Dockerfile 17 条最佳实践与安全规则体检，分级输出并附具体改法 | ✅ 零依赖 |
 | [`env-sync-check`](skills/env-sync-check/) | .env.example、各环境 .env 与代码实际读取的变量三方对齐，顺带查示例文件里的真密钥 | ✅ 零依赖 |
 | [`i18n-missing-keys`](skills/i18n-missing-keys/) | 多语言文案对齐：缺失键、多余键、空值、占位符不一致，外加代码里用了却没定义的键 | ✅ 零依赖 |
 | [`k8s-manifest-check`](skills/k8s-manifest-check/) | K8s 清单生产就绪检查：安全基线、资源限制、探针、废弃 API、selector 匹配 | ✅ 零依赖 |

@@ -51,9 +51,9 @@ tags:
 
 | 检查项 | 看什么 | 典型 high |
 |---|---|---|
-| Dockerfile | 18 条最佳实践与安全规则 | `ENV`/`ARG` 把密钥写进镜像层 |
-| K8s 清单 | 19 条生产就绪基线：资源、探针、安全上下文、镜像标签、selector 匹配 | 环境变量里明文写密码 |
-| SQL 迁移 | 18 条锁表与不可逆风险规则，自动识别 MySQL / PostgreSQL 方言 | DROP COLUMN、无 WHERE 的 UPDATE/DELETE |
+| Dockerfile | 17 条最佳实践与安全规则 | `ENV`/`ARG` 把密钥写进镜像层 |
+| K8s 清单 | 17 条生产就绪基线：资源、探针、安全上下文、镜像标签、selector 匹配 | 环境变量里明文写密码 |
+| SQL 迁移 | 16 条锁表与不可逆风险规则，自动识别 MySQL / PostgreSQL 方言 | DROP COLUMN、无 WHERE 的 UPDATE/DELETE |
 | OpenAPI 兼容 | 新旧两份规范的破坏性变更 | 删接口、响应字段不再保证返回 |
 | .env 配置 | 示例文件、环境文件、代码三方对齐 | 环境文件缺了示例中登记的变量 |
 

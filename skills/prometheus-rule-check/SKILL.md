@@ -1,8 +1,8 @@
 ---
 name: prometheus-rule-check
-description: Prometheus 告警规则体检、录制规则检查、告警规则评审、alert rules lint、告警缺 for 导致瞬时抖动就误报、for 太短、缺 severity 标签、注解缺 summary 与 description、告警内容没有 labels 与 value 上下文、rate 窗口小于抓取间隔 4 倍、rate 与 increase 用在非 counter 指标、没有聚合导致告警风暴、告警名重复、expr 里硬编码实例或 IP、录制规则命名不合三段式、labels 里写 instance 或 job 覆盖原标签、同组规则过多、这条告警为什么老是误报、录制规则命名规范吗。当用户说「帮我看看这些告警规则有没有问题」「上线前评审一下 rules.yml」「把告警规则检查加进 CI」「为什么这条告警半夜乱叫」时使用。附纯标准库脚本 scripts/promrule_check.py，内置最小 YAML 解析不依赖 PyYAML 与 promtool，17 条规则分 high/warn/info 并附改法，支持目录递归、--scrape-interval、--json 与 --strict。
+description: Prometheus 告警规则体检、录制规则检查、告警规则评审、alert rules lint、告警缺 for 导致瞬时抖动就误报、for 太短、缺 severity 标签、注解缺 summary 与 description、告警内容没有 labels 与 value 上下文、rate 窗口小于抓取间隔 4 倍、rate 与 increase 用在非 counter 指标、没有聚合导致告警风暴、告警名重复、expr 里硬编码实例或 IP、录制规则命名不合三段式、labels 里写 instance 或 job 覆盖原标签、同组规则过多、这条告警为什么老是误报、录制规则命名规范吗。当用户说「帮我看看这些告警规则有没有问题」「上线前评审一下 rules.yml」「把告警规则检查加进 CI」「为什么这条告警半夜乱叫」时使用。附纯标准库脚本 scripts/promrule_check.py，内置最小 YAML 解析不依赖 PyYAML 与 promtool，20 条规则分 high/warn/info 并附改法，支持目录递归、--scrape-interval、--json 与 --strict。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "Prometheus 规则体检"
 display_name_en: "Prometheus Rule Check"
 description_zh: "不装依赖、不连 Prometheus 就能给告警与录制规则做评审：查缺 for、for 过短、缺 severity、注解无上下文、rate 窗口与抓取间隔不匹配、rate 作用在非 counter、缺聚合致告警风暴、告警名重复、硬编码实例、labels 覆盖原标签、录制规则命名与单组规则过多，分级输出附改法，可当 CI 门禁。"
@@ -61,6 +61,7 @@ python3 scripts/promrule_check.py rules/ --strict                 # 有 high/war
 | P011 | warn | 录制规则名不合 `level:metric:operation` 三段式 |
 | P012 | warn | 告警名含空格或非驼峰 |
 | P021 | warn | 规则组名重复 |
+| P022 | warn | group 的 `interval` 不是合法时长（如写成 `30`、`1minute`） |
 | P005 | info | 注解里没用到 `{{ $labels }}` 或 `{{ $value }}` |
 | P008 | info | 表达式无聚合且指标疑似高基数（告警风暴风险） |
 | P013 | info | 同组规则超过 20 条 |

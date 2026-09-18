@@ -23,7 +23,7 @@
 | [`dep-outdated-check`](../skills/dep-outdated-check/) | 七种依赖清单查落后多少版本，按主/次/补丁分级并给升级顺序建议 | `dep_outdated.py` | python3 | `dep-outdated-check` | 原创 |
 | [`dep-vuln-check`](../skills/dep-vuln-check/) | 解析六种锁文件查 OSV.dev 已知漏洞（免 API Key），给严重度与建议升级版本 | `osv_check.py` | python3 | `dep-vuln-check-osv` | 原创 |
 | [`docker-compose-check`](../skills/docker-compose-check/) | docker-compose.yml 上线前体检：特权、docker.sock、明文密钥、镜像未固定、缺健康检查 | `compose_check.py` | python3 | 未发布 | 原创 |
-| [`dockerfile-check`](../skills/dockerfile-check/) | Dockerfile 18 条最佳实践与安全规则体检，分级输出并附具体改法 | `dockerfile_check.py` | python3 | `dockerfile-check` | 原创 |
+| [`dockerfile-check`](../skills/dockerfile-check/) | Dockerfile 17 条最佳实践与安全规则体检，分级输出并附具体改法 | `dockerfile_check.py` | python3 | `dockerfile-check` | 原创 |
 | [`env-sync-check`](../skills/env-sync-check/) | .env.example、各环境 .env 与代码实际读取的变量三方对齐，顺带查示例文件里的真密钥 | `env_sync_check.py` | python3 | `env-sync-check` | 原创 |
 | [`i18n-missing-keys`](../skills/i18n-missing-keys/) | 多语言文案对齐：缺失键、多余键、空值、占位符不一致，外加代码里用了却没定义的键 | `i18n_missing_keys.py` | python3 | `i18n-missing-keys` | 原创 |
 | [`k8s-manifest-check`](../skills/k8s-manifest-check/) | K8s 清单生产就绪检查：安全基线、资源限制、探针、废弃 API、selector 匹配 | `k8s_check.py` | python3 | `k8s-manifest-check` | 原创 |

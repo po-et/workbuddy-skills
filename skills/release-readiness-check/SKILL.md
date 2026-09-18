@@ -2,7 +2,7 @@
 name: release-readiness-check
 description: 上线前五分钟体检、发布前检查、上线卡点、release readiness、一条命令跑完 Dockerfile / K8s 清单 / SQL 迁移 / OpenAPI 兼容 / .env 配置五项检查并汇总成一份报告。当用户说「能不能上线」「上线前检查一下」「发布前体检」「帮我看看这次上线有没有风险」「上线 checklist 跑一遍」「CI 加个上线门禁」时使用。附纯标准库脚本 scripts/release_check.py，自动发现目标目录里的 Dockerfile、含 kind 的 K8s YAML、*.sql 迁移、openapi 规范、.env 文件，逐项用子进程调用内置的五个独立检查器，汇总为 Markdown 报告（总览表 → 各项 top 问题 → 门禁结论）。门禁三态：有 high 判「不建议上线」；无 high 但有项拿不到证据（子脚本崩溃、旧规范为空/无 paths、只有 Helm 模板、缺 .env 示例）判「无法判断，缺 N 项证据」并同样不放行；全部项都有结论且无 high 才是「可以上线」。目录里没有这类文件算「不适用」，不影响放行。支持 --json、--strict 做 CI 门禁（有 high 或有无法判断项则退出码 1）、--skip 显式豁免某项、--openapi-base 比对旧规范。
 author: Captain
-version: 0.1.1
+version: 0.1.2
 display_name: "上线体检"
 display_name_en: "Release Readiness Check"
 description_zh: "一条命令给一个项目做上线前五分钟体检：Dockerfile、K8s 清单、SQL 迁移、OpenAPI 兼容、.env 配置五项一起跑，汇总成一份带三态门禁结论（不建议上线 / 无法判断 / 可以上线）的报告。纯 Python 标准库。"
@@ -71,7 +71,7 @@ python3 k8s_check.py <清单目录> --strict
 
 | 检查项 | 看什么 | 典型 high | 单项技能 |
 |---|---|---|---|
-| Dockerfile | 18 条最佳实践与安全规则：基础镜像未固定、root 运行、缓存层失效、管道执行远程脚本 | ENV/ARG 把密钥写进镜像层 | `dockerfile-check` |
+| Dockerfile | 17 条最佳实践与安全规则：基础镜像未固定、root 运行、缓存层失效、管道执行远程脚本 | ENV/ARG 把密钥写进镜像层 | `dockerfile-check` |
 | K8s 清单 | Deployment/Service 等对象的生产就绪基线：资源 requests/limits、探针、安全上下文、镜像标签 | 环境变量里明文写密码，该用 secretKeyRef | `k8s-manifest-check` |
 | SQL 迁移 | 迁移脚本的锁表与不可逆风险，自动识别 MySQL / PostgreSQL 方言 | DROP COLUMN、没有 WHERE 的 UPDATE/DELETE | `sql-migration-check` |
 | OpenAPI 兼容 | 新旧两份规范的破坏性变更：接口删除、参数变必填、响应字段消失或改类型 | 删接口、改字段类型、响应字段不再保证返回 | `openapi-breaking-diff` |

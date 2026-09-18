@@ -1,12 +1,12 @@
 ---
 name: nginx-config-check
-description: nginx 配置体检、nginx.conf 安全与性能检查、反向代理配置审查、server_tokens 泄露版本号、缺 gzip 压缩、listen 443 没开 http2、ssl_protocols 还允许 TLSv1 与 TLSv1.1、缺 HSTS 与 X-Frame-Options 与 X-Content-Type-Options 安全响应头、proxy_pass 没配 proxy_read_timeout 超时、缺 client_max_body_size 导致 413、server_name 重复被静默覆盖、location 里 root 与 alias 用混、alias 没以斜杠结尾的目录穿越、if is evil、access_log off、worker_processes 写死、upstream 没有 keepalive、autoindex on 列目录。当用户说「帮我看看这份 nginx 配置」「nginx 上线前检查一下」「为什么 502 或 413」「这个反代配置对不对」「nginx 安全加固」时使用。附脚本 scripts/nginx_check.py，纯标准库、自带指令解析器能展开 include 通配，16 条规则分 high/warn/info 并附改法，支持 --json 与 --strict。
+description: nginx 配置体检、nginx.conf 安全与性能检查、反向代理配置审查、server_tokens 泄露版本号、缺 gzip 压缩、listen 443 没开 http2、ssl_protocols 还允许 TLSv1 与 TLSv1.1、缺 HSTS 与 X-Frame-Options 与 X-Content-Type-Options 安全响应头、proxy_pass 没配 proxy_read_timeout 超时、缺 client_max_body_size 导致 413、server_name 重复被静默覆盖、location 里 root 与 alias 用混、alias 没以斜杠结尾的目录穿越、if is evil、access_log off、worker_processes 写死、upstream 没有 keepalive、autoindex on 列目录。当用户说「帮我看看这份 nginx 配置」「nginx 上线前检查一下」「为什么 502 或 413」「这个反代配置对不对」「nginx 安全加固」时使用。附脚本 scripts/nginx_check.py，纯标准库、自带指令解析器能展开 include 通配，17 条规则分 high/warn/info 并附改法，支持 --json 与 --strict。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "nginx 配置体检"
 display_name_en: "Nginx Config Check"
-description_zh: "不装任何依赖就能给 nginx 配置做安全与性能体检：自带指令解析器（含 include 展开、块嵌套、注释与引号处理），按 nginx 的继承语义判断 TLS 协议、安全响应头、代理超时、日志、gzip、http2、server_name 冲突、root 与 alias 误用、if is evil、autoindex 列目录等 16 条规则，分级输出附改法，可作 CI 门禁。"
-description_en: "Zero-dependency security and performance audit for nginx configs: a built-in directive parser (include expansion, nested blocks, comments, quotes) plus 16 inheritance-aware rules covering TLS protocols, security headers, proxy timeouts, logging, gzip, HTTP/2, duplicate server_name, root vs alias misuse, if-is-evil and directory listing; graded findings with fixes, CI-gate ready."
+description_zh: "不装任何依赖就能给 nginx 配置做安全与性能体检：自带指令解析器（含 include 展开、块嵌套、注释与引号处理），按 nginx 的继承语义判断 TLS 协议、安全响应头、代理超时、日志、gzip、http2、server_name 冲突、root 与 alias 误用、if is evil、autoindex 列目录等 17 条规则，分级输出附改法，可作 CI 门禁。"
+description_en: "Zero-dependency security and performance audit for nginx configs: a built-in directive parser (include expansion, nested blocks, comments, quotes) plus 17 inheritance-aware rules covering TLS protocols, security headers, proxy timeouts, logging, gzip, HTTP/2, duplicate server_name, root vs alias misuse, if-is-evil and directory listing; graded findings with fixes, CI-gate ready."
 examples_zh:
   - "帮我看看这份 nginx 配置有没有安全问题"
   - "nginx 上线前检查一下，TLSv1.1 关了吗、安全响应头全不全"
@@ -51,6 +51,8 @@ python3 scripts/nginx_check.py nginx.conf --strict                # 有 high/war
 | warn | N001 / N003 / N004 / N005 | server_tokens 未关或被 server 覆盖成 on；listen 443 未启用 http2；TLS server 没写 ssl_protocols；缺 HSTS、X-Frame-Options、X-Content-Type-Options |
 | warn | N006 / N008 / N009 / N010 / N011 | proxy_pass 缺 proxy_connect_timeout 或 proxy_read_timeout；同端口重复 server_name；location 与 root 尾部重复；location 内 if；access_log off |
 | info | N002 / N007 / N012 / N013 / N015 / N016 | 未开 gzip；缺 client_max_body_size；worker_processes 非 auto；upstream 无 keepalive；include 目标缺失；反代未透传 Host 与 X-Forwarded-For |
+| warn | N000 | include 形成循环引用；include 目标文件读取失败 |
+| info | N000 | 没有解析到 http 块 |
 
 ## 边界
 

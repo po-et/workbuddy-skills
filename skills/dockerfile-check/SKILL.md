@@ -1,12 +1,12 @@
 ---
 name: dockerfile-check
-description: Dockerfile 体检、Dockerfile 最佳实践检查、镜像瘦身、构建缓存优化、容器安全基线（非 root、不把密钥打进镜像、固定基础镜像版本）、Docker lint。当用户说「帮我看看这个 Dockerfile 有什么问题」「镜像太大怎么优化」「Dockerfile 安全检查」「为什么每次构建都不命中缓存」「按最佳实践改一下 Dockerfile」时使用。附纯标准库脚本 scripts/dockerfile_check.py：解析续行与多阶段构建，18 条规则（基础镜像未固定版本、ENV/ARG 写入密钥、未切换非 root、curl 管道进 sh、sudo、chmod 777、apt/apk/yum/pip/npm 缓存与清理、COPY . . 早于依赖安装、缺 HEALTHCHECK/WORKDIR/.dockerignore、CMD shell 形式、ADD 代替 COPY、MAINTAINER 废弃、RUN 层过多），按 high/warn/info 分级并给出改法；支持目录递归、--json、--strict（CI 门禁）。
+description: Dockerfile 体检、Dockerfile 最佳实践检查、镜像瘦身、构建缓存优化、容器安全基线（非 root、不把密钥打进镜像、固定基础镜像版本）、Docker lint。当用户说「帮我看看这个 Dockerfile 有什么问题」「镜像太大怎么优化」「Dockerfile 安全检查」「为什么每次构建都不命中缓存」「按最佳实践改一下 Dockerfile」时使用。附纯标准库脚本 scripts/dockerfile_check.py：解析续行与多阶段构建，17 条规则（基础镜像未固定版本、ENV/ARG 写入密钥、未切换非 root、curl 管道进 sh、sudo、chmod 777、apt/apk/yum/pip/npm 缓存与清理、COPY . . 早于依赖安装、缺 HEALTHCHECK/WORKDIR/.dockerignore、CMD shell 形式、ADD 代替 COPY、MAINTAINER 废弃、RUN 层过多），按 high/warn/info 分级并给出改法；支持目录递归、--json、--strict（CI 门禁）。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "Dockerfile 体检"
 display_name_en: "Dockerfile Check"
-description_zh: "一条命令给 Dockerfile 做体检：18 条最佳实践与安全规则，分级输出并附具体改法；纯 Python 标准库，可作 CI 门禁。"
-description_en: "One command to audit a Dockerfile: 18 best-practice and security rules, graded output with concrete fixes; pure Python stdlib, usable as a CI gate."
+description_zh: "一条命令给 Dockerfile 做体检：17 条最佳实践与安全规则，分级输出并附具体改法；纯 Python 标准库，可作 CI 门禁。"
+description_en: "One command to audit a Dockerfile: 17 best-practice and security rules, graded output with concrete fixes; pure Python stdlib, usable as a CI gate."
 examples_zh:
   - "检查一下当前目录的 Dockerfile 有哪些问题"
   - "我们的镜像 1.2G，帮我从 Dockerfile 找瘦身点"

@@ -1,8 +1,8 @@
 ---
 name: docker-compose-check
-description: docker-compose 配置体检、compose.yaml 上线前检查、容器编排安全基线、镜像用 latest 没固定版本、缺 healthcheck 健康检查、缺 restart 重启策略、privileged 特权容器、network_mode host、pid host、挂载 /var/run/docker.sock 与 /etc 与家目录等宿主敏感路径、environment 里 PASSWORD/SECRET/TOKEN 明文密码、MySQL/Redis/PostgreSQL/MongoDB/ES 端口绑 0.0.0.0 对公网暴露、没有 mem_limit 内存上限、depends_on 没用 service_healthy、version 字段废弃、container_name 重名冲突。当用户说「帮我看看这个 docker-compose 有没有问题」「compose 文件能上生产吗」「容器为什么能访问宿主机」「这套编排安全吗」「docker compose lint」时使用。附脚本 scripts/compose_check.py，纯标准库、内置最小 YAML 解析，13 条规则分 high/warn/info 并附改法，支持目录扫描、--json、--strict 做 CI 门禁。
+description: docker-compose 配置体检、compose.yaml 上线前检查、容器编排安全基线、镜像用 latest 没固定版本、缺 healthcheck 健康检查、缺 restart 重启策略、privileged 特权容器、network_mode host、pid host、挂载 /var/run/docker.sock 与 /etc 与家目录等宿主敏感路径、environment 里 PASSWORD/SECRET/TOKEN 明文密码、MySQL/Redis/PostgreSQL/MongoDB/ES 端口绑 0.0.0.0 对公网暴露、没有 mem_limit 内存上限、depends_on 没用 service_healthy、version 字段废弃、container_name 重名冲突。当用户说「帮我看看这个 docker-compose 有没有问题」「compose 文件能上生产吗」「容器为什么能访问宿主机」「这套编排安全吗」「docker compose lint」时使用。附脚本 scripts/compose_check.py，纯标准库、内置最小 YAML 解析，14 条规则分 high/warn/info 并附改法，支持目录扫描、--json、--strict 做 CI 门禁。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "Compose 配置体检"
 display_name_en: "Docker Compose Check"
 description_zh: "不装任何依赖就能给 docker-compose.yml 做上线前体检：安全基线（特权、host 命名空间、docker.sock 与宿主敏感目录、明文密钥、数据库端口暴露）、可靠性（镜像固定版本、健康检查、重启策略、内存与 CPU 上限、依赖顺序）、废弃字段与 container_name 冲突；分级输出附改法，可作 CI 门禁。"
@@ -53,6 +53,8 @@ docker compose config > /tmp/rendered.yml && python3 scripts/compose_check.py /t
 | warn | C001 / C002 / C003 / C008 | 镜像无标签或 latest；缺 healthcheck；缺 restart 策略；缺 mem_limit 或 deploy.resources.limits.memory |
 | warn | C004 / C006 | ipc host、userns_mode host；`${VAR:-明文默认值}` 形式的密码插值 |
 | info | C007 / C008 / C009 / C010 / C011 / C013 | 普通端口绑 0.0.0.0；缺 CPU 上限；depends_on 未用 condition service_healthy；顶层 version 已废弃、compose v1 格式；写死 container_name；以 root 运行 |
+| warn | C000 | 文件不存在；未解析出任何内容；没找到 services |
+| info | C000 | 使用了 YAML 锚点合并（`<<: *`），最小解析器会忽略被合并的字段 |
 
 ## 边界
 

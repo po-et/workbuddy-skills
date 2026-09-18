@@ -2,7 +2,7 @@
 name: env-sync-check
 description: 环境变量配置一致性检查、.env.example 与 .env 对比、缺失环境变量、代码里读了但没登记的配置项、僵尸配置项、.env 里疑似真实密钥、新人搭环境总是缺变量、部署到新环境报「配置未设置」。当用户说「检查一下 .env 和 .env.example 是不是对得上」「哪些环境变量代码在用但示例里没有」「上线前核对一下环境配置」「新同事按 .env.example 起不来服务」时使用。附纯标准库脚本 scripts/env_sync_check.py：解析 .env 系列文件，扫描 Python / Node / Go / Java / Ruby / PHP / Rust / Shell / Compose 里的环境变量读取，输出五类问题（环境文件缺变量、未登记变量、代码读取未登记、示例登记未使用、疑似真实密钥）与重复定义。密钥判定按「名字 + 值」双重启发式：名字命中 PASSWORD/SECRET/TOKEN/KEY/SIGNING/CIPHER/SALT/PRIVATE/DSN 等并排除 *_KEY_ID、PUBLIC_KEY、KEY_PREFIX；值是占位符（空、<...>、***、${VAR}、changeme、REPLACE_ME、your-...、TODO、值等于键名）不报，只有长度与熵真像密钥才报 high。支持 --json 与 --strict 门禁。
 author: Captain
-version: 0.1.1
+version: 0.1.2
 display_name: ".env 一致性检查"
 display_name_en: "Env Sync Check"
 description_zh: "让 .env.example、各环境 .env 与代码实际读取的变量三方对齐：找缺失、找未登记、找僵尸项、找示例文件里的真实密钥（名字 + 值双重判定，占位符不误报）；多语言读取模式识别；纯 Python 标准库，可作 CI 门禁。"
@@ -41,7 +41,7 @@ python3 scripts/env_sync_check.py --json
 python3 scripts/env_sync_check.py --strict                          # 有「缺变量」或「示例含真实密钥」则退出码 1
 ```
 
-## 输出五类
+## 输出七类
 
 | 级别 | 类型 | 含义 | 处理 |
 |---|---|---|---|
