@@ -1,5 +1,9 @@
 # ClawHub（clawhub.ai）发布规则调研笔记
 
+> **渠道状态（2026-09-18）：搁置。** 用户没有 ClawHub 账号；注册需本人完成。
+> 本文档与 `tools/clawhub_prep.py` / `tools/clawhub_publish.sh` / `docs/clawhub-publish-runbook.md`
+> 保持可用状态，有账号后即可直接走 runbook 发布。
+
 日期：2026-09-18。只读调研，未登录、未发布。信息来源以官方仓库 `docs/*.md` 原文抓取为主（比通用网页摘要更可信），`npx clawhub --help` 系列为本机实测（CLI v0.23.3）。凡两个来源打架的地方，两边都列出来，标"需确认"，不替 ClawHub 下结论。
 
 ## 已确认（附来源 URL）
