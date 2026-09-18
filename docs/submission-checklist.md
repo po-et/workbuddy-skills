@@ -334,3 +334,28 @@ gh pr create --repo AlephAITech/WorkBuddyGuide --base "$BASE" --head "po-et:case
 - [ ] 提 PR 后在维护者微信群说一句（依据 `docs/channels.md`：刘聪NLP、袋鼠帝、甲木、Joy）
 - [ ] 合并后把案例页 URL 回填到本节，并加进仓库 README
 - [ ] 案例 #1 的蓝皮书版还没做（上游 slug 计划 `git-iteration-report`）；等截图到位、腾讯云那边定稿后一起改格式
+
+### SkillHub 第十三批（3 个修复 + 19 个新工具 + 4 个补充更新）（2026-09-18，18 个，机器审核中）
+
+| slug | skillId | 发布时间 |
+|---|---|---|
+| sql-slow-query-digest | 206198 | 18:48:18 |
+| api-contract-test | 206200 | 18:49:34 |
+| git-commit-lint | 206203 | 18:50:50 |
+| openapi-to-markdown | 206210 | 18:52:05 |
+| docker-compose-check | 206218 | 18:53:21 |
+| nginx-config-check | 206223 | 18:54:37 |
+| tls-cert-check | 206231 | 18:55:52 |
+| sql-schema-diff | 206237 | 18:57:08 |
+| jwt-inspect | 206244 | 18:58:24 |
+| http-bench-lite | 206250 | 18:59:40 |
+| dns-check | 206263 | 19:00:55 |
+| curl-to-code | 206271 | 19:02:11 |
+| har-analyze | 206277 | 19:03:27 |
+| regex-explain | 206285 | 19:04:43 |
+| csv-profile | 206300 | 19:07:14 |
+| sensitive-data-mask | 206304 | 19:08:29 |
+| log-timeline | 206318 | 19:09:45 |
+| prometheus-rule-check | 206335 | 19:11:01 |
+
+冲突（需换 slug 重发）：json-diff
