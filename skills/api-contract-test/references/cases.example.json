@@ -1,0 +1,75 @@
+{
+  "base_url": "https://api.example.com",
+  "timeout_ms": 5000,
+  "headers": {
+    "Authorization": "Bearer ${API_TOKEN}",
+    "Accept": "application/json",
+    "User-Agent": "api-contract-test/0.1"
+  },
+  "cases": [
+    {
+      "name": "健康检查返回 200 且 status=ok",
+      "method": "GET",
+      "path": "/health",
+      "expect": {
+        "status": 200,
+        "max_ms": 500,
+        "headers": { "Content-Type": "application/json" },
+        "json": [
+          { "path": "$.status", "equals": "ok" }
+        ]
+      }
+    },
+    {
+      "name": "用户详情字段契约",
+      "method": "GET",
+      "path": "/v1/users/1",
+      "query": { "include": "profile" },
+      "expect": {
+        "status": 200,
+        "max_ms": 800,
+        "json": [
+          { "path": "$.data.id", "type": "integer" },
+          { "path": "$.data.name", "exists": true },
+          { "path": "$.data.email", "contains": "@" },
+          { "path": "$.data.roles[0]", "equals": "admin" },
+          { "path": "$.data.password", "exists": false }
+        ]
+      }
+    },
+    {
+      "name": "创建工单返回 201 与 id",
+      "method": "POST",
+      "path": "/v1/issues",
+      "body": {
+        "title": "登录页在 Safari 上白屏",
+        "project": "PLATFORM",
+        "labels": ["bug", "p1"]
+      },
+      "expect": {
+        "status": [200, 201],
+        "max_ms": 1500,
+        "json": [
+          { "path": "$.data.id", "type": "string" },
+          { "path": "$.data.labels", "contains": "bug" }
+        ]
+      }
+    },
+    {
+      "name": "未带 token 应当 401",
+      "method": "GET",
+      "path": "/v1/users/1",
+      "headers": { "Authorization": "" },
+      "expect": {
+        "status": 401,
+        "json": [{ "path": "$.error.code", "exists": true }]
+      }
+    },
+    {
+      "name": "不存在的资源返回 404",
+      "method": "GET",
+      "url": "https://api.example.com/v1/users/999999",
+      "expect": { "status": 404, "body_contains": "not found" }
+    }
+  ]
+}

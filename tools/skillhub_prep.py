@@ -102,6 +102,17 @@ SLUGS = {
     "using-git-worktrees-zh": "git-worktree-workflow-zh",
     "receiving-code-review-zh": "code-review-response-zh",
     "finishing-a-development-branch-zh": "dev-branch-finishing-zh",
+    "sql-slow-query-digest": "sql-slow-query-digest",
+    "api-contract-test": "api-contract-test",
+    "git-commit-lint": "git-commit-lint",
+    "openapi-to-markdown": "openapi-to-markdown",
+    "docker-compose-check": "docker-compose-check",
+    "nginx-config-check": "nginx-config-check",
+    "tls-cert-check": "tls-cert-check",
+    "sql-schema-diff": "sql-schema-diff",
+    "jwt-inspect": "jwt-inspect",
+    "http-bench-lite": "http-bench-lite",
+    "dns-check": "dns-check",
 }
 # 源目录：默认 skills/<name>，复刻的在 ported/skills/<name>
 def source_dir(name: str) -> Path:
@@ -191,6 +202,17 @@ TAGS = {
     "using-git-worktrees-zh": ["git worktree", "工作树", "隔离工作区", "分支保护", "基线测试", "gitignore", "子模块", "并行开发"],
     "receiving-code-review-zh": ["代码评审", "评审意见", "code review", "技术反驳", "YAGNI", "PR 评论", "逐条修复", "澄清提问"],
     "finishing-a-development-branch-zh": ["分支收尾", "合并", "Pull Request", "工作树清理", "基线分支", "上线落地", "git", "发布"],
+    "sql-slow-query-digest": ["慢查询", "慢SQL", "MySQL", "PostgreSQL", "索引优化", "数据库排查", "SQL指纹", "pt-query-digest"],
+    "api-contract-test": ["接口测试", "契约测试", "API回归", "冒烟测试", "JSON断言", "CI门禁", "接口验收", "HTTP"],
+    "git-commit-lint": ["提交规范", "Conventional Commits", "commitlint", "git", "commit-msg", "CI门禁", "代码规范", "提交历史"],
+    "openapi-to-markdown": ["OpenAPI", "Swagger", "接口文档", "API文档", "Markdown", "文档生成", "前后端对接", "文档同步"],
+    "docker-compose-check": ["容器编排", "compose", "Docker", "上线检查", "容器安全", "健康检查", "资源限制", "DevOps"],
+    "nginx-config-check": ["nginx", "反向代理", "配置审查", "TLS", "安全响应头", "性能优化", "上线检查", "SRE"],
+    "tls-cert-check": ["TLS", "证书到期", "HTTPS", "SSL", "巡检", "SAN", "证书链", "SRE"],
+    "sql-schema-diff": ["表结构", "schema diff", "DDL", "迁移", "MySQL", "PostgreSQL", "锁表", "数据库"],
+    "jwt-inspect": ["JWT", "令牌解码", "鉴权排查", "401 排错", "过期时间", "HS256 验签", "安全体检", "Bearer"],
+    "http-bench-lite": ["压测", "QPS", "p99", "延迟分位", "接口自测", "性能基线", "ab", "wrk"],
+    "dns-check": ["DNS", "域名解析", "解析生效", "TTL", "CNAME", "MX", "SPF", "切换验证"],
 }
 
 
