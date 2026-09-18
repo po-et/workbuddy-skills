@@ -52,7 +52,7 @@ SLUGS = {
     "log-timeline": "log-timeline",
     "sensitive-data-mask": "sensitive-data-mask",
     "csv-profile": "csv-profile",
-    "json-diff": "json-diff",
+    "json-diff": "json-config-diff",
     "regex-explain": "regex-explain",
     "har-analyze": "har-analyze",
     "curl-to-code": "curl-to-code",
