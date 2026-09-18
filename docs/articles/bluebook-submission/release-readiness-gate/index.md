@@ -1,6 +1,6 @@
 ---
 title: 上线前五分钟体检：把 Dockerfile / K8s / SQL / OpenAPI / .env 五项检查串成一条 CI 门禁
-summary: 用一个零依赖的「上线体检」Skill 让 WorkBuddy 一条命令跑完五类发布风险检查，第一次跑出 13 个 high，按报告的「→ 改法」逐条收敛到 0，最后把同一条命令接进 CI 当发布门禁；含一次误报、一次漏报和一次「修 warn 修出新 high」的真实过程。
+summary: 用一个零依赖的「上线体检」Skill 让 WorkBuddy 一条命令跑完五类发布风险检查，第一次跑出 15 个 high，按报告的「→ 改法」逐条收敛到 0，最后把同一条命令接进 CI 当发布门禁；含一次误报、一次漏报和一次「修 warn 修出新 high」的真实过程。
 author: po-et
 date: "2026-09-18"
 category: 研发效能
@@ -34,7 +34,7 @@ tags:
 
 1. 一条命令跑完五类发布风险检查：Dockerfile、K8s 清单、SQL 迁移、OpenAPI 兼容性、`.env` 配置一致性。
 2. 一份 Markdown 报告：总览表 → 各项 top 问题 → 门禁结论，每条问题带「文件:行号 / 对象名 / 方法+路径」定位、规则号和「→ 改法」。
-3. 一个可读的门禁结论（「不建议上线」/「可以上线，但先看 warn」）。
+3. 一个可读的门禁结论（「不建议上线」/「可以上线，但先看一眼 warn」/「无法判断」）。
 4. 同一条命令能接进 CI（`--strict`），有 high 时退出码 1，直接当发布门禁用。
 
 这是演示项目 `orders-api` 的具体化目标，背后是一个更通用的任务：把「发版前应该做但没人会记得依次做五遍」的检查，压缩成「一条命令、一个结论、一个退出码」。
@@ -47,7 +47,7 @@ tags:
 
 `release-readiness-check` 内置五个检查器，装总入口这一个就够；需要单独调参数时可以只装对应的一个，来源与安装方式同上：`dockerfile-check`、`k8s-manifest-check`、`sql-migration-check`、`openapi-breaking-diff`、`env-sync-check`。
 
-技能做四件事：**发现 → 执行 → 汇总 → 判门禁**。它走一遍目标目录（跳过 `.git`、`node_modules`、`vendor`、`dist` 等），按特征归类文件：`Dockerfile*`、同时含 `apiVersion:` 与 `kind:` 的 YAML、`*.sql`、`openapi*/swagger*` 规范、根目录 `.env*`；逐项用子进程调用内置检查器（统一加 `--json`），把五种结果归一成 `severity / code / where / message / fix`；最后一条硬规则给结论：**有 high 就是「不建议上线」**。某一项挂了只标「执行失败」，其余四项照跑，并在结论里写明「结论只覆盖跑通的部分」。
+技能做四件事：**发现 → 执行 → 汇总 → 判门禁**。它走一遍目标目录（跳过 `.git`、`node_modules`、`vendor`、`dist` 等），按特征归类文件：`Dockerfile*`、同时含 `apiVersion:` 与 `kind:` 的 YAML、`*.sql`、`openapi*/swagger*` 规范、根目录 `.env*`；逐项用子进程调用内置检查器（统一加 `--json`），把五种结果归一成 `severity / code / where / message / fix`；最后按门禁规则给结论：**有 high 就是「不建议上线」；没有 high 但有项目拿不到证据（子脚本跑失败、规范不合格）同样不放行**——三态门禁，「无法判断」不等于「通过」。某一项挂了或证据不合格只标「无法判断」，其余四项照跑，并在结论里写明这一项没有进入「通过」的判断。
 
 | 检查项 | 看什么 | 典型 high |
 |---|---|---|
@@ -62,7 +62,7 @@ tags:
 - WorkBuddy 可正常使用，普通任务模式即可（脚本本身执行不到一秒，模型负责读报告、判断真伪、给改法）。
 - 权限：默认权限即可——只读本地目标目录 + 执行 `python3`；不需要专家、连接器或 MCP，全程不联网。
 - 操作系统：本文命令与终端回显为 macOS 本机实跑；检查器本身不依赖操作系统特性，Linux CI 环境同样适用——未在 Windows 上验证，**需确认**。
-- 需要一个准备发布的目标项目，本地已有（或部分已有）`Dockerfile`、K8s 部署清单、SQL 迁移脚本、新旧两版 OpenAPI 规范、`.env.example` / `.env.production`；只覆盖其中几类也可以，未覆盖的检查项会显示「跳过」而不是报错。
+- 需要一个准备发布的目标项目，本地已有（或部分已有）`Dockerfile`、K8s 部署清单、SQL 迁移脚本、新旧两版 OpenAPI 规范、`.env.example` / `.env.production`；只覆盖其中几类也可以，未覆盖的检查项会显示「不适用」而不是报错（跟显式 `--skip` 的「已跳过」是两个不同的状态标签）。
 - 不需要任何外部账号、API Key 或付费服务。
 
 ## 在 WorkBuddy 中的操作
@@ -75,7 +75,7 @@ tags:
 python3 scripts/release_check.py . --openapi-base api/openapi.v1.json --out ./release-report.md
 ```
 
-**第 2 步：第一次体检。** 五项检查逐项给出 high/warn/info 计数，合计 13 个 high，门禁结论「不建议上线」。完整回显见下一节「在 WorkBuddy 中的效果」。
+**第 2 步：第一次体检。** 五项检查逐项给出 high/warn/info 计数，合计 15 个 high，门禁结论「不建议上线」。完整回显见下一节「在 WorkBuddy 中的效果」。
 
 **第 3 步：按报告里每条的「→ 改法」逐条改。** 报告每条都带改法，WorkBuddy 按项给出 diff，我判断哪几条是真问题：
 
@@ -93,8 +93,8 @@ CREATE INDEX CONCURRENTLY idx_orders_channel ON orders (channel);
 --   ALTER TABLE orders DROP COLUMN source_legacy;
 ```
 
-- OpenAPI 六条：不改设计，改兼容方式——接口加回来、`page_size` 恢复可选、`total_fee` 与 `amount` 同时保留且同时必返（`total_fee` 标 `deprecated`）、被收窄的 `status` 枚举值 `cancelled` 加回去，版本号 1.5.0 → 1.5.1。
-- `.env` 两条：生产补 `ORDER_CALLBACK_URL`；示例里的 `DB_DSN` 换成 `<postgresql://user:pass@host:5432/orders>` 这种一眼是占位符的写法。
+- OpenAPI 八条：不改设计，改兼容方式——接口加回来、`page_size` 恢复可选、`total_fee` 与 `amount` 同时保留且同时必返（`total_fee` 标 `deprecated`）、被收窄的 `status` 枚举值 `cancelled` 加回去，版本号 1.5.0 → 1.5.1。八条里有两条是 `response-enum-narrowed`（`GET /orders`、`GET /orders/{id}` 各一条，同一个 `status` 枚举收窄因为两个接口共用 `Order` schema），改法是同一个。
+- `.env` 两条：生产补 `ORDER_CALLBACK_URL`；示例里的 `JWT_SIGNING_KEY` 换成 `<jwt-signing-key>` 这种一眼是占位符的写法（`DB_DSN` 这次没有被判成密钥，见「安全与限制」第 1 条）。
 
 **第 4 步：复跑，确认收敛。** 复跑过程中出现的插曲见「遇到的问题」；终态回显见「在 WorkBuddy 中的效果」。
 
@@ -134,15 +134,15 @@ WorkBuddy 把这句自然语言指令翻译成「在 WorkBuddy 中的操作」�
   Dockerfile 体检         high 1 / warn 2 / info 7
   K8s 清单体检            high 1 / warn 5 / info 8
   SQL 迁移风险            high 3 / warn 0 / info 1
-  OpenAPI 破坏性变更      high 6 / warn 0 / info 5
+  OpenAPI 破坏性变更      high 8 / warn 0 / info 5
   .env 一致性             high 2 / warn 2 / info 1
 
-合计：high 13 / warn 9 / info 22
-门禁：不建议上线（有 high）
+合计：high 15 / warn 9 / info 22；无法判断 0 项
+门禁：不建议上线
 报告：/.../orders-api/release-report.md
 ```
 
-三次连续运行的墙上时间 0.19s / 0.16s / 0.15s——「五分钟」是留给人读报告的。13 个 high 摘录：
+三次连续运行的墙上时间 0.19s / 0.16s / 0.15s——「五分钟」是留给人读报告的。15 个 high 摘录：
 
 ```markdown
 - **[HIGH]** `DF006` · `Dockerfile:L10` — ENV 中疑似把敏感值写进镜像：DB_PASSWORD
@@ -155,11 +155,15 @@ WorkBuddy 把这句自然语言指令翻译成「在 WorkBuddy 中的操作」�
 - **[HIGH]** `SM001` · `migrations/0042_add_channel.sql:L6` — DROP COLUMN 会永久删除该列数据
 - **[HIGH]** `removed-operation` · `DELETE /orders/{id}` — 接口被删除
 - **[HIGH]** `param-now-required` · `GET /orders` — 参数 query:page_size 由可选变为必填
-- **[HIGH]** `response-field-removed` · `GET /orders/{id}` — 响应 200 字段 total_fee 被移除
+- **[HIGH]** `response-enum-narrowed` · `GET /orders` — 响应 200 字段 items.[].status 枚举移除了 ['cancelled']
+- **[HIGH]** `response-enum-narrowed` · `GET /orders/{id}` — 响应 200 字段 status 枚举移除了 ['cancelled']
 - **[HIGH]** `response-field-no-longer-required` · `GET /orders/{id}` — 响应 200 字段 total_fee 不再保证返回
-- **[HIGH]** `secret-in-example` · `.env.example` — 示例文件第 2 行的 DB_DSN 看起来是真实密钥
+- **[HIGH]** `response-field-removed` · `GET /orders/{id}` — 响应 200 字段 total_fee 被移除
+- **[HIGH]** `secret-in-example` · `.env.example` — 示例文件第 10 行的 JWT_SIGNING_KEY 看起来是真实密钥
 - **[HIGH]** `missing` · `.env.production` — .env.production 缺少示例中登记的 ORDER_CALLBACK_URL
 ```
+
+（以上摘录 13 条，另有 `GET /orders` 的 `response-field-removed`/`response-field-no-longer-required`（`total_fee`）未列出，共 15 条 high；完整列表见正文文章「15 个 high 逐条摘录」一节。）
 
 报告每项最多列 10 条，K8s 实际 14 条，单跑 `python3 scripts/k8s_check.py k8s/` 看到多出来的是 `K011`（未指定 namespace）、`K012`（NodePort 对外暴露）、`K019`（default ServiceAccount 自动挂载 token）。
 
@@ -172,45 +176,45 @@ WorkBuddy 把这句自然语言指令翻译成「在 WorkBuddy 中的操作」�
   OpenAPI 破坏性变更      high 0 / warn 0 / info 5
   .env 一致性             high 0 / warn 1 / info 1
 
-合计：high 0 / warn 8 / info 21
-门禁：可以上线，但先看 warn
+合计：high 0 / warn 8 / info 21；无法判断 0 项
+门禁：可以上线，但先看一眼 warn
 ```
 
 OpenAPI 剩下的 5 条 info 全是纯新增（新增可选参数 `channel`、响应新增 `amount` 与 `channel`），可以直接抄进变更日志发给调用方。
 
 **CI 门禁验证**：`--strict` 退出码随 high 计数变化——修之前 `echo $?` 得 1，修完得 0（本机实测）。
 
-**产出物**：一份 Markdown 报告（总览表 → 各项 top 问题 → 门禁结论）+ 一个退出码 + 可选 JSON（`{target, generated, report, total, items[]}`，`items[]` 每项含 `status / reason / targets / counts / findings`，可直接喂给机器人）。报告能贴进上线单，因为它满足评审要的三件事：**每条有位置（文件:行号 / 对象名 / 方法+路径）、有规则号、有改法**。
+**产出物**：一份 Markdown 报告（总览表 → 各项 top 问题 → 门禁结论）+ 一个退出码 + 可选 JSON（`{target, generated, report, total, gate, items[]}`，`gate` 含 `verdict/blocked/headline/why`，`items[]` 每项含 `status / reason / targets / counts / findings`，可直接喂给机器人）。报告能贴进上线单，因为它满足评审要的三件事：**每条有位置（文件:行号 / 对象名 / 方法+路径）、有规则号、有改法**。
 
 | | 第一次 | 修完 high | 终态 |
 |---|---:|---:|---:|
-| high | 13 | 1 | **0** |
+| high | 15 | 1 | **0** |
 | warn | 9 | 1 | 8 |
 | info | 22 | — | 21 |
-| 门禁结论 | 不建议上线 | 不建议上线 | 可以上线，但先看 warn |
+| 门禁结论 | 不建议上线 | 不建议上线 | 可以上线，但先看一眼 warn |
 | `--strict` 退出码 | 1 | 1 | 0 |
 
-13 个 high 里，靠人工 checklist 能稳定抓住的大概只有 Dockerfile 那条明文密码（因为它最出名）。`SM003`、`param-now-required`、`missing` 这三类是典型的「上线当晚才发现」。
+15 个 high 里，靠人工 checklist 能稳定抓住的大概只有 Dockerfile 那条明文密码（因为它最出名）。`SM003`、`param-now-required`、`missing` 这三类是典型的「上线当晚才发现」。
 
 ## 验收标准
 
-- 报告 summary 五项检查逐项给出 high/warn/info 计数（没有「执行失败」项），版式与 CLI 回显一致。
-- 门禁结论文本随 high 计数变化：13 个 high → 「不建议上线」；high 清零后 → 「可以上线，但先看 warn」。
-- `--strict` 退出码随 high 计数变化：有 high 时 `echo $?` 为 1，high 清零后为 0（本机实测）。
+- 报告 summary 五项检查逐项给出 high/warn/info 计数（没有「无法判断」项），版式与 CLI 回显一致。
+- 门禁结论文本随 high 计数变化：15 个 high → 「不建议上线」；high 清零后 → 「可以上线，但先看一眼 warn」。
+- `--strict` 退出码随 high 计数、以及「无法判断」项数变化：有 high 或有「无法判断」项时 `echo $?` 为 1，全部项都有结论且无 high 后为 0（本机实测）。
 - 报告中每条 high/warn 都带「文件:行号 / 对象名 / 方法+路径」定位 + 规则号 + 「→ 改法」，可以直接抄进上线单或变更日志。
-- CI 用空 JSON 兜底 OpenAPI base 会把所有接口误判为「新增」（`high 0 / warn 0 / info 3`），正确兜底必须是 `--skip openapi` 并在报告里显式注明「跳过」。
+- 此前 CI 用空 JSON 兜底 OpenAPI base 会把所有接口误判为「新增」（`high 0 / warn 0 / info 3`，假绿灯）；这个缺陷已经修了，现在这类不合格的 base 会被 `validate_spec` 拦下来，标成「无法判断（skipped-invalid）」而不是误判为「新增」，`--strict` 下同样拦截（本机实测 `echo $?` 为 1）。正确兜底仍然建议用 `--skip openapi`，语义更明确，报告里会显式注明「跳过」。
 
 ## 遇到的问题
 
-- **「修 warn 修出一个新 high」**：high 从 13 掉到 1，而这个 1 是自己造出来的——为了消掉「代码读了但示例没登记」的 warn，把 `PAYMENT_TIMEOUT_MS` 写进了 `.env.example`，于是 `.env.production` 立刻变成 `missing`。这个检查器的语义很硬——**示例登记的变量，每个环境文件都必须有**，它不认「代码里有默认值所以可以不配」。这个取向是合理的（靠默认值兜底的超时参数正是最容易在某个环境被忘掉的），所以最终选择补进 `.env.production`，而不是从示例里删。
-- **CI 假绿灯**：一开始把「取不到旧规范」的兜底写成 `|| echo '{}' > /tmp/openapi-base.json`。实测空规范当 base，所有接口都被算成「新增」，该项返回 `high 0 / warn 0 / info 3`，给出一个漂亮的假绿灯。兜底必须是 `--skip openapi`（报告会明写「跳过」，门禁结论也会注明覆盖范围），不能喂空文件。
+- **「修 warn 修出一个新 high」**：high 从 15 掉到 1，而这个 1 是自己造出来的——为了消掉「代码读了但示例没登记」的 warn，把 `PAYMENT_TIMEOUT_MS` 写进了 `.env.example`，于是 `.env.production` 立刻变成 `missing`。这个检查器的语义很硬——**示例登记的变量，每个环境文件都必须有**，它不认「代码里有默认值所以可以不配」。这个取向是合理的（靠默认值兜底的超时参数正是最容易在某个环境被忘掉的），所以最终选择补进 `.env.production`，而不是从示例里删。
+- **CI 假绿灯，此前的缺陷 + 已修复**：最初写这个案例时，把「取不到旧规范」的兜底写成 `|| echo '{}' > /tmp/openapi-base.json`。当时实测空规范当 base，所有接口都被算成「新增」，该项返回 `high 0 / warn 0 / info 3`，给出一个漂亮的假绿灯——哪怕这次发布删了接口，门禁也显示「可以上线」。这个问题后来在 release-readiness-check 里修掉了：OpenAPI 项比对前会先校验两份规范本身合不合格（有没有 `openapi`/`swagger` 版本号、`paths` 里有没有接口）。用同样的空 `{}` 文件复测（2026-09-18 本机实跑）：`OpenAPI 破坏性变更` 这一项现在显示「无法判断（skipped-invalid）：规范不合格，无法比对……」，总计 `high 7 / warn 9 / info 17；无法判断 1 项`，门禁「不建议上线」，`--strict` 退出码 1——不再是假绿灯，而是「无法判断」，现在整个工具是**三态门禁**：有 high → 不建议上线；没有 high 但有项目无法判断 → 同样不放行；全部项目都有结论且无 high → 才放行。「拿不到证据」不再等于「通过」，这条边界现在由代码保证。不过 CI 里仍然建议显式写 `--skip openapi`（语义比「凑巧被判成无法判断」更清楚），下面的 workflow 保留这个写法。
 
 ## 安全与限制
 
-1. **误报真实存在。** `.env.example` 里 `DB_DSN=postgresql://user:pass@localhost:5432/orders` 被判成 `secret-in-example`（high），其实是占位符。密钥启发式看的是「变量名命中 PASSWORD/SECRET/TOKEN/API_KEY/PRIVATE_KEY/ACCESS_KEY/CREDENTIAL/DSN/DATABASE_URL，且值不是 `${...}`/`<...>`/`xxx`/`your-*`/`changeme`/`placeholder`/`example`/`dummy`/`redacted` 这些占位形态，且长度 ≥ 12」。**不要为了清零去改坏配置**，这是这类工具最容易被用错的地方。
-2. **漏报更危险。** 同一份示例里 `JWT_SIGNING_KEY=8f14e45fceea167a5a36dedd4bea2543`（32 位十六进制，非常像真密钥）**没有**被判成密钥——名字匹配的是 `API_KEY / PRIVATE_KEY / ACCESS_KEY` 这几种带前缀的写法，`JWT_SIGNING_KEY` 不在名单里。同理，把响应字段 `status` 的枚举值 `cancelled` 删掉属于响应枚举收窄，工具也没报——枚举收窄规则只覆盖参数与请求字段。**报告干净 ≠ 没问题**，密钥扫描要另配专门工具，接口语义变化仍要靠评审。
+1. **误报真实存在，这次实跑抓到的例子换了一个。** 最初写这篇案例时，`.env.example` 里 `DB_DSN=postgresql://user:pass@localhost:5432/orders` 被判成 `secret-in-example`（high），其实是占位符——这条误报后来被 env-sync-check 自己的修复消掉了：密钥判断改成「名字 + 值」双重条件，连接串类的值现在只截取内嵌密码段判断（这里是 `pass`，4 个字符，长度不够 12），所以这次实跑 `DB_DSN` 完全没被提示。但双重判定换了个地方冒出新误报：`.env.production` 第 4 行的 `JWT_SIGNING_KEY=REPLACED_BY_SECRET_MANAGER` 被判成 `secret`（warn）——`SIGNING` 命中密钥命名，值长度够、字符混杂也够，占位符词表又没收录「REPLACED_BY_...」这种「真值由密钥管理系统接管」的写法。它其实不是密钥，是一句人话注释。**不要为了清零去改坏配置**，这是这类工具最容易被用错的地方；具体命中哪个变量会随规则版本变化。
+2. **漏报也真实存在，但这次的两个例子都已经被修掉了。** 最初写这篇案例时有两处漏报：同一份示例里 `JWT_SIGNING_KEY=8f14e45fceea167a5a36dedd4bea2543`（32 位十六进制，非常像真密钥）没有被判成密钥——当时名字规则只认 `API_KEY / PRIVATE_KEY / ACCESS_KEY` 这几种带前缀的写法；响应字段 `status` 的枚举值 `cancelled` 被删掉属于响应枚举收窄，当时的枚举收窄规则只覆盖参数与请求字段，也没报。这两处后来都修了：env-sync-check 的密钥名字规则加了 `SIGNING`/`JWT` 前缀，这次实跑 `JWT_SIGNING_KEY` 在 `.env.example` 里被判成 `secret-in-example`（high）；openapi-breaking-diff 新增了 `response-enum-narrowed` 规则，`status` 枚举收窄在两个接口上各报了一条 high（这也是本文把 OpenAPI 的 6 个 high 更正为 8 个的原因）。**报告干净 ≠ 没问题**这条结论没变——规则覆盖范围会随版本变化，不是跑一次就能一劳永逸；密钥扫描仍要另配专门工具，接口语义变化仍要靠评审。
 3. **不替代专业工具。** hadolint、kubeconform、OPA/Conftest、DBA 评审的规则集更全更准。这套技能的定位是提交代码之前的第一道快速门禁：零依赖、0.2 秒、五类一起、有退出码。
-4. **几个硬限制**，否则会「跑了但其实没查」：OpenAPI 项必须给 `--openapi-base`，只有一份规范时会跳过；Helm/Kustomize 模板不展开，带 `{{ }}` 的 YAML 会被标为模板跳过，要先 `helm template` 渲染；`.env` 只看目标目录根部，`deploy/prod/.env` 要单独跑一次；YAML 格式的 OpenAPI 需要 PyYAML，没有就先转 JSON；K8s 的最小 YAML 解析不支持锚点合并 `<<: *x` 与多行 flow 集合。
+4. **几个硬限制**，否则会「跑了但其实没查」：OpenAPI 项必须给 `--openapi-base`，只有一份规范、或规范不合格时都会标为「无法判断」而不是被当成没有变更悄悄放行；Helm/Kustomize 模板不展开，带 `{{ }}` 的 YAML 会被标为模板跳过，要先 `helm template` 渲染；`.env` 只看目标目录根部，`deploy/prod/.env` 要单独跑一次；YAML 格式的 OpenAPI 需要 PyYAML，没有就先转 JSON；K8s 的最小 YAML 解析不支持锚点合并 `<<: *x` 与多行 flow 集合。
 5. **分级取舍由团队定。** high 必须清零并作为 CI 门禁；warn 每条有人认领；info（如 `K011` 未指定 namespace、`K019` default SA、`DF015` CMD shell 形式）每季度扫一次，挑几条升级成团队基线，不要每次发布都纠结。
 
 ## 可以怎样复用
