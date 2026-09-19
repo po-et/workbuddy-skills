@@ -358,4 +358,4 @@ gh pr create --repo AlephAITech/WorkBuddyGuide --base "$BASE" --head "po-et:case
 | log-timeline | 206318 | 19:09:45 |
 | prometheus-rule-check | 206335 | 19:11:01 |
 
-冲突（需换 slug 重发）：json-diff
+冲突（需换 slug 重发）：json-diff → 已改名 json-config-diff 重发成功，skillId 207552（2026-09-18 23:3x）
