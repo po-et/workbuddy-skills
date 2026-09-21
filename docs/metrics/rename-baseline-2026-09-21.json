@@ -1,0 +1,156 @@
+[
+ {
+  "slug": "resume-job-expert",
+  "query": "简历优化",
+  "rank_before": null,
+  "top3_before": [
+   "简历优化",
+   "简历优化",
+   "简历优化"
+  ],
+  "at": "2026-09-21T21:39"
+ },
+ {
+  "slug": "gov-doc-expert",
+  "query": "公文写作",
+  "rank_before": null,
+  "top3_before": [
+   "公文写作",
+   "公文写作",
+   "公文写作"
+  ],
+  "at": "2026-09-21T21:39"
+ },
+ {
+  "slug": "presentation-expert",
+  "query": "PPT汇报",
+  "rank_before": null,
+  "top3_before": [
+   "PPT汇报与演讲稿生成器",
+   "PPT汇报生成器_秋叶职场",
+   "编程专家.Skill"
+  ],
+  "at": "2026-09-21T21:39"
+ },
+ {
+  "slug": "workplace-antiscam-expert",
+  "query": "职场防骗",
+  "rank_before": 1,
+  "top3_before": [
+   "职场防骗专家.Skill",
+   "编程专家.Skill",
+   "self-improving agent"
+  ],
+  "at": "2026-09-21T21:39"
+ },
+ {
+  "slug": "tax-filing-expert",
+  "query": "个税申报",
+  "rank_before": null,
+  "top3_before": [
+   "个税申报",
+   "个税申报错误纠正工具",
+   "个税申报更正指引生成器"
+  ],
+  "at": "2026-09-21T21:39"
+ },
+ {
+  "slug": "insurance-policy-expert",
+  "query": "保单解读",
+  "rank_before": 15,
+  "top3_before": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS"
+  ],
+  "at": "2026-09-21T21:39"
+ },
+ {
+  "slug": "financial-literacy-expert",
+  "query": "理财入门",
+  "rank_before": null,
+  "top3_before": [
+   "理财入门指南",
+   "理财入门AI助手",
+   "理财入门教练"
+  ],
+  "at": "2026-09-21T21:39"
+ },
+ {
+  "slug": "agent-engineering-expert",
+  "query": "Agent 工程",
+  "rank_before": null,
+  "top3_before": [
+   "AI Agent 工程化精读",
+   "ECC Agent 工程系统",
+   "AI Agent 工程化精读"
+  ],
+  "at": "2026-09-21T21:39"
+ },
+ {
+  "slug": "skill-author-expert",
+  "query": "技能编写",
+  "rank_before": null,
+  "top3_before": [
+   "技能编写",
+   "技能编写指南",
+   "技能编写专家"
+  ],
+  "at": "2026-09-21T21:39"
+ },
+ {
+  "slug": "sql-migration-check",
+  "query": "数据库迁移风险",
+  "rank_before": null,
+  "top3_before": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS"
+  ],
+  "at": "2026-09-21T21:39"
+ },
+ {
+  "slug": "sql-slow-query-digest",
+  "query": "慢查询分析",
+  "rank_before": null,
+  "top3_before": [
+   "MySQL慢查询分析器",
+   "PostgreSQL 慢查询分析器",
+   "编程专家.Skill"
+  ],
+  "at": "2026-09-21T21:39"
+ },
+ {
+  "slug": "k8s-manifest-check",
+  "query": "K8s 配置检查",
+  "rank_before": null,
+  "top3_before": [
+   "K8s 配置检查",
+   "编程专家.Skill",
+   "self-improving agent"
+  ],
+  "at": "2026-09-21T21:39"
+ },
+ {
+  "slug": "travel-planner-expert",
+  "query": "旅行规划",
+  "rank_before": 7,
+  "top3_before": [
+   "旅行规划",
+   "旅行规划",
+   "旅行规划师"
+  ],
+  "at": "2026-09-21T21:39"
+ },
+ {
+  "slug": "personal-budget-expert",
+  "query": "记账预算",
+  "rank_before": 16,
+  "top3_before": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS"
+  ],
+  "at": "2026-09-21T21:39"
+ }
+]
