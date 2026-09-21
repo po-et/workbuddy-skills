@@ -278,5 +278,5 @@ def _render(rows, args):
              sum(_num(r["stars"]) for r in found)))
     if args.csv_out:
         print("已追加写入 %s" % args.csv_out)
-    print("说明：downloads 极可能约等于「Agent 自动调用次数」而非人工点击下载（推测，需确认）；"
-          "stars 是收藏计数，不是 1–5 星评分；浏览量平台不提供。")
+    print("说明：downloads 是平台抓取与榜单曝光的计数，不是用户行为（实测：全员约 +4/天，在榜技能另加数百/天）；"
+          "真实采用看 installs；stars 是收藏计数，不是 1–5 星评分；浏览量平台不提供。")
