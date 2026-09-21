@@ -359,3 +359,17 @@ gh pr create --repo AlephAITech/WorkBuddyGuide --base "$BASE" --head "po-et:case
 | prometheus-rule-check | 206335 | 19:11:01 |
 
 冲突（需换 slug 重发）：json-diff → 已改名 json-config-diff 重发成功，skillId 207552（2026-09-18 23:3x）
+
+### SkillHub 改名批次 A（09-21 21:38–21:52，排队待扫描）（2026-09-21，9 个，机器审核中）
+
+| slug | skillId | 发布时间 |
+|---|---|---|
+| resume-job-expert | 209301 | 21:38:10 |
+| gov-doc-expert | 209305 | 21:39:26 |
+| presentation-expert | 209306 | 21:40:42 |
+| workplace-antiscam-expert | 209308 | 21:41:57 |
+| tax-filing-expert | 210761 | 21:43:13 |
+| insurance-policy-expert | 210800 | 21:44:28 |
+| financial-literacy-expert | 210951 | 21:45:44 |
+| agent-engineering-expert | 240767 | 21:47:00 |
+| skill-author-expert | 240769 | 21:48:15 |
