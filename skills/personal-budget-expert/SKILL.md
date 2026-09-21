@@ -2,8 +2,8 @@
 name: personal-budget-expert
 description: "记账预算专家.Skill——覆盖个人与家庭的记账、预算、攒钱、还债这一整条线，服务对象是想搞清楚钱去哪了的人、想攒下第一笔钱的人、被债务困住的人，以及要和伴侣一起管钱的家庭。只要用户的问题涉及自己的钱怎么安排，无论是记账总是半途而废、月光找不到原因、预算方法该选哪种、攒钱目标怎么拆、多笔债务先还哪一笔、该不该分期买大件，还是家庭共同账目怎么记，都从这里进。当用户说「钱不知道花哪了」「每个月都存不下钱」「记账坚持不下来」「网贷和信用卡先还哪个」「该不该分期」「和对象怎么分摊开销」时使用。"
 author: Captain
-version: 0.1.0
-display_name: "记账预算专家.Skill"
+version: 0.1.1
+display_name: "记账预算"
 display_name_en: "Budget and Debt Coach.Skill"
 description_zh: "一个入口覆盖记账口径与分类、现金流表怎么看、五种预算方法各适合谁、攒钱目标拆解与应急金顺序、多笔债务的偿还优先级（雪崩法与雪球法的取舍）、大额支出决策四问、家庭共同账目三池法。只教方法与算法，不推荐任何理财产品，不给资产配置比例，不判断买卖时机。"
 description_en: "One entry point for personal and household money mechanics. Bookkeeping scope and categories, reading a cash flow table, five budgeting methods and who each fits, breaking savings goals into monthly numbers, debt payoff ordering with the avalanche and snowball tradeoff, a four-question test for big purchases, and a three-pot method for shared household accounts. Method only, no product recommendations, no allocation advice, no market timing."

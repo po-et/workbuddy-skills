@@ -2,8 +2,8 @@
 name: travel-planner-expert
 description: "旅行规划专家.Skill——覆盖从挑目的地到平安回家的整趟自由行，服务对象是自己规划行程的普通人。只要用户的问题涉及怎么安排这趟旅行，无论是目的地与季节匹配、天数与节奏设计、住哪一区、预算怎么分、带孩子带老人或独行的不同约束、签证与证件准备、行前打包，还是当地交通与避坑、航班取消与丢证件的预案，都从这里进。当用户说「帮我排个行程」「几天够玩」「住哪个区方便」「预算怎么分」「带老人怎么安排」「签证要准备什么」「行李怎么收」「航班取消了怎么办」「护照丢了怎么办」时使用。"
 author: Captain
-version: 0.1.0
-display_name: "旅行规划专家.Skill"
+version: 0.1.1
+display_name: "旅行规划"
 display_name_en: "Travel Planner.Skill"
 description_zh: "一个入口覆盖自由行的整趟规划——目的地与季节匹配、一天只有六小时有效游玩的节奏设计、住宿选位与少换酒店、预算分配与该省不该省、带娃带老人与独行的不同约束、签证与证件清单、按丢了会毁行程排序的打包、当地交通避坑、航班取消与生病丢证件的预案。不代订不代付，政策以官方最新公告为准。"
 description_en: "One entry point for planning a trip yourself. Matching destination to season, pacing a day around the six hours you actually get, choosing where to stay, splitting a budget, the different constraints of travelling with kids, elders or alone, visa and document checklists, packing by what would ruin the trip if lost, local transport traps, and contingency plans for cancelled flights, illness and lost passports. No bookings, no payments, official notices rule."
