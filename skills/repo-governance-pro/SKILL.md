@@ -1,12 +1,12 @@
 ---
 name: repo-governance-pro
-description: 代码仓库治理助手，覆盖「代码写完之后仓库怎么管」的整片活：技术债盘点（TODO / FIXME / HACK 有多少、谁欠的、欠多久了）、代码热点与缺陷高发文件、知识集中度与 bus factor、隐性耦合、分支列表几百条怎么清、分支策略与版本 tag、代码归属与 CODEOWNERS、评审人怎么定、评审流程怎么走、收到评审意见怎么回、提交信息规范与 Conventional Commits、PR / MR 描述怎么写、新人接手陌生仓库从哪看起、仓库体检与季度大扫除。当用户提到技术债、TODO、重构优先级、代码热点、谁维护这块、bus factor、分支清理、删分支、陈旧分支、CODEOWNERS、评审、code review、CR、PR 描述、MR 描述、提交规范、commit lint、仓库治理、接手项目等任一话题，但不确定该用哪个专门技能时使用。不做：直接改代码。
+description: 代码仓库治理助手。只要用户的问题涉及仓库本身怎么管，而不是某一行业务代码怎么写，即应触发本技能，无需用户明确指定。无论是刚接手一个陌生的老仓库不知道从哪看起、TODO 与 FIXME 与 HACK 满天飞不知道谁欠的欠多久了、该先还哪笔债、代码热点、哪些文件最容易出事、这块模块只有一个人懂、两个文件总是一起改、模块越改越难改想要一份架构体检，还是分支几百条不知道哪些能删、分支清理、陈旧分支要不要留、分支怎么开版本 tag 怎么打、这个目录该谁评审、CODEOWNERS 怎么写，或者要立规矩了、提交规范、提交信息乱七八糟、这次改动的提交信息怎么写、PR 描述懒得写评审人看不懂改了啥、帮我评审这个 PR、想要更细的正确性可读性架构安全性能五轴、收到一堆评审意见不知道怎么回该不该反驳、这段代码太绕了想在行为不变的前提下化简、团队想立规矩不知从哪一步落地、要做一次季度仓库大扫除，都从这里进。本技能判断意图并路由到带脚本的子技能，只读不改代码。不做：直接改代码或执行删除，也不替团队定考核指标。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "代码仓库治理助手"
 display_name_en: "Repo Governance Pro"
-description_zh: "一个入口管住仓库本身：技术债盘点、代码热点与知识集中度、分支清理、代码归属与 CODEOWNERS、评审流程、提交规范、PR 描述；按意图路由到带脚本的精专子技能，只读不改代码。"
-description_en: "One entry point for the repository itself: tech-debt inventory, code hotspots and bus factor, branch cleanup, ownership and CODEOWNERS, review workflow, commit conventions, PR descriptions; routes to focused sub-skills, read-only."
+description_zh: "一个入口管住仓库本身，不必等用户报出技能名：技术债盘点、代码热点与知识集中度、分支清理、代码归属与 CODEOWNERS、评审流程与收到意见怎么回、提交规范、PR 描述、代码化简；按意图路由到带脚本的精专子技能，只读不改代码。"
+description_en: "One entry point for the repository itself, triggered by the question rather than by name. Tech-debt inventory, code hotspots and bus factor, branch cleanup, ownership and CODEOWNERS, review workflow and responding to review comments, commit conventions, PR descriptions, behavior-preserving simplification; read-only."
 tags:
   - "技术债"
   - "代码评审"

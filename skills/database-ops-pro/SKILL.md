@@ -1,12 +1,12 @@
 ---
 name: database-ops-pro
-description: 数据库运维助手，覆盖研发跟数据库较劲的整条链路：慢查询定位与索引优化、SQL 跑得慢 / 库 CPU 打满 / 扫全表、执行计划与 explain 怎么看、迁移脚本上线风险（锁表、丢数据、滚动发布期间新旧代码打架）、DDL 变更评审、两套环境的建表 SQL 与表结构对比、字段类型与默认值漂移、ALTER 草稿、数据库连接与配置排查（连不上、连错库、连接串密码写死）。当用户提到慢 SQL、慢查询、slow log、加索引、索引优化、explain、锁表、大表、DDL、迁移、migration、flyway、liquibase、建表语句、schema diff、表结构对比、字段变更、alter table、数据库连接、连接串、DSN、jdbc、连不上数据库、MySQL、PostgreSQL、DBA 评审等任一数据库事务，但不确定该用哪个专门技能时使用；本技能判断意图、给出精简做法并路由到带脚本的子技能。不做：直连生产库执行任何 SQL。
+description: 数据库运维助手。只要用户的问题涉及跟数据库较劲——查得慢、改不动、连不上，即应触发本技能，无需用户明确指定。无论是慢日志堆了一地、接口突然变慢、库 CPU 打满、这条 SQL 该加什么索引、要不要覆盖索引、大表扫全表、SELECT 星号与没有 WHERE，还是迁移脚本能不能上、会不会锁表丢数据、加非空列改列类型删列删表风险多大、大表加索引怕卡死要不要走在线 DDL、滚动发布期间新旧代码打架、DDL 变更要评审、MySQL 与 PostgreSQL 各自的安全写法是什么，或者预发和生产的表结构对不上、有人手改过库要出 ALTER 草稿、字段类型默认值与注释漂移、本地能连而测试环境连不上、连错了库、新人起不来服务、连接串密码写死在代码或配置里、带库数据的导出要脱敏后才能发出去、上线前想把数据库相关的检查一次过完，都从这里进。本技能判断意图，给出精简做法并路由到带脚本的子技能，全程只读不连库。不做：直连生产库执行任何 SQL，也不做数据建模与 ORM 映射。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "数据库运维助手"
 display_name_en: "Database Ops Pro"
-description_zh: "一个入口管住数据库的糟心事：慢查询与索引、迁移脚本的锁表与丢数据风险、两套环境的表结构对比、连接串与配置排查；按意图路由到带脚本的精专子技能，全程只读不连库。"
-description_en: "One entry point for database pain: slow queries and indexes, migration risks like table locks and data loss, schema diffs across environments, connection and config troubleshooting; routes to focused sub-skills, read-only and never connects to a live database."
+description_zh: "一个入口管住数据库的糟心事，不必等用户报出技能名：慢查询与索引、迁移脚本的锁表与丢数据风险、两套环境的表结构对比与 ALTER 草稿、连接串与配置排查、导出数据脱敏；按意图路由到带脚本的精专子技能，全程只读不连库。"
+description_en: "One entry point for database pain, triggered by the symptom rather than by name. Slow queries and indexes, migration risks like table locks and data loss, schema diffs across environments with ALTER drafts, connection and config troubleshooting, masking before sharing; read-only and never connects to a live database."
 tags:
   - "慢查询"
   - "索引优化"

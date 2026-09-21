@@ -1,12 +1,12 @@
 ---
 name: tech-writing-expert
-description: "技术表达.Skill——覆盖技术人「把技术讲给人听」的整份写作与表达工作，服务对象是要写东西给人看的工程师。只要用户的问题涉及把技术讲清楚、讲到对方愿意点头，无论是技术方案文档、周报月报与述职、晋升答辩材料、故障复盘报告，还是技术分享稿与 PPT 大纲、给非技术同事的翻译式解释、要对方回话的邮件与 IM，都从这里进。当用户说「这个方案怎么写」「周报没东西写」「述职材料怎么搭」「晋升答辩材料」「复盘报告怎么写」「产品经理听不懂」「说人话」「这封邮件怎么写才有人理」「技术分享讲什么」「PPT 大纲」时使用。"
+description: "技术表达.Skill。只要用户要把技术写给一个具体的人看、而且读完要对方给个回应，即应触发本技能，无需用户明确指定。无论是技术方案与设计文档怎么写、RFC 与立项材料怎么搭、第一屏该放什么、方案写完了怕评审会上被挑穿想先自审一遍，还是周报月报没东西写、这周全在查一个线上问题、迭代进展怎么同步、述职与晋升答辩材料怎么搭、一年的活讲不出高度、故障复盘报告怎么写、讨论要落成需求文档再拆成任务，或者产品经理老板客服听不懂要说人话、跨团队同一个词两种意思、同一个东西一会儿叫任务一会儿叫作业、这个选型要不要记成 ADR、邮件或 IM 发出去没人理想要个回话、技术分享稿与 PPT 大纲从哪起、PR 描述与对外版本说明和 release notes 怎么写、休假转岗要留一份交接、要写给 AI 或 Agent 看的规则文档、写完想做一次读者测试，都从这里进。本技能先定读者与你要的那个决定再动笔。不做：写接口文档与代码注释，不编数字，也不替人按发送键。"
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "技术表达.Skill"
 display_name_en: "Tech Communication.Skill"
-description_zh: "一个入口覆盖技术人对人的表达——方案文档、周报月报与述职、晋升答辩、故障复盘、分享稿与 PPT 大纲、给非技术同事的解释、要结果的邮件与 IM。先定读者与你要的决定，再动笔；按意图路由到精专子技能。"
-description_en: "One entry point for explaining technology to people. Design docs, weekly and monthly reports, promotion packets, incident postmortems, talk outlines and slide skeletons, plain-language explanations for non-engineers, and emails that actually get a reply. Reader first, decision first; routes to focused sub-skills."
+description_zh: "一个入口覆盖技术人对人的表达，不必等用户报出技能名：方案文档与 RFC、周报月报与述职、晋升答辩、故障复盘、需求 Spec 与任务拆解、分享稿与 PPT 大纲、给非技术同事的解释、要结果的邮件与 IM、PR 描述与版本说明、交接文档。先定读者与你要的决定，再动笔。"
+description_en: "One entry point for explaining technology to people, triggered by the writing task rather than by name. Design docs and RFCs, weekly and monthly reports, promotion packets, incident postmortems, specs and ticket breakdowns, talk outlines and slide skeletons, plain-language explanations for non-engineers, emails that get a reply, PR descriptions and release notes, handoff docs. Reader first, decision first."
 tags:
   - "技术写作"
   - "技术方案"

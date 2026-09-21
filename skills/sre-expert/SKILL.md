@@ -1,12 +1,12 @@
 ---
 name: sre-expert
-description: 运维专家.Skill——覆盖运维与 SRE 的整份日常工作，服务对象是运维工程师、SRE、oncall 值班的人，以及自己扛线上的开发。只要用户的问题涉及线上稳定性与基础设施，无论是告警响了要止损、日志翻不动要定位，还是证书快到期、域名解析没生效、发版要回滚、容量不够要扩、告警太吵要治理、故障完了要复盘，都从这里进。当用户说 告警、报警、P0、P1、oncall、值班、线上挂了、打不开、超时、5xx、报错、变慢、抖动、CPU 打满、OOM、磁盘满、日志、grep、时间线、止损、回滚、降级、限流、扩容、容量、压测、QPS、TP99、慢查询、证书、HTTPS、到期、域名、DNS、解析、nginx、K8s、镜像、部署、发布、灰度、巡检、健康检查、监控、Prometheus、告警风暴、误报、漏报、根因、RCA、复盘、postmortem、定时任务、cron 等任一说法时使用；本技能先判断处在哪一环，再给方法并路由到精专子技能。不做：代替人连生产环境执行操作。
+description: 运维专家.Skill。只要用户的问题涉及线上稳定性与基础设施，即应触发本技能，无需用户明确指定。无论是半夜被叫起来、告警一直响、群里喊线上挂了、用户说打不开、接口 5xx 报错超时变慢抖动、CPU 打满 OOM 磁盘满、先止损还是先定位，还是日志翻不动要定位、几台机器日志拼不成一条时间线、日志刷屏看不出哪条是新错误、影响了哪些接口、是不是数据库慢查询拖的、前端首屏慢要拆 HAR 看瀑布流、这块出事的代码谁最熟，或者要给证书做三档预警、证书还有几天到期、域名解析切换前后要留存差异、nginx 配置能不能上会不会 502、这一批地址是不是都活着、周四发版、回滚预案、上线清单与发布后巡检、容器与 K8s 清单要过生产基线、各环境配置对不齐、这接口能扛多少要先压一轮建基线、告警太吵误报漏报要治理、这个定时任务到底几点跑时区对不对、日志要贴群得先脱敏、故障完了要发简报要复盘，都从这里进。不做：代替人连生产环境执行操作。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "运维专家.Skill"
 display_name_en: "SRE Expert.Skill"
-description_zh: "一个入口覆盖运维一整天：告警响应与止损、日志排查、性能与容量、证书与域名、部署与回滚、监控告警治理、故障复盘；按所处环节路由到精专子技能。"
-description_en: "One entry point for a whole SRE day—alert response and mitigation, log digging, performance and capacity, certificates and DNS, deploy and rollback, monitoring hygiene, postmortems; routes to focused sub-skills."
+description_zh: "一个入口覆盖运维一整天，不必等用户报出技能名：告警响应与止损、日志排查与时间线、性能压测基线、证书与域名、部署与回滚、配置对齐、监控告警治理、定时任务解读、故障简报与复盘；按所处环节路由到精专子技能。"
+description_en: "One entry point for a whole SRE day, triggered by the situation rather than by name. Alert response and mitigation, log digging and timelines, load-test baselines, certificates and DNS, deploy and rollback, config drift, monitoring hygiene, cron reading, briefs and postmortems; routes to focused sub-skills."
 tags:
   - "运维"
   - "SRE"

@@ -1,12 +1,12 @@
 ---
 name: career-growth-expert
-description: "职业成长.Skill——覆盖技术人从定级到转型的整条职业路径，服务对象是想晋升、想换方向、想在团队里更有分量的工程师。只要用户的问题涉及职业发展，无论是看不懂职级与晋升标准、绩效自评与目标设定、向上管理与跨部门协作，还是技术选型没有话语权、带人与 code review 文化、跳槽时机与行业判断、技术品牌建设，都从这里进。当用户说「怎么晋升」「晋升差在哪」「绩效怎么写」「OKR 怎么定」「跟老板怎么聊」「跨部门推不动」「方案说不过别人」「带人带不动」「该不该跳槽」「这个行业还行不行」「怎么做技术影响力」时使用。"
+description: "职业成长.Skill。只要用户的问题涉及自己的职业发展，而不是手头这行代码怎么写，即应触发本技能，无需用户明确指定。无论是想晋升、看不懂公司的职级标准、不知道差在哪、评委席上没人说得清我做过什么、晋升这件事太大要跨月推进、绩效自评与述职要素材却记不清一年做了什么、一年做的都是零碎需求、目标与 OKR 拆不到能落地、季度自检该给下季度定什么，还是自己都说不清想要什么、跟老板对不齐、跨部门推不动对方不回消息、技术选型上说不过别人、半年后被追问当初为什么选它、开始带人但评审老是吵架、被评审的人只会表演式附和、想扩大影响半径不知从哪块入手、只有一个人懂的模块要接过来还是分出去、要补的短板一大把学不动，或者在纠结、该不该跳槽、这条赛道还行不行、要不要转管理、什么时候算该走了、手上这个 offer 接不接、想把方法论沉淀成能被看见的产物、要转岗交接，都从这里进。不做：法律与合同建议，不代写虚假履历，也不承诺晋升结果。"
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "职业成长.Skill"
 display_name_en: "Career Growth.Skill"
-description_zh: "一个入口覆盖技术人的职业路径——职级认知与晋升路径、绩效自评与目标设定、向上管理与跨部门协作、技术选型话语权、带人与 code review 文化、跳槽时机与行业判断、技术品牌建设。先把事实捞齐再谈判断，按意图路由到精专子技能。"
-description_en: "One entry point for an engineer's career path. Levels and promotion, self reviews and goal setting, managing up and cross-team work, earning a say in technical decisions, mentoring and code review culture, when to switch jobs and how to read an industry, and building a technical brand. Evidence first; routes to focused sub-skills."
+description_zh: "一个入口覆盖技术人的职业路径，不必等用户报出技能名：职级认知与晋升缺口、绩效自评与目标拆解、向上管理与跨部门协作、技术选型话语权与 ADR、带人与 code review 文化、影响半径与学习计划、跳槽时机与行业判断、转管理与 offer 六维、技术品牌与交接。先把事实捞齐再谈判断。"
+description_en: "One entry point for an engineer's career path, triggered by the worry rather than by name. Levels and promotion gaps, self reviews and goal breakdown, managing up and cross-team work, earning a say in technical decisions, mentoring and code review culture, widening impact radius and learning plans, when to switch jobs and how to read an industry, moving into management, comparing offers, building a technical brand and handing work over. Evidence first."
 tags:
   - "职业成长"
   - "晋升"

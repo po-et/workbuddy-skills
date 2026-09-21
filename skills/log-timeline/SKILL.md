@@ -2,7 +2,7 @@
 name: log-timeline
 description: 多文件日志时间线重建、故障复盘、把几个服务的日志按时间合到一起、应用日志与 Nginx 日志和 syslog 对齐、跨时区日志统一、故障那几分钟到底发生了什么、谁先谁后、错误爆发点在哪、每秒事件密度、这三个文件时间格式不一样怎么对齐、错误是什么时候开始暴增的。当用户说「把这几个日志按时间线合起来」「复盘一下这次故障」「10 点到 10 点 05 分之间发生了什么」「先后顺序是什么」「哪台机器先报错」时使用。附纯标准库脚本 scripts/log_timeline.py，自动识别 ISO8601、带毫秒的常见格式、syslog、Nginx 与 Unix 毫秒时间戳并归一到 --tz，按时间排序合并并标注来源别名与级别，支持 --from/--to 时间窗、--grep、--level、无时间戳续行归并、ASCII 事件密度柱状图、错误爆发点检测与 --json。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "日志时间线重建"
 display_name_en: "Log Timeline"
 description_zh: "把多个格式不同、时区不同的日志文件合成一条时间线：自动识别 ISO8601/syslog/Nginx/Unix 毫秒时间戳并归一到同一时区，按时间排序并标注来源与级别，附每桶事件密度柱状图、各文件首末事件与错误爆发点，故障复盘一条命令出结果。纯 Python 标准库。"

@@ -1,12 +1,12 @@
 ---
 name: data-toolkit-pro
-description: 数据处理助手，覆盖研发天天要干却懒得手写脚本的数据杂活：CSV / TSV / 表格导出的数据画像与质量检查（空值率、类型混乱、重复行、全空列、坏行）、两份 JSON 或配置的语义对比与差异定位、从样例 JSON 反推 Schema 与接口契约、正则怎么写怎么调怎么避免灾难性回溯、日志与数据脱敏后再对外分享、手机号身份证银行卡邮箱等敏感信息识别、仓库里写死的密钥自查、几十万行日志按模板聚类降噪。当用户提到 CSV、Excel 导出、数据质量、数据画像、空值、脏数据、JSON 对比、diff、接口返回对不上、JSON Schema、字段契约、正则、regex、匹配不上、脱敏、打码、PII、敏感信息、密钥泄露、token 写死、日志太多看不过来等任一数据杂活，但不确定该用哪个专门技能时使用。不做：数据分析结论与业务口径判断。
+description: 数据处理助手。只要用户手上有一份文件要看清楚、要对比、要清洗、要脱敏之后发出去，即应触发本技能，无需用户明确指定。无论是运营甩过来一份 CSV 或 TSV 导出不知道干不干净、连分隔符和编码都不确定、空值率多少、哪几列全是空的、哪几列类型混着来、有没有重复行坏行、有没有疑似个人信息的列、能不能直接入库，还是两份 JSON 或两套配置要逐字段定位差异、接口返回对不上、数组顺序变了导致差异全是噪音、接口返回要写文档要做校验想反推 Schema 当契约，或者看不懂这条正则、正则匹配不上、改完怕改坏想拿真实样本先红后绿、担心灾难性回溯把服务卡死，又或者日志要贴工单发给外部得先把手机号身份证银行卡邮箱 token 密钥连接串打码、先脱敏、脱敏后还要跨文件对得上、想确认仓库里没有写死的凭据、几十万行日志不知道从哪看起要先聚类降噪挑出最少见的那条，都从这里进。本技能判断是哪类杂活并路由到带脚本的子技能，纯本地跑不联网不上传。不做：数据分析结论与业务口径判断。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "数据处理助手"
 display_name_en: "Data Toolkit Pro"
-description_zh: "一个入口搞定研发的数据杂活：CSV 画像与质量检查、JSON 与配置对比、Schema 推断、正则编写与调试、脱敏与密钥自查、日志聚类降噪；按意图路由到带脚本的精专子技能，纯本地不外传数据。"
-description_en: "One entry point for everyday data chores: CSV profiling and quality checks, JSON and config diffs, schema inference, regex writing and debugging, masking and secret scanning, log clustering; routes to focused sub-skills, all local."
+description_zh: "一个入口搞定研发的数据杂活，不必等用户报出技能名：CSV 画像与质量检查、JSON 与配置对比、Schema 推断、正则编写调试与回溯风险、脱敏与密钥自查、日志聚类降噪；按意图路由到带脚本的精专子技能，纯本地不外传数据。"
+description_en: "One entry point for everyday data chores, triggered by the file in hand rather than by name. CSV profiling and quality checks, JSON and config diffs, schema inference, regex explanation and backtracking risks, masking and secret scanning, log clustering; all local, nothing uploaded."
 tags:
   - "CSV 画像"
   - "数据质量"

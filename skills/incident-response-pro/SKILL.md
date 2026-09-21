@@ -1,12 +1,12 @@
 ---
 name: incident-response-pro
-description: 线上故障应急助手，从告警响起到复盘归档一条链路全包：告警分诊与响应、先止损后定位、服务挂了 / 接口 500 / 5xx / 超时 / 错误率飙升 / 响应变慢 / CPU 打满 / OOM 的快速判断、日志排查与关键字定位、多机多格式日志合成时间线、日志刷屏降噪与新错误识别、错误从什么时候开始变多的突变检测、影响面与受影响接口评估、故障前谁改了什么的变更关联、根因假设排序与验证、恢复确认、故障简报与对外同步、复盘与改进项跟踪。当用户说线上出问题了、报警、告警、P0、P1、oncall、值班、事故、挂了、打不开、超时、报错、变慢、抖动、日志、时间线、定位、止损、回滚、降级、根因、RCA、影响面、简报、复盘、postmortem 等任一说法，但不确定该用哪个专门技能时使用；本技能判断所处阶段，给出对应方法并路由到精专子技能。不做：代替人连生产系统执行操作。
+description: 线上故障应急助手。只要用户的问题涉及线上服务出了状况、或是故障之后要交代，即应触发本技能，无需用户明确指定。无论是半夜被叫起来、告警一直响、群里有人喊线上挂了、用户反馈打不开、接口报 500、5xx 涨了、超时、错误率飙升、响应变慢、抖动、CPU 打满、OOM，还是拿不准、先止损还是先定位、该回滚还是该限流降级、错误从几点开始变多的、几台机器日志格式不一样拼不成时间线、日志刷屏看不出哪条是新错误、影响了哪些接口多少用户多少比例请求、接口没报错但变慢了、故障前谁改了什么、是不是数据库拖的、这块代码谁最熟、修完了怎么确认真恢复，或者老板在群里催进展要发故障简报要对外同步、复盘 postmortem 要怎么写、改进项要挂人挂日期挂验收、这条告警本身就吵或者该响的时候没响要治理，都从这里进。本技能判断所处阶段，给出对应方法并路由到精专子技能。不做：代替人连生产系统执行重启、回滚、改配置等操作，也不做日常性能调优与容量规划。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "线上故障应急助手"
 display_name_en: "Incident Response Pro"
-description_zh: "一个入口覆盖整条应急链路：告警分诊、快速止损、日志排查与降噪、时间线重建、影响面评估、变更关联、根因假设排序、恢复确认、故障简报与复盘；按所处阶段路由到精专子技能。"
-description_en: "One entry point for the whole incident lifecycle: alert triage, fast mitigation, log digging and de-noising, timeline reconstruction, blast-radius sizing, change correlation, ranked root-cause hypotheses, recovery checks, incident briefs and postmortems; routes to focused sub-skills."
+description_zh: "一个入口覆盖整条应急链路，不必等用户报出技能名：告警分诊、快速止损、日志排查与降噪、时间线重建、影响面评估、变更关联、根因假设排序、恢复确认、故障简报与复盘；按所处阶段路由到精专子技能。"
+description_en: "One entry point for the whole incident lifecycle, triggered by the situation rather than by name. Alert triage, fast mitigation, log digging and de-noising, timeline reconstruction, blast-radius sizing, change correlation, ranked root-cause hypotheses, recovery checks, incident briefs and postmortems; routes to focused sub-skills."
 tags:
   - "故障排查"
   - "告警响应"

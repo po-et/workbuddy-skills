@@ -2,7 +2,7 @@
 name: curl-to-code
 description: curl 命令转代码、把 curl 翻译成 Python/Go/Java/JS、浏览器 Copy as cURL 转请求代码、接口联调脚本生成、把抓包的请求改成可复用代码、curl 转 requests/fetch/axios/net-http/HttpClient/PHP curl。当用户说「这条 curl 怎么用 Python 写」「把这个 curl 转成 Go」「从 Chrome 复制的 curl 帮我改成代码」「照这个接口写个调用示例」「curl 里的 token 别写死在代码里」时使用。附纯标准库脚本 scripts/curl_to_code.py，解析 -X/-H/-d/-F/-u/-b/-G/-L/-k/--compressed/--max-time 与单双引号、反斜杠续行、ANSI-C 引用，输出 8 种语言代码，Authorization/Cookie/token 类请求头自动改读环境变量，支持标准输入、--all、--json。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "curl 转代码"
 display_name_en: "curl to Code"
 description_zh: "一条命令把 curl 翻译成 8 种语言的请求代码（requests/urllib/fetch/axios/net-http/HttpClient/PHP curl/可读 curl），凭据自动改读环境变量；支持从浏览器 Copy as cURL 直接粘贴。纯 Python 标准库。"

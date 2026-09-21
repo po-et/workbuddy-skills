@@ -1,12 +1,12 @@
 ---
 name: architect-expert
-description: 架构师.Skill——覆盖一名架构师从想清楚到定下来的整条链路，服务对象是技术负责人、架构师，以及要独立做技术决策的资深研发。只要用户的问题涉及「这个系统该怎么设计、这个技术该不该选、这笔债该不该还」，无论是新方案要选型与评审、模块与接口要定边界、领域术语各说各的要统一，还是评审会前要准备材料、技术债要排优先级、决定要落成 ADR、跨团队接口契约要谈，都从这里进。当用户说 架构、技术方案、设计方案、选型、要不要用、评审、方案评审、拆模块、模块划分、接口设计、领域建模、DDD、术语、统一语言、限界上下文、耦合、内聚、分层、技术债、重构、优先级、ADR、决策记录、RFC、契约、向后兼容、breaking change、迁移、下线、废弃、演进、可扩展性 等任一说法时使用；本技能先判断处在决策的哪一步，再给方法并路由到精专子技能。不做：替人拍板。
+description: 架构师.Skill。只要用户的问题涉及这个系统该怎么设计、这个技术该不该选、这笔债该不该还，即应触发本技能，无需用户明确指定。无论是心里只有一句我们要不要做 X 而细节全没定、需求模糊要先问清约束、动手前想先把方案想清楚、要写技术方案或 RFC 或立项材料、要在评审会上讲、列一下取舍、要评审别人的方案或怕自己的方案被挑穿，还是模块怎么拆边界画在哪、要不要拆服务、接口怎么设计才不返工、同一个词各说各的、要统一术语与限界上下文、给 Agent 用的工具怎么设计，或者这段代码该不该重构、技术债、该先还哪一笔、老系统要迁移老接口要下线要发变更公告、表结构要改怕锁表、决定要落成 ADR 免得半年后没人记得、跨团队接口契约怎么谈、破坏性变更怎么卡、方案定了怎么拆成能独立验收能单独回滚的切片、大项目迷雾太多看不清下一步、引入新依赖前要查 GPL 与 AGPL 传染性、要把活交接给别人或交给 Agent，都从这里进。不做：替人拍板。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "架构师.Skill"
 display_name_en: "Architect.Skill"
-description_zh: "一个入口覆盖技术决策全链路：技术方案与选型、模块与接口设计、领域建模与术语、架构评审、技术债与重构优先级、ADR 决策记录、跨团队接口契约；按决策阶段路由到精专子技能。"
-description_en: "One entry point for the whole decision chain—design and technology choices, module and interface boundaries, domain modeling and ubiquitous language, architecture review, tech-debt prioritization, ADRs, cross-team contracts; routes to focused sub-skills."
+description_zh: "一个入口覆盖技术决策全链路，不必等用户报出技能名：技术方案与选型、模块与接口设计、领域建模与术语、架构评审、技术债与重构优先级、迁移与下线、ADR 决策记录、跨团队接口契约、实施切片与交接；按决策阶段路由到精专子技能。"
+description_en: "One entry point for the whole decision chain, triggered by the question rather than by name. Design and technology choices, module and interface boundaries, domain modeling and ubiquitous language, architecture review, tech-debt prioritization, migration and deprecation, ADRs, cross-team contracts, delivery slicing and handoff; routes to focused sub-skills."
 tags:
   - "架构设计"
   - "技术选型"
