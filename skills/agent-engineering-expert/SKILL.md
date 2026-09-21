@@ -2,8 +2,8 @@
 name: agent-engineering-expert
 description: "Agent 工程专家.Skill——覆盖写 Agent、写技能、调提示词这一整份工作，服务对象是给 Agent 写指令、写技能、搭编排的人。只要用户的问题涉及 Agent 与提示词的设计、调试、评测，即应触发本技能，无需用户明确指定。无论是技能写了不触发、触发了却选错技能、AI 越聊越傻、答非所问、上下文塞不下、对话太长要接着聊、提示词该写多细、指令不听、老是瞎编、工具调用参数畸形、子代理怎么拆怎么并行、改完不知道有没有变好，还是 SKILL.md 的 frontmatter 与描述怎么写才会被自动调用，都从这里进。当用户说 提示词、prompt、系统提示词、指令、上下文、context、token 超了、爆上下文、压缩、交接、中间迷失、幻觉、工具描述、function calling、MCP、子代理、并行、评测、eval、回归、不触发、触发错、写技能、SKILL.md、Agent 变笨 等任一说法时使用；本技能先定位问题出在哪一层，再给方法并路由到精专子技能。不做代跑上线，也不接触真实密钥。"
 author: Captain
-version: 0.1.0
-display_name: "Agent 工程专家.Skill"
+version: 0.1.1
+display_name: "Agent 工程"
 display_name_en: "Agent Engineering Expert.Skill"
 description_zh: "一个入口覆盖 Agent 工程一整条链路：技能触发面设计、指令高度校准、上下文预算与渐进式披露、五种上下文退化的诊断、长会话压缩与交接、工具定义、子代理编排与并行、评测回归、失败模式排查；按问题所在的层路由到精专子技能。"
 description_en: "One entry point for the whole agent-engineering loop—skill trigger surfaces, instruction altitude, context budgeting and progressive disclosure, five context-degradation failure modes, long-session compaction and handoff, tool definitions, subagent orchestration, evals and regression; routes to focused sub-skills."

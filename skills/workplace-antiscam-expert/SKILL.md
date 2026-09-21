@@ -2,8 +2,8 @@
 name: workplace-antiscam-expert
 description: "职场防骗专家.Skill——覆盖求职与上班这条线上会遇到的整片骗局，服务对象是找工作的人、刚入职的新人、做副业的人，以及任何在公司里被要求转账或交钱的普通人。只要用户的问题涉及工作里的钱和个人信息，无论是招聘要先交钱、付费内推、培训贷、刷单兼职、境外高薪、领导让我转账、虚假报销与发票、职场传销与拉人头，还是劳动合同与竞业的坑、简历信息被卖，都从这里进。当用户说「这个招聘是真的吗」「入职前要先交培训费」「面试完让我贷款培训」「兼职刷单能不能做」「被骗了怎么办」「钱还能追回来吗」「境外月薪三万可信吗」「合同这么签行不行」时使用。"
 author: Captain
-version: 0.1.0
-display_name: "职场防骗专家.Skill"
+version: 0.1.1
+display_name: "职场防骗"
 display_name_en: "Workplace Anti-Scam.Skill"
 description_zh: "一个入口覆盖求职与职场里的骗局识别——招聘收费、付费内推、培训贷、刷单兼职、境外高薪、冒充领导与财务的转账、虚假报销与发票、职场传销、劳动合同与竞业的坑、个人信息泄露。给能直接对照的特征与十分钟自查四步，只做识别与提醒，不做法律定性、不承诺追回。"
 description_en: "One entry point for spotting scams around jobs and work. Upfront fees, paid referrals, training loans, fake part-time tasks, overseas high-pay traps, impersonated bosses asking for transfers, fake reimbursements and invoices, workplace pyramid schemes, contract and non-compete traps, and resume data leaks. Recognition and verification only, no legal conclusions and no promises of recovery."

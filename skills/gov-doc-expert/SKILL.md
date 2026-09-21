@@ -2,8 +2,8 @@
 name: gov-doc-expert
 description: "公文写作专家.Skill——覆盖单位里正式材料从接到任务到定稿的整份活，服务对象是办公室、综合岗、文秘、材料岗，以及任何被临时抓去写材料的人。只要用户的问题涉及写正式材料，无论是通知、通报、请示、报告、函、纪要，还是总结、计划、讲话稿、汇报材料、述职报告，都从这里进。当用户说「该用请示还是报告」「通知怎么写」「标题怎么拟」「主送抄送怎么写」「领导交代了几句我不知道怎么起稿」「材料太空了」「套话怎么用才不假大空」「会议纪要怎么整理」「年度总结怎么写」「讲话稿怎么写」「述职报告怎么写」时使用。"
 author: Captain
-version: 0.1.0
-display_name: "公文写作专家.Skill"
+version: 0.1.1
+display_name: "公文写作"
 display_name_en: "Official Writing Expert.Skill"
 description_zh: "一个入口覆盖单位正式材料——通知、通报、请示、报告、函、纪要、总结、计划、讲话稿、汇报材料、述职报告；文种怎么选、标题主送抄送成文日期怎么写、行文逻辑怎么立、套话哪些能用哪些是空转、一堆口语素材怎么加工成稿。格式细节以本单位现行模板与现行国家标准为准，按意图路由到精专子技能。"
 description_en: "One entry point for official and workplace documents in Chinese organizations. Notices, circulars, requests for instructions, reports, letters, meeting minutes, summaries, plans, speeches, briefing materials and performance statements. How to pick the right document type, get the header and recipients and date right, build the argument, use stock phrases without hollowing out the text, and turn raw spoken notes into a finished draft. Routes to focused sub-skills."

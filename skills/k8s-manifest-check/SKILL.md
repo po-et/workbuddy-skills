@@ -3,7 +3,7 @@ name: k8s-manifest-check
 description: Kubernetes 清单体检、K8s YAML 生产就绪检查、Deployment 安全基线、资源 requests/limits 缺失、探针缺失、镜像 latest、特权容器、hostNetwork、hostPath、明文密码写进 env、selector 与 labels 不匹配、废弃 apiVersion、CronJob 并发策略、NodePort 暴露、Ingress 无 TLS。当用户说「帮我检查这些 K8s YAML 有没有问题」「上线前看看 Deployment 配置」「这个 Pod 为什么不安全」「资源限制有没有配」「K8s 清单 lint」时使用。附脚本 scripts/k8s_check.py：内置最小 YAML 解析（不依赖 PyYAML 与 kubectl），覆盖 Deployment/StatefulSet/DaemonSet/Job/CronJob/Pod/Service/Ingress，17 条规则分 high/warn/info 并附改法；识别 Helm 模板提示先渲染；支持目录递归、--json、--strict。
 author: Captain
 version: 0.1.1
-display_name: "K8s 清单体检"
+display_name: "K8s 配置检查"
 display_name_en: "Kubernetes Manifest Check"
 description_zh: "不装任何依赖就能给 Kubernetes YAML 做生产就绪检查：安全基线（特权、root、hostNetwork、hostPath、明文密钥）、可靠性（资源限制、探针、副本、selector 匹配）、废弃 API、CronJob 与暴露面；分级输出附改法，可作 CI 门禁。"
 description_en: "Production-readiness checks for Kubernetes YAML with zero dependencies: security baseline (privileged, root, hostNetwork, hostPath, plaintext secrets), reliability (resources, probes, replicas, selector match), deprecated APIs, CronJob and exposure; graded output with fixes, CI-gate ready."

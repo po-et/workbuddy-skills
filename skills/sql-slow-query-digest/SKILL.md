@@ -2,8 +2,8 @@
 name: sql-slow-query-digest
 description: 慢查询日志摘要、慢 SQL 分析、MySQL slow log 分析、PostgreSQL 慢日志分析、pt-query-digest 精简替代、找出最耗时的 SQL、数据库变慢排查、索引缺失定位、SQL 指纹聚合。当用户说「帮我看看慢查询日志里哪些 SQL 最费时间」「数据库 CPU 打满了，从慢日志找元凶」「这份 slow.log 汇总一下」「哪些 SQL 扫了几百万行只返回几条」「按指纹把慢 SQL 归并统计」时使用。附纯标准库脚本 scripts/slow_query_digest.py，把 SQL 归一化成指纹（数字与字符串换问号、IN 列表折叠、空白压缩、统一小写）后聚合次数、总耗时、平均与最大耗时、平均扫描行数、首末出现时间与示例原句，按总耗时排序输出 Top N，并给出扫描返回比过高、无 WHERE、SELECT *、前导百分号 LIKE、深分页、锁等待等分级提示与改法；支持 stdin、--json 与 --strict 门禁。
 author: Captain
-version: 0.1.0
-display_name: "慢查询摘要"
+version: 0.1.1
+display_name: "慢查询分析"
 display_name_en: "SQL Slow Query Digest"
 description_zh: "一条命令把慢查询日志变成 Top SQL 报表：按指纹聚合次数与总耗时、平均扫描行数，并标出无索引、无 WHERE、SELECT * 等问题与改法；MySQL 与 PostgreSQL 通吃，纯 Python 标准库。"
 description_en: "Turn slow query logs into a Top-SQL report in one command: fingerprint-level counts, total time and rows examined, plus graded hints for missing indexes, missing WHERE and SELECT *; MySQL and PostgreSQL, pure Python stdlib."

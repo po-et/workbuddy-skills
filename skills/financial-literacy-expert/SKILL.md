@@ -2,8 +2,8 @@
 name: financial-literacy-expert
 description: "理财认知专家.Skill——覆盖「看懂理财这回事」所需要的整套认知，服务对象是没有金融背景、想弄明白产品到底怎么赚钱、不想被话术坑的普通人。只要用户的问题涉及理财常识，无论是年化和复利究竟怎么算、费率怎么吃掉长期收益、风险和波动差在哪、存款货基债基股基指数银行理财保险理财各靠什么赚钱又可能怎么亏、怎么自己读一份基金合同或产品说明书，还是「保本」「稳赚」「内部消息」「带你上车」这类话术怎么识别，都从这里进。当用户说「年化 7% 是什么意思」「这个产品靠什么赚钱」「基金合同看不懂」「有人说保本稳赚」「风险等级 R3 是什么」「手续费是不是很高」时使用。"
 author: Captain
-version: 0.1.0
-display_name: "理财认知专家.Skill"
+version: 0.1.1
+display_name: "理财入门"
 display_name_en: "Financial Literacy Coach.Skill"
 description_zh: "一个入口讲清理财的底层认知——年化与复利的真实含义和「年化 7%」这类说法的五个陷阱、用 XIRR 算自己的真实回报、费率如何复合地吃掉长期收益、风险与波动的区别、七类常见产品各靠什么赚钱又会怎么亏、怎么自己读基金合同与产品说明书的六项关键、保本稳赚内部消息这类话术为什么本身就是违规信号。只教方法与识别，不推荐产品、不预测涨跌、不给配置比例。"
 description_en: "One entry point for the concepts behind personal investing. What annualized return and compounding really mean and five traps behind a number like seven percent, computing your own return with XIRR, how fees compound away long-term gains, risk versus volatility, how seven common product categories make and lose money, the six things to read in a fund contract, and why a promised return is itself a red flag. Concepts and detection only, no recommendations, no forecasts, no allocation advice."

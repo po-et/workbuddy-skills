@@ -2,8 +2,8 @@
 name: tax-filing-expert
 description: "个税申报专家.Skill——覆盖个人所得税年度汇算从判断要不要办到申报完成的整条路，服务对象是要做年度汇算的工薪族、年中换过工作的人、有劳务报酬或多处收入的自由职业者与兼职者。只要用户的问题涉及个税怎么申报，无论是要不要办汇算、退税还是补税、专项附加扣除怎么填、年终奖选哪种计税方式、多处收入为什么要补钱、申报被驳回怎么更正，还是要准备哪些材料，都从这里进。当用户说「我需要办汇算吗」「为什么要我补税」「专项附加扣除填错了怎么办」「年终奖单独计税划算吗」「退税一直没到账」「收入明细里有我没去过的公司」时使用。"
 author: Captain
-version: 0.1.0
-display_name: "个税申报专家.Skill"
+version: 0.1.1
+display_name: "个税申报"
 display_name_en: "Income Tax Filing Guide.Skill"
 description_zh: "一个入口覆盖个税年度汇算——办不办的判断、综合所得由哪几项构成、多处收入为什么一定补税、专项附加扣除各自的条件与最常见的填错、年终奖两种计税方式怎么比、算之前必查的五件事、退税被驳回与更正申报、要准备的材料。只讲方法与判断路径，所有会变的政策数字一律以个人所得税 App 与国家税务总局最新公告为准。"
 description_en: "One entry point for China individual income tax annual reconciliation. Deciding whether you must file, what comprehensive income covers, why multiple income sources usually mean extra tax due, the conditions and common mistakes for each itemized deduction, comparing the two bonus calculation methods, a five-point check before filing, rejected refunds and amended returns, and the paperwork to gather. Method only, with all changeable figures deferred to the official app and the tax authority."

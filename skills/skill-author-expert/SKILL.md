@@ -2,8 +2,8 @@
 name: skill-author-expert
 description: "技能作者.Skill——服务想把技能发到 SkillHub、OpenClaw 这类技能市场的人，从选题一直覆盖到上架后看数据。只要用户的问题涉及技能的选题、编写、打包、发布与上架运营，即应触发本技能，无需用户明确指定。无论是不知道做什么题目、想知道这个题有没有人要、SKILL.md 每个字段填什么、描述怎么写才会被 Agent 自动调用、名字和 slug 撞了、上传报 400、frontmatter 解析失败、版本号被拒、发布频率过高、一天能发几个、发了两天没人下载、评测查不到、要不要升版本、被拒了怎么改，都从这里进。当用户说 发技能、上架、发布、技能市场、SkillHub、slug、抢注、撞名、frontmatter、打包、配额、限流、审核、AI 评分、下载量、收藏、触发面、描述、examples、tags、版本号、changelog、被拒 等任一说法时使用；本页的平台规律全部出自两天 97 次真实发布的实测，推测的一律标注。"
 author: Captain
-version: 0.1.0
-display_name: "技能作者.Skill"
+version: 0.1.1
+display_name: "技能编写"
 display_name_en: "Skill Author.Skill"
 description_zh: "把技能从选题做到上架的整条链路做成清单：怎么判断题目有没有人要、SKILL.md 与 frontmatter 逐字段怎么填、描述与触发面怎么写、slug 撞名怎么办、打包与发布配额的坑、上架后看哪个数、版本与更新策略、常见被拒原因；附两天 97 次真实发布实测出的平台规律。"
 description_en: "A complete checklist for shipping a skill to a marketplace—picking a topic with real demand, filling every SKILL.md frontmatter field, writing a description that actually triggers, dodging slug squatting, packaging and publish-quota traps, reading post-launch metrics, versioning, and the usual rejection reasons—backed by 97 real publishes."

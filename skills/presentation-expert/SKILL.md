@@ -2,8 +2,8 @@
 name: presentation-expert
 description: "汇报演示专家.Skill——覆盖从接到汇报任务到讲完答完的整个过程，服务对象是要做 PPT、要上台汇报、要答辩、要开线上会的人，不限行业。只要用户的问题涉及把一件事讲给一屋子人听，无论是搭故事线、做页面、选图表、写讲稿，还是控场、问答、压缩时长、线上演示，都从这里进。当用户说「PPT 怎么做」「汇报讲什么」「故事线怎么搭」「一页放多少内容」「这组数据用什么图」「逐字稿怎么写」「上台紧张」「被领导打断怎么办」「30 分钟的稿子压成 5 分钟」「答辩怎么准备」「线上会议怎么讲」时使用。"
 author: Captain
-version: 0.1.0
-display_name: "汇报演示专家.Skill"
+version: 0.1.1
+display_name: "PPT汇报演示"
 display_name_en: "Presentation Coach.Skill"
 description_zh: "一个入口覆盖整场汇报——先定受众要做的那个决定，再用金字塔或 SCQA 搭故事线，一页一个观点，按问题类型选图表，做视觉取舍，写讲稿并算时长，压缩时长只留决定链，最后是控场、问答与线上会议演示。产出结构、页标题、讲稿与图表选型，不替你上台。按意图路由到精专子技能。"
 description_en: "One entry point for the whole presentation. Start from the decision the audience must make, build the storyline with a pyramid or SCQA, one point per slide, pick the right chart for the question, cut the visuals back, write and time the script, compress a long talk down to the decision chain, then handle the room, the Q and A, and online meetings. Produces structure, slide titles, script and chart choices. Routes to focused sub-skills."

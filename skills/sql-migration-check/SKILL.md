@@ -3,7 +3,7 @@ name: sql-migration-check
 description: SQL 迁移脚本上线前风险检查、数据库变更评审、DDL 锁表风险、丢数据风险、MySQL / PostgreSQL 在线 DDL 建议、扩展-收缩迁移。当用户说「帮我看看这个迁移 SQL 能不能直接上线」「这条 ALTER 会不会锁表」「数据库变更评审」「Flyway/Liquibase/Alembic/Django 的迁移文件有没有风险」「加 NOT NULL 列为什么失败」时使用。附纯标准库脚本 scripts/sql_migration_check.py：切分语句、自动识别方言，16 条规则——DROP TABLE/COLUMN、TRUNCATE、无 WHERE 的 UPDATE/DELETE、NOT NULL 无 DEFAULT 的新列、易变函数默认值、改列类型、RENAME、非 CONCURRENTLY 建索引、加外键/唯一约束、SET NOT NULL、无主键建表、MyISAM、显式 LOCK 等，每条给出对应方言的安全做法；支持目录递归、stdin、--json、--strict。
 author: Captain
 version: 0.1.1
-display_name: "SQL 迁移风险检查"
+display_name: "数据库迁移风险"
 display_name_en: "SQL Migration Risk Check"
 description_zh: "上线前扫一遍迁移 SQL：找出会锁表、丢数据、让滚动部署报错的语句，按 high/warn/info 分级并给出 MySQL / PostgreSQL 各自的安全写法；纯 Python 标准库。"
 description_en: "Scan migration SQL before release: find statements that lock tables, lose data or break rolling deploys, graded high/warn/info with MySQL/PostgreSQL-specific safe alternatives; pure Python stdlib."

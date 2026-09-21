@@ -2,8 +2,8 @@
 name: insurance-policy-expert
 description: "保单解读专家.Skill——覆盖读懂一份已经买到手的保单所需要的全部环节，服务对象是手上有保单却看不懂的人、准备理赔的人、被拒赔的人，以及在考虑退保或续保的人。只要用户的问题涉及自己这份保单到底怎么回事，无论是投保人被保人受益人怎么分、保额与保障期间怎么看、免责条款藏在哪、健康告知没说实话会怎样、理赔要准备什么材料、为什么被拒赔、保证续保和可续保差在哪、退保能拿回多少，还是保单丢了怎么办，都从这里进。当用户说「这份保单到底保什么」「这种情况能赔吗」「健康告知漏填了怎么办」「被拒赔了怎么办」「退保能退多少钱」「保单找不到了」时使用。"
 author: Captain
-version: 0.1.0
-display_name: "保单解读专家.Skill"
+version: 0.1.1
+display_name: "保单解读"
 display_name_en: "Insurance Policy Reader.Skill"
 description_zh: "一个入口读懂你手上的保单——三个人四个数四个期的结构、免责条款藏在合同的哪四个位置、健康告知的规则与漏告知的后果、理赔材料清单与八种常见拒赔、被拒赔后的核对路径、保证续保与可续保的区别、退保的真实代价与合同内的替代选项、保单丢失怎么办。只解读你这一份，不推荐产品、不做产品对比、不判断某份保单值不值。"
 description_en: "One entry point for understanding an insurance policy you already hold. The three parties, four key amounts and four key periods, where exclusions hide in the contract, health disclosure rules and the cost of omissions, claim paperwork and eight common denial reasons, what to do after a denial, guaranteed renewal versus renewable, the real cost of surrender, and lost policy documents. Reading only, no product recommendations and no comparisons."
