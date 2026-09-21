@@ -1,0 +1,29 @@
+# 这份打包配置只为 skillkit/ 这一个 CLI 存在。
+# 仓库其余部分（skills/、experts/、tools/、docs/）不是 Python 包，也不会被打进去。
+# 装法见 skillkit/README.md：`pip install -e .` 之后就有 `skillkit` 命令；
+# 不想装也行，`python3 -m skillkit` 直接可用（纯标准库，零依赖）。
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skillkit"
+version = "0.1.0"
+description = "技能作者的命令行工具箱：起草、体检、打包、排期、看数据。纯标准库，零依赖。"
+readme = "skillkit/README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+keywords = ["skill", "skillhub", "agent-skills", "cli", "lint"]
+classifiers = [
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Environment :: Console",
+    "Topic :: Software Development :: Quality Assurance",
+]
+dependencies = []
+
+[project.scripts]
+skillkit = "skillkit.cli:main"
+
+[tool.setuptools]
+packages = ["skillkit", "skillkit.commands", "skillkit.tests"]

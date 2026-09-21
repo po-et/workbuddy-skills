@@ -8,3 +8,4 @@ config.yml
 out/
 runs/
 dist/
+*.egg-info/
