@@ -1,0 +1,46 @@
+[
+ {
+  "slug": "long-doc-summary",
+  "query": "长文总结",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T12:11",
+  "latest_version": "0.1.0",
+  "live": true,
+  "rank_after": 1,
+  "read_at": "2026-09-23T12:17"
+ },
+ {
+  "slug": "math-problem-tutor",
+  "query": "数学题",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T12:11",
+  "latest_version": "0.1.0",
+  "live": true,
+  "rank_after": 1,
+  "read_at": "2026-09-23T12:17"
+ },
+ {
+  "slug": "vocab-memorization-plan",
+  "query": "背单词",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T12:11",
+  "latest_version": "0.1.0",
+  "live": true,
+  "rank_after": 1,
+  "read_at": "2026-09-23T12:17"
+ },
+ {
+  "slug": "coding-for-beginners",
+  "query": "编程入门",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T12:11",
+  "latest_version": "0.1.0",
+  "live": true,
+  "rank_after": 1,
+  "read_at": "2026-09-23T12:17"
+ }
+]
