@@ -1,0 +1,46 @@
+[
+ {
+  "slug": "questionnaire-design",
+  "query": "问卷设计",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T12:17",
+  "latest_version": "0.1.0",
+  "live": true,
+  "rank_after": 1,
+  "read_at": "2026-09-23T12:25"
+ },
+ {
+  "slug": "interview-outline",
+  "query": "访谈提纲",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T12:17",
+  "latest_version": "0.1.0",
+  "live": true,
+  "rank_after": 1,
+  "read_at": "2026-09-23T12:25"
+ },
+ {
+  "slug": "office-automation-scripts",
+  "query": "自动化办公",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T12:17",
+  "latest_version": "0.1.0",
+  "live": true,
+  "rank_after": 1,
+  "read_at": "2026-09-23T12:25"
+ },
+ {
+  "slug": "shopping-list-planner",
+  "query": "购物清单",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T12:17",
+  "latest_version": "0.1.0",
+  "live": true,
+  "rank_after": 1,
+  "read_at": "2026-09-23T12:25"
+ }
+]
