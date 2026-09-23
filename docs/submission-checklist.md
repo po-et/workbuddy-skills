@@ -476,3 +476,21 @@ gh pr create --repo AlephAITech/WorkBuddyGuide --base "$BASE" --head "po-et:case
 | debate-speech | 245963 | 13:06:29 |
 | radio-script | 245970 | 13:07:45 |
 | graduation-speech | 246116 | 13:09:00 |
+
+### SkillHub wave3c（09-23）（2026-09-23，4 个，机器审核中）
+
+| slug | skillId | 发布时间 |
+|---|---|---|
+| kids-reading-plan | 246091 | 13:08:48 |
+| kids-screen-time | 246222 | 13:10:04 |
+| kids-coding | 246224 | 13:11:19 |
+| gift-list | 246226 | 13:12:35 |
+
+### SkillHub wave3d（09-23）（2026-09-23，4 个，机器审核中）
+
+| slug | skillId | 发布时间 |
+|---|---|---|
+| sleep-plan | 246100 | 13:08:52 |
+| running-for-beginners | 246223 | 13:10:08 |
+| renting-guide | 246225 | 13:11:23 |
+| new-product-copy | 246227 | 13:12:39 |
