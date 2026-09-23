@@ -450,3 +450,11 @@ gh pr create --repo AlephAITech/WorkBuddyGuide --base "$BASE" --head "po-et:case
 | dog-care-basics | 245814 | 12:27:19 |
 | car-buying-checklist | 245817 | 12:28:35 |
 | meeting-arrangement | 245818 | 12:29:50 |
+
+### SkillHub wave2c（09-23）（2026-09-23，3 个，机器审核中）
+
+| slug | skillId | 发布时间 |
+|---|---|---|
+| report-making | 245930 | 12:38:24 |
+| json-formatting | 245933 | 12:39:39 |
+| markdown-conversion | 245935 | 12:40:55 |
