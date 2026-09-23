@@ -1,0 +1,30 @@
+[
+ {
+  "slug": "salary-raise-request",
+  "query": "加薪申请",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T13:03"
+ },
+ {
+  "slug": "resignation-conversation",
+  "query": "离职谈话",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T13:03"
+ },
+ {
+  "slug": "team-building-plan",
+  "query": "团建方案",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T13:03"
+ },
+ {
+  "slug": "new-hire-mentoring",
+  "query": "新人带教",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T13:03"
+ }
+]
