@@ -1,0 +1,30 @@
+[
+ {
+  "slug": "after-viewing-essay",
+  "query": "观后感",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T13:05"
+ },
+ {
+  "slug": "debate-speech",
+  "query": "辩论稿",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T13:05"
+ },
+ {
+  "slug": "radio-script",
+  "query": "广播稿",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T13:05"
+ },
+ {
+  "slug": "graduation-speech",
+  "query": "毕业致辞",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T13:05"
+ }
+]
