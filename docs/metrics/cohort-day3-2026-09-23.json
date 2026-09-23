@@ -1,0 +1,695 @@
+[
+ {
+  "slug": "humanizer-zh",
+  "d0": 325,
+  "dl": 87017,
+  "inst": 5832,
+  "star": 100
+ },
+ {
+  "slug": "perspective-micro-essay",
+  "d0": 109,
+  "dl": 114,
+  "inst": 0,
+  "star": 1
+ },
+ {
+  "slug": "jianying-draft-forge",
+  "d0": 26,
+  "dl": 74,
+  "inst": 0,
+  "star": 1
+ },
+ {
+  "slug": "bihuo-auth",
+  "d0": 25,
+  "dl": 43,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "bihuo-setup",
+  "d0": 24,
+  "dl": 49,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "sales-crm-followup-plan",
+  "d0": 24,
+  "dl": 32,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "taxplus",
+  "d0": 24,
+  "dl": 38,
+  "inst": 0,
+  "star": 1
+ },
+ {
+  "slug": "bihuo-promote",
+  "d0": 23,
+  "dl": 46,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "renchacha",
+  "d0": 23,
+  "dl": 35,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "kingdee-k3cloudsql-dictionary",
+  "d0": 23,
+  "dl": 43,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "pc-health-report",
+  "d0": 23,
+  "dl": 34,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "pm-meeting-minutes",
+  "d0": 22,
+  "dl": 40,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "cntgtgfc",
+  "d0": 22,
+  "dl": 35,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "dcrfdfdfd",
+  "d0": 22,
+  "dl": 35,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "prd-document-writer",
+  "d0": 22,
+  "dl": 33,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "storm-research-protocol",
+  "d0": 22,
+  "dl": 35,
+  "inst": 0,
+  "star": 1
+ },
+ {
+  "slug": "totorosir-trae-checkin",
+  "d0": 22,
+  "dl": 58,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "sdngffg",
+  "d0": 21,
+  "dl": 31,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "gbtfgrfrfrtf",
+  "d0": 21,
+  "dl": 36,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "fvgngydv",
+  "d0": 21,
+  "dl": 36,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "bnhgjj88",
+  "d0": 21,
+  "dl": 36,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "fvnyhhgt",
+  "d0": 21,
+  "dl": 38,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "yitang-yai-skill",
+  "d0": 21,
+  "dl": 28,
+  "inst": 0,
+  "star": 1
+ },
+ {
+  "slug": "xhy-new-lesson-plan",
+  "d0": 21,
+  "dl": 31,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "windows-screen-coordinate",
+  "d0": 21,
+  "dl": 49,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "compensation-expert",
+  "d0": 21,
+  "dl": 26,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "reference-format-checker",
+  "d0": 20,
+  "dl": 68,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "xzcbnghy",
+  "d0": 20,
+  "dl": 35,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "dxb-erp-copilot",
+  "d0": 20,
+  "dl": 36,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "visa-materials-checklist",
+  "d0": 20,
+  "dl": 28,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "wechat-infographic-generator",
+  "d0": 20,
+  "dl": 30,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "annual-review-summary-writer",
+  "d0": 20,
+  "dl": 32,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "salary-structure-design",
+  "d0": 20,
+  "dl": 28,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "enbxtopdf",
+  "d0": 20,
+  "dl": 51,
+  "inst": 0,
+  "star": 1
+ },
+ {
+  "slug": "yizhanghuxingtu-shineifengshui",
+  "d0": 20,
+  "dl": 30,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "yd-a-share-trading-coach",
+  "d0": 20,
+  "dl": 26,
+  "inst": 0,
+  "star": 1
+ },
+ {
+  "slug": "speaking-first-english",
+  "d0": 20,
+  "dl": 27,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "film-editing-director",
+  "d0": 20,
+  "dl": 26,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "live-commerce-compliance",
+  "d0": 20,
+  "dl": 33,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "travel-budget-itinerary",
+  "d0": 19,
+  "dl": 29,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "cpa-tax",
+  "d0": 19,
+  "dl": 27,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "star-pic-collector",
+  "d0": 19,
+  "dl": 25,
+  "inst": 0,
+  "star": 1
+ },
+ {
+  "slug": "manufacturing-gross-margin-factor-analysis",
+  "d0": 19,
+  "dl": 25,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "baokuan-xuanti",
+  "d0": 19,
+  "dl": 45,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "doc-holmes",
+  "d0": 19,
+  "dl": 45,
+  "inst": 0,
+  "star": 1
+ },
+ {
+  "slug": "gov-bidding-radar",
+  "d0": 19,
+  "dl": 24,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "ai-pm-coach",
+  "d0": 19,
+  "dl": 31,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "prd-quality-gate-20260920-k7m4q9-aifanche",
+  "d0": 19,
+  "dl": 50,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "luoke-pbl-science-teaching",
+  "d0": 19,
+  "dl": 29,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "aisino-client-match-yage",
+  "d0": 19,
+  "dl": 23,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "uk-undergrad-planner",
+  "d0": 19,
+  "dl": 28,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "resume-star-rewrite",
+  "d0": 19,
+  "dl": 30,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "takeout-menu-pricing",
+  "d0": 19,
+  "dl": 23,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "hose-ai-trip",
+  "d0": 19,
+  "dl": 29,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "meeting-notes-cleanup",
+  "d0": 19,
+  "dl": 27,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "live-commerce-mcn",
+  "d0": 19,
+  "dl": 31,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "cpa-strategy",
+  "d0": 18,
+  "dl": 27,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "sip-ims-call-analysis-user-e51170a3",
+  "d0": 18,
+  "dl": 30,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "cpa-audit",
+  "d0": 18,
+  "dl": 25,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "docker-jenkins-deploy",
+  "d0": 18,
+  "dl": 27,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "touhang-xiaojiling-prospectus-review",
+  "d0": 18,
+  "dl": 38,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "comment-analyzer",
+  "d0": 18,
+  "dl": 22,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "sqq",
+  "d0": 18,
+  "dl": 27,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "stm32-ros-uart-param-protocol",
+  "d0": 18,
+  "dl": 25,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "seedream-seedance-prompts",
+  "d0": 18,
+  "dl": 23,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "skjf-productivity-create-skill-name",
+  "d0": 18,
+  "dl": 25,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "sip-drawdown-calculator",
+  "d0": 18,
+  "dl": 23,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "scan-to-pdf",
+  "d0": 18,
+  "dl": 28,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "us-undergrad-planner",
+  "d0": 18,
+  "dl": 29,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "frontend-designer",
+  "d0": 18,
+  "dl": 23,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "short-drama-emotion-translate",
+  "d0": 18,
+  "dl": 22,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "industrial-park-consultant",
+  "d0": 18,
+  "dl": 22,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "cnipa-patent-search",
+  "d0": 18,
+  "dl": 23,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "fde-project-practitioner",
+  "d0": 18,
+  "dl": 25,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "reduce-shortdrama-s2",
+  "d0": 18,
+  "dl": 29,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "job-interest-structure-analyzer",
+  "d0": 16,
+  "dl": 24,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "salary-grossup-calc",
+  "d0": 16,
+  "dl": 27,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "huaming-oltc-translate",
+  "d0": 16,
+  "dl": 31,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "mr-oltc-selector",
+  "d0": 16,
+  "dl": 30,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "skillpay-forge",
+  "d0": 16,
+  "dl": 21,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "reduce-xhs-s2",
+  "d0": 16,
+  "dl": 21,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "work2cli-hitl",
+  "d0": 16,
+  "dl": 27,
+  "inst": 0,
+  "star": 1
+ },
+ {
+  "slug": "short-drama-video-prompts",
+  "d0": 16,
+  "dl": 27,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "reduce-kuaishou-s2",
+  "d0": 16,
+  "dl": 20,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "suge-pop-up-market-vendor-application-pack",
+  "d0": 16,
+  "dl": 21,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "sdcbtgdf",
+  "d0": 16,
+  "dl": 20,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "zxdsyjujb",
+  "d0": 16,
+  "dl": 21,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "aegis-quant-compliant",
+  "d0": 15,
+  "dl": 36,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "diff-drive-kinematics-odometry",
+  "d0": 15,
+  "dl": 20,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "chain-fnb-script-master",
+  "d0": 15,
+  "dl": 20,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "catchup-guard",
+  "d0": 15,
+  "dl": 21,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "suge-product-variant-listing-matrix",
+  "d0": 15,
+  "dl": 20,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "agent-3layer-memory",
+  "d0": 15,
+  "dl": 20,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "dvddf99",
+  "d0": 15,
+  "dl": 19,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "cdsvbgfvf",
+  "d0": 15,
+  "dl": 19,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "yantai-food-guide",
+  "d0": 14,
+  "dl": 21,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "industrial-fu-trading-agent",
+  "d0": 14,
+  "dl": 19,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "app-adaptation-assistant",
+  "d0": 14,
+  "dl": 19,
+  "inst": 0,
+  "star": 0
+ },
+ {
+  "slug": "dfvnyhjug",
+  "d0": 14,
+  "dl": 22,
+  "inst": 0,
+  "star": 0
+ }
+]
