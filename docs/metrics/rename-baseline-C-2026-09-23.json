@@ -1,0 +1,23 @@
+[
+ {
+  "slug": "qa-expert",
+  "query": "测试用例",
+  "rank_before": 17,
+  "new_version": "0.1.3",
+  "at": "2026-09-23T11:54"
+ },
+ {
+  "slug": "tech-writing-expert",
+  "query": "技术文档",
+  "rank_before": 11,
+  "new_version": "0.1.3",
+  "at": "2026-09-23T11:54"
+ },
+ {
+  "slug": "architect-expert",
+  "query": "架构设计",
+  "rank_before": 7,
+  "new_version": "0.1.3",
+  "at": "2026-09-23T11:54"
+ }
+]

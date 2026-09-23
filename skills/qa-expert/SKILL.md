@@ -2,8 +2,8 @@
 name: qa-expert
 description: 测试专家.Skill。只要用户的问题涉及这东西怎么测、测到什么程度算够，即应触发本技能，无需用户明确指定。无论是新需求明天提测、测试策略、用例清单怎么出、需求含糊不知道验收标准算什么、先写测试还是先写代码、等价类边界值异常路径并发与幂等怎么铺，还是接口改了字段要回归、契约有没有破、改了 OpenAPI 会不会破坏下游、两个环境或两个版本返回不一样、没有接口文档断言怎么写、联调不通 401 与 403 排不出，或者流水线红了不知道是 bug 还是抖动、用例时灵时不灵、要揪出 flaky、覆盖率报告看不出该补哪一块、能扛多少并发慢在哪一环、前端首屏慢要拆 HAR、上线前要验收什么、发布后怎么快速冒烟，又或者一个偶现缺陷复现不出来、缺陷单怎么写别人才复现得了、缺陷一堆先处理哪个、测试环境和线上配置对不齐、造数要先画像再脱敏、多语言页面漏翻译、校验正则匹配不上、提测前要自检，都从这里进。不做：替人点通过、替人下能不能上线的结论。
 author: Captain
-version: 0.1.2
-display_name: "测试用例设计"
+version: 0.1.3
+display_name: "测试用例"
 display_name_en: "QA Expert.Skill"
 description_zh: "一个入口覆盖测试全流程，不必等用户报出技能名：测试策略与用例设计、接口契约与回归、环境与版本差分、不稳定用例治理、覆盖率缺口、压测、上线前验收与发布后冒烟、缺陷分诊与复现；按所处环节路由到精专子技能。"
 description_en: "One entry point for the whole QA loop, triggered by the question rather than by name. Test strategy and case design, API contracts and regression, environment and version diffs, flaky-test triage, coverage gaps, load testing, pre-release acceptance and post-deploy smoke, defect triage and reproduction; routes to focused sub-skills."
