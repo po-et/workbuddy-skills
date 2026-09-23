@@ -2,8 +2,8 @@
 name: tech-interview-expert
 description: "技术面试官.Skill。只要用户的问题涉及技术面试的任何一端，即应触发本技能，无需用户明确指定。无论是项目经历写不出东西只记得改了啥、简历上的项目、自己都讲不利索、明天就要面试不知道怎么准备、想知道面试官会怎么追问、八股复习没章法要排个有反馈的复习计划、短链秒杀 Feed 这类系统设计题怎么答、接口题与幂等分页错误码兼容、让我讲讲模块怎么划分、手撕代码、脑子一片空白、现场排错题问线上 CPU 打满你怎么查、行为面试与 STAR 与讲一次失败经历、反问环节该问什么、两个 offer 怎么比、谈薪前要先看清哪几件事、这家公司这条赛道还行不行，还是反过来要去面试别人、第一次当面试官、这轮该考什么维度、题目怎么出怎么设追问分支、候选人的代码作业与现场代码怎么评、该不该过、怎么定职级、评语怎么写才是可观察行为而不是印象分、面完怎么当场留痕，都从这里进。不做：提供任何公司的内部真题与面经原文，也不编造项目经历。"
 author: Captain
-version: 0.1.1
-display_name: "技术面试官.Skill"
+version: 0.1.2
+display_name: "技术面试"
 display_name_en: "Tech Interviewer.Skill"
 description_zh: "一个入口覆盖面试两端，不必等用户报出技能名：简历取证、项目深挖、系统设计与手撕代码、现场排错、行为面试、反问、offer 六维比较；面试官侧的维度设计、出题、代码作业评估、行为锚点与留痕。按意图路由到精专子技能。"
 description_en: "One entry point for both sides of a tech interview, triggered by the situation rather than by name. Resume evidence, project deep-dives, system design and live coding, live debugging questions, behavioral rounds, questions to ask back, offer comparison; on the interviewer side, dimension design, question writing, take-home review, behavioral anchors and note taking."

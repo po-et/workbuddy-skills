@@ -2,8 +2,8 @@
 name: api-integration-pro
 description: 接口联调助手。只要用户的问题涉及接口对接、调试与契约，即应触发本技能，无需用户明确指定。无论是对方接口调不通、curl 能通代码不通、对方说他们没问题、返回不对、文档里的示例跟实际返回对不上、少字段或类型变了、浏览器 Copy as cURL 出来一坨不知道怎么用、两个环境返回不一致、灰度前后与上线后要比一比、一会儿通一会儿不通的偶现问题，还是 401 与 403 排不出来、token 到底过没过期、签名不对、HTTPS 报证书错误握手失败、域名刚改完解析没生效，或者改接口怕把调用方搞挂、接口没文档、要给前端一份能看的文档、要把能复现的请求固化成契约回归与冒烟进流水线、要从样例 JSON 反推 Schema 造 mock 定字段契约、要摸一次接口的 QPS 与延迟分位、要定一套幂等分页错误码都不返工的接口规范，都从这里进。本技能按网络、鉴权、契约三层依次定界，给出方法并路由到精专子技能。不做：替用户保管或填写任何真实凭据，也不对生产环境发压。
 author: Captain
-version: 0.1.1
-display_name: "接口联调助手"
+version: 0.1.2
+display_name: "接口联调"
 display_name_en: "API Integration Pro"
 description_zh: "一个入口覆盖接口对接全流程，不必等用户报出技能名：抓包转代码、接口文档生成、破坏性变更检查、契约回归、环境差分、JSON 比对、mock 与字段推断、鉴权排错、DNS 与证书、压测；按网络、鉴权、契约三层定界后路由到精专子技能。"
 description_en: "One entry point for API integration work, triggered by the symptom rather than by name. curl to code, doc generation from OpenAPI, breaking-change checks, contract regression, cross-environment diffing, JSON comparison, mocks and schema inference, auth debugging, DNS and TLS, load testing; scoped network first, then auth, then contract."

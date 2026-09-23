@@ -2,8 +2,8 @@
 name: container-deploy-pro
 description: 容器与部署助手。只要用户的问题涉及把服务打包、发出去、验回来，即应触发本技能，无需用户明确指定。无论是 Dockerfile 写得对不对、镜像太大、构建太慢、里面还在用 root 跑安不安全、基础镜像版本没固定、compose 与 K8s 清单能不能上生产、探针与资源上限怎么配、用了废弃的 API 版本、数据库端口暴露出去了、容器起不来一直重启、CrashLoopBackOff、启动就退出，还是 nginx 反向代理与网关配置、HTTPS 证书快到期或 SAN 没覆盖域名、环境变量少配了 key、示例文件跟代码实际读的对不上、多环境配置漂移、仓库里有没有硬编码密钥、这次数据库迁移会不会锁表，或者新服务第一次上线要走一遍、明天要发版、灰度发布、上线前想一次性全过一遍拿个门禁结论、发布完要确认服务真起来了、要回滚但不知道哪些能回哪些回不了，都从这里进。本技能判断所处阶段，给出方法并路由到精专子技能。不做：直接连接集群或代替人执行部署命令，也不做容量规划与成本优化。
 author: Captain
-version: 0.1.1
-display_name: "容器与部署助手"
+version: 0.1.2
+display_name: "容器部署"
 display_name_en: "Container Deploy Pro"
 description_zh: "一个入口覆盖容器与上线全过程，不必等用户报出技能名：镜像体检与瘦身、compose 与 K8s 清单检查、nginx 反代、TLS 证书、环境变量对齐、密钥自查、迁移锁表、上线前一次性体检与发布后巡检、回滚边界与顺序；按阶段路由到精专子技能。"
 description_en: "One entry point from image to rollback, triggered by the situation rather than by name. Dockerfile review and slimming, compose and Kubernetes manifest checks, restart-loop triage, nginx reverse proxy, TLS certificates, env alignment, secret scanning, migration locking, pre-release gate and post-deploy probes, rollback order; routes to focused sub-skills."
