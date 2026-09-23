@@ -390,3 +390,28 @@ gh pr create --repo AlephAITech/WorkBuddyGuide --base "$BASE" --head "po-et:case
 | database-ops-pro | 208182 | 11:48:23 |
 | repo-governance-pro | 208185 | 11:49:38 |
 | data-toolkit-pro | 208188 | 11:50:54 |
+
+### SkillHub wave1a（09-23）（2026-09-23，4 个，机器审核中）
+
+| slug | skillId | 发布时间 |
+|---|---|---|
+| reflection-letter | 245766 | 12:04:46 |
+| english-email | 245768 | 12:06:02 |
+| leave-request-note | 245771 | 12:07:18 |
+| event-host-script | 245774 | 12:08:33 |
+
+### SkillHub wave1b（09-23）（2026-09-23，4 个，机器审核中）
+
+| slug | skillId | 发布时间 |
+|---|---|---|
+| kpi-design | 245772 | 12:07:37 |
+| job-description-writer | 245775 | 12:08:52 |
+| onboarding-guide | 245777 | 12:10:08 |
+| meeting-transcript-cleanup | 245780 | 12:11:23 |
+
+### SkillHub wave1c（09-23）（2026-09-23，2 个，机器审核中）
+
+| slug | skillId | 发布时间 |
+|---|---|---|
+| long-doc-summary | 245779 | 12:11:00 |
+| math-problem-tutor | 245782 | 12:12:16 |

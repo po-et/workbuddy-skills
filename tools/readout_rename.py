@@ -5,7 +5,7 @@
 基线：docs/metrics/rename-baseline-2026-09-21.json（改名前名次，同一查询词）
 原则：latestVersion 没变的技能只报「未上线」，不拿它的名次说事。
 """
-import json, time, urllib.request, urllib.parse, pathlib, datetime, sys
+import json, time, urllib.request, urllib.parse, pathlib, datetime, sys, re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 BASE = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "docs/metrics/rename-baseline-2026-09-21.json"
@@ -57,7 +57,7 @@ def main():
     if live_rows:
         top3 = sum(1 for o in live_rows if o["rank_after"] and o["rank_after"] <= 3)
         print(f"\n已上线 {len(live_rows)}/{len(out)}：进前 3 的 {top3} 个；改名前这些技能进前 3 的 {sum(1 for o in live_rows if o['rank_before'] and o['rank_before'] <= 3)} 个")
-        tag = BASE.stem.replace("rename-baseline", "").strip("-")
+        tag = re.sub(r"-?\d{4}-\d{2}-\d{2}$", "", BASE.stem.replace("rename-baseline", "")).strip("-")
         p = ROOT / f"docs/metrics/rename-readout-{tag + '-' if tag else ''}{datetime.date.today()}.json"
         json.dump(out, open(p, "w"), ensure_ascii=False, indent=1)
         print("已存", p.relative_to(ROOT))

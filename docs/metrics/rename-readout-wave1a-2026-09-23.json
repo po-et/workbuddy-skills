@@ -1,0 +1,46 @@
+[
+ {
+  "slug": "reflection-letter",
+  "query": "检讨书",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T12:05",
+  "latest_version": "0.1.0",
+  "live": true,
+  "rank_after": 1,
+  "read_at": "2026-09-23T12:11"
+ },
+ {
+  "slug": "english-email",
+  "query": "英文邮件",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T12:05",
+  "latest_version": "0.1.0",
+  "live": true,
+  "rank_after": 1,
+  "read_at": "2026-09-23T12:11"
+ },
+ {
+  "slug": "leave-request-note",
+  "query": "请假条",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T12:05",
+  "latest_version": "0.1.0",
+  "live": true,
+  "rank_after": 1,
+  "read_at": "2026-09-23T12:12"
+ },
+ {
+  "slug": "event-host-script",
+  "query": "主持词",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T12:05",
+  "latest_version": "0.1.0",
+  "live": true,
+  "rank_after": 1,
+  "read_at": "2026-09-23T12:12"
+ }
+]
