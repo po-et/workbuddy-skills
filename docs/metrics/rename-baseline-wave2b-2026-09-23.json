@@ -1,0 +1,30 @@
+[
+ {
+  "slug": "birthday-party-planner",
+  "query": "生日策划",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T12:26"
+ },
+ {
+  "slug": "dog-care-basics",
+  "query": "养狗",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T12:26"
+ },
+ {
+  "slug": "car-buying-checklist",
+  "query": "买车",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T12:26"
+ },
+ {
+  "slug": "meeting-arrangement",
+  "query": "会议安排",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T12:26"
+ }
+]
