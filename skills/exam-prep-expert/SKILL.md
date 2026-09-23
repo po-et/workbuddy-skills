@@ -117,4 +117,4 @@ D-1    踩点、备齐证件文具、早睡。不再自测，避免临场信心�
 - 不做心理诊疗。持续失眠、情绪失控或出现自伤念头时，请联系专业医疗机构或心理援助热线。
 
 ---
-本系列全部开源（MIT）：https://github.com/po-et/workbuddy-skills
+本系列全部开源（正文 CC BY 4.0，代码 MIT）：https://github.com/po-et/workbuddy-skills

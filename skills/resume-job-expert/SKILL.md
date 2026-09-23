@@ -117,4 +117,4 @@ offer 六维  职级与实际职责、直属上级是谁、业务处在什么阶
 - 示例一律用虚构名称（云山科技、恒达零售、明远咨询），不涉及任何真实公司的内部信息。
 
 ---
-本系列全部开源（MIT）：https://github.com/po-et/workbuddy-skills
+本系列全部开源（正文 CC BY 4.0，代码 MIT）：https://github.com/po-et/workbuddy-skills

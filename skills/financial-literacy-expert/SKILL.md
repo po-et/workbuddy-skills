@@ -117,4 +117,4 @@ metadata:
 - 相关技能：现金流、攒钱与还债顺序去 personal-budget-expert；读懂手上的保单去 insurance-policy-expert；个税年度汇算去 tax-filing-expert；已经被拉进群、被要求转账或下载 App 的，立刻去 workplace-antiscam-expert。
 
 ---
-本系列全部开源（MIT）：https://github.com/po-et/workbuddy-skills
+本系列全部开源（正文 CC BY 4.0，代码 MIT）：https://github.com/po-et/workbuddy-skills

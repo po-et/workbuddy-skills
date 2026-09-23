@@ -117,4 +117,4 @@ metadata:
 - 不编造评分、排名与「本地人才知道」的说法。没查证的店名、路线、价格一律不写。
 
 ---
-本系列全部开源（MIT）：https://github.com/po-et/workbuddy-skills
+本系列全部开源（正文 CC BY 4.0，代码 MIT）：https://github.com/po-et/workbuddy-skills

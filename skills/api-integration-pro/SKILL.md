@@ -79,4 +79,4 @@ metadata:
 - 不写业务实现代码，也不做前端页面联调之外的 UI 工作。
 
 ---
-本系列全部开源（MIT）：https://github.com/po-et/workbuddy-skills
+本系列全部开源（正文 CC BY 4.0，代码 MIT）：https://github.com/po-et/workbuddy-skills

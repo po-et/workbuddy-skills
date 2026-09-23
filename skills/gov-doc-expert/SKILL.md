@@ -116,4 +116,4 @@ metadata:
 - 示例一律用虚构名称（云山市城建局、恒达物流有限公司、明远街道办），不指向任何真实单位。
 
 ---
-本系列全部开源（MIT）：https://github.com/po-et/workbuddy-skills
+本系列全部开源（正文 CC BY 4.0，代码 MIT）：https://github.com/po-et/workbuddy-skills

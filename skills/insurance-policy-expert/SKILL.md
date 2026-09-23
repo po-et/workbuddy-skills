@@ -117,4 +117,4 @@ metadata:
 - 相关技能：保费在家庭开支里怎么安排去 personal-budget-expert；想弄懂「保险理财」靠什么赚钱去 financial-literacy-expert；接到「保单升级」「退保补偿」「保险公司回访返现」这类电话，去 workplace-antiscam-expert。
 
 ---
-本系列全部开源（MIT）：https://github.com/po-et/workbuddy-skills
+本系列全部开源（正文 CC BY 4.0，代码 MIT）：https://github.com/po-et/workbuddy-skills

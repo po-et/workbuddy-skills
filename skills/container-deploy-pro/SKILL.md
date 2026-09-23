@@ -80,4 +80,4 @@ metadata:
 - 不做容量规划、成本优化与集群运维，那超出本技能范围。
 
 ---
-本系列全部开源（MIT）：https://github.com/po-et/workbuddy-skills
+本系列全部开源（正文 CC BY 4.0，代码 MIT）：https://github.com/po-et/workbuddy-skills

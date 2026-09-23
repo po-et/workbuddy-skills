@@ -93,4 +93,4 @@ metadata:
 - 不写业务代码、不做架构选型，那是编程类与架构类技能的事。
 
 ---
-本系列全部开源（MIT）：https://github.com/po-et/workbuddy-skills
+本系列全部开源（正文 CC BY 4.0，代码 MIT）：https://github.com/po-et/workbuddy-skills

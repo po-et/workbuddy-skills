@@ -62,4 +62,4 @@ metadata:
 - 不接触任何未脱敏的公司内部系统信息；公开示例一律用 GitHub / GitLab / Jira。
 
 ---
-本系列全部开源（MIT）：https://github.com/po-et/workbuddy-skills 。复刻自他人作品的技能在各自目录的 ATTRIBUTION.md 注明来源。
+本系列全部开源（正文 CC BY 4.0，代码 MIT）：https://github.com/po-et/workbuddy-skills 。复刻自他人作品的技能在各自目录的 ATTRIBUTION.md 注明来源。

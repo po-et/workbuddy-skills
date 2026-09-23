@@ -117,4 +117,4 @@ python3 skills/skill-lint/scripts/skill_lint.py skills/<你的技能>   # 可发
 - 不保证本页规律长期有效：样本只有一个个人账号、97 个 slug、两天、两份快照，接口随时可能变。
 
 ---
-本系列全部开源（MIT）：https://github.com/po-et/workbuddy-skills
+本系列全部开源（正文 CC BY 4.0，代码 MIT）：https://github.com/po-et/workbuddy-skills

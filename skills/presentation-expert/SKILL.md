@@ -117,4 +117,4 @@ SCQA 四句（写在一张纸上，四句写不顺就别做页面）
 - 不接触未公开的公司内部信息；示例一律用虚构名称（云山科技、恒达零售、明远咨询）。
 
 ---
-本系列全部开源（MIT）：https://github.com/po-et/workbuddy-skills
+本系列全部开源（正文 CC BY 4.0，代码 MIT）：https://github.com/po-et/workbuddy-skills

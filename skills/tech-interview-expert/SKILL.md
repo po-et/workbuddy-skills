@@ -106,4 +106,4 @@ offer 六维    职级与实际职责、直属上级、业务处在什么阶段�
 - 不接触任何未脱敏的公司内部信息；示例一律用 GitHub / GitLab / Jira 与 example.com。
 
 ---
-本系列全部开源（MIT）：https://github.com/po-et/workbuddy-skills
+本系列全部开源（正文 CC BY 4.0，代码 MIT）：https://github.com/po-et/workbuddy-skills

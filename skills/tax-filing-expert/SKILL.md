@@ -117,4 +117,4 @@ metadata:
 - 相关技能：记账、还债与目标拆解去 personal-budget-expert；看懂产品与费率去 financial-literacy-expert；遇到自称「退税专员」「税务稽查」要你转账、点链接、装 App 的，去 workplace-antiscam-expert。
 
 ---
-本系列全部开源（MIT）：https://github.com/po-et/workbuddy-skills
+本系列全部开源（正文 CC BY 4.0，代码 MIT）：https://github.com/po-et/workbuddy-skills

@@ -114,4 +114,4 @@ metadata:
 - 不替代 110、96110、劳动监察与律师。紧急情况先打电话，回来再整理材料。
 
 ---
-本系列全部开源（MIT）：https://github.com/po-et/workbuddy-skills
+本系列全部开源（正文 CC BY 4.0，代码 MIT）：https://github.com/po-et/workbuddy-skills
