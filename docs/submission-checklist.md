@@ -458,3 +458,12 @@ gh pr create --repo AlephAITech/WorkBuddyGuide --base "$BASE" --head "po-et:case
 | report-making | 245930 | 12:38:24 |
 | json-formatting | 245933 | 12:39:39 |
 | markdown-conversion | 245935 | 12:40:55 |
+
+### SkillHub wave3a（09-23）（2026-09-23，4 个，机器审核中）
+
+| slug | skillId | 发布时间 |
+|---|---|---|
+| salary-raise-request | 245949 | 13:03:42 |
+| resignation-conversation | 245953 | 13:04:58 |
+| team-building-plan | 245962 | 13:06:13 |
+| new-hire-mentoring | 245967 | 13:07:29 |
