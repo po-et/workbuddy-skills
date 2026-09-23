@@ -1,0 +1,23 @@
+[
+ {
+  "slug": "thesis-opening-report",
+  "query": "开题报告",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T12:25"
+ },
+ {
+  "slug": "driving-test-prep",
+  "query": "驾照考试",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T12:25"
+ },
+ {
+  "slug": "japanese-learning-plan",
+  "query": "日语学习",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T12:25"
+ }
+]
