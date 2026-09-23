@@ -415,3 +415,21 @@ gh pr create --repo AlephAITech/WorkBuddyGuide --base "$BASE" --head "po-et:case
 |---|---|---|
 | long-doc-summary | 245779 | 12:11:00 |
 | math-problem-tutor | 245782 | 12:12:16 |
+
+### SkillHub wave1d（09-23）（2026-09-23，4 个，机器审核中）
+
+| slug | skillId | 发布时间 |
+|---|---|---|
+| questionnaire-design | 245793 | 12:17:49 |
+| interview-outline | 245795 | 12:19:05 |
+| office-automation-scripts | 245797 | 12:20:20 |
+| shopping-list-planner | 245800 | 12:21:36 |
+
+### SkillHub wave1e（09-23）（2026-09-23，4 个，机器审核中）
+
+| slug | skillId | 发布时间 |
+|---|---|---|
+| image-alt-description | 245799 | 12:21:17 |
+| ui-microcopy | 245802 | 12:22:33 |
+| python-script-writer | 245805 | 12:23:48 |
+| sql-generation-helper | 245808 | 12:25:04 |
