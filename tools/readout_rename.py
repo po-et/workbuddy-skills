@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """改名实验读数：先核对新版本是否已上线（过了安全扫描），再对比改名前后的搜索名次。
 
-用法：python3 tools/readout_rename.py            # 只读，约 1 分钟
+用法：python3 tools/readout_rename.py [基线json]   # 只读，约 1 分钟；默认读批次 A 基线
 基线：docs/metrics/rename-baseline-2026-09-21.json（改名前名次，同一查询词）
 原则：latestVersion 没变的技能只报「未上线」，不拿它的名次说事。
 """
-import json, time, urllib.request, urllib.parse, pathlib, datetime
+import json, time, urllib.request, urllib.parse, pathlib, datetime, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-BASE = ROOT / "docs/metrics/rename-baseline-2026-09-21.json"
+BASE = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "docs/metrics/rename-baseline-2026-09-21.json"
 HDR = {"User-Agent": "skillhub-cli/0.1", "Accept": "application/json"}
 NEW_VERSION = "0.1.1"  # 批次 A 与两个先行实验统一升到这个版本
 
@@ -42,7 +42,7 @@ def main():
             time.sleep(1.2)
         d = get(f"/api/v1/skills/{r['slug']}")
         lv = (d.get("latestVersion") or {}).get("version") or ""
-        live = lv == NEW_VERSION
+        live = lv == r.get("new_version", NEW_VERSION)
         name = (d.get("skill") or {}).get("displayName", "")
         rank = None
         if live:
