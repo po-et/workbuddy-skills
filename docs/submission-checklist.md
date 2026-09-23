@@ -373,3 +373,20 @@ gh pr create --repo AlephAITech/WorkBuddyGuide --base "$BASE" --head "po-et:case
 | financial-literacy-expert | 210951 | 21:45:44 |
 | agent-engineering-expert | 240767 | 21:47:00 |
 | skill-author-expert | 240769 | 21:48:15 |
+
+### SkillHub 改名批次 B（09-23，排队待扫描）（2026-09-23，12 个，机器审核中）
+
+| slug | skillId | 发布时间 |
+|---|---|---|
+| sre-expert | 208288 | 11:37:02 |
+| qa-expert | 208290 | 11:38:18 |
+| architect-expert | 208291 | 11:39:33 |
+| tech-interview-expert | 208292 | 11:40:49 |
+| tech-writing-expert | 208295 | 11:42:05 |
+| career-growth-expert | 208299 | 11:43:20 |
+| incident-response-pro | 208174 | 11:44:36 |
+| api-integration-pro | 208177 | 11:45:52 |
+| container-deploy-pro | 208179 | 11:47:07 |
+| database-ops-pro | 208182 | 11:48:23 |
+| repo-governance-pro | 208185 | 11:49:38 |
+| data-toolkit-pro | 208188 | 11:50:54 |
