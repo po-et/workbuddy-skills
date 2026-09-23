@@ -34,9 +34,9 @@ examples_zh:
 每周耗时 = 单次耗时 × 每周频率
 回本周数 = （搭建耗时 + 一年维护耗时）÷ 每周省下的时间
 例：每周合并 20 个门店表，单次 40 分钟；写脚本 3 小时、维护 1 小时、跑完核对 5 分钟
-    回本 = 240 ÷（40 − 5）≈ 7 周 → 做
+  回本 = 240 ÷（40 − 5）≈ 7 周 → 做
 经验线：回本不到一个季度、规则半年不变 → 做；每周不到 15 分钟或格式每月都变 → 先写操作清单
-加分：手工易错且错了代价高（发错数、漏人），回本慢些也值得
+加分：手工易错且错了代价高（发错数、漏人），回本慢也值得
 先问：这一步能不能删掉，或让上游直接给对格式
 ```
 
@@ -49,9 +49,9 @@ examples_zh:
 
 ## 四个模板：先预览，再执行
 
-`python3 脚本名.py` 运行；会动文件的模板不加 `--apply` 只预览。原件一律不删不改。
+`python3 脚本名.py` 运行；会动文件的模板不加 `--apply` 只预览。原件一律不删、不覆盖。
 
-1 文件整理：按扩展名分进子文件夹，重名的留在原处
+1 文件整理：按扩展名分进子文件夹，重名的不动
 
 ```python
 import sys, shutil
@@ -65,7 +65,7 @@ for f in sorted(src.iterdir()):
             dest.parent.mkdir(exist_ok=True); shutil.move(str(f), str(dest))
 ```
 
-2 批量重命名：前缀加三位序号，先出对照表，改名副本放进新文件夹
+2 批量重命名：前缀加三位序号，先出对照表，副本放进新文件夹
 
 ```python
 import sys, csv, shutil
@@ -92,16 +92,16 @@ for p in sorted(Path("门店报表").glob("*.csv")):
     with open(p, encoding="utf-8-sig", newline="") as f:   # 报编码错改 gbk
         r = csv.reader(f); h = next(r, [])
         header = header or h
-        if not h or h != header: print("跳过（空表或表头不一致）", p.name); continue
+        if not h or h != header: print("跳过（空表或表头不同）", p.name); continue
         rows += [row + [p.name] for row in r]
 with open("合并结果.csv", "w", encoding="utf-8-sig", newline="") as f:
     csv.writer(f).writerows([header + ["来源文件"]] + rows)
 print("共", len(rows), "行")
 ```
 
-xlsx 优先用第 1 层 Power Query；非要脚本就装 pandas、openpyxl，用 `pd.read_excel` 逐个读、`pd.concat` 合并。
+xlsx 优先用第 1 层 Power Query；非要脚本就装 pandas、openpyxl，`pd.read_excel` 逐个读后 `pd.concat`。
 
-4 定时提醒：到期日批量变成日历提醒，导入后到期前三天 9:00 弹出
+4 定时提醒：到期日批量变日历提醒，导入后到期前三天 9:00 弹出
 
 ```python
 import csv, datetime as dt
@@ -126,7 +126,7 @@ with open("到期提醒.ics", "w", encoding="utf-8", newline="") as f:
     f.write(("\n".join(out + ["END:VCALENDAR"]) + "\n").replace("\n", "\r\n"))
 ```
 
-固定周期的提醒直接在日历建重复事件。导入后抽查一条的提醒时间，个别日历应用会忽略导入的提醒。脚本要定时跑，用 crontab 或 Windows「任务计划程序」。
+固定周期的提醒直接建日历重复事件。导入后抽一条核对提醒时间，个别日历应用会忽略导入的提醒。脚本定时跑用 crontab 或 Windows「任务计划程序」；macOS 后台访问「下载」可能被拦。
 
 ## 最常见的错误
 
@@ -144,5 +144,5 @@ with open("到期提醒.ics", "w", encoding="utf-8", newline="") as f:
 
 - 不接触公司内部系统：不写登录、抓取或批量提交内部系统的脚本，不绕过审批，这类需求找公司 IT。
 - 不处理凭据：脚本里不写账号、密码、密钥、验证码，也不教怎么存取；不做自动登录、自动发邮件。
-- 公司电脑能不能装 Python、跑脚本、设定时任务，以公司 IT 规定为准。
+- 公司电脑能否装 Python、跑脚本、设定时任务，以公司 IT 规定为准。
 - 含个人信息、工资、客户数据的表格只在本机处理，不上传任何网站。
