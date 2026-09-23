@@ -1,0 +1,30 @@
+[
+ {
+  "slug": "kids-reading-plan",
+  "query": "阅读计划",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T13:08"
+ },
+ {
+  "slug": "kids-screen-time",
+  "query": "手机管理",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T13:08"
+ },
+ {
+  "slug": "kids-coding",
+  "query": "儿童编程",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T13:08"
+ },
+ {
+  "slug": "gift-list",
+  "query": "礼物清单",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T13:08"
+ }
+]
