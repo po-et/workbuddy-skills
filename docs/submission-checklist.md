@@ -433,3 +433,20 @@ gh pr create --repo AlephAITech/WorkBuddyGuide --base "$BASE" --head "po-et:case
 | ui-microcopy | 245802 | 12:22:33 |
 | python-script-writer | 245805 | 12:23:48 |
 | sql-generation-helper | 245808 | 12:25:04 |
+
+### SkillHub wave2a（09-23）（2026-09-23，3 个，机器审核中）
+
+| slug | skillId | 发布时间 |
+|---|---|---|
+| thesis-opening-report | 245809 | 12:25:25 |
+| driving-test-prep | 245812 | 12:26:40 |
+| japanese-learning-plan | 245815 | 12:27:56 |
+
+### SkillHub wave2b（09-23）（2026-09-23，4 个，机器审核中）
+
+| slug | skillId | 发布时间 |
+|---|---|---|
+| birthday-party-planner | 245811 | 12:26:04 |
+| dog-care-basics | 245814 | 12:27:19 |
+| car-buying-checklist | 245817 | 12:28:35 |
+| meeting-arrangement | 245818 | 12:29:50 |
