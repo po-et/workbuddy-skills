@@ -1,0 +1,46 @@
+[
+ {
+  "slug": "kpi-design",
+  "query": "KPI 制定",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T12:07",
+  "latest_version": "0.1.0",
+  "live": true,
+  "rank_after": 1,
+  "read_at": "2026-09-23T12:14"
+ },
+ {
+  "slug": "job-description-writer",
+  "query": "招聘 JD",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T12:07",
+  "latest_version": "0.1.0",
+  "live": true,
+  "rank_after": 1,
+  "read_at": "2026-09-23T12:14"
+ },
+ {
+  "slug": "onboarding-guide",
+  "query": "入职指南",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T12:07",
+  "latest_version": "0.1.0",
+  "live": true,
+  "rank_after": 1,
+  "read_at": "2026-09-23T12:14"
+ },
+ {
+  "slug": "meeting-transcript-cleanup",
+  "query": "会议录音整理",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T12:07",
+  "latest_version": "0.1.0",
+  "live": true,
+  "rank_after": 1,
+  "read_at": "2026-09-23T12:15"
+ }
+]
