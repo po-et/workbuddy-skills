@@ -467,3 +467,12 @@ gh pr create --repo AlephAITech/WorkBuddyGuide --base "$BASE" --head "po-et:case
 | resignation-conversation | 245953 | 13:04:58 |
 | team-building-plan | 245962 | 13:06:13 |
 | new-hire-mentoring | 245967 | 13:07:29 |
+
+### SkillHub wave3b（09-23）（2026-09-23，4 个，机器审核中）
+
+| slug | skillId | 发布时间 |
+|---|---|---|
+| after-viewing-essay | 245957 | 13:05:13 |
+| debate-speech | 245963 | 13:06:29 |
+| radio-script | 245970 | 13:07:45 |
+| graduation-speech | 246116 | 13:09:00 |
