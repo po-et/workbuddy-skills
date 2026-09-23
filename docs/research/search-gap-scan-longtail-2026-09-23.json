@@ -1,0 +1,1920 @@
+[
+ {
+  "cat": "内容写作",
+  "q": "帮我写周报",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.052,
+  "top1": "小红书账号医生",
+  "top3": [
+   "小红书账号医生",
+   "编程专家.Skill",
+   "self-improving agent"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "写年终总结",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "Find Skills"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "写工作总结",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "Find Skills"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "写述职报告",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "Find Skills"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "写自我介绍",
+  "cls": "薄弱",
+  "n_name": 1,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "Find Skills"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "写会议纪要",
+  "cls": "薄弱",
+  "n_name": 1,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "Find Skills"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "写产品介绍",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "Find Skills"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "写活动方案",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "Find Skills"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "写招聘文案",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "Find Skills"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "写道歉信",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "Find Skills"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "写感谢信",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "Find Skills"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "写辞职信",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "Find Skills"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "写离职申请",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "Find Skills"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "写推荐信",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "Find Skills"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "写邀请函",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "Find Skills"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "写通知",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.051,
+  "top1": "合同助手",
+  "top3": [
+   "合同助手",
+   "self-improving agent",
+   "Find Skills"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "写倡议书",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "self-improving agent",
+  "top3": [
+   "self-improving agent",
+   "Find Skills",
+   "ima-skills"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "写演讲稿",
+  "cls": "薄弱",
+  "n_name": 1,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "self-improving agent",
+  "top3": [
+   "self-improving agent",
+   "Find Skills",
+   "演讲大师"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "写开幕致辞",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "育儿大师.Skill",
+  "top3": [
+   "育儿大师.Skill",
+   "搜索引擎",
+   "文章去AI味工具"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "写颁奖词",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "Agent Browser",
+  "top3": [
+   "Agent Browser",
+   "育儿大师.Skill",
+   "搜索引擎"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "写获奖感言",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "腾讯文档 TENCENT DOCS",
+  "top3": [
+   "腾讯文档 TENCENT DOCS",
+   "Agent Browser",
+   "育儿大师.Skill"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "写生日祝福",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "腾讯文档 TENCENT DOCS",
+   "Agent Browser"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "写结婚祝福",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "写新年祝福",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "Find Skills"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "写朋友圈",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "Find Skills"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "写小红书",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "Find Skills"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "写公众号",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.062,
+  "top1": "公众号文案创作",
+  "top3": [
+   "公众号文案创作",
+   "公众号写作助手（通用版）",
+   "编程专家.Skill"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "写短视频脚本",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "Find Skills"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "写直播脚本",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "Find Skills"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "起标题",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.052,
+  "top1": "公众号选题 & 爆款标题（AI）",
+  "top3": [
+   "公众号选题 & 爆款标题（AI）",
+   "爆款标题生成器技能",
+   "编程专家.Skill"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "改错别字",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.051,
+  "top1": "Double Check Article",
+  "top3": [
+   "Double Check Article",
+   "编程专家.Skill",
+   "self-improving agent"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "文章润色",
+  "cls": "已有",
+  "n_name": 5,
+  "n_exact": 3,
+  "top1_score": 0.102,
+  "top1": "文章润色",
+  "top3": [
+   "文章润色",
+   "文章润色",
+   "文章润色"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "文章降重",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.053,
+  "top1": "AI检测·去AI味评分+四平台改写",
+  "top3": [
+   "AI检测·去AI味评分+四平台改写",
+   "文章去AI味",
+   "编程专家.Skill"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "扩写",
+  "cls": "已有",
+  "n_name": 5,
+  "n_exact": 0,
+  "top1_score": 0.057,
+  "top1": "明源云需求扩写",
+  "top3": [
+   "明源云需求扩写",
+   "界面设计需求扩写与提示词优化｜简诗 AI",
+   "编程专家.Skill"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "缩写",
+  "cls": "薄弱",
+  "n_name": 1,
+  "n_exact": 0,
+  "top1_score": 0.06,
+  "top1": "股票",
+  "top3": [
+   "股票",
+   "医学缩写解析工具",
+   "编程专家.Skill"
+  ]
+ },
+ {
+  "cat": "内容写作",
+  "q": "改写",
+  "cls": "已有",
+  "n_name": 6,
+  "n_exact": 0,
+  "top1_score": 0.06,
+  "top1": "体制内公文写作与排版助手",
+  "top3": [
+   "体制内公文写作与排版助手",
+   "爆款改写-学员版",
+   "说人话改写"
+  ]
+ },
+ {
+  "cat": "办公协作",
+  "q": "做周计划",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "育儿大师.Skill"
+  ]
+ },
+ {
+  "cat": "办公协作",
+  "q": "做月计划",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "Find Skills",
+  "top3": [
+   "Find Skills",
+   "Summarize",
+   "ima-skills"
+  ]
+ },
+ {
+  "cat": "办公协作",
+  "q": "做项目计划",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "Find Skills",
+  "top3": [
+   "Find Skills",
+   "防骗大师.Skill",
+   "露禾论文写作助手（免费版pro）"
+  ]
+ },
+ {
+  "cat": "办公协作",
+  "q": "排会议日程",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "Find Skills",
+  "top3": [
+   "Find Skills",
+   "会议日程优化器",
+   "防骗大师.Skill"
+  ]
+ },
+ {
+  "cat": "办公协作",
+  "q": "写会议邀请",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "Find Skills",
+  "top3": [
+   "Find Skills",
+   "防骗大师.Skill",
+   "email-writer"
+  ]
+ },
+ {
+  "cat": "办公协作",
+  "q": "整理会议记录",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "Find Skills",
+  "top3": [
+   "Find Skills",
+   "会议记录整理与行动项提取",
+   "Meeting Notes Generator"
+  ]
+ },
+ {
+  "cat": "办公协作",
+  "q": "写待办",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "Find Skills",
+  "top3": [
+   "Find Skills",
+   "防骗大师.Skill",
+   "敏捷产品待办"
+  ]
+ },
+ {
+  "cat": "办公协作",
+  "q": "拆任务",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "Find Skills",
+  "top3": [
+   "Find Skills",
+   "防骗大师.Skill",
+   "smart-charts"
+  ]
+ },
+ {
+  "cat": "办公协作",
+  "q": "写需求",
+  "cls": "薄弱",
+  "n_name": 1,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "Find Skills",
+  "top3": [
+   "Find Skills",
+   "防骗大师.Skill",
+   "smart-charts"
+  ]
+ },
+ {
+  "cat": "办公协作",
+  "q": "写方案",
+  "cls": "薄弱",
+  "n_name": 2,
+  "n_exact": 0,
+  "top1_score": 0.051,
+  "top1": "木老师标书技能包 · S3 写方案",
+  "top3": [
+   "木老师标书技能包 · S3 写方案",
+   "Find Skills",
+   "方案卡编写方案"
+  ]
+ },
+ {
+  "cat": "办公协作",
+  "q": "做竞品分析",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.051,
+  "top1": "竞品分析.skill",
+  "top3": [
+   "竞品分析.skill",
+   "Find Skills",
+   "防骗大师.Skill"
+  ]
+ },
+ {
+  "cat": "办公协作",
+  "q": "做用户画像",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "防骗大师.Skill",
+  "top3": [
+   "防骗大师.Skill",
+   "smart-charts",
+   "ima-skills"
+  ]
+ },
+ {
+  "cat": "办公协作",
+  "q": "写复盘报告",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.051,
+  "top1": "A股复盘",
+  "top3": [
+   "A股复盘",
+   "smart-charts",
+   "ima-skills"
+  ]
+ },
+ {
+  "cat": "办公协作",
+  "q": "写项目总结",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "smart-charts",
+  "top3": [
+   "smart-charts",
+   "ima-skills",
+   "Weather"
+  ]
+ },
+ {
+  "cat": "办公协作",
+  "q": "写进度汇报",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "Find Skills",
+   "dev-expert"
+  ]
+ },
+ {
+  "cat": "办公协作",
+  "q": "写风险报告",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "Find Skills",
+   "dev-expert"
+  ]
+ },
+ {
+  "cat": "办公协作",
+  "q": "做预算表",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "Find Skills",
+   "dev-expert"
+  ]
+ },
+ {
+  "cat": "办公协作",
+  "q": "写报销说明",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "Find Skills",
+   "dev-expert"
+  ]
+ },
+ {
+  "cat": "办公协作",
+  "q": "写请示",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.054,
+  "top1": "笔杆子",
+  "top3": [
+   "笔杆子",
+   "合同助手",
+   "编程专家.Skill"
+  ]
+ },
+ {
+  "cat": "办公协作",
+  "q": "写报告",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.053,
+  "top1": "MBB咨询报告写作器",
+  "top3": [
+   "MBB咨询报告写作器",
+   "编程专家.Skill",
+   "Find Skills"
+  ]
+ },
+ {
+  "cat": "办公协作",
+  "q": "写通报",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "Find Skills",
+   "dev-expert"
+  ]
+ },
+ {
+  "cat": "办公协作",
+  "q": "写函",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "Find Skills",
+   "dev-expert"
+  ]
+ },
+ {
+  "cat": "办公协作",
+  "q": "写工作交接",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "Find Skills",
+   "dev-expert"
+  ]
+ },
+ {
+  "cat": "办公协作",
+  "q": "写岗位说明",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "Find Skills",
+   "dev-expert"
+  ]
+ },
+ {
+  "cat": "学习教育",
+  "q": "做学习计划",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "Find Skills",
+   "Study Roadmap Generator"
+  ]
+ },
+ {
+  "cat": "学习教育",
+  "q": "做复习计划",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "Agent Browser",
+   "dev-expert"
+  ]
+ },
+ {
+  "cat": "学习教育",
+  "q": "整理笔记",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.053,
+  "top1": "印象笔记官方Skill",
+  "top3": [
+   "印象笔记官方Skill",
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS"
+  ]
+ },
+ {
+  "cat": "学习教育",
+  "q": "整理错题",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "self-improving agent",
+  "top3": [
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS",
+   "Summarize"
+  ]
+ },
+ {
+  "cat": "学习教育",
+  "q": "讲题",
+  "cls": "已有",
+  "n_name": 7,
+  "n_exact": 0,
+  "top1_score": 0.053,
+  "top1": "网页交互式讲题",
+  "top3": [
+   "网页交互式讲题",
+   "雅思 AI 讲题",
+   "解题讲题"
+  ]
+ },
+ {
+  "cat": "学习教育",
+  "q": "出题",
+  "cls": "已有",
+  "n_name": 8,
+  "n_exact": 0,
+  "top1_score": 0.056,
+  "top1": "老师出题助手",
+  "top3": [
+   "老师出题助手",
+   "小培智能出题",
+   "CTF Web 方向出题大师"
+  ]
+ },
+ {
+  "cat": "学习教育",
+  "q": "出试卷",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "self-improving agent",
+  "top3": [
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS",
+   "Summarize"
+  ]
+ },
+ {
+  "cat": "学习教育",
+  "q": "批改作文",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "self-improving agent",
+  "top3": [
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS",
+   "Summarize"
+  ]
+ },
+ {
+  "cat": "学习教育",
+  "q": "写教案",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.053,
+  "top1": "全学段全学科通用教案撰写助手",
+  "top3": [
+   "全学段全学科通用教案撰写助手",
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS"
+  ]
+ },
+ {
+  "cat": "学习教育",
+  "q": "写课件大纲",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "self-improving agent",
+  "top3": [
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS",
+   "Summarize"
+  ]
+ },
+ {
+  "cat": "学习教育",
+  "q": "写论文提纲",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "self-improving agent",
+  "top3": [
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS",
+   "Summarize"
+  ]
+ },
+ {
+  "cat": "学习教育",
+  "q": "改论文",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.056,
+  "top1": "论文修改润色全维度仪表盘",
+  "top3": [
+   "论文修改润色全维度仪表盘",
+   "论文润色修改全流程SOP",
+   "self-improving agent"
+  ]
+ },
+ {
+  "cat": "学习教育",
+  "q": "写摘要",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "self-improving agent",
+  "top3": [
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS",
+   "Summarize"
+  ]
+ },
+ {
+  "cat": "学习教育",
+  "q": "写文献综述",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.067,
+  "top1": "全球12亿文献知识库（8千万中文期刊可下载）",
+  "top3": [
+   "全球12亿文献知识库（8千万中文期刊可下载）",
+   "全球12亿文献知识库（8千万中文期刊可下载）",
+   "self-improving agent"
+  ]
+ },
+ {
+  "cat": "学习教育",
+  "q": "翻译成英文",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.053,
+  "top1": "Translate EN ZH",
+  "top3": [
+   "Translate EN ZH",
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS"
+  ]
+ },
+ {
+  "cat": "学习教育",
+  "q": "翻译成中文",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.053,
+  "top1": "Translate EN ZH",
+  "top3": [
+   "Translate EN ZH",
+   "research-paper-pdf-translator",
+   "MailMe X News"
+  ]
+ },
+ {
+  "cat": "学习教育",
+  "q": "润色英文",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "self-improving agent",
+  "top3": [
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS",
+   "Summarize"
+  ]
+ },
+ {
+  "cat": "学习教育",
+  "q": "写英文简历",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "self-improving agent",
+  "top3": [
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS",
+   "Summarize"
+  ]
+ },
+ {
+  "cat": "学习教育",
+  "q": "写英文自我介绍",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "self-improving agent",
+  "top3": [
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS",
+   "Summarize"
+  ]
+ },
+ {
+  "cat": "学习教育",
+  "q": "练口语",
+  "cls": "薄弱",
+  "n_name": 1,
+  "n_exact": 0,
+  "top1_score": 0.052,
+  "top1": "🎙️ 英语口语陪练",
+  "top3": [
+   "🎙️ 英语口语陪练",
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS"
+  ]
+ },
+ {
+  "cat": "学习教育",
+  "q": "背古诗",
+  "cls": "薄弱",
+  "n_name": 1,
+  "n_exact": 0,
+  "top1_score": 0.052,
+  "top1": "初高中必背古诗文三步记忆法",
+  "top3": [
+   "初高中必背古诗文三步记忆法",
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS"
+  ]
+ },
+ {
+  "cat": "学习教育",
+  "q": "学拼音",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "self-improving agent",
+  "top3": [
+   "self-improving agent",
+   "K12-小学教育助手",
+   "腾讯文档 TENCENT DOCS"
+  ]
+ },
+ {
+  "cat": "学习教育",
+  "q": "学英语语法",
+  "cls": "薄弱",
+  "n_name": 1,
+  "n_exact": 0,
+  "top1_score": 0.056,
+  "top1": "AMA医学英语语法检查器",
+  "top3": [
+   "AMA医学英语语法检查器",
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "做旅行计划",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "self-improving agent",
+  "top3": [
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS",
+   "Summarize"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "做行程",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "self-improving agent",
+  "top3": [
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS",
+   "Summarize"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "做菜谱",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "self-improving agent",
+  "top3": [
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS",
+   "Summarize"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "一周食谱",
+  "cls": "已有",
+  "n_name": 4,
+  "n_exact": 1,
+  "top1_score": 0.099,
+  "top1": "一周食谱",
+  "top3": [
+   "一周食谱",
+   "一周食谱规划",
+   "一周食谱助手"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "做健身计划",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "self-improving agent",
+  "top3": [
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS",
+   "Summarize"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "做减肥计划",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "self-improving agent",
+  "top3": [
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS",
+   "Summarize"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "做作息表",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "self-improving agent",
+  "top3": [
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS",
+   "Summarize"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "写租房合同",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "self-improving agent",
+  "top3": [
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS",
+   "Summarize"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "写借条",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "self-improving agent",
+  "top3": [
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS",
+   "Summarize"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "做预算",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "self-improving agent",
+  "top3": [
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS",
+   "Popeye Money"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "算工资",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "Summarize",
+  "top3": [
+   "Summarize",
+   "Self-Improving + Proactive Agent",
+   "Skill Vetter"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "算个税",
+  "cls": "薄弱",
+  "n_name": 1,
+  "n_exact": 0,
+  "top1_score": 0.051,
+  "top1": "个税计算器",
+  "top3": [
+   "个税计算器",
+   "Agent Browser",
+   "蚂蚁社保平台达人佣金结算个税核验"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "算房贷",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "Agent Browser",
+  "top3": [
+   "Agent Browser",
+   "搜索引擎",
+   "Self-Improving + Proactive Agent"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "算利息",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "self-improving agent",
+  "top3": [
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS",
+   "Agent Browser"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "选保险",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "self-improving agent",
+  "top3": [
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS",
+   "搜索引擎"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "买房",
+  "cls": "已有",
+  "n_name": 7,
+  "n_exact": 0,
+  "top1_score": 0.066,
+  "top1": "买房流程导航",
+  "top3": [
+   "买房流程导航",
+   "买房置业策略师",
+   "买房决策助手"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "装修预算",
+  "cls": "已有",
+  "n_name": 5,
+  "n_exact": 0,
+  "top1_score": 0.07,
+  "top1": "装修预算计算",
+  "top3": [
+   "装修预算计算",
+   "装修预算分配",
+   "装修预算审核与避坑清单"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "起名字",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "昵称专家",
+   "Find Skills"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "给孩子起名",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "Find Skills",
+   "育儿大师.Skill"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "给公司起名",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "Find Skills",
+   "育儿大师.Skill"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "写简历",
+  "cls": "薄弱",
+  "n_name": 1,
+  "n_exact": 0,
+  "top1_score": 0.058,
+  "top1": "UP 简历 - 让 Agent 帮你写简历找工作",
+  "top3": [
+   "UP 简历 - 让 Agent 帮你写简历找工作",
+   "编程专家.Skill",
+   "Find Skills"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "改简历",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "Find Skills",
+   "育儿大师.Skill"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "模拟面试",
+  "cls": "已有",
+  "n_name": 7,
+  "n_exact": 0,
+  "top1_score": 0.063,
+  "top1": "模拟面试导师",
+  "top3": [
+   "模拟面试导师",
+   "模拟面试题生成器",
+   "模拟面试助手"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "面试自我介绍",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "Find Skills",
+   "育儿大师.Skill"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "谈薪",
+  "cls": "已有",
+  "n_name": 6,
+  "n_exact": 0,
+  "top1_score": 0.061,
+  "top1": "谈薪/加薪话术",
+  "top3": [
+   "谈薪/加薪话术",
+   "职场谈判军师·加薪/谈薪/争资源的话术",
+   "求职面试教练 · 简历+模拟面试+谈薪"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "搬家清单",
+  "cls": "已有",
+  "n_name": 4,
+  "n_exact": 1,
+  "top1_score": 0.102,
+  "top1": "搬家清单",
+  "top3": [
+   "搬家清单",
+   "搬家清单生成",
+   "搬家清单生成器"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "选礼物",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "Find Skills",
+   "育儿大师.Skill"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "写情书",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "Find Skills",
+   "育儿大师.Skill"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "哄孩子睡觉",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "Find Skills",
+   "育儿大师.Skill"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "带娃",
+  "cls": "已有",
+  "n_name": 7,
+  "n_exact": 0,
+  "top1_score": 0.074,
+  "top1": "育儿大师.Skill",
+  "top3": [
+   "育儿大师.Skill",
+   "亲子带娃旅行全攻略｜3分钟生成行程+预算+避坑+出片攻略",
+   "Find Skills"
+  ]
+ },
+ {
+  "cat": "开发运维",
+  "q": "写SQL",
+  "cls": "薄弱",
+  "n_name": 1,
+  "n_exact": 0,
+  "top1_score": 0.051,
+  "top1": "阿拉丁·SQL数据工坊｜建表·写SQL·优化·迁移·造数一体",
+  "top3": [
+   "阿拉丁·SQL数据工坊｜建表·写SQL·优化·迁移·造数一体",
+   "self-improving agent",
+   "视频短视频图片音乐音频配音口播数字人全能创作"
+  ]
+ },
+ {
+  "cat": "开发运维",
+  "q": "优化SQL",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "dev-expert"
+  ]
+ },
+ {
+  "cat": "开发运维",
+  "q": "写正则",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "dev-expert"
+  ]
+ },
+ {
+  "cat": "开发运维",
+  "q": "写脚本",
+  "cls": "薄弱",
+  "n_name": 1,
+  "n_exact": 0,
+  "top1_score": 0.052,
+  "top1": "小lin说skill- 像小lin说一样撰写脚本",
+  "top3": [
+   "小lin说skill- 像小lin说一样撰写脚本",
+   "编程专家.Skill",
+   "dev-expert"
+  ]
+ },
+ {
+  "cat": "开发运维",
+  "q": "写单元测试",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "dev-expert",
+   "搜索引擎"
+  ]
+ },
+ {
+  "cat": "开发运维",
+  "q": "写接口文档",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "dev-expert",
+   "搜索引擎"
+  ]
+ },
+ {
+  "cat": "开发运维",
+  "q": "写README",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "dev-expert",
+   "搜索引擎"
+  ]
+ },
+ {
+  "cat": "开发运维",
+  "q": "写commit",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "dev-expert",
+   "搜索引擎"
+  ]
+ },
+ {
+  "cat": "开发运维",
+  "q": "排查报错",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "dev-expert",
+   "搜索引擎"
+  ]
+ },
+ {
+  "cat": "开发运维",
+  "q": "看日志",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "搜索引擎",
+  "top3": [
+   "搜索引擎",
+   "ima-skills",
+   "SSH Linux 远程操作"
+  ]
+ },
+ {
+  "cat": "开发运维",
+  "q": "写Dockerfile",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "Summarize",
+  "top3": [
+   "Summarize",
+   "搜索引擎",
+   "Self-Improving + Proactive Agent"
+  ]
+ },
+ {
+  "cat": "开发运维",
+  "q": "写CI",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "self-improving agent",
+  "top3": [
+   "self-improving agent",
+   "Find Skills",
+   "Agent Browser"
+  ]
+ },
+ {
+  "cat": "开发运维",
+  "q": "写定时任务",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "self-improving agent",
+  "top3": [
+   "self-improving agent",
+   "Find Skills",
+   "Agent Browser"
+  ]
+ },
+ {
+  "cat": "开发运维",
+  "q": "数据清洗",
+  "cls": "已有",
+  "n_name": 9,
+  "n_exact": 3,
+  "top1_score": 0.102,
+  "top1": "数据清洗",
+  "top3": [
+   "数据清洗",
+   "数据清洗",
+   "数据清洗"
+  ]
+ },
+ {
+  "cat": "开发运维",
+  "q": "画流程图",
+  "cls": "薄弱",
+  "n_name": 2,
+  "n_exact": 0,
+  "top1_score": 0.053,
+  "top1": "流程图绘制助手",
+  "top3": [
+   "流程图绘制助手",
+   "用 JS 库在网页里画流程图",
+   "self-improving agent"
+  ]
+ },
+ {
+  "cat": "开发运维",
+  "q": "画架构图",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "Design Md"
+  ]
+ },
+ {
+  "cat": "开发运维",
+  "q": "写技术方案",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "Find Skills"
+  ]
+ },
+ {
+  "cat": "开发运维",
+  "q": "写设计文档",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "Find Skills"
+  ]
+ },
+ {
+  "cat": "开发运维",
+  "q": "写压测报告",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "Find Skills"
+  ]
+ },
+ {
+  "cat": "开发运维",
+  "q": "写故障报告",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "Find Skills"
+  ]
+ },
+ {
+  "cat": "开发运维",
+  "q": "写复盘",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "Find Skills"
+  ]
+ },
+ {
+  "cat": "开发运维",
+  "q": "写变更方案",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "Find Skills"
+  ]
+ },
+ {
+  "cat": "开发运维",
+  "q": "写回滚方案",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "Find Skills"
+  ]
+ },
+ {
+  "cat": "开发运维",
+  "q": "写监控告警规则",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "Find Skills"
+  ]
+ }
+]
