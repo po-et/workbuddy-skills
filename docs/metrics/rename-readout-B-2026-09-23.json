@@ -1,0 +1,194 @@
+[
+ {
+  "slug": "sre-expert",
+  "query": "服务器告警处理",
+  "rank_before": null,
+  "top3_before": [
+   "Summarize",
+   "视频短视频图片音乐音频配音口播数字人全能创作",
+   "AI数字人口播与虚拟主播视频"
+  ],
+  "new_version": "0.1.2",
+  "at": "2026-09-23T11:36",
+  "latest_version": "0.1.2",
+  "live": true,
+  "rank_after": 1,
+  "read_at": "2026-09-23T11:53"
+ },
+ {
+  "slug": "qa-expert",
+  "query": "测试用例",
+  "rank_before": null,
+  "top3_before": [
+   "测试用例",
+   "测试用例",
+   "测试用例"
+  ],
+  "new_version": "0.1.2",
+  "at": "2026-09-23T11:36",
+  "latest_version": "0.1.2",
+  "live": true,
+  "rank_after": 17,
+  "read_at": "2026-09-23T11:53"
+ },
+ {
+  "slug": "architect-expert",
+  "query": "架构设计",
+  "rank_before": null,
+  "top3_before": [
+   "架构设计",
+   "架构设计",
+   "架构设计"
+  ],
+  "new_version": "0.1.2",
+  "at": "2026-09-23T11:36",
+  "latest_version": "0.1.2",
+  "live": true,
+  "rank_after": 7,
+  "read_at": "2026-09-23T11:53"
+ },
+ {
+  "slug": "tech-interview-expert",
+  "query": "技术面试",
+  "rank_before": 8,
+  "top3_before": [
+   "技术面试准备助手",
+   "技术面试通关准备",
+   "技术面试CS通识教练"
+  ],
+  "new_version": "0.1.2",
+  "at": "2026-09-23T11:36",
+  "latest_version": "0.1.2",
+  "live": true,
+  "rank_after": 1,
+  "read_at": "2026-09-23T11:53"
+ },
+ {
+  "slug": "tech-writing-expert",
+  "query": "技术文档",
+  "rank_before": null,
+  "top3_before": [
+   "技术文档更新",
+   "技术文档翻译",
+   "技术文档写作专家"
+  ],
+  "new_version": "0.1.2",
+  "at": "2026-09-23T11:36",
+  "latest_version": "0.1.2",
+  "live": true,
+  "rank_after": 11,
+  "read_at": "2026-09-23T11:53"
+ },
+ {
+  "slug": "career-growth-expert",
+  "query": "职业规划",
+  "rank_before": null,
+  "top3_before": [
+   "职业规划",
+   "职业规划",
+   "职业规划AI助手"
+  ],
+  "new_version": "0.1.2",
+  "at": "2026-09-23T11:36",
+  "latest_version": "0.1.2",
+  "live": true,
+  "rank_after": 3,
+  "read_at": "2026-09-23T11:53"
+ },
+ {
+  "slug": "incident-response-pro",
+  "query": "线上故障排查",
+  "rank_before": null,
+  "top3_before": [
+   "线上故障排查与应急助手",
+   "Agent Browser",
+   "Summarize"
+  ],
+  "new_version": "0.1.2",
+  "at": "2026-09-23T11:36",
+  "latest_version": "0.1.2",
+  "live": true,
+  "rank_after": 1,
+  "read_at": "2026-09-23T11:53"
+ },
+ {
+  "slug": "api-integration-pro",
+  "query": "接口联调",
+  "rank_before": 2,
+  "top3_before": [
+   "接口联调指南",
+   "接口联调助手",
+   "self-improving agent"
+  ],
+  "new_version": "0.1.2",
+  "at": "2026-09-23T11:36",
+  "latest_version": "0.1.2",
+  "live": true,
+  "rank_after": 1,
+  "read_at": "2026-09-23T11:53"
+ },
+ {
+  "slug": "container-deploy-pro",
+  "query": "容器部署",
+  "rank_before": null,
+  "top3_before": [
+   "魔盒node服务开发技能包",
+   "self-improving agent",
+   "\"Docker 容器部署指南\""
+  ],
+  "new_version": "0.1.2",
+  "at": "2026-09-23T11:36",
+  "latest_version": "0.1.2",
+  "live": true,
+  "rank_after": 1,
+  "read_at": "2026-09-23T11:53"
+ },
+ {
+  "slug": "database-ops-pro",
+  "query": "数据库运维",
+  "rank_before": 2,
+  "top3_before": [
+   "数据库运维管理助手",
+   "数据库运维助手",
+   "self-improving agent"
+  ],
+  "new_version": "0.1.2",
+  "at": "2026-09-23T11:36",
+  "latest_version": "0.1.2",
+  "live": true,
+  "rank_after": 1,
+  "read_at": "2026-09-23T11:53"
+ },
+ {
+  "slug": "repo-governance-pro",
+  "query": "代码仓库治理",
+  "rank_before": 1,
+  "top3_before": [
+   "代码仓库治理助手",
+   "self-improving agent",
+   "smart-charts"
+  ],
+  "new_version": "0.1.2",
+  "at": "2026-09-23T11:36",
+  "latest_version": "0.1.1",
+  "live": false,
+  "rank_after": null,
+  "read_at": "2026-09-23T11:53"
+ },
+ {
+  "slug": "data-toolkit-pro",
+  "query": "数据处理",
+  "rank_before": 7,
+  "top3_before": [
+   "数据处理",
+   "数据处理脚本生成器",
+   "数据处理协议审查"
+  ],
+  "new_version": "0.1.2",
+  "at": "2026-09-23T11:36",
+  "latest_version": "0.1.1",
+  "live": false,
+  "rank_after": null,
+  "read_at": "2026-09-23T11:53"
+ }
+]

@@ -57,7 +57,8 @@ def main():
     if live_rows:
         top3 = sum(1 for o in live_rows if o["rank_after"] and o["rank_after"] <= 3)
         print(f"\n已上线 {len(live_rows)}/{len(out)}：进前 3 的 {top3} 个；改名前这些技能进前 3 的 {sum(1 for o in live_rows if o['rank_before'] and o['rank_before'] <= 3)} 个")
-        p = ROOT / f"docs/metrics/rename-readout-{datetime.date.today()}.json"
+        tag = BASE.stem.replace("rename-baseline", "").strip("-")
+        p = ROOT / f"docs/metrics/rename-readout-{tag + '-' if tag else ''}{datetime.date.today()}.json"
         json.dump(out, open(p, "w"), ensure_ascii=False, indent=1)
         print("已存", p.relative_to(ROOT))
     else:
