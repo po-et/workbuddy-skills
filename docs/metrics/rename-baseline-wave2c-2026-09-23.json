@@ -1,0 +1,23 @@
+[
+ {
+  "slug": "report-making",
+  "query": "报表制作",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T12:38"
+ },
+ {
+  "slug": "json-formatting",
+  "query": "JSON 格式化",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T12:38"
+ },
+ {
+  "slug": "markdown-conversion",
+  "query": "Markdown 转换",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T12:38"
+ }
+]
