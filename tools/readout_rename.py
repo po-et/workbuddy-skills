@@ -40,7 +40,7 @@ def main():
     for i, r in enumerate(rows):
         if i:
             time.sleep(1.2)
-        d = get(f"/api/v1/skills/{r['slug']}")
+        d = get(f"/api/v1/skills/{r['slug']}?namespace=indiv-captain")  # 裸 slug 可能解析到别人的同名技能
         lv = (d.get("latestVersion") or {}).get("version") or ""
         live = lv == r.get("new_version", NEW_VERSION)
         name = (d.get("skill") or {}).get("displayName", "")

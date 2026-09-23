@@ -186,9 +186,17 @@ PITFALLS = (
         "skillkit": "lint / build 都用同一个 SemVer 正则校验",
     },
     {
+        "id": "bare-slug-cross-namespace",
+        "现象": "自己的技能突然「有了安装和收藏」，或 latestVersion 对不上",
+        "规则": "GET /api/v1/skills/{slug} 不带 namespace 时可能解析到别人的同名技能（如当天导入的 ClawHub 镜像）；查自己的一律带 ?namespace=<你的 handle>",
+        "证据": "2026-09-23：code-review-zh / pr-description 裸 slug 解析到 clawhub 镜像（708/730 下载、12/15 安装），带 namespace 后是我们的 1/3 下载、0 安装",
+        "置信度": "实测",
+        "skillkit": "stats 与 metrics_snapshot 默认带 --namespace；自写脚本务必照做",
+    },
+    {
         "id": "slug-global-unique",
         "现象": "发布报 409 slug 冲突",
-        "规则": "SkillHub 的 slug 全网唯一，先到先得；冲突时只能换名重发，重试没用",
+        "规则": "发布时同名 slug 可能报 409（重试没用，只能换名）；但平台上确有同 slug 多作者（dev-expert×2、anti-fraud×3、ClawHub 镜像与原生同名），唯一性边界未知（需确认）",
         "证据": "2026-09-17 批量发布实测",
         "置信度": "实测",
         "skillkit": "build 支持 --slug / --map 换名；建议带用途后缀降低撞车概率",
