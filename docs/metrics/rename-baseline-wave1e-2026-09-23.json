@@ -1,0 +1,30 @@
+[
+ {
+  "slug": "image-alt-description",
+  "query": "图片描述",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T12:21"
+ },
+ {
+  "slug": "ui-microcopy",
+  "query": "UI 文案",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T12:21"
+ },
+ {
+  "slug": "python-script-writer",
+  "query": "Python 脚本",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T12:21"
+ },
+ {
+  "slug": "sql-generation-helper",
+  "query": "SQL 生成",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-23T12:21"
+ }
+]
