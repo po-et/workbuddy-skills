@@ -1,0 +1,46 @@
+[
+ {
+  "slug": "video-frame-extract",
+  "query": "视频抽帧",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-24T10:42",
+  "latest_version": "0.1.0",
+  "live": true,
+  "rank_after": 1,
+  "read_at": "2026-09-24T10:49"
+ },
+ {
+  "slug": "audio-editing",
+  "query": "音频剪辑",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-24T10:42",
+  "latest_version": "0.1.0",
+  "live": true,
+  "rank_after": 1,
+  "read_at": "2026-09-24T10:50"
+ },
+ {
+  "slug": "github-cli-ops",
+  "query": "GitHub 操作",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-24T10:42",
+  "latest_version": "0.1.0",
+  "live": true,
+  "rank_after": 1,
+  "read_at": "2026-09-24T10:50"
+ },
+ {
+  "slug": "morning-briefing",
+  "query": "晨间简报",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-24T10:42",
+  "latest_version": "0.1.0",
+  "live": true,
+  "rank_after": 1,
+  "read_at": "2026-09-24T10:50"
+ }
+]

@@ -503,3 +503,12 @@ gh pr create --repo AlephAITech/WorkBuddyGuide --base "$BASE" --head "po-et:case
 | skill-search-helper | 247863 | 10:22:00 |
 | skill-preinstall-check | 247870 | 10:23:16 |
 | proactive-assistant | 247876 | 10:24:31 |
+
+### SkillHub wave4c（09-24）（2026-09-24，4 个，机器审核中）
+
+| slug | skillId | 发布时间 |
+|---|---|---|
+| video-frame-extract | 247924 | 10:42:37 |
+| audio-editing | 247927 | 10:43:52 |
+| github-cli-ops | 247932 | 10:45:08 |
+| morning-briefing | 247935 | 10:46:24 |
