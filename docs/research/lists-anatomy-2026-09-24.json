@@ -1,0 +1,6244 @@
+{
+ "recommended": [
+  {
+   "slug": "dev-expert",
+   "ns": "indiv-ebandao",
+   "src": "community",
+   "cat": "dev-programming",
+   "dl": 1319368,
+   "star": 269,
+   "inst": 0,
+   "age_d": 97,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "parenting-expert",
+   "ns": "indiv-ebandao",
+   "src": "community",
+   "cat": "life-service",
+   "dl": 812652,
+   "star": 23,
+   "inst": 0,
+   "age_d": 7,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "tencent-docs",
+   "ns": "tencent-adm",
+   "src": "enterprise",
+   "cat": "office-efficiency",
+   "dl": 1173400,
+   "star": 307,
+   "inst": 8107,
+   "age_d": 201,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "dev-expert",
+   "ns": "user_814dbe54",
+   "src": "community",
+   "cat": "dev-programming",
+   "dl": 647824,
+   "star": 14,
+   "inst": 0,
+   "age_d": 21,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "anti-fraud",
+   "ns": "indiv-ebandao",
+   "src": "community",
+   "cat": "life-service",
+   "dl": 579417,
+   "star": 27,
+   "inst": 0,
+   "age_d": 37,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "baozheng",
+   "ns": "indiv-ebandao",
+   "src": "community",
+   "cat": "professional",
+   "dl": 311343,
+   "star": 39,
+   "inst": 0,
+   "age_d": 83,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "anti-fraud",
+   "ns": "user_814dbe54",
+   "src": "community",
+   "cat": "life-service",
+   "dl": 316945,
+   "star": 0,
+   "inst": 0,
+   "age_d": 20,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "luhe-paper-free-pro",
+   "ns": "org-liz6o019",
+   "src": "enterprise",
+   "cat": "professional",
+   "dl": 302143,
+   "star": 10,
+   "inst": 0,
+   "age_d": 9,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "smart-charts",
+   "ns": "user_5b28ea14",
+   "src": "community",
+   "cat": "data-analysis",
+   "dl": 368404,
+   "star": 109,
+   "inst": 8,
+   "age_d": 177,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "anti-fraud",
+   "ns": "indiv-skill",
+   "src": "community",
+   "cat": "professional",
+   "dl": 273820,
+   "star": 1,
+   "inst": 0,
+   "age_d": 14,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "mysteel-datasearch",
+   "ns": "mysteel",
+   "src": "enterprise",
+   "cat": "data-analysis",
+   "dl": 333070,
+   "star": 3,
+   "inst": 0,
+   "age_d": 49,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "wps-office-suite",
+   "ns": "user_1a470ba8",
+   "src": "community",
+   "cat": "office-efficiency",
+   "dl": 255887,
+   "star": 101,
+   "inst": 0,
+   "age_d": 88,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "qilinbashe",
+   "ns": "user_cd0fcd93",
+   "src": "community",
+   "cat": "professional",
+   "dl": 126126,
+   "star": 56,
+   "inst": 0,
+   "age_d": 69,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "libai",
+   "ns": "indiv-ebandao",
+   "src": "community",
+   "cat": "content-creation",
+   "dl": 179125,
+   "star": 56,
+   "inst": 0,
+   "age_d": 89,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "contextweave-interactive-architecture",
+   "ns": "user_bddf3fe6",
+   "src": "community",
+   "cat": "design-media",
+   "dl": 236426,
+   "star": 243,
+   "inst": 239,
+   "age_d": 168,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "gpt-image-2-5-studio",
+   "ns": "user_87b8e34f",
+   "src": "community",
+   "cat": "design-media",
+   "dl": 101035,
+   "star": 13,
+   "inst": 0,
+   "age_d": 13,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "lingyi-wx-video-script-creator-plus",
+   "ns": "org-28ib33ph",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 166240,
+   "star": 29,
+   "inst": 0,
+   "age_d": 80,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "ima-skills",
+   "ns": "tencent-adm",
+   "src": "enterprise",
+   "cat": "knowledge-management",
+   "dl": 370694,
+   "star": 538,
+   "inst": 11831,
+   "age_d": 190,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "smart-charts",
+   "ns": "user_814dbe54",
+   "src": "community",
+   "cat": "data-analysis",
+   "dl": 95234,
+   "star": 1,
+   "inst": 0,
+   "age_d": 21,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "academic-figures",
+   "ns": "indiv-sorsor",
+   "src": "community",
+   "cat": "data-analysis",
+   "dl": 90159,
+   "star": 58,
+   "inst": 0,
+   "age_d": 148,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "lingyi-content-quality-check",
+   "ns": "org-28ib33ph",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 131601,
+   "star": 32,
+   "inst": 0,
+   "age_d": 73,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "lingyi-wx-video-decomposer-plus",
+   "ns": "org-28ib33ph",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 254058,
+   "star": 90,
+   "inst": 0,
+   "age_d": 84,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "douyin-pro",
+   "ns": "user_3b54b400",
+   "src": "community",
+   "cat": "design-media",
+   "dl": 119018,
+   "star": 62,
+   "inst": 0,
+   "age_d": 67,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "patent-drafting-cn",
+   "ns": "user_9c63fdb4",
+   "src": "community",
+   "cat": "professional",
+   "dl": 175415,
+   "star": 36,
+   "inst": 0,
+   "age_d": 111,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "live-commerce-script-studio",
+   "ns": "beatra-ai",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 87576,
+   "star": 15,
+   "inst": 0,
+   "age_d": 43,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "dknowc-official-doc-writer-skillhub",
+   "ns": "user_c9faff27",
+   "src": "community",
+   "cat": "office-efficiency",
+   "dl": 133397,
+   "star": 69,
+   "inst": 22,
+   "age_d": 153,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "find-skills",
+   "ns": "clawhub_root",
+   "src": "clawhub",
+   "cat": "ai-agent",
+   "dl": 1026407,
+   "star": 1770,
+   "inst": 75956,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "paperless-business-system-from-files",
+   "ns": "user_84b8c7d7",
+   "src": "community",
+   "cat": "dev-programming",
+   "dl": 211408,
+   "star": 13,
+   "inst": 0,
+   "age_d": 53,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "beatra-ai-video-studio",
+   "ns": "beatra-ai",
+   "src": "enterprise",
+   "cat": "design-media",
+   "dl": 91793,
+   "star": 18,
+   "inst": 0,
+   "age_d": 49,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "unclecheng-reduce-ai-perception-v2",
+   "ns": "user_ab5ae6ee",
+   "src": "community",
+   "cat": "content-creation",
+   "dl": 269065,
+   "star": 676,
+   "inst": 650,
+   "age_d": 170,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "chinese-official-writing",
+   "ns": "user_f3d82da7",
+   "src": "clawhub",
+   "cat": "content-creation",
+   "dl": 176029,
+   "star": 71,
+   "inst": 53,
+   "age_d": 137,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "cloudbase",
+   "ns": "tencent-adm",
+   "src": "enterprise",
+   "cat": "dev-programming",
+   "dl": 132836,
+   "star": 30,
+   "inst": 9,
+   "age_d": 194,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "global-biblio-base",
+   "ns": "user_164f4c1f",
+   "src": "community",
+   "cat": "knowledge-management",
+   "dl": 117399,
+   "star": 175,
+   "inst": 0,
+   "age_d": 135,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "totorosir-workbuddy-checkin",
+   "ns": "user_3a370331",
+   "src": "community",
+   "cat": "ai-agent",
+   "dl": 102738,
+   "star": 14,
+   "inst": 0,
+   "age_d": 28,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "biaoshu-bailian",
+   "ns": "org-32m5yxyy",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 78539,
+   "star": 52,
+   "inst": 0,
+   "age_d": 86,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "lingyi-wx-video-decomposer-exp",
+   "ns": "org-28ib33ph",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 105404,
+   "star": 58,
+   "inst": 0,
+   "age_d": 89,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "lingyi-wx-viral-script-generator",
+   "ns": "org-28ib33ph",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 161127,
+   "star": 81,
+   "inst": 0,
+   "age_d": 82,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "wps-office-suite",
+   "ns": "user_814dbe54",
+   "src": "community",
+   "cat": "office-efficiency",
+   "dl": 81200,
+   "star": 0,
+   "inst": 0,
+   "age_d": 21,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "baozheng",
+   "ns": "user_814dbe54",
+   "src": "community",
+   "cat": "professional",
+   "dl": 44753,
+   "star": 0,
+   "inst": 0,
+   "age_d": 20,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "lingyi-member-system-setup",
+   "ns": "org-28ib33ph",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 55474,
+   "star": 2,
+   "inst": 0,
+   "age_d": 39,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "gongwen-writting-2",
+   "ns": "tec-wins",
+   "src": "enterprise",
+   "cat": "office-efficiency",
+   "dl": 121209,
+   "star": 25,
+   "inst": 0,
+   "age_d": 39,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "beatra-ai-music-creator",
+   "ns": "beatra-ai",
+   "src": "enterprise",
+   "cat": "design-media",
+   "dl": 79549,
+   "star": 5,
+   "inst": 0,
+   "age_d": 49,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "telehot-bid-compliance-check",
+   "ns": "org-38jzlv6v",
+   "src": "enterprise",
+   "cat": "office-efficiency",
+   "dl": 66284,
+   "star": 11,
+   "inst": 0,
+   "age_d": 13,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "personalized-song-maker",
+   "ns": "user_87b8e34f",
+   "src": "community",
+   "cat": "content-creation",
+   "dl": 56003,
+   "star": 6,
+   "inst": 0,
+   "age_d": 45,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "tax-policy-knowledge",
+   "ns": "user_11064e10",
+   "src": "community",
+   "cat": "professional",
+   "dl": 97668,
+   "star": 44,
+   "inst": 93,
+   "age_d": 167,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "lingyi-wx-account-diagnose",
+   "ns": "org-28ib33ph",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 70775,
+   "star": 6,
+   "inst": 0,
+   "age_d": 33,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "lskj-recommend",
+   "ns": "org-whlskj",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 66263,
+   "star": 9,
+   "inst": 0,
+   "age_d": 27,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "cnfinancialscraper",
+   "ns": "user_9d5a2a39",
+   "src": "community",
+   "cat": "data-analysis",
+   "dl": 135141,
+   "star": 239,
+   "inst": 0,
+   "age_d": 124,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "lingyi-cross-domain-synergy-plan",
+   "ns": "org-28ib33ph",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 53185,
+   "star": 2,
+   "inst": 0,
+   "age_d": 39,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "zlbx-bidding",
+   "ns": "user_98035bfb",
+   "src": "community",
+   "cat": "data-analysis",
+   "dl": 49823,
+   "star": 12,
+   "inst": 212,
+   "age_d": 173,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "lingyi-private-domain-tag-system-build",
+   "ns": "org-28ib33ph",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 51029,
+   "star": 2,
+   "inst": 0,
+   "age_d": 39,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "shanghai-ocean-university-hengsha-birdwatching",
+   "ns": "user_a730098d",
+   "src": "community",
+   "cat": "education",
+   "dl": 45349,
+   "star": 10,
+   "inst": 0,
+   "age_d": 18,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "zhiliao-official-tender-assistant",
+   "ns": "org-32m5yxyy",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 51607,
+   "star": 9,
+   "inst": 0,
+   "age_d": 91,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "pdf-image-text-extractor",
+   "ns": "user_5f9c21aa",
+   "src": "community",
+   "cat": "office-efficiency",
+   "dl": 151333,
+   "star": 181,
+   "inst": 378,
+   "age_d": 166,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "cad-design-and-drafting",
+   "ns": "org-qu1qhx78",
+   "src": "enterprise",
+   "cat": "design-media",
+   "dl": 46438,
+   "star": 28,
+   "inst": 0,
+   "age_d": 42,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "tender-search",
+   "ns": "user_98035bfb",
+   "src": "community",
+   "cat": "business-ops",
+   "dl": 42091,
+   "star": 13,
+   "inst": 181,
+   "age_d": 169,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "lingyi-private-domain-sales-repurchase-strategy",
+   "ns": "org-28ib33ph",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 47108,
+   "star": 2,
+   "inst": 0,
+   "age_d": 39,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "zlbx-bidding-payskill",
+   "ns": "org-32m5yxyy",
+   "src": "enterprise",
+   "cat": "data-analysis",
+   "dl": 44311,
+   "star": 11,
+   "inst": 0,
+   "age_d": 81,
+   "eval": null,
+   "labels": {
+    "pricing_type": "paid",
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "xique-ai",
+   "ns": "org-kkw9656k",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 55679,
+   "star": 5,
+   "inst": 0,
+   "age_d": 35,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "workbuddy-guide",
+   "ns": "user_73de2035",
+   "src": "community",
+   "cat": "ai-agent",
+   "dl": 69897,
+   "star": 59,
+   "inst": 0,
+   "age_d": 117,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "pentest",
+   "ns": "user_a730098d",
+   "src": "community",
+   "cat": "it-ops-security",
+   "dl": 49008,
+   "star": 29,
+   "inst": 0,
+   "age_d": 48,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "agently-mail",
+   "ns": "tencent-adm",
+   "src": "enterprise",
+   "cat": "ai-agent",
+   "dl": 130628,
+   "star": 80,
+   "inst": 0,
+   "age_d": 112,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "lskj-official-sales",
+   "ns": "org-whlskj",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 59422,
+   "star": 6,
+   "inst": 0,
+   "age_d": 54,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "shanghai-ocean-university-hengsha-cycling-planner",
+   "ns": "user_a730098d",
+   "src": "community",
+   "cat": "life-service",
+   "dl": 38652,
+   "star": 9,
+   "inst": 0,
+   "age_d": 18,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "lingyi-yunying-diaoyan-baogao",
+   "ns": "org-28ib33ph",
+   "src": "enterprise",
+   "cat": "data-analysis",
+   "dl": 55888,
+   "star": 20,
+   "inst": 0,
+   "age_d": 73,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "aistockresearcher",
+   "ns": "user_9d5a2a39",
+   "src": "community",
+   "cat": "data-analysis",
+   "dl": 67821,
+   "star": 122,
+   "inst": 0,
+   "age_d": 123,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "high-quality-skill-guidance",
+   "ns": "user_4894573e",
+   "src": "community",
+   "cat": "ai-agent",
+   "dl": 22634,
+   "star": 12,
+   "inst": 0,
+   "age_d": 38,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "kdocs-skill",
+   "ns": "user_5ea84866",
+   "src": "community",
+   "cat": "office-efficiency",
+   "dl": 136874,
+   "star": 123,
+   "inst": 2029,
+   "age_d": 167,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "fengyupentest",
+   "ns": "org-sb0eogd5",
+   "src": "enterprise",
+   "cat": "it-ops-security",
+   "dl": 38491,
+   "star": 6,
+   "inst": 0,
+   "age_d": 18,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "lskj-official-analyze",
+   "ns": "org-whlskj",
+   "src": "enterprise",
+   "cat": "professional",
+   "dl": 58359,
+   "star": 6,
+   "inst": 0,
+   "age_d": 54,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "handwritten-newspaper-template-generator-showapi",
+   "ns": "showapi",
+   "src": "enterprise",
+   "cat": "design-media",
+   "dl": 55373,
+   "star": 2,
+   "inst": 0,
+   "age_d": 37,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "gongwenxiezuo",
+   "ns": "davtime",
+   "src": "enterprise",
+   "cat": "professional",
+   "dl": 32560,
+   "star": 20,
+   "inst": 0,
+   "age_d": 28,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "lingyi-wx-account-decomposer-paid",
+   "ns": "org-28ib33ph",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 40055,
+   "star": 10,
+   "inst": 0,
+   "age_d": 68,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "smart-agriculture-opportunity-tracker",
+   "ns": "org-whlskj",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 28830,
+   "star": 2,
+   "inst": 0,
+   "age_d": 22,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "humanizer-zh",
+   "ns": "clawhub_liuxy951129-cpu",
+   "src": "clawhub",
+   "cat": "content-creation",
+   "dl": 88433,
+   "star": 101,
+   "inst": 5832,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "omni-viral-video-deconstruction",
+   "ns": "org-dlg3hiaf",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 32236,
+   "star": 2,
+   "inst": 0,
+   "age_d": 20,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "luhe-paper-writer",
+   "ns": "user_815c5ecc",
+   "src": "community",
+   "cat": "content-creation",
+   "dl": 24423,
+   "star": 8,
+   "inst": 0,
+   "age_d": 34,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "tiangong-skill",
+   "ns": "indiv-ebandao",
+   "src": "community",
+   "cat": "ai-agent",
+   "dl": 31309,
+   "star": 24,
+   "inst": 0,
+   "age_d": 106,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "chengxin",
+   "ns": "clawhub_tongcheng-ai",
+   "src": "clawhub",
+   "cat": "life-service",
+   "dl": 22854,
+   "star": 6,
+   "inst": 28,
+   "age_d": 144,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "code-review93",
+   "ns": "user_19b9fbd9",
+   "src": "community",
+   "cat": "dev-programming",
+   "dl": 21150,
+   "star": 4,
+   "inst": 0,
+   "age_d": 28,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "doc-snapshot",
+   "ns": "user_cbeb91bb",
+   "src": "community",
+   "cat": "office-efficiency",
+   "dl": 22651,
+   "star": 1,
+   "inst": 0,
+   "age_d": 12,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "xuanzang-skill",
+   "ns": "indiv-ebandao",
+   "src": "community",
+   "cat": "ai-agent",
+   "dl": 33824,
+   "star": 6,
+   "inst": 0,
+   "age_d": 100,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "lskj-official-subscribe",
+   "ns": "org-whlskj",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 36419,
+   "star": 2,
+   "inst": 0,
+   "age_d": 54,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "stock-theme-radar",
+   "ns": "laoxi",
+   "src": "enterprise",
+   "cat": "professional",
+   "dl": 25486,
+   "star": 17,
+   "inst": 0,
+   "age_d": 35,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "lskj-official-ztbdata",
+   "ns": "org-whlskj",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 37438,
+   "star": 3,
+   "inst": 0,
+   "age_d": 54,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "thesis-writing-companion",
+   "ns": "laoxi",
+   "src": "enterprise",
+   "cat": "education",
+   "dl": 25649,
+   "star": 25,
+   "inst": 0,
+   "age_d": 36,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "patent-disclosure-skill",
+   "ns": "user_9610c87f",
+   "src": "community",
+   "cat": "professional",
+   "dl": 53041,
+   "star": 107,
+   "inst": 175,
+   "age_d": 168,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "lanshan-national-purchaser-insight",
+   "ns": "org-whlskj",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 28241,
+   "star": 2,
+   "inst": 0,
+   "age_d": 28,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "adaptive-presentation-studio",
+   "ns": "user_84b8c7d7",
+   "src": "community",
+   "cat": "office-efficiency",
+   "dl": 24117,
+   "star": 2,
+   "inst": 0,
+   "age_d": 52,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "lingyi-copy-de-ai-human-eval",
+   "ns": "org-28ib33ph",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 74502,
+   "star": 17,
+   "inst": 0,
+   "age_d": 66,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "fanqiexiaoshuoxiezuo",
+   "ns": "laoxi",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 38132,
+   "star": 48,
+   "inst": 0,
+   "age_d": 40,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "zzu-college-playbook",
+   "ns": "user_55cbc991",
+   "src": "community",
+   "cat": "education",
+   "dl": 18577,
+   "star": 1,
+   "inst": 0,
+   "age_d": 15,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "smart-city-landing-radar",
+   "ns": "org-whlskj",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 27368,
+   "star": 2,
+   "inst": 0,
+   "age_d": 22,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "deep-skill-finder",
+   "ns": "user_a92b64bc",
+   "src": "community",
+   "cat": "ai-agent",
+   "dl": 33301,
+   "star": 16,
+   "inst": 0,
+   "age_d": 76,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "lingyi-daily-hot-topic",
+   "ns": "org-28ib33ph",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 34233,
+   "star": 11,
+   "inst": 0,
+   "age_d": 61,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "qidianxiaoshuoxiezuo",
+   "ns": "davtime",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 29701,
+   "star": 24,
+   "inst": 0,
+   "age_d": 34,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ppt-craft-master",
+   "ns": "laoxi",
+   "src": "enterprise",
+   "cat": "office-efficiency",
+   "dl": 45246,
+   "star": 49,
+   "inst": 0,
+   "age_d": 40,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "contextweave-interactive-architecture",
+   "ns": "user_814dbe54",
+   "src": "community",
+   "cat": "design-media",
+   "dl": 24097,
+   "star": 0,
+   "inst": 0,
+   "age_d": 21,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "lskj-official-monitor",
+   "ns": "org-whlskj",
+   "src": "enterprise",
+   "cat": "data-analysis",
+   "dl": 27857,
+   "star": 1,
+   "inst": 0,
+   "age_d": 54,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "omni-content-matrix",
+   "ns": "davtime",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 18141,
+   "star": 21,
+   "inst": 0,
+   "age_d": 29,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  }
+ ],
+ "trending": [
+  {
+   "slug": "dev-expert",
+   "ns": "indiv-ebandao",
+   "src": "community",
+   "cat": "dev-programming",
+   "dl": 1319368,
+   "star": 269,
+   "inst": 0,
+   "age_d": 97,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "dev-expert",
+   "ns": "user_814dbe54",
+   "src": "community",
+   "cat": "dev-programming",
+   "dl": 647824,
+   "star": 14,
+   "inst": 0,
+   "age_d": 21,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "mysteel-datasearch",
+   "ns": "mysteel",
+   "src": "enterprise",
+   "cat": "data-analysis",
+   "dl": 333070,
+   "star": 3,
+   "inst": 0,
+   "age_d": 49,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "parenting-expert",
+   "ns": "indiv-ebandao",
+   "src": "community",
+   "cat": "life-service",
+   "dl": 812652,
+   "star": 23,
+   "inst": 0,
+   "age_d": 7,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "beatra",
+   "ns": "beatra-ai",
+   "src": "enterprise",
+   "cat": "design-media",
+   "dl": 474235,
+   "star": 62,
+   "inst": 0,
+   "age_d": 49,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "anti-fraud",
+   "ns": "indiv-ebandao",
+   "src": "community",
+   "cat": "life-service",
+   "dl": 579417,
+   "star": 27,
+   "inst": 0,
+   "age_d": 37,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "anti-fraud",
+   "ns": "user_814dbe54",
+   "src": "community",
+   "cat": "life-service",
+   "dl": 316945,
+   "star": 0,
+   "inst": 0,
+   "age_d": 20,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "anti-fraud",
+   "ns": "indiv-skill",
+   "src": "community",
+   "cat": "professional",
+   "dl": 273820,
+   "star": 1,
+   "inst": 0,
+   "age_d": 14,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "poster-design-studio",
+   "ns": "user_87b8e34f",
+   "src": "community",
+   "cat": "design-media",
+   "dl": 120552,
+   "star": 13,
+   "inst": 0,
+   "age_d": 45,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "ai-logo-maker",
+   "ns": "user_87b8e34f",
+   "src": "community",
+   "cat": "design-media",
+   "dl": 78062,
+   "star": 10,
+   "inst": 0,
+   "age_d": 45,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "talking-avatar-video",
+   "ns": "beatra-ai",
+   "src": "enterprise",
+   "cat": "design-media",
+   "dl": 191497,
+   "star": 21,
+   "inst": 0,
+   "age_d": 47,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "wechat-cover-maker",
+   "ns": "user_87b8e34f",
+   "src": "community",
+   "cat": "design-media",
+   "dl": 63922,
+   "star": 7,
+   "inst": 0,
+   "age_d": 49,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "multi-search-engine",
+   "ns": "zcwl",
+   "src": "enterprise",
+   "cat": "knowledge-management",
+   "dl": 629825,
+   "star": 48,
+   "inst": 0,
+   "age_d": 38,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "personalized-song-maker",
+   "ns": "user_87b8e34f",
+   "src": "community",
+   "cat": "content-creation",
+   "dl": 56003,
+   "star": 6,
+   "inst": 0,
+   "age_d": 45,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "gongwen-writting-2",
+   "ns": "tec-wins",
+   "src": "enterprise",
+   "cat": "office-efficiency",
+   "dl": 121209,
+   "star": 25,
+   "inst": 0,
+   "age_d": 39,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "minimax-h3-ai-video",
+   "ns": "user_87b8e34f",
+   "src": "community",
+   "cat": "design-media",
+   "dl": 49858,
+   "star": 11,
+   "inst": 0,
+   "age_d": 45,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "wps-office-suite",
+   "ns": "user_1a470ba8",
+   "src": "community",
+   "cat": "office-efficiency",
+   "dl": 255891,
+   "star": 101,
+   "inst": 0,
+   "age_d": 88,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "wps-office-suite",
+   "ns": "user_814dbe54",
+   "src": "community",
+   "cat": "office-efficiency",
+   "dl": 81203,
+   "star": 0,
+   "inst": 0,
+   "age_d": 21,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "patent-drafting-cn",
+   "ns": "user_9c63fdb4",
+   "src": "community",
+   "cat": "professional",
+   "dl": 175415,
+   "star": 36,
+   "inst": 0,
+   "age_d": 111,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "totorosir-workbuddy-checkin",
+   "ns": "user_3a370331",
+   "src": "community",
+   "cat": "ai-agent",
+   "dl": 102738,
+   "star": 14,
+   "inst": 0,
+   "age_d": 28,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "beatra-ai-video-studio",
+   "ns": "beatra-ai",
+   "src": "enterprise",
+   "cat": "design-media",
+   "dl": 91793,
+   "star": 18,
+   "inst": 0,
+   "age_d": 49,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "lingyi-wx-video-decomposer-plus",
+   "ns": "org-28ib33ph",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 254058,
+   "star": 90,
+   "inst": 0,
+   "age_d": 84,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "lingyi-wx-video-script-creator-plus",
+   "ns": "org-28ib33ph",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 166240,
+   "star": 29,
+   "inst": 0,
+   "age_d": 80,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "telehot-skill-custom",
+   "ns": "org-38jzlv6v",
+   "src": "enterprise",
+   "cat": "dev-programming",
+   "dl": 35855,
+   "star": 0,
+   "inst": 0,
+   "age_d": 6,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "dknowc-official-doc-writer-skillhub",
+   "ns": "user_c9faff27",
+   "src": "community",
+   "cat": "office-efficiency",
+   "dl": 133397,
+   "star": 69,
+   "inst": 22,
+   "age_d": 153,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "paperless-business-system-from-files",
+   "ns": "user_84b8c7d7",
+   "src": "community",
+   "cat": "dev-programming",
+   "dl": 211408,
+   "star": 13,
+   "inst": 0,
+   "age_d": 53,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "video-generation",
+   "ns": "clawhub_ivangdavila",
+   "src": "clawhub",
+   "cat": "design-media",
+   "dl": 40814,
+   "star": 10,
+   "inst": 1696,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "academic-figures",
+   "ns": "indiv-sorsor",
+   "src": "community",
+   "cat": "data-analysis",
+   "dl": 90159,
+   "star": 58,
+   "inst": 0,
+   "age_d": 148,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "unclecheng-reduce-ai-perception-v2",
+   "ns": "user_ab5ae6ee",
+   "src": "community",
+   "cat": "content-creation",
+   "dl": 269065,
+   "star": 676,
+   "inst": 650,
+   "age_d": 170,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "cnfinancialscraper",
+   "ns": "user_9d5a2a39",
+   "src": "community",
+   "cat": "data-analysis",
+   "dl": 135141,
+   "star": 239,
+   "inst": 0,
+   "age_d": 124,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "ima-skills",
+   "ns": "tencent-adm",
+   "src": "enterprise",
+   "cat": "knowledge-management",
+   "dl": 370694,
+   "star": 538,
+   "inst": 11831,
+   "age_d": 190,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "chinese-official-writing",
+   "ns": "user_f3d82da7",
+   "src": "clawhub",
+   "cat": "content-creation",
+   "dl": 176029,
+   "star": 71,
+   "inst": 53,
+   "age_d": 137,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "beatra-ai-music-creator",
+   "ns": "beatra-ai",
+   "src": "enterprise",
+   "cat": "design-media",
+   "dl": 79549,
+   "star": 5,
+   "inst": 0,
+   "age_d": 49,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "lingyi-content-quality-check",
+   "ns": "org-28ib33ph",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 131601,
+   "star": 32,
+   "inst": 0,
+   "age_d": 73,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "slides-maker",
+   "ns": "user_f486c577",
+   "src": "community",
+   "cat": "office-efficiency",
+   "dl": 68678,
+   "star": 28,
+   "inst": 0,
+   "age_d": 71,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "cloudbase",
+   "ns": "tencent-adm",
+   "src": "enterprise",
+   "cat": "dev-programming",
+   "dl": 132838,
+   "star": 30,
+   "inst": 9,
+   "age_d": 194,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "handwritten-newspaper-template-generator-showapi",
+   "ns": "showapi",
+   "src": "enterprise",
+   "cat": "design-media",
+   "dl": 55373,
+   "star": 2,
+   "inst": 0,
+   "age_d": 37,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "douyin-pro",
+   "ns": "user_3b54b400",
+   "src": "community",
+   "cat": "design-media",
+   "dl": 119018,
+   "star": 62,
+   "inst": 0,
+   "age_d": 67,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "zhiliao-official-tender-assistant",
+   "ns": "org-32m5yxyy",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 51607,
+   "star": 9,
+   "inst": 0,
+   "age_d": 91,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "biaoshu-bailian",
+   "ns": "org-32m5yxyy",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 78539,
+   "star": 52,
+   "inst": 0,
+   "age_d": 86,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "tshirt-design-showapi",
+   "ns": "showapi",
+   "src": "enterprise",
+   "cat": "design-media",
+   "dl": 32292,
+   "star": 0,
+   "inst": 0,
+   "age_d": 37,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "zlbx-bidding",
+   "ns": "user_98035bfb",
+   "src": "community",
+   "cat": "data-analysis",
+   "dl": 49823,
+   "star": 12,
+   "inst": 212,
+   "age_d": 173,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "smart-charts",
+   "ns": "user_5b28ea14",
+   "src": "community",
+   "cat": "data-analysis",
+   "dl": 368404,
+   "star": 109,
+   "inst": 8,
+   "age_d": 177,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "tax-policy-knowledge",
+   "ns": "user_11064e10",
+   "src": "community",
+   "cat": "professional",
+   "dl": 97673,
+   "star": 44,
+   "inst": 93,
+   "age_d": 167,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "video-generation",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "design-media",
+   "dl": 12104,
+   "star": 1,
+   "inst": 0,
+   "age_d": 42,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "video-generation",
+   "ns": "user_9c63fdb4",
+   "src": "community",
+   "cat": "design-media",
+   "dl": 12050,
+   "star": 2,
+   "inst": 0,
+   "age_d": 5,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "zlbx-bidding-payskill",
+   "ns": "org-32m5yxyy",
+   "src": "enterprise",
+   "cat": "data-analysis",
+   "dl": 44311,
+   "star": 11,
+   "inst": 0,
+   "age_d": 81,
+   "eval": null,
+   "labels": {
+    "pricing_type": "paid",
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "tencent-news",
+   "ns": "tencent-adm",
+   "src": "enterprise",
+   "cat": "knowledge-management",
+   "dl": 26633,
+   "star": 38,
+   "inst": 268,
+   "age_d": 181,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "totorosir-workbuddy-score",
+   "ns": "user_3a370331",
+   "src": "community",
+   "cat": "life-service",
+   "dl": 21718,
+   "star": 4,
+   "inst": 0,
+   "age_d": 23,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "software-architecture-diagram-generator-showapi",
+   "ns": "showapi",
+   "src": "enterprise",
+   "cat": "dev-programming",
+   "dl": 33814,
+   "star": 1,
+   "inst": 0,
+   "age_d": 41,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "playwright-web-test",
+   "ns": "clawhub_carpedx",
+   "src": "clawhub",
+   "cat": "dev-programming",
+   "dl": 10919,
+   "star": 1,
+   "inst": 19,
+   "age_d": 140,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ppt-generator-skill",
+   "ns": "user_3b34947d",
+   "src": "community",
+   "cat": "office-efficiency",
+   "dl": 120285,
+   "star": 298,
+   "inst": 1378,
+   "age_d": 174,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-podcast-voiceover",
+   "ns": "beatra-ai",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 116834,
+   "star": 12,
+   "inst": 0,
+   "age_d": 45,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "lingyi-wx-viral-script-generator",
+   "ns": "org-28ib33ph",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 161127,
+   "star": 81,
+   "inst": 0,
+   "age_d": 82,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "tender-search",
+   "ns": "user_98035bfb",
+   "src": "community",
+   "cat": "business-ops",
+   "dl": 42091,
+   "star": 13,
+   "inst": 181,
+   "age_d": 169,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "chengxin",
+   "ns": "clawhub_tongcheng-ai",
+   "src": "clawhub",
+   "cat": "life-service",
+   "dl": 22854,
+   "star": 6,
+   "inst": 28,
+   "age_d": 144,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "xiaobaogongai-law",
+   "ns": "user_89f3090c",
+   "src": "community",
+   "cat": "professional",
+   "dl": 10607,
+   "star": 0,
+   "inst": 0,
+   "age_d": 13,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "xiaobaogongai-contract-drafting",
+   "ns": "user_89f3090c",
+   "src": "community",
+   "cat": "professional",
+   "dl": 8918,
+   "star": 0,
+   "inst": 0,
+   "age_d": 13,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "aistockresearcher",
+   "ns": "user_9d5a2a39",
+   "src": "community",
+   "cat": "data-analysis",
+   "dl": 67821,
+   "star": 122,
+   "inst": 0,
+   "age_d": 123,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "public-document-layout-master",
+   "ns": "davtime",
+   "src": "enterprise",
+   "cat": "office-efficiency",
+   "dl": 30458,
+   "star": 16,
+   "inst": 0,
+   "age_d": 27,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "qidianxiaoshuoxiezuo",
+   "ns": "davtime",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 29701,
+   "star": 24,
+   "inst": 0,
+   "age_d": 34,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "pdf-image-text-extractor",
+   "ns": "user_5f9c21aa",
+   "src": "community",
+   "cat": "office-efficiency",
+   "dl": 151336,
+   "star": 181,
+   "inst": 378,
+   "age_d": 166,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "jinjiangxiaoshuoxiezuo",
+   "ns": "davtime",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 21381,
+   "star": 18,
+   "inst": 0,
+   "age_d": 20,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "westock-data",
+   "ns": "tencent-adm",
+   "src": "enterprise",
+   "cat": "professional",
+   "dl": 41859,
+   "star": 175,
+   "inst": 528,
+   "age_d": 166,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "gongwenxiezuo",
+   "ns": "davtime",
+   "src": "enterprise",
+   "cat": "professional",
+   "dl": 32560,
+   "star": 20,
+   "inst": 0,
+   "age_d": 28,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "xiaoshuopingfen",
+   "ns": "davtime",
+   "src": "enterprise",
+   "cat": "knowledge-management",
+   "dl": 25546,
+   "star": 16,
+   "inst": 0,
+   "age_d": 23,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "lingyi-wx-account-diagnose",
+   "ns": "org-28ib33ph",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 70775,
+   "star": 6,
+   "inst": 0,
+   "age_d": 33,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "lingyi-member-system-setup",
+   "ns": "org-28ib33ph",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 55474,
+   "star": 2,
+   "inst": 0,
+   "age_d": 39,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "lingyi-private-domain-tag-system-build",
+   "ns": "org-28ib33ph",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 51029,
+   "star": 2,
+   "inst": 0,
+   "age_d": 39,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "city-weather-poster-generator-showapi",
+   "ns": "showapi",
+   "src": "enterprise",
+   "cat": "design-media",
+   "dl": 22991,
+   "star": 0,
+   "inst": 0,
+   "age_d": 45,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "contextweave-interactive-architecture",
+   "ns": "user_bddf3fe6",
+   "src": "community",
+   "cat": "design-media",
+   "dl": 236437,
+   "star": 243,
+   "inst": 239,
+   "age_d": 168,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "lingyi-private-domain-sales-repurchase-strategy",
+   "ns": "org-28ib33ph",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 47108,
+   "star": 2,
+   "inst": 0,
+   "age_d": 39,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "agently-mail",
+   "ns": "tencent-adm",
+   "src": "enterprise",
+   "cat": "ai-agent",
+   "dl": 130628,
+   "star": 80,
+   "inst": 0,
+   "age_d": 112,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "lingyi-cross-domain-synergy-plan",
+   "ns": "org-28ib33ph",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 53185,
+   "star": 2,
+   "inst": 0,
+   "age_d": 39,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "wechat-writer-pro",
+   "ns": "davtime",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 27662,
+   "star": 20,
+   "inst": 0,
+   "age_d": 35,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "kdocs-skill",
+   "ns": "user_5ea84866",
+   "src": "community",
+   "cat": "office-efficiency",
+   "dl": 136874,
+   "star": 123,
+   "inst": 2029,
+   "age_d": 167,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "jubenfuke",
+   "ns": "davtime",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 14307,
+   "star": 17,
+   "inst": 0,
+   "age_d": 15,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "mysteel-reportwrite",
+   "ns": "clawhub_wyb92",
+   "src": "clawhub",
+   "cat": "data-analysis",
+   "dl": 8784,
+   "star": 1,
+   "inst": 16,
+   "age_d": 176,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "xiaoshuojubenzhuanfenjing",
+   "ns": "davtime",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 26002,
+   "star": 24,
+   "inst": 0,
+   "age_d": 30,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "mysteel-reportwrite",
+   "ns": "mysteel",
+   "src": "enterprise",
+   "cat": "professional",
+   "dl": 7769,
+   "star": 0,
+   "inst": 0,
+   "age_d": 43,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "excerpo",
+   "ns": "user_a10ab3ad",
+   "src": "community",
+   "cat": "knowledge-management",
+   "dl": 17501,
+   "star": 3,
+   "inst": 0,
+   "age_d": 23,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "humanizer-zh",
+   "ns": "clawhub_liuxy951129-cpu",
+   "src": "clawhub",
+   "cat": "content-creation",
+   "dl": 88433,
+   "star": 101,
+   "inst": 5832,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "showapi-pc-config-comparison-image",
+   "ns": "showapi",
+   "src": "enterprise",
+   "cat": "professional",
+   "dl": 19068,
+   "star": 0,
+   "inst": 0,
+   "age_d": 37,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "web-anti-crawl-fetch",
+   "ns": "clawhub_dlutwuwei",
+   "src": "clawhub",
+   "cat": "data-analysis",
+   "dl": 8017,
+   "star": 1,
+   "inst": 89,
+   "age_d": 178,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "hetongfengxianshencha",
+   "ns": "davtime",
+   "src": "enterprise",
+   "cat": "professional",
+   "dl": 24953,
+   "star": 17,
+   "inst": 0,
+   "age_d": 26,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "manjuduanjushengcheng",
+   "ns": "davtime",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 17306,
+   "star": 21,
+   "inst": 0,
+   "age_d": 22,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-ppt-skill",
+   "ns": "user_741c61d8",
+   "src": "community",
+   "cat": "office-efficiency",
+   "dl": 20129,
+   "star": 3,
+   "inst": 0,
+   "age_d": 37,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "hithink-finance",
+   "ns": "org-6602ci5n",
+   "src": "enterprise",
+   "cat": "professional",
+   "dl": 20563,
+   "star": 25,
+   "inst": 0,
+   "age_d": 72,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "wedding-invitation-generation-showapi",
+   "ns": "showapi",
+   "src": "enterprise",
+   "cat": "design-media",
+   "dl": 16224,
+   "star": 1,
+   "inst": 0,
+   "age_d": 37,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "browserskill",
+   "ns": "tencent-adm",
+   "src": "enterprise",
+   "cat": "ai-agent",
+   "dl": 30864,
+   "star": 12,
+   "inst": 0,
+   "age_d": 34,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "aistockresearcher",
+   "ns": "user_814dbe54",
+   "src": "community",
+   "cat": "professional",
+   "dl": 4898,
+   "star": 0,
+   "inst": 0,
+   "age_d": 20,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "lh6-anniversary-blessing",
+   "ns": "tencent-adm",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 2938,
+   "star": 0,
+   "inst": 0,
+   "age_d": 23,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "mysteel-marketanalysis",
+   "ns": "mysteel",
+   "src": "enterprise",
+   "cat": "professional",
+   "dl": 7180,
+   "star": 0,
+   "inst": 0,
+   "age_d": 43,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "cad-design-and-drafting",
+   "ns": "org-qu1qhx78",
+   "src": "enterprise",
+   "cat": "design-media",
+   "dl": 46438,
+   "star": 28,
+   "inst": 0,
+   "age_d": 42,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "nidhov01-obsidian",
+   "ns": "clawhub_nidhov01",
+   "src": "clawhub",
+   "cat": "knowledge-management",
+   "dl": 6838,
+   "star": 0,
+   "inst": 159,
+   "age_d": 188,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "deep-skill-finder",
+   "ns": "user_a92b64bc",
+   "src": "community",
+   "cat": "ai-agent",
+   "dl": 33301,
+   "star": 16,
+   "inst": 0,
+   "age_d": 76,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "find-skill-skillhub",
+   "ns": "user_290ac21c",
+   "src": "community",
+   "cat": "ai-agent",
+   "dl": 93652,
+   "star": 236,
+   "inst": 0,
+   "age_d": 89,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ui-design-guide",
+   "ns": "tencent-adm",
+   "src": "enterprise",
+   "cat": "design-media",
+   "dl": 29937,
+   "star": 32,
+   "inst": 2,
+   "age_d": 144,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "perler-beads-pattern-generation-showapi",
+   "ns": "showapi",
+   "src": "enterprise",
+   "cat": "design-media",
+   "dl": 14376,
+   "star": 2,
+   "inst": 0,
+   "age_d": 37,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "data-visualization-master",
+   "ns": "davtime",
+   "src": "enterprise",
+   "cat": "data-analysis",
+   "dl": 18345,
+   "star": 12,
+   "inst": 0,
+   "age_d": 19,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  }
+ ],
+ "featured": [
+  {
+   "slug": "find-skills",
+   "ns": "clawhub_root",
+   "src": "clawhub",
+   "cat": "ai-agent",
+   "dl": 1026407,
+   "star": 1770,
+   "inst": 75956,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "self-improving-agent",
+   "ns": "clawhub_pskoett",
+   "src": "clawhub",
+   "cat": "ai-agent",
+   "dl": 1236897,
+   "star": 4511,
+   "inst": 86140,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "summarize",
+   "ns": "clawhub_paudyyin",
+   "src": "clawhub",
+   "cat": "knowledge-management",
+   "dl": 625972,
+   "star": 1037,
+   "inst": 45959,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "tencent-docs",
+   "ns": "tencent-adm",
+   "src": "enterprise",
+   "cat": "office-efficiency",
+   "dl": 1173465,
+   "star": 307,
+   "inst": 8107,
+   "age_d": 201,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "weread-skills-official",
+   "ns": "user_0b9d349a",
+   "src": "community",
+   "cat": "life-service",
+   "dl": 10777,
+   "star": 57,
+   "inst": 0,
+   "age_d": 128,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "github",
+   "ns": "clawhub_steipete",
+   "src": "clawhub",
+   "cat": "dev-programming",
+   "dl": 375451,
+   "star": 706,
+   "inst": 35756,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "agent-browser",
+   "ns": "clawhub_rez0",
+   "src": "clawhub",
+   "cat": "ai-agent",
+   "dl": 850860,
+   "star": 988,
+   "inst": 36434,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ima-skills",
+   "ns": "tencent-adm",
+   "src": "enterprise",
+   "cat": "knowledge-management",
+   "dl": 370707,
+   "star": 538,
+   "inst": 11831,
+   "age_d": 190,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "tencent-esign-contract",
+   "ns": "tencent-adm",
+   "src": "enterprise",
+   "cat": "professional",
+   "dl": 2350,
+   "star": 10,
+   "inst": 0,
+   "age_d": 132,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "self-improving",
+   "ns": "clawhub_ivangdavila",
+   "src": "clawhub",
+   "cat": "ai-agent",
+   "dl": 415960,
+   "star": 1602,
+   "inst": 57561,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "tencentos-expert",
+   "ns": "user_7ac3e421",
+   "src": "community",
+   "cat": "it-ops-security",
+   "dl": 2258,
+   "star": 7,
+   "inst": 0,
+   "age_d": 133,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "skill-vetter",
+   "ns": "clawhub_spclaudehome",
+   "src": "clawhub",
+   "cat": "ai-agent",
+   "dl": 315654,
+   "star": 1322,
+   "inst": 37273,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "proactive-agent",
+   "ns": "clawhub_halthelobster",
+   "src": "clawhub",
+   "cat": "ai-agent",
+   "dl": 255988,
+   "star": 913,
+   "inst": 28937,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "weather",
+   "ns": "clawhub_steipete",
+   "src": "clawhub",
+   "cat": "life-service",
+   "dl": 262169,
+   "star": 482,
+   "inst": 21530,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "humanizer",
+   "ns": "clawhub_biostartechnology",
+   "src": "clawhub",
+   "cat": "content-creation",
+   "dl": 288705,
+   "star": 1101,
+   "inst": 33756,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "tencent-news",
+   "ns": "tencent-adm",
+   "src": "enterprise",
+   "cat": "knowledge-management",
+   "dl": 26633,
+   "star": 38,
+   "inst": 268,
+   "age_d": 181,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "nano-pdf",
+   "ns": "clawhub_steipete",
+   "src": "clawhub",
+   "cat": "office-efficiency",
+   "dl": 131905,
+   "star": 293,
+   "inst": 12773,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "qqbrowser-skill",
+   "ns": "tencent-adm",
+   "src": "enterprise",
+   "cat": "ai-agent",
+   "dl": 9730,
+   "star": 12,
+   "inst": 329,
+   "age_d": 188,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "auto-updater",
+   "ns": "clawhub_maximeprades",
+   "src": "clawhub",
+   "cat": "ai-agent",
+   "dl": 130064,
+   "star": 469,
+   "inst": 16784,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "tencent-channel-community",
+   "ns": "tencent-adm",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 4403,
+   "star": 8,
+   "inst": 136,
+   "age_d": 183,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "openai-whisper",
+   "ns": "clawhub_steipete",
+   "src": "clawhub",
+   "cat": "design-media",
+   "dl": 109995,
+   "star": 358,
+   "inst": 11622,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "tencentcloud-lighthouse-skill",
+   "ns": "tencent-adm",
+   "src": "enterprise",
+   "cat": "it-ops-security",
+   "dl": 22067,
+   "star": 16,
+   "inst": 1395,
+   "age_d": 201,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "agent-browser-2",
+   "ns": "clawhub_murphykobe",
+   "src": "clawhub",
+   "cat": "ai-agent",
+   "dl": 6302,
+   "star": 7,
+   "inst": 201,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "cloudbase",
+   "ns": "tencent-adm",
+   "src": "enterprise",
+   "cat": "dev-programming",
+   "dl": 132838,
+   "star": 30,
+   "inst": 9,
+   "age_d": 194,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "skill-creator",
+   "ns": "clawhub_chindden",
+   "src": "clawhub",
+   "cat": "ai-agent",
+   "dl": 206003,
+   "star": 472,
+   "inst": 3453,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "automation-workflows",
+   "ns": "clawhub_jk-0001",
+   "src": "clawhub",
+   "cat": "ai-agent",
+   "dl": 98719,
+   "star": 348,
+   "inst": 10172,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "video-generator-seedance",
+   "ns": "clawhub_aaronzoe",
+   "src": "clawhub",
+   "cat": "design-media",
+   "dl": 2474,
+   "star": 2,
+   "inst": 52,
+   "age_d": 194,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "lexiang-mcp-skill",
+   "ns": "clawhub_lexiang",
+   "src": "clawhub",
+   "cat": "knowledge-management",
+   "dl": 3512,
+   "star": 3,
+   "inst": 264,
+   "age_d": 198,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "word-docx",
+   "ns": "clawhub_ivangdavila",
+   "src": "clawhub",
+   "cat": "office-efficiency",
+   "dl": 200224,
+   "star": 538,
+   "inst": 23940,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "tavily-search",
+   "ns": "clawhub_paudyyin",
+   "src": "clawhub",
+   "cat": "knowledge-management",
+   "dl": 59205,
+   "star": 12,
+   "inst": 1855,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "excel-xlsx",
+   "ns": "clawhub_ivangdavila",
+   "src": "clawhub",
+   "cat": "office-efficiency",
+   "dl": 194268,
+   "star": 452,
+   "inst": 24636,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "video-frames",
+   "ns": "clawhub_steipete",
+   "src": "clawhub",
+   "cat": "design-media",
+   "dl": 66263,
+   "star": 145,
+   "inst": 6609,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "notion",
+   "ns": "clawhub_steipete",
+   "src": "clawhub",
+   "cat": "ai-agent",
+   "dl": 108793,
+   "star": 271,
+   "inst": 10208,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "tencent-cos-skill",
+   "ns": "tencent-adm",
+   "src": "enterprise",
+   "cat": "it-ops-security",
+   "dl": 25196,
+   "star": 14,
+   "inst": 865,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "edgeone-clawscan",
+   "ns": "clawhub_aigsec",
+   "src": "clawhub",
+   "cat": "it-ops-security",
+   "dl": 4080,
+   "star": 125,
+   "inst": 332,
+   "age_d": 196,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "tencentcloud-asr",
+   "ns": "tencent-adm",
+   "src": "enterprise",
+   "cat": "design-media",
+   "dl": 4646,
+   "star": 11,
+   "inst": 19,
+   "age_d": 198,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "tencentcloud-tts",
+   "ns": "tencent-adm",
+   "src": "enterprise",
+   "cat": "design-media",
+   "dl": 2768,
+   "star": 3,
+   "inst": 241,
+   "age_d": 198,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "wps-office-automation-skill",
+   "ns": "clawhub_zyuanhua",
+   "src": "clawhub",
+   "cat": "office-efficiency",
+   "dl": 10404,
+   "star": 5,
+   "inst": 86,
+   "age_d": 188,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "tencent-ads-assistant",
+   "ns": "clawhub_yishuang07",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 11477,
+   "star": 4,
+   "inst": 45,
+   "age_d": 194,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "baidu-search",
+   "ns": "clawhub_ide-rea",
+   "src": "clawhub",
+   "cat": "knowledge-management",
+   "dl": 129379,
+   "star": 259,
+   "inst": 3204,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "data-analysis",
+   "ns": "clawhub_ivangdavila",
+   "src": "clawhub",
+   "cat": "data-analysis",
+   "dl": 92979,
+   "star": 244,
+   "inst": 9814,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "powerpoint-pptx",
+   "ns": "clawhub_ivangdavila",
+   "src": "clawhub",
+   "cat": "office-efficiency",
+   "dl": 78299,
+   "star": 199,
+   "inst": 8062,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "agent-reach",
+   "ns": "clawhub_panniantong",
+   "src": "clawhub",
+   "cat": "ai-agent",
+   "dl": 42069,
+   "star": 76,
+   "inst": 2479,
+   "age_d": 196,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "agently-mail",
+   "ns": "tencent-adm",
+   "src": "enterprise",
+   "cat": "ai-agent",
+   "dl": 130628,
+   "star": 80,
+   "inst": 0,
+   "age_d": 112,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  }
+ ],
+ "hot": [
+  {
+   "slug": "dev-expert",
+   "ns": "indiv-ebandao",
+   "src": "community",
+   "cat": "dev-programming",
+   "dl": 1319378,
+   "star": 269,
+   "inst": 0,
+   "age_d": 97,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "self-improving-agent",
+   "ns": "clawhub_pskoett",
+   "src": "clawhub",
+   "cat": "ai-agent",
+   "dl": 1236897,
+   "star": 4511,
+   "inst": 86140,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "tencent-docs",
+   "ns": "tencent-adm",
+   "src": "enterprise",
+   "cat": "office-efficiency",
+   "dl": 1173465,
+   "star": 307,
+   "inst": 8107,
+   "age_d": 201,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "find-skills",
+   "ns": "clawhub_root",
+   "src": "clawhub",
+   "cat": "ai-agent",
+   "dl": 1026407,
+   "star": 1770,
+   "inst": 75956,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "agent-browser",
+   "ns": "clawhub_rez0",
+   "src": "clawhub",
+   "cat": "ai-agent",
+   "dl": 850860,
+   "star": 988,
+   "inst": 36434,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "parenting-expert",
+   "ns": "indiv-ebandao",
+   "src": "community",
+   "cat": "life-service",
+   "dl": 812654,
+   "star": 23,
+   "inst": 0,
+   "age_d": 7,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "dev-expert",
+   "ns": "user_814dbe54",
+   "src": "community",
+   "cat": "dev-programming",
+   "dl": 647834,
+   "star": 14,
+   "inst": 0,
+   "age_d": 21,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "multi-search-engine",
+   "ns": "zcwl",
+   "src": "enterprise",
+   "cat": "knowledge-management",
+   "dl": 629825,
+   "star": 48,
+   "inst": 0,
+   "age_d": 38,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "summarize",
+   "ns": "clawhub_paudyyin",
+   "src": "clawhub",
+   "cat": "knowledge-management",
+   "dl": 625972,
+   "star": 1037,
+   "inst": 45959,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "anti-fraud",
+   "ns": "indiv-ebandao",
+   "src": "community",
+   "cat": "life-service",
+   "dl": 579418,
+   "star": 27,
+   "inst": 0,
+   "age_d": 37,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "beatra",
+   "ns": "beatra-ai",
+   "src": "enterprise",
+   "cat": "design-media",
+   "dl": 474701,
+   "star": 62,
+   "inst": 0,
+   "age_d": 49,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "self-improving",
+   "ns": "clawhub_ivangdavila",
+   "src": "clawhub",
+   "cat": "ai-agent",
+   "dl": 415960,
+   "star": 1602,
+   "inst": 57561,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "github",
+   "ns": "clawhub_steipete",
+   "src": "clawhub",
+   "cat": "dev-programming",
+   "dl": 375451,
+   "star": 706,
+   "inst": 35756,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "ima-skills",
+   "ns": "tencent-adm",
+   "src": "enterprise",
+   "cat": "knowledge-management",
+   "dl": 370707,
+   "star": 538,
+   "inst": 11831,
+   "age_d": 190,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "smart-charts",
+   "ns": "user_5b28ea14",
+   "src": "community",
+   "cat": "data-analysis",
+   "dl": 368406,
+   "star": 109,
+   "inst": 8,
+   "age_d": 177,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "mysteel-datasearch",
+   "ns": "mysteel",
+   "src": "enterprise",
+   "cat": "data-analysis",
+   "dl": 333071,
+   "star": 3,
+   "inst": 0,
+   "age_d": 49,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "admapix",
+   "ns": "clawhub_fly0pants",
+   "src": "clawhub",
+   "cat": "data-analysis",
+   "dl": 331920,
+   "star": 304,
+   "inst": 6496,
+   "age_d": 194,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "anti-fraud",
+   "ns": "user_814dbe54",
+   "src": "community",
+   "cat": "life-service",
+   "dl": 316946,
+   "star": 0,
+   "inst": 0,
+   "age_d": 20,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "skill-vetter",
+   "ns": "clawhub_spclaudehome",
+   "src": "clawhub",
+   "cat": "ai-agent",
+   "dl": 315654,
+   "star": 1322,
+   "inst": 37273,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "baozheng",
+   "ns": "indiv-ebandao",
+   "src": "community",
+   "cat": "professional",
+   "dl": 311343,
+   "star": 39,
+   "inst": 0,
+   "age_d": 83,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "luhe-paper-free-pro",
+   "ns": "org-liz6o019",
+   "src": "enterprise",
+   "cat": "professional",
+   "dl": 302143,
+   "star": 10,
+   "inst": 0,
+   "age_d": 9,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "humanizer",
+   "ns": "clawhub_biostartechnology",
+   "src": "clawhub",
+   "cat": "content-creation",
+   "dl": 288705,
+   "star": 1101,
+   "inst": 33756,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ontology",
+   "ns": "clawhub_oswalpalash",
+   "src": "clawhub",
+   "cat": "ai-agent",
+   "dl": 277522,
+   "star": 787,
+   "inst": 29080,
+   "age_d": 196,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "anti-fraud",
+   "ns": "indiv-skill",
+   "src": "community",
+   "cat": "professional",
+   "dl": 273821,
+   "star": 1,
+   "inst": 0,
+   "age_d": 14,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "unclecheng-reduce-ai-perception-v2",
+   "ns": "user_ab5ae6ee",
+   "src": "community",
+   "cat": "content-creation",
+   "dl": 269065,
+   "star": 676,
+   "inst": 650,
+   "age_d": 170,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "weather",
+   "ns": "clawhub_steipete",
+   "src": "clawhub",
+   "cat": "life-service",
+   "dl": 262171,
+   "star": 482,
+   "inst": 21530,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "proactive-agent",
+   "ns": "clawhub_halthelobster",
+   "src": "clawhub",
+   "cat": "ai-agent",
+   "dl": 255988,
+   "star": 913,
+   "inst": 28937,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "wps-office-suite",
+   "ns": "user_1a470ba8",
+   "src": "community",
+   "cat": "office-efficiency",
+   "dl": 255891,
+   "star": 101,
+   "inst": 0,
+   "age_d": 88,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "lingyi-wx-video-decomposer-plus",
+   "ns": "org-28ib33ph",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 254058,
+   "star": 90,
+   "inst": 0,
+   "age_d": 84,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "web-tools-guide",
+   "ns": "user_ec205dbb",
+   "src": "community",
+   "cat": "knowledge-management",
+   "dl": 244797,
+   "star": 216,
+   "inst": 3459,
+   "age_d": 177,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "contextweave-interactive-architecture",
+   "ns": "user_bddf3fe6",
+   "src": "community",
+   "cat": "design-media",
+   "dl": 236437,
+   "star": 243,
+   "inst": 239,
+   "age_d": 168,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "agent-browser",
+   "ns": "zcwl",
+   "src": "enterprise",
+   "cat": "ai-agent",
+   "dl": 226996,
+   "star": 9,
+   "inst": 0,
+   "age_d": 33,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "paperless-business-system-from-files",
+   "ns": "user_84b8c7d7",
+   "src": "community",
+   "cat": "dev-programming",
+   "dl": 211409,
+   "star": 13,
+   "inst": 0,
+   "age_d": 53,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "skill-creator",
+   "ns": "clawhub_chindden",
+   "src": "clawhub",
+   "cat": "ai-agent",
+   "dl": 206003,
+   "star": 472,
+   "inst": 3453,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "gog",
+   "ns": "clawhub_steipete",
+   "src": "clawhub",
+   "cat": "office-efficiency",
+   "dl": 201985,
+   "star": 944,
+   "inst": 14214,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "word-docx",
+   "ns": "clawhub_ivangdavila",
+   "src": "clawhub",
+   "cat": "office-efficiency",
+   "dl": 200227,
+   "star": 538,
+   "inst": 23940,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "excel-xlsx",
+   "ns": "clawhub_ivangdavila",
+   "src": "clawhub",
+   "cat": "office-efficiency",
+   "dl": 194268,
+   "star": 452,
+   "inst": 24636,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "tencent-meeting-mcp",
+   "ns": "tencent-adm",
+   "src": "enterprise",
+   "cat": "office-efficiency",
+   "dl": 192091,
+   "star": 63,
+   "inst": 0,
+   "age_d": 41,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "talking-avatar-video",
+   "ns": "beatra-ai",
+   "src": "enterprise",
+   "cat": "design-media",
+   "dl": 191547,
+   "star": 21,
+   "inst": 0,
+   "age_d": 47,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "libai",
+   "ns": "indiv-ebandao",
+   "src": "community",
+   "cat": "content-creation",
+   "dl": 179125,
+   "star": 56,
+   "inst": 0,
+   "age_d": 89,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "chinese-official-writing",
+   "ns": "user_f3d82da7",
+   "src": "clawhub",
+   "cat": "content-creation",
+   "dl": 176038,
+   "star": 71,
+   "inst": 53,
+   "age_d": 137,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "patent-drafting-cn",
+   "ns": "user_9c63fdb4",
+   "src": "community",
+   "cat": "professional",
+   "dl": 175425,
+   "star": 36,
+   "inst": 0,
+   "age_d": 111,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "lingyi-wx-video-script-creator-plus",
+   "ns": "org-28ib33ph",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 166240,
+   "star": 29,
+   "inst": 0,
+   "age_d": 80,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "agent-browser-clawdbot",
+   "ns": "clawhub_matrixy",
+   "src": "clawhub",
+   "cat": "ai-agent",
+   "dl": 163563,
+   "star": 464,
+   "inst": 2631,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "lingyi-wx-viral-script-generator",
+   "ns": "org-28ib33ph",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 161127,
+   "star": 81,
+   "inst": 0,
+   "age_d": 82,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "pdf-image-text-extractor",
+   "ns": "user_5f9c21aa",
+   "src": "community",
+   "cat": "office-efficiency",
+   "dl": 151336,
+   "star": 181,
+   "inst": 378,
+   "age_d": 166,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "kdocs-skill",
+   "ns": "user_5ea84866",
+   "src": "community",
+   "cat": "office-efficiency",
+   "dl": 136874,
+   "star": 123,
+   "inst": 2029,
+   "age_d": 167,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "luban-skill-pro",
+   "ns": "indiv-ebandao",
+   "src": "community",
+   "cat": "ai-agent",
+   "dl": 135502,
+   "star": 73,
+   "inst": 0,
+   "age_d": 104,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "cnfinancialscraper",
+   "ns": "user_9d5a2a39",
+   "src": "community",
+   "cat": "data-analysis",
+   "dl": 135148,
+   "star": 239,
+   "inst": 0,
+   "age_d": 124,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "agent-memory",
+   "ns": "clawhub_dennis-da-menace",
+   "src": "clawhub",
+   "cat": "ai-agent",
+   "dl": 134424,
+   "star": 172,
+   "inst": 25555,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "nano-banana-pro",
+   "ns": "clawhub_steipete",
+   "src": "clawhub",
+   "cat": "design-media",
+   "dl": 133938,
+   "star": 473,
+   "inst": 3086,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "dknowc-official-doc-writer-skillhub",
+   "ns": "user_c9faff27",
+   "src": "community",
+   "cat": "office-efficiency",
+   "dl": 133397,
+   "star": 69,
+   "inst": 22,
+   "age_d": 153,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "cloudbase",
+   "ns": "tencent-adm",
+   "src": "enterprise",
+   "cat": "dev-programming",
+   "dl": 132838,
+   "star": 30,
+   "inst": 9,
+   "age_d": 194,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "nano-pdf",
+   "ns": "clawhub_steipete",
+   "src": "clawhub",
+   "cat": "office-efficiency",
+   "dl": 131905,
+   "star": 293,
+   "inst": 12773,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "lingyi-content-quality-check",
+   "ns": "org-28ib33ph",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 131602,
+   "star": 32,
+   "inst": 0,
+   "age_d": 73,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "agently-mail",
+   "ns": "tencent-adm",
+   "src": "enterprise",
+   "cat": "ai-agent",
+   "dl": 130631,
+   "star": 80,
+   "inst": 0,
+   "age_d": 112,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "auto-updater",
+   "ns": "clawhub_maximeprades",
+   "src": "clawhub",
+   "cat": "ai-agent",
+   "dl": 130064,
+   "star": 469,
+   "inst": 16784,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "baidu-search",
+   "ns": "clawhub_ide-rea",
+   "src": "clawhub",
+   "cat": "knowledge-management",
+   "dl": 129379,
+   "star": 259,
+   "inst": 3204,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "qilinbashe",
+   "ns": "user_cd0fcd93",
+   "src": "community",
+   "cat": "professional",
+   "dl": 126126,
+   "star": 56,
+   "inst": 0,
+   "age_d": 69,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "gongwen-writting-2",
+   "ns": "tec-wins",
+   "src": "enterprise",
+   "cat": "office-efficiency",
+   "dl": 121209,
+   "star": 25,
+   "inst": 0,
+   "age_d": 39,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "poster-design-studio",
+   "ns": "user_87b8e34f",
+   "src": "community",
+   "cat": "design-media",
+   "dl": 120552,
+   "star": 13,
+   "inst": 0,
+   "age_d": 45,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "ppt-generator-skill",
+   "ns": "user_3b34947d",
+   "src": "community",
+   "cat": "office-efficiency",
+   "dl": 120287,
+   "star": 298,
+   "inst": 1378,
+   "age_d": 174,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "api-gateway",
+   "ns": "clawhub_byungkyu",
+   "src": "clawhub",
+   "cat": "ai-agent",
+   "dl": 119250,
+   "star": 397,
+   "inst": 11601,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "douyin-pro",
+   "ns": "user_3b54b400",
+   "src": "community",
+   "cat": "design-media",
+   "dl": 119018,
+   "star": 62,
+   "inst": 0,
+   "age_d": 67,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "global-biblio-base",
+   "ns": "user_164f4c1f",
+   "src": "community",
+   "cat": "knowledge-management",
+   "dl": 117399,
+   "star": 175,
+   "inst": 0,
+   "age_d": 135,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "openclaw-tavily-search",
+   "ns": "clawhub_jacky1n7",
+   "src": "clawhub",
+   "cat": "data-analysis",
+   "dl": 117271,
+   "star": 286,
+   "inst": 8311,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "ai-podcast-voiceover",
+   "ns": "beatra-ai",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 116889,
+   "star": 12,
+   "inst": 0,
+   "age_d": 45,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "agent-browser",
+   "ns": "user_814dbe54",
+   "src": "community",
+   "cat": "ai-agent",
+   "dl": 112971,
+   "star": 2,
+   "inst": 0,
+   "age_d": 21,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "aihot",
+   "ns": "clawhub_kkkkhazix",
+   "src": "clawhub",
+   "cat": "knowledge-management",
+   "dl": 110965,
+   "star": 86,
+   "inst": 44,
+   "age_d": 138,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "openai-whisper",
+   "ns": "clawhub_steipete",
+   "src": "clawhub",
+   "cat": "design-media",
+   "dl": 109995,
+   "star": 358,
+   "inst": 11622,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "notion",
+   "ns": "clawhub_steipete",
+   "src": "clawhub",
+   "cat": "ai-agent",
+   "dl": 108793,
+   "star": 271,
+   "inst": 10208,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "gh-cli-readonly-agent",
+   "ns": "indiv-yaoyao",
+   "src": "community",
+   "cat": "dev-programming",
+   "dl": 108495,
+   "star": 5,
+   "inst": 0,
+   "age_d": 37,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "admapix",
+   "ns": "zcwl",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 108136,
+   "star": 1,
+   "inst": 0,
+   "age_d": 40,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "memory-setup",
+   "ns": "clawhub_jrbobbyhansen-pixel",
+   "src": "clawhub",
+   "cat": "ai-agent",
+   "dl": 106820,
+   "star": 133,
+   "inst": 8659,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "lingyi-wx-video-decomposer-exp",
+   "ns": "org-28ib33ph",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 105404,
+   "star": 58,
+   "inst": 0,
+   "age_d": 89,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "suno-lyrics-to-song",
+   "ns": "user_87b8e34f",
+   "src": "community",
+   "cat": "content-creation",
+   "dl": 104574,
+   "star": 20,
+   "inst": 0,
+   "age_d": 49,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "totorosir-workbuddy-checkin",
+   "ns": "user_3a370331",
+   "src": "community",
+   "cat": "ai-agent",
+   "dl": 102744,
+   "star": 14,
+   "inst": 0,
+   "age_d": 28,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "browser-use",
+   "ns": "clawhub_shawnpana",
+   "src": "clawhub",
+   "cat": "ai-agent",
+   "dl": 101519,
+   "star": 165,
+   "inst": 483,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "gpt-image-2-5-studio",
+   "ns": "user_87b8e34f",
+   "src": "community",
+   "cat": "design-media",
+   "dl": 101035,
+   "star": 13,
+   "inst": 0,
+   "age_d": 13,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "automation-workflows",
+   "ns": "clawhub_jk-0001",
+   "src": "clawhub",
+   "cat": "ai-agent",
+   "dl": 98719,
+   "star": 348,
+   "inst": 10172,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "tax-policy-knowledge",
+   "ns": "user_11064e10",
+   "src": "community",
+   "cat": "professional",
+   "dl": 97673,
+   "star": 44,
+   "inst": 93,
+   "age_d": 167,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "sonoscli",
+   "ns": "clawhub_steipete",
+   "src": "clawhub",
+   "cat": "life-service",
+   "dl": 96621,
+   "star": 58,
+   "inst": 6761,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "diagram-generator",
+   "ns": "clawhub_matthewyin",
+   "src": "clawhub",
+   "cat": "design-media",
+   "dl": 95309,
+   "star": 73,
+   "inst": 992,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "smart-charts",
+   "ns": "user_814dbe54",
+   "src": "community",
+   "cat": "data-analysis",
+   "dl": 95236,
+   "star": 1,
+   "inst": 0,
+   "age_d": 21,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "prismfy-search",
+   "ns": "clawhub_uroboros1205",
+   "src": "clawhub",
+   "cat": "knowledge-management",
+   "dl": 94940,
+   "star": 38,
+   "inst": 2878,
+   "age_d": 180,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "find-skill-skillhub",
+   "ns": "user_290ac21c",
+   "src": "community",
+   "cat": "ai-agent",
+   "dl": 93652,
+   "star": 236,
+   "inst": 0,
+   "age_d": 89,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "free-ride",
+   "ns": "clawhub_shaivpidadi",
+   "src": "clawhub",
+   "cat": "it-ops-security",
+   "dl": 93342,
+   "star": 481,
+   "inst": 2348,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "data-analysis",
+   "ns": "clawhub_ivangdavila",
+   "src": "clawhub",
+   "cat": "data-analysis",
+   "dl": 92979,
+   "star": 244,
+   "inst": 9814,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "whiteboard-animation-maker",
+   "ns": "user_87b8e34f",
+   "src": "community",
+   "cat": "content-creation",
+   "dl": 92241,
+   "star": 13,
+   "inst": 0,
+   "age_d": 12,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "beatra-ai-video-studio",
+   "ns": "beatra-ai",
+   "src": "enterprise",
+   "cat": "design-media",
+   "dl": 91793,
+   "star": 18,
+   "inst": 0,
+   "age_d": 49,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "hot-topic-content-maker",
+   "ns": "beatra-ai",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 91027,
+   "star": 31,
+   "inst": 0,
+   "age_d": 43,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ecommerce-listing-image-set",
+   "ns": "beatra-ai",
+   "src": "enterprise",
+   "cat": "design-media",
+   "dl": 90930,
+   "star": 33,
+   "inst": 0,
+   "age_d": 45,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "academic-figures",
+   "ns": "indiv-sorsor",
+   "src": "community",
+   "cat": "data-analysis",
+   "dl": 90159,
+   "star": 58,
+   "inst": 0,
+   "age_d": 148,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "markdown-converter",
+   "ns": "clawhub_steipete",
+   "src": "clawhub",
+   "cat": "knowledge-management",
+   "dl": 89664,
+   "star": 254,
+   "inst": 8264,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "humanizer-zh",
+   "ns": "clawhub_liuxy951129-cpu",
+   "src": "clawhub",
+   "cat": "content-creation",
+   "dl": 88434,
+   "star": 101,
+   "inst": 5832,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "live-commerce-script-studio",
+   "ns": "beatra-ai",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 87576,
+   "star": 15,
+   "inst": 0,
+   "age_d": 43,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "obsidian",
+   "ns": "zcwl",
+   "src": "enterprise",
+   "cat": "knowledge-management",
+   "dl": 86606,
+   "star": 4,
+   "inst": 0,
+   "age_d": 40,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "akshare-stock",
+   "ns": "clawhub_mbpz",
+   "src": "clawhub",
+   "cat": "professional",
+   "dl": 86449,
+   "star": 255,
+   "inst": 13337,
+   "age_d": 198,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "agent-phone-call",
+   "ns": "clawhub_mrsz",
+   "src": "clawhub",
+   "cat": "ai-agent",
+   "dl": 85147,
+   "star": 18,
+   "inst": 2448,
+   "age_d": 147,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "feishu-evolver-wrapper",
+   "ns": "clawhub_autogame-17",
+   "src": "clawhub",
+   "cat": "office-efficiency",
+   "dl": 81651,
+   "star": 18,
+   "inst": 4610,
+   "age_d": 202,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  }
+ ],
+ "newest": [
+  {
+   "slug": "github",
+   "ns": "user_6af9f15b",
+   "src": "community",
+   "cat": "dev-programming",
+   "dl": 107,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "case-retrieval-report-fast",
+   "ns": "user_08c66eae",
+   "src": "community",
+   "cat": "professional",
+   "dl": 56,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "sxcdfghyyh",
+   "ns": "org-61cldd5y",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 19,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "pricing_type": "paid",
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "azcdfhjpl",
+   "ns": "org-61cldd5y",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 19,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "pricing_type": "paid",
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "sdgfyuii",
+   "ns": "org-61cldd5y",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 19,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "pricing_type": "paid",
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "sxfghhuj",
+   "ns": "org-61cldd5y",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 19,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "pricing_type": "paid",
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "sfghjju",
+   "ns": "org-61cldd5y",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 19,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "pricing_type": "paid",
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "sfghhj",
+   "ns": "org-61cldd5y",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 18,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "pricing_type": "paid",
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "szdfghikk",
+   "ns": "org-61cldd5y",
+   "src": "enterprise",
+   "cat": "education",
+   "dl": 18,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "pricing_type": "paid",
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "3d-short-drama-studio",
+   "ns": "org-c491l5hl",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 18,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "pricing_type": "paid",
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "sfgghh",
+   "ns": "org-61cldd5y",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 18,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "pricing_type": "paid",
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "sfgyhuh",
+   "ns": "org-61cldd5y",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 18,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "pricing_type": "paid",
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "resume-optimization-v2",
+   "ns": "user_e76bf3ee",
+   "src": "community",
+   "cat": "knowledge-management",
+   "dl": 21,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "sfhjkjkk",
+   "ns": "org-61cldd5y",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 18,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "pricing_type": "paid",
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "sgjhjjjssd",
+   "ns": "org-61cldd5y",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 19,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "pricing_type": "paid",
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "dfnjiko",
+   "ns": "org-61cldd5y",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 18,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "pricing_type": "paid",
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-comic-drama-distribution",
+   "ns": "org-c491l5hl",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 18,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "comic-drama-compliance-check",
+   "ns": "org-c491l5hl",
+   "src": "enterprise",
+   "cat": "professional",
+   "dl": 19,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "xiaohongshu-tuwen-batch",
+   "ns": "org-rlj78ndq",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 20,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "pricing_type": "paid",
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "zj-supplier-profile",
+   "ns": "user_ef162806",
+   "src": "community",
+   "cat": "business-ops",
+   "dl": 23,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "skill-workshop",
+   "ns": "indiv-rushi-skill",
+   "src": "community",
+   "cat": "dev-programming",
+   "dl": 30,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "file-indexer",
+   "ns": "indiv-rushi-skill",
+   "src": "community",
+   "cat": "it-ops-security",
+   "dl": 25,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "zj-tender-history",
+   "ns": "user_ef162806",
+   "src": "community",
+   "cat": "knowledge-management",
+   "dl": 29,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "u9-agent-hub",
+   "ns": "user_ba2171d4",
+   "src": "community",
+   "cat": "ai-agent",
+   "dl": 32,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "power-market-data-fetch",
+   "ns": "user_7241ae04",
+   "src": "community",
+   "cat": "office-efficiency",
+   "dl": 71,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "jeremyx-luxun-writing",
+   "ns": "user_45ac371c",
+   "src": "community",
+   "cat": "content-creation",
+   "dl": 26,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-fixed-countdown-video",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "design-media",
+   "dl": 18,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "qfyq-transcribe",
+   "ns": "org-qv8pgfjo",
+   "src": "enterprise",
+   "cat": "office-efficiency",
+   "dl": 55,
+   "star": 2,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "ai-hive-fixed-love-letter",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 18,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "workbuddy-speedup-diagnosis",
+   "ns": "user_738c00b9",
+   "src": "community",
+   "cat": "ai-agent",
+   "dl": 30,
+   "star": 1,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-opc-case-permission-anonymize",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 20,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-opc-project-resume-preflight",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 18,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-opc-client-silence-pause",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 19,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-opc-scope-extra-quote",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 19,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-opc-monthly-service-quota",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 18,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-opc-quote-version-reconcile",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 19,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-opc-service-knowledge-base",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "knowledge-management",
+   "dl": 19,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-opc-owner-daily-brief",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "office-efficiency",
+   "dl": 19,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "ai-hive-opc-outsourcing-handoff-pack",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 21,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-opc-renewal-dates-ledger",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 19,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-opc-balance-payment-evidence",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 19,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-opc-project-profit-rework",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 20,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-opc-client-weekly-results",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "office-efficiency",
+   "dl": 17,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "ai-hive-opc-service-acceptance-evidence",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 16,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "ai-hive-opc-studio-capacity-schedule",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 22,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-opc-revision-feedback-locator",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 19,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-opc-quote-follow-up-ledger",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 18,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-opc-voice-scope-change",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "office-efficiency",
+   "dl": 18,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-opc-client-material-chasing",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 18,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-opc-client-intake-materials",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 20,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-opc-inquiry-reply-attachments",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 18,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-opc-customer-question-demo",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 17,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "ai-hive-opc-starter-service-package",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 18,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-opc-lead-magnet-production",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 19,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-opc-sample-preview-delivery",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 17,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "ai-hive-opc-client-proposal-kit",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "office-efficiency",
+   "dl": 19,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-opc-service-handbook",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "office-efficiency",
+   "dl": 18,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-opc-service-contact-card",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 18,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-opc-company-profile-kit",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "content-creation",
+   "dl": 19,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "patent-wajue-diantie",
+   "ns": "org-aqs3srg8",
+   "src": "enterprise",
+   "cat": "professional",
+   "dl": 31,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "qf-project-biz-analysis",
+   "ns": "indiv-qf",
+   "src": "community",
+   "cat": "business-ops",
+   "dl": 29,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-business-hr-approval",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 19,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-business-people-plan",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 18,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-business-payroll-check",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 17,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "ai-hive-business-noncompete",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "professional",
+   "dl": 16,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "ai-hive-business-employee-exit",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 17,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "ai-hive-business-policy-version",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 17,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "ai-hive-business-founder-succession",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 16,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "ai-hive-business-vendor-control",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 18,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-business-delegation-check",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 18,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-business-owner-dashboard",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "data-analysis",
+   "dl": 18,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-business-process-owner",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 18,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-business-management-charter",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 18,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "ai-hive-business-compliance-intake",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 19,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "ai-hive-business-data-privacy",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "professional",
+   "dl": 16,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "ai-hive-business-litigation-handover",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "professional",
+   "dl": 16,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "ai-hive-business-distribution",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "professional",
+   "dl": 16,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "ai-hive-business-tax-notice",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "professional",
+   "dl": 16,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "ai-hive-life-loan-fraud",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "professional",
+   "dl": 20,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-life-iou-intake",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "office-efficiency",
+   "dl": 18,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-life-fx-fees",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "professional",
+   "dl": 20,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-life-rate-language",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "professional",
+   "dl": 20,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-life-compound-interest",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "professional",
+   "dl": 19,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-life-simple-interest",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "professional",
+   "dl": 19,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-life-exam-score",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "education",
+   "dl": 20,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "dingjie-e10-mcp-connector",
+   "ns": "indiv-workbuddy",
+   "src": "community",
+   "cat": "business-ops",
+   "dl": 218,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "true"
+   }
+  },
+  {
+   "slug": "ai-hive-life-duolingo-practice",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "education",
+   "dl": 19,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-life-pte-practice",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "education",
+   "dl": 18,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-life-toefl-format",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "education",
+   "dl": 18,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-life-ielts-feedback",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "education",
+   "dl": 22,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-life-exam-registration",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "education",
+   "dl": 20,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-life-exam-match",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "education",
+   "dl": 20,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-life-flight-passenger",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 22,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-life-flight-transfer",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "life-service",
+   "dl": 18,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-life-visa-family",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "life-service",
+   "dl": 20,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-life-transit-entry",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "life-service",
+   "dl": 18,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-life-visa-refusal",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "professional",
+   "dl": 19,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-life-visa-interview",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "education",
+   "dl": 20,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-life-visa-itinerary",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "business-ops",
+   "dl": 19,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  },
+  {
+   "slug": "ai-hive-life-visa-funds",
+   "ns": "infimind",
+   "src": "enterprise",
+   "cat": "life-service",
+   "dl": 19,
+   "star": 0,
+   "inst": 0,
+   "age_d": 1,
+   "eval": null,
+   "labels": {
+    "requires_api_key": "false"
+   }
+  }
+ ]
+}
