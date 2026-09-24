@@ -1,209 +1,334 @@
-# 技能索引（全部 116 个）
+# 技能索引（线上 168 个）
 
-本文件由 `skills/*/SKILL.md` 与 `ported/skills/*/SKILL.md` 的 frontmatter 实际内容整理而成，
-是 [README](../README.md)「技能目录」一节的完整版——README 只给技能名与一句话，这里补上依赖、线上 slug 与复刻上游。
+生成日期：2026-09-23。唯一依据：[`docs/metrics/status-ns-2026-09-23.json`](metrics/status-ns-2026-09-23.json) 里 `"mine": true` 的 168 行（按 `indiv-captain` 命名空间读取的线上清单）。
+
+分组与 [README](../README.md)「按场景找技能」一致：日常场景 → 开发者与运维 → 工程实践复刻系列。README 只完整列出日常场景，这里是全部 168 个。
 
 **读表说明**
 
-- **技能**：链接指向仓库里的目录。`ported/skills/` 下的是中文复刻，上游与许可证见「来源」列。
-- **脚本**：列出 `scripts/` 下的可执行文件；`—` 表示纯 SKILL.md 方法论技能，不带脚本。
-- **依赖**：来自 frontmatter 的 `metadata.openclaw.requires.bins`。`python3` 指 Python 3 标准库，不需要 pip 装任何东西。
-- **SkillHub slug**：已发布到 [skillhub.cn](https://skillhub.cn/) 的技能在这里给出线上 slug（与目录名不同时尤其注意）；
-  `未发布` 表示尚未上架（发布配额有限，见 `docs/skillhub-growth.md`）。线上地址形如 `https://skillhub.cn/skills/indiv-captain/<slug>`。
+- **中文名**：源 `SKILL.md` 里的 `display_name`，也就是 SkillHub 上的展示名；链接指向仓库里的源目录。
+- **一句话**：由源 `SKILL.md` 的 `description_zh` 缩写而来。
+- **slug**：SkillHub 上的 slug。目录名到 slug 的映射在 `tools/skillhub_prep.py` 的 `SLUGS` 里，没列进去的目录，slug 就是目录名。技能页地址形如 `https://skillhub.cn/skills/indiv-captain/<slug>`。
+- **安装**：`skillhub install <slug> --namespace indiv-captain`。`code-review-zh`、`pr-description`、`secrets-scan`、`skillhub-publish-helper` 这几个 slug 和其他作者的技能同名，不带 `--namespace` 可能装到别人的那个。
+- 日常场景 54 个里，除公文写作、PPT汇报演示、简历优化助手、职场防骗、理财入门、保单解读、个税申报、CSV 数据画像这 8 个，其余 46 个是 2026-09-23 新上线的（名单来自 `docs/metrics/rename-baseline-wave*-2026-09-23.json`）。
+- 仓库里另有 19 个技能目录不在这份线上清单里，本索引不收录。
 
-## 上线与发布检查（19 个）
+| 部分 | 分组 | 个数 |
+|---|---|---|
+| [日常场景](#日常场景) | [职场写作与沟通](#职场写作与沟通)、[学习与考试](#学习与考试)、[家庭与生活](#家庭与生活)、[数据与办公自动化](#数据与办公自动化) | 54 |
+| [开发者与运维](#开发者与运维) | [研发总入口与方案评审](#研发总入口与方案评审)、[上线与发布检查](#上线与发布检查)、[线上排查与可观测](#线上排查与可观测)、[代码与仓库治理](#代码与仓库治理)、[接口与契约](#接口与契约)、[数据与文本处理](#数据与文本处理)、[Agent 与技能开发](#agent-与技能开发) | 55 |
+| [工程实践复刻系列](#工程实践复刻系列) | [需求与方案](#需求与方案)、[文档研究与学习](#文档研究与学习)、[计划与执行](#计划与执行)、[测试调试与验证](#测试调试与验证)、[代码设计与评审](#代码设计与评审)、[Git 工作流](#git-工作流)、[上线运维与安全](#上线运维与安全)、[Agent 与上下文工程](#agent-与上下文工程) | 59 |
+| 合计 | | 168 |
 
-发版前把能静态查出来的事故一次查完，全部能当 CI 门禁。
+## 日常场景
 
-| 技能 | 干什么 | 脚本 | 依赖 | SkillHub slug | 来源 |
-|---|---|---|---|---|---|
-| [`changelog`](../skills/changelog/) | 按 tag 区间读 git 提交，按 Keep a Changelog 分组生成发布说明草稿，每条附 hash | `build_changelog.py` | git + python3 | `changelog-keep` | 原创 |
-| [`ci-config-review`](../skills/ci-config-review/) | 离线扫 GitHub Actions / GitLab CI 的安全问题：未固定 SHA、脚本注入、权限过宽、secret 泄露 | `ci_lint.py` | python3 | `ci-config-review` | 原创 |
-| [`config-env-diff`](../skills/config-env-diff/) | 多份配置拉平成键路径逐个对比，分「只有一方有 / 类型不同 / 值不同」，密钥自动脱敏 | `config_env_diff.py` | python3 | `config-env-diff` | 原创 |
-| [`dep-outdated-check`](../skills/dep-outdated-check/) | 七种依赖清单查落后多少版本，按主/次/补丁分级并给升级顺序建议 | `dep_outdated.py` | python3 | `dep-outdated-check` | 原创 |
-| [`dep-vuln-check`](../skills/dep-vuln-check/) | 解析六种锁文件查 OSV.dev 已知漏洞（免 API Key），给严重度与建议升级版本 | `osv_check.py` | python3 | `dep-vuln-check-osv` | 原创 |
-| [`docker-compose-check`](../skills/docker-compose-check/) | docker-compose.yml 上线前体检：特权、docker.sock、明文密钥、镜像未固定、缺健康检查 | `compose_check.py` | python3 | 未发布 | 原创 |
-| [`dockerfile-check`](../skills/dockerfile-check/) | Dockerfile 17 条最佳实践与安全规则体检，分级输出并附具体改法 | `dockerfile_check.py` | python3 | `dockerfile-check` | 原创 |
-| [`env-sync-check`](../skills/env-sync-check/) | .env.example、各环境 .env 与代码实际读取的变量三方对齐，顺带查示例文件里的真密钥 | `env_sync_check.py` | python3 | `env-sync-check` | 原创 |
-| [`i18n-missing-keys`](../skills/i18n-missing-keys/) | 多语言文案对齐：缺失键、多余键、空值、占位符不一致，外加代码里用了却没定义的键 | `i18n_missing_keys.py` | python3 | `i18n-missing-keys` | 原创 |
-| [`k8s-manifest-check`](../skills/k8s-manifest-check/) | K8s 清单生产就绪检查：安全基线、资源限制、探针、废弃 API、selector 匹配 | `k8s_check.py` | python3 | `k8s-manifest-check` | 原创 |
-| [`license-check`](../skills/license-check/) | 离线读 npm / Python / Go 依赖许可证，按 restricted 到宽松五级分类并出清单草稿 | `license_check.py` | python3 | `license-check-offline` | 原创 |
-| [`nginx-config-check`](../skills/nginx-config-check/) | 自带指令解析器的 nginx 配置体检：TLS、安全响应头、代理超时、root/alias 误用 | `nginx_check.py` | python3 | 未发布 | 原创 |
-| [`release-checklist`](../skills/release-checklist/) | 对比两个版本的实际改动，生成带验证方式与回滚方案的可勾选上线清单 | `collect_diff.py`、`render_checklist.py` | git + python3 | `release-checklist-git` | 原创 |
-| [`release-readiness-check`](../skills/release-readiness-check/) | 上线前五分钟体检：Dockerfile / K8s / SQL 迁移 / OpenAPI / .env 五项一起跑，出三态门禁结论 | `release_check.py` | python3 | `release-readiness-check` | 原创 |
-| [`sql-migration-check`](../skills/sql-migration-check/) | 扫迁移 SQL 里会锁表、丢数据、让滚动部署报错的语句，给 MySQL / PG 各自的安全写法 | `sql_migration_check.py` | python3 | `sql-migration-check` | 原创 |
-| [`ci-cd-zh`](../ported/skills/ci-cd-zh/) | 把质量门禁自动化：lint→类型→测试→构建→E2E 一个都不跳；预览部署、特性开关、分阶段发布 | — | — | `ci-cd-zh` | 复刻 · [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) · MIT |
-| [`deprecation-migration-zh`](../ported/skills/deprecation-migration-zh/) | 老系统 / 旧接口 / 旧字段安全下线：绞杀者与适配器模式、数据库 expand-contract 不停机改名 | — | — | `deprecation-migration-zh` | 复刻 · [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) · MIT |
-| [`security-hardening-zh`](../ported/skills/security-hardening-zh/) | 先威胁建模再加固：OWASP 防护模式、SSRF、依赖审计分诊、密钥轮换、LLM 输出当不可信输入 | — | — | `security-hardening-zh` | 复刻 · [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) · MIT |
-| [`shipping-launch-zh`](../ported/skills/shipping-launch-zh/) | 可逆、可观测、渐进地发布：发布前清单、开关生命周期、灰度绿黄红阈值、回滚条件 | — | — | `shipping-launch-zh` | 复刻 · [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) · MIT |
+54 个，普通人日常会碰到的事：职场、学习、家庭生活、数据与办公。
 
-## 线上排查与可观测（18 个）
+### 职场写作与沟通
 
-出事时把日志、指标、变更对齐成证据；平时做巡检与容量摸底。
+24 个。公文、汇报、邮件、检讨与请假；求职、加薪与离职；招聘、入职与带人；会议、调研与各类文案。
 
-| 技能 | 干什么 | 脚本 | 依赖 | SkillHub slug | 来源 |
-|---|---|---|---|---|---|
-| [`access-log-stats`](../skills/access-log-stats/) | Nginx / Apache / JSON 访问日志变接口级报表：QPS、P50/P95/P99、5xx、错误率、Top IP | `access_log_stats.py` | python3 | `access-log-stats` | 原创 |
-| [`cron-explain`](../skills/cron-explain/) | cron 表达式翻译成中文并按时区列出接下来 N 次运行，识别日/周「或」逻辑陷阱 | `cron_explain.py` | python3 | `cron-explain` | 原创 |
-| [`dns-check`](../skills/dns-check/) | 不依赖 dig：自己拼 DNS 报文查多种记录，并排对比多个解析器，验证解析改完是否生效 | `dns_check.py` | python3 | 未发布 | 原创 |
-| [`har-analyze`](../skills/har-analyze/) | 读懂 DevTools 导出的 HAR：耗时与体积 Top N、阶段分解、按域名聚合，再给 9 类问题清单 | `har_analyze.py` | python3 | 未发布 | 原创 |
-| [`http-bench-lite`](../skills/http-bench-lite/) | 没装 ab / wrk 也能压：成功率、状态码分布、QPS 与 p50–p99 分位，并发与时长有硬上限 | `http_bench.py` | python3 | 未发布 | 原创 |
-| [`http-health-check`](../skills/http-health-check/) | 并发巡检一批 URL：状态码、耗时阈值、关键字、HTTPS 证书剩余天数；异常退出码 1 | `health_check.py` | python3 | `http-health-check` | 原创 |
-| [`incident-brief`](../skills/incident-brief/) | 把变更、指标异常与人工观察对齐成时间线，按可疑度排候选并给反证；不下根因结论 | `changepoint.py`、`collect_changes.py`、`timeline.py` | python3 | `incident-brief-sre` | 原创 |
-| [`log-anomaly`](../skills/log-anomaly/) | 日志或指标 CSV 转时间序列，滑动基线 3σ 找出异常开始、峰值与恢复时间点 | `log_anomaly.py` | python3 | `log-anomaly-3sigma` | 原创 |
-| [`log-pattern-cluster`](../skills/log-pattern-cluster/) | 日志按模板归并：最常见的模式是噪音，最少见的模式往往是新错误 | `log_cluster.py` | python3 | `log-pattern-cluster` | 原创 |
-| [`log-timeline`](../skills/log-timeline/) | 多个格式与时区都不同的日志合成一条时间线，附事件密度柱状图与错误爆发点 | `log_timeline.py` | python3 | 未发布 | 原创 |
-| [`prometheus-rule-check`](../skills/prometheus-rule-check/) | 不连 Prometheus 评审告警与录制规则：缺 for、rate 窗口不匹配、缺聚合致告警风暴 | `promrule_check.py` | python3 | 未发布 | 原创 |
-| [`sql-slow-query-digest`](../skills/sql-slow-query-digest/) | 慢查询日志按指纹聚合成 Top SQL 报表，标出无索引、无 WHERE、SELECT * 等问题 | `slow_query_digest.py` | python3 | 未发布 | 原创 |
-| [`tls-cert-check`](../skills/tls-cert-check/) | 批量巡检 HTTPS 证书：剩余天数、SAN 是否覆盖主机名、协议与签名算法、链是否完整 | `tls_check.py` | python3 | 未发布 | 原创 |
-| [`debug-triage-zh`](../ported/skills/debug-triage-zh/) | 出问题先停线保留证据，按复现→定位→最小化→修根因→回归→端到端六步分诊 | — | git | `debug-triage-zh` | 复刻 · [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) · MIT |
-| [`diagnosing-bugs-zh`](../ported/skills/diagnosing-bugs-zh/) | 六阶段调试纪律：先造能变红的反馈回路，再最小化、列可证伪假设、先写回归测试再修 | — | — | `diagnosing-bugs-zh` | 复刻 · [mattpocock/skills](https://github.com/mattpocock/skills) · MIT |
-| [`observability-zh`](../ported/skills/observability-zh/) | 先写值班会问的问题再埋点：结构化日志、关联 ID、RED/USE 指标、只对症状告警并链 runbook | — | — | `observability-zh` | 复刻 · [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) · MIT |
-| [`performance-optimization-zh`](../ported/skills/performance-optimization-zh/) | 测量→定位→修→验证→守护：Web Vitals、N+1、索引形状、缓存雪崩；中性改动一律回退 | — | — | `performance-optimization-zh` | 复刻 · [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) · MIT |
-| [`systematic-debugging-zh`](../ported/skills/systematic-debugging-zh/) | 任何 Bug 都先找根因再修：四阶段流程，含三次失败即质疑架构的熔断规则 | — | — | `systematic-debugging-zh` | 复刻 · [obra/superpowers](https://github.com/obra/superpowers) · MIT |
+| 中文名 | 一句话 | slug |
+|---|---|---|
+| [公文写作](../skills/gov-doc-expert/) | 通知、请示、报告、纪要、述职等公文：选文种、定格式、素材加工成稿 | `gov-doc-expert` |
+| [PPT汇报演示](../skills/presentation-expert/) | 整场汇报：先定受众要做的决定，搭故事线、选图表、写讲稿 | `presentation-expert` |
+| [英文邮件](../skills/english-email/) | 商务英文邮件：七种意图的结构与句式、三档语气，附中式英语自查 | `english-email` |
+| [检讨书](../skills/reflection-letter/) | 检讨书与情况说明：按事实、责任、影响、整改四层写，附三套模板 | `reflection-letter` |
+| [请假条](../skills/leave-request-note/) | 请假条：学校、公司两套填空格式，各类假别的写法差异与常附材料 | `leave-request-note` |
+| [简历优化助手](../skills/resume-job-expert/) | 整条求职链路：按 JD 改简历、投递、各轮面试、offer 比较与谈薪 | `resume-job-expert` |
+| [职场防骗](../skills/workplace-antiscam-expert/) | 识别求职与职场骗局：招聘收费、培训贷、刷单、冒充领导转账等 | `workplace-antiscam-expert` |
+| [加薪申请](../skills/salary-raise-request/) | 准备加薪沟通：盘点可举证的成果、选时机、三段式谈，附申请模板 | `salary-raise-request` |
+| [离职谈话](../skills/resignation-conversation/) | 离职谈话：员工怎么提、被挽留怎么回；管理者怎么谈、交接怎么排 | `resignation-conversation` |
+| [招聘 JD](../skills/job-description-writer/) | 写招聘 JD：三段式结构、写清薪资区间，排查歧视性表述，附三份模板 | `job-description-writer` |
+| [入职指南](../skills/onboarding-guide/) | 给新同事写入职指南：按首日、首周、首月列清单，含导师机制与模板 | `onboarding-guide` |
+| [新人带教](../skills/new-hire-mentoring/) | 带教新同事：30/60/90 天目标、每周一对一、由易到难排任务、给反馈 | `new-hire-mentoring` |
+| [KPI 制定](../skills/kpi-design/) | 制定团队或岗位 KPI：从上级目标拆指标，过 SMART，定权重与口径 | `kpi-design` |
+| [团建方案](../skills/team-building-plan/) | 团建方案：先定目的，按预算与人数选形式，附三份模板与避雷清单 | `team-building-plan` |
+| [会议安排](../skills/meeting-arrangement/) | 安排会议：先判断要不要开，再定目标、参会人与议程，附议程模板 | `meeting-arrangement` |
+| [会议录音整理](../skills/meeting-transcript-cleanup/) | 会议转写稿整理成纪要：按议题重组，抽出决议、待办与负责人 | `meeting-transcript-cleanup` |
+| [长文总结](../skills/long-doc-summary/) | 长文总结：按读者与用途出 100/300/1000 字三版，关键数字标出处 | `long-doc-summary` |
+| [访谈提纲](../skills/interview-outline/) | 用户与专家访谈提纲：主线只问过去的具体行为，附追问句式与记录模板 | `interview-outline` |
+| [问卷设计](../skills/questionnaire-design/) | 问卷设计：从调研目标推出题目，选题型、排题序，排查诱导与双重提问 | `questionnaire-design` |
+| [主持词](../skills/event-host-script/) | 年会、婚礼、发布会等六类活动主持词：开场、串场、收尾与冷场话术 | `event-host-script` |
+| [广播稿](../skills/radio-script/) | 校园、社区、企业广播稿：开场与串联词，书面稿改口语，附填空模板 | `radio-script` |
+| [上新文案](../skills/new-product-copy/) | 新品上市文案：参数转卖点，改写成详情页、推文与短视频口播脚本 | `new-product-copy` |
+| [UI 文案](../skills/ui-microcopy/) | 界面文案：按钮、空状态、错误提示、确认弹窗等的模板与中英对照 | `ui-microcopy` |
+| [图片描述](../skills/image-alt-description/) | 给图片写描述：无障碍 alt 文本、商品图、社媒配文、图表文字化 | `image-alt-description` |
 
-## 代码与仓库治理（22 个）
+### 学习与考试
 
-提交、评审、分支、测试覆盖、技术债——仓库长期健康度。
+11 个。论文与学生写作、演讲与辩论、单词与日语、数学题、编程入门、驾考，以及给家长的孩子学习计划。
 
-| 技能 | 干什么 | 脚本 | 依赖 | SkillHub slug | 来源 |
-|---|---|---|---|---|---|
-| [`codeowners-suggest`](../skills/codeowners-suggest/) | 从 git 历史推导各目录实际维护者，生成带占比注释的 CODEOWNERS 草稿 | `codeowners_suggest.py` | python3 + git | `codeowners-suggest` | 原创 |
-| [`commit-message`](../skills/commit-message/) | 从暂存区 diff 推断 Conventional Commits 的类型、范围与破坏性变更，给中英文候选 | `suggest_commit.py` | git + python3 | `commit-message-cc` | 原创 |
-| [`flaky-test-finder`](../skills/flaky-test-finder/) | 汇总多次 JUnit XML 找时而通过时而失败的用例，给失败率、失败序列与常见报错 | `flaky_finder.py` | python3 | `flaky-test-finder` | 原创 |
-| [`git-branch-cleanup`](../skills/git-branch-cleanup/) | 只读分析本地与远端分支，分已合并 / 陈旧 / 受保护三类并生成待人工审阅的删除脚本 | `branch_cleanup.py` | python3 + git | `git-branch-cleanup` | 原创 |
-| [`git-commit-lint`](../skills/git-commit-lint/) | 按 Conventional Commits 体检一个提交范围，可做 CI 门禁与 commit-msg 钩子 | `git_commit_lint.py` | python3 + git | 未发布 | 原创 |
-| [`git-hotspots`](../skills/git-hotspots/) | 用 git 历史找缺陷高发文件、只有一个人在改的目录（bus factor）与隐性耦合 | `git_hotspots.py` | python3 + git | `git-hotspots` | 原创 |
-| [`iteration-report`](../skills/iteration-report/) | 从 Git 提交与工单生成可溯源的迭代周报：按交付价值重组，提交信息烂也能从 diff 反推 | `collect_git.py`、`collect_issues.py`、`render_report.py` | git + python3 | `iteration-report-git` | 原创 |
-| [`pr-description`](../skills/pr-description/) | 从分支提交与 diff 生成 PR/MR 描述草稿：按区域分组、标出迁移与依赖风险、关联工单 | `pr_describe.py` | python3 + git | `pr-description` | 原创 |
-| [`secrets-scan`](../skills/secrets-scan/) | 扫仓库里硬编码的密钥与口令，工作树加最近提交历史一起查，命中值脱敏后分级 | `secrets_scan.py` | python3 + git | `secrets-scan` | 原创 |
-| [`test-coverage-gap`](../skills/test-coverage-gap/) | 回答「该先给哪些文件补测试」：没有对应测试的源码按改动热度排序，叠加覆盖率报告 | `test_coverage_gap.py` | python3 + git | `test-coverage-gap` | 原创 |
-| [`todo-debt-scan`](../skills/todo-debt-scan/) | 汇总 TODO/FIXME/HACK 标记，结合 git blame 算作者与年龄，给优先处理清单 | `todo_scan.py` | python3 | `todo-debt-scan` | 原创 |
-| [`architecture-deepening-zh`](../ported/skills/architecture-deepening-zh/) | 扫代码库找把浅模块变深的重构机会，输出带前后对比图的自包含 HTML 架构评审报告 | — | — | `architecture-deepening-zh` | 复刻 · [mattpocock/skills](https://github.com/mattpocock/skills) · MIT |
-| [`code-review-five-axis-zh`](../ported/skills/code-review-five-axis-zh/) | 正确性 / 可读性 / 架构 / 安全 / 性能五轴评审，意见分级前缀，结构性问题给具名修法 | — | git | `code-review-five-axis-zh` | 复刻 · [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) · MIT |
-| [`code-review-zh`](../ported/skills/code-review-zh/) | 标准轴（仓库规范 + Fowler 12 种坏味道）与 Spec 轴分开评审，附脚本预扫 | `review_prep.py` | git + python3 | `code-review-zh` | 复刻 · [mattpocock/skills](https://github.com/mattpocock/skills) · MIT |
-| [`code-simplification-zh`](../ported/skills/code-simplification-zh/) | 在不改变行为的前提下让代码更好读：五原则、一次一改跑测试、复核 | — | — | `code-simplification-zh` | 复刻 · [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) · MIT |
-| [`deep-module-design-zh`](../ported/skills/deep-module-design-zh/) | 用统一词汇设计深模块：小接口大实现、接缝位置、适配器；设计两次比较多个接口方案 | — | — | `deep-module-design-zh` | 复刻 · [mattpocock/skills](https://github.com/mattpocock/skills) · MIT |
-| [`domain-modeling-zh`](../ported/skills/domain-modeling-zh/) | 打磨领域模型：挑战模糊用词、用场景压测边界、术语落定写进 CONTEXT.md，ADR 只记难逆转的权衡 | — | — | 未发布 | 复刻 · [mattpocock/skills](https://github.com/mattpocock/skills) · MIT |
-| [`finishing-a-development-branch-zh`](../ported/skills/finishing-a-development-branch-zh/) | 实现完成后如何落地：先验证测试再给本地合并 / 发 PR / 原样保留三选一菜单 | — | git | `dev-branch-finishing-zh` | 复刻 · [obra/superpowers](https://github.com/obra/superpowers) · MIT |
-| [`git-workflow-zh`](../ported/skills/git-workflow-zh/) | 主干开发、短分支、原子提交、~100 行改动、worktree 并行、语义化版本与面向人的 changelog | — | git | `git-workflow-zh` | 复刻 · [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) · MIT |
-| [`merge-conflicts-zh`](../ported/skills/merge-conflicts-zh/) | 五步解 merge/rebase 冲突：追双方意图、逐块保留不发明行为；附 ours/theirs 方向陷阱 | — | git | `merge-conflicts-zh` | 复刻 · [mattpocock/skills](https://github.com/mattpocock/skills) · MIT |
-| [`receiving-code-review-zh`](../ported/skills/receiving-code-review-zh/) | 把评审意见当技术输入而非社交场合：看不懂就全停下来问，该反驳时用技术理由反驳 | — | git | `code-review-response-zh` | 复刻 · [obra/superpowers](https://github.com/obra/superpowers) · MIT |
-| [`using-git-worktrees-zh`](../ported/skills/using-git-worktrees-zh/) | 动手前先确保工作发生在隔离工作区：检测、建 worktree、装依赖、跑基线测试 | — | git | `git-worktree-workflow-zh` | 复刻 · [obra/superpowers](https://github.com/obra/superpowers) · MIT |
+| 中文名 | 一句话 | slug |
+|---|---|---|
+| [开题报告](../skills/thesis-opening-report/) | 开题报告六部分的填空模板与示例，附导师常打回的 8 种情况与改法 | `thesis-opening-report` |
+| [观后感](../skills/after-viewing-essay/) | 观后感：从打动你的一个细节写起、不复述剧情，附学生版与成人版模板 | `after-viewing-essay` |
+| [辩论稿](../skills/debate-speech/) | 辩论赛发言稿：一辩立论、攻辩问题链、自由辩分工、四辩结辩 | `debate-speech` |
+| [毕业致辞](../skills/graduation-speech/) | 毕业致辞：学生、教师、家长三种身份，用故事、共同记忆与期许搭全篇 | `graduation-speech` |
+| [背单词](../skills/vocab-memorization-plan/) | 背单词计划：按目标和每天可用时间算新词量，按间隔复习排期 | `vocab-memorization-plan` |
+| [日语学习](../skills/japanese-learning-plan/) | 日语零基础到 N4/N3：首周拿下假名，沿语法主线推进，附两版日程 | `japanese-learning-plan` |
+| [数学题](../skills/math-problem-tutor/) | 中小学数学题讲解：列已知与所求、分步推导、代回验算，不代做作业 | `math-problem-tutor` |
+| [编程入门](../skills/coding-for-beginners/) | 零基础编程入门：按目标选语言，前 30 天每日任务与每周一个小项目 | `coding-for-beginners` |
+| [驾照考试](../skills/driving-test-prep/) | 驾照四个科目的备考方法与考前一周计划，只教方法、不给题目答案 | `driving-test-prep` |
+| [阅读计划](../skills/kids-reading-plan/) | 3–12 岁分三档的阅读计划：每日时长、共读比例、选书标准、记录表 | `kids-reading-plan` |
+| [儿童编程](../skills/kids-coding/) | 6–12 岁儿童编程：图形化还是 Python 起步，8 周计划，家长怎么陪 | `kids-coding` |
 
-## 接口与契约（9 个）
+### 家庭与生活
 
-接口的生成、对比、回归与兼容性把关。
+12 个。理财、保险与个税；租房、买车与购物；送礼与生日；孩子的屏幕时间、养狗、跑步与睡眠。
 
-| 技能 | 干什么 | 脚本 | 依赖 | SkillHub slug | 来源 |
-|---|---|---|---|---|---|
-| [`api-contract-test`](../skills/api-contract-test/) | 一组接口用例跑完：校验状态码、JSON 字段、响应头与耗时上限，支持并发，--strict 当门禁 | `api_contract_test.py` | python3 | 未发布 | 原创 |
-| [`api-diff`](../skills/api-diff/) | 同一批请求打到两个环境，逐字段深度对比 JSON 响应（可忽略易变字段），用于发布前后回归 | `api_diff.py` | python3 | `api-diff-test` | 原创 |
-| [`curl-to-code`](../skills/curl-to-code/) | curl 翻译成 8 种语言的请求代码，凭据自动改读环境变量；浏览器 Copy as cURL 直接粘 | `curl_to_code.py` | python3 | 未发布 | 原创 |
-| [`json-schema-infer`](../skills/json-schema-infer/) | 几条样例 JSON 推断出 JSON Schema（draft 2020-12）：必填/可选/可空、枚举候选、常见 format | `schema_infer.py` | python3 | `json-schema-infer` | 原创 |
-| [`jwt-inspect`](../skills/jwt-inspect/) | 解开 JWT 逐条解释，exp/nbf 换算成还剩多久，顺带做 alg=none、超长有效期等安全体检 | `jwt_inspect.py` | python3 | 未发布 | 原创 |
-| [`openapi-breaking-diff`](../skills/openapi-breaking-diff/) | 对比两个 OpenAPI 3.x，把变更分成破坏性与非破坏性两组逐条列出，可作 CI 门禁 | `openapi_diff.py` | python3 | `openapi-breaking-diff` | 原创 |
-| [`openapi-to-markdown`](../skills/openapi-to-markdown/) | OpenAPI 3.x 变成能直接发出去的中文 Markdown 接口文档，$ref 与 allOf 自动展开 | `openapi_to_markdown.py` | python3 | 未发布 | 原创 |
-| [`sql-schema-diff`](../skills/sql-schema-diff/) | 对比两份建表 SQL 的结构差异并生成 ALTER TABLE 迁移草稿，单独列出会锁表的语句 | `schema_diff.py` | python3 | 未发布 | 原创 |
-| [`api-design-zh`](../ported/skills/api-design-zh/) | 设计难以误用的稳定接口：Hyrum 定律、契约先行、统一错误、只加不改、幂等键实现要点 | — | — | `api-design-zh` | 复刻 · [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) · MIT |
+| 中文名 | 一句话 | slug |
+|---|---|---|
+| [理财入门](../skills/financial-literacy-expert/) | 看懂年化、复利、费率与产品怎么赚怎么亏，识别保本稳赚话术 | `financial-literacy-expert` |
+| [保单解读](../skills/insurance-policy-expert/) | 读懂手上的保单：免责条款、健康告知、理赔与拒赔、续保与退保 | `insurance-policy-expert` |
+| [个税申报](../skills/tax-filing-expert/) | 个税年度汇算：办不办、专项附加扣除、年终奖计税、退税被驳回 | `tax-filing-expert` |
+| [租房攻略](../skills/renting-guide/) | 租房全流程清单：定预算、看房检查、签约核对、入住交接、退租拿押金 | `renting-guide` |
+| [买车](../skills/car-buying-checklist/) | 买车决策清单：拆预算、定新车二手与油电，附试驾与合同交付核对项 | `car-buying-checklist` |
+| [购物清单](../skills/shopping-list-planner/) | 按场景生成可勾选的分类购物清单：按动线排序、设预算、防重复买 | `shopping-list-planner` |
+| [礼物清单](../skills/gift-list/) | 按对象与预算定礼物方向（只给品类），附卡片文案与避雷清单 | `gift-list` |
+| [生日策划](../skills/birthday-party-planner/) | 生日策划：按寿星与预算定主题场地，三段时间线，附三份现成方案 | `birthday-party-planner` |
+| [手机管理](../skills/kids-screen-time/) | 给家长的孩子屏幕规则：和孩子一起写约定，附冲突时的说法与复盘 | `kids-screen-time` |
+| [养狗](../skills/dog-care-basics/) | 新手养狗：接狗准备、第一周安排、三项基础训练、疫苗驱虫常识 | `dog-care-basics` |
+| [跑步入门](../skills/running-for-beginners/) | 零基础跑步 8 周计划：从跑 1 分钟走 2 分钟起步，到连续慢跑 30 分钟 | `running-for-beginners` |
+| [睡眠计划](../skills/sleep-plan/) | 两周改善睡眠的作息计划：先钉住起床时间，附睡眠日志，不做诊断 | `sleep-plan` |
 
-## 数据处理（4 个）
+### 数据与办公自动化
 
-入仓前体检、配置对比、正则、脱敏这类一次性数据活。
+7 个。报表、取数 SQL、一次性脚本与办公自动化，以及 CSV、JSON、Markdown 这类格式活。
 
-| 技能 | 干什么 | 脚本 | 依赖 | SkillHub slug | 来源 |
-|---|---|---|---|---|---|
-| [`csv-profile`](../skills/csv-profile/) | CSV/TSV 入仓前体检：逐列类型、空值率、分位数，汇总全空列、常量列、重复行、疑似 PII | `csv_profile.py` | python3 | 未发布 | 原创 |
-| [`json-diff`](../skills/json-diff/) | 两份 JSON 按扁平路径列差异，数组可按业务键配对避免位移误报，密钥自动脱敏 | `json_diff.py` | python3 | 未发布 | 原创 |
-| [`regex-explain`](../skills/regex-explain/) | 正则翻译成中文并逐 token 拆解，8 类风险提示（灾难性回溯等），输出 VERBOSE 注释版 | `regex_explain.py` | python3 | 未发布 | 原创 |
-| [`sensitive-data-mask`](../skills/sensitive-data-mask/) | 对外分享前脱敏：手机号、身份证、银行卡、JWT、AK/SK、连接串密码，三种替换策略 | `mask_sensitive.py` | python3 | 未发布 | 原创 |
+| 中文名 | 一句话 | slug |
+|---|---|---|
+| [报表制作](../skills/report-making/) | 做业务报表：先问读者要做的决定，写清指标口径，再搭表选图 | `report-making` |
+| [SQL 生成](../skills/sql-generation-helper/) | 把取数需求写成只读 SQL：先确认表结构与口径，每条附说明与坑 | `sql-generation-helper` |
+| [Python 脚本](../skills/python-script-writer/) | 写一次性 Python 脚本：先问清输入输出，给可运行骨架与三个模板 | `python-script-writer` |
+| [自动化办公](../skills/office-automation-scripts/) | 先算自动化能不能回本，再在公式、宏、Python 间选工具，附模板 | `office-automation-scripts` |
+| [CSV 数据画像](../skills/csv-profile/) | CSV/TSV 体检：逐列类型、空值率、分位数，汇总重复行与疑似个人信息 | `csv-profile` |
+| [JSON 格式化](../skills/json-formatting/) | JSON 美化、压缩与报错定位，必填字段粗校验，与 YAML、CSV 互转 | `json-formatting` |
+| [Markdown 转换](../skills/markdown-conversion/) | pandoc 互转 Markdown、Word、HTML、PDF，含中文排版设置 | `markdown-conversion` |
 
-## 研发流程方法论（31 个）
+## 开发者与运维
 
-从想法到上线的工作方法：澄清需求、写 Spec、拆任务、TDD、验证。
+55 个。`skills/` 下的原创研发技能。带脚本的那些不装 Agent 也能当命令行工具直接跑，见 README「命令行 30 秒上手」。
 
-| 技能 | 干什么 | 脚本 | 依赖 | SkillHub slug | 来源 |
-|---|---|---|---|---|---|
-| [`dev-workflow-pro`](../skills/dev-workflow-pro/) | 总入口：按意图把需求盘问、Spec、评审、上线、排查等路由到精专子技能 | — | git + python3 | `dev-workflow-pro` | 原创 |
-| [`tech-design-review`](../skills/tech-design-review/) | 按 QA / SRE / 安全 / 数据 / 成本五视角审技术方案，意见分阻塞/建议/疑问三级 | — | — | `tech-design-review` | 原创 |
-| [`brainstorming-zh`](../ported/skills/brainstorming-zh/) | 动手前把想法谈成设计：分级、逐条提问、方案对比、写 spec 并自查；先拿批准再实现 | — | — | `brainstorming-spec-zh` | 复刻 · [obra/superpowers](https://github.com/obra/superpowers) · MIT |
-| [`browser-testing-devtools-zh`](../ported/skills/browser-testing-devtools-zh/) | 让 Agent 在真实浏览器里验证：UI/网络/性能三条排查流程、截图回归、console 零错误 | — | — | `browser-testing-devtools-zh` | 复刻 · [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) · MIT |
-| [`constraints-md-zh`](../ported/skills/constraints-md-zh/) | 把质量标准写成能机械检查的 CONSTRAINTS.md：底线 + 带数字的维度 + 棘轮 + 有期限的例外 | — | — | `constraints-md-zh` | 复刻 · [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) · MIT |
-| [`doc-coauthoring-zh`](../ported/skills/doc-coauthoring-zh/) | 和用户一起写方案与决策文档：先转移上下文，逐节共创，最后用零上下文读者 Agent 验收 | — | — | `doc-coauthoring-zh` | 复刻 · [anthropics/skills](https://github.com/anthropics/skills) · Apache-2.0 |
-| [`docs-and-adr-zh`](../ported/skills/docs-and-adr-zh/) | 记录决策而不只是代码：ADR 何时写与模板、注释只写 why、README 与 Changelog 结构 | — | — | `docs-and-adr-zh` | 复刻 · [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) · MIT |
-| [`doubt-driven-zh`](../ported/skills/doubt-driven-zh/) | 非平凡决策先让冷上下文审稿者来推翻：只给产物与契约做对抗性提示，三轮封顶 | — | — | `doubt-driven-zh` | 复刻 · [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) · MIT |
-| [`engineering-skills-index-zh`](../ported/skills/engineering-skills-index-zh/) | 25 个工程实践技能的路由表：任务到手先判断阶段再选技能，附六条始终生效的行为 | — | — | `engineering-skills-index-zh` | 复刻 · [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) · MIT |
-| [`executing-plans-zh`](../ported/skills/executing-plans-zh/) | 把写好的实施计划执行到底：先审计划再动手、逐任务验证、遇阻即停不猜 | — | git | `executing-dev-plans-zh` | 复刻 · [obra/superpowers](https://github.com/obra/superpowers) · MIT |
-| [`frontend-ui-zh`](../ported/skills/frontend-ui-zh/) | 做出像设计感工程师做的界面：组件架构、避开八种 AI 默认审美、WCAG 2.1 AA、移动优先 | — | — | `frontend-ui-zh` | 复刻 · [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) · MIT |
-| [`grill-me-zh`](../ported/skills/grill-me-zh/) | 按设计树分轮追问，每题附推荐答案；事实自己查、决策交给你，落盘 decisions.md | — | — | `grill-me-zh` | 复刻 · [mattpocock/skills](https://github.com/mattpocock/skills) · MIT |
-| [`idea-refine-zh`](../ported/skills/idea-refine-zh/) | 粗糙点子磨成方案：HMW 重述、七种透镜生成变体、压力测试，产出含不做清单的一页纸 | — | — | `idea-refine-zh` | 复刻 · [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) · MIT |
-| [`incremental-implementation-zh`](../ported/skills/incremental-implementation-zh/) | 功能切成可独立验证的薄片，实现→测试→验证→提交循环；未完成功能放开关后面 | — | git | `incremental-implementation-zh` | 复刻 · [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) · MIT |
-| [`interview-me-zh`](../ported/skills/interview-me-zh/) | 动手前把真实意图问出来：一句话假设 + 置信度，一次一问，拿到明确的是才停 | — | — | `interview-me-zh` | 复刻 · [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) · MIT |
-| [`planning-tasks-zh`](../ported/skills/planning-tasks-zh/) | 从 spec 到可执行任务：依赖图、垂直切片、每个任务带验收与验证步骤、大小 XS–L | — | — | `planning-tasks-zh` | 复刻 · [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) · MIT |
-| [`prototype-zh`](../ported/skills/prototype-zh/) | 原型是回答一个问题的一次性代码：逻辑问题走单文件 HTML 演示，外观问题走多 UI 变体 | — | — | `prototype-zh` | 复刻 · [mattpocock/skills](https://github.com/mattpocock/skills) · MIT |
-| [`re-pitch-zh`](../ported/skills/re-pitch-zh/) | 上一条没讲明白时用简化技术表达重讲：短句、一句一意、只用项目术语表里的词 | — | — | `re-pitch-zh` | 复刻 · [mattpocock/skills](https://github.com/mattpocock/skills) · MIT |
-| [`research-primary-zh`](../ported/skills/research-primary-zh/) | 只查一手来源（官方文档、源码、规范），每个主张附引用，写成仓库约定位置的 Markdown | — | — | `research-primary-zh` | 复刻 · [mattpocock/skills](https://github.com/mattpocock/skills) · MIT |
-| [`source-driven-zh`](../ported/skills/source-driven-zh/) | 框架相关代码一律先查官方文档：识别版本→抓页面→按文档实现→引用来源，查不到标 UNVERIFIED | — | — | `source-driven-zh` | 复刻 · [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) · MIT |
-| [`spec-and-tickets-zh`](../ported/skills/spec-and-tickets-zh/) | 讨论整理成 Spec，再拆成带阻塞关系的垂直切片工单，输出 Markdown 与可导入 JSON | — | — | `spec-and-tickets-zh` | 复刻 · [mattpocock/skills](https://github.com/mattpocock/skills) · MIT |
-| [`spec-driven-zh`](../ported/skills/spec-driven-zh/) | 写代码前先写 spec：六要素模板，把模糊需求改写成成功标准，四阶段逐门人审 | — | — | `spec-driven-zh` | 复刻 · [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) · MIT |
-| [`tdd-seams-zh`](../ported/skills/tdd-seams-zh/) | 红→绿循环参考手册：测试写在预先约定的接缝上，三大反模式与系统边界 mock 指南 | — | — | `tdd-seams-zh` | 复刻 · [mattpocock/skills](https://github.com/mattpocock/skills) · MIT |
-| [`tdd-zh`](../ported/skills/tdd-zh/) | 先写失败的测试再写代码，修 bug 先复现；测状态不测交互、DAMP、少 mock、AAA | — | — | `tdd-zh` | 复刻 · [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) · MIT |
-| [`teach-workspace-zh`](../ported/skills/teach-workspace-zh/) | 把一个目录变成学习工作台：任务书、术语表、每课一个 HTML 小课与速查卡 | — | — | `teach-workspace-zh` | 复刻 · [mattpocock/skills](https://github.com/mattpocock/skills) · MIT |
-| [`to-questionnaire-zh`](../ported/skills/to-questionnaire-zh/) | 把用户独自答不了的决策变成 Markdown 问卷，交给掌握信息的人异步填 | — | — | `to-questionnaire-zh` | 复刻 · [mattpocock/skills](https://github.com/mattpocock/skills) · MIT |
-| [`triage-zh`](../ported/skills/triage-zh/) | Issue 与外部 PR 推过一个小状态机：分类、验证、写 Agent 能直接执行的简报 | — | — | `issue-triage-zh` | 复刻 · [mattpocock/skills](https://github.com/mattpocock/skills) · MIT |
-| [`verification-before-completion-zh`](../ported/skills/verification-before-completion-zh/) | 任何「完成/修好/通过」的说法都必须有本轮新跑出来的证据；五步门禁与借口反驳表 | — | — | `pre-completion-verification-zh` | 复刻 · [obra/superpowers](https://github.com/obra/superpowers) · MIT |
-| [`wayfinder-zh`](../ported/skills/wayfinder-zh/) | 超出一次会话的大事画成共享地图：命名目的地，建决策工单，每次会话清一片迷雾 | — | — | `wayfinder-zh` | 复刻 · [mattpocock/skills](https://github.com/mattpocock/skills) · MIT |
-| [`wizard-zh`](../ported/skills/wizard-zh/) | 只有人能做的手工流程（申请密钥、配 CI secrets）做成分阶段确认的 bash 向导 | — | bash | `wizard-zh` | 复刻 · [mattpocock/skills](https://github.com/mattpocock/skills) · MIT |
-| [`writing-plans-zh`](../ported/skills/writing-plans-zh/) | 把 spec 写成零上下文工程师能照做的实施计划，每步 2–5 分钟并附真实代码与验证命令 | — | — | `writing-impl-plans-zh` | 复刻 · [obra/superpowers](https://github.com/obra/superpowers) · MIT |
+### 研发总入口与方案评审
 
-## Agent 与上下文工程（13 个）
+2 个。不确定该用哪个技能时从总入口进；技术方案落地前先过一遍多视角评审。
 
-写给 Agent 的工程学：上下文、记忆、工具设计、子代理与技能本身。
+| 中文名 | 一句话 | slug |
+|---|---|---|
+| [研发全能助手](../skills/dev-workflow-pro/) | 研发流程总入口：需求、提交、评审、上线、排查等按意图路由到子技能 | `dev-workflow-pro` |
+| [技术方案评审官](../skills/tech-design-review/) | 按 QA、SRE、安全、数据、成本五视角审技术方案，意见分三级 | `tech-design-review` |
 
-| 技能 | 干什么 | 脚本 | 依赖 | SkillHub slug | 来源 |
-|---|---|---|---|---|---|
-| [`build-workbuddy-connector`](../skills/build-workbuddy-connector/) | 按 WorkBuddy 开放平台规范构建连接器：规范速查、骨架生成、目录校验、CLI-Anything 封装 | `scaffold_connector.py`、`validate_connector.py` | python3 | `build-workbuddy-connector` | 原创 |
-| [`skill-lint`](../skills/skill-lint/) | 五维度给 SKILL.md 打分并给修改建议：可发现性、结构、可执行性、合规、示例 | `skill_lint.py` | python3 | `skill-lint-scorecard` | 原创 |
-| [`skillhub-publish-helper`](../skills/skillhub-publish-helper/) | 批量发技能到 SkillHub：校验 frontmatter、剔除会被拒的文件、限速发布、CSV 记 skillId | `publish_batch.py` | python3 + skillhub | `skillhub-publish-helper` | 原创 |
-| [`context-compression-zh`](../ported/skills/context-compression-zh/) | 长会话压缩怎么压才不丢关键信息：优化每任务 token、结构化强制章节、先保产物轨迹 | — | — | `context-compression-strategies-zh` | 复刻 · [muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) · MIT |
-| [`context-degradation-zh`](../ported/skills/context-degradation-zh/) | 在级联之前诊断上下文失效：中间迷失、投毒、干扰、混淆、冲突五种模式各有检测信号 | — | — | `context-degradation-zh` | 复刻 · [muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) · MIT |
-| [`context-engineering-zh`](../ported/skills/context-engineering-zh/) | 让 Agent 在对的时候看到对的信息：五层上下文与规则文件模板、75% 开始修剪、信任分级 | — | — | `context-engineering-zh` | 复刻 · [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) · MIT |
-| [`context-fundamentals-zh`](../ported/skills/context-fundamentals-zh/) | 上下文是推理时模型可见的全部状态：当有限的注意力预算而非储物箱，关键约束放首尾 | — | — | `context-fundamentals-zh` | 复刻 · [muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) · MIT |
-| [`dispatching-parallel-agents-zh`](../ported/skills/dispatching-parallel-agents-zh/) | 把互相独立的问题一次性分派给多个子代理：怎么切分、提示词四要素、回收后冲突检查 | — | — | `parallel-agent-dispatch-zh` | 复刻 · [obra/superpowers](https://github.com/obra/superpowers) · MIT |
-| [`handoff-doc-zh`](../ported/skills/handoff-doc-zh/) | 当前对话压成下一个 Agent 能直接接手的交接单：只引用不重复、脱敏、附建议技能 | — | — | `handoff-doc-zh` | 复刻 · [mattpocock/skills](https://github.com/mattpocock/skills) · MIT |
-| [`memory-systems-zh`](../ported/skills/memory-systems-zh/) | 让 Agent 跨会话保持连续性：记忆分层、按检索形状选框架、从最浅一层起步、追踪时间有效性 | — | — | `memory-systems-zh` | 复刻 · [muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) · MIT |
-| [`subagent-driven-development-zh`](../ported/skills/subagent-driven-development-zh/) | 一份实施计划驱动子代理流水线：每任务一个全新实现者、任务级双判定评审、账本抗压缩 | `review-package.sh`、`sdd-workspace.sh`、`task-brief.sh` | git + bash | `subagent-driven-development-zh` | 复刻 · [obra/superpowers](https://github.com/obra/superpowers) · MIT |
-| [`tool-design-zh`](../ported/skills/tool-design-zh/) | 把工具当作确定性系统与 Agent 之间的契约：合并重叠工具、一致命名、面向恢复的错误信息 | — | — | `tool-design-zh` | 复刻 · [muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) · MIT |
-| [`writing-for-agents-zh`](../ported/skills/writing-for-agents-zh/) | 让技能、AGENTS.md、规则文件每次都被正确读取：上下文指针措辞、信息层级、渐进披露 | — | — | `writing-for-agents-zh` | 复刻 · [mattpocock/skills](https://github.com/mattpocock/skills) · MIT |
+### 上线与发布检查
 
----
+14 个。发版前把能静态查出来的事故一次查完，检查类大多能直接当 CI 门禁。
 
-## 统计（116 个）
+| 中文名 | 一句话 | slug |
+|---|---|---|
+| [上线体检](../skills/release-readiness-check/) | 五项一起查：Dockerfile/K8s/SQL 迁移/OpenAPI/.env | `release-readiness-check` |
+| [上线检查清单](../skills/release-checklist/) | 对比两个版本的实际改动，生成带验证与回滚方案的可勾选上线清单 | `release-checklist-git` |
+| [Changelog 生成器](../skills/changelog/) | 按 tag 区间读提交，按 Keep a Changelog 生成发布说明 | `changelog-keep` |
+| [数据库迁移风险](../skills/sql-migration-check/) | 扫迁移 SQL 里会锁表、丢数据的语句，给 MySQL/PG 各自的安全写法 | `sql-migration-check` |
+| [K8s 配置检查](../skills/k8s-manifest-check/) | K8s YAML 生产就绪检查：安全基线、资源限制、探针、废弃 API | `k8s-manifest-check` |
+| [Compose 配置体检](../skills/docker-compose-check/) | docker-compose.yml 体检：特权、明文密钥、镜像版本、健康检查 | `docker-compose-check` |
+| [nginx 配置体检](../skills/nginx-config-check/) | nginx 配置安全与性能体检：TLS、安全响应头、代理超时等 17 条规则 | `nginx-config-check` |
+| [.env 一致性检查](../skills/env-sync-check/) | .env.example、各环境 .env 与代码读取的变量三方对齐，查真密钥 | `env-sync-check` |
+| [多环境配置对比](../skills/config-env-diff/) | 多份配置拉平成键路径逐个对比，分三类差异，密钥自动脱敏 | `config-env-diff` |
+| [多语言文案键检查](../skills/i18n-missing-keys/) | 多语言文案对齐：缺失键、多余键、占位符不一致、用了却没定义的键 | `i18n-missing-keys` |
+| [依赖漏洞体检](../skills/dep-vuln-check/) | 解析六种锁文件查 OSV.dev 已知漏洞，给严重度与建议升级版本 | `dep-vuln-check-osv` |
+| [依赖过期检查](../skills/dep-outdated-check/) | 七种依赖清单查落后多少版本，按主/次/补丁分级给升级顺序 | `dep-outdated-check` |
+| [开源协议合规检查](../skills/license-check/) | 离线读 npm/Python/Go 依赖许可证，五级分类并出第三方清单草稿 | `license-check-offline` |
+| [CI 配置审查](../skills/ci-config-review/) | 离线扫 CI 配置：未固定 SHA、脚本注入、权限、secret 泄露 | `ci-config-review` |
 
-| 口径 | 数量 |
-|---|---:|
-| 技能总数 | 116 |
-| 原创（`skills/`） | 56 |
-| 中文复刻（`ported/skills/`，全部带 ATTRIBUTION） | 60 |
-| 带可执行脚本 | 56（55 个 Python，1 个 Bash） |
-| 其中只需 `python3`（标准库） | 42 |
-| 其中需 `python3` + `git` | 12 |
-| 其中需要第三方 CLI | 1（`skillhub-publish-helper` 需 `skillhub`） |
-| 纯 SKILL.md 方法论技能 | 60 |
-| 已发布到 SkillHub | 96 |
+### 线上排查与可观测
 
-`openapi-breaking-diff`、`openapi-to-markdown`、`release-readiness-check` 三个在**输入是 YAML 时**需要 PyYAML（输入 JSON 时纯标准库），
-`iteration-report`、`release-checklist` 有 PyYAML 就用、没有就走内置的极简解析器。其余带脚本的技能全程只用标准库。
+13 个。出事时把日志、指标、变更对齐成证据；平时做巡检与容量摸底。
 
-复刻上游分布（按 ATTRIBUTION.md 统计）：
+| 中文名 | 一句话 | slug |
+|---|---|---|
+| [线上排查简报](../skills/incident-brief/) | 变更、指标异常与人工观察对齐成时间线，排候选给反证，不下根因 | `incident-brief-sre` |
+| [日志突变检测](../skills/log-anomaly/) | 日志或指标 CSV 转时间序列，用 3σ 找出异常开始、峰值与恢复点 | `log-anomaly-3sigma` |
+| [日志时间线重建](../skills/log-timeline/) | 多个格式、时区不同的日志合成一条时间线，标出错误爆发点 | `log-timeline` |
+| [日志模板聚类](../skills/log-pattern-cluster/) | 日志按模板归并计数：最常见的是噪音，最少见的指向新错误 | `log-pattern-cluster` |
+| [访问日志统计](../skills/access-log-stats/) | 访问日志变接口级报表：请求量、P50/P95/P99、5xx、高峰、Top IP | `access-log-stats` |
+| [慢查询分析](../skills/sql-slow-query-digest/) | 慢查询日志按指纹聚合成 Top SQL 报表，标出无索引等问题与改法 | `sql-slow-query-digest` |
+| [Prometheus 规则体检](../skills/prometheus-rule-check/) | 不连 Prometheus 评审告警与录制规则：缺 for、窗口不匹配、告警风暴 | `prometheus-rule-check` |
+| [HTTP 健康巡检](../skills/http-health-check/) | 并发巡检一批 URL：状态码、耗时、关键字、HTTPS 证书剩余天数 | `http-health-check` |
+| [TLS 证书巡检](../skills/tls-cert-check/) | 批量巡检 HTTPS 证书：剩余天数、SAN 是否覆盖主机名、证书链 | `tls-cert-check` |
+| [域名解析巡检](../skills/dns-check/) | 不依赖 dig 查多种 DNS 记录，并排对比多个解析器，验证解析是否生效 | `dns-check` |
+| [轻量 HTTP 压测](../skills/http-bench-lite/) | 没装 ab/wrk 也能压：成功率、QPS 与延迟分位，并发与时长有硬上限 | `http-bench-lite` |
+| [HAR 性能分析](../skills/har-analyze/) | 读懂 HAR：耗时与体积 Top N、阶段分解、按域名聚合、9 类问题 | `har-analyze` |
+| [cron 表达式解释器](../skills/cron-explain/) | cron 表达式译成中文，按时区列出接下来 N 次运行，识别日/周陷阱 | `cron-explain` |
 
-| 上游 | 个数 | 许可证 |
-|---|---:|---|
-| [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | 25 | MIT |
-| [mattpocock/skills](https://github.com/mattpocock/skills) | 19 | MIT |
-| [obra/superpowers](https://github.com/obra/superpowers) | 10 | MIT |
-| [muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) | 5 | MIT |
-| [anthropics/skills](https://github.com/anthropics/skills) | 1 | Apache-2.0 |
+### 代码与仓库治理
 
-许可证合计：MIT 59 个，Apache-2.0 1 个。每个复刻目录下都有 `ATTRIBUTION.md`，写明来源文件、许可证与改了什么。
+11 个。提交、评审、分支、测试覆盖、技术债——仓库的长期健康度。
 
+| 中文名 | 一句话 | slug |
+|---|---|---|
+| [迭代周报生成器](../skills/iteration-report/) | 从 Git 提交与工单生成可溯源的迭代周报，风险与遗留单列 | `iteration-report-git` |
+| [Git 提交信息生成器](../skills/commit-message/) | 按暂存区 diff 生成 Conventional Commits 中英文候选 | `commit-message-cc` |
+| [提交信息规范检查](../skills/git-commit-lint/) | 按 Conventional Commits 体检一段提交，可做 CI 门禁 | `git-commit-lint` |
+| [PR 描述生成](../skills/pr-description/) | 从分支提交与 diff 生成 PR/MR 描述草稿，标出迁移与依赖风险 | `pr-description` |
+| [仓库泄密自查](../skills/secrets-scan/) | 扫仓库与近期提交历史里硬编码的密钥，命中值脱敏并给轮换改法 | `secrets-scan` |
+| [CODEOWNERS 建议](../skills/codeowners-suggest/) | 从 git 历史推导各目录实际维护者，生成带占比的 CODEOWNERS 草稿 | `codeowners-suggest` |
+| [代码热点与知识集中度](../skills/git-hotspots/) | 用 git 历史找缺陷高发文件、只有一人在改的目录与隐性耦合 | `git-hotspots` |
+| [git 分支清理助手](../skills/git-branch-cleanup/) | 只读分析分支，分三类并生成待人工审阅的删除脚本，不自动删除 | `git-branch-cleanup` |
+| [测试覆盖缺口](../skills/test-coverage-gap/) | 该先给哪些文件补测试：无测试的源码按改动热度排序，叠加覆盖率 | `test-coverage-gap` |
+| [flaky 测试识别](../skills/flaky-test-finder/) | 汇总多次 JUnit XML 报告，找出时过时挂的用例及其失败率与报错 | `flaky-test-finder` |
+| [技术债标记盘点](../skills/todo-debt-scan/) | 汇总 TODO/FIXME，用 git blame 算作者与年龄，出优先清单 | `todo-debt-scan` |
+
+### 接口与契约
+
+8 个。接口的生成、对比、回归与兼容性把关。
+
+| 中文名 | 一句话 | slug |
+|---|---|---|
+| [接口契约回归](../skills/api-contract-test/) | 跑一组接口用例：校验状态码、JSON 字段、响应头与耗时，可当门禁 | `api-contract-test` |
+| [接口差分测试](../skills/api-diff/) | 同一批请求打到两个环境，逐字段对比 JSON 响应，做发布前后回归 | `api-diff-test` |
+| [curl 转代码](../skills/curl-to-code/) | curl 译成 8 种语言的请求代码，凭据自动改读环境变量 | `curl-to-code` |
+| [OpenAPI 破坏性变更检查](../skills/openapi-breaking-diff/) | 对比两个 OpenAPI 3.x 规范，变更分破坏性与非破坏性逐条列出 | `openapi-breaking-diff` |
+| [接口文档生成](../skills/openapi-to-markdown/) | OpenAPI 3.x 转中文 Markdown 接口文档，$ref 自动展开 | `openapi-to-markdown` |
+| [JSON Schema 推断](../skills/json-schema-infer/) | 几条样例 JSON 推断出 JSON Schema，识别必填、可选与可空 | `json-schema-infer` |
+| [JWT 解码与体检](../skills/jwt-inspect/) | 解开 JWT 逐条解释，换算过期时间，顺带查 alg=none 等安全问题 | `jwt-inspect` |
+| [建表 SQL 结构对比](../skills/sql-schema-diff/) | 对比两份建表 SQL，生成 ALTER TABLE 草稿，单列会锁表的高危项 | `sql-schema-diff` |
+
+### 数据与文本处理
+
+2 个。读懂正则；日志和数据对外分享前先脱敏。
+
+| 中文名 | 一句话 | slug |
+|---|---|---|
+| [正则中文解释](../skills/regex-explain/) | 正则译成中文并逐 token 拆解，提示灾难性回溯等 8 类风险 | `regex-explain` |
+| [日志与数据脱敏](../skills/sensitive-data-mask/) | 对外分享前脱敏：手机号、身份证、银行卡、密钥等，三种替换策略 | `sensitive-data-mask` |
+
+### Agent 与技能开发
+
+5 个。Agent 工程、技能编写与打分、批量发布到 SkillHub、构建 WorkBuddy 连接器。
+
+| 中文名 | 一句话 | slug |
+|---|---|---|
+| [Agent 工程](../skills/agent-engineering-expert/) | Agent 工程总入口：触发面、上下文预算、工具定义、子代理编排等 | `agent-engineering-expert` |
+| [技能编写](../skills/skill-author-expert/) | 技能从选题到上架的清单：frontmatter、触发面、slug 撞名、发布配额 | `skill-author-expert` |
+| [技能体检（SKILL.md 打分）](../skills/skill-lint/) | 从可发现性、结构、可执行性、合规、示例五个维度给 SKILL.md 打分 | `skill-lint-scorecard` |
+| [SkillHub 发布助手](../skills/skillhub-publish-helper/) | 批量发布到 SkillHub：校验、剔除会被拒的文件、限速、记 skillId | `skillhub-publish-helper` |
+| [连接器构建助手](../skills/build-workbuddy-connector/) | 按 WorkBuddy 开放平台规范构建连接器：规范速查、骨架生成、校验 | `build-workbuddy-connector` |
+
+## 工程实践复刻系列
+
+59 个。`ported/skills/` 下的中文复刻：来自成熟的外部开源项目，不是逐字翻译，每个都做了中文化与场景适配，逐个目录附 `ATTRIBUTION.md` 写明来源、许可证与改动。上游：[addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) 25、[mattpocock/skills](https://github.com/mattpocock/skills) 18、[obra/superpowers](https://github.com/obra/superpowers) 10、[muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) 5、[anthropics/skills](https://github.com/anthropics/skills) 1。
+
+### 需求与方案
+
+9 个。动手前把想法、需求和设计谈清楚；第一行是其中 25 个工程实践技能的路由表。
+
+| 中文名 | 一句话 | slug |
+|---|---|---|
+| [工程实践技能系列·总入口](../ported/skills/engineering-skills-index-zh/) | 25 个工程实践技能的路由表：先判断阶段再选技能，附六条通用行为 | `engineering-skills-index-zh` |
+| [需求头脑风暴与设计](../ported/skills/brainstorming-zh/) | 动手前把想法谈成设计：分级、逐条提问、方案对比、写 spec，批准再做 | `brainstorming-spec-zh` |
+| [需求盘问官](../ported/skills/grill-me-zh/) | 按设计树分轮追问，每题附推荐答案，问清后落盘 decisions.md 再开工 | `grill-me-zh` |
+| [需求访谈（一次一问）](../ported/skills/interview-me-zh/) | 动手前问出真实意图：一句话假设加置信度，一次一问，确认才停 | `interview-me-zh` |
+| [创意打磨（发散→收敛→一页纸）](../ported/skills/idea-refine-zh/) | 粗糙点子磨成方案：HMW 重述、七种透镜、压力测试，出一页纸 | `idea-refine-zh` |
+| [规格驱动开发（先 Spec 后代码）](../ported/skills/spec-driven-zh/) | 写代码前先写 spec：六要素模板，把模糊需求改写成成功标准 | `spec-driven-zh` |
+| [需求→Spec→任务拆解](../ported/skills/spec-and-tickets-zh/) | 讨论整理成 Spec，再拆成带阻塞关系的垂直切片工单 | `spec-and-tickets-zh` |
+| [决策问卷生成](../ported/skills/to-questionnaire-zh/) | 把自己答不了的决策变成问卷，交给掌握信息的人异步填写 | `to-questionnaire-zh` |
+| [一次性原型（逻辑 / UI）](../ported/skills/prototype-zh/) | 一次性原型回答一个问题：逻辑走单文件 HTML，外观走多个 UI 变体 | `prototype-zh` |
+
+### 文档研究与学习
+
+5 个。写方案与决策文档、只查一手来源、把没讲明白的话重讲一遍、搭学习工作台。
+
+| 中文名 | 一句话 | slug |
+|---|---|---|
+| [文档协作写作三阶段](../ported/skills/doc-coauthoring-zh/) | 和用户一起写方案与决策文档：转移上下文、逐节共创、零上下文读者验收 | `doc-coauthoring-zh` |
+| [文档与 ADR](../ported/skills/docs-and-adr-zh/) | 记录决策而不只是代码：ADR 何时写与模板，注释只写 why | `docs-and-adr-zh` |
+| [一手来源研究](../ported/skills/research-primary-zh/) | 只查官方文档、源码、规范等一手来源，每个主张附引用 | `research-primary-zh` |
+| [没听懂，重讲一遍](../ported/skills/re-pitch-zh/) | 上一条没讲明白时重讲：先补背景，短句、一句一意，不加新信息 | `re-pitch-zh` |
+| [学习工作台（教我一门技能）](../ported/skills/teach-workspace-zh/) | 把一个目录变成学习工作台：任务书、术语表、每课一个 HTML 小课 | `teach-workspace-zh` |
+
+### 计划与执行
+
+8 个。从 spec 到任务，再到逐步执行；超出一次会话的大事拆成决策工单。
+
+| 中文名 | 一句话 | slug |
+|---|---|---|
+| [实施计划与任务拆解](../ported/skills/planning-tasks-zh/) | 从 spec 到可执行任务：依赖图、垂直切片，每个任务带验收与验证 | `planning-tasks-zh` |
+| [编写实施计划](../ported/skills/writing-plans-zh/) | 把 spec 写成零上下文工程师能照做的计划，每步附代码与验证命令 | `writing-impl-plans-zh` |
+| [执行实施计划](../ported/skills/executing-plans-zh/) | 把写好的实施计划执行到底：先审计划、逐任务验证、遇阻即停 | `executing-dev-plans-zh` |
+| [增量实现（薄切片）](../ported/skills/incremental-implementation-zh/) | 功能切成可独立验证的薄片，按实现、测试、验证、提交循环推进 | `incremental-implementation-zh` |
+| [源驱动开发（官方文档为准）](../ported/skills/source-driven-zh/) | 框架代码先查官方文档：认版本、按文档实现并引用，查不到标 UNVERIFIED | `source-driven-zh` |
+| [导航图（大事拆决策工单）](../ported/skills/wayfinder-zh/) | 超出一次会话的大事画成地图：命名目的地，拆决策工单逐个解决 | `wayfinder-zh` |
+| [工单分诊状态机](../ported/skills/triage-zh/) | Issue 与外部 PR 过状态机：分类、验证，写 Agent 可直接执行的简报 | `issue-triage-zh` |
+| [人工步骤向导生成器](../ported/skills/wizard-zh/) | 把只有人能做的手工步骤做成分阶段确认的 bash 向导 | `wizard-zh` |
+
+### 测试调试与验证
+
+10 个。TDD、浏览器验证、完成前验证、对抗复审，以及几套调试与性能方法。
+
+| 中文名 | 一句话 | slug |
+|---|---|---|
+| [测试驱动开发（红-绿-重构）](../ported/skills/tdd-zh/) | 先写失败的测试再写代码，修 bug 先复现；测状态不测交互、少 mock | `tdd-zh` |
+| [接缝驱动 TDD](../ported/skills/tdd-seams-zh/) | 红绿循环手册：测试写在预先约定的接缝上，避开三大反模式 | `tdd-seams-zh` |
+| [浏览器 DevTools 测试](../ported/skills/browser-testing-devtools-zh/) | 让 Agent 在真实浏览器里验证：UI、网络、性能排查与截图回归 | `browser-testing-devtools-zh` |
+| [完成前验证门禁](../ported/skills/verification-before-completion-zh/) | 说「完成」「修好」之前，必须有本轮新跑出的证据；附五步门禁 | `pre-completion-verification-zh` |
+| [约束驱动开发（CONSTRAINTS.md）](../ported/skills/constraints-md-zh/) | 质量标准写成能机械检查的 CONSTRAINTS.md：底线、棘轮、限期例外 | `constraints-md-zh` |
+| [质疑驱动开发（对抗复审）](../ported/skills/doubt-driven-zh/) | 非平凡决策先交给冷上下文审稿者对抗性复审，三轮封顶 | `doubt-driven-zh` |
+| [系统化排错与分诊](../ported/skills/debug-triage-zh/) | 出问题先停线保留证据，从复现到端到端验证六步分诊 | `debug-triage-zh` |
+| [Bug 诊断法](../ported/skills/diagnosing-bugs-zh/) | 六阶段调试：先造能变红的反馈回路，列可证伪假设，先写回归测试 | `diagnosing-bugs-zh` |
+| [系统化调试四阶段](../ported/skills/systematic-debugging-zh/) | 任何 Bug 先找根因再修：四阶段流程，三次失败即质疑架构 | `systematic-debugging-zh` |
+| [性能优化（先测量再优化）](../ported/skills/performance-optimization-zh/) | 测量、定位、修、验证、守护：常见性能问题修法，中性改动一律回退 | `performance-optimization-zh` |
+
+### 代码设计与评审
+
+8 个。接口与模块设计、前端 UI、代码化简，以及发起评审与接收评审意见。
+
+| 中文名 | 一句话 | slug |
+|---|---|---|
+| [API 与接口设计](../ported/skills/api-design-zh/) | 设计难以误用的稳定接口：契约先行、统一错误、只加不改、幂等键 | `api-design-zh` |
+| [深模块设计（接口·接缝·可测性）](../ported/skills/deep-module-design-zh/) | 设计深模块：小接口大实现、接缝与适配器，设计两次再比较 | `deep-module-design-zh` |
+| [架构加深体检（HTML 报告）](../ported/skills/architecture-deepening-zh/) | 扫代码库找浅模块变深的重构机会，输出 HTML 架构评审报告 | `architecture-deepening-zh` |
+| [前端 UI 工程（生产级·无障碍）](../ported/skills/frontend-ui-zh/) | 生产级前端界面：组件架构、避开 AI 默认审美、WCAG 2.1 AA 无障碍 | `frontend-ui-zh` |
+| [代码化简（行为不变）](../ported/skills/code-simplification-zh/) | 行为不变地让代码更好读：五原则，一次一改并跑测试 | `code-simplification-zh` |
+| [五轴代码评审](../ported/skills/code-review-five-axis-zh/) | 正确性、可读性、架构、安全、性能五轴评审，意见分级 | `code-review-five-axis-zh` |
+| [代码评审（双轴）](../ported/skills/code-review-zh/) | 规范与坏味道、是否实现需求两轴分开评审，脚本预扫密钥等 | `code-review-zh` |
+| [接收代码评审意见](../ported/skills/receiving-code-review-zh/) | 把评审意见当技术输入：看不懂先问，该反驳用技术理由，逐条验证 | `code-review-response-zh` |
+
+### Git 工作流
+
+4 个。主干开发、工作树隔离、解冲突、分支收尾。
+
+| 中文名 | 一句话 | slug |
+|---|---|---|
+| [Git 工作流与版本管理](../ported/skills/git-workflow-zh/) | 主干开发、短分支、原子提交、语义化版本与面向人的 changelog | `git-workflow-zh` |
+| [Git 工作树隔离工作区](../ported/skills/using-git-worktrees-zh/) | 动手前确保在隔离工作区：建 worktree、装依赖、跑基线测试 | `git-worktree-workflow-zh` |
+| [合并冲突解决](../ported/skills/merge-conflicts-zh/) | 五步解 merge/rebase 冲突：追双方意图，逐块保留不发明行为 | `merge-conflicts-zh` |
+| [开发分支收尾](../ported/skills/finishing-a-development-branch-zh/) | 实现完成后先验证测试，再在本地合并、发 PR、原样保留中三选一 | `dev-branch-finishing-zh` |
+
+### 上线运维与安全
+
+5 个。CI/CD 门禁、渐进发布与回滚、下线迁移、可观测性、安全加固。
+
+| 中文名 | 一句话 | slug |
+|---|---|---|
+| [CI/CD 与自动化门禁](../ported/skills/ci-cd-zh/) | 质量门禁自动化：lint 到 E2E 一个不跳，预览部署与分阶段发布 | `ci-cd-zh` |
+| [上线发布（清单·灰度·回滚）](../ported/skills/shipping-launch-zh/) | 可逆、可观测、渐进地发布：发布前清单、灰度阈值、回滚条件 | `shipping-launch-zh` |
+| [下线与迁移（扩展-收缩）](../ported/skills/deprecation-migration-zh/) | 安全下线老系统与旧接口：绞杀者模式、expand/contract 不停机改名 | `deprecation-migration-zh` |
+| [可观测性与埋点](../ported/skills/observability-zh/) | 先写值班会问的问题再埋点：结构化日志、RED/USE 指标、症状告警 | `observability-zh` |
+| [安全加固（威胁建模到 LLM 安全）](../ported/skills/security-hardening-zh/) | 先威胁建模再加固：OWASP、SSRF、依赖审计、LLM 输出当不可信输入 | `security-hardening-zh` |
+
+### Agent 与上下文工程
+
+10 个。上下文预算、退化与压缩、记忆、工具设计、给 Agent 写文档、子代理编排。
+
+| 中文名 | 一句话 | slug |
+|---|---|---|
+| [上下文工程基础](../ported/skills/context-fundamentals-zh/) | 把上下文当有限的注意力预算：信息量优先、关键约束放首尾 | `context-fundamentals-zh` |
+| [上下文工程（规则文件与预算）](../ported/skills/context-engineering-zh/) | 让 Agent 适时看到对的信息：五层上下文、规则文件模板、信任分级 | `context-engineering-zh` |
+| [上下文退化诊断](../ported/skills/context-degradation-zh/) | 诊断上下文失效：中间迷失、投毒、干扰、混淆、冲突五种模式 | `context-degradation-zh` |
+| [上下文压缩策略](../ported/skills/context-compression-zh/) | 长会话压缩不丢关键信息：按任务算 token，先保产物轨迹 | `context-compression-strategies-zh` |
+| [Agent 记忆系统设计](../ported/skills/memory-systems-zh/) | 让 Agent 跨会话保持连续：记忆分层、按检索形状选框架 | `memory-systems-zh` |
+| [面向 Agent 的工具设计](../ported/skills/tool-design-zh/) | 工具即契约：合并重叠工具、一致命名、面向恢复的错误信息 | `tool-design-zh` |
+| [给 Agent 写文档（技能与规则文件）](../ported/skills/writing-for-agents-zh/) | 让技能与 AGENTS.md 每次都被正确读取：信息层级与渐进披露 | `writing-for-agents-zh` |
+| [会话交接单](../ported/skills/handoff-doc-zh/) | 把当前对话压成下一个 Agent 或同事能直接接手的交接单 | `handoff-doc-zh` |
+| [并行派发子代理](../ported/skills/dispatching-parallel-agents-zh/) | 互相独立的问题一次分派给多个子代理：切分、提示词、冲突检查 | `parallel-agent-dispatch-zh` |
+| [子代理驱动开发](../ported/skills/subagent-driven-development-zh/) | 实施计划驱动子代理流水线：每任务新实现者、双判定评审、账本抗压缩 | `subagent-driven-development-zh` |
