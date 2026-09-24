@@ -1,0 +1,30 @@
+[
+ {
+  "slug": "video-frame-extract",
+  "query": "视频抽帧",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-24T10:42"
+ },
+ {
+  "slug": "audio-editing",
+  "query": "音频剪辑",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-24T10:42"
+ },
+ {
+  "slug": "github-cli-ops",
+  "query": "GitHub 操作",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-24T10:42"
+ },
+ {
+  "slug": "morning-briefing",
+  "query": "晨间简报",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-24T10:42"
+ }
+]
