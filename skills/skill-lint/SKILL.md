@@ -2,8 +2,8 @@
 name: skill-lint
 description: 技能体检、SKILL.md 质量打分、给 Skill 提可发现性与结构建议。当用户说「帮我看看这个技能写得怎么样」「为什么我的技能没人下载」「SKILL.md 怎么写才容易被搜到」「检查一下技能的 frontmatter」「发布前体检」「批量给技能打分」时使用。脚本从五个维度各 20 分打分：可发现性（description 是否说清什么时候用、触发词与同义词、tags）、结构（何时用/流程/产出/边界四节、篇幅）、可执行性（命令块、引用的脚本存在）、合规（frontmatter 必填、无扩展名文件、复刻有 ATTRIBUTION、无密钥）、示例（examples 数量与描述一致性），并给出逐条修改建议。零依赖。
 author: Captain
-version: 0.1.0
-display_name: "技能体检（SKILL.md 打分）"
+version: 0.1.1
+display_name: "技能体检"
 display_name_en: "Skill Lint"
 description_zh: "五维度给 SKILL.md 打分并给修改建议：可发现性、结构、可执行性、合规、示例；适合发布前自检与批量体检。"
 description_en: "Score a SKILL.md on discoverability, structure, executability, compliance and examples, with concrete fix suggestions; for pre-publish checks and batch audits."
