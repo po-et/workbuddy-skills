@@ -512,3 +512,12 @@ gh pr create --repo AlephAITech/WorkBuddyGuide --base "$BASE" --head "po-et:case
 | audio-editing | 247927 | 10:43:52 |
 | github-cli-ops | 247932 | 10:45:08 |
 | morning-briefing | 247935 | 10:46:24 |
+
+### SkillHub wave4b（09-24）（2026-09-24，4 个，机器审核中）
+
+| slug | skillId | 发布时间 |
+|---|---|---|
+| reduce-ai-tone | 247926 | 10:43:46 |
+| excel-processing | 247931 | 10:45:01 |
+| word-formatting | 247933 | 10:46:17 |
+| pptx-making | 247939 | 10:47:32 |
