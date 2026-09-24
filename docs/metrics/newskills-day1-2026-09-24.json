@@ -1,0 +1,462 @@
+[
+ {
+  "slug": "reflection-letter",
+  "query": "检讨书",
+  "rank": 1,
+  "dl": 4,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "content-creation"
+ },
+ {
+  "slug": "english-email",
+  "query": "英文邮件",
+  "rank": 1,
+  "dl": 4,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "office-efficiency"
+ },
+ {
+  "slug": "leave-request-note",
+  "query": "请假条",
+  "rank": 1,
+  "dl": 3,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "office-efficiency"
+ },
+ {
+  "slug": "event-host-script",
+  "query": "主持词",
+  "rank": 1,
+  "dl": 3,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "content-creation"
+ },
+ {
+  "slug": "kpi-design",
+  "query": "KPI 制定",
+  "rank": 1,
+  "dl": 2,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "business-ops"
+ },
+ {
+  "slug": "job-description-writer",
+  "query": "招聘 JD",
+  "rank": 1,
+  "dl": 4,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "content-creation"
+ },
+ {
+  "slug": "onboarding-guide",
+  "query": "入职指南",
+  "rank": 1,
+  "dl": 3,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "business-ops"
+ },
+ {
+  "slug": "meeting-transcript-cleanup",
+  "query": "会议录音整理",
+  "rank": 1,
+  "dl": 3,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "office-efficiency"
+ },
+ {
+  "slug": "long-doc-summary",
+  "query": "长文总结",
+  "rank": 1,
+  "dl": 3,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "knowledge-management"
+ },
+ {
+  "slug": "math-problem-tutor",
+  "query": "数学题",
+  "rank": 1,
+  "dl": 4,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "education"
+ },
+ {
+  "slug": "vocab-memorization-plan",
+  "query": "背单词",
+  "rank": 1,
+  "dl": 6,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "education"
+ },
+ {
+  "slug": "coding-for-beginners",
+  "query": "编程入门",
+  "rank": 1,
+  "dl": 5,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "education"
+ },
+ {
+  "slug": "questionnaire-design",
+  "query": "问卷设计",
+  "rank": 1,
+  "dl": 3,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "data-analysis"
+ },
+ {
+  "slug": "interview-outline",
+  "query": "访谈提纲",
+  "rank": 1,
+  "dl": 3,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "content-creation"
+ },
+ {
+  "slug": "office-automation-scripts",
+  "query": "自动化办公",
+  "rank": 1,
+  "dl": 10,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "office-efficiency"
+ },
+ {
+  "slug": "shopping-list-planner",
+  "query": "购物清单",
+  "rank": 1,
+  "dl": 7,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "life-service"
+ },
+ {
+  "slug": "image-alt-description",
+  "query": "图片描述",
+  "rank": 1,
+  "dl": 3,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "content-creation"
+ },
+ {
+  "slug": "ui-microcopy",
+  "query": "UI 文案",
+  "rank": 1,
+  "dl": 4,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "content-creation"
+ },
+ {
+  "slug": "python-script-writer",
+  "query": "Python 脚本",
+  "rank": 1,
+  "dl": 4,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "dev-programming"
+ },
+ {
+  "slug": "sql-generation-helper",
+  "query": "SQL 生成",
+  "rank": 1,
+  "dl": 7,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "dev-programming"
+ },
+ {
+  "slug": "thesis-opening-report",
+  "query": "开题报告",
+  "rank": 1,
+  "dl": 9,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "education"
+ },
+ {
+  "slug": "driving-test-prep",
+  "query": "驾照考试",
+  "rank": 1,
+  "dl": 5,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "education"
+ },
+ {
+  "slug": "japanese-learning-plan",
+  "query": "日语学习",
+  "rank": 1,
+  "dl": 7,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "education"
+ },
+ {
+  "slug": "birthday-party-planner",
+  "query": "生日策划",
+  "rank": 1,
+  "dl": 5,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "life-service"
+ },
+ {
+  "slug": "dog-care-basics",
+  "query": "养狗",
+  "rank": 1,
+  "dl": 6,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "life-service"
+ },
+ {
+  "slug": "car-buying-checklist",
+  "query": "买车",
+  "rank": 1,
+  "dl": 4,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "life-service"
+ },
+ {
+  "slug": "meeting-arrangement",
+  "query": "会议安排",
+  "rank": 1,
+  "dl": 7,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "office-efficiency"
+ },
+ {
+  "slug": "report-making",
+  "query": "报表制作",
+  "rank": 1,
+  "dl": 3,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "data-analysis"
+ },
+ {
+  "slug": "json-formatting",
+  "query": "JSON 格式化",
+  "rank": 1,
+  "dl": 7,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "dev-programming"
+ },
+ {
+  "slug": "markdown-conversion",
+  "query": "Markdown 转换",
+  "rank": 1,
+  "dl": 3,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "office-efficiency"
+ },
+ {
+  "slug": "salary-raise-request",
+  "query": "加薪申请",
+  "rank": 1,
+  "dl": 3,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "business-ops"
+ },
+ {
+  "slug": "resignation-conversation",
+  "query": "离职谈话",
+  "rank": 1,
+  "dl": 6,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "business-ops"
+ },
+ {
+  "slug": "team-building-plan",
+  "query": "团建方案",
+  "rank": 1,
+  "dl": 5,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "business-ops"
+ },
+ {
+  "slug": "new-hire-mentoring",
+  "query": "新人带教",
+  "rank": 1,
+  "dl": 7,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "business-ops"
+ },
+ {
+  "slug": "after-viewing-essay",
+  "query": "观后感",
+  "rank": 1,
+  "dl": 3,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "content-creation"
+ },
+ {
+  "slug": "debate-speech",
+  "query": "辩论稿",
+  "rank": 1,
+  "dl": 20,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "content-creation"
+ },
+ {
+  "slug": "radio-script",
+  "query": "广播稿",
+  "rank": 1,
+  "dl": 7,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "content-creation"
+ },
+ {
+  "slug": "graduation-speech",
+  "query": "毕业致辞",
+  "rank": 1,
+  "dl": 2,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "content-creation"
+ },
+ {
+  "slug": "kids-reading-plan",
+  "query": "阅读计划",
+  "rank": 1,
+  "dl": 6,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "education"
+ },
+ {
+  "slug": "kids-screen-time",
+  "query": "手机管理",
+  "rank": 1,
+  "dl": 2,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "life-service"
+ },
+ {
+  "slug": "kids-coding",
+  "query": "儿童编程",
+  "rank": 1,
+  "dl": 7,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "education"
+ },
+ {
+  "slug": "gift-list",
+  "query": "礼物清单",
+  "rank": 1,
+  "dl": 5,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "life-service"
+ },
+ {
+  "slug": "sleep-plan",
+  "query": "睡眠计划",
+  "rank": 1,
+  "dl": 2,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "life-service"
+ },
+ {
+  "slug": "running-for-beginners",
+  "query": "跑步入门",
+  "rank": 1,
+  "dl": 3,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "life-service"
+ },
+ {
+  "slug": "renting-guide",
+  "query": "租房攻略",
+  "rank": 1,
+  "dl": 2,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "life-service"
+ },
+ {
+  "slug": "new-product-copy",
+  "query": "上新文案",
+  "rank": 1,
+  "dl": 5,
+  "inst": 0,
+  "star": 0,
+  "cmt": 0,
+  "cat": "content-creation"
+ }
+]
