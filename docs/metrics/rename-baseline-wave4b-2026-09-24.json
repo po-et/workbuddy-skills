@@ -1,0 +1,30 @@
+[
+ {
+  "slug": "reduce-ai-tone",
+  "query": "降AI味",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-24T10:43"
+ },
+ {
+  "slug": "excel-processing",
+  "query": "Excel 处理",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-24T10:43"
+ },
+ {
+  "slug": "word-formatting",
+  "query": "Word 排版",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-24T10:43"
+ },
+ {
+  "slug": "pptx-making",
+  "query": "PPT 制作",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-24T10:43"
+ }
+]
