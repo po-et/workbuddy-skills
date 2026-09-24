@@ -19,101 +19,101 @@ skillhub install renting-guide --namespace indiv-captain       # 租房攻略
 
 25 个：公文、汇报、邮件、检讨与请假；求职、加薪与离职；招聘、入职与带人；会议、调研与各类文案；文风改写去AI味。
 
-| 中文名 | 一句话 | slug |
+| 中文名 | 一句话 | SkillHub 页面（可收藏 / 安装） |
 |---|---|---|
-| [公文写作](skills/gov-doc-expert/) | 通知、请示、报告、纪要、述职等公文：选文种、定格式、素材加工成稿 | `gov-doc-expert` |
-| [PPT汇报演示](skills/presentation-expert/) | 整场汇报：先定受众要做的决定，搭故事线、选图表、写讲稿 | `presentation-expert` |
-| [英文邮件](skills/english-email/) | 商务英文邮件：七种意图的结构与句式、三档语气，附中式英语自查 | `english-email` |
-| [检讨书](skills/reflection-letter/) | 检讨书与情况说明：按事实、责任、影响、整改四层写，附三套模板 | `reflection-letter` |
-| [请假条](skills/leave-request-note/) | 请假条：学校、公司两套填空格式，各类假别的写法差异与常附材料 | `leave-request-note` |
-| [简历优化助手](skills/resume-job-expert/) | 整条求职链路：按 JD 改简历、投递、各轮面试、offer 比较与谈薪 | `resume-job-expert` |
-| [职场防骗](skills/workplace-antiscam-expert/) | 识别求职与职场骗局：招聘收费、培训贷、刷单、冒充领导转账等 | `workplace-antiscam-expert` |
-| [加薪申请](skills/salary-raise-request/) | 准备加薪沟通：盘点可举证的成果、选时机、三段式谈，附申请模板 | `salary-raise-request` |
-| [离职谈话](skills/resignation-conversation/) | 离职谈话：员工怎么提、被挽留怎么回；管理者怎么谈、交接怎么排 | `resignation-conversation` |
-| [招聘 JD](skills/job-description-writer/) | 写招聘 JD：三段式结构、写清薪资区间，排查歧视性表述，附三份模板 | `job-description-writer` |
-| [入职指南](skills/onboarding-guide/) | 给新同事写入职指南：按首日、首周、首月列清单，含导师机制与模板 | `onboarding-guide` |
-| [新人带教](skills/new-hire-mentoring/) | 带教新同事：30/60/90 天目标、每周一对一、由易到难排任务、给反馈 | `new-hire-mentoring` |
-| [KPI 制定](skills/kpi-design/) | 制定团队或岗位 KPI：从上级目标拆指标，过 SMART，定权重与口径 | `kpi-design` |
-| [团建方案](skills/team-building-plan/) | 团建方案：先定目的，按预算与人数选形式，附三份模板与避雷清单 | `team-building-plan` |
-| [会议安排](skills/meeting-arrangement/) | 安排会议：先判断要不要开，再定目标、参会人与议程，附议程模板 | `meeting-arrangement` |
-| [会议录音整理](skills/meeting-transcript-cleanup/) | 会议转写稿整理成纪要：按议题重组，抽出决议、待办与负责人 | `meeting-transcript-cleanup` |
-| [长文总结](skills/long-doc-summary/) | 长文总结：按读者与用途出 100/300/1000 字三版，关键数字标出处 | `long-doc-summary` |
-| [访谈提纲](skills/interview-outline/) | 用户与专家访谈提纲：主线只问过去的具体行为，附追问句式与记录模板 | `interview-outline` |
-| [问卷设计](skills/questionnaire-design/) | 问卷设计：从调研目标推出题目，选题型、排题序，排查诱导与双重提问 | `questionnaire-design` |
-| [主持词](skills/event-host-script/) | 年会、婚礼、发布会等六类活动主持词：开场、串场、收尾与冷场话术 | `event-host-script` |
-| [广播稿](skills/radio-script/) | 校园、社区、企业广播稿：开场与串联词，书面稿改口语，附填空模板 | `radio-script` |
-| [上新文案](skills/new-product-copy/) | 新品上市文案：参数转卖点，改写成详情页、推文与短视频口播脚本 | `new-product-copy` |
-| [UI 文案](skills/ui-microcopy/) | 界面文案：按钮、空状态、错误提示、确认弹窗等的模板与中英对照 | `ui-microcopy` |
-| [图片描述](skills/image-alt-description/) | 给图片写描述：无障碍 alt 文本、商品图、社媒配文、图表文字化 | `image-alt-description` |
-| [降AI味](skills/reduce-ai-tone/) | 12 条清单认出中文 AI 腔，按六步改写，附脚本统计套话与句长 | `reduce-ai-tone` |
+| [公文写作](skills/gov-doc-expert/) | 通知、请示、报告、纪要、述职等公文：选文种、定格式、素材加工成稿 | [`gov-doc-expert`](https://skillhub.cn/skills/@indiv-captain/gov-doc-expert) |
+| [PPT汇报演示](skills/presentation-expert/) | 整场汇报：先定受众要做的决定，搭故事线、选图表、写讲稿 | [`presentation-expert`](https://skillhub.cn/skills/@indiv-captain/presentation-expert) |
+| [英文邮件](skills/english-email/) | 商务英文邮件：七种意图的结构与句式、三档语气，附中式英语自查 | [`english-email`](https://skillhub.cn/skills/@indiv-captain/english-email) |
+| [检讨书](skills/reflection-letter/) | 检讨书与情况说明：按事实、责任、影响、整改四层写，附三套模板 | [`reflection-letter`](https://skillhub.cn/skills/@indiv-captain/reflection-letter) |
+| [请假条](skills/leave-request-note/) | 请假条：学校、公司两套填空格式，各类假别的写法差异与常附材料 | [`leave-request-note`](https://skillhub.cn/skills/@indiv-captain/leave-request-note) |
+| [简历优化助手](skills/resume-job-expert/) | 整条求职链路：按 JD 改简历、投递、各轮面试、offer 比较与谈薪 | [`resume-job-expert`](https://skillhub.cn/skills/@indiv-captain/resume-job-expert) |
+| [职场防骗](skills/workplace-antiscam-expert/) | 识别求职与职场骗局：招聘收费、培训贷、刷单、冒充领导转账等 | [`workplace-antiscam-expert`](https://skillhub.cn/skills/@indiv-captain/workplace-antiscam-expert) |
+| [加薪申请](skills/salary-raise-request/) | 准备加薪沟通：盘点可举证的成果、选时机、三段式谈，附申请模板 | [`salary-raise-request`](https://skillhub.cn/skills/@indiv-captain/salary-raise-request) |
+| [离职谈话](skills/resignation-conversation/) | 离职谈话：员工怎么提、被挽留怎么回；管理者怎么谈、交接怎么排 | [`resignation-conversation`](https://skillhub.cn/skills/@indiv-captain/resignation-conversation) |
+| [招聘 JD](skills/job-description-writer/) | 写招聘 JD：三段式结构、写清薪资区间，排查歧视性表述，附三份模板 | [`job-description-writer`](https://skillhub.cn/skills/@indiv-captain/job-description-writer) |
+| [入职指南](skills/onboarding-guide/) | 给新同事写入职指南：按首日、首周、首月列清单，含导师机制与模板 | [`onboarding-guide`](https://skillhub.cn/skills/@indiv-captain/onboarding-guide) |
+| [新人带教](skills/new-hire-mentoring/) | 带教新同事：30/60/90 天目标、每周一对一、由易到难排任务、给反馈 | [`new-hire-mentoring`](https://skillhub.cn/skills/@indiv-captain/new-hire-mentoring) |
+| [KPI 制定](skills/kpi-design/) | 制定团队或岗位 KPI：从上级目标拆指标，过 SMART，定权重与口径 | [`kpi-design`](https://skillhub.cn/skills/@indiv-captain/kpi-design) |
+| [团建方案](skills/team-building-plan/) | 团建方案：先定目的，按预算与人数选形式，附三份模板与避雷清单 | [`team-building-plan`](https://skillhub.cn/skills/@indiv-captain/team-building-plan) |
+| [会议安排](skills/meeting-arrangement/) | 安排会议：先判断要不要开，再定目标、参会人与议程，附议程模板 | [`meeting-arrangement`](https://skillhub.cn/skills/@indiv-captain/meeting-arrangement) |
+| [会议录音整理](skills/meeting-transcript-cleanup/) | 会议转写稿整理成纪要：按议题重组，抽出决议、待办与负责人 | [`meeting-transcript-cleanup`](https://skillhub.cn/skills/@indiv-captain/meeting-transcript-cleanup) |
+| [长文总结](skills/long-doc-summary/) | 长文总结：按读者与用途出 100/300/1000 字三版，关键数字标出处 | [`long-doc-summary`](https://skillhub.cn/skills/@indiv-captain/long-doc-summary) |
+| [访谈提纲](skills/interview-outline/) | 用户与专家访谈提纲：主线只问过去的具体行为，附追问句式与记录模板 | [`interview-outline`](https://skillhub.cn/skills/@indiv-captain/interview-outline) |
+| [问卷设计](skills/questionnaire-design/) | 问卷设计：从调研目标推出题目，选题型、排题序，排查诱导与双重提问 | [`questionnaire-design`](https://skillhub.cn/skills/@indiv-captain/questionnaire-design) |
+| [主持词](skills/event-host-script/) | 年会、婚礼、发布会等六类活动主持词：开场、串场、收尾与冷场话术 | [`event-host-script`](https://skillhub.cn/skills/@indiv-captain/event-host-script) |
+| [广播稿](skills/radio-script/) | 校园、社区、企业广播稿：开场与串联词，书面稿改口语，附填空模板 | [`radio-script`](https://skillhub.cn/skills/@indiv-captain/radio-script) |
+| [上新文案](skills/new-product-copy/) | 新品上市文案：参数转卖点，改写成详情页、推文与短视频口播脚本 | [`new-product-copy`](https://skillhub.cn/skills/@indiv-captain/new-product-copy) |
+| [UI 文案](skills/ui-microcopy/) | 界面文案：按钮、空状态、错误提示、确认弹窗等的模板与中英对照 | [`ui-microcopy`](https://skillhub.cn/skills/@indiv-captain/ui-microcopy) |
+| [图片描述](skills/image-alt-description/) | 给图片写描述：无障碍 alt 文本、商品图、社媒配文、图表文字化 | [`image-alt-description`](https://skillhub.cn/skills/@indiv-captain/image-alt-description) |
+| [降AI味](skills/reduce-ai-tone/) | 12 条清单认出中文 AI 腔，按六步改写，附脚本统计套话与句长 | [`reduce-ai-tone`](https://skillhub.cn/skills/@indiv-captain/reduce-ai-tone) |
 
 ### 学习与考试
 
 11 个：论文与学生写作、演讲与辩论、单词与日语、数学题、编程入门、驾考，以及给家长的孩子学习计划。
 
-| 中文名 | 一句话 | slug |
+| 中文名 | 一句话 | SkillHub 页面（可收藏 / 安装） |
 |---|---|---|
-| [开题报告](skills/thesis-opening-report/) | 开题报告六部分的填空模板与示例，附导师常打回的 8 种情况与改法 | `thesis-opening-report` |
-| [观后感](skills/after-viewing-essay/) | 观后感：从打动你的一个细节写起、不复述剧情，附学生版与成人版模板 | `after-viewing-essay` |
-| [辩论稿](skills/debate-speech/) | 辩论赛发言稿：一辩立论、攻辩问题链、自由辩分工、四辩结辩 | `debate-speech` |
-| [毕业致辞](skills/graduation-speech/) | 毕业致辞：学生、教师、家长三种身份，用故事、共同记忆与期许搭全篇 | `graduation-speech` |
-| [背单词](skills/vocab-memorization-plan/) | 背单词计划：按目标和每天可用时间算新词量，按间隔复习排期 | `vocab-memorization-plan` |
-| [日语学习](skills/japanese-learning-plan/) | 日语零基础到 N4/N3：首周拿下假名，沿语法主线推进，附两版日程 | `japanese-learning-plan` |
-| [数学题](skills/math-problem-tutor/) | 中小学数学题讲解：列已知与所求、分步推导、代回验算，不代做作业 | `math-problem-tutor` |
-| [编程入门](skills/coding-for-beginners/) | 零基础编程入门：按目标选语言，前 30 天每日任务与每周一个小项目 | `coding-for-beginners` |
-| [驾照考试](skills/driving-test-prep/) | 驾照四个科目的备考方法与考前一周计划，只教方法、不给题目答案 | `driving-test-prep` |
-| [阅读计划](skills/kids-reading-plan/) | 3–12 岁分三档的阅读计划：每日时长、共读比例、选书标准、记录表 | `kids-reading-plan` |
-| [儿童编程](skills/kids-coding/) | 6–12 岁儿童编程：图形化还是 Python 起步，8 周计划，家长怎么陪 | `kids-coding` |
+| [开题报告](skills/thesis-opening-report/) | 开题报告六部分的填空模板与示例，附导师常打回的 8 种情况与改法 | [`thesis-opening-report`](https://skillhub.cn/skills/@indiv-captain/thesis-opening-report) |
+| [观后感](skills/after-viewing-essay/) | 观后感：从打动你的一个细节写起、不复述剧情，附学生版与成人版模板 | [`after-viewing-essay`](https://skillhub.cn/skills/@indiv-captain/after-viewing-essay) |
+| [辩论稿](skills/debate-speech/) | 辩论赛发言稿：一辩立论、攻辩问题链、自由辩分工、四辩结辩 | [`debate-speech`](https://skillhub.cn/skills/@indiv-captain/debate-speech) |
+| [毕业致辞](skills/graduation-speech/) | 毕业致辞：学生、教师、家长三种身份，用故事、共同记忆与期许搭全篇 | [`graduation-speech`](https://skillhub.cn/skills/@indiv-captain/graduation-speech) |
+| [背单词](skills/vocab-memorization-plan/) | 背单词计划：按目标和每天可用时间算新词量，按间隔复习排期 | [`vocab-memorization-plan`](https://skillhub.cn/skills/@indiv-captain/vocab-memorization-plan) |
+| [日语学习](skills/japanese-learning-plan/) | 日语零基础到 N4/N3：首周拿下假名，沿语法主线推进，附两版日程 | [`japanese-learning-plan`](https://skillhub.cn/skills/@indiv-captain/japanese-learning-plan) |
+| [数学题](skills/math-problem-tutor/) | 中小学数学题讲解：列已知与所求、分步推导、代回验算，不代做作业 | [`math-problem-tutor`](https://skillhub.cn/skills/@indiv-captain/math-problem-tutor) |
+| [编程入门](skills/coding-for-beginners/) | 零基础编程入门：按目标选语言，前 30 天每日任务与每周一个小项目 | [`coding-for-beginners`](https://skillhub.cn/skills/@indiv-captain/coding-for-beginners) |
+| [驾照考试](skills/driving-test-prep/) | 驾照四个科目的备考方法与考前一周计划，只教方法、不给题目答案 | [`driving-test-prep`](https://skillhub.cn/skills/@indiv-captain/driving-test-prep) |
+| [阅读计划](skills/kids-reading-plan/) | 3–12 岁分三档的阅读计划：每日时长、共读比例、选书标准、记录表 | [`kids-reading-plan`](https://skillhub.cn/skills/@indiv-captain/kids-reading-plan) |
+| [儿童编程](skills/kids-coding/) | 6–12 岁儿童编程：图形化还是 Python 起步，8 周计划，家长怎么陪 | [`kids-coding`](https://skillhub.cn/skills/@indiv-captain/kids-coding) |
 
 ### 家庭与生活
 
 13 个：理财、保险与个税；租房、买车与购物；送礼与生日；孩子的屏幕时间、养狗、跑步与睡眠；晨间待办简报。
 
-| 中文名 | 一句话 | slug |
+| 中文名 | 一句话 | SkillHub 页面（可收藏 / 安装） |
 |---|---|---|
-| [理财入门](skills/financial-literacy-expert/) | 看懂年化、复利、费率与产品怎么赚怎么亏，识别保本稳赚话术 | `financial-literacy-expert` |
-| [保单解读](skills/insurance-policy-expert/) | 读懂手上的保单：免责条款、健康告知、理赔与拒赔、续保与退保 | `insurance-policy-expert` |
-| [个税申报](skills/tax-filing-expert/) | 个税年度汇算：办不办、专项附加扣除、年终奖计税、退税被驳回 | `tax-filing-expert` |
-| [租房攻略](skills/renting-guide/) | 租房全流程清单：定预算、看房检查、签约核对、入住交接、退租拿押金 | `renting-guide` |
-| [买车](skills/car-buying-checklist/) | 买车决策清单：拆预算、定新车二手与油电，附试驾与合同交付核对项 | `car-buying-checklist` |
-| [购物清单](skills/shopping-list-planner/) | 按场景生成可勾选的分类购物清单：按动线排序、设预算、防重复买 | `shopping-list-planner` |
-| [礼物清单](skills/gift-list/) | 按对象与预算定礼物方向（只给品类），附卡片文案与避雷清单 | `gift-list` |
-| [生日策划](skills/birthday-party-planner/) | 生日策划：按寿星与预算定主题场地，三段时间线，附三份现成方案 | `birthday-party-planner` |
-| [手机管理](skills/kids-screen-time/) | 给家长的孩子屏幕规则：和孩子一起写约定，附冲突时的说法与复盘 | `kids-screen-time` |
-| [养狗](skills/dog-care-basics/) | 新手养狗：接狗准备、第一周安排、三项基础训练、疫苗驱虫常识 | `dog-care-basics` |
-| [跑步入门](skills/running-for-beginners/) | 零基础跑步 8 周计划：从跑 1 分钟走 2 分钟起步，到连续慢跑 30 分钟 | `running-for-beginners` |
-| [睡眠计划](skills/sleep-plan/) | 两周改善睡眠的作息计划：先钉住起床时间，附睡眠日志，不做诊断 | `sleep-plan` |
-| [晨间简报](skills/morning-briefing/) | 把待办、日程、消息按优先级整理成五段式简报，分三种长度 | `morning-briefing` |
+| [理财入门](skills/financial-literacy-expert/) | 看懂年化、复利、费率与产品怎么赚怎么亏，识别保本稳赚话术 | [`financial-literacy-expert`](https://skillhub.cn/skills/@indiv-captain/financial-literacy-expert) |
+| [保单解读](skills/insurance-policy-expert/) | 读懂手上的保单：免责条款、健康告知、理赔与拒赔、续保与退保 | [`insurance-policy-expert`](https://skillhub.cn/skills/@indiv-captain/insurance-policy-expert) |
+| [个税申报](skills/tax-filing-expert/) | 个税年度汇算：办不办、专项附加扣除、年终奖计税、退税被驳回 | [`tax-filing-expert`](https://skillhub.cn/skills/@indiv-captain/tax-filing-expert) |
+| [租房攻略](skills/renting-guide/) | 租房全流程清单：定预算、看房检查、签约核对、入住交接、退租拿押金 | [`renting-guide`](https://skillhub.cn/skills/@indiv-captain/renting-guide) |
+| [买车](skills/car-buying-checklist/) | 买车决策清单：拆预算、定新车二手与油电，附试驾与合同交付核对项 | [`car-buying-checklist`](https://skillhub.cn/skills/@indiv-captain/car-buying-checklist) |
+| [购物清单](skills/shopping-list-planner/) | 按场景生成可勾选的分类购物清单：按动线排序、设预算、防重复买 | [`shopping-list-planner`](https://skillhub.cn/skills/@indiv-captain/shopping-list-planner) |
+| [礼物清单](skills/gift-list/) | 按对象与预算定礼物方向（只给品类），附卡片文案与避雷清单 | [`gift-list`](https://skillhub.cn/skills/@indiv-captain/gift-list) |
+| [生日策划](skills/birthday-party-planner/) | 生日策划：按寿星与预算定主题场地，三段时间线，附三份现成方案 | [`birthday-party-planner`](https://skillhub.cn/skills/@indiv-captain/birthday-party-planner) |
+| [手机管理](skills/kids-screen-time/) | 给家长的孩子屏幕规则：和孩子一起写约定，附冲突时的说法与复盘 | [`kids-screen-time`](https://skillhub.cn/skills/@indiv-captain/kids-screen-time) |
+| [养狗](skills/dog-care-basics/) | 新手养狗：接狗准备、第一周安排、三项基础训练、疫苗驱虫常识 | [`dog-care-basics`](https://skillhub.cn/skills/@indiv-captain/dog-care-basics) |
+| [跑步入门](skills/running-for-beginners/) | 零基础跑步 8 周计划：从跑 1 分钟走 2 分钟起步，到连续慢跑 30 分钟 | [`running-for-beginners`](https://skillhub.cn/skills/@indiv-captain/running-for-beginners) |
+| [睡眠计划](skills/sleep-plan/) | 两周改善睡眠的作息计划：先钉住起床时间，附睡眠日志，不做诊断 | [`sleep-plan`](https://skillhub.cn/skills/@indiv-captain/sleep-plan) |
+| [晨间简报](skills/morning-briefing/) | 把待办、日程、消息按优先级整理成五段式简报，分三种长度 | [`morning-briefing`](https://skillhub.cn/skills/@indiv-captain/morning-briefing) |
 
 ### 数据与办公自动化
 
 12 个：报表、取数 SQL、一次性脚本与办公自动化；Excel、Word、PPT 这类文档处理；视频抽帧与音频剪辑；以及 CSV、JSON、Markdown 这类格式活。
 
-| 中文名 | 一句话 | slug |
+| 中文名 | 一句话 | SkillHub 页面（可收藏 / 安装） |
 |---|---|---|
-| [报表制作](skills/report-making/) | 做业务报表：先问读者要做的决定，写清指标口径，再搭表选图 | `report-making` |
-| [SQL 生成](skills/sql-generation-helper/) | 把取数需求写成只读 SQL：先确认表结构与口径，每条附说明与坑 | `sql-generation-helper` |
-| [Python 脚本](skills/python-script-writer/) | 写一次性 Python 脚本：先问清输入输出，给可运行骨架与三个模板 | `python-script-writer` |
-| [自动化办公](skills/office-automation-scripts/) | 先算自动化能不能回本，再在公式、宏、Python 间选工具，附模板 | `office-automation-scripts` |
-| [CSV 数据画像](skills/csv-profile/) | CSV/TSV 体检：逐列类型、空值率、分位数，汇总重复行与疑似个人信息 | `csv-profile` |
-| [JSON 格式化](skills/json-formatting/) | JSON 美化、压缩与报错定位，必填字段粗校验，与 YAML、CSV 互转 | `json-formatting` |
-| [Markdown 转换](skills/markdown-conversion/) | pandoc 互转 Markdown、Word、HTML、PDF，含中文排版设置 | `markdown-conversion` |
-| [Excel 处理](skills/excel-processing/) | 用 openpyxl 批量建表、筛选、写公式、合并 xlsx，附 8 个坑修法 | `excel-processing` |
-| [Word 排版](skills/word-formatting/) | 先样式后内容排版 Word：编号、题注、页码、目录，附三套常见规格 | `word-formatting` |
-| [PPT 制作](skills/pptx-making/) | 写故事线与结论式标题，按内容选版式配图表，附大纲模板与自检清单 | `pptx-making` |
-| [视频抽帧](skills/video-frame-extract/) | 用 ffmpeg 按时间点、间隔或关键帧截图抽帧，拼缩略图、转 GIF | `video-frame-extract` |
-| [音频剪辑](skills/audio-editing/) | 用 ffmpeg 裁剪拼接音频、转格式调音量、去静音、提取视频音轨 | `audio-editing` |
+| [报表制作](skills/report-making/) | 做业务报表：先问读者要做的决定，写清指标口径，再搭表选图 | [`report-making`](https://skillhub.cn/skills/@indiv-captain/report-making) |
+| [SQL 生成](skills/sql-generation-helper/) | 把取数需求写成只读 SQL：先确认表结构与口径，每条附说明与坑 | [`sql-generation-helper`](https://skillhub.cn/skills/@indiv-captain/sql-generation-helper) |
+| [Python 脚本](skills/python-script-writer/) | 写一次性 Python 脚本：先问清输入输出，给可运行骨架与三个模板 | [`python-script-writer`](https://skillhub.cn/skills/@indiv-captain/python-script-writer) |
+| [自动化办公](skills/office-automation-scripts/) | 先算自动化能不能回本，再在公式、宏、Python 间选工具，附模板 | [`office-automation-scripts`](https://skillhub.cn/skills/@indiv-captain/office-automation-scripts) |
+| [CSV 数据画像](skills/csv-profile/) | CSV/TSV 体检：逐列类型、空值率、分位数，汇总重复行与疑似个人信息 | [`csv-profile`](https://skillhub.cn/skills/@indiv-captain/csv-profile) |
+| [JSON 格式化](skills/json-formatting/) | JSON 美化、压缩与报错定位，必填字段粗校验，与 YAML、CSV 互转 | [`json-formatting`](https://skillhub.cn/skills/@indiv-captain/json-formatting) |
+| [Markdown 转换](skills/markdown-conversion/) | pandoc 互转 Markdown、Word、HTML、PDF，含中文排版设置 | [`markdown-conversion`](https://skillhub.cn/skills/@indiv-captain/markdown-conversion) |
+| [Excel 处理](skills/excel-processing/) | 用 openpyxl 批量建表、筛选、写公式、合并 xlsx，附 8 个坑修法 | [`excel-processing`](https://skillhub.cn/skills/@indiv-captain/excel-processing) |
+| [Word 排版](skills/word-formatting/) | 先样式后内容排版 Word：编号、题注、页码、目录，附三套常见规格 | [`word-formatting`](https://skillhub.cn/skills/@indiv-captain/word-formatting) |
+| [PPT 制作](skills/pptx-making/) | 写故事线与结论式标题，按内容选版式配图表，附大纲模板与自检清单 | [`pptx-making`](https://skillhub.cn/skills/@indiv-captain/pptx-making) |
+| [视频抽帧](skills/video-frame-extract/) | 用 ffmpeg 按时间点、间隔或关键帧截图抽帧，拼缩略图、转 GIF | [`video-frame-extract`](https://skillhub.cn/skills/@indiv-captain/video-frame-extract) |
+| [音频剪辑](skills/audio-editing/) | 用 ffmpeg 裁剪拼接音频、转格式调音量、去静音、提取视频音轨 | [`audio-editing`](https://skillhub.cn/skills/@indiv-captain/audio-editing) |
 
 ### 让 AI 助手更好用
 
 4 个：把踩过的坑记下来复用、按关键词搜技能、装前先扫风险、任务收尾主动提醒下一步。
 
-| 中文名 | 一句话 | slug |
+| 中文名 | 一句话 | SkillHub 页面（可收藏 / 安装） |
 |---|---|---|
-| [踩坑记录](skills/lessons-learned-log/) | 把出错、返工按现象、根因、做法记成条目，开工前按关键词检索 | `lessons-learned-log` |
-| [技能搜索](skills/skill-search-helper/) | 把需求改写成搜索词找候选技能，按匹配度等比较，给首选与备选 | `skill-search-helper` |
-| [安装前检查](skills/skill-preinstall-check/) | 装技能前静态扫描六类危险动作，按高中低列出风险信号，不作安全认证 | `skill-preinstall-check` |
-| [主动助手](skills/proactive-assistant/) | 任务收尾固定汇报四段与风险，主动提醒截止与矛盾，对外动作先征求同意 | `proactive-assistant` |
+| [踩坑记录](skills/lessons-learned-log/) | 把出错、返工按现象、根因、做法记成条目，开工前按关键词检索 | [`lessons-learned-log`](https://skillhub.cn/skills/@indiv-captain/lessons-learned-log) |
+| [技能搜索](skills/skill-search-helper/) | 把需求改写成搜索词找候选技能，按匹配度等比较，给首选与备选 | [`skill-search-helper`](https://skillhub.cn/skills/@indiv-captain/skill-search-helper) |
+| [安装前检查](skills/skill-preinstall-check/) | 装技能前静态扫描六类危险动作，按高中低列出风险信号，不作安全认证 | [`skill-preinstall-check`](https://skillhub.cn/skills/@indiv-captain/skill-preinstall-check) |
+| [主动助手](skills/proactive-assistant/) | 任务收尾固定汇报四段与风险，主动提醒截止与矛盾，对外动作先征求同意 | [`proactive-assistant`](https://skillhub.cn/skills/@indiv-captain/proactive-assistant) |
 
 ### 开发者与运维（分组索引）
 
