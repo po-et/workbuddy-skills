@@ -1,8 +1,8 @@
-# 技能索引（线上 168 个）
+# 技能索引（线上 180 个）
 
-生成日期：2026-09-23。唯一依据：[`docs/metrics/status-ns-2026-09-23.json`](metrics/status-ns-2026-09-23.json) 里 `"mine": true` 的 168 行（按 `indiv-captain` 命名空间读取的线上清单）。
+生成日期：2026-09-24。依据两份 ground truth：一，[`docs/metrics/status-ns-2026-09-23.json`](metrics/status-ns-2026-09-23.json) 里 `"mine": true` 的 168 行（2026-09-23 前的线上清单）；二，2026-09-24 新验证上线且排名第一的 12 个 slug，来自 [`rename-readout-wave4a-2026-09-24.json`](metrics/rename-readout-wave4a-2026-09-24.json)、[`rename-readout-wave4b-2026-09-24.json`](metrics/rename-readout-wave4b-2026-09-24.json)、[`rename-readout-wave4c-2026-09-24.json`](metrics/rename-readout-wave4c-2026-09-24.json) 三份文件的 `slug` 字段。
 
-分组与 [README](../README.md)「按场景找技能」一致：日常场景 → 开发者与运维 → 工程实践复刻系列。README 只完整列出日常场景，这里是全部 168 个。
+分组与 [README](../README.md)「按场景找技能」一致：日常场景 → 开发者与运维 → 工程实践复刻系列。README 只完整列出日常场景，这里是全部 180 个。
 
 **读表说明**
 
@@ -10,23 +10,23 @@
 - **一句话**：由源 `SKILL.md` 的 `description_zh` 缩写而来。
 - **slug**：SkillHub 上的 slug。目录名到 slug 的映射在 `tools/skillhub_prep.py` 的 `SLUGS` 里，没列进去的目录，slug 就是目录名。技能页地址形如 `https://skillhub.cn/skills/indiv-captain/<slug>`。
 - **安装**：`skillhub install <slug> --namespace indiv-captain`。`code-review-zh`、`pr-description`、`secrets-scan`、`skillhub-publish-helper` 这几个 slug 和其他作者的技能同名，不带 `--namespace` 可能装到别人的那个。
-- 日常场景 54 个里，除公文写作、PPT汇报演示、简历优化助手、职场防骗、理财入门、保单解读、个税申报、CSV 数据画像这 8 个，其余 46 个是 2026-09-23 新上线的（名单来自 `docs/metrics/rename-baseline-wave*-2026-09-23.json`）。
+- 日常场景 65 个里，除公文写作、PPT汇报演示、简历优化助手、职场防骗、理财入门、保单解读、个税申报、CSV 数据画像这 8 个，46 个是 2026-09-23 新上线的（名单来自 `docs/metrics/rename-baseline-wave*-2026-09-23.json`），另有 11 个是 2026-09-24 新上线的（名单来自 `docs/metrics/rename-readout-wave4a/b/c-2026-09-24.json`，含新分组「让 AI 助手更好用」的 4 个）。
 - 仓库里另有 19 个技能目录不在这份线上清单里，本索引不收录。
 
 | 部分 | 分组 | 个数 |
 |---|---|---|
-| [日常场景](#日常场景) | [职场写作与沟通](#职场写作与沟通)、[学习与考试](#学习与考试)、[家庭与生活](#家庭与生活)、[数据与办公自动化](#数据与办公自动化) | 54 |
-| [开发者与运维](#开发者与运维) | [研发总入口与方案评审](#研发总入口与方案评审)、[上线与发布检查](#上线与发布检查)、[线上排查与可观测](#线上排查与可观测)、[代码与仓库治理](#代码与仓库治理)、[接口与契约](#接口与契约)、[数据与文本处理](#数据与文本处理)、[Agent 与技能开发](#agent-与技能开发) | 55 |
+| [日常场景](#日常场景) | [职场写作与沟通](#职场写作与沟通)、[学习与考试](#学习与考试)、[家庭与生活](#家庭与生活)、[数据与办公自动化](#数据与办公自动化)、[让 AI 助手更好用](#让-ai-助手更好用) | 65 |
+| [开发者与运维](#开发者与运维) | [研发总入口与方案评审](#研发总入口与方案评审)、[上线与发布检查](#上线与发布检查)、[线上排查与可观测](#线上排查与可观测)、[代码与仓库治理](#代码与仓库治理)、[接口与契约](#接口与契约)、[数据与文本处理](#数据与文本处理)、[Agent 与技能开发](#agent-与技能开发) | 56 |
 | [工程实践复刻系列](#工程实践复刻系列) | [需求与方案](#需求与方案)、[文档研究与学习](#文档研究与学习)、[计划与执行](#计划与执行)、[测试调试与验证](#测试调试与验证)、[代码设计与评审](#代码设计与评审)、[Git 工作流](#git-工作流)、[上线运维与安全](#上线运维与安全)、[Agent 与上下文工程](#agent-与上下文工程) | 59 |
-| 合计 | | 168 |
+| 合计 | | 180 |
 
 ## 日常场景
 
-54 个，普通人日常会碰到的事：职场、学习、家庭生活、数据与办公。
+65 个，普通人日常会碰到的事：职场、学习、家庭生活、数据与办公。
 
 ### 职场写作与沟通
 
-24 个。公文、汇报、邮件、检讨与请假；求职、加薪与离职；招聘、入职与带人；会议、调研与各类文案。
+25 个。公文、汇报、邮件、检讨与请假；求职、加薪与离职；招聘、入职与带人；会议、调研与各类文案；文风改写去AI味。
 
 | 中文名 | 一句话 | slug |
 |---|---|---|
@@ -54,6 +54,7 @@
 | [上新文案](../skills/new-product-copy/) | 新品上市文案：参数转卖点，改写成详情页、推文与短视频口播脚本 | `new-product-copy` |
 | [UI 文案](../skills/ui-microcopy/) | 界面文案：按钮、空状态、错误提示、确认弹窗等的模板与中英对照 | `ui-microcopy` |
 | [图片描述](../skills/image-alt-description/) | 给图片写描述：无障碍 alt 文本、商品图、社媒配文、图表文字化 | `image-alt-description` |
+| [降AI味](../skills/reduce-ai-tone/) | 12 条清单认出中文 AI 腔，按六步改写，附脚本统计套话与句长 | `reduce-ai-tone` |
 
 ### 学习与考试
 
@@ -75,7 +76,7 @@
 
 ### 家庭与生活
 
-12 个。理财、保险与个税；租房、买车与购物；送礼与生日；孩子的屏幕时间、养狗、跑步与睡眠。
+13 个。理财、保险与个税；租房、买车与购物；送礼与生日；孩子的屏幕时间、养狗、跑步与睡眠；晨间待办简报。
 
 | 中文名 | 一句话 | slug |
 |---|---|---|
@@ -91,10 +92,11 @@
 | [养狗](../skills/dog-care-basics/) | 新手养狗：接狗准备、第一周安排、三项基础训练、疫苗驱虫常识 | `dog-care-basics` |
 | [跑步入门](../skills/running-for-beginners/) | 零基础跑步 8 周计划：从跑 1 分钟走 2 分钟起步，到连续慢跑 30 分钟 | `running-for-beginners` |
 | [睡眠计划](../skills/sleep-plan/) | 两周改善睡眠的作息计划：先钉住起床时间，附睡眠日志，不做诊断 | `sleep-plan` |
+| [晨间简报](../skills/morning-briefing/) | 把待办、日程、消息按优先级整理成五段式简报，分三种长度 | `morning-briefing` |
 
 ### 数据与办公自动化
 
-7 个。报表、取数 SQL、一次性脚本与办公自动化，以及 CSV、JSON、Markdown 这类格式活。
+12 个。报表、取数 SQL、一次性脚本与办公自动化；Excel、Word、PPT 这类文档处理；视频抽帧与音频剪辑；以及 CSV、JSON、Markdown 这类格式活。
 
 | 中文名 | 一句话 | slug |
 |---|---|---|
@@ -105,10 +107,26 @@
 | [CSV 数据画像](../skills/csv-profile/) | CSV/TSV 体检：逐列类型、空值率、分位数，汇总重复行与疑似个人信息 | `csv-profile` |
 | [JSON 格式化](../skills/json-formatting/) | JSON 美化、压缩与报错定位，必填字段粗校验，与 YAML、CSV 互转 | `json-formatting` |
 | [Markdown 转换](../skills/markdown-conversion/) | pandoc 互转 Markdown、Word、HTML、PDF，含中文排版设置 | `markdown-conversion` |
+| [Excel 处理](../skills/excel-processing/) | 用 openpyxl 批量建表、筛选、写公式、合并 xlsx，附 8 个坑修法 | `excel-processing` |
+| [Word 排版](../skills/word-formatting/) | 先样式后内容排版 Word：编号、题注、页码、目录，附三套常见规格 | `word-formatting` |
+| [PPT 制作](../skills/pptx-making/) | 写故事线与结论式标题，按内容选版式配图表，附大纲模板与自检清单 | `pptx-making` |
+| [视频抽帧](../skills/video-frame-extract/) | 用 ffmpeg 按时间点、间隔或关键帧截图抽帧，拼缩略图、转 GIF | `video-frame-extract` |
+| [音频剪辑](../skills/audio-editing/) | 用 ffmpeg 裁剪拼接音频、转格式调音量、去静音、提取视频音轨 | `audio-editing` |
+
+### 让 AI 助手更好用
+
+4 个。把踩过的坑记下来复用、按关键词搜技能、装前先扫风险、任务收尾主动提醒下一步。
+
+| 中文名 | 一句话 | slug |
+|---|---|---|
+| [踩坑记录](../skills/lessons-learned-log/) | 把出错、返工按现象、根因、做法记成条目，开工前按关键词检索 | `lessons-learned-log` |
+| [技能搜索](../skills/skill-search-helper/) | 把需求改写成搜索词找候选技能，按匹配度等比较，给首选与备选 | `skill-search-helper` |
+| [安装前检查](../skills/skill-preinstall-check/) | 装技能前静态扫描六类危险动作，按高中低列出风险信号，不作安全认证 | `skill-preinstall-check` |
+| [主动助手](../skills/proactive-assistant/) | 任务收尾固定汇报四段与风险，主动提醒截止与矛盾，对外动作先征求同意 | `proactive-assistant` |
 
 ## 开发者与运维
 
-55 个。`skills/` 下的原创研发技能。带脚本的那些不装 Agent 也能当命令行工具直接跑，见 README「命令行 30 秒上手」。
+56 个。`skills/` 下的原创研发技能。带脚本的那些不装 Agent 也能当命令行工具直接跑，见 README「命令行 30 秒上手」。
 
 ### 研发总入口与方案评审
 
@@ -162,7 +180,7 @@
 
 ### 代码与仓库治理
 
-11 个。提交、评审、分支、测试覆盖、技术债——仓库的长期健康度。
+12 个。提交、评审、分支、测试覆盖、技术债、GitHub 操作——仓库的长期健康度。
 
 | 中文名 | 一句话 | slug |
 |---|---|---|
@@ -177,6 +195,7 @@
 | [测试覆盖缺口](../skills/test-coverage-gap/) | 该先给哪些文件补测试：无测试的源码按改动热度排序，叠加覆盖率 | `test-coverage-gap` |
 | [flaky 测试识别](../skills/flaky-test-finder/) | 汇总多次 JUnit XML 报告，找出时过时挂的用例及其失败率与报错 | `flaky-test-finder` |
 | [技术债标记盘点](../skills/todo-debt-scan/) | 汇总 TODO/FIXME，用 git blame 算作者与年龄，出优先清单 | `todo-debt-scan` |
+| [GitHub 操作](../skills/github-cli-ops/) | 用 gh 命令行查 issue、PR 与 CI 日志，写操作先预览、确认再执行 | `github-cli-ops` |
 
 ### 接口与契约
 
@@ -210,7 +229,7 @@
 |---|---|---|
 | [Agent 工程](../skills/agent-engineering-expert/) | Agent 工程总入口：触发面、上下文预算、工具定义、子代理编排等 | `agent-engineering-expert` |
 | [技能编写](../skills/skill-author-expert/) | 技能从选题到上架的清单：frontmatter、触发面、slug 撞名、发布配额 | `skill-author-expert` |
-| [技能体检（SKILL.md 打分）](../skills/skill-lint/) | 从可发现性、结构、可执行性、合规、示例五个维度给 SKILL.md 打分 | `skill-lint-scorecard` |
+| [技能体检](../skills/skill-lint/) | 从可发现性、结构、可执行性、合规、示例五个维度给 SKILL.md 打分 | `skill-lint-scorecard` |
 | [SkillHub 发布助手](../skills/skillhub-publish-helper/) | 批量发布到 SkillHub：校验、剔除会被拒的文件、限速、记 skillId | `skillhub-publish-helper` |
 | [连接器构建助手](../skills/build-workbuddy-connector/) | 按 WorkBuddy 开放平台规范构建连接器：规范速查、骨架生成、校验 | `build-workbuddy-connector` |
 

@@ -1,0 +1,758 @@
+[
+ {
+  "cat": "智能体自我改进",
+  "q": "自我改进",
+  "cls": "已有",
+  "n_name": 8,
+  "n_exact": 0,
+  "top1_score": 0.075,
+  "top1": "self-improving agent",
+  "top3": [
+   "self-improving agent",
+   "自我改进（self-improving-agent）",
+   "自我改进智能体"
+  ]
+ },
+ {
+  "cat": "智能体自我改进",
+  "q": "自我反思",
+  "cls": "已有",
+  "n_name": 7,
+  "n_exact": 0,
+  "top1_score": 0.066,
+  "top1": "自我反思技能",
+  "top3": [
+   "自我反思技能",
+   "自我反思 · 经验萃取",
+   "自我反思 + 自我批评 + 自主学习 + 自组织记忆"
+  ]
+ },
+ {
+  "cat": "智能体自我改进",
+  "q": "经验沉淀",
+  "cls": "已有",
+  "n_name": 3,
+  "n_exact": 0,
+  "top1_score": 0.052,
+  "top1": "自我改进经验沉淀系统",
+  "top3": [
+   "自我改进经验沉淀系统",
+   "编程专家.Skill",
+   "self-improving agent"
+  ]
+ },
+ {
+  "cat": "智能体自我改进",
+  "q": "错题复盘",
+  "cls": "薄弱",
+  "n_name": 2,
+  "n_exact": 0,
+  "top1_score": 0.06,
+  "top1": "初中数学错题复盘助手",
+  "top3": [
+   "初中数学错题复盘助手",
+   "错题复盘与举一反三生成器",
+   "编程专家.Skill"
+  ]
+ },
+ {
+  "cat": "智能体自我改进",
+  "q": "踩坑记录",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "学习日志系统"
+  ]
+ },
+ {
+  "cat": "智能体自我改进",
+  "q": "经验库",
+  "cls": "已有",
+  "n_name": 7,
+  "n_exact": 0,
+  "top1_score": 0.053,
+  "top1": "招投标专家否决经验库（专家版）",
+  "top3": [
+   "招投标专家否决经验库（专家版）",
+   "方案模式经验库",
+   "风险预判经验库"
+  ]
+ },
+ {
+  "cat": "记忆",
+  "q": "长期记忆",
+  "cls": "已有",
+  "n_name": 8,
+  "n_exact": 0,
+  "top1_score": 0.061,
+  "top1": "长期记忆系统",
+  "top3": [
+   "长期记忆系统",
+   "Long Term Memory 长期记忆",
+   "MEMORY.md Manager - 长期记忆管理 (安全版)"
+  ]
+ },
+ {
+  "cat": "记忆",
+  "q": "记忆管理",
+  "cls": "已有",
+  "n_name": 8,
+  "n_exact": 2,
+  "top1_score": 0.111,
+  "top1": "记忆管理",
+  "top3": [
+   "记忆管理",
+   "记忆管理",
+   "记忆管理器"
+  ]
+ },
+ {
+  "cat": "记忆",
+  "q": "跨会话记忆",
+  "cls": "已有",
+  "n_name": 4,
+  "n_exact": 0,
+  "top1_score": 0.066,
+  "top1": "跨会话记忆桥",
+  "top3": [
+   "跨会话记忆桥",
+   "跨会话记忆 语义检索 持久化存储",
+   "跨会话记忆管理"
+  ]
+ },
+ {
+  "cat": "记忆",
+  "q": "知识图谱",
+  "cls": "已有",
+  "n_name": 7,
+  "n_exact": 1,
+  "top1_score": 0.1,
+  "top1": "知识图谱",
+  "top3": [
+   "知识图谱",
+   "编程专家.Skill",
+   "dev-expert"
+  ]
+ },
+ {
+  "cat": "记忆",
+  "q": "实体关系",
+  "cls": "薄弱",
+  "n_name": 1,
+  "n_exact": 0,
+  "top1_score": 0.058,
+  "top1": "解决方案架构师/售前顾问超级工作台（Solution Architect &  Presales Consultant Super Workbench）",
+  "top3": [
+   "解决方案架构师/售前顾问超级工作台（Solution Architect &  Presales Consultant Super Workbench）",
+   "多实体关系ER图",
+   "编程专家.Skill"
+  ]
+ },
+ {
+  "cat": "记忆",
+  "q": "个人知识库",
+  "cls": "已有",
+  "n_name": 9,
+  "n_exact": 1,
+  "top1_score": 0.105,
+  "top1": "个人知识库",
+  "top3": [
+   "个人知识库",
+   "kdocs skill",
+   "个人知识库整理助手"
+  ]
+ },
+ {
+  "cat": "找技能",
+  "q": "找技能",
+  "cls": "已有",
+  "n_name": 4,
+  "n_exact": 1,
+  "top1_score": 0.099,
+  "top1": "找技能",
+  "top3": [
+   "找技能",
+   "找技能 · 风险评估版",
+   "Find Skills - 查找技能"
+  ]
+ },
+ {
+  "cat": "找技能",
+  "q": "技能推荐",
+  "cls": "已有",
+  "n_name": 5,
+  "n_exact": 0,
+  "top1_score": 0.054,
+  "top1": "技能推荐（easy-skill）",
+  "top3": [
+   "技能推荐（easy-skill）",
+   "技能推荐官 · 每周 AI 技能精选",
+   "智能技能推荐器"
+  ]
+ },
+ {
+  "cat": "找技能",
+  "q": "技能搜索",
+  "cls": "薄弱",
+  "n_name": 1,
+  "n_exact": 0,
+  "top1_score": 0.051,
+  "top1": "FindSkill - SkillHub 技能搜索、推荐与安装",
+  "top3": [
+   "FindSkill - SkillHub 技能搜索、推荐与安装",
+   "self-improving agent",
+   "防骗大师.Skill"
+  ]
+ },
+ {
+  "cat": "找技能",
+  "q": "技能安装",
+  "cls": "已有",
+  "n_name": 6,
+  "n_exact": 0,
+  "top1_score": 0.074,
+  "top1": "技能安装门禁",
+  "top3": [
+   "技能安装门禁",
+   "技能安装汇总",
+   "Skill Install Guard｜技能安装守门员"
+  ]
+ },
+ {
+  "cat": "找技能",
+  "q": "技能对比",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "腾讯文档 TENCENT DOCS",
+   "Agent Browser"
+  ]
+ },
+ {
+  "cat": "技能安全",
+  "q": "技能安全",
+  "cls": "已有",
+  "n_name": 8,
+  "n_exact": 0,
+  "top1_score": 0.066,
+  "top1": "技能安全审查",
+  "top3": [
+   "技能安全审查",
+   "技能安全扫描修复",
+   "技能安全审查助手"
+  ]
+ },
+ {
+  "cat": "技能安全",
+  "q": "技能审查",
+  "cls": "已有",
+  "n_name": 2,
+  "n_exact": 1,
+  "top1_score": 0.094,
+  "top1": "技能审查",
+  "top3": [
+   "技能审查",
+   "ClawVet技能审查器",
+   "编程专家.Skill"
+  ]
+ },
+ {
+  "cat": "技能安全",
+  "q": "安装前检查",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "腾讯文档 TENCENT DOCS",
+   "Agent Browser"
+  ]
+ },
+ {
+  "cat": "技能安全",
+  "q": "技能体检",
+  "cls": "薄弱",
+  "n_name": 2,
+  "n_exact": 0,
+  "top1_score": 0.061,
+  "top1": "技能体检助手",
+  "top3": [
+   "技能体检助手",
+   "技能体检（SKILL.md 打分）",
+   "编程专家.Skill"
+  ]
+ },
+ {
+  "cat": "技能安全",
+  "q": "插件安全",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS"
+  ]
+ },
+ {
+  "cat": "技能安全",
+  "q": "权限检查",
+  "cls": "已有",
+  "n_name": 3,
+  "n_exact": 0,
+  "top1_score": 0.057,
+  "top1": "飞书多维表格权限检查",
+  "top3": [
+   "飞书多维表格权限检查",
+   "编程专家.Skill",
+   "self-improving agent"
+  ]
+ },
+ {
+  "cat": "主动助手",
+  "q": "主动助手",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS"
+  ]
+ },
+ {
+  "cat": "主动助手",
+  "q": "待办提醒",
+  "cls": "薄弱",
+  "n_name": 1,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS"
+  ]
+ },
+ {
+  "cat": "主动助手",
+  "q": "每日简报",
+  "cls": "已有",
+  "n_name": 8,
+  "n_exact": 0,
+  "top1_score": 0.067,
+  "top1": "每日简报生成器",
+  "top3": [
+   "每日简报生成器",
+   "每日简报生成器",
+   "每日简报-医学"
+  ]
+ },
+ {
+  "cat": "主动助手",
+  "q": "晨间简报",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.052,
+  "top1": "Daily Briefing",
+  "top3": [
+   "Daily Briefing",
+   "编程专家.Skill",
+   "self-improving agent"
+  ]
+ },
+ {
+  "cat": "写作去痕",
+  "q": "去AI味",
+  "cls": "已有",
+  "n_name": 10,
+  "n_exact": 6,
+  "top1_score": 0.113,
+  "top1": "去AI味",
+  "top3": [
+   "去AI味",
+   "去AI味",
+   "去AI味"
+  ]
+ },
+ {
+  "cat": "写作去痕",
+  "q": "降AI味",
+  "cls": "薄弱",
+  "n_name": 2,
+  "n_exact": 0,
+  "top1_score": 0.063,
+  "top1": "降AI味改写",
+  "top3": [
+   "降AI味改写",
+   "体制内公文写作与排版助手",
+   "论文降AI味"
+  ]
+ },
+ {
+  "cat": "写作去痕",
+  "q": "AI味",
+  "cls": "已有",
+  "n_name": 8,
+  "n_exact": 0,
+  "top1_score": 0.066,
+  "top1": "论文降AI率·去AI味",
+  "top3": [
+   "论文降AI率·去AI味",
+   "体制内公文写作与排版助手",
+   "文章去AI味精修"
+  ]
+ },
+ {
+  "cat": "写作去痕",
+  "q": "人性化改写",
+  "cls": "薄弱",
+  "n_name": 2,
+  "n_exact": 0,
+  "top1_score": 0.054,
+  "top1": "文章 AI 味检测与人性化改写工具",
+  "top3": [
+   "文章 AI 味检测与人性化改写工具",
+   "编程专家.Skill",
+   "self-improving agent"
+  ]
+ },
+ {
+  "cat": "Office 文件",
+  "q": "Excel 处理",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS"
+  ]
+ },
+ {
+  "cat": "Office 文件",
+  "q": "Excel 表格",
+  "cls": "薄弱",
+  "n_name": 1,
+  "n_exact": 0,
+  "top1_score": 0.059,
+  "top1": "Excel 表格大师",
+  "top3": [
+   "Excel 表格大师",
+   "编程专家.Skill",
+   "self-improving agent"
+  ]
+ },
+ {
+  "cat": "Office 文件",
+  "q": "Word 文档",
+  "cls": "已有",
+  "n_name": 5,
+  "n_exact": 1,
+  "top1_score": 0.069,
+  "top1": "Word 文档生成与编辑",
+  "top3": [
+   "Word 文档生成与编辑",
+   "Word / DOCX",
+   "深知公文写作"
+  ]
+ },
+ {
+  "cat": "Office 文件",
+  "q": "Word 排版",
+  "cls": "薄弱",
+  "n_name": 1,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS"
+  ]
+ },
+ {
+  "cat": "Office 文件",
+  "q": "PPT 制作",
+  "cls": "薄弱",
+  "n_name": 1,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "顾问式 PPT 制作",
+  "top3": [
+   "顾问式 PPT 制作",
+   "编程专家.Skill",
+   "self-improving agent"
+  ]
+ },
+ {
+  "cat": "Office 文件",
+  "q": "PDF 编辑",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS"
+  ]
+ },
+ {
+  "cat": "Office 文件",
+  "q": "PDF 合并",
+  "cls": "薄弱",
+  "n_name": 2,
+  "n_exact": 0,
+  "top1_score": 0.059,
+  "top1": "PDF 合并拆分旋转",
+  "top3": [
+   "PDF 合并拆分旋转",
+   "编程专家.Skill",
+   "self-improving agent"
+  ]
+ },
+ {
+  "cat": "Office 文件",
+  "q": "PDF 拆分",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS"
+  ]
+ },
+ {
+  "cat": "Office 文件",
+  "q": "PDF 转图片",
+  "cls": "薄弱",
+  "n_name": 1,
+  "n_exact": 0,
+  "top1_score": 0.059,
+  "top1": "PDF 转图片·页面渲染截图与坐标文字提取",
+  "top3": [
+   "PDF 转图片·页面渲染截图与坐标文字提取",
+   "编程专家.Skill",
+   "self-improving agent"
+  ]
+ },
+ {
+  "cat": "音视频",
+  "q": "语音转文字",
+  "cls": "已有",
+  "n_name": 8,
+  "n_exact": 3,
+  "top1_score": 0.108,
+  "top1": "语音转文字",
+  "top3": [
+   "语音转文字",
+   "语音转文字",
+   "语音转文字"
+  ]
+ },
+ {
+  "cat": "音视频",
+  "q": "录音转文字",
+  "cls": "已有",
+  "n_name": 4,
+  "n_exact": 0,
+  "top1_score": 0.076,
+  "top1": "录音转文字｜本地转写·会议字幕",
+  "top3": [
+   "录音转文字｜本地转写·会议字幕",
+   "录音转文字 · 会议纪要整理",
+   "录音转文字助手"
+  ]
+ },
+ {
+  "cat": "音视频",
+  "q": "视频抽帧",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS"
+  ]
+ },
+ {
+  "cat": "音视频",
+  "q": "视频截图",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS"
+  ]
+ },
+ {
+  "cat": "音视频",
+  "q": "视频转GIF",
+  "cls": "薄弱",
+  "n_name": 1,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS"
+  ]
+ },
+ {
+  "cat": "音视频",
+  "q": "音频剪辑",
+  "cls": "薄弱",
+  "n_name": 1,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "腾讯文档 TENCENT DOCS"
+  ]
+ },
+ {
+  "cat": "开发",
+  "q": "GitHub 操作",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.051,
+  "top1": "GitHub API 工具",
+  "top3": [
+   "GitHub API 工具",
+   "编程专家.Skill",
+   "self-improving agent"
+  ]
+ },
+ {
+  "cat": "开发",
+  "q": "GitHub",
+  "cls": "已有",
+  "n_name": 10,
+  "n_exact": 6,
+  "top1_score": 0.146,
+  "top1": "Github",
+  "top3": [
+   "Github",
+   "github",
+   "github"
+  ]
+ },
+ {
+  "cat": "开发",
+  "q": "Git 操作",
+  "cls": "已有",
+  "n_name": 2,
+  "n_exact": 1,
+  "top1_score": 0.093,
+  "top1": "Git 操作",
+  "top3": [
+   "Git 操作",
+   "智能 Git 操作助手",
+   "编程专家.Skill"
+  ]
+ },
+ {
+  "cat": "开发",
+  "q": "命令行助手",
+  "cls": "已有",
+  "n_name": 3,
+  "n_exact": 0,
+  "top1_score": 0.051,
+  "top1": "DeepTutor命令行助手",
+  "top3": [
+   "DeepTutor命令行助手",
+   "用 AI 命令行助手提速终端操作",
+   "用 AI 命令行助手提速终端操作"
+  ]
+ },
+ {
+  "cat": "开发",
+  "q": "终端命令",
+  "cls": "已有",
+  "n_name": 3,
+  "n_exact": 0,
+  "top1_score": 0.062,
+  "top1": "终端命令安全 风险拦截 人工确认",
+  "top3": [
+   "终端命令安全 风险拦截 人工确认",
+   "终端命令助手",
+   "终端命令速查手册"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "天气",
+  "cls": "已有",
+  "n_name": 9,
+  "n_exact": 2,
+  "top1_score": 0.107,
+  "top1": "天气",
+  "top3": [
+   "天气",
+   "天气",
+   "Weather"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "天气预报",
+  "cls": "已有",
+  "n_name": 9,
+  "n_exact": 5,
+  "top1_score": 0.101,
+  "top1": "天气预报",
+  "top3": [
+   "天气预报",
+   "天气预报",
+   "天气预报"
+  ]
+ },
+ {
+  "cat": "生活",
+  "q": "出行天气",
+  "cls": "空缺",
+  "n_name": 0,
+  "n_exact": 0,
+  "top1_score": 0.05,
+  "top1": "编程专家.Skill",
+  "top3": [
+   "编程专家.Skill",
+   "self-improving agent",
+   "Find Skills"
+  ]
+ }
+]

@@ -1,6 +1,6 @@
 # workbuddy-skills
 
-面向腾讯 WorkBuddy / SkillHub 的开源中文 Agent 技能，全部以账号 `indiv-captain` 发布在 [skillhub.cn](https://skillhub.cn/)，截至 2026-09-23 线上 **168 个**：从检讨书、请假条、开题报告、背单词、租房、个税汇算这类日常事，到上线体检、日志排查、代码评审这类研发活。许可：文字部分（文档、`SKILL.md` 正文、模板）CC BY 4.0，代码 MIT，见 [LICENSE-CONTENT](LICENSE-CONTENT)；`ported/` 下的复刻技能沿用各自上游的许可证。用法：在 skillhub.cn 搜技能的中文名（比如「检讨书」），在技能页安装；或者用命令行 `skillhub install <slug> --namespace indiv-captain`。`--namespace` 不能省：有些 slug 和其他作者的技能同名（如 `code-review-zh`、`pr-description`、`secrets-scan`、`skillhub-publish-helper`），不带它可能装到别人的那个。
+面向腾讯 WorkBuddy / SkillHub 的开源中文 Agent 技能，全部以账号 `indiv-captain` 发布在 [skillhub.cn](https://skillhub.cn/)，截至 2026-09-24 线上 **180 个**：从检讨书、请假条、开题报告、背单词、租房、个税汇算这类日常事，到上线体检、日志排查、代码评审这类研发活。许可：文字部分（文档、`SKILL.md` 正文、模板）CC BY 4.0，代码 MIT，见 [LICENSE-CONTENT](LICENSE-CONTENT)；`ported/` 下的复刻技能沿用各自上游的许可证。用法：在 skillhub.cn 搜技能的中文名（比如「检讨书」），在技能页安装；或者用命令行 `skillhub install <slug> --namespace indiv-captain`。`--namespace` 不能省：有些 slug 和其他作者的技能同名（如 `code-review-zh`、`pr-description`、`secrets-scan`、`skillhub-publish-helper`），不带它可能装到别人的那个。
 
 ```bash
 skillhub install reflection-letter --namespace indiv-captain   # 检讨书
@@ -11,13 +11,13 @@ skillhub install renting-guide --namespace indiv-captain       # 租房攻略
 
 ## 按场景找技能
 
-168 个技能分三块：**日常场景**（54 个）→ **开发者与运维**（55 个）→ **工程实践复刻系列**（59 个）。日常场景下面全部列出；后两块这里只列分组，逐条清单见 **[docs/SKILLS.md](docs/SKILLS.md)**。
+180 个技能分三块：**日常场景**（65 个）→ **开发者与运维**（56 个）→ **工程实践复刻系列**（59 个）。日常场景下面全部列出；后两块这里只列分组，逐条清单见 **[docs/SKILLS.md](docs/SKILLS.md)**。
 
-每行是「中文名 | 一句话 | slug」。中文名就是 SkillHub 上的展示名，拿它去 skillhub.cn 搜；点开是仓库里的源目录。slug 用于命令行安装。日常场景 54 个里，除公文写作、PPT汇报演示、简历优化助手、职场防骗、理财入门、保单解读、个税申报、CSV 数据画像这 8 个，其余 46 个是 2026-09-23 新上线的。
+每行是「中文名 | 一句话 | slug」。中文名就是 SkillHub 上的展示名，拿它去 skillhub.cn 搜；点开是仓库里的源目录。slug 用于命令行安装。日常场景 65 个里，除公文写作、PPT汇报演示、简历优化助手、职场防骗、理财入门、保单解读、个税申报、CSV 数据画像这 8 个，46 个是 2026-09-23 新上线的，另有 11 个是 2026-09-24 新上线的（含新分组「让 AI 助手更好用」的 4 个）。
 
 ### 职场写作与沟通
 
-24 个：公文、汇报、邮件、检讨与请假；求职、加薪与离职；招聘、入职与带人；会议、调研与各类文案。
+25 个：公文、汇报、邮件、检讨与请假；求职、加薪与离职；招聘、入职与带人；会议、调研与各类文案；文风改写去AI味。
 
 | 中文名 | 一句话 | slug |
 |---|---|---|
@@ -45,6 +45,7 @@ skillhub install renting-guide --namespace indiv-captain       # 租房攻略
 | [上新文案](skills/new-product-copy/) | 新品上市文案：参数转卖点，改写成详情页、推文与短视频口播脚本 | `new-product-copy` |
 | [UI 文案](skills/ui-microcopy/) | 界面文案：按钮、空状态、错误提示、确认弹窗等的模板与中英对照 | `ui-microcopy` |
 | [图片描述](skills/image-alt-description/) | 给图片写描述：无障碍 alt 文本、商品图、社媒配文、图表文字化 | `image-alt-description` |
+| [降AI味](skills/reduce-ai-tone/) | 12 条清单认出中文 AI 腔，按六步改写，附脚本统计套话与句长 | `reduce-ai-tone` |
 
 ### 学习与考试
 
@@ -66,7 +67,7 @@ skillhub install renting-guide --namespace indiv-captain       # 租房攻略
 
 ### 家庭与生活
 
-12 个：理财、保险与个税；租房、买车与购物；送礼与生日；孩子的屏幕时间、养狗、跑步与睡眠。
+13 个：理财、保险与个税；租房、买车与购物；送礼与生日；孩子的屏幕时间、养狗、跑步与睡眠；晨间待办简报。
 
 | 中文名 | 一句话 | slug |
 |---|---|---|
@@ -82,10 +83,11 @@ skillhub install renting-guide --namespace indiv-captain       # 租房攻略
 | [养狗](skills/dog-care-basics/) | 新手养狗：接狗准备、第一周安排、三项基础训练、疫苗驱虫常识 | `dog-care-basics` |
 | [跑步入门](skills/running-for-beginners/) | 零基础跑步 8 周计划：从跑 1 分钟走 2 分钟起步，到连续慢跑 30 分钟 | `running-for-beginners` |
 | [睡眠计划](skills/sleep-plan/) | 两周改善睡眠的作息计划：先钉住起床时间，附睡眠日志，不做诊断 | `sleep-plan` |
+| [晨间简报](skills/morning-briefing/) | 把待办、日程、消息按优先级整理成五段式简报，分三种长度 | `morning-briefing` |
 
 ### 数据与办公自动化
 
-7 个：报表、取数 SQL、一次性脚本与办公自动化，以及 CSV、JSON、Markdown 这类格式活。
+12 个：报表、取数 SQL、一次性脚本与办公自动化；Excel、Word、PPT 这类文档处理；视频抽帧与音频剪辑；以及 CSV、JSON、Markdown 这类格式活。
 
 | 中文名 | 一句话 | slug |
 |---|---|---|
@@ -96,20 +98,36 @@ skillhub install renting-guide --namespace indiv-captain       # 租房攻略
 | [CSV 数据画像](skills/csv-profile/) | CSV/TSV 体检：逐列类型、空值率、分位数，汇总重复行与疑似个人信息 | `csv-profile` |
 | [JSON 格式化](skills/json-formatting/) | JSON 美化、压缩与报错定位，必填字段粗校验，与 YAML、CSV 互转 | `json-formatting` |
 | [Markdown 转换](skills/markdown-conversion/) | pandoc 互转 Markdown、Word、HTML、PDF，含中文排版设置 | `markdown-conversion` |
+| [Excel 处理](skills/excel-processing/) | 用 openpyxl 批量建表、筛选、写公式、合并 xlsx，附 8 个坑修法 | `excel-processing` |
+| [Word 排版](skills/word-formatting/) | 先样式后内容排版 Word：编号、题注、页码、目录，附三套常见规格 | `word-formatting` |
+| [PPT 制作](skills/pptx-making/) | 写故事线与结论式标题，按内容选版式配图表，附大纲模板与自检清单 | `pptx-making` |
+| [视频抽帧](skills/video-frame-extract/) | 用 ffmpeg 按时间点、间隔或关键帧截图抽帧，拼缩略图、转 GIF | `video-frame-extract` |
+| [音频剪辑](skills/audio-editing/) | 用 ffmpeg 裁剪拼接音频、转格式调音量、去静音、提取视频音轨 | `audio-editing` |
+
+### 让 AI 助手更好用
+
+4 个：把踩过的坑记下来复用、按关键词搜技能、装前先扫风险、任务收尾主动提醒下一步。
+
+| 中文名 | 一句话 | slug |
+|---|---|---|
+| [踩坑记录](skills/lessons-learned-log/) | 把出错、返工按现象、根因、做法记成条目，开工前按关键词检索 | `lessons-learned-log` |
+| [技能搜索](skills/skill-search-helper/) | 把需求改写成搜索词找候选技能，按匹配度等比较，给首选与备选 | `skill-search-helper` |
+| [安装前检查](skills/skill-preinstall-check/) | 装技能前静态扫描六类危险动作，按高中低列出风险信号，不作安全认证 | `skill-preinstall-check` |
+| [主动助手](skills/proactive-assistant/) | 任务收尾固定汇报四段与风险，主动提醒截止与矛盾，对外动作先征求同意 | `proactive-assistant` |
 
 ### 开发者与运维（分组索引）
 
-55 个，都在 `skills/` 下，逐条的中文名、一句话、slug 见 [docs/SKILLS.md](docs/SKILLS.md#开发者与运维)。带脚本的那些不装 Agent 也能当命令行工具直接跑，见下文「命令行 30 秒上手」。
+56 个，都在 `skills/` 下，逐条的中文名、一句话、slug 见 [docs/SKILLS.md](docs/SKILLS.md#开发者与运维)。带脚本的那些不装 Agent 也能当命令行工具直接跑，见下文「命令行 30 秒上手」。
 
 | 分组 | 个数 | 包含 |
 |---|---|---|
 | [研发总入口与方案评审](docs/SKILLS.md#研发总入口与方案评审) | 2 | 研发全能助手、技术方案评审官 |
 | [上线与发布检查](docs/SKILLS.md#上线与发布检查) | 14 | 上线体检、上线检查清单、Changelog 生成器、数据库迁移风险、K8s 配置检查、Compose 配置体检、nginx 配置体检、.env 一致性检查、多环境配置对比、多语言文案键检查、依赖漏洞体检、依赖过期检查、开源协议合规检查、CI 配置审查 |
 | [线上排查与可观测](docs/SKILLS.md#线上排查与可观测) | 13 | 线上排查简报、日志突变检测、日志时间线重建、日志模板聚类、访问日志统计、慢查询分析、Prometheus 规则体检、HTTP 健康巡检、TLS 证书巡检、域名解析巡检、轻量 HTTP 压测、HAR 性能分析、cron 表达式解释器 |
-| [代码与仓库治理](docs/SKILLS.md#代码与仓库治理) | 11 | 迭代周报生成器、Git 提交信息生成器、提交信息规范检查、PR 描述生成、仓库泄密自查、CODEOWNERS 建议、代码热点与知识集中度、git 分支清理助手、测试覆盖缺口、flaky 测试识别、技术债标记盘点 |
+| [代码与仓库治理](docs/SKILLS.md#代码与仓库治理) | 12 | 迭代周报生成器、Git 提交信息生成器、提交信息规范检查、PR 描述生成、仓库泄密自查、CODEOWNERS 建议、代码热点与知识集中度、git 分支清理助手、测试覆盖缺口、flaky 测试识别、技术债标记盘点、GitHub 操作 |
 | [接口与契约](docs/SKILLS.md#接口与契约) | 8 | 接口契约回归、接口差分测试、curl 转代码、OpenAPI 破坏性变更检查、接口文档生成、JSON Schema 推断、JWT 解码与体检、建表 SQL 结构对比 |
 | [数据与文本处理](docs/SKILLS.md#数据与文本处理) | 2 | 正则中文解释、日志与数据脱敏 |
-| [Agent 与技能开发](docs/SKILLS.md#agent-与技能开发) | 5 | Agent 工程、技能编写、技能体检（SKILL.md 打分）、SkillHub 发布助手、连接器构建助手 |
+| [Agent 与技能开发](docs/SKILLS.md#agent-与技能开发) | 5 | Agent 工程、技能编写、技能体检、SkillHub 发布助手、连接器构建助手 |
 
 ### 工程实践复刻系列（分组索引）
 
@@ -134,7 +152,7 @@ skillhub install renting-guide --namespace indiv-captain       # 租房攻略
 
 两条路，都不需要你自己打包：
 
-1. **SkillHub**（[skillhub.cn](https://skillhub.cn/)）：168 个技能都在 `indiv-captain` 名下，技能页有「安装到本地 Agent」按钮；
+1. **SkillHub**（[skillhub.cn](https://skillhub.cn/)）：180 个技能都在 `indiv-captain` 名下，技能页有「安装到本地 Agent」按钮；
    装了官方 CLI 也可以 `skillhub install <slug> --namespace indiv-captain`（为什么要带 `--namespace` 见开头）。
    slug 与目录名不完全一致（例如 `release-checklist` 的线上 slug 是 `release-checklist-git`），
    对照见 [docs/SKILLS.md](docs/SKILLS.md)：中文名链接到源目录，最后一列是 slug。
@@ -146,7 +164,7 @@ skillhub install renting-guide --namespace indiv-captain       # 租房攻略
 
 ### B. 纯命令行，不装任何 Agent
 
-**这是最被低估的一条路。**168 个里有 54 个自带可执行脚本，其中 40 个只要有 `python3` 就能跑
+**这是最被低估的一条路。**180 个里有 54 个自带可执行脚本，其中 40 个只要有 `python3` 就能跑
 （标准库，不用 pip），可以直接当 CI 步骤、cron 任务或者临时排查工具用：
 
 ```bash
@@ -174,7 +192,7 @@ ln -s "$PWD/skills/release-readiness-check" ~/.agents/skills/release-readiness-c
 ### 仓库结构
 
 ```
-skills/             原创技能：127 个目录，其中 109 个在线上
+skills/             原创技能：139 个目录，其中 121 个在线上
 ported/skills/      中文复刻：60 个目录，其中 59 个在线上；逐个附 ATTRIBUTION.md，保留原许可证
 ported/connectors/  CLI-Anything 连接器（mermaid、drawio）
 skillkit/           技能作者的命令行工具箱：起草、体检、打包、排期、看数据
@@ -340,7 +358,7 @@ iteration-report ──迭代区间──> release-readiness-check ──高风�
 
 ## 相关文档
 
-- **[技能索引 docs/SKILLS.md](docs/SKILLS.md)** —— 线上 168 个的完整清单：分组、中文名、一句话、slug
+- **[技能索引 docs/SKILLS.md](docs/SKILLS.md)** —— 线上 180 个的完整清单：分组、中文名、一句话、slug
 - [skillkit](skillkit/README.md) —— 技能作者的命令行工具箱：`new` / `lint` / `build` / `doctor` / `budget` / `stats` / `pitfalls`
 - [系列文章 docs/articles/](docs/articles/) —— 生态观察、使用案例与 SkillHub 平台实测（发布配额、下载量、搜索排名）
 - [生态缺口分析](docs/ecosystem-gap-analysis.md) —— 什么值得搬、什么不值得，带证据
@@ -350,7 +368,7 @@ iteration-report ──迭代区间──> release-readiness-check ──高风�
 - [Skills 策略](docs/skills-strategy.md) —— 为什么不做「技能合集」而做「技能体系」
 
 关于下载量：截至 2026-09-23 的快照（[`docs/metrics/status-ns-2026-09-23.json`](docs/metrics/status-ns-2026-09-23.json)，按 `indiv-captain` 命名空间读取），
-168 个 slug **累计下载 3229 次**，收藏、评论、安装量全部为 0。按我们的实测，下载增量主要来自平台抓取（全员基线）与榜单曝光，
+168 个 slug（2026-09-23 前上线的那批，尚无 2026-09-24 新增 12 个的下载数据）**累计下载 3229 次**，收藏、评论、安装量全部为 0。按我们的实测，下载增量主要来自平台抓取（全员基线）与榜单曝光，
 而不是技能内容本身（见 [下载量机制](docs/metrics/2026-09-21-下载量机制.md)、[曝光假说检验](docs/metrics/2026-09-21-曝光假说检验.md)），
 所以**不能用来比较技能之间的真实需求差异**。
 
