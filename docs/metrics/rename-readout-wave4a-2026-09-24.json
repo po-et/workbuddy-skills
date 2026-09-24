@@ -1,0 +1,46 @@
+[
+ {
+  "slug": "lessons-learned-log",
+  "query": "踩坑记录",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-24T10:20",
+  "latest_version": "0.1.0",
+  "live": true,
+  "rank_after": 1,
+  "read_at": "2026-09-24T10:29"
+ },
+ {
+  "slug": "skill-search-helper",
+  "query": "技能搜索",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-24T10:20",
+  "latest_version": "0.1.0",
+  "live": true,
+  "rank_after": 1,
+  "read_at": "2026-09-24T10:29"
+ },
+ {
+  "slug": "skill-preinstall-check",
+  "query": "安装前检查",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-24T10:20",
+  "latest_version": "0.1.0",
+  "live": true,
+  "rank_after": 1,
+  "read_at": "2026-09-24T10:29"
+ },
+ {
+  "slug": "proactive-assistant",
+  "query": "主动助手",
+  "rank_before": null,
+  "new_version": "0.1.0",
+  "at": "2026-09-24T10:20",
+  "latest_version": "0.1.0",
+  "live": true,
+  "rank_after": 1,
+  "read_at": "2026-09-24T10:29"
+ }
+]

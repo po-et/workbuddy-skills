@@ -494,3 +494,12 @@ gh pr create --repo AlephAITech/WorkBuddyGuide --base "$BASE" --head "po-et:case
 | running-for-beginners | 246223 | 13:10:08 |
 | renting-guide | 246225 | 13:11:23 |
 | new-product-copy | 246227 | 13:12:39 |
+
+### SkillHub wave4a（09-24）（2026-09-24，4 个，机器审核中）
+
+| slug | skillId | 发布时间 |
+|---|---|---|
+| lessons-learned-log | 247862 | 10:20:45 |
+| skill-search-helper | 247863 | 10:22:00 |
+| skill-preinstall-check | 247870 | 10:23:16 |
+| proactive-assistant | 247876 | 10:24:31 |
