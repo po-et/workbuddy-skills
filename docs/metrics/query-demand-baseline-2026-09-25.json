@@ -1,0 +1,192 @@
+{
+ "at": "2026-09-25T20:44",
+ "queries": [
+  {
+   "q": "辩论稿",
+   "top": [
+    {
+     "slug": "debate-speech",
+     "ns": "indiv-captain",
+     "name": "辩论稿",
+     "dl": 68,
+     "score": 0.093
+    }
+   ]
+  },
+  {
+   "q": "开题报告",
+   "top": [
+    {
+     "slug": "thesis-opening-report",
+     "ns": "indiv-captain",
+     "name": "开题报告",
+     "dl": 25,
+     "score": 0.09
+    },
+    {
+     "slug": "mti-thesis-check-report",
+     "ns": "user_263471b7",
+     "name": "翻译硕士（MTI）开题报告自查Skills",
+     "dl": 728,
+     "score": 0.055
+    }
+   ]
+  },
+  {
+   "q": "背单词",
+   "top": [
+    {
+     "slug": "vocab-memorization-plan",
+     "ns": "indiv-captain",
+     "name": "背单词",
+     "dl": 17,
+     "score": 0.089
+    },
+    {
+     "slug": "english-learner",
+     "ns": "clawhub_liningg",
+     "name": "英语学习助手",
+     "dl": 5882,
+     "score": 0.055
+    }
+   ]
+  },
+  {
+   "q": "驾照考试",
+   "top": [
+    {
+     "slug": "driving-test-prep",
+     "ns": "indiv-captain",
+     "name": "驾照考试",
+     "dl": 12,
+     "score": 0.088
+    },
+    {
+     "slug": "driving-license-express",
+     "ns": "user_70c2f807",
+     "name": "驾照考试速通",
+     "dl": 689,
+     "score": 0.066
+    }
+   ]
+  },
+  {
+   "q": "检讨书",
+   "top": [
+    {
+     "slug": "reflection-letter",
+     "ns": "indiv-captain",
+     "name": "检讨书",
+     "dl": 12,
+     "score": 0.088
+    }
+   ]
+  },
+  {
+   "q": "请假条",
+   "top": [
+    {
+     "slug": "leave-request-note",
+     "ns": "indiv-captain",
+     "name": "请假条",
+     "dl": 11,
+     "score": 0.087
+    },
+    {
+     "slug": "guanfu-qingjiatiao-shengcheng",
+     "ns": "user_d9f1d6f7",
+     "name": "请假条生成【观复的国学笔记·出品】",
+     "dl": 51,
+     "score": 0.057
+    },
+    {
+     "slug": "ai-hive-fixed-leave-note",
+     "ns": "infimind",
+     "name": "请假条生成助手",
+     "dl": 18,
+     "score": 0.053
+    },
+    {
+     "slug": "leave-doc",
+     "ns": "clawhub_ckchzh",
+     "name": "Leave Doc",
+     "dl": 1253,
+     "score": 0.05
+    }
+   ]
+  },
+  {
+   "q": "简历优化",
+   "top": [
+    {
+     "slug": "resume-optimize-lyf",
+     "ns": "user_9737c8f2",
+     "name": "简历优化",
+     "dl": 1106,
+     "score": 0.103
+    },
+    {
+     "slug": "rusume-optimizer",
+     "ns": "user_1002ca6a",
+     "name": "简历优化",
+     "dl": 801,
+     "score": 0.102
+    },
+    {
+     "slug": "dw-resume-tuner",
+     "ns": "user_cb37ec27",
+     "name": "简历优化",
+     "dl": 252,
+     "score": 0.098
+    },
+    {
+     "slug": "resume",
+     "ns": "user_9737c8f2",
+     "name": "简历优化",
+     "dl": 2,
+     "score": 0.082
+    },
+    {
+     "slug": "mimo-resume-optimizer",
+     "ns": "clawhub_qqyougitcom",
+     "name": "简历优化器",
+     "dl": 752,
+     "score": 0.066
+    }
+   ]
+  },
+  {
+   "q": "年终总结",
+   "top": [
+    {
+     "slug": "yearreview",
+     "ns": "user_c8b52036",
+     "name": "年终总结",
+     "dl": 101,
+     "score": 0.095
+    },
+    {
+     "slug": "prompt-free-040",
+     "ns": "user_2c08c7ce",
+     "name": "年终总结",
+     "dl": 78,
+     "score": 0.094
+    },
+    {
+     "slug": "prompt-nianzhong-zongjie",
+     "ns": "user_2c08c7ce",
+     "name": "年终总结",
+     "dl": 69,
+     "score": 0.093
+    },
+    {
+     "slug": "layout-guide",
+     "ns": "user_f48fefd6",
+     "name": "医美年终总结",
+     "dl": 199,
+     "score": 0.051
+    }
+   ]
+  }
+ ]
+}
