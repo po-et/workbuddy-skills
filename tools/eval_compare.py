@@ -5,7 +5,7 @@
   基线默认 docs/metrics/eval-items-2026-09-26.json（升级前各技能的评测总分 overall）
   slug 不给时，读 docs/metrics/upgrade-published-*.json 里发布过的全部技能
 输出：逐个技能「升级前 → 现在」，以及已重评的均值变化、≥4.7 的个数变化；存 docs/metrics/eval-compare-<日期>.json
-口径：总分 = 各维度子项均值的平均（与 eval_items 一致）；评测 createdAt 早于 latestVersion.createdAt 的记为「未重评」。
+口径：总分 = 各维度子项均值的平均（与 eval_items 一致）；新版本尚未成为 latestVersion，或评测 createdAt 早于它，都记为「未重评」。
 退出码：0 正常；1 参数/文件错误；130 中断。
 """
 import datetime
@@ -56,8 +56,9 @@ def main():
     except (OSError, KeyError, json.JSONDecodeError) as e:
         print(f"读不了基线 {base_path}：{e}", file=sys.stderr)
         return 1
-    slugs = args or sorted({r["slug"] for f in glob.glob(str(ROOT / "docs/metrics/upgrade-published-*.json"))
-                            for r in json.load(open(f, encoding="utf-8"))})
+    expected = {r["slug"]: r.get("new_version") for f in sorted(glob.glob(str(ROOT / "docs/metrics/upgrade-published-*.json")))
+                for r in json.load(open(f, encoding="utf-8"))}
+    slugs = args or sorted(expected)
     if not slugs:
         print("没有要对比的技能（先发布升级，或在命令行给 slug）", file=sys.stderr)
         return 1
@@ -69,7 +70,9 @@ def main():
         lv = d.get("latestVersion") or {}
         ev = get(f"/api/v1/skills/{s}/evaluation?namespace={NS}") or {}
         now = overall(ev)
-        fresh = bool(ev.get("createdAt") and lv.get("createdAt") and ev["createdAt"] > lv["createdAt"])
+        want = expected.get(s)
+        fresh = bool(ev.get("createdAt") and lv.get("createdAt") and ev["createdAt"] > lv["createdAt"]
+                     and (not want or lv.get("version") == want))  # 新版本还在扫描队列时，评测的是旧版本
         rows.append({"slug": s, "name": (d.get("skill") or {}).get("displayName", ""), "latest": lv.get("version", ""),
                      "before": base.get(s), "now": now, "re_evaluated": fresh})
         tag = "已重评" if fresh else "未重评"
