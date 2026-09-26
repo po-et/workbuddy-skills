@@ -151,5 +151,59 @@
   "new_version": "0.1.1",
   "skill_id": "247935",
   "published_at": "2026-09-26T23:50"
+ },
+ {
+  "slug": "job-description-writer",
+  "dir": "job-description-writer",
+  "query": "招聘 JD",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245775",
+  "published_at": "2026-09-26T23:50"
+ },
+ {
+  "slug": "interview-outline",
+  "dir": "interview-outline",
+  "query": "访谈提纲",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245795",
+  "published_at": "2026-09-26T23:51"
+ },
+ {
+  "slug": "driving-test-prep",
+  "dir": "driving-test-prep",
+  "query": "驾照考试",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245812",
+  "published_at": "2026-09-26T23:52"
+ },
+ {
+  "slug": "graduation-speech",
+  "dir": "graduation-speech",
+  "query": "毕业致辞",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "246116",
+  "published_at": "2026-09-26T23:54"
+ },
+ {
+  "slug": "new-product-copy",
+  "dir": "new-product-copy",
+  "query": "上新文案",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "246227",
+  "published_at": "2026-09-26T23:55"
+ },
+ {
+  "slug": "pptx-making",
+  "dir": "pptx-making",
+  "query": "PPT 制作",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "247939",
+  "published_at": "2026-09-26T23:56"
  }
 ]
