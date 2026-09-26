@@ -1,6 +1,6 @@
 # workbuddy-skills
 
-面向腾讯 WorkBuddy / SkillHub 的开源中文 Agent 技能，全部以账号 `indiv-captain` 发布在 [skillhub.cn](https://skillhub.cn/)，截至 2026-09-24 线上 **180 个**：从检讨书、请假条、开题报告、背单词、租房、个税汇算这类日常事，到上线体检、日志排查、代码评审这类研发活。许可：文字部分（文档、`SKILL.md` 正文、模板）CC BY 4.0，代码 MIT，见 [LICENSE-CONTENT](LICENSE-CONTENT)；`ported/` 下的复刻技能沿用各自上游的许可证。用法：在 skillhub.cn 搜技能的中文名（比如「检讨书」），在技能页安装；或者用命令行 `skillhub install <slug> --namespace indiv-captain`。`--namespace` 不能省：有些 slug 和其他作者的技能同名（如 `code-review-zh`、`pr-description`、`secrets-scan`、`skillhub-publish-helper`），不带它可能装到别人的那个。
+面向腾讯 WorkBuddy / SkillHub 的开源中文 Agent 技能，全部以账号 `indiv-captain` 发布在 [skillhub.cn](https://skillhub.cn/)，截至 2026-09-26 线上 **200 个**（SkillHub 单账号上限），另有新写的技能在本仓库先行可用、排队上架：从检讨书、请假条、开题报告、背单词、租房、个税汇算这类日常事，到上线体检、日志排查、代码评审这类研发活。许可：文字部分（文档、`SKILL.md` 正文、模板）CC BY 4.0，代码 MIT，见 [LICENSE-CONTENT](LICENSE-CONTENT)；`ported/` 下的复刻技能沿用各自上游的许可证。用法：在 skillhub.cn 搜技能的中文名（比如「检讨书」），在技能页安装；或者用命令行 `skillhub install <slug> --namespace indiv-captain`。`--namespace` 不能省：有些 slug 和其他作者的技能同名（如 `code-review-zh`、`pr-description`、`secrets-scan`、`skillhub-publish-helper`），不带它可能装到别人的那个。
 
 ```bash
 skillhub install reflection-letter --namespace indiv-captain   # 检讨书
@@ -11,9 +11,46 @@ skillhub install renting-guide --namespace indiv-captain       # 租房攻略
 
 ## 按场景找技能
 
-180 个技能分三块：**日常场景**（65 个）→ **开发者与运维**（56 个）→ **工程实践复刻系列**（59 个）。日常场景下面全部列出；后两块这里只列分组，逐条清单见 **[docs/SKILLS.md](docs/SKILLS.md)**。
+最上面两组是 2026-09 新增的开学季与腾讯生态技能。其余 180 个技能分三块：**日常场景**（65 个）→ **开发者与运维**（56 个）→ **工程实践复刻系列**（59 个）。日常场景下面全部列出；后两块这里只列分组，逐条清单见 **[docs/SKILLS.md](docs/SKILLS.md)**。
 
 每行是「中文名 | 一句话 | slug」。中文名就是 SkillHub 上的展示名，拿它去 skillhub.cn 搜；点开是仓库里的源目录。slug 用于命令行安装。日常场景 65 个里，除公文写作、PPT汇报演示、简历优化助手、职场防骗、理财入门、保单解读、个税申报、CSV 数据画像这 8 个，46 个是 2026-09-23 新上线的，另有 11 个是 2026-09-24 新上线的（含新分组「让 AI 助手更好用」的 4 个）。
+
+### 开学季与秋招（2026-09 新增）
+
+15 个：开学、竞选、奖助学金、秋招、考研保研、实践报告。都是写之前 SkillHub 全站搜不到的词，只帮你整理自己的真实经历，示例一律标虚构。
+
+| 中文名 | 一句话 | SkillHub 页面（可收藏 / 安装） |
+|---|---|---|
+| [国庆攻略](skills/national-day-travel/) | 黄金周错峰出行：出发返程时段、订票订房节奏、自驾与应急预案，附行程预算脚本 | [`national-day-travel`](https://skillhub.cn/skills/@indiv-captain/national-day-travel) |
+| [实习报告](skills/internship-report/) | 实习报告四段结构，把真实工作记录写成段落，附周记模板与提交前自查脚本 | [`internship-report`](https://skillhub.cn/skills/@indiv-captain/internship-report) |
+| [秋招](skills/autumn-campus-recruiting/) | 秋招全流程：投递记录、笔试面试、三方协议常识与防骗，附 offer 加权对比脚本 | 排队上架 |
+| [考研报名](skills/kaoyan-registration/) | 考研报名流程与逐项核对表：报考点、学历校验、确认后能改什么（以当年公告为准） | 排队上架 |
+| [保研](skills/postgrad-recommendation/) | 推免准备：夏令营/预推免/九推节奏、联系导师邮件、个人陈述与面试 | 排队上架 |
+| [期中复习](skills/midterm-review/) | 按距考试 14/7/3/1 天排计划、课程分级与取舍，附每日复习分配脚本 | 排队上架 |
+| [竞选稿](skills/campaign-speech/) | 班干部、学生会竞选稿：为什么是我、三件具体的事，1/2/3 分钟三档，附计时脚本 | 排队上架 |
+| [奖学金申请](skills/scholarship-application/) | 奖学金申请书：六个维度盘点真实事实、STAR 写法、面试答辩题，附自查脚本 | 排队上架 |
+| [助学金申请书](skills/financial-aid-application/) | 困难资助申请书：如实陈述不渲染、材料清单、隐私保护，附脱敏扫描脚本 | 排队上架 |
+| [军训心得](skills/military-training-reflection/) | 从一个亲历瞬间写起的三段式军训心得，800/1500 字两档，附套话自查脚本 | 排队上架 |
+| [学生会面试](skills/student-union-interview/) | 学生会、社团、班委面试：1 分钟自我介绍、20 道高频题思路、无领导小组套路 | 排队上架 |
+| [新生自我介绍](skills/freshman-self-intro/) | 班级、宿舍、社团、导师、线上群五种场合，30 秒到 3 分钟三档模板 | 排队上架 |
+| [班会策划](skills/class-meeting-planning/) | 主题班会 45 分钟标准流程、主持稿框架与互动形式，附三个完整方案 | 排队上架 |
+| [社团招新](skills/club-recruitment/) | 招新推文、摆摊话术、报名表与 7 天留人计划，附报名表统计去重脚本 | 排队上架 |
+| [社会实践报告](skills/social-practice-report/) | 暑期社会实践报告：选题分工、问卷访谈、只用真实数据、受访者隐私，附问卷统计脚本 | 排队上架 |
+
+### 腾讯生态（2026-09 新增）
+
+8 个：企业微信、腾讯会议、腾讯问卷、TAPD、腾讯云轻量服务器、腾讯位置服务、微信群、小程序。脚本只用 Python 标准库；凡是会发消息或改资源的，默认只预览；key 一律从环境变量读。接口细节以官方文档为准。
+
+| 中文名 | 一句话 | SkillHub 页面（可收藏 / 安装） |
+|---|---|---|
+| [企微机器人](skills/wecom-group-bot/) | 企业微信群机器人推送日报、告警、提醒：模板、errcode 解释，默认只预览、确认才发送 | 排队上架 |
+| [腾讯会议纪要](skills/tencent-meeting-minutes/) | 把腾讯会议导出的转写文本整理成可发群的纪要：解析发言人，挑出决议与待办 | 排队上架 |
+| [腾讯问卷](skills/tencent-survey-analysis/) | 腾讯问卷导出数据清洗与统计：自动识别题型，频数、量表均值、交叉表，附报告模板 | 排队上架 |
+| [缺陷管理](skills/defect-management/) | TAPD 等工具的缺陷单模板、严重度×优先级、流转规则，附导出 CSV 的复盘统计脚本 | 排队上架 |
+| [轻量服务器](skills/lighthouse-server/) | 腾讯云轻量服务器从零上手：安全基线、部署顺序、快照备份与巡检，附只读体检脚本 | 排队上架 |
+| [地址解析](skills/address-geocoding/) | 中文地址批量解析：清洗规则、腾讯位置服务地理编码（key 读环境变量、默认预演）、配送半径 | 排队上架 |
+| [微信群管理](skills/wechat-group-management/) | 微信群运营：群规、欢迎语、活动节奏、违规处理与群主交接，附本地聊天统计脚本 | 排队上架 |
+| [小程序审核](skills/miniprogram-review/) | 小程序提审前七项自查、驳回原因到修改动作对照、申诉模板，附项目扫描脚本 | 排队上架 |
 
 ### 职场写作与沟通
 

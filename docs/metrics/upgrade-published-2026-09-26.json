@@ -7,5 +7,77 @@
   "new_version": "0.1.1",
   "skill_id": "245771",
   "published_at": "2026-09-26T23:27"
+ },
+ {
+  "slug": "reflection-letter",
+  "dir": "reflection-letter",
+  "query": "检讨书",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245766",
+  "published_at": "2026-09-26T23:32"
+ },
+ {
+  "slug": "long-doc-summary",
+  "dir": "long-doc-summary",
+  "query": "长文总结",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245779",
+  "published_at": "2026-09-26T23:33"
+ },
+ {
+  "slug": "image-alt-description",
+  "dir": "image-alt-description",
+  "query": "图片描述",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245799",
+  "published_at": "2026-09-26T23:34"
+ },
+ {
+  "slug": "dog-care-basics",
+  "dir": "dog-care-basics",
+  "query": "养狗",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245814",
+  "published_at": "2026-09-26T23:35"
+ },
+ {
+  "slug": "team-building-plan",
+  "dir": "team-building-plan",
+  "query": "团建方案",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245962",
+  "published_at": "2026-09-26T23:37"
+ },
+ {
+  "slug": "kids-coding",
+  "dir": "kids-coding",
+  "query": "儿童编程",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "246224",
+  "published_at": "2026-09-26T23:38"
+ },
+ {
+  "slug": "skill-preinstall-check",
+  "dir": "skill-preinstall-check",
+  "query": "安装前检查",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "247870",
+  "published_at": "2026-09-26T23:39"
+ },
+ {
+  "slug": "github-cli-ops",
+  "dir": "github-cli-ops",
+  "query": "GitHub 操作",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "247932",
+  "published_at": "2026-09-26T23:40"
  }
 ]
