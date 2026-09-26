@@ -84,7 +84,9 @@ def local_links_ok(src):
     """SKILL.md 与 references/examples 里的相对链接必须指向存在的文件。"""
     bad = []
     for md in [src / "SKILL.md", *sorted(src.glob("references/*.md")), *sorted(src.glob("examples/*.md"))]:
-        for target in re.findall(r"\]\(([^)\s#]+)(?:#[^)]*)?\)", md.read_text("utf-8")):
+        text = re.sub(r"```.*?```", "", md.read_text("utf-8"), flags=re.S)  # 代码块里的是模板占位，不是链接
+        text = re.sub(r"`[^`\n]*`", "", text)
+        for target in re.findall(r"\]\(([^)\s#]+)(?:#[^)]*)?\)", text):
             if re.match(r"^[a-z]+://|^mailto:", target):
                 continue
             if not (md.parent / target).exists():
