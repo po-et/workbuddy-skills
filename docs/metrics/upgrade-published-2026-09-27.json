@@ -187,5 +187,68 @@
   "new_version": "0.1.1",
   "skill_id": "247933",
   "published_at": "2026-09-27T00:19"
+ },
+ {
+  "slug": "meeting-transcript-cleanup",
+  "dir": "meeting-transcript-cleanup",
+  "query": "会议录音整理",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245780",
+  "published_at": "2026-09-27T00:21"
+ },
+ {
+  "slug": "shopping-list-planner",
+  "dir": "shopping-list-planner",
+  "query": "购物清单",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245800",
+  "published_at": "2026-09-27T00:22"
+ },
+ {
+  "slug": "birthday-party-planner",
+  "dir": "birthday-party-planner",
+  "query": "生日策划",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245811",
+  "published_at": "2026-09-27T00:23"
+ },
+ {
+  "slug": "resignation-conversation",
+  "dir": "resignation-conversation",
+  "query": "离职谈话",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245953",
+  "published_at": "2026-09-27T00:24"
+ },
+ {
+  "slug": "kids-screen-time",
+  "dir": "kids-screen-time",
+  "query": "手机管理",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "246222",
+  "published_at": "2026-09-27T00:26"
+ },
+ {
+  "slug": "skill-search-helper",
+  "dir": "skill-search-helper",
+  "query": "技能搜索",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "247863",
+  "published_at": "2026-09-27T00:27"
+ },
+ {
+  "slug": "audio-editing",
+  "dir": "audio-editing",
+  "query": "音频剪辑",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "247927",
+  "published_at": "2026-09-27T00:28"
  }
 ]
