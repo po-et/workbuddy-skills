@@ -521,3 +521,10 @@ gh pr create --repo AlephAITech/WorkBuddyGuide --base "$BASE" --head "po-et:case
 | excel-processing | 247931 | 10:45:01 |
 | word-formatting | 247933 | 10:46:17 |
 | pptx-making | 247939 | 10:47:32 |
+
+### SkillHub 开学季第 1 批（2026-09-26，2 个，机器审核中）
+
+| slug | skillId | 发布时间 |
+|---|---|---|
+| national-day-travel | 250276 | 23:23:49 |
+| internship-report | 250278 | 23:25:05 |

@@ -1,0 +1,11 @@
+[
+ {
+  "slug": "leave-request-note",
+  "dir": "leave-request-note",
+  "query": "请假条",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245771",
+  "published_at": "2026-09-26T23:27"
+ }
+]
