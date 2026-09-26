@@ -61,5 +61,68 @@
   "new_version": "0.1.1",
   "skill_id": "245935",
   "published_at": "2026-09-27T00:02"
+ },
+ {
+  "slug": "onboarding-guide",
+  "dir": "onboarding-guide",
+  "query": "入职指南",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245777",
+  "published_at": "2026-09-27T00:03"
+ },
+ {
+  "slug": "office-automation-scripts",
+  "dir": "office-automation-scripts",
+  "query": "自动化办公",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245797",
+  "published_at": "2026-09-27T00:04"
+ },
+ {
+  "slug": "japanese-learning-plan",
+  "dir": "japanese-learning-plan",
+  "query": "日语学习",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245815",
+  "published_at": "2026-09-27T00:05"
+ },
+ {
+  "slug": "salary-raise-request",
+  "dir": "salary-raise-request",
+  "query": "加薪申请",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245949",
+  "published_at": "2026-09-27T00:06"
+ },
+ {
+  "slug": "kids-reading-plan",
+  "dir": "kids-reading-plan",
+  "query": "阅读计划",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "246091",
+  "published_at": "2026-09-27T00:08"
+ },
+ {
+  "slug": "lessons-learned-log",
+  "dir": "lessons-learned-log",
+  "query": "踩坑记录",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "247862",
+  "published_at": "2026-09-27T00:09"
+ },
+ {
+  "slug": "video-frame-extract",
+  "dir": "video-frame-extract",
+  "query": "视频抽帧",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "247924",
+  "published_at": "2026-09-27T00:10"
  }
 ]

@@ -2,7 +2,7 @@
 name: office-automation-scripts
 description: "自动化办公——用单次耗时×每周频率算清重复活值不值得自动化，按表格公式、宏、Python 脚本逐级选工具，附文件整理、批量重命名、表格合并、定时提醒模板。当用户说「这个活能不能自动化」「批量重命名文件」「几十个表格怎么合并」时使用。"
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "自动化办公"
 display_name_en: "Office Automation"
 description_zh: "单次耗时×每周频率算成本、对比搭建维护时间算回本周数；按公式、宏、Python 脚本由低到高选工具；附文件整理、批量重命名、表格合并、到期提醒模板。不碰内部系统与账号密码。"
@@ -21,12 +21,35 @@ examples_zh:
   - "每周要把 20 个门店的表合成一张，这个活能不能自动化"
   - "帮我批量重命名文件，几百张活动照片要改成日期加序号"
   - "几十个表格怎么合并，还想标出每行来自哪个文件"
+examples_en:
+  - "Every week I merge sheets from 20 stores into one. Is this worth automating?"
+  - "Batch-rename hundreds of event photos to date plus a sequence number"
+  - "How do I merge dozens of spreadsheets and mark which file each row came from?"
 ---
 
 # 自动化办公
 
 **先算账再动手**：多数重复活一个公式就能解决，值得写脚本的是量大、规则稳、出错代价高的几件。
 适用：每周都在复制粘贴、合并表格、改文件名、整理文件夹、盯到期日。
+
+## 何时使用
+
+用户这样说时启用（前五条是主要场景，最后一条是边缘场景）：
+
+- 「这个活能不能自动化」「每周花一小时复制粘贴，值不值得写脚本」
+- 「几十个表格怎么合并，还想标出每行来自哪个文件」
+- 「帮我批量重命名文件，几百张照片要改成日期加序号」
+- 「下载文件夹太乱了，按类型分一分」
+- 「合同、证件的到期日，能不能批量变成日历提醒」
+- 「你给的脚本跑报错了」「合并后中文乱码」——按下文「信息不全或出错时」处理
+
+调用方式：在对话里描述这件活（单次多久、多久一次、文件长什么样，最好附一个样例或表头）；需要脚本时，用户在自己电脑的终端运行 `python3 scripts/<脚本名>.py`，不加 `--apply` 只预览。
+
+不适用（遇到时这样处理）：
+
+- 登录、抓取、批量提交公司内部系统，自动发邮件 → 不做，请找公司 IT；系统导出后的本地文件可以接着处理。
+- 要保留公式、格式、多工作表的 .xlsx 批处理 → 先用第 1 层 Power Query；非要用 Python 读写 xlsx，转「Excel 处理」类技能（如 excel-processing）。
+- 这四类以外的一次性脚本 → 转「Python 脚本」类技能（如 python-script-writer）；只问某个公式怎么写，直接简答。
 
 ## 先判断：值不值得做
 
@@ -44,101 +67,142 @@ examples_zh:
 
 - 第 1 层 表格公式：数据在一两个文件里。匹配用 XLOOKUP／VLOOKUP，汇总用数据透视表，同结构多表合并用 Power Query（版本间有差异）。
 - 第 2 层 快捷指令／宏：单个软件里的固定操作。macOS「快捷指令」、Windows 的 Power Automate Desktop、表格软件的「录制宏」。
-- 第 3 层 Python 脚本：跨文件夹、上百个文件、要预览和留底，用下面的标准库模板。
+- 第 3 层 Python 脚本：跨文件夹、上百个文件、要预览和留底，用下面的标准库脚本。
 - 选层三问：数据在不在一个文件里？步骤会不会常变？你走后谁维护？最后一问答不上就选低一层。
 
-## 四个模板：先预览，再执行
+## 四个脚本：先预览，再执行
 
-`python3 脚本名.py` 运行；会动文件的模板不加 `--apply` 只预览。原件一律不删、不覆盖。
+四个模板已做成 `scripts/` 里的单文件脚本，只用 Python 标准库（3.8+），路径和选项都用参数传，不用改代码。会动文件的两个默认只预览，加 `--apply` 才执行；原件一律不删、不覆盖；结果文件先写临时文件再替换，中途出错不会留下半截文件。
 
-1 文件整理：按扩展名分进子文件夹，重名的不动
+| 脚本 | 做什么 | 预览命令 | 怎么撤回 |
+|---|---|---|---|
+| `scripts/organize_files.py` | 按扩展名分进子文件夹，目标已有同名文件的不动 | `python3 scripts/organize_files.py ~/Downloads` | 执行时写「移动记录-时间.csv」，`--undo 记录.csv --apply` 移回 |
+| `scripts/batch_rename.py` | 前缀加序号，先出对照表，改好名的副本放进新文件夹 | `python3 scripts/batch_rename.py 待改名 --prefix 2026-09-活动照片` | 原件不动，删掉「已改名」文件夹 |
+| `scripts/merge_csv.py` | 同表头 CSV 合成一张，末列标来源文件，自动识别 UTF-8/GBK | `python3 scripts/merge_csv.py 门店报表 --out 合并结果.csv` | 只新建结果文件，删掉即可 |
+| `scripts/ics_reminder.py` | 「事项,到期日」清单变日历提醒，默认到期前三天 9:00 弹出 | `python3 scripts/ics_reminder.py 到期清单.csv` | 在日历里删掉导入的事件 |
 
-```python
-import sys, shutil
-from pathlib import Path
-src = Path.home() / "Downloads"   # 要整理的目录
-for f in sorted(src.iterdir()):
-    dest = src / (f.suffix.lower().lstrip(".") or "其他") / f.name
-    if f.is_file() and not f.name.startswith(".") and not dest.exists():
-        print(f.name, "->", dest.parent.name)
-        if "--apply" in sys.argv:
-            dest.parent.mkdir(exist_ok=True); shutil.move(str(f), str(dest))
-```
+常用选项：
 
-2 批量重命名：前缀加三位序号，先出对照表，副本放进新文件夹
+- 文件整理：`--apply` 执行；`--log 路径` 指定移动记录位置；只处理这一层的普通文件，隐藏文件跳过。
+- 批量重命名：默认按文件名自然排序（IMG_2 在 IMG_10 前）；`--sort mtime` 按修改时间；`--digits 4` 四位序号；`--start 101` 从 101 起；`--ext .jpg,.png` 只改这些类型。
+- 表格合并：`--pattern "*-9月.csv"` 只合并部分文件；`--recursive` 连子文件夹；`--encoding gbk` 强制编码；表头不同、编码认不出、某行多出列的文件会跳过，并逐个说明原因。
+- 到期提醒：`--days-before 7 --at 10:30` 改提醒时间；列名不同用 `--name-col 合同名称 --date-col 截止日期`；2026-10-08、2026/10/8、2026年10月8日 都认；认不出的行、已过期的行、重复行逐行说明后跳过。
 
-```python
-import sys, csv, shutil
-from pathlib import Path
-folder, prefix = Path("待改名"), "2026-09-活动照片"
-files = sorted(p for p in folder.iterdir() if p.is_file() and not p.name.startswith("."))
-plan = [(p, f"{prefix}-{i:03d}{p.suffix}") for i, p in enumerate(files, 1)]
-with open("改名对照表.csv", "w", newline="", encoding="utf-8-sig") as f:
-    csv.writer(f).writerows([("原名", "新名")] + [(p.name, n) for p, n in plan])
-out = folder / "已改名"
-for p, n in plan:
-    print(p.name, "->", n)
-    if "--apply" in sys.argv:
-        out.mkdir(exist_ok=True); shutil.copy2(p, out / n)
-```
-
-3 表格合并：同表头的 CSV 合成一张，末列标来源文件
-
-```python
-import csv
-from pathlib import Path
-header, rows = [], []
-for p in sorted(Path("门店报表").glob("*.csv")):
-    with open(p, encoding="utf-8-sig", newline="") as f:   # 报编码错改 gbk
-        r = csv.reader(f); h = next(r, [])
-        header = header or h
-        if not h or h != header: print("跳过（空表或表头不同）", p.name); continue
-        rows += [row + [p.name] for row in r]
-with open("合并结果.csv", "w", encoding="utf-8-sig", newline="") as f:
-    csv.writer(f).writerows([header + ["来源文件"]] + rows)
-print("共", len(rows), "行")
-```
-
-xlsx 优先用第 1 层 Power Query；非要脚本就装 pandas、openpyxl，`pd.read_excel` 逐个读后 `pd.concat`。
-
-4 定时提醒：到期日批量变日历提醒，导入后到期前三天 9:00 弹出
-
-```python
-import csv, datetime as dt
-EVENT = """BEGIN:VEVENT
-UID:{i}-{day}@example.com
-DTSTAMP:{now}
-DTSTART;VALUE=DATE:{day}
-SUMMARY:{name}到期
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:{name}
-TRIGGER:-P2DT15H
-END:VALARM
-END:VEVENT"""
-now = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-out = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//example.com//reminder//CN"]
-with open("到期清单.csv", encoding="utf-8-sig") as f:   # 两列：事项,到期日；事项别含英文逗号分号
-    for i, row in enumerate(csv.DictReader(f)):
-        day = dt.datetime.strptime(row["到期日"].replace("/", "-"), "%Y-%m-%d").strftime("%Y%m%d")
-        out.append(EVENT.format(i=i, day=day, now=now, name=row["事项"]))
-with open("到期提醒.ics", "w", encoding="utf-8", newline="") as f:
-    f.write(("\n".join(out + ["END:VCALENDAR"]) + "\n").replace("\n", "\r\n"))
-```
+xlsx 优先用第 1 层 Power Query；零安装的办法是在表格软件里逐个「另存为 CSV UTF-8」再用 merge_csv.py；非要直接读 xlsx 就装 pandas、openpyxl，`pd.read_excel` 逐个读后 `pd.concat`。
 
 固定周期的提醒直接建日历重复事件。导入后抽一条核对提醒时间，个别日历应用会忽略导入的提醒。脚本定时跑用 crontab 或 Windows「任务计划程序」；macOS 后台访问「下载」可能被拦。
 
-## 最常见的错误
+## 信息不全或出错时
 
-- 没算账就写：一年做两次的活，写了一下午脚本。
-- 上来就全自动：没预览、没对照表，改错了回不去。
-- 跑完不核对：少合并一个文件没人发现——对一遍行数再抽查。
+| 情况 | 怎么处理 | 对用户说的话（模板） |
+|---|---|---|
+| 缺关键信息：没说单次多久、多久一次、文件长什么样 | 只问这 3 个；维护耗时（默认一年 1 小时）、核对耗时（默认每次 5 分钟）先按默认值算，在算账表里标 [待确认] | 「先确认三件事：这活单次大概多久？多久做一次？文件是 CSV 还是 xlsx，能发一下表头吗？其余我先按常见值估，标了 [待确认]。」 |
+| 说法自相矛盾：前面说每天做、后面说一个月两次；说表头一样，样例却不同 | 指出矛盾处，两种理解各算一遍回本周数，请用户选 | 「你前面说每天、后面说每月两次：按每天算回本约 X 周，按每月两次要 Y 周，是哪一种？」 |
+| 格式不对：发来 xlsx、中文乱码、日期写法五花八门 | xlsx 先走 Power Query 或另存为 CSV UTF-8；乱码时脚本已自动试 UTF-8/GBK，仍不行再另存；日期统一写成 2026-10-08 | 「这份是 xlsx，最省事的是另存为『CSV UTF-8』再跑合并脚本；不想转就用 Power Query。」 |
+| 超出范围：要登录内部系统、自动发邮件、抓网页 | 这部分不写，转公司 IT；本地文件的整理、合并照做 | 「登录和提交内部系统的部分我不写，要走公司 IT；系统导出的文件放进一个文件夹，后面的合并我来。」 |
+| 时间紧，只要最小可用版 | 最小版 = 一行算账结论 + 一条预览命令 + 一句核对方法，其余稍后补 | 「最小版：结论『做』；先跑 `python3 scripts/merge_csv.py 门店报表` 看结果；核对各文件行数之和。其余我稍后补。」 |
+| 坚持越界：要把密码写进脚本、直接覆盖原件、绕过审批 | 守住：不写凭据、不绕审批；覆盖改为输出到新文件夹，由用户核对后自己删旧文件 | 「密码不能写进脚本，这条我不做；原件我也不覆盖——结果放在新文件夹，你核对完再自己删。」 |
+| 一个公式就能解决 | 不写脚本，直接给公式和操作步骤 | 「这个用 XLOOKUP 一列就能搞定，不值得写脚本，步骤如下。」 |
+
+脚本报错对照（四个脚本口径一致）：
+
+| 退出码 / 提示 | 原因 | 修正办法 |
+|---|---|---|
+| 0 | 成功（预览或执行完成） | 按屏幕上的「核对」提示对一遍 |
+| 1「参数错误：…」 | 少了参数、选项写错、前缀含 `/ : * ?` 等字符、CSV 里没有指定的列 | 按提示里的正确写法改，或加 `-h` 看用法 |
+| 2「找不到文件夹」「没有权限」「读不出文字」「写不进去」 | 路径写错或含空格没加引号；文件正被 Excel 打开；系统拦截访问；编码不是 UTF-8/GBK | 路径加引号；关掉占用文件的软件；macOS 在「隐私与安全性」给终端授权；另存为 CSV UTF-8 |
+| 3「没有可处理的…」 | 文件夹是空的、筛选条件没匹配到、所有行都被跳过 | 检查 `--pattern`、`--ext`，逐条看「跳过」的原因 |
+| 130「已中断」 | 按了 Ctrl+C | 不会留下半截结果文件，重跑即可；文件整理已移动的部分可用移动记录撤回 |
+| 「跳过 xx：表头不同（少了…；多了…）」 | 这个文件的列名和第一个文件不一样 | 统一列名后重跑，或单独处理这个文件 |
+| 终端提示找不到 python3 | 没装 Python；Windows 上命令可能叫 `python` 或 `py` | 按公司 IT 规定安装，或退回第 1、2 层工具 |
 
 ## 输出契约
 
-1. 先回算账表：单次耗时、每周频率、搭建与维护估时、回本周数、结论（做／写清单／不做）。
-2. 写明选哪一层和理由；公式能解决的直接给公式与步骤，不写脚本。
-3. 脚本只用标准库或写明要装的包，默认预览，附「怎么运行、怎么核对、怎么撤回」三行。
+交付物按以下顺序，缺哪块写明原因，不跳过：
+
+1. **算账表**：单次耗时、每周频率、每周耗时、搭建耗时、一年维护、每周省下、回本周数，写出算式；结论三选一：做／先写操作清单／不做。
+2. **选层与理由**：第几层，用「选层三问」给一句话理由。
+3. **方案**：公式与操作步骤；或脚本名 + 预览命令 + 执行命令（路径用用户给的，含空格加引号）。脚本只用标准库；确实要装包的（如 pandas、openpyxl）写明装什么。
+4. **三行说明**：怎么运行、怎么核对（对行数、抽查几行）、怎么撤回。
+5. **待确认清单**：所有 [待补]、[待确认] 汇总在最后。
+
+占位符：用户必须提供、我没法估的（文件夹路径、表头、列名）写 [待补：…]；按默认值估的（维护耗时、核对耗时）写 [待确认：默认值]。不编文件名、列名和耗时。
+
+交付前自检（逐条答是/否，有「否」就改完再交）：
+
+- [ ] 回本周数写出了算式，数字和用户给的一致？
+- [ ] 公式能解决的，没有写脚本？
+- [ ] 会动文件的命令，第一条是不带 `--apply` 的预览？
+- [ ] 写了撤回方法，且原件不删不覆盖？
+- [ ] 命令里没有账号、密码、内部系统地址？
+- [ ] [待补]/[待确认] 都列进了最后的清单？
+
+## 示例
+
+以下为示例，数字取自上文的算账例子，文件夹名为虚构。
+
+**用户**：每周要把 20 个门店的表合成一张，这个活能不能自动化？
+
+**助手先问**：① 每次合并大概多久？② 门店发来的是 CSV 还是 xlsx，表头都一样吗？③ 以后谁维护，你的电脑能运行 Python 吗？
+
+**用户**：40 分钟左右；都是 CSV，表头一样；我自己维护，能装 Python。
+
+**助手交付**：
+
+```text
+一、算账
+  每周耗时 = 40 分钟 × 1 次 = 40 分钟
+  搭建 3 小时 + 一年维护 1 小时 = 240 分钟 [待确认：维护耗时为估计值]
+  每周省下 = 40 − 5（跑完核对）= 35 分钟
+  回本 = 240 ÷ 35 ≈ 7 周 → 结论：做
+二、选层：第 3 层 Python 脚本。数据分在 20 个文件里、步骤固定、你自己维护且能跑 Python；
+    以后若交给不会 Python 的同事维护，改用第 1 层 Power Query 的文件夹合并。
+三、方案：python3 scripts/merge_csv.py 门店报表 --out 合并结果.csv
+四、运行：把 20 个 CSV 放进「门店报表」文件夹，在它的上一级目录运行上面的命令
+    核对：屏幕会列出每个文件的行数和「共 N 行」，两边应相等；再抽 3 行和原表对
+    撤回：脚本只新建「合并结果.csv」，不改原文件，删掉结果即可
+五、待确认清单：维护耗时一年 1 小时 [待确认]；门店报表文件夹的实际位置 [待补]
+```
+
+更多完整示例（含脚本的真实输出）：[合并门店报表：遇到表头不一致的文件](examples/merge-store-reports.md)、[活动照片改名与到期提醒](examples/rename-and-reminder.md)。
+
+## 常见问题（FAQ）
+
+**Q：脚本跑报错了怎么办？**
+A：先看最后一行中文提示和退出码，对照上面的「脚本报错对照」表；还不行，把命令和完整报错原样贴过来，不要只说「跑不了」。
+
+**Q：合并后中文乱码，或提示「读不出文字」？**
+A：merge_csv.py 会依次试 UTF-8 和 GBK，并在每个文件后面标出用了哪种；两种都不对时，在表格软件里另存为「CSV UTF-8」。输出文件带 BOM，用 Excel 直接打开不乱码。
+
+**Q：我的是 xlsx，不想装 pandas 怎么办？**
+A：两条零安装的路：用第 1 层 Power Query 合并，或逐个另存为 CSV 再跑 merge_csv.py。要保留公式和格式，转「Excel 处理」类技能。
+
+**Q：能不能直接帮我跑、直接改我电脑上的文件？**
+A：我给命令，你在自己电脑上运行；默认只预览，确认后再加 `--apply`。我不远程操作你的电脑，也不碰公司系统。
+
+**Q：公司电脑不让装 Python 怎么办？**
+A：用第 1、2 层：公式、数据透视表、Power Query、录制宏、快捷指令。能不能装软件，以公司 IT 规定为准。
+
+**Q：改错了能撤回吗？**
+A：批量重命名只生成副本，删掉「已改名」文件夹就回到原样；文件整理会写移动记录，用 `--undo 记录.csv --apply` 移回；合并和提醒只新建文件，删掉即可。
+
+**Q：能每周自动跑吗？**
+A：可以用 crontab（macOS/Linux）或 Windows「任务计划程序」定时；先手动跑两三次、确认输出稳定再定时。
+
+**Q：和录制宏、Power Automate 有什么区别？**
+A：宏和快捷指令适合单个软件里的固定点击步骤；脚本适合跨文件夹、上百个文件、要预览和留底的活。按「选层三问」选，能用低一层就不上高一层。
+
+## 常见错误（反模式）
+
+| 错误做法 | 为什么错 | 正确做法 |
+|---|---|---|
+| 没算账就写：一年做两次的活，写了一下午脚本 | 搭建时间永远收不回来 | 先算回本周数；不到一个季度、规则半年不变才做 |
+| 上来就全自动：没预览、没对照表 | 规则一错就改坏几百个文件，回不去 | 先预览、出对照表或移动记录，核对后再 `--apply` |
+| 跑完不核对 | 少合并一个文件、漏一行都没人发现 | 对行数之和，抽查 3 行，逐条看「跳过」原因 |
+| 直接覆盖原件 | 一旦出错，原始数据就没了 | 输出到新文件或新文件夹，用户核对后自己删旧的 |
+| 路径写死在脚本里 | 换个月份、换台电脑就得改代码，容易改错 | 路径、前缀都用参数传 |
+| 把合并结果放进输入文件夹 | 下次重跑会把上次的结果再合并一遍 | 结果写在输入文件夹外；merge_csv.py 也会自动排除本次的输出文件 |
+| 公式能解决的也写脚本 | 维护成本高，别人接不了手 | 按「选层三问」，能低一层就不上高一层 |
 
 ## 边界与不做什么
 
