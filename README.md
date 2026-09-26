@@ -17,7 +17,7 @@ skillhub install renting-guide --namespace indiv-captain       # 租房攻略
 
 ### 开学季与秋招（2026-09 新增）
 
-15 个：开学、竞选、奖助学金、秋招、考研保研、实践报告。都是写之前 SkillHub 全站搜不到的词，只帮你整理自己的真实经历，示例一律标虚构。
+19 个：开学、竞选、奖助学金、秋招、考研保研、实践报告、心得与总结、运动会。都是写之前 SkillHub 全站搜不到的词，只帮你整理自己的真实经历，示例一律标虚构。
 
 | 中文名 | 一句话 | SkillHub 页面（可收藏 / 安装） |
 |---|---|---|
@@ -36,6 +36,10 @@ skillhub install renting-guide --namespace indiv-captain       # 租房攻略
 | [班会策划](skills/class-meeting-planning/) | 主题班会 45 分钟标准流程、主持稿框架与互动形式，附三个完整方案 | 排队上架 |
 | [社团招新](skills/club-recruitment/) | 招新推文、摆摊话术、报名表与 7 天留人计划，附报名表统计去重脚本 | 排队上架 |
 | [社会实践报告](skills/social-practice-report/) | 暑期社会实践报告：选题分工、问卷访谈、只用真实数据、受访者隐私，附问卷统计脚本 | 排队上架 |
+| [心得体会](skills/experience-reflection/) | 学习、培训、读书、实践后的心得：从一个触动点写起，四段成文，800/1500/3000 字三档 | 排队上架 |
+| [个人总结](skills/personal-summary/) | 学期、季度、年度、试用期个人总结：先盘点真实事实，再按成果—方法—不足—计划成文 | 排队上架 |
+| [通讯稿](skills/news-brief-writing/) | 运动会、讲座、志愿活动等通讯稿：5W1H 收集表、倒金字塔、标题导语公式、肖像与隐私同意 | 排队上架 |
+| [运动会加油稿](skills/sports-meet-cheer/) | 按项目写加油稿与串场稿，50/100/200 字三档，附投稿清单统计脚本 | 排队上架 |
 
 ### 腾讯生态（2026-09 新增）
 
