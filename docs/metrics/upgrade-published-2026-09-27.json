@@ -1,0 +1,65 @@
+[
+ {
+  "slug": "vocab-memorization-plan",
+  "dir": "vocab-memorization-plan",
+  "query": "背单词",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245785",
+  "published_at": "2026-09-26T23:56"
+ },
+ {
+  "slug": "python-script-writer",
+  "dir": "python-script-writer",
+  "query": "Python 脚本",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245805",
+  "published_at": "2026-09-26T23:57"
+ },
+ {
+  "slug": "meeting-arrangement",
+  "dir": "meeting-arrangement",
+  "query": "会议安排",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245818",
+  "published_at": "2026-09-26T23:59"
+ },
+ {
+  "slug": "after-viewing-essay",
+  "dir": "after-viewing-essay",
+  "query": "观后感",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245957",
+  "published_at": "2026-09-27T00:00"
+ },
+ {
+  "slug": "sleep-plan",
+  "dir": "sleep-plan",
+  "query": "睡眠计划",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "246100",
+  "published_at": "2026-09-27T00:01"
+ },
+ {
+  "slug": "reduce-ai-tone",
+  "dir": "reduce-ai-tone",
+  "query": "降AI味",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "247926",
+  "published_at": "2026-09-27T00:02"
+ },
+ {
+  "slug": "markdown-conversion",
+  "dir": "markdown-conversion",
+  "query": "Markdown 转换",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245935",
+  "published_at": "2026-09-27T00:02"
+ }
+]
