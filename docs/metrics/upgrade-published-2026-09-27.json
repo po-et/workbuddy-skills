@@ -124,5 +124,68 @@
   "new_version": "0.1.1",
   "skill_id": "247924",
   "published_at": "2026-09-27T00:10"
+ },
+ {
+  "slug": "kpi-design",
+  "dir": "kpi-design",
+  "query": "KPI 制定",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245772",
+  "published_at": "2026-09-27T00:12"
+ },
+ {
+  "slug": "questionnaire-design",
+  "dir": "questionnaire-design",
+  "query": "问卷设计",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245793",
+  "published_at": "2026-09-27T00:13"
+ },
+ {
+  "slug": "thesis-opening-report",
+  "dir": "thesis-opening-report",
+  "query": "开题报告",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245809",
+  "published_at": "2026-09-27T00:14"
+ },
+ {
+  "slug": "json-formatting",
+  "dir": "json-formatting",
+  "query": "JSON 格式化",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245933",
+  "published_at": "2026-09-27T00:15"
+ },
+ {
+  "slug": "radio-script",
+  "dir": "radio-script",
+  "query": "广播稿",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245970",
+  "published_at": "2026-09-27T00:17"
+ },
+ {
+  "slug": "renting-guide",
+  "dir": "renting-guide",
+  "query": "租房攻略",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "246225",
+  "published_at": "2026-09-27T00:18"
+ },
+ {
+  "slug": "word-formatting",
+  "dir": "word-formatting",
+  "query": "Word 排版",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "247933",
+  "published_at": "2026-09-27T00:19"
  }
 ]
