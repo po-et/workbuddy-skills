@@ -2,7 +2,7 @@
 name: english-email
 description: "英文邮件——商务英文邮件按意图给结构与句式：请求、跟进、拒绝、道歉、催款、约会议、自我介绍，含语气分级、主题行与中式英语自查。当用户说「帮我写封英文邮件」「这封邮件语气对吗」「改成地道英文」时使用。"
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "英文邮件"
 display_name_en: "English Email"
 description_zh: "商务英文邮件：按请求、跟进、拒绝、道歉、催款、约会议、自我介绍七种意图给结构与可替换句式，分正式、中性、亲近三档语气，给主题行公式与结尾写法，列中式英语最常见的 10 处和自查命令。不代替合同或法律文本。"
@@ -20,12 +20,32 @@ examples_zh:
   - "帮我写封英文邮件催客户付款，发票已经逾期两周了"
   - "想约美国供应商开个视频会，帮我写邀约并把时区写清楚"
   - "这封英文邮件是我从中文直译的，帮我看看有没有中式英语"
+examples_en:
+  - "Write an English email chasing a client for payment; the invoice is two weeks overdue"
+  - "I translated this English email word for word from Chinese; please check it for Chinglish"
 ---
 
 # 英文邮件
 
 定位一句话：**商务英文邮件先求对方十秒内看懂「要他做什么、哪天之前」，再求用词漂亮。**
-何时用：给海外客户、供应商、同事写英文邮件；把中文草稿改成英文；拿不准语气是太冲还是太卑微时。
+
+## 何时使用
+
+在对话里直接说需求就行，不用记命令；自查脚本由助手在需要时运行。典型说法：
+
+- 「帮我写封英文邮件，催客户付款，发票逾期两周了」
+- 「这封邮件语气对吗？会不会太冲，或者太卑微」
+- 「把这段中文改成地道的英文邮件」
+- 「想约美国供应商开视频会，帮我写邀约，时区写清楚」
+- 「对方拒了我们的报价，怎么礼貌地跟进」
+
+适用：给海外客户、供应商、同事写英文邮件；把中文草稿改成英文；拿不准语气是太冲还是太卑微时。
+
+不适用（遇到时这样处理）：
+
+- 合同条款、律师函、违约或索赔通知、保密协议措辞 → 说明要交给法务或律师；可以把事实和诉求整理成清单，方便带去问。
+- 需要盖章或公证的认证翻译 → 请找有资质的翻译机构，这里不出「认证译文」。
+- 不是邮件的英文写作（论文、简历排版、演讲稿）→ 交给对应的写作类技能；只要一两句客套话的，直接给句子，不走完整流程。
 
 ## 先判断：意图、关系、期限
 
@@ -39,21 +59,25 @@ examples_zh:
 | 结尾句 | I look forward to hearing from you. | Let me know if you have any questions. | Thanks! |
 | 落款 | Kind regards, / Sincerely, | Best regards, | Best, / Cheers, |
 
-3. **期限**：写成具体日期并放进第一段，如 by Friday, 15 May；涉及几点，同时写对方和你的时区，夏令时用日历工具核对，别心算。
+3. **期限**：写成具体日期并放进第一段，如 by Friday, 15 May；涉及几点，同时写对方和你的时区，夏令时用日历工具核对，别心算。手边有 python3 也可以用标准库换算（城市名按实际替换）：
+
+```bash
+python3 -c "from datetime import datetime as D; from zoneinfo import ZoneInfo as Z; print(D(2026,10,13,9,0,tzinfo=Z('America/Chicago')).astimezone(Z('Asia/Shanghai')))"
+```
 
 ## 写作步骤：通用骨架与七种意图
 
 通用骨架：主题行 → 称呼 → 第一句说目的 → 背景一到三句 → 具体请求（多项就编号）→ 期限与下一步 → 结尾句 → 落款与签名（姓名、职位、公司、带国家区号的电话）。
 
-| 意图 | 结构 | 可替换句式（方括号处替换） |
-|---|---|---|
-| 请求 | 目的 → 理由 → 要什么 → 期限 | I'm writing to ask whether you could [send the Q3 figures] by [date]. / Would it be possible to [move the deadline to Friday]? |
-| 跟进 | 指明上次哪封 → 还缺什么 → 新期限 → 给台阶 | Following up on my email of [date] about [topic]. / In case it got buried, here's a quick recap: [one line]. |
-| 拒绝 | 感谢 → 明确说不 → 一句理由 → 替代方案 | Thank you for thinking of us. Unfortunately, we are unable to [accept the revised terms] at this time. / What we can offer instead is [alternative]. |
-| 道歉 | 错在哪 → 影响 → 已补救 → 防再犯 | I'm sorry for [the incorrect invoice]. / We have [reissued it] and [added a second check] so it won't happen again. |
-| 催款 | 发票号、金额、到期日 → 附件 → 问付款日期 | Our records show that invoice [number] for [amount], due on [date], remains unpaid. / Could you let us know when we can expect payment? |
-| 约会议 | 目的 → 时长 → 两三个候选时间带时区 → 形式 | Would you be available for a [30-minute] call to discuss [topic]? / I'm free [Tue 9–10 am] or [Wed 3–4 pm], New York time. |
-| 自我介绍 | 我是谁 → 怎么认识 → 为什么找你 → 低门槛请求 | [Name] suggested I reach out to you about [topic]. / Would you be open to a 15-minute call next week? |
+七种意图的结构如下；每种的可替换句式（方括号处替换）见 [references/intent-phrases.md](references/intent-phrases.md)。
+
+- 请求：目的 → 理由 → 要什么 → 期限
+- 跟进：指明上次哪封 → 还缺什么 → 新期限 → 给台阶
+- 拒绝：感谢 → 明确说不 → 一句理由 → 替代方案
+- 道歉：错在哪 → 影响 → 已补救 → 防再犯
+- 催款：发票号、金额、到期日 → 附件 → 问付款日期
+- 约会议：目的 → 时长 → 两三个候选时间带时区 → 形式
+- 自我介绍：我是谁 → 怎么认识 → 为什么找你 → 低门槛请求
 
 道歉只说一次 sorry，后面讲补救。催款分三级：第一封中性；第二封正式，并抄送对方财务；第三封写明后续安排——后续措施以合同和公司政策为准，涉及法律手段先问法务。
 
@@ -71,33 +95,134 @@ Introduction: [Your name] from [Company], referred by [Name]
 
 别用空主题、Hello、URGENT!!!，也别把整句话塞进主题；换了话题就换主题行。结尾句写清下一步——谁、做什么、哪天之前，然后才是落款。
 
-## 中式英语最常见的 10 处
+## 中式英语与发送前自查
 
-| # | 常见写法 | 改成 |
-|---|---|---|
-| 1 | Please kindly confirm … | Please confirm … / Could you confirm …? |
-| 2 | Please noted that … | Please note that … |
-| 3 | discuss about the plan | discuss the plan |
-| 4 | contact with me | contact me |
-| 5 | open a meeting | hold / have a meeting |
-| 6 | The price is too expensive. | The price is too high. |
-| 7 | Dear Mr. John（Mr. 加名） | Dear Mr. Smith（Mr. 加姓）或 Dear John |
-| 8 | Welcome to contact me. | Feel free to contact me. |
-| 9 | Hope you can understand. | Thank you for your understanding.（原句听着像「你该理解」） |
-| 10 | I want to know … | Could you let me know …? / I'd like to know … |
+最常见的 10 处（Please kindly、Please noted、discuss about、contact with、Mr. 加名……）的对照表与改法见 [references/chinglish-10.md](references/chinglish-10.md)。比用词更伤的是结构：请求埋在第三段、一封塞三件事、只写 ASAP 不写日期、约会议不写时区、正文说有附件却没附。
 
-比用词更伤的是结构：请求埋在第三段、一封塞三件事、只写 ASAP 不写日期、约会议不写时区、正文说有附件却没附。发送前把草稿存成 draft.txt 自查一遍，命中不等于一定错，逐条对照上表判断：
+发送前把草稿存成 draft.txt，跑一遍自查脚本（python3 标准库，只读不改，不联网）：
 
 ```bash
-grep -n -i -E "please kindly|please noted|discuss about|contact with|open a meeting|too expensive|welcome to contact|hope you can understand|i want to|asap" draft.txt
+python3 scripts/email_check.py draft.txt           # 中式英语、没替换的占位符、ASAP、时区、主题行、附件、重复道歉
+python3 scripts/email_check.py - < draft.txt       # 从标准输入读
+python3 scripts/email_check.py draft.txt --json    # 给程序用
 ```
+
+命中不等于一定错，逐条对照表判断；第 7 条（Mr. 后面接的是姓还是名）脚本判断不了，要人工看称呼。
+
+## 信息不全或出错时
+
+| 情况 | 怎么处理 | 对用户说的话（模板） |
+|---|---|---|
+| 缺关键信息（收件人、意图、期限） | 最多问 3 个：对方是谁、什么关系；要对方做什么；哪天之前。语气默认中性，金额、单号、日期先用 [待补] 占位，草稿照出 | 「先按中性语气出了一版，有 3 处 [待补]：对方怎么称呼？要他做什么？哪天之前？」 |
+| 输入自相矛盾（中文稿说「不急」，结尾又要「明天必须回」） | 指出是哪两句矛盾，给两种理解各写一个开头，让用户选 | 「第 2 段说不急，结尾要明天回复。按『明天前回复』还是『本周内方便时回复』写？」 |
+| 语气拿不准（初次联系、对方职级高、投诉升级） | 中性和正式两版并排，标出差别在哪几处 | 「给了中性、正式两版，差别在称呼和提请求的那句，你选一版。」 |
+| 超出本技能范围（合同条款、律师函、认证翻译） | 不写正文，只把事实和诉求列成清单，建议找法务、律师或有资质的翻译机构 | 「这封涉及违约责任，措辞要法务把关。我先把事实和诉求列成清单，你带去问。」 |
+| 时间紧，只要最小可用版 | 只交三样：Subject 一行、三到五句正文（目的＋请求＋期限）、落款；第二版和改动清单省略，状态行注明「最小版」 | 「最小版：主题＋五句话＋落款，补齐 [待补] 就能发；要更正式的再说。」 |
+| 用户坚持越界（代发、冒充他人、诱导付款、索要账号密码） | 守住边界，只给能做的替代 | 「发送和登录邮箱要你本人操作，草稿可以直接复制；冒充他人或索要密码的邮件我不写。」 |
+
+**脚本退出码与报错**
+
+| 退出码 / 报错 | 原因 | 修正办法 |
+|---|---|---|
+| 0 | 没有「问题」级命中，可能仍有「提醒」（如记得附上附件） | 看完提醒即可交付 |
+| 3 | 命中中式英语、没替换的占位符、ASAP、时区缺失等 | 逐条对照参考表改，改完再跑，直到 0 或每条都判断过 |
+| 1（参数错误 / 输入有问题） | 没给文件名，或草稿为空、超过 1MB | 按 `python3 scripts/email_check.py draft.txt` 重跑，确认文件里有正文 |
+| 2（读取失败） | 文件不存在、是目录、没权限，或编码不是 UTF-8/GBK | 检查路径；另存为 UTF-8；或把草稿直接贴进对话，改为人工逐条检查 |
+| 130 | 按了 Ctrl+C | 直接重跑；脚本只读，不会留下半截文件 |
+| python3: command not found | 本机没有 Python 3 | 用参考表末尾的 grep 一行命令，或人工逐条对照 |
+| 时区换算命令报 ZoneInfoNotFoundError | 本机缺时区数据（多见于 Windows） | 改用日历工具换算，别心算 |
 
 ## 输出契约
 
-1. 先确认：收件人是谁、和你什么关系、意图、期限、想要的语气；缺的信息用 [ ] 占位，不编金额、日期、承诺和对方姓名。
-2. 交付：Subject 一行、正文、签名占位；用户给了中文稿或英文草稿的，另附改动清单，逐条说明改了哪里、为什么。
-3. 拿不准语气时，给中性和正式两版并排，让用户自己选。
-4. 正文默认一屏读完；超过三段的细节改用编号列表或放进附件。
+先确认：收件人是谁、和你什么关系、意图、期限、想要的语气（一次最多问三个，其余按默认并占位）。交付物按这个顺序，缺一段不算完成：
+
+1. **状态行**：`状态：可直接发送`，或 `状态：还有 N 处 [待补]/[待确认]，补齐再发`（最小版另注「最小版」）。
+2. **Subject** 一行，按主题行公式。
+3. **正文**：称呼 → 第一句说目的 → 背景一到三句 → 请求（多项编号）→ 期限与下一步 → 结尾句；默认一屏读完，超过三段的细节改用编号列表或放进附件。
+4. **落款与签名**：姓名、职位、公司、带国家区号的电话，不知道的占位。
+5. **改动清单**（用户给了中文稿或英文草稿时）：逐条「原文 → 改成 → 为什么」。
+6. **需要你确认的点**：没有就写「无」。拿不准语气时，第 2–4 部分给中性和正式两版并排，让用户自己选。
+
+占位符规则：`[待补：发票号]` 只用于用户才知道的事实——金额、日期、单号、对方姓名、承诺，一律不编；`[待确认：语气按中性]` 用于我先按默认值写、需要用户点头的地方。两类占位符的数量都写进状态行。
+
+交付前自检（逐条答是/否，有「否」先改再交）：
+
+- [ ] 第一段就说清要对方做什么、哪天之前？
+- [ ] 期限是具体日期；涉及钟点时写了双方时区或城市？
+- [ ] 一封只办一件事，或多件已编号？
+- [ ] 跑过 email_check.py 且退出码为 0，或每条命中都人工判断过？
+- [ ] 没有编造金额、日期、姓名和承诺，所有 [待补]/[待确认] 都计入了状态行？
+- [ ] 正文提到附件时，已提醒用户真的附上？
+
+## 示例
+
+**示例（虚构场景）**：用户说「帮我写封英文邮件催客户付款，发票已经逾期两周了」。
+
+助手先问（一次不超过三个）：① 发票号、金额、原到期日？② 第几次催，对方对接人怎么称呼？③ 希望对方哪天前回复？
+
+用户补充：「INV-0415，12,800 美元，4 月 30 日到期；第一次催；对方叫 Anna Lee；希望 5 月 15 日前回复。」
+
+最终交付：
+
+```text
+状态：签名 4 处 [待补]，补齐即可发送；附件发票 INV-0415 发送前确认已附上
+
+Subject: Reminder: Invoice INV-0415 overdue since 30 April
+
+Hello Ms. Lee,
+
+I'm writing about invoice INV-0415 for USD 12,800, which was due on 30 April and, according to our records, remains unpaid. A copy is attached for your reference.
+
+Could you let us know by Friday, 15 May when we can expect payment? If it has already been sent, please share the remittance details so we can match it on our side.
+
+Thank you, and let me know if you have any questions.
+
+Best regards,
+[待补：你的姓名]
+[待补：职位] | [待补：公司]
+[待补：带国家区号的电话]
+
+需要你确认的点：这是第一封，用了中性语气；如到期仍未回复，第二封改正式并抄送对方财务。
+```
+
+更多示例：[examples/rewrite-chinglish.md](examples/rewrite-chinglish.md)（中文直译稿改成地道英文，附脚本输出与逐条改动清单）、[examples/meeting-request.md](examples/meeting-request.md)（约美国供应商开会，两个候选时间与双方时区）。
+
+## 常见问题（FAQ）
+
+**Q：能不能直接帮我发出去？**
+A：不能代发，也不登录邮箱。交付的是可以直接复制的 Subject 和正文，发送前按自检清单过一遍即可。
+
+**Q：催了一次没回，下一封怎么写？**
+A：第二封改正式语气，写明上次哪天发的哪封，并抄送对方财务；第三封写明后续安排，后续措施以合同和公司政策为准，涉及法律手段先问法务。
+
+**Q：不知道对方姓什么、是男是女，怎么称呼？**
+A：用全名最稳，如 Dear Alex Chen；连名字都不知道，就写部门或职位，如 Dear Accounts Payable Team。别猜 Mr./Ms.，也别用 Mr. 加名。
+
+**Q：约会议的时间怎么写才不出错？**
+A：候选时间写成「时间 + 城市或时区」，如 Tue 9–10 am, Chicago time；需要同时写北京时间的，用日历工具或上面的 python3 命令换算，夏令时前后会差一小时。
+
+**Q：怎么判断语气太冲还是太卑微？**
+A：太冲的信号：全大写、连串感叹号、只写 ASAP、命令式开头；太卑微的信号：一封里好几次 sorry、please kindly 叠用、大段铺垫才说正事。拿不准就给中性和正式两版。
+
+**Q：中文稿很长，要逐句翻译吗？**
+A：不要。先提炼「要对方做什么、哪天之前」，按骨架重写；细节改成编号列表或放附件，并在改动清单里说明删了什么。
+
+**Q：脚本报了很多命中，都得改吗？**
+A：命中不等于错，比如熟人之间用 I want to 也可以接受。逐条对照参考表判断，改完再跑一遍。
+
+## 常见错误（反模式）
+
+| 错误做法 | 为什么错 | 正确做法 |
+|---|---|---|
+| 请求埋在第三段 | 对方十秒内看不到要他做什么 | 第一句说目的，第一段就写请求和期限 |
+| 一封塞三件事 | 对方往往只回一件，其余被忽略 | 一封只办一件；非要多件就编号 |
+| 只写 ASAP / urgent | 没有日期就没有期限，还显得冲 | 写具体日期：by Friday, 15 May |
+| 约会议不写时区 | 两边各按自己的时区理解，容易错过 | 候选时间带城市或时区，换算用工具核对 |
+| 正文说有附件却没附 | 对方还得回信要，拖慢进度 | 发送前核对附件，脚本会提醒 |
+| 一封里 sorry 说好几遍 | 显得卑微，重点被道歉淹没 | 道歉只说一次，后面讲补救和防再犯 |
+| 空主题、Hello、URGENT!!! | 容易被忽略，也显得不专业 | 类型 + 对象 + 期限或状态，六到十个词 |
+| 逐字直译中文 | 冒出 please kindly、discuss about 这类中式英语 | 按英文骨架重写，再跑自查脚本 |
+| 替用户编金额、日期、承诺 | 发出去就是对外承诺，错了难收回 | 用 [待补] 占位，问清再填 |
 
 ## 边界与不做什么
 

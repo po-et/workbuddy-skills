@@ -79,5 +79,77 @@
   "new_version": "0.1.1",
   "skill_id": "247932",
   "published_at": "2026-09-26T23:40"
+ },
+ {
+  "slug": "english-email",
+  "dir": "english-email",
+  "query": "英文邮件",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245768",
+  "published_at": "2026-09-26T23:41"
+ },
+ {
+  "slug": "math-problem-tutor",
+  "dir": "math-problem-tutor",
+  "query": "数学题",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245782",
+  "published_at": "2026-09-26T23:42"
+ },
+ {
+  "slug": "ui-microcopy",
+  "dir": "ui-microcopy",
+  "query": "UI 文案",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245802",
+  "published_at": "2026-09-26T23:43"
+ },
+ {
+  "slug": "car-buying-checklist",
+  "dir": "car-buying-checklist",
+  "query": "买车",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245817",
+  "published_at": "2026-09-26T23:45"
+ },
+ {
+  "slug": "new-hire-mentoring",
+  "dir": "new-hire-mentoring",
+  "query": "新人带教",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245967",
+  "published_at": "2026-09-26T23:46"
+ },
+ {
+  "slug": "gift-list",
+  "dir": "gift-list",
+  "query": "礼物清单",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "246226",
+  "published_at": "2026-09-26T23:47"
+ },
+ {
+  "slug": "proactive-assistant",
+  "dir": "proactive-assistant",
+  "query": "主动助手",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "247876",
+  "published_at": "2026-09-26T23:48"
+ },
+ {
+  "slug": "morning-briefing",
+  "dir": "morning-briefing",
+  "query": "晨间简报",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "247935",
+  "published_at": "2026-09-26T23:50"
  }
 ]
