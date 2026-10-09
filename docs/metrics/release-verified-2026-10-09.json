@@ -1,6 +1,6 @@
 {
   "namespace": "indiv-captain",
-  "generated_at": "2026-10-09T18:32:54.539486+08:00",
+  "generated_at": "2026-10-09T18:36:11.142416+08:00",
   "download_role": "maintainer_acceptance_verification_not_real_user",
   "records": [
     {
@@ -250,13 +250,33 @@
     {
       "slug": "running-for-beginners",
       "target_version": "0.1.1",
-      "latest_version": "0.1.0",
-      "queried_at_beijing": "2026-10-09T18:31:39.000721+08:00",
-      "status": "submitted_not_verified_live",
+      "latest_version": "0.1.1",
+      "queried_at_beijing": "2026-10-09T18:34:44.945123+08:00",
+      "status": "live_and_package_verified",
       "skillhub_url": "https://skillhub.cn/skills/@indiv-captain/running-for-beginners",
       "detail_endpoint": "https://api.skillhub.cn/api/v1/skills/running-for-beginners?namespace=indiv-captain",
-      "target_version_security_reports": {},
-      "package_files_sha256": [],
+      "target_version_security_reports": {
+        "keen": "benign",
+        "sanbu": "benign"
+      },
+      "package_files_sha256": [
+        {
+          "path": "SKILL.md",
+          "sha256": "318e50c5c6150b03678a6ee84667e0b95367123689e4e2cddb1ac0d60d6323f8"
+        },
+        {
+          "path": "examples/8-week-plan-dated.md",
+          "sha256": "012f35d55d56b349252a36ce220d458e0a5a90442fbc167f101756a51d3f1512"
+        },
+        {
+          "path": "references/gear-warmup-stretch.md",
+          "sha256": "d57a272cc517668ca1c483b6b7bec0c75326fc549d96b8a832fd044c7cebb464"
+        },
+        {
+          "path": "scripts/run_review.py",
+          "sha256": "ff77053777e19662f8da6f31bd79e22f238c8c508e2d244ba96fdcf41381bac6"
+        }
+      ],
       "fresh_evaluation_confirmed": false
     }
   ]
