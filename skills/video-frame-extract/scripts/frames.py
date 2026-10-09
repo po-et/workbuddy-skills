@@ -21,6 +21,7 @@
 import argparse
 import csv
 import json
+import math
 import os
 import re
 import shlex
@@ -50,9 +51,14 @@ def parse_time(text):
     """83.5、1:23.5、00:01:23.5 都认，返回秒数。"""
     if not re.match(r"^\d+(:\d{1,2}){0,2}(\.\d+)?$", text or ""):
         raise ValueError(text)
+    parts = text.split(":")
+    if any(float(part) >= 60 for part in parts[1:]):
+        raise ValueError(text)
     sec = 0.0
-    for part in text.split(":"):
+    for part in parts:
         sec = sec * 60 + float(part)
+    if not math.isfinite(sec):
+        raise ValueError(text)
     return sec
 
 
@@ -108,6 +114,8 @@ def probe(path, timeout=60):
         duration = float((data.get("format") or {}).get("duration"))
     except (TypeError, ValueError):
         raise Fail("读不出时长（常见于直播录制的裸流）：先转封装成 mp4 再抽帧", 2)
+    if not math.isfinite(duration) or duration <= 0:
+        raise Fail("视频时长不是有效的正数：先检查文件是否完整，再转封装成 mp4 重试", 2)
     num, _, den = (s.get("r_frame_rate") or "0/1").partition("/")
     fps = float(num) / float(den or 1) if float(den or 1) else 0.0
     w, h = int(s.get("width") or 0), int(s.get("height") or 0)
@@ -153,6 +161,9 @@ def sequence(a, info):
     default_dir, prefix = SEQ[a.cmd]
     out_dir = Path(a.out_dir or default_dir).expanduser().resolve()
     old = sorted(out_dir.glob(prefix + "*.jpg")) if out_dir.is_dir() else []
+    if (out_dir / "index.csv").exists() and not a.overwrite:
+        raise Fail("%s 已存在。对照表也属于输出：换一个 --out-dir，或加 --overwrite。"
+                   % (out_dir / "index.csv"), 2)
     if old and not a.overwrite:
         raise Fail("%s 里已有 %d 张 %s*.jpg（上次的结果？）。ffmpeg 的 -n 挡不住覆盖编号图片，所以先停下："
                    "换一个 --out-dir，或加 --overwrite。" % (out_dir, len(old), prefix), 2)
@@ -208,7 +219,7 @@ def sequence(a, info):
 
 
 def _num(x):
-    return ("%.4f" % x).rstrip("0").rstrip(".")
+    return format(x, ".12g")
 
 
 def single(a, info):
@@ -236,7 +247,7 @@ def single(a, info):
         ensure_new(out, a.overwrite, a.dry_run)
         n = a.cols * a.rows
         cmd = ["ffmpeg", "-hide_banner", "-nostats", "-y" if a.overwrite else "-n", "-i", str(a.video), "-vf",
-               "fps=%d/%s,scale=%d:-2,tile=%dx%d:padding=4:margin=4" % (n, _num(info["duration"]), a.width, a.cols, a.rows),
+               "fps=%d/%s:round=up,scale=%d:-2,tile=%dx%d:padding=4:margin=4" % (n, _num(info["duration"]), a.width, a.cols, a.rows),
                "-frames:v", "1", "-q:v", "3", str(out)]
         note = "按总时长均分 %d 张，%d×%d 拼成一张" % (n, a.cols, a.rows)
     run(cmd, a.timeout, a.dry_run)
@@ -343,8 +354,14 @@ def main(argv=None):
             parse_time(a.at)
         except ValueError:
             ap.error("--at「%s」认不出，写成 83.5、1:23.5 或 00:01:23.5" % a.at)
+    for name in ("every", "threshold", "start", "duration", "rate"):
+        v = getattr(a, name, None)
+        if v is not None and not math.isfinite(v):
+            ap.error("--%s 要是有限数字，不能用 nan 或 inf" % name)
     if getattr(a, "every", None) is not None and a.every <= 0:
         ap.error("--every 要大于 0")
+    if getattr(a, "rate", None) is not None and not 0 < a.rate <= 50:
+        ap.error("--rate 要大于 0 且不超过 50（每秒候选帧数，默认 2）")
     if getattr(a, "count", None) is not None and not 1 <= a.count <= 1000:
         ap.error("--count 要在 1 到 1000 之间")
     if getattr(a, "threshold", None) is not None and not 0 < a.threshold < 1:
@@ -372,6 +389,8 @@ def main(argv=None):
             show_probe(info)
             return 0
         if a.cmd in SEQ:
+            if a.cmd == "interval" and a.every is not None and a.every < info["duration"] / 1000:
+                raise Fail("--every 会产生超过 1000 张图片。请增大间隔，或用 --count（最多 1000 张）。", 1)
             return sequence(a, info)
         if a.cmd == "gif":
             return gif(a, info)

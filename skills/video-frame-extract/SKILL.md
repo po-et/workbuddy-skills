@@ -2,7 +2,7 @@
 name: video-frame-extract
 description: "视频抽帧——用 ffmpeg 从视频里按时间点截图、每隔 N 秒抽一张、只抽关键帧或按场景变化抽帧，还能拼缩略图、转 GIF。当用户说「视频截图」「每隔几秒截一张」「抽关键帧」「做视频封面」「视频转GIF」「让AI看视频」时使用。"
 author: Captain
-version: 0.1.1
+version: 0.1.2
 display_name: "视频抽帧"
 display_name_en: "Video Frame Extract"
 description_zh: "用 ffmpeg/ffprobe 从视频里截图与抽帧：先看时长、帧率、分辨率与旋转，再按时间点、固定间隔、关键帧、场景变化抽取，拼缩略图、用调色板两步法转 GIF；讲清 -ss 位置、每 N 秒取哪一帧、竖屏旋转、文件编号这些常见坑。"
@@ -24,6 +24,10 @@ examples_en:
   - "Grab the frame at 1:23 of this video as a cover image"
   - "Take one frame every 5 seconds so an AI can see what the video is about"
   - "Turn seconds 10 to 13 of this screen recording into a GIF that isn't too big"
+metadata:
+  openclaw:
+    requires:
+      bins: [ffmpeg, ffprobe]
 ---
 
 # 视频抽帧
@@ -90,7 +94,7 @@ mkdir -p key && ffmpeg -skip_frame nokey -i in.mp4 -fps_mode vfr -q:v 2 key/k_%0
 mkdir -p scene && ffmpeg -i in.mp4 -vf "select='eq(n,0)+gt(scene,0.3)',showinfo" -fps_mode vfr -q:v 2 scene/s_%03d.jpg 2>&1 | grep -o 'pts_time:[0-9.]*'
 # 4×3 缩略图拼图：按总时长均分 12 张
 D=$(ffprobe -v error -show_entries format=duration -of csv=p=0 in.mp4)
-ffmpeg -i in.mp4 -vf "fps=12/$D,scale=320:-2,tile=4x3:padding=4:margin=4" -frames:v 1 -q:v 3 sheet.jpg
+ffmpeg -i in.mp4 -vf "fps=12/$D:round=up,scale=320:-2,tile=4x3:padding=4:margin=4" -frames:v 1 -q:v 3 sheet.jpg
 ```
 
 转 GIF 分两步：先为这一段画面生成专属 256 色调色板，再按它上色。一步直转用的是通用色表，真实画面容易出现色带和噪点。
@@ -117,7 +121,9 @@ GIF 太大按这个顺序减：缩短时长 → 降到 8–10 帧/秒 → 宽度
 | `sheet` | 缩略图拼图 | `python3 scripts/frames.py sheet in.mp4 --cols 4 --rows 3` |
 | `gif` | 调色板两步法 | `python3 scripts/frames.py gif in.mp4 --start 10 --duration 3` |
 
-比直接敲命令多做的事：时间点超出视频长度先报错；输出目录自动建；目录里已有同前缀的旧图、或同名输出已存在时先停下（`--overwrite` 才覆盖）；抽完核对张数和分辨率，把「文件名、秒、时间码」写进输出目录的 `index.csv`；场景抽帧只出 1 张或出得太多时给出调阈值的建议；`--dry-run` 只打印命令；单条命令默认 1800 秒超时（`--timeout` 可改）。
+比直接敲命令多做的事：时间点超出视频长度先报错；数值必须有限，封面候选帧率为每秒大于 0 且不超过 50 帧；固定间隔预计超过 1000 张时要求增大间隔；输出目录自动建；目录里已有同前缀的旧图、`index.csv` 或同名输出时先停下（`--overwrite` 才覆盖）；抽完核对张数和分辨率，把「文件名、秒、时间码」写进输出目录的 `index.csv`；场景抽帧只出 1 张或出得太多时给出调阈值的建议；`--dry-run` 只打印命令；单条命令默认 1800 秒超时（`--timeout` 可改）。
+
+拼图按从左到右、从上到下排列，第 k 格对应约 `k×总时长/(列数×行数)` 秒，从第 0 秒起。先用相同张数的 `interval --count` 生成 `index.csv`，可将时间点与拼图一起交给 AI；拼图本身不带文字标签。画面采样最多早一帧，不能据此推断没有拍到的发言或画面。
 
 ## 信息不全或出错时
 
@@ -170,7 +176,7 @@ GIF 太大按这个顺序减：缩短时长 → 降到 8–10 帧/秒 → 宽度
 
 ## 示例
 
-以下为示例：视频是用 ffmpeg 自带测试图案生成的 32 秒样片，输出是实际运行脚本的结果，绝对路径截短为 `…/`。
+以下为 0.1.1 版的历史实测示例：视频是用 ffmpeg 自带测试图案生成的 32 秒样片，输出是实际运行脚本的结果，绝对路径截短为 `…/`。0.1.2 保留更多参数有效位数；当前实测见本地会议复盘素材演示。
 
 **用户**：每隔 5 秒截一张，我想让 AI 看视频讲了什么。（附：demo.mp4）
 
@@ -195,7 +201,7 @@ python3 scripts/frames.py interval demo.mp4 --count 12 --out-dir ai_frames
 说明：时间点是每隔约 2.67 秒的时刻，实际画面是该时刻或之前最近的一帧（最多早 0.04 秒）
 ```
 
-更多完整示例：[给 AI 看视频：均分、拼图与场景抽帧](examples/ai-video-frames.md)、[封面、竖屏截图与 GIF](examples/cover-and-gif.md)。
+更多完整示例：[给 AI 看视频：均分、拼图与场景抽帧](examples/ai-video-frames.md)、[封面、竖屏截图与 GIF](examples/cover-and-gif.md)、[本地会议复盘素材演示（合成测试）](examples/meeting-review-local-demo.md)。
 
 ## 常见问题（FAQ）
 

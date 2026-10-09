@@ -9,6 +9,10 @@ skillhub install renting-guide --namespace indiv-captain       # 租房攻略
 
 ---
 
+先完成一件事：从[报表制作、辩论稿或视频抽帧](docs/try-a-skill.md)选一个，复制任务或运行本机命令。完成或遇到问题后，用[技能反馈](https://github.com/po-et/workbuddy-skills/issues/new?template=skill-feedback.md)留下可公开的输入和实际结果，帮助我们改进。
+
+[2026-10-09 升级与验收记录](docs/releases/2026-10-09.md)包含本轮修复、可复跑案例和平台上线状态。
+
 ## 按场景找技能
 
 最上面两组是 2026-09 新增的开学季与腾讯生态技能。其余 180 个技能分三块：**日常场景**（65 个）→ **开发者与运维**（56 个）→ **工程实践复刻系列**（59 个）。日常场景下面全部列出；后两块这里只列分组，逐条清单见 **[docs/SKILLS.md](docs/SKILLS.md)**。

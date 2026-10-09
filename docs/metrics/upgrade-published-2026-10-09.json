@@ -1,0 +1,74 @@
+[
+ {
+  "slug": "report-making",
+  "dir": "report-making",
+  "query": "报表制作",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245930",
+  "published_at": "2026-10-09T17:55"
+ },
+ {
+  "slug": "video-frame-extract",
+  "dir": "video-frame-extract",
+  "query": "视频抽帧",
+  "rank_before": null,
+  "new_version": "0.1.2",
+  "skill_id": "247924",
+  "published_at": "2026-10-09T18:04"
+ },
+ {
+  "slug": "sql-generation-helper",
+  "dir": "sql-generation-helper",
+  "query": "SQL 生成",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245808",
+  "published_at": "2026-10-09T18:11"
+ },
+ {
+  "slug": "event-host-script",
+  "dir": "event-host-script",
+  "query": "主持词",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245774",
+  "published_at": "2026-10-09T18:12"
+ },
+ {
+  "slug": "coding-for-beginners",
+  "dir": "coding-for-beginners",
+  "query": "编程入门",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245790",
+  "published_at": "2026-10-09T18:14"
+ },
+ {
+  "slug": "debate-speech",
+  "dir": "debate-speech",
+  "query": "辩论稿",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "245963",
+  "published_at": "2026-10-09T18:17"
+ },
+ {
+  "slug": "excel-processing",
+  "dir": "excel-processing",
+  "query": "Excel 处理",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "247931",
+  "published_at": "2026-10-09T18:18"
+ },
+ {
+  "slug": "running-for-beginners",
+  "dir": "running-for-beginners",
+  "query": "跑步入门",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "246223",
+  "published_at": "2026-10-09T18:31"
+ }
+]

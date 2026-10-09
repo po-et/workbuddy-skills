@@ -1,0 +1,263 @@
+{
+  "namespace": "indiv-captain",
+  "generated_at": "2026-10-09T18:32:54.539486+08:00",
+  "download_role": "maintainer_acceptance_verification_not_real_user",
+  "records": [
+    {
+      "slug": "report-making",
+      "target_version": "0.1.1",
+      "latest_version": "0.1.1",
+      "queried_at_beijing": "2026-10-09T18:29:15.046099+08:00",
+      "status": "live_and_package_verified",
+      "skillhub_url": "https://skillhub.cn/skills/@indiv-captain/report-making",
+      "detail_endpoint": "https://api.skillhub.cn/api/v1/skills/report-making?namespace=indiv-captain",
+      "target_version_security_reports": {
+        "keen": "benign",
+        "sanbu": "benign"
+      },
+      "package_files_sha256": [
+        {
+          "path": "SKILL.md",
+          "sha256": "c8e3719e702f8c6c585647ceb449b9a96a1f41f0919d8ebac2ff15bb1acf5cef"
+        },
+        {
+          "path": "examples/monthly-report-region-channel.md",
+          "sha256": "28e9382370ed8922539667adac86fcb44a3b15afe7fbb41263ad5d24be20cb4e"
+        },
+        {
+          "path": "references/templates.md",
+          "sha256": "1440e177a8ce1467089d895fb0b9449b6025c3de4d2e465efb0888b2f4e5f7f7"
+        },
+        {
+          "path": "scripts/anomaly_flag.py",
+          "sha256": "6944d977c1bfc7686e28d48a30a60178e4b13cfa0faaa53f667d760e5370a2ae"
+        },
+        {
+          "path": "scripts/csv_profile.py",
+          "sha256": "4aae40951de44f073be60dcd3fd5569689c5ea2dd8583984aee79771ce5f731a"
+        }
+      ],
+      "fresh_evaluation_confirmed": false
+    },
+    {
+      "slug": "video-frame-extract",
+      "target_version": "0.1.2",
+      "latest_version": "0.1.2",
+      "queried_at_beijing": "2026-10-09T18:29:16.109044+08:00",
+      "status": "live_and_package_verified",
+      "skillhub_url": "https://skillhub.cn/skills/@indiv-captain/video-frame-extract",
+      "detail_endpoint": "https://api.skillhub.cn/api/v1/skills/video-frame-extract?namespace=indiv-captain",
+      "target_version_security_reports": {
+        "keen": "benign",
+        "sanbu": "benign"
+      },
+      "package_files_sha256": [
+        {
+          "path": "SKILL.md",
+          "sha256": "ef137547fcbc5ee13d921fb1aec8ff861144ff5187fe52e5778a066dbc6f27e2"
+        },
+        {
+          "path": "examples/ai-video-frames.md",
+          "sha256": "d74121d55edbf401e72ae661299924876a46171d619364183299a4e575a2bf09"
+        },
+        {
+          "path": "examples/cover-and-gif.md",
+          "sha256": "18c62a9f7f9fc276ad3dc741d42bf7c9024fbe9b462ac49627ffa7823c271be4"
+        },
+        {
+          "path": "examples/meeting-review-local-demo.md",
+          "sha256": "bb6ddae4b65140a0276781daaf8d4197aa2cb97e3eb717dc59f17b677c1cbb9f"
+        },
+        {
+          "path": "scripts/frames.py",
+          "sha256": "022b0a819a50f54551dff424b357645087274472b479ee5289b4562f5457d15f"
+        }
+      ],
+      "fresh_evaluation_confirmed": false
+    },
+    {
+      "slug": "sql-generation-helper",
+      "target_version": "0.1.1",
+      "latest_version": "0.1.1",
+      "queried_at_beijing": "2026-10-09T18:29:17.137159+08:00",
+      "status": "live_and_package_verified",
+      "skillhub_url": "https://skillhub.cn/skills/@indiv-captain/sql-generation-helper",
+      "detail_endpoint": "https://api.skillhub.cn/api/v1/skills/sql-generation-helper?namespace=indiv-captain",
+      "target_version_security_reports": {
+        "keen": "benign",
+        "sanbu": "benign"
+      },
+      "package_files_sha256": [
+        {
+          "path": "SKILL.md",
+          "sha256": "71739d69b95883bf819cd69946ae4001cebeb514fd2db7098f629462264add8a"
+        },
+        {
+          "path": "examples/repurchase-rate.md",
+          "sha256": "f690bd3a7fafd996df78748e25399a6830fdb2525a5fa6ac4cac67513858a46b"
+        },
+        {
+          "path": "references/patterns.md",
+          "sha256": "ac8198ae8646e849f94b9a169e1fd53152ba1e6ed6a3b0b9efd48afcd0690dba"
+        },
+        {
+          "path": "scripts/sql_guard.py",
+          "sha256": "aebdca4b6db201a1fb140972654766c12bda63917f7f0518e00fb17058d4bfde"
+        }
+      ],
+      "fresh_evaluation_confirmed": false
+    },
+    {
+      "slug": "event-host-script",
+      "target_version": "0.1.1",
+      "latest_version": "0.1.1",
+      "queried_at_beijing": "2026-10-09T18:29:18.183037+08:00",
+      "status": "live_and_package_verified",
+      "skillhub_url": "https://skillhub.cn/skills/@indiv-captain/event-host-script",
+      "detail_endpoint": "https://api.skillhub.cn/api/v1/skills/event-host-script?namespace=indiv-captain",
+      "target_version_security_reports": {
+        "keen": "benign",
+        "sanbu": "benign"
+      },
+      "package_files_sha256": [
+        {
+          "path": "SKILL.md",
+          "sha256": "bdffb8eba31cfe3b0fc6348d23b69e59da5f28eff690b3e673d782d3b9e91ca6"
+        },
+        {
+          "path": "examples/annual-party-dual-host.md",
+          "sha256": "9fa14f721b63d79fcc20288426aa2530a1a7bc6507bfeb286a3f835e77f1757d"
+        },
+        {
+          "path": "references/fill-in-template.md",
+          "sha256": "a963be13e68a055d12802a1976ea40f7ad51c9f243da425985605104a041706e"
+        },
+        {
+          "path": "scripts/host_timer.py",
+          "sha256": "e6fc859b5ea480c0d16e29bf70855e42a743fd6f0a78c709feb3a432d1bdd109"
+        }
+      ],
+      "fresh_evaluation_confirmed": false
+    },
+    {
+      "slug": "coding-for-beginners",
+      "target_version": "0.1.1",
+      "latest_version": "0.1.1",
+      "queried_at_beijing": "2026-10-09T18:29:19.186039+08:00",
+      "status": "live_and_package_verified",
+      "skillhub_url": "https://skillhub.cn/skills/@indiv-captain/coding-for-beginners",
+      "detail_endpoint": "https://api.skillhub.cn/api/v1/skills/coding-for-beginners?namespace=indiv-captain",
+      "target_version_security_reports": {
+        "keen": "benign",
+        "sanbu": "benign"
+      },
+      "package_files_sha256": [
+        {
+          "path": "SKILL.md",
+          "sha256": "9759805f5d237e626790ad9f6bbd982af2fb3de6a6f5ed1cc6a4058ee7b365ef"
+        },
+        {
+          "path": "examples/plan-20min-a-day.md",
+          "sha256": "cd29d4f246f5a4f93abe4e516ab311790afa09df895f260f794e73d1cd27e831"
+        },
+        {
+          "path": "references/30-day-plan.md",
+          "sha256": "56fd787ac9b14f2bf47d9f0f46f51b93f2ef32d0b1627baafb375b40019195c1"
+        },
+        {
+          "path": "references/error-types.md",
+          "sha256": "505f1cbeca180bad6d8f2582a470adb0acde337e92c20b86fe09815732e0b481"
+        },
+        {
+          "path": "scripts/explain_error.py",
+          "sha256": "23e493614f19a7bc2b3e744eb00d580719b04435686e83e66afa7d8a0131b6e3"
+        }
+      ],
+      "fresh_evaluation_confirmed": false
+    },
+    {
+      "slug": "debate-speech",
+      "target_version": "0.1.1",
+      "latest_version": "0.1.1",
+      "queried_at_beijing": "2026-10-09T18:29:20.213048+08:00",
+      "status": "live_and_package_verified",
+      "skillhub_url": "https://skillhub.cn/skills/@indiv-captain/debate-speech",
+      "detail_endpoint": "https://api.skillhub.cn/api/v1/skills/debate-speech?namespace=indiv-captain",
+      "target_version_security_reports": {
+        "keen": "benign",
+        "sanbu": "benign"
+      },
+      "package_files_sha256": [
+        {
+          "path": "SKILL.md",
+          "sha256": "e68d70b6aa6d247324553443582a22548c6b29289d06c5b4dbb414c7b326bf82"
+        },
+        {
+          "path": "examples/english-timed-constructive.md",
+          "sha256": "4cbd1967683883cd77e39c7c431f765bc37941fae7a0f52d8dbc0712483afda5"
+        },
+        {
+          "path": "examples/lilun-zhengfang-yibian.md",
+          "sha256": "7267e46c595cf397d2f89ba5fc62c4432f39338002e57ee69470cbe824567792"
+        },
+        {
+          "path": "references/rebuttal-patterns.md",
+          "sha256": "be5c8b3b7c1fe8aa6654cd001a67eb5233ad84e6242d547a0435f586f8d40abf"
+        },
+        {
+          "path": "references/skeleton.md",
+          "sha256": "16c6f4a46124210ec0a331a2baf5c839ff92cc70b9f9e161779d30c7b033c966"
+        },
+        {
+          "path": "scripts/speech_timer.py",
+          "sha256": "98bc147270f565a71e11ef6f2284f4e22f802950bef991a733bbe5968b192947"
+        }
+      ],
+      "fresh_evaluation_confirmed": false
+    },
+    {
+      "slug": "excel-processing",
+      "target_version": "0.1.1",
+      "latest_version": "0.1.1",
+      "queried_at_beijing": "2026-10-09T18:29:21.195245+08:00",
+      "status": "live_and_package_verified",
+      "skillhub_url": "https://skillhub.cn/skills/@indiv-captain/excel-processing",
+      "detail_endpoint": "https://api.skillhub.cn/api/v1/skills/excel-processing?namespace=indiv-captain",
+      "target_version_security_reports": {
+        "keen": "benign",
+        "sanbu": "benign"
+      },
+      "package_files_sha256": [
+        {
+          "path": "SKILL.md",
+          "sha256": "fa9eead83595d85476d0dde695deb7aea268f9c87d2a158e98c586fc26407daa"
+        },
+        {
+          "path": "examples/header-aligned-merge.md",
+          "sha256": "ce227c7f4cb4b50c9e0492486eebd2148152975d4eecb818a7e444074d601bf0"
+        },
+        {
+          "path": "references/merge-contract.md",
+          "sha256": "9a990fc3a34abc23ac0e74a0d14d65eacffd4a47fcf607e7654de0f07fd3ee6b"
+        },
+        {
+          "path": "scripts/merge_xlsx.py",
+          "sha256": "ec69c3366c1dcc1f4ca32fc3e07267733a679c41557ed2cd3d45dddadc4b8507"
+        }
+      ],
+      "fresh_evaluation_confirmed": false
+    },
+    {
+      "slug": "running-for-beginners",
+      "target_version": "0.1.1",
+      "latest_version": "0.1.0",
+      "queried_at_beijing": "2026-10-09T18:31:39.000721+08:00",
+      "status": "submitted_not_verified_live",
+      "skillhub_url": "https://skillhub.cn/skills/@indiv-captain/running-for-beginners",
+      "detail_endpoint": "https://api.skillhub.cn/api/v1/skills/running-for-beginners?namespace=indiv-captain",
+      "target_version_security_reports": {},
+      "package_files_sha256": [],
+      "fresh_evaluation_confirmed": false
+    }
+  ]
+}

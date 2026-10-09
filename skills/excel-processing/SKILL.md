@@ -2,11 +2,11 @@
 name: excel-processing
 description: "Excel 处理——用 Python（openpyxl）批量新建、读取、筛选、追加、合并 .xlsx，不弄坏公式、日期和格式。当用户说「用Python处理Excel」「批量合并Excel」「公式读出来是None」「日期变成数字了」时使用。"
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "Excel 处理"
 display_name_en: "Excel Processing"
-description_zh: "Excel 处理：用 openpyxl 批量创建、读取、修改 .xlsx。七段本机跑通的代码覆盖新建带格式的表、按表头名筛选、追加行、写公式、日期写法、合并单元格与冻结窗格、多表合并；另列数字存成文本、日期变序列号、公式读成字符串、大文件内存等 8 个坑的症状和修法。"
-description_en: "Batch-create, read, filter, append and merge .xlsx files with Python and openpyxl without breaking formulas, dates or formatting, with seven locally tested recipes and the eight most common pitfalls."
+description_zh: "Excel 处理：用 openpyxl 批量创建、读取、修改 .xlsx。保留七段实测代码与常见坑修法；新增按表头合并脚本，明确选工作表、严格核对表头、原件只读、结果防覆盖并带来源行；公式默认拒绝，可明确选择已有缓存值，缺缓存时报错。"
+description_en: "Batch-create, read, filter, append and merge .xlsx files with Python and openpyxl. Includes seven tested recipes and a header-aligned merge CLI with explicit sheet selection, input preservation, no-clobber output, provenance and explicit formula-cache handling."
 tags:
   - "Excel 处理"
   - "Excel"
@@ -21,6 +21,14 @@ examples_zh:
   - "用Python批量合并几十个Excel表，每个表列顺序还不一样"
   - "openpyxl写进去的公式，读出来怎么是None"
   - "Excel里的日期用Python读出来变成46289了"
+examples_en:
+  - "Merge Excel detail sheets whose columns are in different orders"
+  - "Explain why an openpyxl formula has no cached value"
+  - "Merge only the named sheet and save a new file without changing inputs"
+metadata:
+  openclaw:
+    requires:
+      bins: [python3]
 ---
 
 # Excel 处理
@@ -41,6 +49,16 @@ examples_zh:
 ```
 
 检查点：动手前写下四样东西，输入文件和工作表名、表头在第几行、要输出什么、输出文件名。处理流程固定为五步：判断，挑下面对应的代码改，另存新文件，在 Excel 里打开核对，交付运行摘要。
+
+## 直接运行：严格按表头合并
+
+```bash
+python3 scripts/merge_xlsx.py east.xlsx west.xlsx --sheet 明细 --out combined.xlsx
+```
+
+要求已有 openpyxl。此脚本只合并 `.xlsx` 平面明细：显式指定工作表；列顺序可变，表头集合必须一致，重复、空表头或无表头数据报错；所有输入只读，输出另存且拒绝覆盖。保留值与数字格式，新增来源文件、工作表、原行号；不复制整份工作簿结构，不自动去重。
+
+公式默认报错。明确加 `--formulas cached` 才读取已有缓存，缺缓存或错误缓存报错，不计算或搬移公式引用。输出 JSON 汇总读入、写出、空行与缓存格数量。表头不在首行可用 `--header-row 3`。完整规则、退出码和依赖见 [合并规则](references/merge-contract.md)；可复跑的 [合成示例](examples/header-aligned-merge.md) 明确不是真实用户案例。
 
 ## 七段代码：新建、筛选、追加、公式、日期、合并冻结、多表合并
 
