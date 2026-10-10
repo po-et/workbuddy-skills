@@ -90,7 +90,7 @@
 | [生日策划](../skills/birthday-party-planner/) | 生日策划：按寿星与预算定主题场地，三段时间线，附三份现成方案 | [`birthday-party-planner`](https://skillhub.cn/skills/@indiv-captain/birthday-party-planner) |
 | [手机管理](../skills/kids-screen-time/) | 给家长的孩子屏幕规则：和孩子一起写约定，附冲突时的说法与复盘 | [`kids-screen-time`](https://skillhub.cn/skills/@indiv-captain/kids-screen-time) |
 | [养狗](../skills/dog-care-basics/) | 新手养狗：接狗准备、第一周安排、三项基础训练、疫苗驱虫常识 | [`dog-care-basics`](https://skillhub.cn/skills/@indiv-captain/dog-care-basics) |
-| [跑步入门](../skills/running-for-beginners/) | 零基础跑步 8 周计划：从跑 1 分钟走 2 分钟起步，到连续慢跑 30 分钟 | [`running-for-beginners`](https://skillhub.cn/skills/@indiv-captain/running-for-beginners) |
+| [跑步入门](../skills/running-for-beginners/) | 可重复、延长的自拟 8 阶段走跑示例；出现疼痛先暂停，按记录调整 | [`running-for-beginners`](https://skillhub.cn/skills/@indiv-captain/running-for-beginners) |
 | [睡眠计划](../skills/sleep-plan/) | 两周改善睡眠的作息计划：先钉住起床时间，附睡眠日志，不做诊断 | [`sleep-plan`](https://skillhub.cn/skills/@indiv-captain/sleep-plan) |
 | [晨间简报](../skills/morning-briefing/) | 把待办、日程、消息按优先级整理成五段式简报，分三种长度 | [`morning-briefing`](https://skillhub.cn/skills/@indiv-captain/morning-briefing) |
 

@@ -2,7 +2,7 @@
 name: api-diff
 description: 接口差分测试、两个环境响应对比、上线前后接口回归、灰度 vs 线上对比。当用户说「对比一下预发和线上这批接口的返回」「新版本接口有没有改坏」「同一个请求打两个环境看差异」「接口回归测试」「A/B 环境响应 diff」「重构后接口输出是否一致」「迁移后数据对不对」时使用。脚本把一份用例（方法、路径、头、体）同时打到环境 A 与 B，逐字段深度对比 JSON（可忽略时间戳、trace id 等易变字段），报告状态码、耗时与差异路径；凭证只从环境变量读，不写入用例文件。
 author: Captain
-version: 0.1.0
+version: 0.1.1
 display_name: "接口差分测试"
 display_name_en: "API Diff Testing"
 description_zh: "同一批请求打到两个环境，逐字段深度对比 JSON 响应（可忽略易变字段），输出状态码、耗时与差异路径表，用于发布前后回归。"
@@ -21,13 +21,21 @@ metadata:
 
 # 接口差分测试
 
-上线前后最便宜的回归：**同样的请求，两个环境，逐字段比**。不需要写断言，差异本身就是问题清单。
+同样的请求，两个环境，逐字段比。输出行为变化清单，再按接口契约判断哪些变化需要修复。
+
+## 先跑一个完整本地案例
+
+```bash
+python3 {baseDir}/examples/local_order_demo.py
+```
+
+它启动两台回环 HTTP 服务，实际发送 GET，先发现合成订单的金额、数量、布尔类型和缺失字段四处回归，再修正响应并重新请求，分别生成失败与通过报告。输入、差异路径、退出码和 SHA256 都可检查；不连接外部端点、不读取认证头。详见 [本地订单验收案例](examples/local-order-acceptance.md)。
 
 ## 核心原则
 
-1. **凭证不落盘。** 认证头只从环境变量 `API_DIFF_HEADERS` 读；用例文件可以进仓库，token 不能。
-2. **只打只读接口。** 默认 GET；要对比写接口必须用测试数据且用户明确同意。
-3. **忽略要有理由。** 每个被忽略的字段（时间戳、请求 id）在报告里列出，别把真差异也忽略掉。
+1. **认证头只从环境变量 `API_DIFF_HEADERS` 读。** 用例文件的 Authorization、Cookie、带 token/secret/api-key 的常见头会被拒绝；自定义凭证名称仍需人工检查。报告不会写入请求头，并遮蔽响应中回显的这些环境认证值；分享报告前仍需检查响应里的其他敏感业务字段。
+2. **执行范围可核对。** 默认只允许回环地址的 GET/HEAD，不跟随重定向、不使用系统代理。核对外部 A/B 端点且任务已获授权后加 `--allow-external`；其他方法需用户已授权使用测试数据，再加 `--allow-write`。GET/HEAD 是方法限制，仍需核对接口实现是否只读。
+3. **忽略要有理由。** 按完整字段名匹配正则，逐条列出实际忽略路径；`id` 不会匹配 `order_id`。常见金额/数量字段及其父级子树受保护，详见下方边界。
 4. **差异不是错误。** 报告只说"不一样"，是不是 bug 由人判断；但状态码不同一定要置顶。
 
 ## 执行流程
@@ -37,8 +45,8 @@ metadata:
 `cases.json`（示例见 `references/cases.example.json`）：
 
 ```json
-[{"name": "订单详情", "method": "GET", "path": "/api/orders/1"},
- {"name": "搜索", "method": "POST", "path": "/api/search", "body": {"q": "test"}},
+[{"name": "订单详情", "method": "GET", "path": "/api/orders/DEMO-001"},
+ {"name": "搜索", "method": "GET", "path": "/api/search?q=synthetic"},
  {"name": "路径不同", "method": "GET", "path": "/v1/x", "path_b": "/v2/x"}]
 ```
 
@@ -47,12 +55,15 @@ metadata:
 ### 第 2 步：跑对比
 
 ```bash
-API_DIFF_HEADERS='{"Authorization":"Bearer <token>"}' \
-python3 {baseDir}/scripts/api_diff.py --a https://staging.example.com --b https://prod.example.com \
+python3 {baseDir}/scripts/api_diff.py --a http://127.0.0.1:8001 --b http://127.0.0.1:8002 \
   --cases cases.json --ignore "updated_at,request_id,trace_id,^ts$" --md out/api-diff.md --out out/api-diff.json
 ```
 
-`--ignore` 是字段名正则（逗号分隔）；退出码 0 表示全部一致。
+这条命令适用于已启动的本地服务；首次试用直接执行上方演示脚本即可，无需先搭环境。
+
+`--ignore` 是字段名全匹配正则（逗号分隔）。退出码 **0**：所有用例为 2xx 且响应一致；**1**：响应/状态差异、同码非 2xx、网络或解析失败；**2**：输入或执行范围无效、忽略规则命中保护字段。两端同为 500 不算通过；HEAD/204/205 无响应体可正常比较。JSON 布尔值与数字区分，`null` 与缺失区分，小数用 Decimal 精确比较；文本按完整响应字节比较。
+
+如需访问已核对的外部环境，在命令中明确添加 `--allow-external`。认证头从环境变量注入，例如 `API_DIFF_HEADERS` 内容为 `{"Authorization":"Bearer <token>"}`，不要把真实值写入用例或可分享命令记录。
 
 ### 第 3 步：解读（这一步由你做）
 
@@ -69,7 +80,7 @@ python3 {baseDir}/scripts/api_diff.py --a https://staging.example.com --b https:
 
 ```
 # 接口差分：A ↔ B
-- 用例数 / 一致 / 有差异 / 状态码不同 / 失败；忽略字段
+- 用例数 / 一致 / 有差异 / 状态码不同 / 失败 / 同码非 2xx / 拒绝的忽略规则
 | 用例 | 方法 路径 | 结论 | A 状态/耗时 | B 状态/耗时 | 差异数 |
 ## <用例名>：逐路径差异
 ## 结论：需修 / 预期 / 待确认
@@ -77,6 +88,8 @@ python3 {baseDir}/scripts/api_diff.py --a https://staging.example.com --b https:
 
 ## 常见问题
 
-**接口有分页或随机排序？** 用 `--ignore` 忽略排序字段，或在用例里固定 `sort`/`page_size` 参数。
-**响应不是 JSON？** 按文本比较前 4000 字符。
+**接口有分页或随机排序？** 固定 `sort`/`page_size`；数组按位置比较，忽略排序字段不会重排数组。
+**响应不是 JSON？** 按完整字节的 SHA256 比较，报告只展示有限预览，不会忽略第 4000 字符后的变化。
 **要比 gRPC？** 先用网关或 grpcurl 转成 JSON 再比。
+**能忽略金额或数量吗？** 脚本将字段名按下划线、分隔符和 camelCase 拆词，保护 `amount/quantity/qty/count/price/total/balance`；忽略父对象时也检查这些字段。命中后保留差异、报告拒绝路径并退出 2。这个命名规则不能识别 `money`、`库存` 或所有业务语义，仍需按实际接口契约复核。
+**报告会截断吗？** 每个用例最多收集 200 条差异，JSON 留前 50 条，Markdown 展示前 30 条，并有截断提示；不能把显示数量当成全部差异数。响应本身会完整读入内存，适合普通 JSON 接口，不用于流式或巨型响应。

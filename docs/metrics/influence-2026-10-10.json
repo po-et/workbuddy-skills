@@ -1,0 +1,251 @@
+{
+  "checked_at": "2026-10-10T11:41:01.564535+08:00",
+  "completed_at": "2026-10-10T11:42:00.313964+08:00",
+  "namespace": "indiv-captain",
+  "account_inventory": {
+    "complete": true,
+    "count": 200,
+    "unique_slugs": 200,
+    "namespace_verified": true,
+    "totals": {
+      "downloads": 14061,
+      "installs": 0,
+      "stars": 3
+    },
+    "baseline_checked_at": "2026-10-09T17:44:14.222244+08:00",
+    "deltas_since_baseline": {
+      "downloads": 284,
+      "installs": 0,
+      "stars": 0
+    },
+    "sources": [
+      {
+        "url": "https://api.skillhub.cn/api/v1/users/user_a3a2e24a/skills?page=1&pageSize=100",
+        "queried_at_beijing": "2026-10-10T11:41:01.565420+08:00",
+        "http_status": 200
+      },
+      {
+        "url": "https://api.skillhub.cn/api/v1/users/user_a3a2e24a/skills?page=2&pageSize=100",
+        "queried_at_beijing": "2026-10-10T11:41:04.461269+08:00",
+        "http_status": 200
+      },
+      {
+        "url": "https://api.skillhub.cn/api/v1/users/user_a3a2e24a/skills?page=3&pageSize=100",
+        "queried_at_beijing": "2026-10-10T11:41:08.587032+08:00",
+        "http_status": 200
+      }
+    ]
+  },
+  "interpretation": {
+    "downloads": "Counter includes maintainer verification downloads; people and completed tasks cannot be inferred.",
+    "installs": "SkillHub API field, not a verified count of all-channel users. WorkBuddy open-platform install/call metrics have different semantics.",
+    "stars": "Favorites, not distinct verified people.",
+    "independent_completed_tasks": null,
+    "repeat_users": null,
+    "public_feedback_issues": 0
+  },
+  "prior_release_checks": [
+    {
+      "slug": "report-making",
+      "expected_version": "0.1.1",
+      "latest_version": "0.1.1",
+      "namespace_verified": true,
+      "security_statuses": {
+        "keen": "benign",
+        "sanbu": "benign"
+      },
+      "evaluation_created_at": "2026-09-26T15:54:27.158000+08:00",
+      "published_at": "2026-10-09T17:55:51.450000+08:00",
+      "fresh_evaluation_confirmed": false,
+      "detail_source": {
+        "url": "https://api.skillhub.cn/api/v1/skills/report-making?namespace=indiv-captain",
+        "queried_at_beijing": "2026-10-10T11:41:10.917802+08:00",
+        "http_status": 200
+      },
+      "evaluation_source": {
+        "url": "https://api.skillhub.cn/api/v1/skills/report-making/evaluation?namespace=indiv-captain",
+        "queried_at_beijing": "2026-10-10T11:41:13.063667+08:00",
+        "http_status": 200
+      }
+    },
+    {
+      "slug": "video-frame-extract",
+      "expected_version": "0.1.2",
+      "latest_version": "0.1.2",
+      "namespace_verified": true,
+      "security_statuses": {
+        "keen": "benign",
+        "sanbu": "benign"
+      },
+      "evaluation_created_at": "2026-09-29T05:12:42.626000+08:00",
+      "published_at": "2026-10-09T18:04:47.410000+08:00",
+      "fresh_evaluation_confirmed": false,
+      "detail_source": {
+        "url": "https://api.skillhub.cn/api/v1/skills/video-frame-extract?namespace=indiv-captain",
+        "queried_at_beijing": "2026-10-10T11:41:15.622659+08:00",
+        "http_status": 200
+      },
+      "evaluation_source": {
+        "url": "https://api.skillhub.cn/api/v1/skills/video-frame-extract/evaluation?namespace=indiv-captain",
+        "queried_at_beijing": "2026-10-10T11:41:18.099598+08:00",
+        "http_status": 200
+      }
+    },
+    {
+      "slug": "sql-generation-helper",
+      "expected_version": "0.1.1",
+      "latest_version": "0.1.1",
+      "namespace_verified": true,
+      "security_statuses": {
+        "keen": "benign",
+        "sanbu": "benign"
+      },
+      "evaluation_created_at": "2026-09-26T15:43:26.093000+08:00",
+      "published_at": "2026-10-09T18:11:38.474000+08:00",
+      "fresh_evaluation_confirmed": false,
+      "detail_source": {
+        "url": "https://api.skillhub.cn/api/v1/skills/sql-generation-helper?namespace=indiv-captain",
+        "queried_at_beijing": "2026-10-10T11:41:20.511970+08:00",
+        "http_status": 200
+      },
+      "evaluation_source": {
+        "url": "https://api.skillhub.cn/api/v1/skills/sql-generation-helper/evaluation?namespace=indiv-captain",
+        "queried_at_beijing": "2026-10-10T11:41:22.910870+08:00",
+        "http_status": 200
+      }
+    },
+    {
+      "slug": "event-host-script",
+      "expected_version": "0.1.1",
+      "latest_version": "0.1.1",
+      "namespace_verified": true,
+      "security_statuses": {
+        "keen": "benign",
+        "sanbu": "benign"
+      },
+      "evaluation_created_at": "2026-09-25T19:48:00.651000+08:00",
+      "published_at": "2026-10-09T18:12:54.091000+08:00",
+      "fresh_evaluation_confirmed": false,
+      "detail_source": {
+        "url": "https://api.skillhub.cn/api/v1/skills/event-host-script?namespace=indiv-captain",
+        "queried_at_beijing": "2026-10-10T11:41:25.218975+08:00",
+        "http_status": 200
+      },
+      "evaluation_source": {
+        "url": "https://api.skillhub.cn/api/v1/skills/event-host-script/evaluation?namespace=indiv-captain",
+        "queried_at_beijing": "2026-10-10T11:41:27.416814+08:00",
+        "http_status": 200
+      }
+    },
+    {
+      "slug": "coding-for-beginners",
+      "expected_version": "0.1.1",
+      "latest_version": "0.1.1",
+      "namespace_verified": true,
+      "security_statuses": {
+        "keen": "benign",
+        "sanbu": "benign"
+      },
+      "evaluation_created_at": "2026-09-26T15:37:20.445000+08:00",
+      "published_at": "2026-10-09T18:14:09.712000+08:00",
+      "fresh_evaluation_confirmed": false,
+      "detail_source": {
+        "url": "https://api.skillhub.cn/api/v1/skills/coding-for-beginners?namespace=indiv-captain",
+        "queried_at_beijing": "2026-10-10T11:41:29.825052+08:00",
+        "http_status": 200
+      },
+      "evaluation_source": {
+        "url": "https://api.skillhub.cn/api/v1/skills/coding-for-beginners/evaluation?namespace=indiv-captain",
+        "queried_at_beijing": "2026-10-10T11:41:31.987926+08:00",
+        "http_status": 200
+      }
+    },
+    {
+      "slug": "debate-speech",
+      "expected_version": "0.1.1",
+      "latest_version": "0.1.1",
+      "namespace_verified": true,
+      "security_statuses": {
+        "keen": "benign",
+        "sanbu": "benign"
+      },
+      "evaluation_created_at": "2026-09-26T16:19:43.605000+08:00",
+      "published_at": "2026-10-09T18:17:34.309000+08:00",
+      "fresh_evaluation_confirmed": false,
+      "detail_source": {
+        "url": "https://api.skillhub.cn/api/v1/skills/debate-speech?namespace=indiv-captain",
+        "queried_at_beijing": "2026-10-10T11:41:34.520504+08:00",
+        "http_status": 200
+      },
+      "evaluation_source": {
+        "url": "https://api.skillhub.cn/api/v1/skills/debate-speech/evaluation?namespace=indiv-captain",
+        "queried_at_beijing": "2026-10-10T11:41:36.761660+08:00",
+        "http_status": 200
+      }
+    },
+    {
+      "slug": "excel-processing",
+      "expected_version": "0.1.1",
+      "latest_version": "0.1.1",
+      "namespace_verified": true,
+      "security_statuses": {
+        "keen": "benign",
+        "sanbu": "benign"
+      },
+      "evaluation_created_at": "2026-09-27T11:39:14.264000+08:00",
+      "published_at": "2026-10-09T18:18:56.727000+08:00",
+      "fresh_evaluation_confirmed": false,
+      "detail_source": {
+        "url": "https://api.skillhub.cn/api/v1/skills/excel-processing?namespace=indiv-captain",
+        "queried_at_beijing": "2026-10-10T11:41:39.027617+08:00",
+        "http_status": 200
+      },
+      "evaluation_source": {
+        "url": "https://api.skillhub.cn/api/v1/skills/excel-processing/evaluation?namespace=indiv-captain",
+        "queried_at_beijing": "2026-10-10T11:41:41.181240+08:00",
+        "http_status": 200
+      }
+    },
+    {
+      "slug": "running-for-beginners",
+      "expected_version": "0.1.1",
+      "latest_version": "0.1.1",
+      "namespace_verified": true,
+      "security_statuses": {
+        "keen": "benign",
+        "sanbu": "benign"
+      },
+      "evaluation_created_at": "2026-09-26T16:23:11.239000+08:00",
+      "published_at": "2026-10-09T18:31:07.744000+08:00",
+      "fresh_evaluation_confirmed": false,
+      "detail_source": {
+        "url": "https://api.skillhub.cn/api/v1/skills/running-for-beginners?namespace=indiv-captain",
+        "queried_at_beijing": "2026-10-10T11:41:43.844896+08:00",
+        "http_status": 200
+      },
+      "evaluation_source": {
+        "url": "https://api.skillhub.cn/api/v1/skills/running-for-beginners/evaluation?namespace=indiv-captain",
+        "queried_at_beijing": "2026-10-10T11:41:46.337001+08:00",
+        "http_status": 200
+      }
+    }
+  ],
+  "github": {
+    "repository": "https://github.com/po-et/workbuddy-skills",
+    "stars": 0,
+    "forks": 0,
+    "issues_first_page_complete": true,
+    "public_issue_or_pr_entries": 0,
+    "views": {
+      "count": 30,
+      "uniques": 18,
+      "last_daily_bucket_utc": "2026-10-08T00:00:00Z"
+    },
+    "clones": {
+      "count": 200,
+      "uniques": 93,
+      "last_daily_bucket_utc": "2026-10-08T00:00:00Z"
+    },
+    "interpretation": "Rolling 14-day traffic; machine activity may contribute. The daily series ends at 2026-10-08 UTC, so this snapshot cannot assess the October 9 trial-page publication."
+  }
+}

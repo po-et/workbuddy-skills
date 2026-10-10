@@ -1,0 +1,11 @@
+[
+ {
+  "slug": "api-diff-test",
+  "dir": "api-diff",
+  "query": "接口差分测试",
+  "rank_before": null,
+  "new_version": "0.1.1",
+  "skill_id": "203378",
+  "published_at": "2026-10-10T11:59"
+ }
+]

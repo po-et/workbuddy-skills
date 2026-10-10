@@ -1,0 +1,31 @@
+{
+  "old": {
+    "id": "response-old",
+    "order_id": "DEMO-ORDER-001",
+    "paid_amount": 19900,
+    "items": [{"sku": "DEMO-SKU-A", "quantity": 2}],
+    "can_refund": true,
+    "note": null,
+    "request_id": "synthetic-request-old",
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  "regressed": {
+    "id": "response-new",
+    "order_id": "DEMO-ORDER-001",
+    "paid_amount": 18900,
+    "items": [{"sku": "DEMO-SKU-A", "quantity": 3}],
+    "can_refund": 1,
+    "request_id": "synthetic-request-new",
+    "updated_at": "2026-10-10T00:00:01Z"
+  },
+  "repaired": {
+    "id": "response-fixed",
+    "order_id": "DEMO-ORDER-001",
+    "paid_amount": 19900,
+    "items": [{"sku": "DEMO-SKU-A", "quantity": 2}],
+    "can_refund": true,
+    "note": null,
+    "request_id": "synthetic-request-fixed",
+    "updated_at": "2026-10-10T00:00:02Z"
+  }
+}

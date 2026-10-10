@@ -1,17 +1,30 @@
 # workbuddy-skills
 
-面向腾讯 WorkBuddy / SkillHub 的开源中文 Agent 技能，全部以账号 `indiv-captain` 发布在 [skillhub.cn](https://skillhub.cn/)，截至 2026-09-26 线上 **200 个**（SkillHub 单账号上限），另有新写的技能在本仓库先行可用、排队上架：从检讨书、请假条、开题报告、背单词、租房、个税汇算这类日常事，到上线体检、日志排查、代码评审这类研发活。许可：文字部分（文档、`SKILL.md` 正文、模板）CC BY 4.0，代码 MIT，见 [LICENSE-CONTENT](LICENSE-CONTENT)；`ported/` 下的复刻技能沿用各自上游的许可证。用法：在 skillhub.cn 搜技能的中文名（比如「检讨书」），在技能页安装；或者用命令行 `skillhub install <slug> --namespace indiv-captain`。`--namespace` 不能省：有些 slug 和其他作者的技能同名（如 `code-review-zh`、`pr-description`、`secrets-scan`、`skillhub-publish-helper`），不带它可能装到别人的那个。
+**Captain · 可核验的 AI 工作流**：给 WorkBuddy 一项具体任务，交付能追溯输入、检查结果、重复运行的文件。由个人作者维护，面向腾讯 WorkBuddy / SkillHub；开源代码与示例不代表腾讯官方认证或真实客户案例。
+
+## 从三个完整任务开始
+
+| 你要完成的事 | 输入 → 交付 | 从这里试用 |
+|---|---|---|
+| 接口迁移前发现业务差异 | 两套接口与用例 → 差异 JSON、失败退出码、忽略字段记录 | [API 差分验收](skills/api-diff/) |
+| 多份 Excel 整理成管理报表 | 列顺序不同的明细 → 来源行、汇总、异常、业务报告 | [办公报表完整示例](examples/office-report/) |
+| 从长录屏选出复盘画面 | 本机视频 → 带时间点截图、联系表、原件核对 | [视频抽帧](skills/video-frame-extract/) |
+
+先看[安装与任务入口](docs/start-here.md)，完成后用[技能反馈](https://github.com/po-et/workbuddy-skills/issues/new?template=skill-feedback.md)记录实际输入与结果。[本轮开发与验收](docs/releases/2026-10-10.md)包含接口差分升级、办公完整链路和 117 项回归；[此前八项升级](docs/releases/2026-10-09.md)也保留上线证据。
+
+## 安装到 WorkBuddy
+
+本账号命名空间是 `indiv-captain`。本机已有 SkillHub CLI 时，必须同时指定作者与 WorkBuddy 的技能目录；默认 `./skills/` 不是 WorkBuddy 的识别目录。目录依据 [SkillHub 官方安装说明](https://skillhub.cn/install/skillhub.md)。
 
 ```bash
-skillhub install reflection-letter --namespace indiv-captain   # 检讨书
-skillhub install renting-guide --namespace indiv-captain       # 租房攻略
+skillhub install api-diff-test --namespace indiv-captain --dir "$HOME/.workbuddy/skills"
+skillhub install excel-processing --namespace indiv-captain --dir "$HOME/.workbuddy/skills"
+skillhub install report-making --namespace indiv-captain --dir "$HOME/.workbuddy/skills"
 ```
 
----
+安装后按官方说明重启客户端，再在新任务中调用技能。[更多试用任务](docs/try-a-skill.md)也包含辩论、买车等场景。`--namespace` 避免同名作者混淆，`--dir` 避免装到当前工作目录；本机脚本通过与实际 WorkBuddy 对话完成属于两项独立验证。
 
-先完成一件事：从[报表制作、辩论稿或视频抽帧](docs/try-a-skill.md)选一个，复制任务或运行本机命令。完成或遇到问题后，用[技能反馈](https://github.com/po-et/workbuddy-skills/issues/new?template=skill-feedback.md)留下可公开的输入和实际结果，帮助我们改进。
-
-[2026-10-09 升级与验收记录](docs/releases/2026-10-09.md)包含本轮修复、可复跑案例和平台上线状态。
+截至 2026-10-10，本账号在 [SkillHub](https://skillhub.cn/) 有 **200 个**在线技能；新技能先在仓库可用，受账号名额限制排队上架。完整目录保留日常场景、开发运维与工程实践复刻。许可：文字（文档、`SKILL.md`、模板）CC BY 4.0，代码 MIT，见 [LICENSE-CONTENT](LICENSE-CONTENT)；`ported/` 沿用各自上游许可证。
 
 ## 按场景找技能
 
@@ -126,7 +139,7 @@ skillhub install renting-guide --namespace indiv-captain       # 租房攻略
 | [生日策划](skills/birthday-party-planner/) | 生日策划：按寿星与预算定主题场地，三段时间线，附三份现成方案 | [`birthday-party-planner`](https://skillhub.cn/skills/@indiv-captain/birthday-party-planner) |
 | [手机管理](skills/kids-screen-time/) | 给家长的孩子屏幕规则：和孩子一起写约定，附冲突时的说法与复盘 | [`kids-screen-time`](https://skillhub.cn/skills/@indiv-captain/kids-screen-time) |
 | [养狗](skills/dog-care-basics/) | 新手养狗：接狗准备、第一周安排、三项基础训练、疫苗驱虫常识 | [`dog-care-basics`](https://skillhub.cn/skills/@indiv-captain/dog-care-basics) |
-| [跑步入门](skills/running-for-beginners/) | 零基础跑步 8 周计划：从跑 1 分钟走 2 分钟起步，到连续慢跑 30 分钟 | [`running-for-beginners`](https://skillhub.cn/skills/@indiv-captain/running-for-beginners) |
+| [跑步入门](skills/running-for-beginners/) | 可重复、延长的自拟 8 阶段走跑示例；出现疼痛先暂停，按记录调整 | [`running-for-beginners`](https://skillhub.cn/skills/@indiv-captain/running-for-beginners) |
 | [睡眠计划](skills/sleep-plan/) | 两周改善睡眠的作息计划：先钉住起床时间，附睡眠日志，不做诊断 | [`sleep-plan`](https://skillhub.cn/skills/@indiv-captain/sleep-plan) |
 | [晨间简报](skills/morning-briefing/) | 把待办、日程、消息按优先级整理成五段式简报，分三种长度 | [`morning-briefing`](https://skillhub.cn/skills/@indiv-captain/morning-briefing) |
 
@@ -197,8 +210,8 @@ skillhub install renting-guide --namespace indiv-captain       # 租房攻略
 
 两条路，都不需要你自己打包：
 
-1. **SkillHub**（[skillhub.cn](https://skillhub.cn/)）：180 个技能都在 `indiv-captain` 名下，技能页有「安装到本地 Agent」按钮；
-   装了官方 CLI 也可以 `skillhub install <slug> --namespace indiv-captain`（为什么要带 `--namespace` 见开头）。
+1. **SkillHub**（[skillhub.cn](https://skillhub.cn/)）：本账号 200 个在线技能都在 `indiv-captain` 名下，技能页提供安装入口；
+   装了官方 CLI 也可以 `skillhub install <slug> --namespace indiv-captain --dir "$HOME/.workbuddy/skills"`（目录与重启说明见开头）。
    slug 与目录名不完全一致（例如 `release-checklist` 的线上 slug 是 `release-checklist-git`），
    对照见 [docs/SKILLS.md](docs/SKILLS.md)：中文名链接到源目录，最后一列是 slug。
 2. **本地目录**：把 `skills/<name>/` 整个目录放进 WorkBuddy 的技能目录。
@@ -209,8 +222,8 @@ skillhub install renting-guide --namespace indiv-captain       # 租房攻略
 
 ### B. 纯命令行，不装任何 Agent
 
-**这是最被低估的一条路。**180 个里有 54 个自带可执行脚本，其中 40 个只要有 `python3` 就能跑
-（标准库，不用 pip），可以直接当 CI 步骤、cron 任务或者临时排查工具用：
+带可执行脚本的技能可以直接当 CI 步骤或临时排查工具用。许多脚本只用 Python 标准库；
+Excel、视频等技能需要额外依赖，按各自 `SKILL.md` 核对环境：
 
 ```bash
 python3 skills/<技能名>/scripts/<脚本>.py --help
@@ -237,8 +250,8 @@ ln -s "$PWD/skills/release-readiness-check" ~/.agents/skills/release-readiness-c
 ### 仓库结构
 
 ```
-skills/             原创技能：139 个目录，其中 121 个在线上
-ported/skills/      中文复刻：60 个目录，其中 59 个在线上；逐个附 ATTRIBUTION.md，保留原许可证
+skills/             原创技能：166 个目录，包含已上线与排队技能
+ported/skills/      中文复刻：60 个目录；逐个附 ATTRIBUTION.md，保留原许可证
 ported/connectors/  CLI-Anything 连接器（mermaid、drawio）
 skillkit/           技能作者的命令行工具箱：起草、体检、打包、排期、看数据
 docs/               技能索引、系列文章、平台实测记录、指标口径
@@ -403,7 +416,7 @@ iteration-report ──迭代区间──> release-readiness-check ──高风�
 
 ## 相关文档
 
-- **[技能索引 docs/SKILLS.md](docs/SKILLS.md)** —— 线上 180 个的完整清单：分组、中文名、一句话、slug
+- **[技能索引 docs/SKILLS.md](docs/SKILLS.md)** —— 分组、中文名、一句话、slug；含 2026-09-24 的历史 180 项索引，当前在线量见[最新快照](docs/metrics/influence-2026-10-10.json)
 - [skillkit](skillkit/README.md) —— 技能作者的命令行工具箱：`new` / `lint` / `build` / `doctor` / `budget` / `stats` / `pitfalls`
 - [系列文章 docs/articles/](docs/articles/) —— 生态观察、使用案例与 SkillHub 平台实测（发布配额、下载量、搜索排名）
 - [生态缺口分析](docs/ecosystem-gap-analysis.md) —— 什么值得搬、什么不值得，带证据

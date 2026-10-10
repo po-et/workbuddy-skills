@@ -1,0 +1,272 @@
+{
+  "namespace": "indiv-captain",
+  "scope": "API upgrade plus synthetic local office workflow; not real users or WorkBuddy-client execution",
+  "api": {
+    "slug": "api-diff-test",
+    "expected_version": "0.1.1",
+    "submitted_at_beijing": "2026-10-10T11:59+08:00",
+    "latest_matches_requested": true,
+    "publication_state": "live_and_package_verified",
+    "independent_review_passed": true,
+    "independent_review_scenarios": 6,
+    "demo": {
+      "synthetic": true,
+      "external_requests": false,
+      "credentials_used": false,
+      "outcomes": {
+        "regressed": {
+          "exit_code": 1,
+          "verdict": "diff",
+          "diff_paths": [
+            "$.can_refund",
+            "$.items[0].quantity",
+            "$.note",
+            "$.paid_amount"
+          ],
+          "ignored_paths": [
+            "$.id",
+            "$.request_id",
+            "$.updated_at"
+          ]
+        },
+        "repaired": {
+          "exit_code": 0,
+          "verdict": "same",
+          "diff_paths": [],
+          "ignored_paths": [
+            "$.id",
+            "$.request_id",
+            "$.updated_at"
+          ]
+        }
+      },
+      "fixture_sha256": "32ecb78b3f49da704dc8ad325e453cd3175a99aeb50544f9978f6a001d6818d9",
+      "cases_sha256": "009af78ae38f0f03ec953a11a30ee48d713409800b163560a3adeff8d9eb19b3",
+      "script_sha256": "c52ff0503364ed421b7d60bfd8957a226a2fda1cddef68a87227210d1e040e0d",
+      "verified": true
+    },
+    "readback": {
+      "namespace_verified": true,
+      "wanted_version": "0.1.1",
+      "latest_version": "0.1.1",
+      "target_version_id": 419647,
+      "scans": {
+        "keen": {
+          "status": "benign"
+        },
+        "sanbu": {
+          "status": "benign"
+        }
+      },
+      "all_files_match": true,
+      "compared_files": [
+        {
+          "file": "SKILL.md",
+          "sha256": "a7c7ae4c258a802e9fc8edc578e19253e5fd11eba508aa0ff5f0361228e1fe9f"
+        },
+        {
+          "file": "examples/local-order-acceptance.md",
+          "sha256": "70240d5b9af82e1e52518656bf81c961a152991a814d8ad049ba8e7c1b5956da"
+        },
+        {
+          "file": "examples/local_order_demo.py",
+          "sha256": "9531a68dc11c159509350e54003af78b41b8d2de9a888ab26d58c89bc0002df7"
+        },
+        {
+          "file": "examples/order-responses.json",
+          "sha256": "32ecb78b3f49da704dc8ad325e453cd3175a99aeb50544f9978f6a001d6818d9"
+        },
+        {
+          "file": "references/cases.example.json",
+          "sha256": "da75367ca3a9e47b7c5a11ea34d6575e21b3b5f14ad7228ae77333defe60db41"
+        },
+        {
+          "file": "scripts/api_diff.py",
+          "sha256": "c52ff0503364ed421b7d60bfd8957a226a2fda1cddef68a87227210d1e040e0d"
+        }
+      ],
+      "fresh_evaluation_confirmed": false,
+      "download_role": "maintainer_acceptance_not_real_user",
+      "checked_at": "2026-10-10T12:05:27.978689+08:00"
+    },
+    "package_verification": {
+      "http_status": 200,
+      "download_role": "agent_acceptance_verification_not_real_user",
+      "package_sha256": "19b3b207448363a24f5674ddf0da252b1a4089c4521b85feac3b80326af79c74",
+      "byte_count": 15339,
+      "downloaded_at": {
+        "queried_at_utc": "2026-10-10T04:05:32.181782+00:00",
+        "queried_at_beijing": "2026-10-10T12:05:32.181782+08:00"
+      },
+      "used_local_acceptance_archive": false,
+      "compared_files": [
+        {
+          "path": "SKILL.md",
+          "dist_sha256": "a7c7ae4c258a802e9fc8edc578e19253e5fd11eba508aa0ff5f0361228e1fe9f",
+          "download_sha256": "a7c7ae4c258a802e9fc8edc578e19253e5fd11eba508aa0ff5f0361228e1fe9f",
+          "match": true
+        },
+        {
+          "path": "examples/local-order-acceptance.md",
+          "dist_sha256": "70240d5b9af82e1e52518656bf81c961a152991a814d8ad049ba8e7c1b5956da",
+          "download_sha256": "70240d5b9af82e1e52518656bf81c961a152991a814d8ad049ba8e7c1b5956da",
+          "match": true
+        },
+        {
+          "path": "examples/local_order_demo.py",
+          "dist_sha256": "9531a68dc11c159509350e54003af78b41b8d2de9a888ab26d58c89bc0002df7",
+          "download_sha256": "9531a68dc11c159509350e54003af78b41b8d2de9a888ab26d58c89bc0002df7",
+          "match": true
+        },
+        {
+          "path": "examples/order-responses.json",
+          "dist_sha256": "32ecb78b3f49da704dc8ad325e453cd3175a99aeb50544f9978f6a001d6818d9",
+          "download_sha256": "32ecb78b3f49da704dc8ad325e453cd3175a99aeb50544f9978f6a001d6818d9",
+          "match": true
+        },
+        {
+          "path": "references/cases.example.json",
+          "dist_sha256": "da75367ca3a9e47b7c5a11ea34d6575e21b3b5f14ad7228ae77333defe60db41",
+          "download_sha256": "da75367ca3a9e47b7c5a11ea34d6575e21b3b5f14ad7228ae77333defe60db41",
+          "match": true
+        },
+        {
+          "path": "scripts/api_diff.py",
+          "dist_sha256": "c52ff0503364ed421b7d60bfd8957a226a2fda1cddef68a87227210d1e040e0d",
+          "download_sha256": "c52ff0503364ed421b7d60bfd8957a226a2fda1cddef68a87227210d1e040e0d",
+          "match": true
+        }
+      ],
+      "missing_dist_files": [],
+      "unexpected_package_files": [
+        "_meta.json"
+      ],
+      "all_dist_files_match": true
+    },
+    "evaluation": {
+      "createdAt": 1789561368376,
+      "versionId": 318514,
+      "explicit_version": null,
+      "fresh_evaluation_confirmed": false,
+      "overall_dimension_equal_weight": 4.493,
+      "overall_all_items_equal_weight": 4.473,
+      "item_count": 15,
+      "is_newer_than_target_latest": false,
+      "latest_createdAt_used": 1791604769322,
+      "latest_matches_target": true,
+      "evaluation_createdAt_utc": "2026-09-16T12:22:48.376000+00:00",
+      "latest_createdAt_utc": "2026-10-10T03:59:29.322000+00:00"
+    },
+    "consumer_install": {
+      "scope": "isolated maintainer CLI install; not WorkBuddy-client task or real user",
+      "namespace_requested": "indiv-captain",
+      "installed_relative_directory": "@indiv-captain/api-diff-test",
+      "version": "0.1.1",
+      "all_dist_files_match": true,
+      "files": [
+        {
+          "file": "SKILL.md",
+          "match": true
+        },
+        {
+          "file": "examples/local-order-acceptance.md",
+          "match": true
+        },
+        {
+          "file": "examples/local_order_demo.py",
+          "match": true
+        },
+        {
+          "file": "examples/order-responses.json",
+          "match": true
+        },
+        {
+          "file": "references/cases.example.json",
+          "match": true
+        },
+        {
+          "file": "scripts/api_diff.py",
+          "match": true
+        }
+      ],
+      "cli_exit_code": 0
+    }
+  },
+  "office": {
+    "synthetic_demo": true,
+    "source_rows": 72,
+    "merged_rows": 72,
+    "provenance_rows_verified": 72,
+    "source_hashes_unchanged": true,
+    "sources": [
+      {
+        "file": "inputs/east.xlsx",
+        "sha256_before": "f86c670cb94b4fdf690deab7e189aea8ef89d27d5cceabf397439ad8ae7f884c",
+        "sha256_after": "f86c670cb94b4fdf690deab7e189aea8ef89d27d5cceabf397439ad8ae7f884c"
+      },
+      {
+        "file": "inputs/west.xlsx",
+        "sha256_before": "32410f5175940fd3e9813c064a036e14ebe5a70c3b8a94c1b3f1a7f4bc694170",
+        "sha256_after": "32410f5175940fd3e9813c064a036e14ebe5a70c3b8a94c1b3f1a7f4bc694170"
+      }
+    ],
+    "known_sales_source": "312050.89",
+    "known_sales_merged": "312050.89",
+    "known_sales_grouped": "312050.89",
+    "known_sales_monthly": "312050.89",
+    "anomaly_count": 1,
+    "missing_sales_rows": 1,
+    "missing_refund_rows": 1,
+    "steps": [
+      {
+        "name": "merge",
+        "script": "skills/excel-processing/scripts/merge_xlsx.py",
+        "script_sha256": "ec69c3366c1dcc1f4ca32fc3e07267733a679c41557ed2cd3d45dddadc4b8507",
+        "exit_code": 0,
+        "stdout_artifact": "merge.txt"
+      },
+      {
+        "name": "profile",
+        "script": "skills/report-making/scripts/csv_profile.py",
+        "script_sha256": "4aae40951de44f073be60dcd3fd5569689c5ea2dd8583984aee79771ce5f731a",
+        "exit_code": 0,
+        "stdout_artifact": "profile.txt"
+      },
+      {
+        "name": "anomaly",
+        "script": "skills/report-making/scripts/anomaly_flag.py",
+        "script_sha256": "6944d977c1bfc7686e28d48a30a60178e4b13cfa0faaa53f667d760e5370a2ae",
+        "exit_code": 0,
+        "stdout_artifact": "anomaly.txt"
+      }
+    ],
+    "python_version": "3.12.12",
+    "openpyxl_version": "3.1.5",
+    "skill_versions": {
+      "excel-processing": {
+        "version": "0.1.1",
+        "skill_md_sha256": "6689d812169f1329324c6667a6961a31ca29ed24548e3ce431ac4ca2bcf552c7"
+      },
+      "report-making": {
+        "version": "0.1.1",
+        "skill_md_sha256": "98a0e9e23255d49a9414bfc92ca0d80403ee567d84e170cbd4c78fc3b216d4cb"
+      }
+    }
+  },
+  "regression": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -v",
+    "count": 117,
+    "passed": 117,
+    "failed": 0,
+    "skipped": 0,
+    "elapsed_seconds": 37.545,
+    "log_sha256": "a6260e16a0409e880e644754a5333dc63d164f071c6bc6bd49ccfc702177e2bf",
+    "api_tests": 27,
+    "office_tests": 7,
+    "existing_tests": 83
+  },
+  "client_execution_confirmed": false,
+  "independent_user_tasks": null,
+  "external_community_posts": false,
+  "operations_messages_sent": false
+}

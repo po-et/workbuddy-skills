@@ -1,18 +1,25 @@
 # 先用一个技能完成一件事
 
-选一个你正在做的任务，给 WorkBuddy 可公开的样本或本机文件路径。安装时保留 `--namespace indiv-captain`，确保拿到本仓库维护的版本。
+选一个你正在做的任务，给 WorkBuddy 可公开的样本或本机文件路径。安装时同时保留 `--namespace indiv-captain` 和 `--dir "$HOME/.workbuddy/skills"`，确保选对作者并装到 WorkBuddy 技能目录。目录依据 [SkillHub 官方安装说明](https://skillhub.cn/install/skillhub.md)，安装后重启客户端。
 
 在 WorkBuddy 里，可以直接复制下方任务并让它调用已安装的技能。手动安装需本机已有 SkillHub CLI；下方脚本命令按本仓库的根目录写，使用安装包时请按实际位置调整脚本路径。
 
 | 当前任务 | 技能与安装命令 | 可以检查的结果 |
 |---|---|---|
-| 周报全是数字，看不出重点 | [报表制作](https://skillhub.cn/skills/@indiv-captain/report-making)：`skillhub install report-making --namespace indiv-captain` | 指标口径、缺失数据说明、异常标注、一页报表 |
-| 三分钟辩论稿总是超时 | [辩论稿](https://skillhub.cn/skills/@indiv-captain/debate-speech)：`skillhub install debate-speech --namespace indiv-captain` | 立论稿、攻辩链、字数与时间估算；以自己的朗读计时为准 |
-| 录屏太长，想用少量画面复盘 | [视频抽帧](https://skillhub.cn/skills/@indiv-captain/video-frame-extract)：`skillhub install video-frame-extract --namespace indiv-captain` | 截图、时间点对照表、联系表；原视频保持不变 |
-| 多个 Excel 明细列顺序不同 | [Excel 处理](https://skillhub.cn/skills/@indiv-captain/excel-processing)：`skillhub install excel-processing --namespace indiv-captain` | 按表头对齐的合并表、来源行、运行摘要；原件只读、结果防覆盖 |
-| 买车报价说不清总成本 | [买车](https://skillhub.cn/skills/@indiv-captain/car-buying-checklist)：`skillhub install car-buying-checklist --namespace indiv-captain` | 用户提供费用的预算表，缺项留待补，政策口径待核实 |
+| 接口迁移要比较新旧返回 | [接口差分](https://skillhub.cn/skills/@indiv-captain/api-diff-test)：`skillhub install api-diff-test --namespace indiv-captain --dir "$HOME/.workbuddy/skills"` | HTTP 状态、字段类型与业务值差异、忽略路径、失败退出码 |
+| 周报全是数字，看不出重点 | [报表制作](https://skillhub.cn/skills/@indiv-captain/report-making)：`skillhub install report-making --namespace indiv-captain --dir "$HOME/.workbuddy/skills"` | 指标口径、缺失数据说明、异常标注、一页报表 |
+| 三分钟辩论稿总是超时 | [辩论稿](https://skillhub.cn/skills/@indiv-captain/debate-speech)：`skillhub install debate-speech --namespace indiv-captain --dir "$HOME/.workbuddy/skills"` | 立论稿、攻辩链、字数与时间估算；以自己的朗读计时为准 |
+| 录屏太长，想用少量画面复盘 | [视频抽帧](https://skillhub.cn/skills/@indiv-captain/video-frame-extract)：`skillhub install video-frame-extract --namespace indiv-captain --dir "$HOME/.workbuddy/skills"` | 截图、时间点对照表、联系表；原视频保持不变 |
+| 多个 Excel 明细列顺序不同 | [Excel 处理](https://skillhub.cn/skills/@indiv-captain/excel-processing)：`skillhub install excel-processing --namespace indiv-captain --dir "$HOME/.workbuddy/skills"` | 按表头对齐的合并表、来源行、运行摘要；原件只读、结果防覆盖 |
+| 买车报价说不清总成本 | [买车](https://skillhub.cn/skills/@indiv-captain/car-buying-checklist)：`skillhub install car-buying-checklist --namespace indiv-captain --dir "$HOME/.workbuddy/skills"` | 用户提供费用的预算表，缺项留待补，政策口径待核实 |
 
 ## 可以直接复制的任务
+
+**接口迁移验收**
+
+> 使用接口差分技能，先复跑技能里的本地合成示例，保留失败与修复后的 JSON 报告。核对双方返回 500 不会通过、false 与 0 会被区分、order_id 的差异不会被宽泛的 id 忽略。之后再说明我提供的测试环境地址与用例覆盖什么；接入外部地址或执行写请求前先确认。报告结果只用于这组输入的差分，不能当成整个系统迁移验收通过。
+
+接口示例、命令与明确边界见 [接口差分](../skills/api-diff/SKILL.md)。需要 Python 3；报告可能含业务返回值，公开反馈前只保留可公开的最小样本。
 
 **业务报表**
 
@@ -26,6 +33,8 @@ python3 skills/report-making/scripts/anomaly_flag.py 我的汇总.csv --period �
 ```
 
 列名按你实际表头填写，阈值由业务问题决定。脚本提供标注，异常原因需要你核实。[完整示例](../skills/report-making/examples/monthly-report-region-channel.md)使用演示数据；示例不代表真实客户案例。
+
+两份 Excel 合并、汇总、体检、标注与报告交付可一起复跑：[办公报表完整示例](../examples/office-report/)。
 
 **辩论准备**
 
