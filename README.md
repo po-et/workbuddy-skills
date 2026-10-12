@@ -2,6 +2,8 @@
 
 **Captain · 可核验的 AI 工作流**：给 WorkBuddy 一项具体任务，交付能追溯输入、检查结果、重复运行的文件。由个人作者维护，面向腾讯 WorkBuddy / SkillHub；开源代码与示例不代表腾讯官方认证或真实客户案例。
 
+[打开成果页](https://po-et.github.io/workbuddy-skills/showcase/)：选任务、复制安装与提示词、查看样本和验收。[真实 WorkBuddy 实测](docs/articles/09-WorkBuddy实测-接口差分验收.md)已补齐维护者客户端执行与报告复核。
+
 ## 从三个完整任务开始
 
 | 你要完成的事 | 输入 → 交付 | 从这里试用 |

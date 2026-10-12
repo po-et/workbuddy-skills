@@ -1,0 +1,47 @@
+{
+  "assets": [
+    {
+      "file": "02-four-business-differences.svg",
+      "sha256": "8a8b2b067fc622db395930bc6b8656818736c1a51cf37b75b93b3a7809e52682",
+      "width": 1600,
+      "height": 920,
+      "type": "SVG result/process diagram; not client screenshot"
+    },
+    {
+      "file": "03-repaired-and-cross-checked.svg",
+      "sha256": "9c5c1ab2c8eb0e72ef51075d9ee0763a5f7e6f41da28d361bcc7f0fbd676cd3b",
+      "width": 1600,
+      "height": 920,
+      "type": "SVG result/process diagram; not client screenshot"
+    },
+    {
+      "file": "01-verifiable-workflow.svg",
+      "sha256": "693fa0b6c99fda27eefafbc04e62523008bb2c73d7df687a5ec3f70c2280342c",
+      "width": 1600,
+      "height": 920,
+      "type": "SVG result/process diagram; not client screenshot"
+    }
+  ],
+  "data_source": "result-evidence.json",
+  "data_source_sha256": "8d4c289df886100938e7adaad8732b7d7196b435edef4ec0b774fcca1d932e3c",
+  "browser_rendered_images": [
+    {
+      "file": "01-verifiable-workflow.jpg",
+      "sha256": "cfd9645f0cc761166c2defd12381576c145addae31d7500dd60bec693b20bdb7",
+      "format": "JPEG",
+      "source": "browser rendering of the matching SVG; not a WorkBuddy-client screenshot"
+    },
+    {
+      "file": "02-four-business-differences.jpg",
+      "sha256": "a0995e127c53fb37e2d25a790befbca98c0446c14ecf037d3e1ab47baa88467e",
+      "format": "JPEG",
+      "source": "browser rendering of the matching SVG; not a WorkBuddy-client screenshot"
+    },
+    {
+      "file": "03-repaired-and-cross-checked.jpg",
+      "sha256": "cc4033eb9b30624a8b925060fd2a548601ce3e587e93a2047c7f21da851a3f4f",
+      "format": "JPEG",
+      "source": "browser rendering of the matching SVG; not a WorkBuddy-client screenshot"
+    }
+  ]
+}

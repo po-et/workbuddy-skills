@@ -1,0 +1,157 @@
+{
+  "case_date": "2026-10-12",
+  "skill": "api-diff",
+  "version": "0.1.1",
+  "scope": "maintainer-operated WorkBuddy client task; explicit local SKILL.md; synthetic loopback GET example; not market auto-trigger or independent user",
+  "source_files": {
+    "verification.json": "54fbf587f2fe8bc95234d4f4cbbb27486fc07407f63d4e3e5f02f650cc31deff",
+    "regressed.json": "8a541ffa817cf5e6f6c478c8757e965714c1fcc82a834bd4bd98029690b96214",
+    "repaired.json": "5510707d2a84f3fad136cd22a2de3cea481e9945b871483df2efcdc5f1391437",
+    "cases.json": "009af78ae38f0f03ec953a11a30ee48d713409800b163560a3adeff8d9eb19b3"
+  },
+  "verification": {
+    "synthetic": true,
+    "external_requests": false,
+    "credentials_used": false,
+    "request_method": "GET",
+    "requests": [
+      [
+        {
+          "method": "GET",
+          "path": "/api/orders/DEMO-001"
+        },
+        {
+          "method": "GET",
+          "path": "/api/orders/DEMO-001"
+        }
+      ],
+      [
+        {
+          "method": "GET",
+          "path": "/api/orders/DEMO-001"
+        },
+        {
+          "method": "GET",
+          "path": "/api/orders/DEMO-001"
+        }
+      ]
+    ],
+    "outcomes": {
+      "regressed": {
+        "exit_code": 1,
+        "verdict": "diff",
+        "diff_paths": [
+          "$.can_refund",
+          "$.items[0].quantity",
+          "$.note",
+          "$.paid_amount"
+        ],
+        "ignored_paths": [
+          "$.id",
+          "$.request_id",
+          "$.updated_at"
+        ]
+      },
+      "repaired": {
+        "exit_code": 0,
+        "verdict": "same",
+        "diff_paths": [],
+        "ignored_paths": [
+          "$.id",
+          "$.request_id",
+          "$.updated_at"
+        ]
+      }
+    },
+    "fixture_sha256": "32ecb78b3f49da704dc8ad325e453cd3175a99aeb50544f9978f6a001d6818d9",
+    "cases_sha256": "009af78ae38f0f03ec953a11a30ee48d713409800b163560a3adeff8d9eb19b3",
+    "script_sha256": "c52ff0503364ed421b7d60bfd8957a226a2fda1cddef68a87227210d1e040e0d",
+    "verified": true
+  },
+  "regressed": {
+    "name": "合成订单契约",
+    "method": "GET",
+    "path": "/api/orders/DEMO-001",
+    "path_b": "/api/orders/DEMO-001",
+    "verdict": "diff",
+    "a": {
+      "status": 200,
+      "ms": 12,
+      "bytes": 234,
+      "error": null,
+      "body_sha256": "067858dcfe2175b2a639162adaba2782de0b52ef135de005553f5d99b7c1eea7"
+    },
+    "b": {
+      "status": 200,
+      "ms": 6,
+      "bytes": 217,
+      "error": null,
+      "body_sha256": "aff5538ff5ee5f4d18bc2356885abbfa9d12b1997a3b16beae49c3a7232eef67"
+    },
+    "diffs": [
+      {
+        "path": "$.can_refund",
+        "kind": "type",
+        "a": "boolean",
+        "b": "number"
+      },
+      {
+        "path": "$.items[0].quantity",
+        "kind": "value",
+        "a": "2",
+        "b": "3"
+      },
+      {
+        "path": "$.note",
+        "kind": "only_in_a",
+        "a": "null"
+      },
+      {
+        "path": "$.paid_amount",
+        "kind": "value",
+        "a": "19900",
+        "b": "18900"
+      }
+    ],
+    "ignored_paths": [
+      "$.id",
+      "$.request_id",
+      "$.updated_at"
+    ],
+    "ignore_rejected": [],
+    "diff_count": 4,
+    "diffs_truncated": false
+  },
+  "repaired": {
+    "name": "合成订单契约",
+    "method": "GET",
+    "path": "/api/orders/DEMO-001",
+    "path_b": "/api/orders/DEMO-001",
+    "verdict": "same",
+    "a": {
+      "status": 200,
+      "ms": 10,
+      "bytes": 234,
+      "error": null,
+      "body_sha256": "067858dcfe2175b2a639162adaba2782de0b52ef135de005553f5d99b7c1eea7"
+    },
+    "b": {
+      "status": 200,
+      "ms": 5,
+      "bytes": 238,
+      "error": null,
+      "body_sha256": "3f502764c8906dc1d6d8a282da8de0600aa1e7c204957d26bc8dbf5c7fa60967"
+    },
+    "diffs": [],
+    "ignored_paths": [
+      "$.id",
+      "$.request_id",
+      "$.updated_at"
+    ],
+    "ignore_rejected": [],
+    "diff_count": 0,
+    "diffs_truncated": false
+  },
+  "illustrations": "result and process diagrams rendered from actual JSON; not WorkBuddy screenshots",
+  "external_contest_submitted": false
+}

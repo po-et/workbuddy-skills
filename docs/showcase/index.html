@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Captain 的三个可核验 AI 工作流：接口差分、Excel 到一页报告、录屏抽帧。复制安装与任务，对照公开合成案例检查交付。">
+  <meta name="theme-color" content="#EEF5FB">
+  <title>Captain｜WorkBuddy 与 SkillHub 可核验工作流</title>
+  <meta property="og:title" content="Captain｜可核验的 AI 工作流">
+  <meta property="og:description" content="从接口差分、Excel报表与录屏复盘开始，查看输入、产物与验收，复制任务直接试用。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://po-et.github.io/workbuddy-skills/showcase/">
+  <meta property="og:image" content="https://po-et.github.io/workbuddy-skills/assets/2026-10-12-client-case/02-four-business-differences.jpg">
+  <style>
+    :root{--paper:#fff;--desk:#eef5fb;--ink:#12304a;--blue:#1763cf;--teal:#067c7d;--red:#b74335;--muted:#506479;--line:#d7e3ed;--soft:#f7fafc;--font:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;--mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:28px}body{margin:0;color:var(--ink);background:var(--desk);font-family:var(--font);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}button,textarea{font:inherit}button,a{-webkit-tap-highlight-color:transparent}a{color:var(--blue);text-underline-offset:4px;text-decoration-thickness:1px}a:hover{text-decoration-thickness:2px}button{cursor:pointer}button:focus-visible,a:focus-visible,summary:focus-visible,textarea:focus-visible{outline:3px solid var(--blue);outline-offset:4px}button:disabled{cursor:wait}h1,h2,h3,p{margin:0}h1{font-size:clamp(36px,4.45vw,58px);line-height:1.18;letter-spacing:-.045em;font-weight:750}h2{font-size:28px;line-height:1.35;letter-spacing:-.025em}h3{font-size:20px;line-height:1.4}p{max-width:72ch}small{font-size:13px}code{font-family:var(--mono);font-size:.88em;overflow-wrap:anywhere}pre{margin:0;font-family:var(--mono);font-size:13px;line-height:1.75;white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word}pre code{font-size:inherit}
+    .wrap{width:min(1180px,calc(100% - 64px));margin:auto}.skip{position:fixed;left:20px;top:-100px;z-index:10;background:var(--ink);color:white;padding:12px 18px}.skip:focus{top:12px}.site-header{background:var(--paper);border-bottom:1px solid var(--line)}.header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:82px}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}.brand-mark{width:35px;height:35px;border:2px solid var(--ink);border-radius:7px;display:grid;place-items:center;font-weight:800;font-size:22px;line-height:1;position:relative}.brand-mark:after{content:"";position:absolute;right:-5px;bottom:-5px;width:12px;height:12px;border:3px solid white;background:var(--teal);border-radius:50%}.brand strong{font-size:22px;letter-spacing:-.5px}.brand span:last-child{font-size:13px;color:var(--muted);display:block;margin-top:-2px}.header-links{display:flex;gap:26px;align-items:center;font-size:14px}.header-links a{color:var(--ink);text-decoration:none}.header-links a:hover{color:var(--blue)}.hero{padding:64px 0 56px;display:grid;grid-template-columns:1fr 1.08fr;gap:64px;align-items:center}.hero-copy p{margin-top:24px;color:var(--muted);font-size:17px;max-width:30em}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:10px 20px;border:1px solid var(--blue);border-radius:6px;background:var(--blue);color:white;text-decoration:none;font-weight:600;font-size:15px;line-height:1.5}.button:hover{background:#0e51b0;border-color:#0e51b0;text-decoration:none}.button.secondary{background:transparent;color:var(--ink);border-color:#bccedc}.button.secondary:hover{background:white;border-color:var(--blue)}.hero-copy .byline{margin-top:20px;font-size:12px;color:var(--muted)}.comparison{background:var(--paper);border:1px solid #c8dbe9;border-radius:10px;overflow:hidden;box-shadow:0 12px 30px rgba(19,64,100,.06)}.comparison-top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:17px 22px;background:var(--ink);color:white}.comparison-top h2{font-size:17px;letter-spacing:0}.comparison-top span{font-size:12px;color:#d3e4ee}.comparison-meta{padding:17px 22px 10px;color:var(--muted);font-size:13px}.comparison table{width:100%;border-collapse:collapse;text-align:left;font-size:13px}.comparison th{font-weight:500;color:var(--muted);padding:10px 14px;border-bottom:1px solid var(--line)}.comparison td{padding:14px;border-bottom:1px solid #e7eef3;vertical-align:top}.comparison th:first-child,.comparison td:first-child{padding-left:22px}.comparison th:last-child,.comparison td:last-child{padding-right:22px}.comparison td code{font-size:12px}.changed{color:var(--red);background:#fdf3ef}.fixed{color:var(--teal);background:#eef8f6}.comparison-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;padding:16px 22px;font-size:12px;color:var(--muted)}.verdict{font-weight:650}.verdict.fail{color:var(--red)}.verdict.pass{color:var(--teal)}.source-note{font-size:12px;color:var(--muted);line-height:1.6}
+    .workbench{border:1px solid #cbdde9;background:var(--paper);border-radius:12px;overflow:hidden;scroll-margin-top:24px}.bench-heading{display:flex;align-items:end;justify-content:space-between;gap:24px;padding:28px 32px;border-bottom:1px solid var(--line)}.bench-heading p{font-size:14px;color:var(--muted)}.bench-layout{display:grid;grid-template-columns:260px minmax(0,1fr)}.task-rail{background:#f3f8fc;border-right:1px solid var(--line);padding:24px 16px}.task-tabs{display:flex;flex-direction:column;gap:6px}.task-tab{display:block;text-align:left;width:100%;padding:18px 17px;border:1px solid transparent;border-radius:7px;background:transparent;color:var(--ink);line-height:1.5;position:relative}.task-tab:hover{background:#e7f0f8}.task-tab[aria-selected="true"]{background:white;border-color:#c7ddec;box-shadow:0 3px 9px rgba(25,79,122,.04)}.task-tab[aria-selected="true"]:before{content:"";position:absolute;left:-1px;top:16px;bottom:16px;width:3px;background:var(--blue);border-radius:2px}.task-tab strong{display:block;font-size:16px;font-weight:650}.task-tab span{display:block;color:var(--muted);font-size:12px;margin-top:6px}.rail-note{padding:22px 17px;font-size:12px;color:var(--muted);border-top:1px solid var(--line);margin-top:22px}.rail-note a{display:block;margin-top:10px}.task-panel{padding:30px 34px 34px;min-width:0}.task-panel[hidden]{display:none}.panel-heading{display:flex;align-items:start;justify-content:space-between;gap:18px;margin-bottom:18px}.panel-heading h3{font-size:25px;letter-spacing:-.02em}.version{padding:4px 10px;border:1px solid var(--line);border-radius:4px;font-family:var(--mono);font-size:12px;white-space:nowrap;color:var(--muted)}.panel-lead{color:var(--muted);font-size:15px}.delivery-flow{display:grid;grid-template-columns:1fr 1fr 1fr;border:1px solid var(--line);margin:24px 0 22px;border-radius:6px;overflow:hidden}.delivery-flow div{padding:16px 18px;background:var(--soft);border-right:1px solid var(--line)}.delivery-flow div:last-child{border-right:0;background:#f0faf8}.delivery-flow dt{font-size:12px;color:var(--muted);margin-bottom:6px}.delivery-flow dd{margin:0;font-size:14px;font-weight:600;line-height:1.65}.checklist{list-style:none;margin:0 0 26px;padding:0;display:grid;gap:8px}.checklist li{position:relative;padding-left:26px;font-size:14px;line-height:1.6}.checklist li:before{content:"✓";position:absolute;left:0;top:0;color:var(--teal);font-weight:750}.action-block{margin-top:22px}.block-heading{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:10px}.block-heading h4{margin:0;font-size:16px;font-weight:650}.copy-button{display:inline-flex;justify-content:center;align-items:center;gap:8px;min-height:38px;padding:7px 13px;font-size:13px;font-weight:600;color:var(--blue);border:1px solid #c4d7ec;background:#f3f7fe;border-radius:5px;flex-shrink:0}.copy-button:hover{background:#e7f0fd;border-color:var(--blue)}.copy-button svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.6}.command-box{padding:17px 19px;border:1px solid #d3e1ed;background:#f1f6fc;border-radius:6px}.task-box{background:#fafcfd;border:1px solid var(--line);border-radius:6px;padding:17px 19px}.task-box p{font-size:14px;line-height:1.85}.block-note{font-size:12px;color:var(--muted);margin-top:9px}.block-note code{font-size:12px}.case-links{display:flex;flex-wrap:wrap;gap:10px 24px;font-size:13px;margin-top:16px}.sample{border-top:1px solid var(--line);margin-top:24px;padding-top:2px}.sample summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:17px 0;font-size:14px;font-weight:650}.sample summary:after{content:"＋";font-size:20px;color:var(--blue);font-weight:400}.sample[open] summary:after{content:"−"}.sample summary::-webkit-details-marker{display:none}.sample-content{padding-bottom:12px}.sample-content .source-note{margin-top:12px}.sample-json{background:var(--soft);border:1px solid var(--line);padding:16px;border-radius:5px;max-height:350px;overflow-y:auto}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:5px}.sample-table{border-collapse:collapse;width:100%;text-align:left;font-size:13px;min-width:460px}.sample-table th,.sample-table td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}.sample-table th{font-weight:600;background:var(--soft);color:var(--muted)}.sample-table tr:last-child td{border-bottom:0}.sample-table .attention{color:var(--red);font-weight:600}.video-figure{margin:0}.video-figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:4px}.video-figure figcaption{font-size:12px;color:var(--muted);margin-top:9px}.sample-subheading{font-size:13px;font-weight:600;margin:18px 0 10px}
+    .evidence{padding:46px 0 42px;display:grid;grid-template-columns:1fr 1.1fr;gap:60px}.evidence h2{font-size:25px}.evidence-intro{font-size:14px;color:var(--muted);margin-top:15px}.evidence dl{margin:0}.evidence-row{display:grid;grid-template-columns:130px 1fr;gap:18px;padding:14px 0;border-bottom:1px solid #cfdeea}.evidence-row:first-child{padding-top:0}.evidence dt{font-size:14px;font-weight:650}.evidence dd{margin:0;font-size:13px;color:var(--muted)}.evidence dd a{display:inline-block;margin-top:5px}.boundary{margin-top:17px;padding-left:15px;border-left:3px solid #94b7cb;color:var(--muted);font-size:12px;line-height:1.8}.feedback{display:flex;align-items:center;justify-content:space-between;gap:24px;background:#e0f0f4;border:1px solid #c8dfe6;padding:27px 32px;border-radius:8px;margin-bottom:40px}.feedback h2{font-size:22px}.feedback p{margin-top:8px;font-size:14px;color:var(--muted)}.feedback .button{background:var(--teal);border-color:var(--teal);white-space:nowrap}.feedback .button:hover{background:#056467}.site-footer{border-top:1px solid var(--line);background:var(--paper);padding:24px 0}.footer-inner{display:flex;justify-content:space-between;gap:24px;align-items:start;font-size:12px;color:var(--muted)}.footer-inner nav{display:flex;flex-wrap:wrap;gap:20px}.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:8;max-width:calc(100% - 40px);padding:11px 19px;background:var(--ink);color:white;border-radius:6px;font-size:14px;box-shadow:0 6px 20px rgba(0,0,0,.14);pointer-events:none}.toast:empty{display:none}.manual-copy{padding:24px;border:1px solid var(--line);border-radius:10px;width:min(620px,calc(100% - 32px));color:var(--ink);background:white}.manual-copy::backdrop{background:rgba(18,48,74,.35)}.manual-copy h2{font-size:22px}.manual-copy p{font-size:14px;color:var(--muted);margin:12px 0}.manual-copy textarea{width:100%;min-height:200px;max-height:50vh;padding:13px;border:1px solid #bbcfdf;border-radius:5px;font-family:var(--mono);font-size:13px;line-height:1.65;resize:vertical}.dialog-actions{display:flex;justify-content:flex-end;margin-top:16px}.noscript{padding:18px;background:#fff1da;border-bottom:1px solid #e6c88e;font-size:14px}
+    @media(max-width:1050px){.hero{gap:36px}.hero h1{font-size:45px}.bench-layout{grid-template-columns:225px minmax(0,1fr)}.task-panel{padding:28px 25px}.evidence{gap:36px}.comparison td,.comparison th{padding-left:10px;padding-right:10px}}
+    @media(max-width:780px){.wrap{width:calc(100% - 36px)}.header-inner{min-height:74px;gap:12px}.header-links{gap:14px;font-size:12px}.header-links a:first-child{display:none}.brand strong{font-size:20px}.hero{padding:38px 0 32px;grid-template-columns:1fr;gap:30px}.hero h1{font-size:43px}.hero-copy p{margin-top:18px;font-size:16px;max-width:42em}.hero-copy .byline{margin-top:14px}.comparison{max-width:620px}.bench-heading{padding:22px;align-items:start;flex-direction:column;gap:8px}.bench-heading h2{font-size:24px}.bench-layout{grid-template-columns:1fr}.task-rail{padding:12px;border-right:0;border-bottom:1px solid var(--line)}.task-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.task-tab{padding:13px 10px}.task-tab strong{font-size:13px}.task-tab span{font-size:11px;line-height:1.6}.task-tab[aria-selected="true"]:before{top:12px;bottom:12px}.rail-note{display:none}.task-panel{padding:24px 22px}.panel-heading h3{font-size:23px}.version{font-size:11px}.delivery-flow div{padding:13px 12px}.delivery-flow dd{font-size:13px}.evidence{grid-template-columns:1fr;gap:26px;padding:34px 4px}.evidence h2{font-size:23px}.evidence-row{grid-template-columns:116px 1fr}.feedback{padding:23px;align-items:start;flex-direction:column;gap:18px;margin-bottom:30px}.feedback h2{font-size:21px}.footer-inner{flex-direction:column;gap:12px}.footer-inner nav{gap:18px}.command-box,.task-box{padding:14px}.hero-actions .button{font-size:14px}.comparison td code{font-size:11px}}
+    @media(max-width:420px){.wrap{width:calc(100% - 28px)}.brand span:last-child{font-size:11px}.brand-mark{width:30px;height:30px;font-size:20px}.header-links{gap:12px}.hero h1{font-size:36px}.comparison-top{padding:15px}.comparison-top h2{font-size:15px}.comparison-top span{font-size:11px}.comparison th:first-child,.comparison td:first-child{padding-left:12px}.comparison th:last-child,.comparison td:last-child{padding-right:12px}.comparison td,.comparison th{padding:11px 7px;font-size:11px}.comparison td code{font-size:10px}.comparison-meta,.comparison-bottom{padding-left:14px;padding-right:14px}.task-panel{padding:22px 16px}.task-tabs{grid-template-columns:1fr}.task-tab{padding:11px 14px}.task-tab strong{font-size:14px}.task-tab span{margin-top:3px}.task-tab[aria-selected="true"]:before{top:10px;bottom:10px}.delivery-flow{grid-template-columns:1fr}.delivery-flow div{display:grid;grid-template-columns:56px 1fr;gap:12px;border-right:0;border-bottom:1px solid var(--line)}.delivery-flow div:last-child{border-bottom:0}.delivery-flow dt{margin:0}.panel-heading{flex-direction:column;gap:8px}.block-heading{align-items:start}.copy-button{font-size:12px;padding:6px 10px}.evidence-row{grid-template-columns:100px 1fr;gap:12px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#workbench">跳到任务工作台</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="https://github.com/po-et/workbuddy-skills" aria-label="Captain，打开 GitHub 仓库">
+        <span class="brand-mark" aria-hidden="true">C</span>
+        <div><strong>Captain</strong><span>可核验的 AI 工作流</span></div>
+      </a>
+      <nav class="header-links" aria-label="主导航">
+        <a href="#workbench">开始一个任务</a>
+        <a href="#evidence">验收依据</a>
+        <a href="https://github.com/po-et/workbuddy-skills">GitHub</a>
+      </nav>
+    </div>
+  </header>
+  <noscript><div class="noscript wrap">此页的任务切换与复制按钮需要 JavaScript。你仍可阅读办公案例，或打开 <a href="https://github.com/po-et/workbuddy-skills/blob/main/docs/start-here.md">完整安装与任务说明</a>，获取三个工作流的命令。</div></noscript>
+  <main id="main" class="wrap">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title">把 AI 的结果，<br>放到证据旁。</h1>
+        <p>接口哪里变了、报表数字从哪来、录屏哪一刻值得回看。先完成一个具体任务，再用输入、结果和核对记录验收。</p>
+        <div class="hero-actions">
+          <a class="button" href="#workbench">选一个任务</a>
+          <a class="button secondary" href="#evidence">查看已验证的范围</a>
+        </div>
+        <p class="byline">个人作者维护。公开样本可复跑，真实任务由你核对。</p>
+      </div>
+      <div class="comparison" aria-label="公开合成订单接口的差异与修正对照">
+        <div class="comparison-top"><h2>一条订单接口，三份响应</h2><span>公开合成案例</span></div>
+        <p class="comparison-meta">同一 GET 请求，实际发送到两个本地服务</p>
+        <table>
+          <thead><tr><th scope="col">字段</th><th scope="col">旧响应</th><th scope="col">回归响应</th><th scope="col">修正后</th></tr></thead>
+          <tbody>
+            <tr><td><code>paid_amount</code></td><td>19900</td><td class="changed">18900</td><td class="fixed">19900</td></tr>
+            <tr><td><code>quantity</code></td><td>2</td><td class="changed">3</td><td class="fixed">2</td></tr>
+            <tr><td><code>can_refund</code></td><td><code>true</code></td><td class="changed"><code>1</code></td><td class="fixed"><code>true</code></td></tr>
+            <tr><td><code>note</code></td><td><code>null</code></td><td class="changed">字段缺失</td><td class="fixed"><code>null</code></td></tr>
+          </tbody>
+        </table>
+        <div class="comparison-bottom"><span class="verdict fail">发现 4 处差异 · 退出码 1</span><span class="verdict pass">修正后一致 · 退出码 0</span></div>
+      </div>
+    </section>
+    <section class="workbench" id="workbench" aria-labelledby="bench-title">
+      <div class="bench-heading">
+        <h2 id="bench-title">你今天要交付什么？</h2>
+        <p>选择任务，复制安装与任务说明，再对照样本核对。</p>
+      </div>
+      <div class="bench-layout">
+        <aside class="task-rail" aria-label="任务选择">
+          <div class="task-tabs" role="tablist" aria-label="三个代表工作流" aria-orientation="vertical">
+            <button class="task-tab" id="tab-office" role="tab" type="button" aria-selected="true" aria-controls="panel-office" tabindex="0" data-task="office"><strong>两份 Excel → 一页报告</strong><span>表头对齐，数字有来源</span></button>
+            <button class="task-tab" id="tab-api" role="tab" type="button" aria-selected="false" aria-controls="panel-api" tabindex="-1" data-task="api"><strong>接口迁移 → 字段差异</strong><span>同一请求，先失败再复验</span></button>
+            <button class="task-tab" id="tab-video" role="tab" type="button" aria-selected="false" aria-controls="panel-video" tabindex="-1" data-task="video"><strong>录屏 → 复盘素材</strong><span>画面、时间点、原件保护</span></button>
+          </div>
+          <div class="rail-note">先用公开样本熟悉交付，再替换成你有权使用的本机数据。技能在你的电脑运行。
+            <a href="https://skillhub.cn/install/skillhub.md">SkillHub 官方安装指引</a>
+            <a href="https://open.workbuddy.cn/docs/skill">WorkBuddy 官方技能说明</a>
+          </div>
+        </aside>
+        <section class="task-panel" id="panel-office" role="tabpanel" aria-labelledby="tab-office" tabindex="0">
+          <div class="panel-heading"><h3>从明细到结论，保留每一行来源</h3><span class="version">两项技能均 v0.1.1</span></div>
+          <p class="panel-lead">列顺序不一样，仍按表头合并。金额缺失就留待取数；只标出异常现象，原因交给你确认。</p>
+          <dl class="delivery-flow">
+            <div><dt>输入</dt><dd>两份 XLSX<br>各 36 行，列顺序不同</dd></div>
+            <div><dt>交付</dt><dd>合并表 + 一页报告<br>明细、汇总、来源与规则</dd></div>
+            <div><dt>验收</dt><dd>72 行逐条可追溯<br>四路已知金额一致</dd></div>
+          </dl>
+          <ul class="checklist">
+            <li>原件、合并、来源核对均为 72 行；两份原件的 SHA256 前后相同。</li>
+            <li>8 月退款率按 12 ÷ 400 = 3.00% 计算，避免平均各渠道比例。</li>
+            <li>9 月仅标出华东 / 线上约 −60% 的变化；华西 / 线上缺失保留未知。</li>
+          </ul>
+          <div class="action-block">
+            <div class="block-heading"><h4>安装 Excel 处理与报表制作</h4><button class="copy-button" type="button" data-copy="install-office" data-copy-label="安装命令"><svg aria-hidden="true" viewBox="0 0 18 18"><rect x="6" y="6" width="9" height="9" rx="1"/><path d="M11 6V3H3v8h3"/></svg>复制安装命令</button></div>
+            <div class="command-box"><pre id="install-office"><code>skillhub install excel-processing --namespace indiv-captain --dir "$HOME/.workbuddy/skills"
+skillhub install report-making --namespace indiv-captain --dir "$HOME/.workbuddy/skills"</code></pre></div>
+            <p class="block-note">适用于已有 SkillHub CLI 的 macOS / Linux 环境。安装后重启 WorkBuddy，核对作者与版本；已有同名目录先检查，不强制覆盖。需要 Python 3.8+ 和已有 openpyxl。</p>
+          </div>
+          <div class="action-block">
+            <div class="block-heading"><h4>复制给 WorkBuddy</h4><button class="copy-button" type="button" data-copy="task-office" data-copy-label="办公任务">复制任务说明</button></div>
+            <div class="task-box"><p id="task-office">在我打开的 workbuddy-skills 仓库中，运行 examples/office-report/run_demo.py，给 --out-dir 一个全新的本地目录；不要安装依赖或覆盖现有目录。成功后打开 report.md，用 verification.json 核对 72 行来源、原件哈希与四路金额。明确说明这是合成演示，缺失指标保持“待取数”，异常原因写“待查”。若缺少仓库或依赖，请先说明缺什么，不宣称任务完成。</p></div>
+            <p class="block-note">完整办公演示位于 GitHub 源码仓库；安装两个技能后，还需在 WorkBuddy 打开本仓库。两个技能包不单独包含这份完整演示。</p>
+            <div class="case-links"><a href="https://github.com/po-et/workbuddy-skills/tree/main/examples/office-report">打开完整办公案例</a><a href="https://skillhub.cn/skills/@indiv-captain/excel-processing">Excel 技能</a><a href="https://skillhub.cn/skills/@indiv-captain/report-making">报表技能</a></div>
+          </div>
+          <details class="sample">
+            <summary>展开实际案例结果与核对表</summary>
+            <div class="sample-content">
+              <div class="table-wrap"><table class="sample-table">
+                <thead><tr><th scope="col">核对项</th><th scope="col">公开合成案例结果</th><th scope="col">如何验收</th></tr></thead>
+                <tbody>
+                  <tr><td>已知销售额</td><td>312,050.89 元</td><td>原件 / 明细 / 分组 / 月份四路合计一致</td></tr>
+                  <tr><td>8 月总退款率</td><td>3.00%</td><td>12 个退款订单 ÷ 400 个订单</td></tr>
+                  <tr><td>9 月华东 / 线上</td><td class="attention">约 −60%；原因待查</td><td>销售额 2,000.02 → 800.02 元</td></tr>
+                  <tr><td>9 月全量销售额</td><td>待取数</td><td>已知部分 32,050.09 元不能代替全量</td></tr>
+                  <tr><td>来源行</td><td>72 / 72 / 72</td><td>原件行、合并行、逐行匹配</td></tr>
+                </tbody>
+              </table></div>
+              <p class="source-note">摘自 2026-10-10 维护者本地验收记录；数据与异常均为演示生成，不是客户经营成果。<a href="https://github.com/po-et/workbuddy-skills/blob/main/docs/metrics/release-verified-2026-10-10.json">打开结构化原记录</a></p>
+            </div>
+          </details>
+        </section>
+        <section class="task-panel" id="panel-api" role="tabpanel" aria-labelledby="tab-api" tabindex="0" hidden>
+          <div class="panel-heading"><h3>让行为变化落到具体字段</h3><span class="version">api-diff-test v0.1.1</span></div>
+          <p class="panel-lead">同一请求发到两个环境，比较状态码、JSON 类型与业务值。先跑技能自带的两个本地服务，不用准备真实接口或凭证。</p>
+          <dl class="delivery-flow">
+            <div><dt>输入</dt><dd>同一订单 GET<br>旧、新两个本地服务</dd></div>
+            <div><dt>交付</dt><dd>失败与复验报告<br>JSON + Markdown + 校验</dd></div>
+            <div><dt>验收</dt><dd>4 处差异被发现<br>修正后 same，退出码 0</dd></div>
+          </dl>
+          <ul class="checklist">
+            <li>实付金额、商品数量、布尔类型、字段缺失四处变化都能定位。</li>
+            <li>报告列出实际忽略的 id、request_id、updated_at 路径；id 不吞掉 order_id。</li>
+            <li>双方同为 HTTP 500 仍不通过；差分只验证这组输入，不代表整个迁移验收通过。</li>
+          </ul>
+          <div class="action-block">
+            <div class="block-heading"><h4>安装接口差分测试</h4><button class="copy-button" type="button" data-copy="install-api" data-copy-label="安装命令">复制安装命令</button></div>
+            <div class="command-box"><pre id="install-api"><code>skillhub install api-diff-test --namespace indiv-captain --dir "$HOME/.workbuddy/skills"</code></pre></div>
+            <p class="block-note">已有 SkillHub CLI 和 Python 3 即可复跑本地案例。安装后重启 WorkBuddy，核对作者与 v0.1.1；外部地址或写请求需要先确认执行范围。</p>
+          </div>
+          <div class="action-block">
+            <div class="block-heading"><h4>复制给 WorkBuddy</h4><button class="copy-button" type="button" data-copy="task-api" data-copy-label="接口任务">复制任务说明</button></div>
+            <div class="task-box"><p id="task-api">调用 indiv-captain 的接口差分测试 v0.1.1。先复跑技能目录下 examples/local_order_demo.py，只使用它的两个本地服务，保留 regressed.json、repaired.json 和 verification.json。核对四处差异、修正后 same 与退出码、实际忽略路径以及输入 SHA256。明确说明它是合成示例，不代表整个系统迁移通过。之后再说明如何替换成我提供且已授权的测试用例；接入外部地址或执行写请求前先确认。</p></div>
+            <p class="block-note">平台安装目录名为 api-diff-test，源码目录名为 skills/api-diff。常见金额 / 数量字段名保护不能识别所有业务含义，忽略规则仍需按响应契约复核。</p>
+            <div class="case-links"><a href="https://github.com/po-et/workbuddy-skills/blob/main/skills/api-diff/examples/local-order-acceptance.md">打开完整接口案例</a><a href="https://skillhub.cn/skills/@indiv-captain/api-diff-test">SkillHub 技能页</a><a href="https://github.com/po-et/workbuddy-skills/blob/main/docs/articles/08-接口差分验收-把金额与类型变化落到字段.md">实现与验收过程</a></div>
+          </div>
+          <details class="sample">
+            <summary>展开合成输入与真实差异路径</summary>
+            <div class="sample-content">
+              <pre class="sample-json"><code>{
+  "old": {
+    "id": "response-old",
+    "order_id": "DEMO-ORDER-001",
+    "paid_amount": 19900,
+    "items": [{"sku": "DEMO-SKU-A", "quantity": 2}],
+    "can_refund": true,
+    "note": null,
+    "request_id": "synthetic-request-old",
+    "updated_at": "2026-10-10T00:00:00Z"
+  },
+  "regressed": {
+    "id": "response-new",
+    "order_id": "DEMO-ORDER-001",
+    "paid_amount": 18900,
+    "items": [{"sku": "DEMO-SKU-A", "quantity": 3}],
+    "can_refund": 1,
+    "request_id": "synthetic-request-new",
+    "updated_at": "2026-10-10T00:00:01Z"
+  },
+  "repaired": {
+    "id": "response-fixed",
+    "order_id": "DEMO-ORDER-001",
+    "paid_amount": 19900,
+    "items": [{"sku": "DEMO-SKU-A", "quantity": 2}],
+    "can_refund": true,
+    "note": null,
+    "request_id": "synthetic-request-fixed",
+    "updated_at": "2026-10-10T00:00:02Z"
+  }
+}</code></pre>
+              <p class="sample-subheading">实际失败报告中的四个路径</p>
+              <pre class="sample-json"><code>$.can_refund
+$.items[0].quantity
+$.note
+$.paid_amount</code></pre>
+              <p class="source-note">输入直接摘自公开 order-responses.json；差异路径摘自 2026-10-10 本地 HTTP 验收记录。金额单位为分。<a href="https://github.com/po-et/workbuddy-skills/blob/main/skills/api-diff/examples/order-responses.json">查看完整输入原件</a></p>
+            </div>
+          </details>
+        </section>
+        <section class="task-panel" id="panel-video" role="tabpanel" aria-labelledby="tab-video" tabindex="0" hidden>
+          <div class="panel-heading"><h3>用画面与时间点准备复盘素材</h3><span class="version">video-frame-extract v0.1.2</span></div>
+          <p class="panel-lead">把你有权使用的本机录屏抽成 12 张画面与一张联系表。结果用于核对可见内容；没有画面依据的内容不能补成会议结论。</p>
+          <dl class="delivery-flow">
+            <div><dt>输入</dt><dd>本机视频<br>示例为 8 秒测试图案</dd></div>
+            <div><dt>交付</dt><dd>12 张图 + 联系表<br>index.csv 时间点</dd></div>
+            <div><dt>验收</dt><dd>画面与时间点对应<br>原视频 SHA256 不变</dd></div>
+          </dl>
+          <ul class="checklist">
+            <li>示例产出 12 张 768 × 432 JPG；联系表按 4 × 3 排列，首格从第 0 秒起。</li>
+            <li>每张都有采样时刻；图片本身不带时间文字，需一起保留 index.csv。</li>
+            <li>同目录重跑会保护已有图片与索引；新一轮用新目录，缺少工具就明确停止。</li>
+          </ul>
+          <div class="action-block">
+            <div class="block-heading"><h4>安装视频抽帧</h4><button class="copy-button" type="button" data-copy="install-video" data-copy-label="安装命令">复制安装命令</button></div>
+            <div class="command-box"><pre id="install-video"><code>skillhub install video-frame-extract --namespace indiv-captain --dir "$HOME/.workbuddy/skills"</code></pre></div>
+            <p class="block-note">需要已有 Python 3.8+、ffmpeg 和 ffprobe。安装技能不会代装这些工具。安装后重启 WorkBuddy，核对作者与 v0.1.2。</p>
+          </div>
+          <div class="action-block">
+            <div class="block-heading"><h4>复制给 WorkBuddy</h4><button class="copy-button" type="button" data-copy="task-video" data-copy-label="视频任务">复制任务说明</button></div>
+            <div class="task-box"><p id="task-video">调用 indiv-captain 的视频抽帧 v0.1.2，先按技能 examples/meeting-review-local-demo.md 复跑 8 秒合成视频案例，使用新的输出目录。抽 12 张均匀画面、保留 index.csv，并生成 4×3 联系表。核对图片张数、采样时刻、联系表排列与原视频 SHA256 未改变。明确这是测试图案，不生成真实会议纪要，不上传或发送。若缺少 ffmpeg、ffprobe 或 Python，先说明依赖缺口。</p></div>
+            <p class="block-note">替换成自己的本机录屏时，先说明使用权限及需遮盖的画面。抽帧会漏掉采样之间的内容，不能替代音频转写或人工核对。</p>
+            <div class="case-links"><a href="https://github.com/po-et/workbuddy-skills/blob/main/skills/video-frame-extract/examples/meeting-review-local-demo.md">打开完整视频案例</a><a href="https://skillhub.cn/skills/@indiv-captain/video-frame-extract">SkillHub 技能页</a></div>
+          </div>
+          <details class="sample">
+            <summary>展开实际联系表与时间点样本</summary>
+            <div class="sample-content">
+              <figure class="video-figure"><img src="assets/video-contact-sheet.jpg" width="1300" height="556" loading="lazy" alt="8 秒 ffmpeg 合成测试图案的实际 4×3 联系表，共 12 个采样画面；颜色图案不包含真实会议信息"><figcaption>实际输出图，2026-10-09 维护者本机生成。不是会议画面。格子从左到右、从上到下，时间点见下表。</figcaption></figure>
+              <p class="sample-subheading">index.csv 的时间点摘录</p>
+              <div class="table-wrap"><table class="sample-table">
+                <thead><tr><th scope="col">文件</th><th scope="col">采样时刻（秒）</th><th scope="col">时间码</th></tr></thead>
+                <tbody>
+                  <tr><td>f_0000.jpg</td><td>0.000</td><td>00:00:00.000</td></tr>
+                  <tr><td>f_0001.jpg</td><td>0.667</td><td>00:00:00.667</td></tr>
+                  <tr><td>f_0002.jpg</td><td>1.333</td><td>00:00:01.333</td></tr>
+                  <tr><td>f_0003.jpg</td><td>2.000</td><td>00:00:02.000</td></tr>
+                  <tr><td>f_0004.jpg</td><td>2.667</td><td>00:00:02.667</td></tr>
+                  <tr><td>f_0005.jpg</td><td>3.333</td><td>00:00:03.333</td></tr>
+                  <tr><td>f_0006.jpg</td><td>4.000</td><td>00:00:04.000</td></tr>
+                  <tr><td>f_0007.jpg</td><td>4.667</td><td>00:00:04.667</td></tr>
+                  <tr><td>f_0008.jpg</td><td>5.333</td><td>00:00:05.333</td></tr>
+                  <tr><td>f_0009.jpg</td><td>6.000</td><td>00:00:06.000</td></tr>
+                  <tr><td>f_0010.jpg</td><td>6.667</td><td>00:00:06.667</td></tr>
+                  <tr><td>f_0011.jpg</td><td>7.333</td><td>00:00:07.333</td></tr>
+                </tbody>
+              </table></div>
+              <p class="source-note">实际选中的源视频帧可能早不到一帧，本例最多约 0.083 秒。只说明采样结果，不推断没有截图的发言。<a href="https://github.com/po-et/workbuddy-skills/blob/main/skills/video-frame-extract/examples/meeting-review-local-demo.md">查看原命令与核对方式</a></p>
+            </div>
+          </details>
+        </section>
+      </div>
+    </section>
+    <section id="evidence" class="evidence" aria-labelledby="evidence-title">
+      <div>
+        <h2 id="evidence-title">每个结论，都留一条核对路径</h2>
+        <p class="evidence-intro">这里展示的是公开源码、实际输出与维护者验收记录。你可以复跑同样的输入，查看哪里通过、哪里仍有边界。</p>
+        <p class="boundary">2026-10-12，维护者已在真实 WorkBuddy 客户端显式读取接口技能并完成合成验收，产物经独立核对。市场自动触发与独立用户成果仍未确认；不代表腾讯官方认证。<a href="https://github.com/po-et/workbuddy-skills/blob/main/docs/articles/09-WorkBuddy实测-接口差分验收.md">查看客户端实测与报告复核</a>。</p>
+      </div>
+      <dl>
+        <div class="evidence-row"><dt>117 项回归</dt><dd>2026-10-10，本地统一检查全部通过。覆盖 API 27 项、办公链路 7 项及原有 83 项。<br><a href="https://github.com/po-et/workbuddy-skills/blob/main/docs/releases/2026-10-10.md">发布与验收说明</a></dd></div>
+        <div class="evidence-row"><dt>6 个包文件</dt><dd>仅指接口差分 0.1.1。SkillHub 下载包六个文件与上传副本 SHA256 一致；两项扫描读回均为 benign。<br><a href="https://github.com/po-et/workbuddy-skills/blob/main/docs/metrics/release-verified-2026-10-10.json">版本与包文件记录</a></dd></div>
+        <div class="evidence-row"><dt>72 行来源</dt><dd>仅指公开合成办公案例。原件、合并明细与逐行核对各 72 行，缺失指标保持未知。<br><a href="https://github.com/po-et/workbuddy-skills/tree/main/examples/office-report">完整办公交付</a></dd></div>
+      </dl>
+    </section>
+    <section class="feedback" aria-labelledby="feedback-title">
+      <div><h2 id="feedback-title">用完后，留下一件具体的事</h2><p>写下技能版本、最小公开输入、结果或失败步骤。完成任务、遇到问题、确实再次使用，都值得记录。</p></div>
+      <a class="button" href="https://github.com/po-et/workbuddy-skills/issues/new?template=skill-feedback.md">提交使用反馈</a>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><p>Captain｜个人作者维护<br>本机案例依据 2026-10-10；客户端实测 2026-10-12；视频合成实跑 2026-10-09</p><nav aria-label="页脚"><a href="https://github.com/po-et/workbuddy-skills">源码与完整目录</a><a href="https://skillhub.cn/install/skillhub.md">官方安装指引</a><a href="https://open.workbuddy.cn/docs/skill">官方技能说明</a></nav></div></footer>
+  <div id="copy-status" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  <dialog class="manual-copy" id="manual-copy" aria-labelledby="manual-title"><h2 id="manual-title">请手动复制</h2><p>浏览器未能写入剪贴板。文本已选中，按 Ctrl+C 或 ⌘C 复制；手机可长按文本选择复制。</p><textarea id="manual-text" readonly aria-label="待复制的完整内容"></textarea><div class="dialog-actions"><button class="button secondary" type="button" id="close-copy">关闭</button></div></dialog>
+  <script>
+    (function(){
+      "use strict";
+      var tabs=Array.prototype.slice.call(document.querySelectorAll(".task-tab"));
+      var tablist=document.querySelector(".task-tabs");
+      var media=window.matchMedia("(min-width: 781px)");
+      var narrow=window.matchMedia("(max-width: 420px)");
+      function setOrientation(){tablist.setAttribute("aria-orientation",media.matches||narrow.matches?"vertical":"horizontal");}
+      setOrientation();
+      if(media.addEventListener)media.addEventListener("change",setOrientation);
+      else if(media.addListener)media.addListener(setOrientation);
+      if(narrow.addEventListener)narrow.addEventListener("change",setOrientation);
+      else if(narrow.addListener)narrow.addListener(setOrientation);
+      function selectTask(tab,focus){
+        tabs.forEach(function(item){
+          var active=item===tab;
+          item.setAttribute("aria-selected",String(active));
+          item.tabIndex=active?0:-1;
+          document.getElementById(item.getAttribute("aria-controls")).hidden=!active;
+        });
+        if(focus)tab.focus();
+      }
+      tabs.forEach(function(tab,index){
+        tab.addEventListener("click",function(){selectTask(tab,false);});
+        tab.addEventListener("keydown",function(event){
+          var next=index;
+          if(event.key==="ArrowDown"||event.key==="ArrowRight")next=(index+1)%tabs.length;
+          else if(event.key==="ArrowUp"||event.key==="ArrowLeft")next=(index+tabs.length-1)%tabs.length;
+          else if(event.key==="Home")next=0;
+          else if(event.key==="End")next=tabs.length-1;
+          else return;
+          event.preventDefault();selectTask(tabs[next],true);
+        });
+      });
+      var status=document.getElementById("copy-status");
+      var dialog=document.getElementById("manual-copy");
+      var manualText=document.getElementById("manual-text");
+      var closeCopy=document.getElementById("close-copy");
+      var toastTimer,copyOrigin;
+      function announce(message){window.clearTimeout(toastTimer);status.textContent=message;toastTimer=window.setTimeout(function(){status.textContent="";},3500);}
+      function oldCopy(text){
+        var area=document.createElement("textarea");area.value=text;area.readOnly=true;
+        area.style.cssText="position:fixed;left:-9999px;top:0;opacity:0;";document.body.appendChild(area);area.focus();area.select();
+        var copied=false;try{copied=document.execCommand("copy");}catch(error){copied=false;}
+        area.remove();return copied;
+      }
+      function manualFallback(text,button){
+        copyOrigin=button;manualText.value=text;
+        if(typeof dialog.showModal==="function")dialog.showModal();
+        else{dialog.setAttribute("open","");dialog.style.position="fixed";dialog.style.top="15%";dialog.style.zIndex="12";}
+        manualText.focus();manualText.select();
+      }
+      document.querySelectorAll("[data-copy]").forEach(function(button){
+        button.addEventListener("click",async function(){
+          var source=document.getElementById(button.getAttribute("data-copy"));
+          var text=source.textContent.trim();var label=button.getAttribute("data-copy-label");var copied=false;
+          button.disabled=true;
+          try{if(navigator.clipboard&&navigator.clipboard.writeText){await navigator.clipboard.writeText(text);copied=true;}}catch(error){copied=false;}
+          if(!copied)copied=oldCopy(text);
+          button.disabled=false;
+          if(copied){button.focus();announce("已复制"+label+"。");}
+          else manualFallback(text,button);
+        });
+      });
+      closeCopy.addEventListener("click",function(){
+        if(typeof dialog.close==="function")dialog.close();else dialog.removeAttribute("open");
+        if(copyOrigin)copyOrigin.focus();
+      });
+      dialog.addEventListener("close",function(){if(copyOrigin)copyOrigin.focus();});
+    }());
+  </script>
+</body>
+</html>

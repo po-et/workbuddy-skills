@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>WorkBuddy 接口差分实测 · 成果图预览</title><style>
+*{box-sizing:border-box}body{margin:0;padding:32px;background:#e8eef1;color:#173340;font-family:"PingFang SC","Microsoft YaHei",sans-serif}main{max-width:1600px;margin:auto}h1{font-size:28px;margin:0 0 12px}p{line-height:1.8;color:#53717d;margin:0 0 28px}section{background:#fff;margin:0 0 32px;border:1px solid #d3dfe5;border-radius:20px;overflow:hidden}img{display:block;width:100%;height:auto}h2{padding:20px 24px;margin:0;border-top:1px solid #dde6ea;font-size:19px}a{color:#087f82}nav{display:flex;gap:20px;flex-wrap:wrap;margin:0 0 24px}section{scroll-margin:20px}</style></head><body><main>
+<h1>WorkBuddy 接口差分实测 · 成果图预览</h1>
+<p>三张图由 2026-10-12 实际任务结果及人工核对整理。它们是流程与结果图，不是客户端截图。公开案例为维护者自行运行的合成输入，不代表第三方用户使用或客户项目。</p>
+<nav><a href="#workflow">图1 · 验收流程</a><a href="#differences">图2 · 四处差异</a><a href="#repair">图3 · 修正复核</a><a href="result-evidence.json">结果数据</a></nav>
+<section id="workflow"><img src="01-verifiable-workflow.svg" alt="显式读取本地技能后运行合成接口，发现四处差异、修正复验并人工核查"><h2>图1：把任务完成变成可复核的验收</h2></section>
+<section id="differences"><img src="02-four-business-differences.svg" alt="两端均返回HTTP200，但金额、数量、布尔类型与空值缺失有四处不同"><h2>图2：回归响应的四处实际差异</h2></section>
+<section id="repair"><img src="03-repaired-and-cross-checked.svg" alt="修正后零业务差异，三处噪音仍不同，人工核对输入与脚本哈希"><h2>图3：修正后仍需核对忽略路径与输入</h2></section>
+</main></body></html>
