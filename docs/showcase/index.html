@@ -135,7 +135,7 @@ skillhub install report-making --namespace indiv-captain --dir "$HOME/.workbuddy
           <ul class="checklist">
             <li>实付金额、商品数量、布尔类型、字段缺失四处变化都能定位。</li>
             <li>报告列出实际忽略的 id、request_id、updated_at 路径；id 不吞掉 order_id。</li>
-            <li>双方同为 HTTP 500 仍不通过；差分只验证这组输入，不代表整个迁移验收通过。</li>
+            <li>工具规则：双方同为 HTTP 500 仍不通过；本次客户端案例两端均为 200，未覆盖非 2xx。差分只验证这组输入，不代表整个迁移验收通过。</li>
           </ul>
           <div class="action-block">
             <div class="block-heading"><h4>安装接口差分测试</h4><button class="copy-button" type="button" data-copy="install-api" data-copy-label="安装命令">复制安装命令</button></div>
