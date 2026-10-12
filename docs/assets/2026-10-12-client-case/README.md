@@ -2,7 +2,7 @@
 
 三张图是依据本次真实任务 JSON 和维护者独立核对绘制的**流程 / 结果图**，不是客户端截图。案例输入为公开合成订单。客户端执行方式为显式读取本地仓库中的 api-diff 0.1.1；不代表市场自动发现、第三方使用或客户项目。
 
-- `01-verifiable-workflow.svg`：读取技能 → 本地执行 → 回归被发现 → 修正复验 → 人工核查。
+- `01-verifiable-workflow.svg`：读取技能 → 本地执行 → 回归被发现 → 修正复验 → 独立核查。
 - `02-four-business-differences.svg`：金额、数量、布尔类型、空值/缺失四处实际差异。
 - `03-repaired-and-cross-checked.svg`：修正后0差异、实际忽略路径、不同响应哈希、输入及脚本核对。
 - `result-evidence.json`：过滤后的本次 regressed/repaired/verification 数据、完整文件哈希。

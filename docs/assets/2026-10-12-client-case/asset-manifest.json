@@ -9,14 +9,14 @@
     },
     {
       "file": "03-repaired-and-cross-checked.svg",
-      "sha256": "9c5c1ab2c8eb0e72ef51075d9ee0763a5f7e6f41da28d361bcc7f0fbd676cd3b",
+      "sha256": "2e08bf9d44a1223eef8c172e226fc13da8d8ddd900d9c65e72e5ee26575c18b5",
       "width": 1600,
       "height": 920,
       "type": "SVG result/process diagram; not client screenshot"
     },
     {
       "file": "01-verifiable-workflow.svg",
-      "sha256": "693fa0b6c99fda27eefafbc04e62523008bb2c73d7df687a5ec3f70c2280342c",
+      "sha256": "3531673b27b9016b283aabc2c6707fe5ee952db3e89cede2083d32ecc5596b71",
       "width": 1600,
       "height": 920,
       "type": "SVG result/process diagram; not client screenshot"
@@ -27,7 +27,7 @@
   "browser_rendered_images": [
     {
       "file": "01-verifiable-workflow.jpg",
-      "sha256": "cfd9645f0cc761166c2defd12381576c145addae31d7500dd60bec693b20bdb7",
+      "sha256": "bc7dbd90fe1b2aa3fadae6b8f063d3a0524464c1717089f924f600b688e9e4bd",
       "format": "JPEG",
       "source": "browser rendering of the matching SVG; not a WorkBuddy-client screenshot"
     },
@@ -39,9 +39,10 @@
     },
     {
       "file": "03-repaired-and-cross-checked.jpg",
-      "sha256": "cc4033eb9b30624a8b925060fd2a548601ce3e587e93a2047c7f21da851a3f4f",
+      "sha256": "23b5a133a5a31b8e00d2bb04fbde2617bf87cacd7abcbd7ca8c47e64bd4c486a",
       "format": "JPEG",
       "source": "browser rendering of the matching SVG; not a WorkBuddy-client screenshot"
     }
-  ]
+  ],
+  "operator_attribution": "Client operations and independent programmatic checks performed by Codex agent; not a confirmed manual human run"
 }
