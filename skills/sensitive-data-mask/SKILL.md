@@ -1,12 +1,14 @@
 ---
 name: sensitive-data-mask
-description: 日志脱敏、数据脱敏、对外分享前处理、把手机号和身份证打码、日志里的银行卡与邮箱与 IP 替换掉、URL 里的 token 与 JWT 与 AK 和 SK 与私钥块与连接串密码一起洗掉、给外部同学发日志前先过一遍、提工单附件前去掉个人信息、导出的 CSV 里有手机号怎么办、批量处理这个目录下的日志、脱敏后还要能对上同一个用户。当用户说「这份日志要发给外部，帮我脱敏」「把手机号和身份证打码」「保留可关联性但不要明文」「这个目录下的日志都洗一遍」「脱敏完给我一份命中统计」时使用。附纯标准库脚本 scripts/mask_sensitive.py，三种策略（mask 保留前后若干位、hash 取 sha256 前 8 位保持可关联、fake 用稳定假值），可 --keep-format 保持长度与格式，支持文件与目录与 stdin、--in-place 需显式确认、输出命中统计与 --report 映射清单。这是防御性工具，脱敏不等于合规。
+description: 日志脱敏、数据脱敏、对外分享前处理、把手机号和身份证打码、日志里的银行卡与邮箱与 IP 替换掉、URL 里的 token 与 JWT 与 AK 和 SK 与私钥块与连接串密码一起洗掉、给外部同学发日志前先过一遍、提工单附件前去掉个人信息、导出的 CSV 里有手机号怎么办、批量处理这个目录下的日志、脱敏后还要能对上同一个用户。当需要离线处理分享前的日志或文本导出时使用。附纯标准库脱敏脚本，输出独立副本、命中统计与不含原值明文的映射。写前检查输入/输出/报告别名冲突，目录保留层级，逐文件原子写入；--force 不授权覆盖输入。支持 mask/hash/fake、stdin 和仅统计；它不能证明全面匿名化，也不会发送材料。
 author: Captain
-version: 0.1.0
+version: 0.1.1
+homepage: https://github.com/po-et/workbuddy-skills
+license: CC-BY-4.0 AND MIT
 display_name: "日志与数据脱敏"
 display_name_en: "Sensitive Data Mask"
-description_zh: "对外分享日志或数据前的脱敏工具：识别手机号、身份证、银行卡、邮箱、IP、URL 凭据参数、JWT、AK/SK、私钥块、连接串密码与明确标注的中文 PII，按 mask/hash/fake 三种策略替换，可保持长度格式与跨文件可关联性，输出命中统计与不含明文的映射清单。纯 Python 标准库。"
-description_en: "Defensive masking for logs and data you are about to share: detects phone numbers, national IDs, bank cards, emails, IPs, URL credential params, JWTs, AK/SK keys, private-key blocks, DSN passwords and explicitly labelled Chinese PII, then replaces them via mask/hash/fake — optionally format-preserving and correlatable across files — with a hit summary and a plaintext-free mapping report. Pure stdlib."
+description_zh: "日志与导出文本的离线脱敏：输出独立副本和命中统计；保护原文件、保留目录层级、原子写入，失败与跳过显式报告。有限模式识别，不宣称全面匿名化，不自动发送。"
+description_en: "Mask local logs and text exports offline while protecting input files, preserving directory structure and writing atomic outputs. Report hits, failures and skipped files; finite patterns do not guarantee anonymization."
 examples_zh:
   - "这份日志要发给外部客户，帮我日志脱敏"
   - "把手机号和身份证打码，但同一个用户还要能对上"
@@ -21,52 +23,48 @@ metadata:
 
 # 日志与数据脱敏
 
-**这是一个防御性工具**：用于把自己手里的日志、导出数据在对外分享前洗一遍，降低误泄露个人信息与凭据的概率。它不是绕过审计的手段，也不产生「合规豁免」。
+交付独立的脱敏副本与逐文件处理统计，原始材料默认只读。不发送日志、连接外部系统或修改分享权限。用 Python 3 标准库运行，输入为 UTF-8 文本；其他编码先另存一份 UTF-8 副本。
 
-## 用法
+## 运行与检查
+
+路径相对本技能安装目录；替换为自己的输入路径。
 
 ```bash
-python3 scripts/mask_sensitive.py app.log                          # 写到 app.log.masked
-python3 scripts/mask_sensitive.py app.log --dry-run                # 只看命中统计，不写文件
-python3 scripts/mask_sensitive.py logs/ --mode hash --salt team-2026 --report map.tsv
-python3 scripts/mask_sensitive.py dump.csv --mode fake --keep-format
-python3 scripts/mask_sensitive.py app.log --keep-subnet 2          # IP 只保留前两段网段
-python3 scripts/mask_sensitive.py app.log --types phone,idcard,email
-cat app.log | python3 scripts/mask_sensitive.py - > shared.log      # 统计走 stderr
-python3 scripts/mask_sensitive.py logs/ --in-place --yes            # 原地覆盖，需显式确认
+python3 scripts/mask_sensitive.py examples/logs --dry-run --types phone,email --json
+python3 scripts/mask_sensitive.py examples/logs --out-dir /path/to/new-masked --types phone,email --json
+python3 scripts/mask_sensitive.py app.log --mode hash --salt local-example --report /path/to/new-map.json --json
 ```
 
-## 三种策略怎么选
+默认每个文件输出到 `<file>.masked`。目录输入配合 `--out-dir` 会保留子目录，两个模块的 `app.log` 分开保存。多个独立文件如果映射到同一输出会提前报错；可以改成共同父目录输入。
 
-| 策略 | 效果 | 适合 |
-| --- | --- | --- |
-| `mask`（默认） | `199****0001`、`110000********0011` | 人要看的日志，保留前后若干位便于对照工单 |
-| `hash` | `<PHONE:cdbe2eb6>`，同一 salt 下同值同结果 | 要做统计、去重、跨文件关联，但不需要还原 |
-| `fake` | `19965617353`、`user0a1b2c3d@example.com` | 要喂给解析器或演示环境，格式必须仍然合法 |
+`--json` 返回成功 `files`、`skipped`、`failed`、`batch_status` 和命中统计。stdin 模式结果走 stdout，统计走 stderr。映射只含原值短哈希、替换值与次数，不包含原值明文；默认不生成映射。
 
-`--keep-format` 让替换值保持原值的长度与字符形态（数字对数字、字母对字母、汉字对「某」），IP 会保证每段仍 ≤ 255；适合字段有长度校验的场景。
+- `0`：本轮所有输入完成，或者仅统计完成；不表示已发现全部敏感内容。
+- `1`：部分输出已存在而跳过；已经产生的成功输出保留。
+- `2`：路径冲突、读取/写入失败等；看逐文件失败原因。命中数仅统计成功处理文件。
 
-## 流程
+完整输出保护约束见 [文件处理契约](references/file-protection.md)。
 
-1. 先 `--dry-run` 跑一遍看命中统计，确认该命中的都命中了（尤其是自定义字段名里的密码、内部 ID 形态）。
-2. 没命中的形态用 `--types` 之外的办法补：先 `sed` 替换掉特有格式，再跑本工具。
-3. 选策略与 salt。需要跨文件、跨批次对上同一个人时，必须固定同一个 `--salt`；换 salt 等于换映射。
-4. 输出到 `<file>.masked`（默认）或 `--out-dir`；确认无误再考虑 `--in-place --yes`，原地覆盖不可撤销。
-5. `--report map.tsv` 留一份映射清单（只含原值哈希、替换值、命中次数，**不含原值明文**），排查时用来确认「这两条记录是不是同一个人」。
-6. **人工抽样复核**几段再发出，并按公司流程走数据外发审批。
+## 选择替换策略
 
-## 覆盖的形态
+| 模式 | 行为 | 适用用途 |
+|---|---|---|
+| `mask` | 保留前后少量字符，中间遮蔽 | 人阅读时保留有限线索 |
+| `hash` | 同一 salt 下用 SHA-256 前 8 位关联 | 有限的跨文件关联；有碰撞与穷举风险，不是加密 |
+| `fake` | 用确定性的示例形态替换 | 演示、解析器测试；不能保证下游所有格式约束 |
 
-手机号（11 位）、身份证号（18 位含出生日期校验）、银行卡号（16–19 位过 Luhn，`--loose-card` 可放宽）、邮箱、IPv4（可 `--keep-subnet` 保留网段）、URL query 里的凭据参数（token/api_key/secret/sig/session/code 等）、JWT、AK 与 SK 类密钥（AWS/GitHub/Slack/OpenAI 常见前缀）、私钥块（BEGIN 到 END 整段替换）、连接串与配置里的密码（`scheme://user:pass@` 与 `password=`）、中文 PII 里**明确标注**的字段（`收货人`/`联系人`/`姓名`/`收货地址`/`住址` 等后面跟的内容）。
+`--keep-format` 保持长度与字符形态；`--keep-subnet` 保留部分网段。`--types` 和 `--skip` 按实际材料收窄识别范围。不同 salt 不应假定可关联，不把共享 salt 当作保密保证。
 
-中文姓名与地址采取保守策略：**只处理有字段名标注的内容**，自由文本里的人名地名一律不动 —— 宁可漏掉让人工复核，也不把正常业务词误伤成 `某某`。
+## 原件与覆盖
 
-## 边界与常见问题
+先检查独立副本。`--force` 仅允许覆盖与输入无关的输出；同一文件、符号链接路径或硬链接别名与输入冲突仍被拒绝。映射报告也不能覆盖输入或脱敏副本。普通文件成功写完后才提交到目标，读取/写入失败不把已有输出截空。
 
-- **脱敏不等于合规**。敏感数据外发仍需按公司流程申请与审批；本工具只降低误泄露概率，不替代审批，也不改变数据的密级。
-- **hash 模式不是加密**。手机号空间只有约 10 亿，不加 salt 时可被穷举反推；跨团队共享时请用只有己方知道的 `--salt`，并把映射清单当敏感文件保管。
-- **漏报一定存在**。自定义编码的用户 ID、拼接过的证件号、图片里的信息、自由文本中的地址都识别不到；发出前必须人工抽样。
-- **误报也存在**。16–19 位且恰好过 Luhn 的流水号会被当银行卡，`1.2.3.4` 这类版本号会被当 IP，`password=` 后面的占位符也会被替换；用 `--types` / `--skip` 收窄范围。
-- 多行私钥块靠 BEGIN/END 成对识别，按块读取时不会被切断；单独出现 BEGIN 的残缺片段可能漏掉。
-- 目录模式默认只处理常见文本扩展名（log/txt/csv/tsv/json/md/yaml/sql/conf 等），`--ext` 可改；已存在的输出文件默认跳过，`--force` 才覆盖。
-- 不处理二进制、压缩包与数据库；压缩日志请先 `zcat` 再用 stdin 模式。
+如果用户明确要求替换原件，才用 `--in-place --yes`；这会替换原文件，不能用 `--force` 代替。它与 `--out-dir` 不可同时使用。新版不使用可预猜的临时文件名，保留原件权限位；处理失败保留原件。没有原地需求时始终交付副本。
+
+## 覆盖范围与使用边界
+
+已覆盖的模式包括手机号、证件/银行卡形态、邮箱、IPv4、部分 URL 凭据参数、JWT、常见密钥前缀、私钥块、连接串密码与明确标注的中文姓名/地址。识别规则有漏报与误报，自由文本姓名、图像和自定义编码不在保证范围内；未命中不能当作安全证明。
+
+按用户的数据范围复核交付，不把脱敏结果等同于全面匿名化。随包样例均为合成内容；本轮只验证脚本与文件保护，未证明第三方使用、企业合规或 WorkBuddy 客户端自动调用。
+
+本版文件保护与样例由本项目原创增强。正文 CC BY 4.0，代码 MIT：https://github.com/po-et/workbuddy-skills

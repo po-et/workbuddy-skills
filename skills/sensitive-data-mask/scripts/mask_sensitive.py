@@ -10,11 +10,13 @@
 脱敏不等于合规：敏感数据外发仍需按公司流程走审批。
 """
 import argparse
+import copy
 import hashlib
 import json
 import os
 import re
 import sys
+import tempfile
 
 _D5 = "-" * 5
 
@@ -229,19 +231,77 @@ def chunks(fh, n=2000):
         yield "".join(buf)
 
 
-def process(src, dst, rules, ctx, dry):
-    out = None if dry else (sys.stdout if dst == "-" else open(dst, "w", encoding="utf-8", newline=""))
-    fh = sys.stdin if src == "-" else open(src, encoding="utf-8", errors="replace", newline="")
+def same_file(a, b):
+    if os.path.realpath(a) == os.path.realpath(b):
+        return True
     try:
+        return os.path.samefile(a, b)
+    except OSError:
+        return False
+
+
+def commit_temp(tmp, dst, overwrite):
+    if overwrite:
+        os.replace(tmp, dst)
+    else:
+        # An exclusive link prevents a concurrent file from being overwritten.
+        os.link(tmp, dst)
+        os.unlink(tmp)
+
+
+def atomic_text(dst, text, overwrite=False):
+    parent = os.path.dirname(os.path.abspath(dst))
+    os.makedirs(parent, exist_ok=True)
+    fd, tmp = tempfile.mkstemp(prefix=".mask-", dir=parent)
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8", newline="") as f:
+            f.write(text)
+            f.flush()
+            os.fsync(f.fileno())
+        commit_temp(tmp, dst, overwrite)
+    finally:
+        if os.path.exists(tmp):
+            os.unlink(tmp)
+
+
+def process(src, dst, rules, ctx, dry, overwrite=False, in_place=False):
+    if not dry and src != "-" and dst != "-" and same_file(src, dst) and not in_place:
+        raise ValueError("输出与输入指向同一文件；--force 不授权覆盖输入")
+    if in_place and os.path.islink(src):
+        raise ValueError("原地模式不替换符号链接；请使用新的输出目录")
+    fh = sys.stdin if src == "-" else open(src, encoding="utf-8", errors="strict", newline="")
+    out, tmp = None, None
+    try:
+        if not dry:
+            if dst == "-":
+                out = sys.stdout
+            else:
+                parent = os.path.dirname(os.path.abspath(dst))
+                os.makedirs(parent, exist_ok=True)
+                fd, tmp = tempfile.mkstemp(prefix=".mask-", dir=parent)
+                out = os.fdopen(fd, "w", encoding="utf-8", newline="")
         for ch in chunks(fh):
             masked = mask_text(ch, rules, ctx)
             if out:
                 out.write(masked)
+        if out and out is not sys.stdout:
+            out.flush()
+            os.fsync(out.fileno())
+            out.close()
+            out = None
+        if fh is not sys.stdin:
+            fh.close()
+        if tmp:
+            if in_place:
+                os.chmod(tmp, os.stat(src).st_mode & 0o777)
+            commit_temp(tmp, dst, overwrite or in_place)
     finally:
         if fh is not sys.stdin:
             fh.close()
         if out and out is not sys.stdout:
             out.close()
+        if tmp and os.path.exists(tmp):
+            os.unlink(tmp)
 
 
 def collect(paths, a):
@@ -252,14 +312,48 @@ def collect(paths, a):
         elif os.path.isdir(p):
             exts = {e if e.startswith(".") else "." + e for e in a.ext.split(",")} if a.ext else TEXT_EXT
             for root, dirs, fns in os.walk(p):
-                dirs[:] = [d for d in dirs if d not in (".git", "node_modules", "__pycache__", ".venv")]
+                dirs[:] = [d for d in dirs if d not in (".git", "node_modules", "__pycache__", ".venv")
+                           and not (a.out_dir and os.path.realpath(os.path.join(root, d)) == os.path.realpath(a.out_dir))]
                 for fn in sorted(fns):
                     if fn.endswith(a.suffix) or os.path.splitext(fn)[1].lower() not in exts:
                         continue
                     files.append(os.path.join(root, fn))
         else:
             files.append(p)
-    return files
+    return list(dict.fromkeys(files))
+
+
+def output_plan(files, a):
+    roots = [os.path.abspath(p) for p in a.paths if p != "-" and os.path.isdir(p)]
+    plan = []
+    for src in files:
+        if src == "-" or a.dry_run:
+            dst = "-"
+        elif a.in_place:
+            dst = src
+        elif a.out_dir:
+            absolute = os.path.abspath(src)
+            root = next((r for r in roots if os.path.commonpath([r, absolute]) == r), None)
+            dst = os.path.join(a.out_dir, os.path.relpath(absolute, root) if root else os.path.basename(src))
+        else:
+            dst = src + a.suffix
+        if src != "-" and not os.path.isfile(src):
+            raise ValueError("输入不是可读取的普通文件")
+        if src != "-" and os.path.islink(src):
+            raise ValueError("输入为符号链接；请明确提供普通文件路径")
+        if not a.dry_run and dst != "-":
+            for other in files:
+                if other != "-" and same_file(dst, other) and not (a.in_place and other == src):
+                    raise ValueError("输出与批次输入文件冲突；请指定新的输出目录")
+            if any(d != "-" and same_file(dst, d) for _, d in plan):
+                raise ValueError("多个输入映射到同一输出；请按目录输入保留层级")
+        plan.append((src, dst))
+    if a.report and not a.dry_run:
+        if any(s != "-" and same_file(a.report, s) or d != "-" and same_file(a.report, d) for s, d in plan):
+            raise ValueError("映射报告与输入或脱敏输出冲突")
+        if os.path.exists(a.report) and not a.force:
+            raise ValueError("映射报告已存在；请换新路径或使用 --force")
+    return plan
 
 
 def main():
@@ -285,51 +379,52 @@ def main():
     a = ap.parse_args()
     if a.in_place and not a.yes:
         sys.exit("--in-place 会覆盖原文件且不可撤销；确认后请加 --yes（建议先不带 --in-place 跑一遍看统计）")
+    if a.in_place and a.out_dir:
+        ap.error("--in-place 与 --out-dir 不能同时使用")
     rules, ctx = build_rules(a), Ctx(a)
     files = collect(a.paths, a)
     if not files:
         sys.exit("没有匹配到任何文件")
-    done = []
-    for src in files:
-        if src == "-":
-            process("-", "-", rules, ctx, a.dry_run)
-            done.append({"src": "<stdin>", "dst": "<stdout>"})
+    try:
+        plan = output_plan(files, a)
+    except (ValueError, OSError) as e:
+        print("路径预检失败：" + str(e), file=sys.stderr)
+        return 2
+    done, skipped, failed = [], [], []
+    for src, dst in plan:
+        if dst != "-" and os.path.exists(dst) and not a.force and not a.in_place and not a.dry_run:
+            skipped.append({"src": src, "dst": dst, "reason": "output_exists"})
             continue
-        if a.dry_run:
-            dst = "-"
-        elif a.in_place:
-            dst = src + ".tmp-mask"
-        elif a.out_dir:
-            os.makedirs(a.out_dir, exist_ok=True)
-            dst = os.path.join(a.out_dir, os.path.basename(src))
-        else:
-            dst = src + a.suffix
-        if dst not in ("-",) and os.path.exists(dst) and not a.force and not a.in_place:
-            print(f"跳过 {src}：{dst} 已存在（加 --force 覆盖）", file=sys.stderr)
+        prior_hits, prior_mapping = dict(ctx.hits), copy.deepcopy(ctx.mapping)
+        try:
+            process(src, dst, rules, ctx, a.dry_run, a.force, a.in_place)
+        except (ValueError, OSError) as e:
+            ctx.hits, ctx.mapping = prior_hits, prior_mapping
+            failed.append({"src": src, "dst": dst, "reason": type(e).__name__})
             continue
-        process(src, None if a.dry_run else dst, rules, ctx, a.dry_run)
-        if a.in_place and not a.dry_run:
-            os.replace(dst, src)
-            dst = src
-        done.append({"src": src, "dst": "(dry-run)" if a.dry_run else dst})
+        done.append({"src": "<stdin>" if src == "-" else src, "dst": "(dry-run)" if a.dry_run else "<stdout>" if dst == "-" else dst})
     total = sum(ctx.hits.values())
     rep = [{"category": c, "hash": h, "replacement": v["to"], "count": v["count"]}
            for (c, h), v in sorted(ctx.mapping.items())]
     if a.report and not a.dry_run:
-        if a.report.endswith(".json"):
-            json.dump(rep, open(a.report, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
-        else:
-            with open(a.report, "w", encoding="utf-8") as f:
-                f.write("# 原值哈希 → 替换值（不含原值明文）\tmode=%s\tsalt=%s\n" % (a.mode, "set" if a.salt else "empty"))
-                f.write("category\torig_sha256_8\treplacement\tcount\n")
-                for r in rep:
-                    f.write(f"{r['category']}\t{r['hash']}\t{r['replacement']}\t{r['count']}\n")
+        try:
+            if a.report.endswith(".json"):
+                content = json.dumps(rep, ensure_ascii=False, indent=2) + "\n"
+            else:
+                content = "# 原值哈希 → 替换值（不含原值明文）\tmode=%s\tsalt=%s\n" % (a.mode, "set" if a.salt else "empty")
+                content += "category\torig_sha256_8\treplacement\tcount\n"
+                content += "".join(f"{r['category']}\t{r['hash']}\t{r['replacement']}\t{r['count']}\n" for r in rep)
+            atomic_text(a.report, content, a.force)
+        except (ValueError, OSError) as e:
+            failed.append({"src": "<mapping>", "dst": a.report, "reason": type(e).__name__})
     summary = {"mode": a.mode, "keep_format": a.keep_format, "files": done, "total_hits": total,
+               "skipped": skipped, "failed": failed,
+               "batch_status": "failed" if failed else "incomplete" if skipped else "completed",
                "distinct_values": len(ctx.mapping),
                "by_category": [{"category": c, "label": CATEGORIES[c][1], "hits": ctx.hits[c],
                                 "distinct": sum(1 for k in ctx.mapping if k[0] == c)}
                                for c in ORDER if ctx.hits[c]],
-               "report": a.report if (a.report and not a.dry_run) else None}
+               "report": a.report if (a.report and not a.dry_run and not any(x['src']=='<mapping>' for x in failed)) else None}
     stream = sys.stderr if "-" in files else sys.stdout      # 脱敏结果走 stdout，统计走 stderr，方便管道
     if a.json:
         print(json.dumps(summary, ensure_ascii=False, indent=2), file=stream)
@@ -341,13 +436,17 @@ def main():
             for r in summary["by_category"]:
                 print(f"{r['label']:<14}{r['hits']:>6}{r['distinct']:>10}", file=stream)
         else:
-            print("  ✓ 没有命中任何敏感形态（也可能是模式没覆盖，别只依赖工具结论）", file=stream)
+            print("  没有可用的成功命中统计" if failed and not done else
+                  "  没有命中已覆盖的敏感形态（仍可能漏报）", file=stream)
         for d in done:
             print(f"  {d['src']} → {d['dst']}", file=stream)
+        for d in skipped + failed:
+            print(f"  未完成：{d['src']}（{d['reason']}）", file=stream)
         if a.report and not a.dry_run:
             print(f"映射清单 {a.report}", file=stream)
         print("提醒：脱敏不等于合规，敏感数据外发仍需走审批；发出前请人工抽样复核。", file=stream)
+    return 2 if failed else 1 if skipped else 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

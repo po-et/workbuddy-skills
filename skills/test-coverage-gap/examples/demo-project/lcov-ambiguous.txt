@@ -1,0 +1,7 @@
+TN:synthetic-path-ambiguity
+SF:left/user.py
+DA:2,1
+end_of_record
+SF:right/user.py
+DA:2,0
+end_of_record

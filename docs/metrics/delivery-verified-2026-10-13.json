@@ -1,0 +1,340 @@
+{
+  "generated_at": "2026-10-13T06:23:21.147595+00:00",
+  "namespace": "indiv-captain",
+  "actor": "maintainer-side AI agents",
+  "all_four_live_and_files_match": true,
+  "releases": [
+    {
+      "slug": "sensitive-data-mask",
+      "version": "0.1.1",
+      "queried_at_beijing": "2026-10-13T14:21:44.863573+08:00",
+      "public_latest_matches": true,
+      "version_id": 431784,
+      "security_reports": {
+        "keen": {
+          "status": "benign"
+        },
+        "sanbu": {
+          "status": "benign"
+        }
+      },
+      "package_verification": {
+        "package_sha256": "0df4184b12ff18bbe077a2309369f49744cdb3eb761f9dd4195a3a5059a819bc",
+        "compared_files": [
+          {
+            "path": "SKILL.md",
+            "dist_sha256": "7f83c73f785bbfbaedacb9349af437dec8f0ca2b544df9338e5fcc6a8987d28f",
+            "download_sha256": "7f83c73f785bbfbaedacb9349af437dec8f0ca2b544df9338e5fcc6a8987d28f",
+            "match": true
+          },
+          {
+            "path": "examples/logs/east/app.txt",
+            "dist_sha256": "ff3cb82b905e7f07929a1e6b65b0f5032ef140a60de152a6579e6bd2edf51806",
+            "download_sha256": "ff3cb82b905e7f07929a1e6b65b0f5032ef140a60de152a6579e6bd2edf51806",
+            "match": true
+          },
+          {
+            "path": "examples/logs/west/app.txt",
+            "dist_sha256": "ff3cb82b905e7f07929a1e6b65b0f5032ef140a60de152a6579e6bd2edf51806",
+            "download_sha256": "ff3cb82b905e7f07929a1e6b65b0f5032ef140a60de152a6579e6bd2edf51806",
+            "match": true
+          },
+          {
+            "path": "references/file-protection.md",
+            "dist_sha256": "3f8d43ab118828230c30ed4a449193209be3127619a6787051e971597c8c2112",
+            "download_sha256": "3f8d43ab118828230c30ed4a449193209be3127619a6787051e971597c8c2112",
+            "match": true
+          },
+          {
+            "path": "scripts/mask_sensitive.py",
+            "dist_sha256": "42cc5993c22859ca6420c77d260f660a3af73ae97082dc95df4035deb796bbe9",
+            "download_sha256": "42cc5993c22859ca6420c77d260f660a3af73ae97082dc95df4035deb796bbe9",
+            "match": true
+          }
+        ],
+        "all_dist_files_match": true,
+        "missing_dist_files": [],
+        "unexpected_package_files": [
+          "_meta.json"
+        ]
+      },
+      "evaluation_version_id": 324569,
+      "new_evaluation_confirmed": false
+    },
+    {
+      "slug": "test-coverage-gap",
+      "version": "0.1.1",
+      "queried_at_beijing": "2026-10-13T14:21:45.829673+08:00",
+      "public_latest_matches": true,
+      "version_id": 431812,
+      "security_reports": {
+        "keen": {
+          "status": "benign"
+        },
+        "sanbu": {
+          "status": "benign"
+        }
+      },
+      "package_verification": {
+        "package_sha256": "73a0069ac9e90f7f8dc1bba59fd78a745b8a482e4a6beebae1e63c94853c123b",
+        "compared_files": [
+          {
+            "path": "SKILL.md",
+            "dist_sha256": "a753a6a35089eed150cc9de8b011fbb98bd5a2fbfbf419f561b382a23a71d2d8",
+            "download_sha256": "a753a6a35089eed150cc9de8b011fbb98bd5a2fbfbf419f561b382a23a71d2d8",
+            "match": true
+          },
+          {
+            "path": "examples/demo-project/lcov-ambiguous.txt",
+            "dist_sha256": "8794c458820c9448e11320272cc1ebe86abe17da788db510cb2053cb0564a894",
+            "download_sha256": "8794c458820c9448e11320272cc1ebe86abe17da788db510cb2053cb0564a894",
+            "match": true
+          },
+          {
+            "path": "examples/demo-project/lcov-mapped.txt",
+            "dist_sha256": "84e3bbef7e19615f0dc0987491c056150fd1e66bc5a16dacf1a348c4aea69e8e",
+            "download_sha256": "84e3bbef7e19615f0dc0987491c056150fd1e66bc5a16dacf1a348c4aea69e8e",
+            "match": true
+          },
+          {
+            "path": "examples/demo-project/moduleA/src/user.py",
+            "dist_sha256": "369925fd3974dd0849d30c590323a9999e1cf6a635ada703aa9ea53a4e651c4c",
+            "download_sha256": "369925fd3974dd0849d30c590323a9999e1cf6a635ada703aa9ea53a4e651c4c",
+            "match": true
+          },
+          {
+            "path": "examples/demo-project/moduleA/tests/test_user.py",
+            "dist_sha256": "04ed64a6f65c9038742908e36acb0110e8a76de8816967c4f4f6593a487eebd4",
+            "download_sha256": "04ed64a6f65c9038742908e36acb0110e8a76de8816967c4f4f6593a487eebd4",
+            "match": true
+          },
+          {
+            "path": "examples/demo-project/moduleB/src/user.py",
+            "dist_sha256": "80a9c744f00f251c15e732cf2abad0bec157eeed4293f697082d814ed236043a",
+            "download_sha256": "80a9c744f00f251c15e732cf2abad0bec157eeed4293f697082d814ed236043a",
+            "match": true
+          },
+          {
+            "path": "references/evidence-contract.md",
+            "dist_sha256": "3ab9c6f1e7e4ee7b17a4d569fd844d3ac1b100f077b61d65697f8d794e375696",
+            "download_sha256": "3ab9c6f1e7e4ee7b17a4d569fd844d3ac1b100f077b61d65697f8d794e375696",
+            "match": true
+          },
+          {
+            "path": "scripts/test_coverage_gap.py",
+            "dist_sha256": "f88d101db9059d8b40a4ec7d8fa9ef0eee42f2ceb7445de56537063d961093b1",
+            "download_sha256": "f88d101db9059d8b40a4ec7d8fa9ef0eee42f2ceb7445de56537063d961093b1",
+            "match": true
+          }
+        ],
+        "all_dist_files_match": true,
+        "missing_dist_files": [],
+        "unexpected_package_files": [
+          "_meta.json"
+        ]
+      },
+      "evaluation_version_id": 321701,
+      "new_evaluation_confirmed": false
+    },
+    {
+      "slug": "release-readiness-check",
+      "version": "0.1.3",
+      "queried_at_beijing": "2026-10-13T14:21:47.529350+08:00",
+      "public_latest_matches": true,
+      "version_id": 431801,
+      "security_reports": {
+        "keen": {
+          "status": "benign"
+        },
+        "sanbu": {
+          "status": "benign"
+        }
+      },
+      "package_verification": {
+        "package_sha256": "c93a3e6be99ea37d651d48d6219dd186c1140331fc39bd7b0868431b8236b601",
+        "compared_files": [
+          {
+            "path": "LICENSE.md",
+            "dist_sha256": "218d39ed6231e03e2a21424f6e45198533477e5a1ae1da39d11a5dda2e593f30",
+            "download_sha256": "218d39ed6231e03e2a21424f6e45198533477e5a1ae1da39d11a5dda2e593f30",
+            "match": true
+          },
+          {
+            "path": "SKILL.md",
+            "dist_sha256": "16abfe71a1bfcea950bf06b7a1fc8bd2a3291541826ea96edae05083a62d0d3d",
+            "download_sha256": "16abfe71a1bfcea950bf06b7a1fc8bd2a3291541826ea96edae05083a62d0d3d",
+            "match": true
+          },
+          {
+            "path": "examples/quick-check.md",
+            "dist_sha256": "733c61d78f85c92ee98202657d56c3e7a4fe0857c1dbe04e4b9650bc29bc06ef",
+            "download_sha256": "733c61d78f85c92ee98202657d56c3e7a4fe0857c1dbe04e4b9650bc29bc06ef",
+            "match": true
+          },
+          {
+            "path": "references/report-contract.md",
+            "dist_sha256": "0e28c65715874d2ae5faccbae0aa1ba5c50e5ddcfb1ada27a1ec7418873f3686",
+            "download_sha256": "0e28c65715874d2ae5faccbae0aa1ba5c50e5ddcfb1ada27a1ec7418873f3686",
+            "match": true
+          },
+          {
+            "path": "scripts/checks/dockerfile_check.py",
+            "dist_sha256": "5bde2b894e1e94722bd41befaef43884f42ea69b2fa00c2ebc0017db3e50e79f",
+            "download_sha256": "5bde2b894e1e94722bd41befaef43884f42ea69b2fa00c2ebc0017db3e50e79f",
+            "match": true
+          },
+          {
+            "path": "scripts/checks/env_sync_check.py",
+            "dist_sha256": "8b1111a0f357d2846ebd4ea3783ef74c003dedbd8306a1dad6c8b5801658ec05",
+            "download_sha256": "8b1111a0f357d2846ebd4ea3783ef74c003dedbd8306a1dad6c8b5801658ec05",
+            "match": true
+          },
+          {
+            "path": "scripts/checks/k8s_check.py",
+            "dist_sha256": "98ddd853bde17e6e33d6489eae3ce36dbbfeb2fec524847eac2eb5f1929942c4",
+            "download_sha256": "98ddd853bde17e6e33d6489eae3ce36dbbfeb2fec524847eac2eb5f1929942c4",
+            "match": true
+          },
+          {
+            "path": "scripts/checks/openapi_diff.py",
+            "dist_sha256": "e2f13ad62b4b24c83e80a19c9a9be501ac3f90af2ee8c730805affd823dd2378",
+            "download_sha256": "e2f13ad62b4b24c83e80a19c9a9be501ac3f90af2ee8c730805affd823dd2378",
+            "match": true
+          },
+          {
+            "path": "scripts/checks/sql_migration_check.py",
+            "dist_sha256": "8184fc327c86eb011d8015de07ec803dcaa40865e50ee18aa7d0afd187f146a2",
+            "download_sha256": "8184fc327c86eb011d8015de07ec803dcaa40865e50ee18aa7d0afd187f146a2",
+            "match": true
+          },
+          {
+            "path": "scripts/release_check.py",
+            "dist_sha256": "f0a5ee13b4be99868755cc2a19f5e2d61e9db64efc51f9c156fcdb56d583f3df",
+            "download_sha256": "f0a5ee13b4be99868755cc2a19f5e2d61e9db64efc51f9c156fcdb56d583f3df",
+            "match": true
+          }
+        ],
+        "all_dist_files_match": true,
+        "missing_dist_files": [],
+        "unexpected_package_files": [
+          "_meta.json"
+        ]
+      },
+      "evaluation_version_id": 324442,
+      "new_evaluation_confirmed": false
+    },
+    {
+      "slug": "meeting-transcript-cleanup",
+      "version": "0.1.2",
+      "queried_at_beijing": "2026-10-13T14:21:48.924356+08:00",
+      "public_latest_matches": true,
+      "version_id": 431821,
+      "security_reports": {
+        "keen": {
+          "status": "benign"
+        },
+        "sanbu": {
+          "status": "benign"
+        }
+      },
+      "package_verification": {
+        "package_sha256": "4b8db2393812884570f86881cd54d9005ba5912ed1a41fac8989ff1f1282f06d",
+        "compared_files": [
+          {
+            "path": "LICENSE.md",
+            "dist_sha256": "19bb3fcced756b1dfdf1cdc89e5afa5379b7f0da6266aa8ae4348c8f3d346681",
+            "download_sha256": "19bb3fcced756b1dfdf1cdc89e5afa5379b7f0da6266aa8ae4348c8f3d346681",
+            "match": true
+          },
+          {
+            "path": "SKILL.md",
+            "dist_sha256": "cc02cb66a1c27bdd2fae15acc8e61629f51c8f09e33e130876c37ecf2b2f8e98",
+            "download_sha256": "cc02cb66a1c27bdd2fae15acc8e61629f51c8f09e33e130876c37ecf2b2f8e98",
+            "match": true
+          },
+          {
+            "path": "assets/sample-notes.json",
+            "dist_sha256": "ec08e981dba8cb9c61703dc7997c2f6f8d47c1dac34967f8c17d40ddbdedfbd0",
+            "download_sha256": "ec08e981dba8cb9c61703dc7997c2f6f8d47c1dac34967f8c17d40ddbdedfbd0",
+            "match": true
+          },
+          {
+            "path": "assets/sample-transcript.txt",
+            "dist_sha256": "c9839e7ec9b6e7b7e272628ca2164567d78249e60cf89b0d10d4f43319502e26",
+            "download_sha256": "c9839e7ec9b6e7b7e272628ca2164567d78249e60cf89b0d10d4f43319502e26",
+            "match": true
+          },
+          {
+            "path": "examples/weekly-sync.md",
+            "dist_sha256": "218ce846d7fca31bc3c71dccee9ab5177059ceb4b08cafda8262948c12c00fbd",
+            "download_sha256": "218ce846d7fca31bc3c71dccee9ab5177059ceb4b08cafda8262948c12c00fbd",
+            "match": true
+          },
+          {
+            "path": "references/notes-contract.md",
+            "dist_sha256": "f31c990340d06eb1ee92e406cc114a7298faa4eb1bf327df14f73d304694a235",
+            "download_sha256": "f31c990340d06eb1ee92e406cc114a7298faa4eb1bf327df14f73d304694a235",
+            "match": true
+          },
+          {
+            "path": "references/templates.md",
+            "dist_sha256": "ffa875d9a99c8e669edb9dc13895ab1230245153f956aaad8343b39bc4cf80f3",
+            "download_sha256": "ffa875d9a99c8e669edb9dc13895ab1230245153f956aaad8343b39bc4cf80f3",
+            "match": true
+          },
+          {
+            "path": "scripts/compile_minutes.py",
+            "dist_sha256": "76709668ee630b3a2fd7fc20ef57729ce5ba6387e0d69e1835d5c7399ea87eae",
+            "download_sha256": "76709668ee630b3a2fd7fc20ef57729ce5ba6387e0d69e1835d5c7399ea87eae",
+            "match": true
+          },
+          {
+            "path": "scripts/tag_candidates.py",
+            "dist_sha256": "a7ee626f86e4eb10b37b6c63071117d6cec60904358d958385db43ba6db373e2",
+            "download_sha256": "a7ee626f86e4eb10b37b6c63071117d6cec60904358d958385db43ba6db373e2",
+            "match": true
+          }
+        ],
+        "all_dist_files_match": true,
+        "missing_dist_files": [],
+        "unexpected_package_files": [
+          "_meta.json"
+        ]
+      },
+      "evaluation_version_id": 378467,
+      "new_evaluation_confirmed": false
+    }
+  ],
+  "authored_file_count": 32,
+  "acceptance_archive_downloads": 4,
+  "adoption_note": "Acceptance downloads and synthetic AI evaluations are not independent user adoption; current-version client execution unverified.",
+  "tests": {
+    "mask": 16,
+    "coverage": 44,
+    "release": 23,
+    "meeting": 29,
+    "total_passed": 112
+  },
+  "inventory_observation": {
+    "checked_at_beijing": "2026-10-13T13:26:32.554142+08:00",
+    "completed_at_beijing": "2026-10-13T13:26:41.003933+08:00",
+    "inventory_complete": true,
+    "skills": 200,
+    "totals": {
+      "downloads": 15806,
+      "installs": 0,
+      "stars": 3
+    },
+    "deltas_since_0958": {
+      "downloads": 48,
+      "installs": 0,
+      "stars": 0
+    },
+    "fresh_evaluations": 0,
+    "github_issues": 0,
+    "github_feedback_coverage_complete": true,
+    "download_caution": "Baseline after own release tests is not isolated; own three round1 acceptance package downloads may contribute. Counters do not identify unique users.",
+    "comment_coverage": "Live detail reports comments=0 for the three refreshed skills. Comment body/actor data and account-wide comments were not queried."
+  },
+  "scope": "Existing-slot rewrites; no online assets deleted. Official platform evaluations still bound to older versions."
+}

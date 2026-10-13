@@ -1,0 +1,1 @@
+Synthetic fixture only: phone=19900000001 email=demo@example.com

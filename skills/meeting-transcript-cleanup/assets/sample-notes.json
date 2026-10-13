@@ -1,0 +1,119 @@
+{
+  "schema_version": "1",
+  "meeting": {
+    "title": "采购对账周会（虚构）",
+    "date": null
+  },
+  "decisions": [
+    {
+      "id": "D1",
+      "text": "保留对账差异清单。",
+      "state": "confirmed",
+      "sources": [
+        {
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "林晓 00:00:05\n就这么定：保留对账差异清单。"
+        }
+      ]
+    },
+    {
+      "id": "D2",
+      "text": "样本核验通过后才考虑导入，尚未批准上线。",
+      "state": "conditional",
+      "sources": [
+        {
+          "start_line": 5,
+          "end_line": 6,
+          "quote": "周航 00:00:20\n如果样本核验通过，才安排导入；今天只是提议，没有批准上线。"
+        }
+      ]
+    },
+    {
+      "id": "D3",
+      "text": "采购页改版已取消。",
+      "state": "cancelled",
+      "sources": [
+        {
+          "start_line": 9,
+          "end_line": 10,
+          "quote": "赵敏 00:00:48\n这个采购页改版先取消，不要排上线。"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "A1",
+      "text": "补一份讨论样本。",
+      "state": "confirmed",
+      "owner": null,
+      "owner_source": null,
+      "due_text": "明天",
+      "due_date": null,
+      "due_source": {
+        "start_line": 7,
+        "end_line": 8,
+        "quote": "发言人1 00:00:35\n我来补一份样本，明天再讨论。"
+      },
+      "sources": [
+        {
+          "start_line": 7,
+          "end_line": 8,
+          "quote": "发言人1 00:00:35\n我来补一份样本，明天再讨论。"
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "text": "生成差异报告；交付日期存在冲突。",
+      "state": "confirmed",
+      "owner": "赵敏",
+      "owner_source": {
+        "start_line": 11,
+        "end_line": 12,
+        "quote": "林晓 00:01:02\n赵敏负责生成差异报告，截止2026-10-16。"
+      },
+      "due_text": "2026-10-16",
+      "due_date": "2026-10-16",
+      "due_source": {
+        "start_line": 11,
+        "end_line": 14,
+        "quote": "林晓 00:01:02\n赵敏负责生成差异报告，截止2026-10-16。\n赵敏 00:01:18\n我听到报告要在2026-10-15交；和刚才2026-10-16冲突，哪个算？"
+      },
+      "sources": [
+        {
+          "start_line": 11,
+          "end_line": 14,
+          "quote": "林晓 00:01:02\n赵敏负责生成差异报告，截止2026-10-16。\n赵敏 00:01:18\n我听到报告要在2026-10-15交；和刚才2026-10-16冲突，哪个算？"
+        }
+      ]
+    }
+  ],
+  "open_questions": [
+    {
+      "id": "Q1",
+      "text": "谁补预算数据、何时完成仍未确定。",
+      "state": "open",
+      "sources": [
+        {
+          "start_line": 15,
+          "end_line": 16,
+          "quote": "周航 00:01:30\n谁来补预算数据？还没确定负责人和时间。"
+        }
+      ]
+    },
+    {
+      "id": "Q2",
+      "text": "差异报告以2026-10-15还是2026-10-16交付为准？",
+      "state": "open",
+      "sources": [
+        {
+          "start_line": 11,
+          "end_line": 14,
+          "quote": "林晓 00:01:02\n赵敏负责生成差异报告，截止2026-10-16。\n赵敏 00:01:18\n我听到报告要在2026-10-15交；和刚才2026-10-16冲突，哪个算？"
+        }
+      ]
+    }
+  ]
+}

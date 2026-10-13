@@ -123,7 +123,7 @@ def build_report(path, rows, encoding):
         tips.append("说话人是编号（%s），先请用户确认各编号对应谁；确认前保留原标签，不猜。"
                     % "、".join(sorted(numbered)))
     if not speakers:
-        tips.append("没识别到说话人标签：负责人只能从称呼与应答推断，推断依据要列给用户确认。")
+        tips.append("没识别到说话人标签：负责人未知时标待认领，不从相邻称呼与应答猜姓名。")
     if not has_ts:
         tips.append("原稿没有时间戳：每条决议、待办改附一句原文关键短语，方便回查。")
     if counts.get("数"):
