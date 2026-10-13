@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "title": "合成接口验收样例的交接",
+  "goal": "接手者复核样例报告并决定下一条边界用例",
+  "reported_status": "in_progress",
+  "decisions": [
+    {"decision": "只使用合成数据", "reason": "让样例可公开复跑", "source": "调用者提供的样例约束"}
+  ],
+  "open_items": [
+    {"id": "A1", "action": "核对异常响应边界", "acceptance": "留下输入、命令和退出码记录"}
+  ],
+  "next_item_id": "A1",
+  "artifacts": [{"path": "synthetic-verification.txt", "role": "合成验证记录"}],
+  "verifications": [
+    {"command": "示意命令，未由交接生成器执行", "reported_result": "调用者提供的合成通过记录", "reported_status": "passed", "observed_at": "2026-10-12T09:00:00+08:00", "evidence_path": "synthetic-verification.txt"}
+  ],
+  "unknowns": ["未验证真实业务接口", "未确认独立用户使用"],
+  "suggested_skills": ["api-diff-test：可选，用于接口响应差分复核"]
+}

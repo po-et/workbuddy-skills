@@ -4,6 +4,8 @@
 
 [打开成果页](https://po-et.github.io/workbuddy-skills/showcase/)：选任务、复制安装与提示词、查看样本和验收。[真实 WorkBuddy 实测](docs/articles/09-WorkBuddy实测-接口差分验收.md)已补齐维护者客户端执行与报告复核。
 
+2026-10-13 新增[工程技能上手链路](docs/engineering-starter.md)：接手仓库、比较 Agent 评测、换会话交接。三个已有技能补齐离线脚本和 Markdown/JSON 产物，保留原有安装链接。
+
 ## 从三个完整任务开始
 
 | 你要完成的事 | 输入 → 交付 | 从这里试用 |

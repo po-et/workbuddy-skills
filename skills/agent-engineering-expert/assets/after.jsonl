@@ -1,0 +1,3 @@
+{"case_id":"tool-schema","passed":true,"evidence":"synthetic: tool arguments still match the stated schema","latency_ms":160,"cost":0.001}
+{"case_id":"trigger-boundary","passed":true,"evidence":"synthetic: unrelated request still left to the selected writing skill"}
+{"case_id":"context-recall","passed":true,"evidence":"synthetic: expected decision included in response","latency_ms":360,"cost":0.002}

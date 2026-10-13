@@ -1,85 +1,84 @@
 ---
 name: repo-governance-pro
-description: 代码仓库治理助手。只要用户的问题涉及仓库本身怎么管，而不是某一行业务代码怎么写，即应触发本技能，无需用户明确指定。无论是刚接手一个陌生的老仓库不知道从哪看起、TODO 与 FIXME 与 HACK 满天飞不知道谁欠的欠多久了、该先还哪笔债、代码热点、哪些文件最容易出事、这块模块只有一个人懂、两个文件总是一起改、模块越改越难改想要一份架构体检，还是分支几百条不知道哪些能删、分支清理、陈旧分支要不要留、分支怎么开版本 tag 怎么打、这个目录该谁评审、CODEOWNERS 怎么写，或者要立规矩了、提交规范、提交信息乱七八糟、这次改动的提交信息怎么写、PR 描述懒得写评审人看不懂改了啥、帮我评审这个 PR、想要更细的正确性可读性架构安全性能五轴、收到一堆评审意见不知道怎么回该不该反驳、这段代码太绕了想在行为不变的前提下化简、团队想立规矩不知从哪一步落地、要做一次季度仓库大扫除，都从这里进。本技能判断意图并路由到带脚本的子技能，只读不改代码。不做：直接改代码或执行删除，也不替团队定考核指标。
+description: 代码仓库治理助手。接手陌生 Git 仓库、交接项目、盘点仓库结构或检查 README、AGENTS、测试入口、构建配置与 CI 文件时，运行离线脚本，生成带 HEAD、分支、工作区状态、跟踪文件统计与有界 SHA-256 证据的 Markdown 和 JSON 报告。只读本地仓库，不执行项目代码，不联网，不读取未跟踪文件内容；文件存在不代表配置有效或测试通过。分支删除、绩效评价和业务代码修改不在本技能范围内。
 author: Captain
-version: 0.1.2
+homepage: https://github.com/po-et/workbuddy-skills
+license: CC-BY-4.0 AND MIT
+version: 0.1.3
 display_name: "代码仓库治理"
 display_name_en: "Repo Governance Pro"
-description_zh: "一个入口管住仓库本身，不必等用户报出技能名：技术债盘点、代码热点与知识集中度、分支清理、代码归属与 CODEOWNERS、评审流程与收到意见怎么回、提交规范、PR 描述、代码化简；按意图路由到带脚本的精专子技能，只读不改代码。"
-description_en: "One entry point for the repository itself, triggered by the question rather than by name. Tech-debt inventory, code hotspots and bus factor, branch cleanup, ownership and CODEOWNERS, review workflow and responding to review comments, commit conventions, PR descriptions, behavior-preserving simplification; read-only."
+description_zh: "给陌生 Git 仓库做一次离线、有证据的结构盘点：HEAD、分支、工作区状态、README/AGENTS/测试入口/构建/CI/依赖清单及有界文件哈希。输出 Markdown 与 JSON，不执行项目代码，不把文件存在当成测试通过。"
+description_en: "Produce an offline Git repository inventory with HEAD, branch, worktree status, tracked documentation/test/build/CI/manifest paths and bounded file hashes. Export Markdown and JSON without running project code or treating file presence as passing tests."
 tags:
-  - "技术债"
-  - "代码评审"
-  - "分支清理"
-  - "代码热点"
-  - "提交规范"
-  - "CODEOWNERS"
-  - "PR 描述"
   - "仓库治理"
+  - "项目交接"
+  - "代码仓库"
+  - "证据报告"
 examples_zh:
-  - "刚接手一个五年的老仓库，想先看代码热点和谁在维护，从哪下手"
-  - "分支清理和技术债盘点都没人做过，帮我来一次仓库治理大扫除"
-  - "团队想立提交规范和评审规矩，从哪一步开始落地"
+  - "刚接手一个老仓库，先给我一份可核对的结构盘点"
+  - "交接前看看 README、测试入口和 CI 文件是否被跟踪"
+  - "盘点这个仓库，生成 Markdown 和 JSON，不运行项目代码"
 examples_en:
-  - "Just inherited a five-year-old repo, where do I look first"
-  - "Hundreds of stale branches and unaudited tech debt, run a repo cleanup"
-  - "We want commit conventions and a review process, where do we start"
+  - "Inventory this unfamiliar repository without executing its code"
+  - "Show tracked documentation, test entry points and CI evidence"
+  - "Create Markdown and JSON handover evidence outside the repository"
 metadata:
   { "openclaw": { "requires": { "bins": ["git", "python3"] }, "os": ["darwin", "linux", "windows"], "emoji": "🏛️" } }
 ---
 
-# 代码仓库治理助手
+# 代码仓库治理
 
-定位一句话：**写代码交给编程助手，管仓库的活交给我。**
-什么时候轮到我：问题的主语不是某一行代码，而是这个仓库——债有多少、谁在扛、分支能不能删、评审怎么走、提交与 PR 怎么写。先判断用户在治理的哪一环，用下表的方法直接干；表里的子技能已安装就调用它（更完整、带脚本），没安装就按本页的精简方法做，并告诉用户可以在 SkillHub 搜索安装。带脚本的子技能都是纯 Python 标准库，`python3` 直接跑，只读 git 历史，不改任何文件。
+把“先看看仓库”落成两个可复核的文件：`inventory.md` 和 `inventory.json`。Python 3.9+ 与 Git 即可运行，无第三方依赖，无其他技能安装要求。
 
-## 意图 → 方法 → 子技能
+## 输入与输出
 
-| 用户在说什么 | 先做什么 | 子技能（SkillHub slug） |
-|---|---|---|
-| 这仓库欠了多少债、该先还哪笔 | TODO / FIXME / HACK 按类型、目录、作者、年龄统计，给优先处理清单与 Markdown 报告 | 技术债标记盘点 `todo-debt-scan` |
-| 哪些文件最容易出事、谁在扛这个模块 | git 历史算改动频次与改动量找缺陷高发文件、单人维护目录（bus factor）、总是一起改的隐性耦合 | 代码热点与知识集中度 `git-hotspots` |
-| 模块越改越难改、想要一份架构体检 | 找出把浅模块变深的重构机会，出带前后对比的 HTML 报告，落成 ADR | 架构加深体检 `architecture-deepening-zh` |
-| 分支几百条，哪些能删 | 分已合并可删 / 陈旧需确认 / 受保护保留三类，附年龄、作者、领先提交数，生成待人工审阅的删除脚本 | git 分支清理助手 `git-branch-cleanup` |
-| 分支怎么开、什么时候合、版本怎么打 | 主干开发 + 短分支 + 原子提交；tag 走语义化版本；worktree 并行 | Git 工作流与版本管理 `git-workflow-zh` |
-| 这个目录该谁评审、CODEOWNERS 怎么写 | 从 git 历史推导实际维护者，生成带占比注释的 CODEOWNERS 草稿，支持父子规则合并 | CODEOWNERS 建议 `codeowners-suggest` |
-| 提交信息乱七八糟、想立规范 | 按 Conventional Commits 体检一个提交区间（type、scope、首行宽度、BREAKING CHANGE），逐条给改法 | 提交信息规范检查 `git-commit-lint` |
-| 这次改动的提交信息怎么写 | `type(scope)!: subject ≤50 字`，body 讲 why，破坏性变更用 `!` | Git 提交信息生成器 `commit-message-cc` |
-| PR 描述懒得写、评审人看不懂改了啥 | 从提交与 diff 分组改动，标出迁移 / 依赖 / CI / 配置风险，关联工单，补测试与评审清单 | PR 描述生成 `pr-description` |
-| 帮我评审这个 PR | 标准轴（仓库规范与坏味道）与 spec 轴（做的是不是要的）分开报，不合并的理由单独排序 | 代码评审（双轴）`code-review-zh` |
-| 要更细的评审维度 | 正确性 / 可读性 / 架构 / 安全 / 性能五轴，意见分级前缀，结构性问题给具名修法 | 五轴代码评审 `code-review-five-axis-zh` |
-| 我收到一堆评审意见，怎么回 | 当技术输入不当社交场合：看不懂就停下来问，该反驳用技术理由，逐条实施逐条验证 | 接收代码评审意见 `code-review-response-zh` |
-| 这段代码太绕了 | 行为不变的前提下化简，一次一改跑一次测试 | 代码化简（行为不变）`code-simplification-zh` |
+输入是一个本地 Git 工作区目录；从子目录传入也会盘点整个工作区。输出目录必须位于被盘点仓库外，已有同名报告拒绝覆盖。省略 `--out-dir` 会使用系统临时目录，终端返回报告的绝对路径。
 
-## 输出契约
-
-1. **每条结论附来源**：文件路径加行号、commit 短 hash、作者与日期、分支名。拿不到来源就写「待确认」。
-2. **不下最终结论的事**：这个分支能不能删、这笔债要不要还、这个 PR 能不能合——只列证据与选项，决定权在人。
-3. **只读**：不删分支、不改代码、不动 CODEOWNERS 与钩子；需要执行的删除或改写一律输出成脚本，人工审阅后自己跑。
-4. **点名要克制**：热点与 bus factor 是流程信号不是绩效材料，按目录与模块说，不按人排名。
-
-## 典型组合流程
-
-**① 接手陌生仓库的第一周**
-`git-hotspots` 找出改得最勤的目录与单人维护区 → `todo-debt-scan` 看这些目录里积了什么债 → `codeowners-suggest` 确认能问谁 → 汇成一页「仓库现状」，含三个最危险的地方与各自的证据。
-
-**② 团队规范落地**（别一次上五条规矩）
-`git-commit-lint` 先体检最近 200 条提交，用真实数据说明问题 → 定最小 type / scope 清单 → 装 commit-msg 钩子并进 CI 门禁 → `pr-description` 生成的结构反过来当 PR 模板 → `codeowners-suggest` 定评审人，评审按 `code-review-zh` 双轴走。
-
-**③ 季度仓库大扫除**
-`git-branch-cleanup` 出三类分支清单，人工审阅后再执行删除脚本 → `todo-debt-scan` 挑 Top 10 债项 → 与 `git-hotspots` 的热点取交集，交集就是这季度真正该动的文件 → 用 `code-simplification-zh` 或 `architecture-deepening-zh` 处理 → 结论写进迭代周报 `iteration-report-git`。
-
-自检口诀：
-```
-治理的活：1) 分清是债 / 人 / 分支 / 流程 → 2) 查表选子技能 → 3) 先出只读报告再动手 → 4) 热点与债取交集，只动交集
+```bash
+# <skill-dir> 换成本技能安装目录；给实际路径加引号，兼容空格。
+python3 "<skill-dir>/scripts/repo_inventory.py" \
+  --repo "/path/to/project" \
+  --out-dir "/path/to/reports/project-inventory"
 ```
 
-## 不做什么
+从本技能目录运行的最短命令：
 
-- 不直接改代码、不执行删除、不替团队定考核指标；一切改动先出清单、由人确认。
-- 不生成业务代码与测试代码——那是编程类与测试类技能的事。
-- 不做故障排查、上线检查、周报这些流程活，那些找研发全能助手 `dev-workflow-pro`。
-- 不接触任何未脱敏的内部系统信息；示例一律用 example.com 与 GitHub / GitLab / Jira。
+```bash
+python3 scripts/repo_inventory.py --repo "/path/to/project"
+```
 
----
-本系列全部开源（正文 CC BY 4.0，代码 MIT）：https://github.com/po-et/workbuddy-skills
+报告包括：
+
+1. 采集时的 HEAD、分支或 detached HEAD、工作区状态；未跟踪文件只计数，不列路径或读取内容。
+2. 跟踪文件的一级目录与扩展名分布；README、AGENTS、测试、构建、CI、依赖清单按**路径规则**分类。
+3. 分类文件的相对路径、可读取状态和 SHA-256；默认最多 64 项证据、每项最多 1 MiB。超限、删除、符号链接、子模块单独标明，不编造哈希。
+4. 采集开始与结束的 HEAD、索引及工作区状态是否相同。发生变化时报告标注 `changed_during_collection`，不可当成同一时点的完整快照。
+
+## 执行顺序
+
+1. 确认用户给出的仓库目录，运行上述命令。不要执行仓库中的安装脚本、构建命令或测试；不要为盘点而拉取远端。
+2. 先读 JSON 的 `snapshot.consistent`、`git.head`、`git.worktree` 和 `limits`。没有 HEAD 的空仓库也是有效输入；非 Git 目录或裸仓库会返回错误。
+3. 根据 `signals` 中的路径与 `evidence` 定位缺口。写“未发现被跟踪的 CI 配置”，不要写“没有 CI”；写“存在测试路径”，不要写“测试已通过”。
+4. 交付报告的**绝对路径链接**，附最多三项有路径证据的下一步建议。需要进一步核查文件内容或执行测试时，作为后续任务，不冒充本轮已验证。
+
+退出码：`0` 两份报告已生成；`2` 输入、Git 查询或输出失败。`0` 只表示盘点完成，工作区可能是脏的，证据可能被截断，项目测试可能从未执行。
+
+## 可调参数
+
+```bash
+python3 scripts/repo_inventory.py --repo "/path/to/project" \
+  --out-dir "/path/to/reports/inventory" \
+  --max-evidence 32 --max-file-bytes 524288
+```
+
+完整规则与 JSON 字段见 [报告契约](references/report-contract.md)，判读示例见 [示例](examples/handover.md)。
+
+## 边界
+
+- Git 查询只读，禁用可选锁和文件监控；不运行钩子、项目代码、网络访问或第三方服务，不改变索引、分支、代码。
+- 不输出文件内容、提交作者、邮箱、远端地址或未跟踪路径。相对路径和分支名仍可能敏感；报告默认供本地审阅，公开前由使用者确认范围。
+- 不跟随被跟踪文件及其父目录的符号链接，不遍历子模块。支持安全文件打开的系统上才计算内容哈希，其他系统如实标记 `safe_open_unavailable`。
+- 不评分“AI 就绪度”，不从文件数量推断质量、风险、知识集中度、绩效、测试覆盖率或上线资格。
+- 报告记录的是当前工作区文件哈希，不是 HEAD 中的 blob 哈希；脏文件、缺失文件与采集中变动均会标明。
+
+本工具由本项目原创改写，不包含内网集成。正文 CC BY 4.0，代码 MIT：https://github.com/po-et/workbuddy-skills

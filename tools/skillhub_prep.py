@@ -351,20 +351,25 @@ def prep(name: str, out: Path) -> Path:
         f'displayName: "{get(fm, "display_name") or name}"',
         f"version: {get(fm, 'version') or '1.0.0'}",
         f'summary: "{summary}"',
-        f"license: {LICENSE}",
-        f"homepage: {HOMEPAGE}",
+        f"license: {get(fm, 'license') or LICENSE}",
+        f"homepage: {get(fm, 'homepage') or HOMEPAGE}",
         yaml_list("tags", tags).rstrip(),
     ])
     dst = out / slug
     if dst.exists():
         shutil.rmtree(dst)
     shutil.copytree(src, dst, ignore=shutil.ignore_patterns("__pycache__", ".DS_Store", "*.pyc"))
-    fm_rest = re.sub(r"^version:.*\n?", "", fm, flags=re.M)  # 避免与 SkillHub 头部的 version 重复
+    fm_rest = re.sub(r"^(?:version|license|homepage):.*\n?", "", fm, flags=re.M)  # 避免重复元数据
     fm_rest = strip_tags(fm_rest)  # 避免与 SkillHub 头部的 tags 重复
     (dst / "SKILL.md").write_text(f"---\n{head}\n{fm_rest}\n---\n{body}", "utf-8")
-    # SkillHub 上传拒绝无扩展名文件（实测 400「不允许的文件类型: LICENSE」），许可证只写 frontmatter 的 license 字段
+    # 保留完整许可到 Markdown，再移除平台拒绝的无扩展名文件。
     for junk in ("LICENSE", "NOTICE", "ATTRIBUTION"):
         if (dst / junk).exists():
+            preserved = dst / (junk + ".md")
+            original = (dst / junk).read_bytes()
+            if preserved.exists() and preserved.read_bytes() != original:
+                raise ValueError(f"许可保留文件冲突: {preserved.name}")
+            preserved.write_bytes(original)
             (dst / junk).unlink()
     return dst
 

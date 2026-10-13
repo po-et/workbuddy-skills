@@ -1,0 +1,244 @@
+{
+  "generated_at_utc": "2026-10-13T02:21:12.887795+00:00",
+  "namespace": "indiv-captain",
+  "scope": "Three existing-slot upgrades; no assets deleted. Offline scripts verified; no new-version WorkBuddy client acceptance or independent user adoption confirmed.",
+  "inventory_baseline": {
+    "checked_at": "2026-10-13T09:58:34.621680+08:00",
+    "count": 200,
+    "complete": true,
+    "totals": {
+      "downloads": 15758,
+      "installs": 0,
+      "stars": 3
+    },
+    "downloads_delta_from_2026_10_12": 582,
+    "growth_attribution": "Unattributed. Baseline collected before this release and acceptance downloads."
+  },
+  "tests": {
+    "agent_eval": {
+      "passed": 27
+    },
+    "repo_inventory": {
+      "passed": 27,
+      "skipped": 1,
+      "skip_reason": "Host filesystem refuses non-UTF-8 filenames"
+    },
+    "handoff": {
+      "passed": 18
+    },
+    "package_license": {
+      "passed": 4
+    },
+    "total_passed": 76,
+    "total_skipped": 1
+  },
+  "independent_behavior_checks": {
+    "handoff": 11,
+    "agent_eval": 13,
+    "actor": "separate AI evaluation agent, not independent human users"
+  },
+  "doctor_local_heuristics": {
+    "agent-engineering-expert": 91,
+    "repo-governance-pro": 82,
+    "handoff-doc-zh": 82,
+    "not_platform_quality_score": true
+  },
+  "releases": [
+    {
+      "slug": "repo-governance-pro",
+      "target_version": "0.1.3",
+      "latest_version": "0.1.3",
+      "queried_at_beijing": "2026-10-13T10:20:04.718432+08:00",
+      "latest_matches_target": true,
+      "target_version_id": 430810,
+      "target_security_reports": {
+        "keen": {
+          "status": "benign"
+        },
+        "sanbu": {
+          "status": "benign"
+        }
+      },
+      "download_role": "maintainer-side AI acceptance; not independent adoption",
+      "package_verification": {
+        "package_sha256": "70abac0e1dae64452e27ab070ffdd2acebf1eac639488601f26a53bf0a3bb983",
+        "byte_count": 12533,
+        "compared_files": [
+          {
+            "path": "SKILL.md",
+            "dist_sha256": "ddbf10014a25e58335a1403ad4d8877edc5aee8218e54bb3b06894c12318330c",
+            "download_sha256": "ddbf10014a25e58335a1403ad4d8877edc5aee8218e54bb3b06894c12318330c",
+            "match": true
+          },
+          {
+            "path": "examples/handover.md",
+            "dist_sha256": "a03fd3e8f2e66e20b45720adaf5a4267df8a6ef72833c47d0dc2d3b7cc37073e",
+            "download_sha256": "a03fd3e8f2e66e20b45720adaf5a4267df8a6ef72833c47d0dc2d3b7cc37073e",
+            "match": true
+          },
+          {
+            "path": "references/report-contract.md",
+            "dist_sha256": "fbdc9fde0bc8f5f98f08ce4f80642853bc599955a068040489c12d64bc123643",
+            "download_sha256": "fbdc9fde0bc8f5f98f08ce4f80642853bc599955a068040489c12d64bc123643",
+            "match": true
+          },
+          {
+            "path": "scripts/repo_inventory.py",
+            "dist_sha256": "6b7e97bf9f770b7e1b6313c9ac9ac0d7b27a7f12c4f5ca7da79be46cd9470111",
+            "download_sha256": "6b7e97bf9f770b7e1b6313c9ac9ac0d7b27a7f12c4f5ca7da79be46cd9470111",
+            "match": true
+          }
+        ],
+        "missing_dist_files": [],
+        "unexpected_package_files": [
+          "_meta.json"
+        ],
+        "all_dist_files_match": true
+      },
+      "platform_added_metadata": "_meta.json contains platform slug/version/owner/published timestamp; not an authored package file",
+      "new_version_evaluation_confirmed": false
+    },
+    {
+      "slug": "agent-engineering-expert",
+      "target_version": "0.1.2",
+      "latest_version": "0.1.2",
+      "queried_at_beijing": "2026-10-13T10:15:54.912362+08:00",
+      "latest_matches_target": true,
+      "target_version_id": 430796,
+      "target_security_reports": {
+        "keen": {
+          "status": "benign"
+        },
+        "sanbu": {
+          "status": "benign"
+        }
+      },
+      "download_role": "maintainer-side AI acceptance; not independent adoption",
+      "package_verification": {
+        "package_sha256": "719031d7f2216927b2c9cdf9ad75119d13d2599ea80bf16ce09b5f7de4dc402a",
+        "byte_count": 12780,
+        "compared_files": [
+          {
+            "path": "SKILL.md",
+            "dist_sha256": "c9e2a0c629ad4144d2813d81596753c9b301c981be3bdc4e24713d6872dda375",
+            "download_sha256": "c9e2a0c629ad4144d2813d81596753c9b301c981be3bdc4e24713d6872dda375",
+            "match": true
+          },
+          {
+            "path": "assets/after.jsonl",
+            "dist_sha256": "b24c8b891fe59025bc13c93a8552403ec46819f4dd2c944461454091eab9c789",
+            "download_sha256": "b24c8b891fe59025bc13c93a8552403ec46819f4dd2c944461454091eab9c789",
+            "match": true
+          },
+          {
+            "path": "assets/before.jsonl",
+            "dist_sha256": "fe71479e4c28dbd1ac4b00755b25a9d75d31927c0532c88b717fa5b12583692f",
+            "download_sha256": "fe71479e4c28dbd1ac4b00755b25a9d75d31927c0532c88b717fa5b12583692f",
+            "match": true
+          },
+          {
+            "path": "references/input-contract.md",
+            "dist_sha256": "bd2341d72c4d1b73e24a6d872b348184d100f80165a490a7fd1aa0765eba79dd",
+            "download_sha256": "bd2341d72c4d1b73e24a6d872b348184d100f80165a490a7fd1aa0765eba79dd",
+            "match": true
+          },
+          {
+            "path": "scripts/agent_eval_compare.py",
+            "dist_sha256": "9ca7448be61b68d67daa5ce97053eee8c23786b6b63da0bdade9456833a9810d",
+            "download_sha256": "9ca7448be61b68d67daa5ce97053eee8c23786b6b63da0bdade9456833a9810d",
+            "match": true
+          }
+        ],
+        "missing_dist_files": [],
+        "unexpected_package_files": [
+          "_meta.json"
+        ],
+        "all_dist_files_match": true
+      },
+      "platform_added_metadata": "_meta.json contains platform slug/version/owner/published timestamp; not an authored package file",
+      "new_version_evaluation_confirmed": false
+    },
+    {
+      "slug": "handoff-doc-zh",
+      "target_version": "0.1.2",
+      "latest_version": "0.1.2",
+      "queried_at_beijing": "2026-10-13T10:15:53.484800+08:00",
+      "latest_matches_target": true,
+      "target_version_id": 430784,
+      "target_security_reports": {
+        "keen": {
+          "status": "benign"
+        },
+        "sanbu": {
+          "status": "benign"
+        }
+      },
+      "download_role": "maintainer-side AI acceptance; not independent adoption",
+      "package_verification": {
+        "package_sha256": "34af6b373531a0d007224bbddd29ca4436315973efebe97bf074100462056e58",
+        "byte_count": 12877,
+        "compared_files": [
+          {
+            "path": "ATTRIBUTION.md",
+            "dist_sha256": "9209f469703a357f8c1f1cf533fd074ad962b9a030d76033ed67f8d041021e39",
+            "download_sha256": "9209f469703a357f8c1f1cf533fd074ad962b9a030d76033ed67f8d041021e39",
+            "match": true
+          },
+          {
+            "path": "LICENSE.md",
+            "dist_sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+            "download_sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+            "match": true
+          },
+          {
+            "path": "SKILL.md",
+            "dist_sha256": "9d3ad20bc536e5ba20793e4a4a48ed812c3ee5aab5c36d03b26097ae33236072",
+            "download_sha256": "9d3ad20bc536e5ba20793e4a4a48ed812c3ee5aab5c36d03b26097ae33236072",
+            "match": true
+          },
+          {
+            "path": "examples/state.json",
+            "dist_sha256": "f7889cca9b2182f1fb3cde3a4a57fe125b5fdb45a3246fe98a8417da1dc76905",
+            "download_sha256": "f7889cca9b2182f1fb3cde3a4a57fe125b5fdb45a3246fe98a8417da1dc76905",
+            "match": true
+          },
+          {
+            "path": "examples/synthetic-verification.txt",
+            "dist_sha256": "f28baaf166b19bc3c533d510c9675e59961335d7260b419cd6f5fd05e859a12d",
+            "download_sha256": "f28baaf166b19bc3c533d510c9675e59961335d7260b419cd6f5fd05e859a12d",
+            "match": true
+          },
+          {
+            "path": "references/state-contract.md",
+            "dist_sha256": "d340c67f5e7e636318f888bcfc66e7664771c1d14c5b62a556b35ba46c0ce741",
+            "download_sha256": "d340c67f5e7e636318f888bcfc66e7664771c1d14c5b62a556b35ba46c0ce741",
+            "match": true
+          },
+          {
+            "path": "references/upstream-license.md",
+            "dist_sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+            "download_sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+            "match": true
+          },
+          {
+            "path": "scripts/build_handoff.py",
+            "dist_sha256": "88e8bac310a2abf2ac77a1b3f769b2473b9790809544ff64d0d637d16bb82a2a",
+            "download_sha256": "88e8bac310a2abf2ac77a1b3f769b2473b9790809544ff64d0d637d16bb82a2a",
+            "match": true
+          }
+        ],
+        "missing_dist_files": [],
+        "unexpected_package_files": [
+          "_meta.json"
+        ],
+        "all_dist_files_match": true
+      },
+      "platform_added_metadata": "_meta.json contains platform slug/version/owner/published timestamp; not an authored package file",
+      "new_version_evaluation_confirmed": false
+    }
+  ],
+  "all_three_live_and_package_files_match": true,
+  "authored_package_files_verified": 17,
+  "acceptance_downloads": 3,
+  "acceptance_downloads_note": "One maintenance archive download per released skill; these are not independent user adoption."
+}
