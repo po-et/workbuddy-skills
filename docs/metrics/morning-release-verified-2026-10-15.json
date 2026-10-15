@@ -1,0 +1,163 @@
+{
+  "slug": "morning-briefing",
+  "namespace_requested": "indiv-captain",
+  "wanted_version": "0.1.2",
+  "queried_at_utc": "2026-10-15T06:52:52.501149+00:00",
+  "queried_at_beijing": "2026-10-15T14:52:52.501149+08:00",
+  "detail_http_status": 200,
+  "detail_error": null,
+  "detail_top_level_keys": [
+    "contentZhAvailable",
+    "latestVersion",
+    "namespace",
+    "owner",
+    "securityReports",
+    "skill",
+    "slug"
+  ],
+  "skill": {
+    "createdAt": 1790217984330,
+    "displayName": "晨间简报",
+    "slug": "morning-briefing",
+    "updatedAt": 1792047162799
+  },
+  "namespace": {
+    "displayName": "user_a3a2e24a",
+    "handle": "indiv-captain"
+  },
+  "latest_version": {
+    "createdAt": 1792046866961,
+    "version": "0.1.2"
+  },
+  "versions_http_status": 200,
+  "versions_error": null,
+  "versions_top_level_keys": [
+    "namespace",
+    "slug",
+    "source",
+    "versions"
+  ],
+  "versions": [
+    {
+      "createdAt": 1792046866961,
+      "securityReports": {
+        "keen": {
+          "status": "benign"
+        },
+        "sanbu": {
+          "status": "benign"
+        }
+      },
+      "version": "0.1.2",
+      "versionId": 437861
+    },
+    {
+      "createdAt": 1790437807114,
+      "securityReports": {
+        "keen": {
+          "status": "benign"
+        },
+        "sanbu": {
+          "status": "benign"
+        }
+      },
+      "version": "0.1.1",
+      "versionId": 378369
+    },
+    {
+      "createdAt": 1790217984330,
+      "securityReports": {
+        "keen": {
+          "status": "benign"
+        },
+        "sanbu": {
+          "status": "benign"
+        }
+      },
+      "version": "0.1.0",
+      "versionId": 373090
+    }
+  ],
+  "latest_matches_requested": true,
+  "evaluation_http_status": 200,
+  "evaluation_error": null,
+  "evaluation": {
+    "createdAt": 1790627401617,
+    "versionId": 378369,
+    "explicit_version": null,
+    "fresh_evaluation_confirmed": false,
+    "overall_dimension_equal_weight": 4.715,
+    "overall_all_items_equal_weight": 4.68,
+    "item_count": 15,
+    "is_newer_than_target_latest": false,
+    "latest_createdAt_used": 1792046866961,
+    "latest_matches_target": true,
+    "evaluation_createdAt_utc": "2026-09-28T20:30:01.617000+00:00",
+    "latest_createdAt_utc": "2026-10-15T06:47:46.961000+00:00"
+  },
+  "package_verification": {
+    "http_status": 200,
+    "download_role": "agent_acceptance_verification_not_real_user",
+    "package_sha256": "70a227be1a633f1fcc43cdd5843ab4d1934044f972526e16ecc4deea8d9fc911",
+    "byte_count": 17066,
+    "downloaded_at": {
+      "queried_at_utc": "2026-10-15T06:52:53.497135+00:00",
+      "queried_at_beijing": "2026-10-15T14:52:53.497135+08:00"
+    },
+    "used_local_acceptance_archive": false,
+    "compared_files": [
+      {
+        "path": "SKILL.md",
+        "dist_sha256": "ad0ee08a645c0275caf9b24f43fd309d30f140b1d663da42d5aca544535a7d25",
+        "download_sha256": "ad0ee08a645c0275caf9b24f43fd309d30f140b1d663da42d5aca544535a7d25",
+        "match": true
+      },
+      {
+        "path": "examples/messages-only.md",
+        "dist_sha256": "09b19a7076e1658d7c34f93e396d158ff8a82a5830471ed76680200338c2189f",
+        "download_sha256": "09b19a7076e1658d7c34f93e396d158ff8a82a5830471ed76680200338c2189f",
+        "match": true
+      },
+      {
+        "path": "examples/monday.md",
+        "dist_sha256": "fce62335525391e71c2ab0474123a1b1099dcd41f95bf0837017a15ec903fd81",
+        "download_sha256": "fce62335525391e71c2ab0474123a1b1099dcd41f95bf0837017a15ec903fd81",
+        "match": true
+      },
+      {
+        "path": "references/input-format.md",
+        "dist_sha256": "48d7148d6c68dee8b6709cc8ccf2fb42609c53bca803ecd279c3098a582db210",
+        "download_sha256": "48d7148d6c68dee8b6709cc8ccf2fb42609c53bca803ecd279c3098a582db210",
+        "match": true
+      },
+      {
+        "path": "scripts/brief.py",
+        "dist_sha256": "eeba3243e4348a8b6d9b3a235766cc2eb859d2115ca49a3b9fe205e8e59ca08c",
+        "download_sha256": "eeba3243e4348a8b6d9b3a235766cc2eb859d2115ca49a3b9fe205e8e59ca08c",
+        "match": true
+      }
+    ],
+    "missing_dist_files": [],
+    "unexpected_package_files": [
+      "_meta.json"
+    ],
+    "all_dist_files_match": true,
+    "platform_metadata": {
+      "slug": "morning-briefing",
+      "version": "0.1.2",
+      "publishedAt": 1792046867060,
+      "matches_target": true
+    }
+  },
+  "verification_scope": {
+    "authored_files": 5,
+    "tests_passed": 10,
+    "doctor": 100,
+    "maintainer_package_downloads": 1,
+    "download_is_independent_user": false,
+    "workbuddy_client_test_performed": false,
+    "source_files_unchanged_since_tests": true,
+    "fresh_platform_evaluation_confirmed": false,
+    "evaluation_note": "The current evaluation is bound to prior 0.1.1 versionId 378369, not this 0.1.2 release; do not attribute its score to this upgrade."
+  }
+}

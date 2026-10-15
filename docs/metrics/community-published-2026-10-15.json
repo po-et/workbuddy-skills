@@ -171,5 +171,12 @@
     "Maintainer AI-operated synthetic acceptance, not independent human use.",
     "Publication is not readership, repeat use, QQ channel submission, or official endorsement.",
     "Own visits may contribute to platform counters."
-  ]
+  ],
+  "creator_center_readback": {
+    "checked_at_utc": "2026-10-15T06:53:48.918089+00:00",
+    "all": 2,
+    "published": 2,
+    "reviewing": 0,
+    "rejected": 0
+  }
 }

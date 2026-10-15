@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "verified_at_beijing": "2026-10-15T14:50:59.214563+08:00",
+  "case_scope": "Maintainer-side local script regression using synthetic input only; no WorkBuddy client execution, real user trial, real files, network or publication.",
+  "today_argument": "2026-10-15",
+  "synthetic_input_file": "todo.synthetic.txt",
+  "synthetic_input_sha256": "1ea8c2088c8ce151e2033e215eaf3711d5710113a6243b8d50dd8d0190ed1a3d",
+  "synthetic_input_line_count": 3,
+  "future_item_due_date": "2026-11-01",
+  "script_references": {
+    "old": {
+      "version": "0.1.1",
+      "reference_commit": "437f2f5",
+      "reference_path": "skills/morning-briefing/scripts/brief.py",
+      "sha256": "4b7e0980cc2aca94646fb0dcbbba2913d478160ca6572cd4758c1be2b0ad9d5c",
+      "execution_location": "Temporary directory; old source not included in this example."
+    },
+    "new": {
+      "version": "0.1.2",
+      "reference_path": "skills/morning-briefing/scripts/brief.py",
+      "sha256_before": "eeba3243e4348a8b6d9b3a235766cc2eb859d2115ca49a3b9fe205e8e59ca08c",
+      "sha256_after": "eeba3243e4348a8b6d9b3a235766cc2eb859d2115ca49a3b9fe205e8e59ca08c",
+      "source_unchanged": true
+    }
+  },
+  "cases": [
+    {
+      "case": "old_same_input_output",
+      "script_version": "0.1.1",
+      "input_kind": "temporary_synthetic_copy",
+      "command_shape": "python3 old-brief.py synthetic-todo.txt 2026-10-15 --out synthetic-todo.txt",
+      "exit_code": 0,
+      "input_sha256_before": "1ea8c2088c8ce151e2033e215eaf3711d5710113a6243b8d50dd8d0190ed1a3d",
+      "input_sha256_after": "1c376fb22f52c0c5156f25d2a726634dafdf9b0b3e4275cc857b9985f01a70df",
+      "input_unchanged": false,
+      "future_item_present_before": true,
+      "future_item_present_after": false,
+      "output_kind": "Input file was replaced by the filtered daily brief.",
+      "resulting_input_sha256": "1c376fb22f52c0c5156f25d2a726634dafdf9b0b3e4275cc857b9985f01a70df",
+      "stderr_empty": true
+    },
+    {
+      "case": "new_same_input_output",
+      "script_version": "0.1.2",
+      "input_kind": "fresh_temporary_synthetic_copy",
+      "command_shape": "python3 skills/morning-briefing/scripts/brief.py synthetic-todo.txt 2026-10-15 --out synthetic-todo.txt",
+      "exit_code": 2,
+      "input_sha256_before": "1ea8c2088c8ce151e2033e215eaf3711d5710113a6243b8d50dd8d0190ed1a3d",
+      "input_sha256_after": "1ea8c2088c8ce151e2033e215eaf3711d5710113a6243b8d50dd8d0190ed1a3d",
+      "input_unchanged": true,
+      "future_item_present_before": true,
+      "future_item_present_after": true,
+      "rejection_explains_same_source": true,
+      "brief_returned_to_stdout": true
+    },
+    {
+      "case": "new_distinct_fresh_output",
+      "script_version": "0.1.2",
+      "input_kind": "fresh_temporary_synthetic_copy",
+      "command_shape": "python3 skills/morning-briefing/scripts/brief.py synthetic-todo.txt 2026-10-15 --out fresh-brief.md",
+      "exit_code": 0,
+      "input_sha256_before": "1ea8c2088c8ce151e2033e215eaf3711d5710113a6243b8d50dd8d0190ed1a3d",
+      "input_sha256_after": "1ea8c2088c8ce151e2033e215eaf3711d5710113a6243b8d50dd8d0190ed1a3d",
+      "input_unchanged": true,
+      "future_item_present_before": true,
+      "future_item_present_after": true,
+      "output_file": "brief.md",
+      "output_sha256": "1c376fb22f52c0c5156f25d2a726634dafdf9b0b3e4275cc857b9985f01a70df",
+      "future_item_in_daily_brief": false,
+      "stderr_empty": true
+    }
+  ],
+  "all_expected_results_confirmed": true,
+  "interpretation": "The daily brief intentionally selects today-relevant entries; it is not a complete task-list backup. Separate output preserves the original future task. The old same-source output overwrote that original while returning success."
+}
