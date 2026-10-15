@@ -32,7 +32,7 @@
 skillhub install car-buying-checklist --namespace indiv-captain --dir "$HOME/.workbuddy/skills"
 ```
 
-本次实测使用本地仓库 v0.1.2，安装命令本身不证明客户端已经读取技能或自动触发成功。发布状态与复跑来源应分别核对。
+本次实测使用本地仓库 v0.1.2，该版本现已在 SkillHub 公开上线，[11 份发布文件哈希与两项扫描状态](../../docs/metrics/car-release-verified-2026-10-15.json)已读回。安装命令本身不证明客户端已经读取技能或自动触发成功。
 
 已取得本仓库后，在仓库根目录运行；Python 3 标准库，无需联网或额外依赖：
 

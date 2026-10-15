@@ -1,0 +1,198 @@
+{
+  "slug": "car-buying-checklist",
+  "namespace_requested": "indiv-captain",
+  "wanted_version": "0.1.2",
+  "queried_at_utc": "2026-10-15T06:27:24.425278+00:00",
+  "queried_at_beijing": "2026-10-15T14:27:24.425278+08:00",
+  "detail_http_status": 200,
+  "detail_error": null,
+  "detail_top_level_keys": [
+    "contentZhAvailable",
+    "latestVersion",
+    "namespace",
+    "owner",
+    "securityReports",
+    "skill",
+    "slug"
+  ],
+  "skill": {
+    "createdAt": 1790137715701,
+    "displayName": "买车",
+    "slug": "car-buying-checklist",
+    "updatedAt": 1792045421827
+  },
+  "namespace": {
+    "displayName": "user_a3a2e24a",
+    "handle": "indiv-captain"
+  },
+  "latest_version": {
+    "createdAt": 1792045120570,
+    "version": "0.1.2"
+  },
+  "versions_http_status": 200,
+  "versions_error": null,
+  "versions_top_level_keys": [
+    "namespace",
+    "slug",
+    "source",
+    "versions"
+  ],
+  "versions": [
+    {
+      "createdAt": 1792045120570,
+      "securityReports": {
+        "keen": {
+          "status": "benign"
+        },
+        "sanbu": {
+          "status": "benign"
+        }
+      },
+      "version": "0.1.2",
+      "versionId": 437818
+    },
+    {
+      "createdAt": 1790437503195,
+      "securityReports": {
+        "keen": {
+          "status": "benign"
+        },
+        "sanbu": {
+          "status": "benign"
+        }
+      },
+      "version": "0.1.1",
+      "versionId": 378352
+    },
+    {
+      "createdAt": 1790137715701,
+      "securityReports": {
+        "keen": {
+          "status": "benign"
+        },
+        "sanbu": {
+          "status": "benign"
+        }
+      },
+      "version": "0.1.0",
+      "versionId": 369357
+    }
+  ],
+  "latest_matches_requested": true,
+  "evaluation_http_status": 200,
+  "evaluation_error": null,
+  "evaluation": {
+    "createdAt": 1790627034717,
+    "versionId": 378352,
+    "explicit_version": null,
+    "fresh_evaluation_confirmed": false,
+    "overall_dimension_equal_weight": 4.818,
+    "overall_all_items_equal_weight": 4.793,
+    "item_count": 15,
+    "is_newer_than_target_latest": false,
+    "latest_createdAt_used": 1792045120570,
+    "latest_matches_target": true,
+    "evaluation_createdAt_utc": "2026-09-28T20:23:54.717000+00:00",
+    "latest_createdAt_utc": "2026-10-15T06:18:40.570000+00:00"
+  },
+  "package_verification": {
+    "http_status": 200,
+    "download_role": "agent_acceptance_verification_not_real_user",
+    "package_sha256": "559af3f84d53e40f96fdb67f925d84cc14948f6fc849e20e7bd35e32b2c4cbdb",
+    "byte_count": 36282,
+    "downloaded_at": {
+      "queried_at_utc": "2026-10-15T06:27:25.520616+00:00",
+      "queried_at_beijing": "2026-10-15T14:27:25.520616+08:00"
+    },
+    "used_local_acceptance_archive": false,
+    "compared_files": [
+      {
+        "path": "SKILL.md",
+        "dist_sha256": "b30dc64a6a187e16b2e228e11931ea3489d3c4b7347bd00bd939a19869e6ee3a",
+        "download_sha256": "b30dc64a6a187e16b2e228e11931ea3489d3c4b7347bd00bd939a19869e6ee3a",
+        "match": true
+      },
+      {
+        "path": "examples/delivery-day.md",
+        "dist_sha256": "5c0ec698ccb9196d4113fab3dd97521ba2228dffab1324e3866960307dff5b0e",
+        "download_sha256": "5c0ec698ccb9196d4113fab3dd97521ba2228dffab1324e3866960307dff5b0e",
+        "match": true
+      },
+      {
+        "path": "examples/first-car-15w.md",
+        "dist_sha256": "67656e44872b6323bd66aee6542c4e27c9ac6f10054229117f4528916bda410c",
+        "download_sha256": "67656e44872b6323bd66aee6542c4e27c9ac6f10054229117f4528916bda410c",
+        "match": true
+      },
+      {
+        "path": "examples/two-quotes-complete.json",
+        "dist_sha256": "5ec9f0756edfe86c832b88c5ffb58be4f8820a04164adf37e527b9c6054ece3e",
+        "download_sha256": "5ec9f0756edfe86c832b88c5ffb58be4f8820a04164adf37e527b9c6054ece3e",
+        "match": true
+      },
+      {
+        "path": "examples/two-quotes-missing-fee.json",
+        "dist_sha256": "6391cb4dd087dc83203dfbfdc19a8e1275b5940ff5434c27eedd0e84ae2e9c40",
+        "download_sha256": "6391cb4dd087dc83203dfbfdc19a8e1275b5940ff5434c27eedd0e84ae2e9c40",
+        "match": true
+      },
+      {
+        "path": "references/checklists.md",
+        "dist_sha256": "19258ff7aea5003cab0477f4989281ebaaedffb97e2cbe8e036590d09ab839e3",
+        "download_sha256": "19258ff7aea5003cab0477f4989281ebaaedffb97e2cbe8e036590d09ab839e3",
+        "match": true
+      },
+      {
+        "path": "references/quote-contract.md",
+        "dist_sha256": "884490a0b34af5136753aa46718b1007f82eef0316b7c7ca2caeaf61bd132af1",
+        "download_sha256": "884490a0b34af5136753aa46718b1007f82eef0316b7c7ca2caeaf61bd132af1",
+        "match": true
+      },
+      {
+        "path": "references/sales-tricks.md",
+        "dist_sha256": "87d209d09e2d5c32ac5ecc06a424df15853c0ec5bc59aaa134533899edb7a9bc",
+        "download_sha256": "87d209d09e2d5c32ac5ecc06a424df15853c0ec5bc59aaa134533899edb7a9bc",
+        "match": true
+      },
+      {
+        "path": "references/templates.md",
+        "dist_sha256": "d22c742d2811d2a1bcd371dd14a5fdd57cfe54e6b2d9952eb3c0b28b3f2d68db",
+        "download_sha256": "d22c742d2811d2a1bcd371dd14a5fdd57cfe54e6b2d9952eb3c0b28b3f2d68db",
+        "match": true
+      },
+      {
+        "path": "scripts/car_cost.py",
+        "dist_sha256": "8c4474f6f54e15d65ef3817be2d84cd948b84bbba4de1aa309883d09e980f284",
+        "download_sha256": "8c4474f6f54e15d65ef3817be2d84cd948b84bbba4de1aa309883d09e980f284",
+        "match": true
+      },
+      {
+        "path": "scripts/compare_quotes.py",
+        "dist_sha256": "b380fd74fca20e1b8ebd75f384d0dd4799856206e2657e28f5e64e924776e009",
+        "download_sha256": "b380fd74fca20e1b8ebd75f384d0dd4799856206e2657e28f5e64e924776e009",
+        "match": true
+      }
+    ],
+    "missing_dist_files": [],
+    "unexpected_package_files": [
+      "_meta.json"
+    ],
+    "all_dist_files_match": true,
+    "platform_metadata": {
+      "slug": "car-buying-checklist",
+      "version": "0.1.2",
+      "publishedAt": 1792045120687,
+      "matches_target": true
+    }
+  },
+  "verification_scope": {
+    "authored_files": 11,
+    "maintainer_package_downloads": 1,
+    "download_is_independent_user": false,
+    "tests_passed": 48,
+    "doctor": 95,
+    "client_artifacts_reproduced": 6,
+    "fresh_platform_evaluation_confirmed": false,
+    "evaluation_note": "Current evaluation remains bound to prior 0.1.1 versionId 378352; do not attribute its score to 0.1.2."
+  }
+}
