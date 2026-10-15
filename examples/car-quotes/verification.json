@@ -1,0 +1,91 @@
+{
+  "verified_at": "2026-10-15T06:19:39.673907+00:00",
+  "app": {
+    "name": "WorkBuddy",
+    "version": "5.8.2",
+    "model_observed": "Space-Bunny",
+    "task_title": "执行汽车购买清单技能验收任务"
+  },
+  "role": "maintainer_agent_client_test_with_explicit_local_skill_path",
+  "independent_human_use_verified": false,
+  "market_auto_discovery_verified": false,
+  "input_kind": "synthetic_only",
+  "source_files_unchanged": {
+    "SKILL.md": true,
+    "examples/delivery-day.md": true,
+    "examples/first-car-15w.md": true,
+    "examples/two-quotes-complete.json": true,
+    "examples/two-quotes-missing-fee.json": true,
+    "references/checklists.md": true,
+    "references/quote-contract.md": true,
+    "references/sales-tricks.md": true,
+    "references/templates.md": true,
+    "scripts/car_cost.py": true,
+    "scripts/compare_quotes.py": true
+  },
+  "all_source_files_unchanged": true,
+  "client_artifact_files": 6,
+  "cases": [
+    {
+      "case": "missing-fee",
+      "input_relative": "skills/car-buying-checklist/examples/two-quotes-missing-fee.json",
+      "input_sha256": "6391cb4dd087dc83203dfbfdc19a8e1275b5940ff5434c27eedd0e84ae2e9c40",
+      "files": [
+        {
+          "path": "missing-fee/comparison.md",
+          "sha256": "3a9324589b4efed4d3d497b11ab14109bd3a3a15c6a3a9998a503c9bcc2a0c2e",
+          "bytes": 3084,
+          "matches_independent_reproduction": true
+        },
+        {
+          "path": "missing-fee/comparison.csv",
+          "sha256": "b4a01f1ebf130855ecb5e84f89259ce6336918000a47335088827ee13eac41b5",
+          "bytes": 493,
+          "matches_independent_reproduction": true
+        },
+        {
+          "path": "missing-fee/comparison.json",
+          "sha256": "1714533aad7a7413cc3b05ab849e480cbfdcf33911681045df500207308121c9",
+          "bytes": 11771,
+          "matches_independent_reproduction": true
+        }
+      ],
+      "a_fee": "15000",
+      "b_fee": null,
+      "b_known_subtotal": "10500",
+      "comparable": false,
+      "b_minus_a": null
+    },
+    {
+      "case": "complete-fee",
+      "input_relative": "skills/car-buying-checklist/examples/two-quotes-complete.json",
+      "input_sha256": "5ec9f0756edfe86c832b88c5ffb58be4f8820a04164adf37e527b9c6054ece3e",
+      "files": [
+        {
+          "path": "complete-fee/comparison.md",
+          "sha256": "0d1a6cef33f13c2275b27134fe91945e481b23e526966b8ce32c70a51b8ba768",
+          "bytes": 2843,
+          "matches_independent_reproduction": true
+        },
+        {
+          "path": "complete-fee/comparison.csv",
+          "sha256": "313b44b4b11e9cc4a0d5806d584e4b19a6efb3d551974b0862e5b899fe2ad23c",
+          "bytes": 400,
+          "matches_independent_reproduction": true
+        },
+        {
+          "path": "complete-fee/comparison.json",
+          "sha256": "414c0dd2eabcdb7434584e31de07e91bad39f032d1c53187c3a95d8efd51e717",
+          "bytes": 11562,
+          "matches_independent_reproduction": true
+        }
+      ],
+      "a_fee": "15000",
+      "b_fee": "16500",
+      "b_known_subtotal": "16500",
+      "comparable": true,
+      "b_minus_a": "1500"
+    }
+  ],
+  "client_ui_observation": "Read skill and contract, then executed two bundled script commands; both exit 0 observed in AX. Raw AX not stored because application URLs include session credentials."
+}

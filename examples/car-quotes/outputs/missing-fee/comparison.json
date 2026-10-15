@@ -1,0 +1,356 @@
+{
+  "schema_version": 1,
+  "input_sha256": "6391cb4dd087dc83203dfbfdc19a8e1275b5940ff5434c27eedd0e84ae2e9c40",
+  "currency": "CNY",
+  "scope": "仅列示用户录入范围的金额；不验证报价真实性，不计算税率/APR，不排序、不推荐车型或融资",
+  "quotes": [
+    {
+      "id": "A",
+      "source": "合成报价 A：无真实商家、车型或个人数据",
+      "method": "finance",
+      "amounts": {
+        "price": "150000",
+        "tax": "0",
+        "insurance": "0",
+        "plate": "0",
+        "addons": "0"
+      },
+      "finance_inputs": {
+        "principal": "100000",
+        "total_repay": "112000",
+        "fees_outside_total": "3000"
+      },
+      "purchase": {
+        "complete": true,
+        "value": "150000",
+        "known_subtotal": "150000",
+        "missing_fields": [],
+        "formula": "price + tax + insurance + plate + addons",
+        "input_pointers": [
+          "/quotes/0/amounts/price",
+          "/quotes/0/amounts/tax",
+          "/quotes/0/amounts/insurance",
+          "/quotes/0/amounts/plate",
+          "/quotes/0/amounts/addons"
+        ]
+      },
+      "finance_fee": {
+        "complete": true,
+        "value": "15000",
+        "known_subtotal": "15000",
+        "missing_fields": [],
+        "formula": "total_repay - principal + fees_outside_total",
+        "input_pointers": [
+          "/quotes/0/finance/principal",
+          "/quotes/0/finance/total_repay",
+          "/quotes/0/finance/fees_outside_total"
+        ],
+        "repayment_difference": "12000",
+        "known_subtotal_scope": "已知还款差额（能算时）与已知另收费用之和；不是完整贷款成本"
+      },
+      "recorded_total": {
+        "complete": true,
+        "value": "165000",
+        "known_subtotal": "165000",
+        "missing_fields": [],
+        "formula": "purchase + finance_fee (cash: purchase only)",
+        "input_pointers": [
+          "/quotes/0/amounts/price",
+          "/quotes/0/amounts/tax",
+          "/quotes/0/amounts/insurance",
+          "/quotes/0/amounts/plate",
+          "/quotes/0/amounts/addons",
+          "/quotes/0/finance/principal",
+          "/quotes/0/finance/total_repay",
+          "/quotes/0/finance/fees_outside_total"
+        ]
+      },
+      "annual_energy": {
+        "complete": true,
+        "value": "1755",
+        "known_subtotal": "1755",
+        "missing_fields": [],
+        "formula": "annual_km / 100 * consumption_per_100 * (home_price * home_share + fast_price * (1 - home_share))",
+        "input_pointers": [
+          "/quotes/0/energy/annual_km",
+          "/quotes/0/energy/consumption_per_100",
+          "/quotes/0/energy/home_price",
+          "/quotes/0/energy/fast_price",
+          "/quotes/0/energy/home_share"
+        ],
+        "assumptions": {
+          "annual_km": "15000",
+          "consumption_per_100": "15",
+          "unit_price": null,
+          "home_price": "0.6",
+          "fast_price": "1.5",
+          "home_share": "0.8"
+        }
+      },
+      "provenance": {
+        "/quotes/0/amounts/price": {
+          "source": "合成报价 A：无真实商家、车型或个人数据",
+          "recorded": true,
+          "value": "150000"
+        },
+        "/quotes/0/amounts/tax": {
+          "source": "合成报价 A：无真实商家、车型或个人数据",
+          "recorded": true,
+          "value": "0"
+        },
+        "/quotes/0/amounts/insurance": {
+          "source": "合成报价 A：无真实商家、车型或个人数据",
+          "recorded": true,
+          "value": "0"
+        },
+        "/quotes/0/amounts/plate": {
+          "source": "合成报价 A：无真实商家、车型或个人数据",
+          "recorded": true,
+          "value": "0"
+        },
+        "/quotes/0/amounts/addons": {
+          "source": "合成报价 A：无真实商家、车型或个人数据",
+          "recorded": true,
+          "value": "0"
+        },
+        "/quotes/0/finance/principal": {
+          "source": "合成报价 A：无真实商家、车型或个人数据",
+          "recorded": true,
+          "value": "100000"
+        },
+        "/quotes/0/finance/total_repay": {
+          "source": "合成报价 A：无真实商家、车型或个人数据",
+          "recorded": true,
+          "value": "112000"
+        },
+        "/quotes/0/finance/fees_outside_total": {
+          "source": "合成报价 A：无真实商家、车型或个人数据",
+          "recorded": true,
+          "value": "3000"
+        },
+        "/quotes/0/energy/annual_km": {
+          "source": "合成报价 A：无真实商家、车型或个人数据",
+          "recorded": true,
+          "value": "15000"
+        },
+        "/quotes/0/energy/consumption_per_100": {
+          "source": "合成报价 A：无真实商家、车型或个人数据",
+          "recorded": true,
+          "value": "15"
+        },
+        "/quotes/0/energy/unit_price": {
+          "source": "合成报价 A：无真实商家、车型或个人数据",
+          "recorded": false,
+          "value": null
+        },
+        "/quotes/0/energy/home_price": {
+          "source": "合成报价 A：无真实商家、车型或个人数据",
+          "recorded": true,
+          "value": "0.6"
+        },
+        "/quotes/0/energy/fast_price": {
+          "source": "合成报价 A：无真实商家、车型或个人数据",
+          "recorded": true,
+          "value": "1.5"
+        },
+        "/quotes/0/energy/home_share": {
+          "source": "合成报价 A：无真实商家、车型或个人数据",
+          "recorded": true,
+          "value": "0.8"
+        }
+      }
+    },
+    {
+      "id": "B",
+      "source": "合成报价 B：无真实商家、车型或个人数据",
+      "method": "finance",
+      "amounts": {
+        "price": "150000",
+        "tax": "0",
+        "insurance": "0",
+        "plate": "0",
+        "addons": "0"
+      },
+      "finance_inputs": {
+        "principal": "100000",
+        "total_repay": "110500",
+        "fees_outside_total": null
+      },
+      "purchase": {
+        "complete": true,
+        "value": "150000",
+        "known_subtotal": "150000",
+        "missing_fields": [],
+        "formula": "price + tax + insurance + plate + addons",
+        "input_pointers": [
+          "/quotes/1/amounts/price",
+          "/quotes/1/amounts/tax",
+          "/quotes/1/amounts/insurance",
+          "/quotes/1/amounts/plate",
+          "/quotes/1/amounts/addons"
+        ]
+      },
+      "finance_fee": {
+        "complete": false,
+        "value": null,
+        "known_subtotal": "10500",
+        "missing_fields": [
+          "/quotes/1/finance/fees_outside_total"
+        ],
+        "formula": "total_repay - principal + fees_outside_total",
+        "input_pointers": [
+          "/quotes/1/finance/principal",
+          "/quotes/1/finance/total_repay",
+          "/quotes/1/finance/fees_outside_total"
+        ],
+        "repayment_difference": "10500",
+        "known_subtotal_scope": "已知还款差额（能算时）与已知另收费用之和；不是完整贷款成本"
+      },
+      "recorded_total": {
+        "complete": false,
+        "value": null,
+        "known_subtotal": "160500",
+        "missing_fields": [
+          "/quotes/1/finance/fees_outside_total"
+        ],
+        "formula": "purchase + finance_fee (cash: purchase only)",
+        "input_pointers": [
+          "/quotes/1/amounts/price",
+          "/quotes/1/amounts/tax",
+          "/quotes/1/amounts/insurance",
+          "/quotes/1/amounts/plate",
+          "/quotes/1/amounts/addons",
+          "/quotes/1/finance/principal",
+          "/quotes/1/finance/total_repay",
+          "/quotes/1/finance/fees_outside_total"
+        ]
+      },
+      "annual_energy": {
+        "complete": true,
+        "value": "1755",
+        "known_subtotal": "1755",
+        "missing_fields": [],
+        "formula": "annual_km / 100 * consumption_per_100 * unit_price",
+        "input_pointers": [
+          "/quotes/1/energy/annual_km",
+          "/quotes/1/energy/consumption_per_100",
+          "/quotes/1/energy/unit_price"
+        ],
+        "assumptions": {
+          "annual_km": "15000",
+          "consumption_per_100": "15",
+          "unit_price": "0.78",
+          "home_price": null,
+          "fast_price": null,
+          "home_share": null
+        }
+      },
+      "provenance": {
+        "/quotes/1/amounts/price": {
+          "source": "合成报价 B：无真实商家、车型或个人数据",
+          "recorded": true,
+          "value": "150000"
+        },
+        "/quotes/1/amounts/tax": {
+          "source": "合成报价 B：无真实商家、车型或个人数据",
+          "recorded": true,
+          "value": "0"
+        },
+        "/quotes/1/amounts/insurance": {
+          "source": "合成报价 B：无真实商家、车型或个人数据",
+          "recorded": true,
+          "value": "0"
+        },
+        "/quotes/1/amounts/plate": {
+          "source": "合成报价 B：无真实商家、车型或个人数据",
+          "recorded": true,
+          "value": "0"
+        },
+        "/quotes/1/amounts/addons": {
+          "source": "合成报价 B：无真实商家、车型或个人数据",
+          "recorded": true,
+          "value": "0"
+        },
+        "/quotes/1/finance/principal": {
+          "source": "合成报价 B：无真实商家、车型或个人数据",
+          "recorded": true,
+          "value": "100000"
+        },
+        "/quotes/1/finance/total_repay": {
+          "source": "合成报价 B：无真实商家、车型或个人数据",
+          "recorded": true,
+          "value": "110500"
+        },
+        "/quotes/1/finance/fees_outside_total": {
+          "source": "合成报价 B：无真实商家、车型或个人数据",
+          "recorded": true,
+          "value": null
+        },
+        "/quotes/1/energy/annual_km": {
+          "source": "合成报价 B：无真实商家、车型或个人数据",
+          "recorded": true,
+          "value": "15000"
+        },
+        "/quotes/1/energy/consumption_per_100": {
+          "source": "合成报价 B：无真实商家、车型或个人数据",
+          "recorded": true,
+          "value": "15"
+        },
+        "/quotes/1/energy/unit_price": {
+          "source": "合成报价 B：无真实商家、车型或个人数据",
+          "recorded": true,
+          "value": "0.78"
+        },
+        "/quotes/1/energy/home_price": {
+          "source": "合成报价 B：无真实商家、车型或个人数据",
+          "recorded": false,
+          "value": null
+        },
+        "/quotes/1/energy/fast_price": {
+          "source": "合成报价 B：无真实商家、车型或个人数据",
+          "recorded": false,
+          "value": null
+        },
+        "/quotes/1/energy/home_share": {
+          "source": "合成报价 B：无真实商家、车型或个人数据",
+          "recorded": false,
+          "value": null
+        }
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "scope": "purchase",
+      "left_id": "A",
+      "right_id": "B",
+      "comparable": true,
+      "right_minus_left": "0",
+      "reason": null
+    },
+    {
+      "scope": "finance_fee",
+      "left_id": "A",
+      "right_id": "B",
+      "comparable": false,
+      "right_minus_left": null,
+      "reason": "缺项或未提供该范围，不能列示完整差额"
+    },
+    {
+      "scope": "recorded_total",
+      "left_id": "A",
+      "right_id": "B",
+      "comparable": false,
+      "right_minus_left": null,
+      "reason": "缺项或未提供该范围，不能列示完整差额"
+    },
+    {
+      "scope": "annual_energy",
+      "left_id": "A",
+      "right_id": "B",
+      "comparable": true,
+      "right_minus_left": "0",
+      "reason": null
+    }
+  ]
+}

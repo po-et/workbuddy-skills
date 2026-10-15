@@ -31,7 +31,8 @@ python3 scripts/car_cost.py --price 15万 --insurance 5000 --plate 500 --addons 
 没有脚本时的一行版（参数依次是发票价、年里程、百公里油耗或电耗、单价）：
 
 ```bash
-python3 -c "import sys;p,km,c,u=map(float,sys.argv[1:]);print('购置税约 %.0f 元（燃油车口径）；年能耗约 %.0f 元' % (p/1.13*0.1, km/100*c*u))" 150000 15000 7 8
+python3 scripts/car_cost.py --price 150000 --km 15000 --consumption 7 --unit-price 8
+# 税费未知保留待确认；拿到正式税费金额后才增加 --tax，不自动套税率
 ```
 
 ## 询价话术

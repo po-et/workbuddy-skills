@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "notice": "全部为合成演示金额，税费/保险等的 0 也是明确给定的演示值，不代表任何地区政策或车型报价。",
+  "quotes": [
+    {
+      "id": "A",
+      "source": "合成报价 A：无真实商家、车型或个人数据",
+      "method": "finance",
+      "amounts": {
+        "price": "150000",
+        "tax": "0",
+        "insurance": "0",
+        "plate": "0",
+        "addons": "0"
+      },
+      "finance": {
+        "principal": "100000",
+        "total_repay": "112000",
+        "fees_outside_total": "3000"
+      },
+      "energy": {
+        "annual_km": "15000",
+        "consumption_per_100": "15",
+        "home_price": "0.6",
+        "fast_price": "1.5",
+        "home_share": "0.8"
+      }
+    },
+    {
+      "id": "B",
+      "source": "合成报价 B：无真实商家、车型或个人数据",
+      "method": "finance",
+      "amounts": {
+        "price": "150000",
+        "tax": "0",
+        "insurance": "0",
+        "plate": "0",
+        "addons": "0"
+      },
+      "finance": {
+        "principal": "100000",
+        "total_repay": "110500",
+        "fees_outside_total": "6000"
+      },
+      "energy": {
+        "annual_km": "15000",
+        "consumption_per_100": "15",
+        "unit_price": "0.78"
+      }
+    }
+  ]
+}

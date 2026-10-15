@@ -1,0 +1,5 @@
+left_id,right_id,scope,left_complete,left_value,left_known_subtotal,right_complete,right_value,right_known_subtotal,comparable,right_minus_left,reason
+A,B,purchase,True,150000,150000,True,150000,150000,True,0,
+A,B,finance_fee,True,15000,15000,True,16500,16500,True,1500,
+A,B,recorded_total,True,165000,165000,True,166500,166500,True,1500,
+A,B,annual_energy,True,1755,1755,True,1755,1755,True,0,

@@ -1,0 +1,518 @@
+{
+  "schema_version": 1,
+  "namespace": "indiv-captain",
+  "checked_at_beijing": "2026-10-15T14:09:44.118390+08:00",
+  "completed_at_beijing": "2026-10-15T14:09:50.223869+08:00",
+  "scope": "Public account counters, seven Oct13 releases and public GitHub issues/PRs; no package download/install or mutation in this refresh.",
+  "inventory": {
+    "complete": true,
+    "count": 200,
+    "unique_slugs": 200,
+    "namespace_verified": true,
+    "full_metric_coverage": true,
+    "metric_coverage": {
+      "downloads": 200,
+      "installs": 200,
+      "stars": 200
+    },
+    "pages": [
+      {
+        "page": 1,
+        "http_status": 200,
+        "queried_at_beijing": "2026-10-15T14:09:44.118586+08:00"
+      },
+      {
+        "page": 2,
+        "http_status": 200,
+        "queried_at_beijing": "2026-10-15T14:09:45.012131+08:00"
+      },
+      {
+        "page": 3,
+        "http_status": 200,
+        "queried_at_beijing": "2026-10-15T14:09:45.690448+08:00"
+      }
+    ],
+    "totals": {
+      "downloads": 16969,
+      "installs": 0,
+      "stars": 3
+    },
+    "baseline": {
+      "checked_at_beijing": "2026-10-13T13:26:32.554142+08:00",
+      "totals": {
+        "downloads": 15806,
+        "installs": 0,
+        "stars": 3
+      }
+    },
+    "deltas": {
+      "downloads": 1163,
+      "installs": 0,
+      "stars": 0
+    },
+    "changed_skill_count": 197,
+    "favorite_skills": [
+      {
+        "slug": "api-diff-test",
+        "stars": 1
+      },
+      {
+        "slug": "video-frame-extract",
+        "stars": 1
+      },
+      {
+        "slug": "car-buying-checklist",
+        "stars": 1
+      }
+    ],
+    "top_download_increments": [
+      {
+        "slug": "gov-doc-expert",
+        "downloads": 419,
+        "increment": 39
+      },
+      {
+        "slug": "morning-briefing",
+        "downloads": 146,
+        "increment": 30
+      },
+      {
+        "slug": "thesis-opening-report",
+        "downloads": 227,
+        "increment": 28
+      },
+      {
+        "slug": "code-simplification-zh",
+        "downloads": 150,
+        "increment": 23
+      },
+      {
+        "slug": "pptx-making",
+        "downloads": 185,
+        "increment": 20
+      }
+    ]
+  },
+  "oct13_release_evaluations": {
+    "latest_target_matches": 7,
+    "fresh_version_bound_evaluations": 7,
+    "scoring_method": "Calculated arithmetic mean of 15 item scores; not an official platform aggregate, user satisfaction, or a controlled experiment.",
+    "improved": 4,
+    "declined": 3,
+    "target_download_increment": 63,
+    "account_download_increment": 1163,
+    "target_share_of_account_increment_percent": 5.4,
+    "records": [
+      {
+        "slug": "agent-engineering-expert",
+        "target_version": "0.1.2",
+        "latest_version": "0.1.2",
+        "latest_created_at_beijing": "2026-10-13T10:11:30.981000+08:00",
+        "target_version_ids": [
+          430796
+        ],
+        "evaluation_version_id": 430796,
+        "evaluation_created_at_beijing": "2026-10-14T22:07:33.116000+08:00",
+        "evaluation_bound_versions": [
+          "0.1.2"
+        ],
+        "fresh_evaluation_confirmed": true,
+        "security_reports": {
+          "keen": {
+            "status": "benign"
+          },
+          "sanbu": {
+            "status": "benign"
+          }
+        },
+        "previous_evaluated_version": "0.1.1",
+        "previous_calculated_equal_item_mean": 4.38,
+        "previous_saved_precision": "unrounded_saved_mean",
+        "calculated_equal_item_mean": 4.653,
+        "item_count": 15,
+        "mean_delta_display": 0.273,
+        "download_delta_since_baseline": 8,
+        "stats": {
+          "comments": 0,
+          "downloads": 53,
+          "installs": 0,
+          "stars": 0,
+          "versions": 3
+        },
+        "sources": [
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/agent-engineering-expert?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-15T14:09:45.906191+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/agent-engineering-expert/versions?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-15T14:09:46.104397+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/agent-engineering-expert/evaluation?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-15T14:09:46.304424+08:00",
+            "http_status": 200
+          }
+        ]
+      },
+      {
+        "slug": "repo-governance-pro",
+        "target_version": "0.1.3",
+        "latest_version": "0.1.3",
+        "latest_created_at_beijing": "2026-10-13T10:14:37.527000+08:00",
+        "target_version_ids": [
+          430810
+        ],
+        "evaluation_version_id": 430810,
+        "evaluation_created_at_beijing": "2026-10-14T22:10:46.705000+08:00",
+        "evaluation_bound_versions": [
+          "0.1.3"
+        ],
+        "fresh_evaluation_confirmed": true,
+        "security_reports": {
+          "keen": {
+            "status": "benign"
+          },
+          "sanbu": {
+            "status": "benign"
+          }
+        },
+        "previous_evaluated_version": "0.1.2",
+        "previous_calculated_equal_item_mean": 4.413,
+        "previous_saved_precision": "unrounded_saved_mean",
+        "calculated_equal_item_mean": 4.68,
+        "item_count": 15,
+        "mean_delta_display": 0.267,
+        "download_delta_since_baseline": 7,
+        "stats": {
+          "comments": 0,
+          "downloads": 94,
+          "installs": 0,
+          "stars": 0,
+          "versions": 4
+        },
+        "sources": [
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/repo-governance-pro?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-15T14:09:45.906359+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/repo-governance-pro/versions?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-15T14:09:46.116022+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/repo-governance-pro/evaluation?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-15T14:09:46.314071+08:00",
+            "http_status": 200
+          }
+        ]
+      },
+      {
+        "slug": "handoff-doc-zh",
+        "target_version": "0.1.2",
+        "latest_version": "0.1.2",
+        "latest_created_at_beijing": "2026-10-13T10:10:04.652000+08:00",
+        "target_version_ids": [
+          430784
+        ],
+        "evaluation_version_id": 430784,
+        "evaluation_created_at_beijing": "2026-10-14T21:59:33.857000+08:00",
+        "evaluation_bound_versions": [
+          "0.1.2"
+        ],
+        "fresh_evaluation_confirmed": true,
+        "security_reports": {
+          "keen": {
+            "status": "benign"
+          },
+          "sanbu": {
+            "status": "benign"
+          }
+        },
+        "previous_evaluated_version": "0.1.1",
+        "previous_calculated_equal_item_mean": 4.353,
+        "previous_saved_precision": "unrounded_saved_mean",
+        "calculated_equal_item_mean": 4.56,
+        "item_count": 15,
+        "mean_delta_display": 0.207,
+        "download_delta_since_baseline": 10,
+        "stats": {
+          "comments": 0,
+          "downloads": 81,
+          "installs": 0,
+          "stars": 0,
+          "versions": 3
+        },
+        "sources": [
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/handoff-doc-zh?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-15T14:09:45.906479+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/handoff-doc-zh/versions?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-15T14:09:46.104910+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/handoff-doc-zh/evaluation?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-15T14:09:46.311998+08:00",
+            "http_status": 200
+          }
+        ]
+      },
+      {
+        "slug": "sensitive-data-mask",
+        "target_version": "0.1.1",
+        "latest_version": "0.1.1",
+        "latest_created_at_beijing": "2026-10-13T13:35:45.188000+08:00",
+        "target_version_ids": [
+          431784
+        ],
+        "evaluation_version_id": 431784,
+        "evaluation_created_at_beijing": "2026-10-15T04:33:59.844000+08:00",
+        "evaluation_bound_versions": [
+          "0.1.1"
+        ],
+        "fresh_evaluation_confirmed": true,
+        "security_reports": {
+          "keen": {
+            "status": "benign"
+          },
+          "sanbu": {
+            "status": "benign"
+          }
+        },
+        "previous_evaluated_version": "0.1.0",
+        "previous_calculated_equal_item_mean": 4.707,
+        "previous_saved_precision": "rounded_to_3_decimals_in_baseline",
+        "calculated_equal_item_mean": 4.567,
+        "item_count": 15,
+        "mean_delta_display": -0.14,
+        "download_delta_since_baseline": 10,
+        "stats": {
+          "comments": 0,
+          "downloads": 85,
+          "installs": 0,
+          "stars": 0,
+          "versions": 2
+        },
+        "sources": [
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/sensitive-data-mask?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-15T14:09:46.566298+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/sensitive-data-mask/versions?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-15T14:09:46.761424+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/sensitive-data-mask/evaluation?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-15T14:09:46.976796+08:00",
+            "http_status": 200
+          }
+        ]
+      },
+      {
+        "slug": "test-coverage-gap",
+        "target_version": "0.1.1",
+        "latest_version": "0.1.1",
+        "latest_created_at_beijing": "2026-10-13T13:41:24.004000+08:00",
+        "target_version_ids": [
+          431812
+        ],
+        "evaluation_version_id": 431812,
+        "evaluation_created_at_beijing": "2026-10-15T04:42:17.894000+08:00",
+        "evaluation_bound_versions": [
+          "0.1.1"
+        ],
+        "fresh_evaluation_confirmed": true,
+        "security_reports": {
+          "keen": {
+            "status": "benign"
+          },
+          "sanbu": {
+            "status": "benign"
+          }
+        },
+        "previous_evaluated_version": "0.1.0",
+        "previous_calculated_equal_item_mean": 4.56,
+        "previous_saved_precision": "rounded_to_3_decimals_in_baseline",
+        "calculated_equal_item_mean": 4.6,
+        "item_count": 15,
+        "mean_delta_display": 0.04,
+        "download_delta_since_baseline": 7,
+        "stats": {
+          "comments": 0,
+          "downloads": 70,
+          "installs": 0,
+          "stars": 0,
+          "versions": 2
+        },
+        "sources": [
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/test-coverage-gap?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-15T14:09:46.572706+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/test-coverage-gap/versions?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-15T14:09:46.778964+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/test-coverage-gap/evaluation?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-15T14:09:46.991501+08:00",
+            "http_status": 200
+          }
+        ]
+      },
+      {
+        "slug": "release-readiness-check",
+        "target_version": "0.1.3",
+        "latest_version": "0.1.3",
+        "latest_created_at_beijing": "2026-10-13T13:39:13.519000+08:00",
+        "target_version_ids": [
+          431801
+        ],
+        "evaluation_version_id": 431801,
+        "evaluation_created_at_beijing": "2026-10-15T04:39:29.780000+08:00",
+        "evaluation_bound_versions": [
+          "0.1.3"
+        ],
+        "fresh_evaluation_confirmed": true,
+        "security_reports": {
+          "keen": {
+            "status": "benign"
+          },
+          "sanbu": {
+            "status": "benign"
+          }
+        },
+        "previous_evaluated_version": "0.1.1",
+        "previous_calculated_equal_item_mean": 4.613,
+        "previous_saved_precision": "rounded_to_3_decimals_in_baseline",
+        "calculated_equal_item_mean": 4.553,
+        "item_count": 15,
+        "mean_delta_display": -0.06,
+        "download_delta_since_baseline": 9,
+        "stats": {
+          "comments": 0,
+          "downloads": 86,
+          "installs": 0,
+          "stars": 0,
+          "versions": 3
+        },
+        "sources": [
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/release-readiness-check?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-15T14:09:46.573129+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/release-readiness-check/versions?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-15T14:09:46.770431+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/release-readiness-check/evaluation?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-15T14:09:46.979209+08:00",
+            "http_status": 200
+          }
+        ]
+      },
+      {
+        "slug": "meeting-transcript-cleanup",
+        "target_version": "0.1.2",
+        "latest_version": "0.1.2",
+        "latest_created_at_beijing": "2026-10-13T13:43:28.697000+08:00",
+        "target_version_ids": [
+          431821
+        ],
+        "evaluation_version_id": 431821,
+        "evaluation_created_at_beijing": "2026-10-15T04:45:08.749000+08:00",
+        "evaluation_bound_versions": [
+          "0.1.2"
+        ],
+        "fresh_evaluation_confirmed": true,
+        "security_reports": {
+          "keen": {
+            "status": "benign"
+          },
+          "sanbu": {
+            "status": "benign"
+          }
+        },
+        "previous_evaluated_version": "0.1.1",
+        "previous_calculated_equal_item_mean": 4.84,
+        "previous_saved_precision": "rounded_to_3_decimals_in_baseline",
+        "calculated_equal_item_mean": 4.733,
+        "item_count": 15,
+        "mean_delta_display": -0.107,
+        "download_delta_since_baseline": 12,
+        "stats": {
+          "comments": 0,
+          "downloads": 67,
+          "installs": 0,
+          "stars": 0,
+          "versions": 3
+        },
+        "sources": [
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/meeting-transcript-cleanup?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-15T14:09:47.229191+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/meeting-transcript-cleanup/versions?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-15T14:09:47.451632+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/meeting-transcript-cleanup/evaluation?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-15T14:09:47.938111+08:00",
+            "http_status": 200
+          }
+        ]
+      }
+    ]
+  },
+  "github_feedback": {
+    "repo": "po-et/workbuddy-skills",
+    "checked_at_beijing": "2026-10-15T14:09:48.212112+08:00",
+    "completed_at_beijing": "2026-10-15T14:09:50.223869+08:00",
+    "coverage_complete": true,
+    "public_issue_count": 0,
+    "public_pr_count": 0,
+    "external_authored_records": 0,
+    "sources": [
+      {
+        "url": "https://api.github.com/repos/po-et/workbuddy-skills/issues?state=all&per_page=100&page=1",
+        "queried_at_beijing": "2026-10-15T14:09:48.212134+08:00",
+        "http_status": 200
+      }
+    ]
+  },
+  "source_delivery": {
+    "oct13_releases_github_synced": true,
+    "commit": "26dcb63",
+    "commit_url": "https://github.com/po-et/workbuddy-skills/commit/26dcb63",
+    "pages_source_hash_match_verified": true,
+    "verification_scope": "Oct13 source delivery only; metrics cover the seven completed Oct13 releases."
+  },
+  "interpretation_limits": [
+    "Download counters do not identify unique users or completed tasks and can include maintainer acceptance downloads after baseline.",
+    "Growth across existing skills cannot be causally attributed to the seven upgrades or to article publication.",
+    "API installs=0 does not establish zero installations or zero users.",
+    "Seven target comment counters are zero; other SkillHub comments and private channels were not queried.",
+    "Three favorites do not establish three independent people or repeat usage.",
+    "Inventory count is not evidence of current quota or remaining publishing capacity. Preserve existing assets and guard the historical limit before new-slot publication.",
+    "Version-bound automated evaluations and benign scanner statuses do not establish actual user success or complete correctness/security."
+  ]
+}

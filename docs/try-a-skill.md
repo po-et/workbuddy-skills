@@ -11,7 +11,7 @@
 | 三分钟辩论稿总是超时 | [辩论稿](https://skillhub.cn/skills/@indiv-captain/debate-speech)：`skillhub install debate-speech --namespace indiv-captain --dir "$HOME/.workbuddy/skills"` | 立论稿、攻辩链、字数与时间估算；以自己的朗读计时为准 |
 | 录屏太长，想用少量画面复盘 | [视频抽帧](https://skillhub.cn/skills/@indiv-captain/video-frame-extract)：`skillhub install video-frame-extract --namespace indiv-captain --dir "$HOME/.workbuddy/skills"` | 截图、时间点对照表、联系表；原视频保持不变 |
 | 多个 Excel 明细列顺序不同 | [Excel 处理](https://skillhub.cn/skills/@indiv-captain/excel-processing)：`skillhub install excel-processing --namespace indiv-captain --dir "$HOME/.workbuddy/skills"` | 按表头对齐的合并表、来源行、运行摘要；原件只读、结果防覆盖 |
-| 买车报价说不清总成本 | [买车](https://skillhub.cn/skills/@indiv-captain/car-buying-checklist)：`skillhub install car-buying-checklist --namespace indiv-captain --dir "$HOME/.workbuddy/skills"` | 用户提供费用的预算表，缺项留待补，政策口径待核实 |
+| 买车报价说不清费用范围 | [买车](https://skillhub.cn/skills/@indiv-captain/car-buying-checklist)：`skillhub install car-buying-checklist --namespace indiv-captain --dir "$HOME/.workbuddy/skills"` | [两份报价核对案例](../examples/car-quotes/)：Markdown/CSV/JSON，费用缺项保留待补，同本金再列费用差额 |
 
 ## 可以直接复制的任务
 

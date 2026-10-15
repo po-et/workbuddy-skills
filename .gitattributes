@@ -1,0 +1,2 @@
+# Preserve exact client-produced bytes so published CSV hashes remain reproducible.
+examples/car-quotes/outputs/*/*.csv -text whitespace=cr-at-eol
