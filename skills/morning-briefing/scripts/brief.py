@@ -9,6 +9,8 @@
   python3 scripts/brief.py --demo                          # 用内置样例跑一遍（样例同 SKILL.md）
   python3 scripts/brief.py todo.txt 2026-09-24 --out 简报.md   # 另存为文件
 
+--out 必须是新文件；同源路径（含路径别名、符号链接、硬链接）和任何已有目标都拒绝，原始待办不变。
+
 待办写法（一行一件）：截止:9-24（也认 2026-09-24、9/24、9月24日、今天、明天、后天），! 表示影响大，
 @人名 表示这个人在等你，等:人名 表示你在等他；全角 ！ ： 也认；以 10:00 或 10:00-11:00 开头的行算日程。
 
@@ -54,6 +56,10 @@ class Parser(argparse.ArgumentParser):
 
 class ReadProblem(Exception):
     """文件读不了 → 退出码 2。"""
+
+
+class WriteProblem(Exception):
+    """输出会覆盖输入或已有文件 → 退出码 2。"""
 
 
 def parse_today(text):
@@ -169,7 +175,23 @@ def read_todo(path):
     raise ReadProblem("%s 的编码认不出来，请另存为 UTF-8。" % ("标准输入" if path == "-" else path))
 
 
-def write_atomic(path, text):
+def check_output(path, source=None):
+    """Reject input aliases and existing targets before creating a temporary file."""
+    if source and source != "-":
+        if os.path.realpath(path) == os.path.realpath(source):
+            raise WriteProblem("输出与待办输入是同一文件（含路径或符号链接别名）；请换新文件名")
+        try:
+            same = os.path.samefile(path, source)
+        except FileNotFoundError:
+            same = False
+        if same:
+            raise WriteProblem("输出与待办输入指向同一文件（含硬链接）；请换新文件名")
+    if os.path.lexists(path):
+        raise WriteProblem("输出目标已存在（含符号链接）；为保护原件，请换新文件名")
+
+
+def write_atomic(path, text, source=None):
+    check_output(path, source)
     folder = os.path.dirname(os.path.abspath(path))
     fd, tmp = tempfile.mkstemp(dir=folder, prefix=".brief-", suffix=".tmp")
     try:
@@ -178,7 +200,10 @@ def write_atomic(path, text):
         mask = os.umask(0)
         os.umask(mask)
         os.chmod(tmp, 0o666 & ~mask)  # mkstemp 默认 0600，改回普通文件权限
-        os.replace(tmp, path)
+        # Atomic no-clobber commit: a target created after check_output is also
+        # protected. The temporary file is on the same filesystem as the target.
+        os.link(tmp, path)
+        os.unlink(tmp)
     except BaseException:
         try:
             os.unlink(tmp)
@@ -193,7 +218,7 @@ def main(argv=None):
     ap.add_argument("date", nargs="?", help="把哪天当作今天，如 2026-09-24（默认本机日期）")
     ap.add_argument("--week", action="store_true", help="周一版：多出「本周还要到期」")
     ap.add_argument("--demo", action="store_true", help="用内置样例跑一遍")
-    ap.add_argument("--out", help="另存为文件（先写临时文件再替换，不会留下半截文件）")
+    ap.add_argument("--out", help="另存为新文件；拒绝覆盖输入、已有文件与符号链接，原子写入")
     args = ap.parse_args(argv)
 
     if args.demo:
@@ -222,7 +247,11 @@ def main(argv=None):
         sys.stderr.write("[待确认] %s\n" % p)
     if args.out:
         try:
-            write_atomic(args.out, brief)
+            write_atomic(args.out, brief, None if args.demo else args.todo)
+        except WriteProblem as e:
+            sys.stderr.write("写文件失败：%s。原始待办与已有目标未修改；简报如下：\n" % e)
+            sys.stdout.write(brief)
+            return EXIT_IO
         except OSError as e:
             sys.stderr.write("写文件失败：%s（%s）。换个目录或文件名再试；简报如下：\n" % (args.out, e.strerror or e))
             sys.stdout.write(brief)

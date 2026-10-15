@@ -1,0 +1,175 @@
+{
+  "article_url": "https://cloud.tencent.com/developer/article/2761723",
+  "title": "WorkBuddy 实测：两份报价，缺项不能填成零",
+  "user_publication_authorized": true,
+  "platform_displayed_publish_time_beijing": "2026-10-15T14:36:40+08:00",
+  "publicly_readable_confirmed": true,
+  "anonymous_verification": {
+    "url": "https://cloud.tencent.com/developer/article/2761723",
+    "queried_at_beijing": "2026-10-15T14:43:47.943072+08:00",
+    "anonymous": true,
+    "cookies_sent": false,
+    "credentials_sent": false,
+    "scope": "Anonymous public article and one public body screenshot only; no browser, login context, cookies, credentials, signed URLs, or image files persisted.",
+    "http_status": 200,
+    "final_url": "https://cloud.tencent.com/developer/article/2761723",
+    "title": "WorkBuddy 实测：两份报价，缺项不能填成零-腾讯云开发者社区-腾讯云",
+    "byte_count": 101223,
+    "html_sha256": "36ccecb24791ba5d833193b79c756744f6e437a09e7a5ab5ac20b55f19eb9902",
+    "expected_title_found": true,
+    "markers": {
+      "Captain": true,
+      "15000": true,
+      "16500": true,
+      "known_subtotal": true,
+      "fees_outside_total": true,
+      "AI 辅助整理": true,
+      "审核中": false,
+      "文章不存在": false,
+      "暂无权限": false
+    },
+    "html_table_count": 2,
+    "html_pre_count": 3,
+    "html_table_row_counts": [
+      6,
+      5
+    ],
+    "github_source_reference_present": true,
+    "publication_time_literal_found": true,
+    "image_tags_count": 5,
+    "body_checks_complete": true,
+    "completed_content_check_at_beijing": "2026-10-15T14:45:19.596402+08:00",
+    "github_public_targets": [
+      "https://github.com/po-et/workbuddy-skills/tree/main/examples/car-quotes",
+      "https://github.com/po-et/workbuddy-skills/blob/main/skills/car-buying-checklist/references/quote-contract.md",
+      "https://github.com/po-et/workbuddy-skills/blob/main/docs/metrics/car-release-verified-2026-10-15.json",
+      "https://github.com/po-et/workbuddy-skills/blob/main/examples/car-quotes/outputs/missing-fee/comparison.json",
+      "https://github.com/po-et/workbuddy-skills/blob/main/examples/car-quotes/README.md",
+      "https://github.com/po-et/workbuddy-skills/blob/main/examples/car-quotes/verification.json",
+      "https://github.com/po-et/workbuddy-skills/tree/main/skills/car-buying-checklist",
+      "https://github.com/po-et/workbuddy-skills/blob/main/examples/car-quotes/README.md#%E5%8F%AF%E5%A4%8D%E5%88%B6%E7%BB%99-workbuddy-%E7%9A%84%E4%BB%BB%E5%8A%A1",
+      "https://github.com/po-et/workbuddy-skills/issues/new/choose"
+    ],
+    "table_row_counts": [
+      6,
+      5
+    ],
+    "table_cells": [
+      [
+        [
+          "项目（元）",
+          "A",
+          "B：第一轮"
+        ],
+        [
+          "贷款本金",
+          "100000",
+          "100000"
+        ],
+        [
+          "总还款额",
+          "112000",
+          "110500"
+        ],
+        [
+          "未含在总还款额里的另收费用",
+          "3000",
+          "未知，输入为 null"
+        ],
+        [
+          "已知还款差额",
+          "12000",
+          "10500"
+        ],
+        [
+          "录入范围贷款费用",
+          "15000",
+          "null，待补"
+        ]
+      ],
+      [
+        [
+          "录入范围贷款费用（元）",
+          "A",
+          "B：补齐后"
+        ],
+        [
+          "计算式",
+          "112000 − 100000 + 3000",
+          "110500 − 100000 + 6000"
+        ],
+        [
+          "结果",
+          "15000",
+          "16500"
+        ],
+        [
+          "完整性",
+          "true",
+          "true"
+        ],
+        [
+          "B − A",
+          "—",
+          "1500"
+        ]
+      ]
+    ],
+    "code_block_count": 3,
+    "json_excerpt_checks": {
+      "value_null": true,
+      "known_subtotal_10500": true,
+      "missing_fees_field": true
+    },
+    "ai_disclosure_found": true,
+    "maintainer_agent_attribution_found": true,
+    "synthetic_input_disclosure_found": true,
+    "content_image_count": 1,
+    "content_images": [
+      {
+        "public_url": "https://developer.qcloudimg.com/http-save/yehe-11488960/ecbe79a5a2c964734cd2959fdf319a06.jpg",
+        "has_query": false,
+        "alt": "WorkBuddy真实客户端：两轮合成报价与六份输出",
+        "anonymous": true,
+        "cookies_sent": false,
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "byte_count": 650457,
+        "sha256": "aa42d0be6e41a71441222c418080b237c3b684f3d79b90085fa13c02627a6b9e",
+        "dimensions": [
+          2932,
+          2048
+        ],
+        "checked": true,
+        "original_file_sha256": "aa42d0be6e41a71441222c418080b237c3b684f3d79b90085fa13c02627a6b9e",
+        "original_dimensions": [
+          2932,
+          2048
+        ],
+        "bytes_match_original": true
+      }
+    ]
+  },
+  "browser_rendered_verification": {
+    "images": [
+      {
+        "alt": "WorkBuddy真实客户端：两轮合成报价与六份输出",
+        "complete": true,
+        "has_query": false,
+        "hostname": "developer.qcloudimg.com",
+        "naturalWidth": 2932
+      }
+    ],
+    "table_rows": [
+      6,
+      5
+    ],
+    "title": "WorkBuddy 实测：两份报价，缺项不能填成零"
+  },
+  "screenshot": "docs/assets/2026-10-15-car-client/community-article.png",
+  "boundaries": [
+    "Maintainer AI-operated synthetic acceptance, not independent human use.",
+    "Publication is not readership, repeat use, QQ channel submission, or official endorsement.",
+    "Own visits may contribute to platform counters."
+  ]
+}
