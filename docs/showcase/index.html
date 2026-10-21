@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Captain 的可核验 AI 工作流：两份报价核对、接口差分、Excel 到一页报告、录屏抽帧。复制安装与任务，对照公开合成案例检查交付。">
+  <meta name="description" content="Captain 的可核验 AI 工作流：PPT 字号检查、两份报价核对、接口差分、Excel 到一页报告、录屏抽帧。复制安装与任务，对照公开合成案例检查交付。">
   <meta name="theme-color" content="#EEF5FB">
   <title>Captain｜WorkBuddy 与 SkillHub 可核验工作流</title>
   <meta property="og:title" content="Captain｜可核验的 AI 工作流">
-  <meta property="og:description" content="从报价核对、接口差分、Excel报表与录屏复盘开始，查看输入、产物与验收，复制任务直接试用。">
+  <meta property="og:description" content="从 PPT 检查、报价核对、接口差分、Excel报表与录屏复盘开始，查看输入、产物与验收，复制任务直接试用。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://po-et.github.io/workbuddy-skills/showcase/">
   <meta property="og:image" content="https://po-et.github.io/workbuddy-skills/assets/2026-10-12-client-case/02-four-business-differences.jpg">
@@ -72,11 +72,12 @@
       </div>
       <div class="bench-layout">
         <aside class="task-rail" aria-label="任务选择">
-          <div class="task-tabs" role="tablist" aria-label="四个代表工作流" aria-orientation="vertical">
+          <div class="task-tabs" role="tablist" aria-label="五个代表工作流" aria-orientation="vertical">
             <button class="task-tab" id="tab-office" role="tab" type="button" aria-selected="true" aria-controls="panel-office" tabindex="0" data-task="office"><strong>两份 Excel → 一页报告</strong><span>表头对齐，数字有来源</span></button>
             <button class="task-tab" id="tab-api" role="tab" type="button" aria-selected="false" aria-controls="panel-api" tabindex="-1" data-task="api"><strong>接口迁移 → 字段差异</strong><span>同一请求，先失败再复验</span></button>
             <button class="task-tab" id="tab-video" role="tab" type="button" aria-selected="false" aria-controls="panel-video" tabindex="-1" data-task="video"><strong>录屏 → 复盘素材</strong><span>画面、时间点、原件保护</span></button>
             <button class="task-tab" id="tab-car" role="tab" type="button" aria-selected="false" aria-controls="panel-car" tabindex="-1" data-task="car"><strong>两份报价 → 缺项与差额</strong><span>未知费用保留待补</span></button>
+            <button class="task-tab" id="tab-ppt" role="tab" type="button" aria-selected="false" aria-controls="panel-ppt" tabindex="-1" data-task="ppt"><strong>现有 PPT → 字号与覆盖</strong><span>段落样式也查，未知不算通过</span></button>
           </div>
           <div class="rail-note">先用公开样本熟悉交付，再替换成你有权使用的本机数据。技能在你的电脑运行。
             <a href="https://skillhub.cn/install/skillhub.md">SkillHub 官方安装指引</a>
@@ -277,6 +278,56 @@ $.paid_amount</code></pre>
           </div>
           <p class="source-note">2026-10-15，维护者侧代理在 WorkBuddy 5.8.2 / Space-Bunny 中显式读取本地技能、运行两组输入；六份输出经独立重跑逐字核对一致。市场自动触发和独立用户使用仍未确认。</p>
         </section>
+        <section class="task-panel" id="panel-ppt" role="tabpanel" aria-labelledby="tab-ppt" tabindex="0" hidden>
+          <div class="panel-heading"><h3>8 磅藏在段落样式里，也要查出来</h3><span class="version">PPT 制作 v0.1.2</span></div>
+          <p class="panel-lead">检查已有 PPT 的标题和字号，保留原文件。报告逐处说明字号从哪来，查不到就列为未确定，再到演示软件复核。</p>
+          <dl class="delivery-flow">
+            <div><dt>输入</dt><dd>原件与修正版 PPTX<br>同一套 4 页合成材料</dd></div>
+            <div><dt>交付</dt><dd>人读结果 + JSON<br>页码、字号来源与文件哈希</dd></div>
+            <div><dt>核对</dt><dd>两处 8 磅 → 24 磅<br>1 处未确定仍保留</dd></div>
+          </dl>
+          <div class="table-wrap"><table class="sample-table">
+            <caption style="padding:12px;text-align:left">公开合成案例 · 默认字号底线 18 磅</caption>
+            <thead><tr><th scope="col">正文位置与字号来源</th><th scope="col">原件</th><th scope="col">修正版</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">第 1 页：段落默认字号</th><td class="attention">8 磅，被发现</td><td>24 磅</td></tr>
+              <tr><th scope="row">第 2 页：文本体第 2 层样式</th><td class="attention">8 磅，被发现</td><td>24 磅</td></tr>
+              <tr><th scope="row">第 3 页：文字片段覆盖段落默认</th><td>24 磅，不误报</td><td>24 磅</td></tr>
+              <tr><th scope="row">第 4 页：检查范围内未设字号</th><td class="attention">未确定，保留 null</td><td class="attention">未确定，保留 null</td></tr>
+            </tbody>
+          </table></div>
+          <p class="block-note">两份各有 8 处非空文字，已确定 7 处、未确定 1 处。旧版对原件退出 0；新版对原件退出 3，修正版退出 0。退出 0 只表示检查范围内未发现问题，剩余未确定字号仍要人工复核。</p>
+          <ul class="checklist" style="margin-top:18px">
+            <li>字号按文字片段、同段落默认、同文本体列表层级依次读取；每处实际文字只计一次。</li>
+            <li>JSON 保留每处文字的页码、XML 位置、字号来源和原件 SHA256，可对照原件复跑。</li>
+            <li>技能提供只读检查器，不生成 PPTX；母版、版式和主题继承、图片内文字及实际渲染仍需人工核对。</li>
+          </ul>
+          <div class="action-block">
+            <div class="block-heading"><h4>1. 安装 PPT 制作</h4><button class="copy-button" type="button" data-copy="install-ppt" data-copy-label="PPT 安装命令">复制安装命令</button></div>
+            <pre class="command-box" id="install-ppt"><code>skillhub install pptx-making --namespace indiv-captain --dir "$HOME/.workbuddy/skills"</code></pre>
+            <p class="block-note">需要已有 SkillHub CLI 和 Python 3；检查器只用标准库。保留已有修改，核对作者与 v0.1.2，再按官方说明重启 WorkBuddy。</p>
+          </div>
+          <div class="action-block">
+            <div class="block-heading"><h4>2. 交给 WorkBuddy</h4><button class="copy-button" type="button" data-copy="task-ppt" data-copy-label="PPT 检查任务">复制任务</button></div>
+            <div class="task-box"><p id="task-ppt">在我打开的 workbuddy-skills 仓库中，使用 indiv-captain 的“PPT 制作”v0.1.2，先阅读技能说明。对 examples/pptx-fonts/inputs/before.pptx 和 examples/pptx-fonts/inputs/after.pptx 实际运行 skills/pptx-making/scripts/pptx_check.py，使用默认 18 磅底线，分别保留人读输出和 --json 报告到一个全新的输出目录，目录已存在就停止。记录每次退出码、原件 SHA256、已确定和未确定字号数、偏小文字的页码与来源，交付 review.md 写逐页建议。未确定字号不能写成通过，也不要声称视觉验收完成。只读 PPTX，不修改原件、配置或记忆，不安装依赖、不联网。若未打开仓库或缺少文件、工具，先说明缺口。</p></div>
+            <p class="block-note">先在 WorkBuddy 打开本仓库；技能包包含检查器，四页合成 PPT 与完整复跑案例需从下方 GitHub 链接取得。</p>
+          </div>
+          <div class="case-links">
+            <a href="https://github.com/po-et/workbuddy-skills/tree/main/examples/pptx-fonts">四页 PPT、检查报告与复跑记录</a>
+            <a href="https://skillhub.cn/skills/@indiv-captain/pptx-making">SkillHub 技能页</a>
+            <a href="https://github.com/po-et/workbuddy-skills/blob/main/examples/pptx-fonts/verification.json">结构化核对记录</a>
+          </div>
+          <details class="sample">
+            <summary>展开第 1 页字号修改前后的渲染对照</summary>
+            <div class="sample-content">
+              <p class="sample-subheading">原件：正文段落默认 8 磅</p>
+              <figure class="video-figure"><img src="../assets/2026-10-21-pptx-case/before-slide-1.png" loading="lazy" alt="四页合成案例的原件第 1 页，正文段落默认字号为 8 磅，字明显偏小"><figcaption>ArtifactTool 导入原 PPTX 后渲染。内容为公开合成演示。</figcaption></figure>
+              <p class="sample-subheading">修正版：同一正文改为 24 磅</p>
+              <figure class="video-figure"><img src="../assets/2026-10-21-pptx-case/after-slide-1.png" loading="lazy" alt="同一合成案例修正版第 1 页，正文段落默认字号改为 24 磅"><figcaption>ArtifactTool 渲染对照图，不是 PowerPoint 客户端截图；最终效果仍需在演示软件复核。</figcaption></figure>
+            </div>
+          </details>
+          <p class="source-note" id="ppt-evidence-note">2026-10-21，维护者侧代理在真实 WorkBuddy 5.8.2 / Space-Bunny 中显式读取本地技能，完成四次检查；四份脚本输出经独立重跑逐字节一致。AI 说明经反馈另存校订稿，原件与技能源文件哈希未变。另检查 ArtifactTool 导入后的 8 张渲染图；未完成 PowerPoint GUI 验收，市场自动触发与独立用户采用仍未确认。<a href="../assets/2026-10-21-pptx-case/workbuddy-client.png">客户端原始截图</a></p>
+        </section>
       </div>
     </section>
     <section class="feedback" aria-labelledby="engineering-title" style="margin-top:32px">
@@ -304,7 +355,7 @@ $.paid_amount</code></pre>
       <a class="button" href="https://github.com/po-et/workbuddy-skills/issues/new?template=skill-feedback.md">提交使用反馈</a>
     </section>
   </main>
-  <footer class="site-footer"><div class="wrap footer-inner"><p>Captain｜个人作者维护<br>报价客户端实测 2026-10-15；接口客户端实测 2026-10-12；视频合成实跑 2026-10-09</p><nav aria-label="页脚"><a href="https://github.com/po-et/workbuddy-skills">源码与完整目录</a><a href="https://skillhub.cn/install/skillhub.md">官方安装指引</a><a href="https://open.workbuddy.cn/docs/skill">官方技能说明</a></nav></div></footer>
+  <footer class="site-footer"><div class="wrap footer-inner"><p>Captain｜个人作者维护<br>PPT 客户端实测 2026-10-21；报价 2026-10-15；接口 2026-10-12</p><nav aria-label="页脚"><a href="https://github.com/po-et/workbuddy-skills">源码与完整目录</a><a href="https://skillhub.cn/install/skillhub.md">官方安装指引</a><a href="https://open.workbuddy.cn/docs/skill">官方技能说明</a></nav></div></footer>
   <div id="copy-status" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
   <dialog class="manual-copy" id="manual-copy" aria-labelledby="manual-title"><h2 id="manual-title">请手动复制</h2><p>浏览器未能写入剪贴板。文本已选中，按 Ctrl+C 或 ⌘C 复制；手机可长按文本选择复制。</p><textarea id="manual-text" readonly aria-label="待复制的完整内容"></textarea><div class="dialog-actions"><button class="button secondary" type="button" id="close-copy">关闭</button></div></dialog>
   <script>

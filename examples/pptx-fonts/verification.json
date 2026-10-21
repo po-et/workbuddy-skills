@@ -1,0 +1,124 @@
+{
+  "case": "synthetic_ppt_font_styles",
+  "checks_passed": true,
+  "inputs_and_checker_unchanged": true,
+  "artifacts": [
+    {
+      "artifact": "before.txt",
+      "exit_code": 3,
+      "recorded_stdout_matches": true,
+      "sha256": "3ed071d22a70803d94b4ab053c03b1b154aa7a038fcb721970533e36d2995a18"
+    },
+    {
+      "artifact": "before.json",
+      "exit_code": 3,
+      "recorded_stdout_matches": true,
+      "sha256": "0a110b40a1cb1a8f79e71c4ddd1e5f1e01bd20e27807772605ec9b32080597d7"
+    },
+    {
+      "artifact": "after.txt",
+      "exit_code": 0,
+      "recorded_stdout_matches": true,
+      "sha256": "43ddf797b2f0bc934c23fe6b49be5823b123b6e14c58bfbc6b9dd6064792e3ad"
+    },
+    {
+      "artifact": "after.json",
+      "exit_code": 0,
+      "recorded_stdout_matches": true,
+      "sha256": "ecddd6ed89140829ad8fce1862ecd12dff6fbb6d1e16d8db5d201b38956f1736"
+    }
+  ],
+  "boundary": "Maintainer reproduction; no independent-user or PowerPoint-rendering claim.",
+  "verified_at_beijing": "2026-10-21T15:23:20.657293+08:00",
+  "client": {
+    "name": "WorkBuddy",
+    "version": "5.8.2",
+    "model_label": "Space-Bunny",
+    "initial_task_displayed_at": "2026-10-21 15:09",
+    "initial_completion_displayed_at": "2026-10-21 15:14",
+    "initial_duration_display": "5m22s",
+    "execution": "Maintainer Codex agent explicitly invoked local SKILL.md; not market automatic discovery",
+    "revision_completion_displayed_at": "2026-10-21 15:17",
+    "revision_duration_display": "56s"
+  },
+  "protected_files": [
+    {
+      "path": "skills/pptx-making/SKILL.md",
+      "before_sha256": "abeca2eded10046102a0bcaccf3d59b9b72222c22d5236b5f51d166029304d2c",
+      "after_sha256": "abeca2eded10046102a0bcaccf3d59b9b72222c22d5236b5f51d166029304d2c",
+      "match": true
+    },
+    {
+      "path": "skills/pptx-making/references/outline-templates.md",
+      "before_sha256": "016263637800e625c4eec8f2546a4b47b90fecb9f31d1ab391a7861a5a59071f",
+      "after_sha256": "016263637800e625c4eec8f2546a4b47b90fecb9f31d1ab391a7861a5a59071f",
+      "match": true
+    },
+    {
+      "path": "skills/pptx-making/examples/checker-run.md",
+      "before_sha256": "cbe80e6a5000fc0fb4ff6b72d301560ad8ccd6cb8df7d3108244c31fd5c68de2",
+      "after_sha256": "cbe80e6a5000fc0fb4ff6b72d301560ad8ccd6cb8df7d3108244c31fd5c68de2",
+      "match": true
+    },
+    {
+      "path": "skills/pptx-making/examples/one-slide-one-point.md",
+      "before_sha256": "9a369e2daf730465559410ce86570b94113d87986708257eb17ad023e5fb9dd3",
+      "after_sha256": "9a369e2daf730465559410ce86570b94113d87986708257eb17ad023e5fb9dd3",
+      "match": true
+    },
+    {
+      "path": "skills/pptx-making/scripts/pptx_check.py",
+      "before_sha256": "54161e35cabe50f427630c3e86c01ca2dcd982e5cc197225a5a29c4b039b7065",
+      "after_sha256": "54161e35cabe50f427630c3e86c01ca2dcd982e5cc197225a5a29c4b039b7065",
+      "match": true
+    },
+    {
+      "path": "examples/pptx-fonts/inputs/before.pptx",
+      "before_sha256": "bd3c23c1ef0447fd7d22b07116735badb38ca26e13cd42c16af17871320adce2",
+      "after_sha256": "bd3c23c1ef0447fd7d22b07116735badb38ca26e13cd42c16af17871320adce2",
+      "match": true
+    },
+    {
+      "path": "examples/pptx-fonts/inputs/after.pptx",
+      "before_sha256": "e019418d9214219547d1a670b44f83939dd222788871ba284e20cb6cf73fe298",
+      "after_sha256": "e019418d9214219547d1a670b44f83939dd222788871ba284e20cb6cf73fe298",
+      "match": true
+    }
+  ],
+  "fixture_rendering": {
+    "tool": "ArtifactTool",
+    "slides_rendered_and_visually_inspected": 8,
+    "both_package_integrity_checks": "pass,0 findings",
+    "native_powerpoint_gui_validated": false
+  },
+  "old_0_1_1_before": {
+    "exit_code": 0,
+    "message": "没发现问题"
+  },
+  "fixture_diff": {
+    "changed_parts": [
+      "ppt/slides/slide1.xml",
+      "ppt/slides/slide2.xml"
+    ],
+    "only_changes": "One sz attribute in each:800 to2400; other parts byte-identical"
+  },
+  "human_adoption_confirmed": false,
+  "limitations": [
+    "This is a maintainer-side synthetic acceptance test, not independent user adoption.",
+    "Four stdout artifacts reproduce byte-exactly; AI prose is separately reviewed and corrected.",
+    "Unresolved font on slide4 remains null in both cases; no final rendered-size claim.",
+    "No PowerPoint GUI validation completed."
+  ],
+  "review_boundary": "Original client review retained privately; raw revised prose published with root review-notes.md. It is not deterministic script output.",
+  "client_screenshot": "docs/assets/2026-10-21-pptx-case/workbuddy-client.png",
+  "public_client_prose": [
+    {
+      "path": "outputs/review-revised.md",
+      "sha256": "99b0ba2eb6bd25f0457e703a03a631f516096730256c2fed2579e03716194a71"
+    },
+    {
+      "path": "outputs/exit-codes.txt",
+      "sha256": "828a94096b218d225e1a3d615a5c984f629866ff5a7ed6766d1a849f6c067b53"
+    }
+  ]
+}

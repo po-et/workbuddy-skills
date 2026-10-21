@@ -1,6 +1,6 @@
 # 用 WorkBuddy 完成一个能核对的任务
 
-选择一个你确实要交付的结果，先用合成输入复跑，再替换成你有权使用的数据。维护者已在真实 WorkBuddy 客户端完成[接口差分实测](articles/09-WorkBuddy实测-接口差分验收.md)和[两份报价核对](articles/10-WorkBuddy实测-两份报价核对.md)，执行方式是显式读取本地技能。这些是维护者的合成验收，独立用户完成任务与市场自动触发仍待验证。
+选择一个你确实要交付的结果，先用合成输入复跑，再替换成你有权使用的数据。维护者已在真实 WorkBuddy 客户端完成[接口差分](articles/09-WorkBuddy实测-接口差分验收.md)、[两份报价核对](articles/10-WorkBuddy实测-两份报价核对.md)和 [PPT 字号检查](articles/11-WorkBuddy实测-PPT字号与检查覆盖.md)，执行方式是显式读取本地技能。这些是维护者的合成验收，独立用户完成任务与市场自动触发仍待验证。
 
 [打开成果页](https://po-et.github.io/workbuddy-skills/showcase/)选择任务，查看样本并复制安装/任务说明。
 
@@ -21,6 +21,9 @@ skillhub install video-frame-extract --namespace indiv-captain --dir "$HOME/.wor
 
 # 两份报价，核对缺项与同范围差额
 skillhub install car-buying-checklist --namespace indiv-captain --dir "$HOME/.workbuddy/skills"
+
+# 已有 PPT，检查字号、标题与未覆盖项
+skillhub install pptx-making --namespace indiv-captain --dir "$HOME/.workbuddy/skills"
 ```
 
 CLI 与目录依据 [SkillHub 官方安装说明](https://skillhub.cn/install/skillhub.md)。默认安装根目录是 `./skills`，必须改成当前 Agent 的目录；其他 Agent 请按官方说明替换。本轮隔离安装实际生成 `@indiv-captain/api-diff-test/` 子目录，六个文件与 0.1.1 上传副本相同；本机以 CLI 打印位置为准。安装后重启 WorkBuddy，在新任务中显式调用技能，核对实际读取的版本；安装检查本身不证明客户端已调用。已有同名目录时先核对作者与版本，不直接加 `--force` 覆盖。
@@ -35,6 +38,7 @@ WorkBuddy 自带市场也能在「专家·技能·连接器 → 技能」中安�
 | Excel → 业务报表 | [合并到报告完整示例](../examples/office-report/) | Python 3、已有 openpyxl | 列顺序对齐、来源行、缺失保留、汇总核对、异常原因待查 |
 | 录屏 → 复盘画面 | [抽帧操作与示例](../skills/video-frame-extract/SKILL.md) | Python 3、ffmpeg、ffprobe | 画面时间点、联系表、原视频未改；画面不等于音频转写 |
 | 两份报价 → 缺项与差额 | [报价核对完整示例](../examples/car-quotes/) | Python 3 标准库 | 缺项保留 null、同本金与费用范围、计算式和字段来源 |
+| 已有 PPT → 问题与覆盖报告 | [四页字号对照](../examples/pptx-fonts/) | Python 3 标准库 | 段落、列表字号与覆盖优先级；未知字号不能当通过；人工查看渲染 |
 
 本仓库命令在仓库根目录运行。使用 SkillHub 安装包时，入口目录是 `~/.workbuddy/skills/@indiv-captain/<slug>/`；接口在平台的 slug 是 `api-diff-test`，仓库源目录是 `skills/api-diff`。办公完整示例属于仓库案例，两个技能包各自包含对应工具。
 

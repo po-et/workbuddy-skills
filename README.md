@@ -2,17 +2,17 @@
 
 **Captain · 可核验的 AI 工作流**：给 WorkBuddy 一项具体任务，交付能追溯输入、检查结果、重复运行的文件。由个人作者维护，面向腾讯 WorkBuddy / SkillHub；开源代码与示例不代表腾讯官方认证或真实客户案例。
 
-[打开成果页](https://po-et.github.io/workbuddy-skills/showcase/)：选任务、复制安装与提示词、查看样本和验收。维护者已在真实 WorkBuddy 客户端完成[接口差分](docs/articles/09-WorkBuddy实测-接口差分验收.md)与[两份报价核对](docs/articles/10-WorkBuddy实测-两份报价核对.md)，原始产物可独立复跑。
+[打开成果页](https://po-et.github.io/workbuddy-skills/showcase/)：选任务、复制安装与提示词、查看样本和验收。维护者已在真实 WorkBuddy 客户端完成[接口差分](docs/articles/09-WorkBuddy实测-接口差分验收.md)、[两份报价核对](docs/articles/10-WorkBuddy实测-两份报价核对.md)和 [PPT 字号检查](docs/articles/11-WorkBuddy实测-PPT字号与检查覆盖.md)，原始脚本产物可独立复跑。[最新发布记录](docs/releases/2026-10-21.md)保留测试、上线和验包证据。
 
 2026-10-13 新增[工程技能上手链路](docs/engineering-starter.md)：接手仓库、比较 Agent 评测、换会话交接。三个已有技能补齐离线脚本和 Markdown/JSON 产物，保留原有安装链接。
 
 [有依据的工作产物](docs/reliable-delivery.md)进一步覆盖会议待办、日志脱敏、补测清单和发布前静态检查：保护原件、保留来源、区分歧义与检查结论。
 
-2026-10-15 新增[两份报价的 WorkBuddy 客户端实测](https://cloud.tencent.com/developer/article/2761723)，已在腾讯云开发者社区公开发表。[原始输入、六份输出与复跑任务](examples/car-quotes/)一并开放；执行主体为维护者侧 AI，真实用户采用仍待验证。
+2026-10-21 新增 [PPT 字号的 WorkBuddy 客户端实测](examples/pptx-fonts/)：修复段落与列表默认字号漏检，公开四页原件 / 修正版、四份原始脚本输出与复跑核验，保留 1 处未知字号。此前[两份报价实测](https://cloud.tencent.com/developer/article/2761723)已在腾讯云开发者社区公开。执行主体均为维护者侧 AI，独立用户采用仍待验证。[本次指标快照](docs/metrics/2026-10-21-readout.md)为 20,212 次累计下载、3 收藏，下载不等于独立用户数。
 
-同日修复晨报输出覆盖原始待办的问题，0.1.2 已上线。[旧版与新版的合成回归对照](examples/morning-preservation/)保留退出码、输入哈希与实际简报；这是本地脚本核验，未进行晨报客户端测试。
+10 月 15 日修复晨报输出覆盖原始待办的问题，0.1.2 已上线。[旧版与新版的合成回归对照](examples/morning-preservation/)保留退出码、输入哈希与实际简报；这是本地脚本核验，未进行晨报客户端测试。
 
-## 从四个完整任务开始
+## 从五个完整任务开始
 
 | 你要完成的事 | 输入 → 交付 | 从这里试用 |
 |---|---|---|
@@ -20,6 +20,7 @@
 | 多份 Excel 整理成管理报表 | 列顺序不同的明细 → 来源行、汇总、异常、业务报告 | [办公报表完整示例](examples/office-report/) |
 | 从长录屏选出复盘画面 | 本机视频 → 带时间点截图、联系表、原件核对 | [视频抽帧](skills/video-frame-extract/) |
 | 两份报价核对缺项与差额 | 用户给定金额与来源 → Markdown、CSV、JSON；未知费用保留待补 | [WorkBuddy 报价实测](examples/car-quotes/) |
+| 已有 PPT 交付前检查 | 原件 / 修正版 → 小字号定位、人读与 JSON 报告、未知覆盖项 | [WorkBuddy PPT 字号实测](examples/pptx-fonts/) |
 
 先看[安装与任务入口](docs/start-here.md)，完成后用[技能反馈](https://github.com/po-et/workbuddy-skills/issues/new?template=skill-feedback.md)记录实际输入与结果。[本轮开发与验收](docs/releases/2026-10-10.md)包含接口差分升级、办公完整链路和 117 项回归；[此前八项升级](docs/releases/2026-10-09.md)也保留上线证据。
 

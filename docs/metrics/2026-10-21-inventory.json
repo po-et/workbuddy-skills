@@ -1,0 +1,2716 @@
+{
+  "schema_version": 2,
+  "namespace": "indiv-captain",
+  "checked_at_beijing": "2026-10-21T14:50:09.312602+08:00",
+  "completed_at_beijing": "2026-10-21T14:52:34+08:00",
+  "scope": "Dated public snapshot: 200 account counters, nine Oct13/Oct15 releases, public GitHub issues/PRs, and anonymous public state of two Tencent Cloud articles. Read-only; no package download/install, evaluation rerun, comment, message, or publication in this refresh.",
+  "inventory": {
+    "complete": true,
+    "count": 200,
+    "unique_slugs": 200,
+    "duplicate_slugs": [],
+    "namespace_verified": true,
+    "same_slug_set_as_baseline": true,
+    "reported_totals_consistent": true,
+    "full_metric_coverage": true,
+    "metric_coverage": {
+      "downloads": 200,
+      "installs": 200,
+      "stars": 200
+    },
+    "pages": [
+      {
+        "page": 1,
+        "http_status": 200,
+        "queried_at_beijing": "2026-10-21T14:50:09.312926+08:00",
+        "row_count": 100,
+        "reported_total": {
+          "total": 200,
+          "page": 1,
+          "pageSize": 100
+        },
+        "url": "https://api.skillhub.cn/api/v1/users/user_a3a2e24a/skills?page=1&pageSize=100"
+      },
+      {
+        "page": 2,
+        "http_status": 200,
+        "queried_at_beijing": "2026-10-21T14:50:10.127518+08:00",
+        "row_count": 100,
+        "reported_total": {
+          "total": 200,
+          "page": 2,
+          "pageSize": 100
+        },
+        "url": "https://api.skillhub.cn/api/v1/users/user_a3a2e24a/skills?page=2&pageSize=100"
+      },
+      {
+        "page": 3,
+        "http_status": 200,
+        "queried_at_beijing": "2026-10-21T14:50:10.827607+08:00",
+        "row_count": 0,
+        "reported_total": {
+          "total": 200,
+          "page": 3,
+          "pageSize": 100
+        },
+        "url": "https://api.skillhub.cn/api/v1/users/user_a3a2e24a/skills?page=3&pageSize=100"
+      }
+    ],
+    "totals": {
+      "downloads": 20212,
+      "installs": 0,
+      "stars": 3
+    },
+    "baseline": {
+      "public_snapshot": "2026-10-15-inventory.json",
+      "checked_at_beijing": "2026-10-15T14:09:44.118390+08:00",
+      "totals": {
+        "downloads": 16969,
+        "installs": 0,
+        "stars": 3
+      }
+    },
+    "deltas": {
+      "downloads": 3243,
+      "installs": 0,
+      "stars": 0
+    },
+    "download_percent_change": 19.11,
+    "download_increased_skill_count": 198,
+    "download_decreased_skill_count": 0,
+    "favorite_skills": [
+      {
+        "slug": "car-buying-checklist",
+        "stars": 1,
+        "downloads": 183,
+        "download_delta_since_baseline": 54
+      },
+      {
+        "slug": "video-frame-extract",
+        "stars": 1,
+        "downloads": 162,
+        "download_delta_since_baseline": 35
+      },
+      {
+        "slug": "api-diff-test",
+        "stars": 1,
+        "downloads": 160,
+        "download_delta_since_baseline": 23
+      }
+    ],
+    "top_download_increments": [
+      {
+        "slug": "gov-doc-expert",
+        "baseline_downloads": 419,
+        "downloads": 514,
+        "increment": 95
+      },
+      {
+        "slug": "thesis-opening-report",
+        "baseline_downloads": 227,
+        "downloads": 315,
+        "increment": 88
+      },
+      {
+        "slug": "pptx-making",
+        "baseline_downloads": 185,
+        "downloads": 253,
+        "increment": 68
+      },
+      {
+        "slug": "architect-expert",
+        "baseline_downloads": 302,
+        "downloads": 367,
+        "increment": 65
+      },
+      {
+        "slug": "japanese-learning-plan",
+        "baseline_downloads": 159,
+        "downloads": 214,
+        "increment": 55
+      },
+      {
+        "slug": "exam-prep-expert",
+        "baseline_downloads": 88,
+        "downloads": 143,
+        "increment": 55
+      },
+      {
+        "slug": "teach-workspace-zh",
+        "baseline_downloads": 392,
+        "downloads": 447,
+        "increment": 55
+      },
+      {
+        "slug": "car-buying-checklist",
+        "baseline_downloads": 129,
+        "downloads": 183,
+        "increment": 54
+      },
+      {
+        "slug": "vocab-memorization-plan",
+        "baseline_downloads": 115,
+        "downloads": 164,
+        "increment": 49
+      },
+      {
+        "slug": "debate-speech",
+        "baseline_downloads": 184,
+        "downloads": 232,
+        "increment": 48
+      }
+    ],
+    "skills": [
+      {
+        "slug": "dns-check",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 59,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "har-analyze",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 59,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "pptx-making",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 253,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "car-buying-checklist",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 183,
+          "installs": 0,
+          "stars": 1
+        }
+      },
+      {
+        "slug": "tech-writing-expert",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 118,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "salary-raise-request",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 61,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "docker-compose-check",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 61,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "audio-editing",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 163,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "incident-brief-sre",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 62,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "dev-branch-finishing-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 62,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "gov-doc-expert",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 514,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "jwt-inspect",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 62,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "iteration-report-git",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 62,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "dog-care-basics",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 62,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "gift-list",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 62,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "video-frame-extract",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 162,
+          "installs": 0,
+          "stars": 1
+        }
+      },
+      {
+        "slug": "shipping-launch-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 63,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "cron-explain",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 63,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "resignation-conversation",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 63,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "code-review-response-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 63,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "parallel-agent-dispatch-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 65,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "writing-impl-plans-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 65,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "proactive-assistant",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 64,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "radio-script",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 64,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "prometheus-rule-check",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 64,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "lessons-learned-log",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 64,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "config-env-diff",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 64,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "team-building-plan",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 66,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "i18n-missing-keys",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 66,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "event-host-script",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 122,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "new-product-copy",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 67,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "flaky-test-finder",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 67,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "executing-dev-plans-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 68,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "birthday-party-planner",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 65,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "kpi-design",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 65,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "new-hire-mentoring",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 67,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "tls-cert-check",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 66,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "spec-driven-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 65,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "git-worktree-workflow-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 68,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "running-for-beginners",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 68,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "idea-refine-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 68,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "agent-engineering-expert",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 68,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "brainstorming-spec-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 66,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "driving-test-prep",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 70,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "git-workflow-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 67,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "issue-triage-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 69,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "http-health-check",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 69,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "access-log-stats",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 69,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "source-driven-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 70,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "planning-tasks-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 70,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "git-commit-lint",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 70,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "subagent-driven-development-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 70,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "sleep-plan",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 71,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "wizard-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 71,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "tool-design-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 71,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "nginx-config-check",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 71,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "ui-microcopy",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 71,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "todo-debt-scan",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 72,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "constraints-md-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 72,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "debug-triage-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 72,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "dockerfile-check",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 72,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "debate-speech",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 232,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "doubt-driven-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 73,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "ci-config-review",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 73,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "pre-completion-verification-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 73,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "doc-coauthoring-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 74,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "http-bench-lite",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 74,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "re-pitch-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 74,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "merge-conflicts-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 74,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "research-primary-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 74,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "after-viewing-essay",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 76,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "regex-explain",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 74,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "codeowners-suggest",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 74,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "qa-expert",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 257,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "incremental-implementation-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 74,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "context-engineering-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 75,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "git-hotspots",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 75,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "github-cli-ops",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 75,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "dep-vuln-check-osv",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 75,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "workplace-antiscam-expert",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 75,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "license-check-offline",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 75,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "code-review-five-axis-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 75,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "dep-outdated-check",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 75,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "spec-and-tickets-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 75,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "frontend-ui-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 75,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "systematic-debugging-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 75,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "english-email",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 77,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "onboarding-guide",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 76,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "insurance-policy-expert",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 76,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "reflection-letter",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 76,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "to-questionnaire-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 77,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "prototype-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 77,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "openapi-breaking-diff",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 77,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "git-branch-cleanup",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 77,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "personal-budget-expert",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 77,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "engineering-skills-index-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 78,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "context-fundamentals-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 79,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "performance-optimization-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 79,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "interview-outline",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 80,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "report-making",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 80,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "kids-coding",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 79,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "api-contract-test",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 81,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "ci-cd-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 82,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "meeting-transcript-cleanup",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 82,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "release-checklist-git",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 81,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "context-degradation-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 84,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "interview-me-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 83,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "test-coverage-gap",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 85,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "sql-slow-query-digest",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 83,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "deep-module-design-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 83,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "leave-request-note",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 85,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "json-formatting",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 83,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "kids-screen-time",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 84,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "log-pattern-cluster",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 85,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "domain-modeling-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 85,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "deprecation-migration-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 85,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "api-design-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 86,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "coding-for-beginners",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 89,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "env-sync-check",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 87,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "curl-to-code",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 87,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "sql-generation-helper",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 88,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "csv-profile",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 87,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "graduation-speech",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 87,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "incident-response-pro",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 88,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "financial-literacy-expert",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 89,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "travel-planner-expert",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 88,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "json-config-diff",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 89,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "wayfinder-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 89,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "log-anomaly-3sigma",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 89,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "morning-briefing",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 171,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "docs-and-adr-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 90,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "markdown-conversion",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 93,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "image-alt-description",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 93,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "architecture-deepening-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 91,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "json-schema-infer",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 92,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "diagnosing-bugs-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 93,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "meeting-arrangement",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 92,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "renting-guide",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 94,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "tech-interview-expert",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 94,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "japanese-learning-plan",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 214,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "container-deploy-pro",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 94,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "log-timeline",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 95,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "skill-search-helper",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 95,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "grill-me-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 96,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "sensitive-data-mask",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 98,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "release-readiness-check",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 100,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "presentation-expert",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 98,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "tdd-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 97,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "sql-schema-diff",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 100,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "reduce-ai-tone",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 100,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "security-hardening-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 103,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "handoff-doc-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 104,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "context-compression-strategies-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 104,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "internship-report",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 109,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "code-simplification-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 183,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "repo-governance-pro",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 109,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "python-script-writer",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 109,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "skill-preinstall-check",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 112,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "browser-testing-devtools-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 116,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "shopping-list-planner",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 115,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "thesis-opening-report",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 315,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "skill-author-expert",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 118,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "sql-migration-check",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 117,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "data-toolkit-pro",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 197,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "tax-filing-expert",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 120,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "questionnaire-design",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 124,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "memory-systems-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 120,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "writing-for-agents-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 125,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "sre-expert",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 127,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "openapi-to-markdown",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 129,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "kids-reading-plan",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 133,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "resume-job-expert",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 137,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "long-doc-summary",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 134,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "commit-message-cc",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 140,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "exam-prep-expert",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 143,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "changelog-keep",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 139,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "observability-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 141,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "career-growth-expert",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 141,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "word-formatting",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 218,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "tech-design-review",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 162,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "dev-workflow-pro",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 146,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "database-ops-pro",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 148,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "skill-lint-scorecard",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 152,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "job-description-writer",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 223,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "api-diff-test",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 160,
+          "installs": 0,
+          "stars": 1
+        }
+      },
+      {
+        "slug": "vocab-memorization-plan",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 164,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "api-integration-pro",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 161,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "math-problem-tutor",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 203,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "k8s-manifest-check",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 200,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "teach-workspace-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 447,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "build-workbuddy-connector",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 203,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "tdd-seams-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 106,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "office-automation-scripts",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 238,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "architect-expert",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 367,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "national-day-travel",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 38,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "skillhub-publish-helper",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 47,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "secrets-scan",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 6,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "code-review-zh",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 7,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "excel-processing",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 3,
+          "installs": 0,
+          "stars": 0
+        }
+      },
+      {
+        "slug": "pr-description",
+        "namespace": "indiv-captain",
+        "stats": {
+          "downloads": 3,
+          "installs": 0,
+          "stars": 0
+        }
+      }
+    ]
+  },
+  "recent_release_evaluations": {
+    "release_scope": "Seven Oct13 releases plus car-buying-checklist 0.1.2 and morning-briefing 0.1.2 published Oct15.",
+    "latest_target_matches": 9,
+    "version_bound_evaluations": 9,
+    "evaluation_reruns_triggered": 0,
+    "scoring_method": "Calculated arithmetic mean of 15 item scores; not an official platform aggregate, user satisfaction, or controlled experiment.",
+    "unchanged_evaluation_record_count": 7,
+    "mean_comparison_counts": {
+      "increased": 1,
+      "decreased": 1,
+      "unchanged": 7
+    },
+    "comparison_limit": "Seven records are identical to Oct15 and must not be described as newly generated or newly improved. Car/morning baselines were still bound to 0.1.1 in the Oct15 release readback; current evaluations bind 0.1.2. Their saved baseline means were rounded to three decimals.",
+    "target_download_increment": 189,
+    "account_download_increment": 3243,
+    "target_share_of_account_increment_percent": 5.83,
+    "records": [
+      {
+        "slug": "agent-engineering-expert",
+        "target_version": "0.1.2",
+        "latest_version": "0.1.2",
+        "latest_created_at_beijing": "2026-10-13T10:11:30.981000+08:00",
+        "target_version_ids": [
+          430796
+        ],
+        "evaluation_version_id": 430796,
+        "evaluation_created_at_beijing": "2026-10-14T22:07:33.116000+08:00",
+        "evaluation_bound_versions": [
+          "0.1.2"
+        ],
+        "version_bound_evaluation_confirmed": true,
+        "same_evaluation_record_as_oct15_snapshot": true,
+        "security_reports": {
+          "keen": {
+            "status": "benign"
+          },
+          "sanbu": {
+            "status": "benign"
+          }
+        },
+        "previous_evaluated_version": "0.1.2",
+        "previous_calculated_equal_item_mean": 4.653,
+        "previous_saved_precision": "unrounded_saved_mean",
+        "calculated_equal_item_mean": 4.653,
+        "item_count": 15,
+        "mean_delta_display": 0.0,
+        "download_delta_since_baseline": 15,
+        "stats": {
+          "comments": 0,
+          "downloads": 68,
+          "installs": 0,
+          "stars": 0,
+          "versions": 3
+        },
+        "lowest_items": [
+          {
+            "dimension": "convention",
+            "item_key": "antiPatternFaq",
+            "score": 4
+          },
+          {
+            "dimension": "adaptability",
+            "item_key": "trigger",
+            "score": 4.3
+          },
+          {
+            "dimension": "convention",
+            "item_key": "docQuality",
+            "score": 4.5
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/agent-engineering-expert?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-21T14:50:11.069203+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/agent-engineering-expert/versions?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-21T14:50:11.271787+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/agent-engineering-expert/evaluation?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-21T14:50:11.478740+08:00",
+            "http_status": 200
+          }
+        ]
+      },
+      {
+        "slug": "repo-governance-pro",
+        "target_version": "0.1.3",
+        "latest_version": "0.1.3",
+        "latest_created_at_beijing": "2026-10-13T10:14:37.527000+08:00",
+        "target_version_ids": [
+          430810
+        ],
+        "evaluation_version_id": 430810,
+        "evaluation_created_at_beijing": "2026-10-14T22:10:46.705000+08:00",
+        "evaluation_bound_versions": [
+          "0.1.3"
+        ],
+        "version_bound_evaluation_confirmed": true,
+        "same_evaluation_record_as_oct15_snapshot": true,
+        "security_reports": {
+          "keen": {
+            "status": "benign"
+          },
+          "sanbu": {
+            "status": "benign"
+          }
+        },
+        "previous_evaluated_version": "0.1.3",
+        "previous_calculated_equal_item_mean": 4.68,
+        "previous_saved_precision": "unrounded_saved_mean",
+        "calculated_equal_item_mean": 4.68,
+        "item_count": 15,
+        "mean_delta_display": 0.0,
+        "download_delta_since_baseline": 15,
+        "stats": {
+          "comments": 0,
+          "downloads": 109,
+          "installs": 0,
+          "stars": 0,
+          "versions": 4
+        },
+        "lowest_items": [
+          {
+            "dimension": "convention",
+            "item_key": "antiPatternFaq",
+            "score": 4
+          },
+          {
+            "dimension": "reliability",
+            "item_key": "errorHandling",
+            "score": 4.4
+          },
+          {
+            "dimension": "convention",
+            "item_key": "docQuality",
+            "score": 4.5
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/repo-governance-pro?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-21T14:50:11.069364+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/repo-governance-pro/versions?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-21T14:50:11.276785+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/repo-governance-pro/evaluation?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-21T14:50:11.491480+08:00",
+            "http_status": 200
+          }
+        ]
+      },
+      {
+        "slug": "handoff-doc-zh",
+        "target_version": "0.1.2",
+        "latest_version": "0.1.2",
+        "latest_created_at_beijing": "2026-10-13T10:10:04.652000+08:00",
+        "target_version_ids": [
+          430784
+        ],
+        "evaluation_version_id": 430784,
+        "evaluation_created_at_beijing": "2026-10-14T21:59:33.857000+08:00",
+        "evaluation_bound_versions": [
+          "0.1.2"
+        ],
+        "version_bound_evaluation_confirmed": true,
+        "same_evaluation_record_as_oct15_snapshot": true,
+        "security_reports": {
+          "keen": {
+            "status": "benign"
+          },
+          "sanbu": {
+            "status": "benign"
+          }
+        },
+        "previous_evaluated_version": "0.1.2",
+        "previous_calculated_equal_item_mean": 4.56,
+        "previous_saved_precision": "unrounded_saved_mean",
+        "calculated_equal_item_mean": 4.56,
+        "item_count": 15,
+        "mean_delta_display": 0.0,
+        "download_delta_since_baseline": 23,
+        "stats": {
+          "comments": 0,
+          "downloads": 104,
+          "installs": 0,
+          "stars": 0,
+          "versions": 3
+        },
+        "lowest_items": [
+          {
+            "dimension": "convention",
+            "item_key": "antiPatternFaq",
+            "score": 3.8
+          },
+          {
+            "dimension": "convention",
+            "item_key": "docQuality",
+            "score": 4.3
+          },
+          {
+            "dimension": "convention",
+            "item_key": "progressive",
+            "score": 4.3
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/handoff-doc-zh?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-21T14:50:11.069505+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/handoff-doc-zh/versions?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-21T14:50:11.278623+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/handoff-doc-zh/evaluation?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-21T14:50:11.482731+08:00",
+            "http_status": 200
+          }
+        ]
+      },
+      {
+        "slug": "sensitive-data-mask",
+        "target_version": "0.1.1",
+        "latest_version": "0.1.1",
+        "latest_created_at_beijing": "2026-10-13T13:35:45.188000+08:00",
+        "target_version_ids": [
+          431784
+        ],
+        "evaluation_version_id": 431784,
+        "evaluation_created_at_beijing": "2026-10-15T04:33:59.844000+08:00",
+        "evaluation_bound_versions": [
+          "0.1.1"
+        ],
+        "version_bound_evaluation_confirmed": true,
+        "same_evaluation_record_as_oct15_snapshot": true,
+        "security_reports": {
+          "keen": {
+            "status": "benign"
+          },
+          "sanbu": {
+            "status": "benign"
+          }
+        },
+        "previous_evaluated_version": "0.1.1",
+        "previous_calculated_equal_item_mean": 4.567,
+        "previous_saved_precision": "unrounded_saved_mean",
+        "calculated_equal_item_mean": 4.567,
+        "item_count": 15,
+        "mean_delta_display": 0.0,
+        "download_delta_since_baseline": 13,
+        "stats": {
+          "comments": 0,
+          "downloads": 98,
+          "installs": 0,
+          "stars": 0,
+          "versions": 2
+        },
+        "lowest_items": [
+          {
+            "dimension": "convention",
+            "item_key": "antiPatternFaq",
+            "score": 4
+          },
+          {
+            "dimension": "convention",
+            "item_key": "docQuality",
+            "score": 4.3
+          },
+          {
+            "dimension": "reliability",
+            "item_key": "errorHandling",
+            "score": 4.3
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/sensitive-data-mask?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-21T14:50:11.735405+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/sensitive-data-mask/versions?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-21T14:50:11.935943+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/sensitive-data-mask/evaluation?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-21T14:50:12.141465+08:00",
+            "http_status": 200
+          }
+        ]
+      },
+      {
+        "slug": "test-coverage-gap",
+        "target_version": "0.1.1",
+        "latest_version": "0.1.1",
+        "latest_created_at_beijing": "2026-10-13T13:41:24.004000+08:00",
+        "target_version_ids": [
+          431812
+        ],
+        "evaluation_version_id": 431812,
+        "evaluation_created_at_beijing": "2026-10-15T04:42:17.894000+08:00",
+        "evaluation_bound_versions": [
+          "0.1.1"
+        ],
+        "version_bound_evaluation_confirmed": true,
+        "same_evaluation_record_as_oct15_snapshot": true,
+        "security_reports": {
+          "keen": {
+            "status": "benign"
+          },
+          "sanbu": {
+            "status": "benign"
+          }
+        },
+        "previous_evaluated_version": "0.1.1",
+        "previous_calculated_equal_item_mean": 4.6,
+        "previous_saved_precision": "unrounded_saved_mean",
+        "calculated_equal_item_mean": 4.6,
+        "item_count": 15,
+        "mean_delta_display": 0.0,
+        "download_delta_since_baseline": 15,
+        "stats": {
+          "comments": 0,
+          "downloads": 85,
+          "installs": 0,
+          "stars": 0,
+          "versions": 2
+        },
+        "lowest_items": [
+          {
+            "dimension": "convention",
+            "item_key": "antiPatternFaq",
+            "score": 4
+          },
+          {
+            "dimension": "adaptability",
+            "item_key": "trigger",
+            "score": 4.3
+          },
+          {
+            "dimension": "convention",
+            "item_key": "docQuality",
+            "score": 4.5
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/test-coverage-gap?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-21T14:50:11.735979+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/test-coverage-gap/versions?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-21T14:50:11.936575+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/test-coverage-gap/evaluation?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-21T14:50:12.148258+08:00",
+            "http_status": 200
+          }
+        ]
+      },
+      {
+        "slug": "release-readiness-check",
+        "target_version": "0.1.3",
+        "latest_version": "0.1.3",
+        "latest_created_at_beijing": "2026-10-13T13:39:13.519000+08:00",
+        "target_version_ids": [
+          431801
+        ],
+        "evaluation_version_id": 431801,
+        "evaluation_created_at_beijing": "2026-10-15T04:39:29.780000+08:00",
+        "evaluation_bound_versions": [
+          "0.1.3"
+        ],
+        "version_bound_evaluation_confirmed": true,
+        "same_evaluation_record_as_oct15_snapshot": true,
+        "security_reports": {
+          "keen": {
+            "status": "benign"
+          },
+          "sanbu": {
+            "status": "benign"
+          }
+        },
+        "previous_evaluated_version": "0.1.3",
+        "previous_calculated_equal_item_mean": 4.553,
+        "previous_saved_precision": "unrounded_saved_mean",
+        "calculated_equal_item_mean": 4.553,
+        "item_count": 15,
+        "mean_delta_display": 0.0,
+        "download_delta_since_baseline": 14,
+        "stats": {
+          "comments": 0,
+          "downloads": 100,
+          "installs": 0,
+          "stars": 0,
+          "versions": 3
+        },
+        "lowest_items": [
+          {
+            "dimension": "convention",
+            "item_key": "antiPatternFaq",
+            "score": 4
+          },
+          {
+            "dimension": "reliability",
+            "item_key": "errorHandling",
+            "score": 4
+          },
+          {
+            "dimension": "convention",
+            "item_key": "docQuality",
+            "score": 4.3
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/release-readiness-check?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-21T14:50:11.745394+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/release-readiness-check/versions?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-21T14:50:11.936217+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/release-readiness-check/evaluation?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-21T14:50:12.165131+08:00",
+            "http_status": 200
+          }
+        ]
+      },
+      {
+        "slug": "meeting-transcript-cleanup",
+        "target_version": "0.1.2",
+        "latest_version": "0.1.2",
+        "latest_created_at_beijing": "2026-10-13T13:43:28.697000+08:00",
+        "target_version_ids": [
+          431821
+        ],
+        "evaluation_version_id": 431821,
+        "evaluation_created_at_beijing": "2026-10-15T04:45:08.749000+08:00",
+        "evaluation_bound_versions": [
+          "0.1.2"
+        ],
+        "version_bound_evaluation_confirmed": true,
+        "same_evaluation_record_as_oct15_snapshot": true,
+        "security_reports": {
+          "keen": {
+            "status": "benign"
+          },
+          "sanbu": {
+            "status": "benign"
+          }
+        },
+        "previous_evaluated_version": "0.1.2",
+        "previous_calculated_equal_item_mean": 4.733,
+        "previous_saved_precision": "unrounded_saved_mean",
+        "calculated_equal_item_mean": 4.733,
+        "item_count": 15,
+        "mean_delta_display": 0.0,
+        "download_delta_since_baseline": 15,
+        "stats": {
+          "comments": 0,
+          "downloads": 82,
+          "installs": 0,
+          "stars": 0,
+          "versions": 3
+        },
+        "lowest_items": [
+          {
+            "dimension": "convention",
+            "item_key": "antiPatternFaq",
+            "score": 4.3
+          },
+          {
+            "dimension": "reliability",
+            "item_key": "errorHandling",
+            "score": 4.5
+          },
+          {
+            "dimension": "reliability",
+            "item_key": "func",
+            "score": 4.5
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/meeting-transcript-cleanup?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-21T14:50:12.392367+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/meeting-transcript-cleanup/versions?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-21T14:50:12.599734+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/meeting-transcript-cleanup/evaluation?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-21T14:50:12.799646+08:00",
+            "http_status": 200
+          }
+        ]
+      },
+      {
+        "slug": "car-buying-checklist",
+        "target_version": "0.1.2",
+        "latest_version": "0.1.2",
+        "latest_created_at_beijing": "2026-10-15T14:18:40.570000+08:00",
+        "target_version_ids": [
+          437818
+        ],
+        "evaluation_version_id": 437818,
+        "evaluation_created_at_beijing": "2026-10-16T23:41:00.750000+08:00",
+        "evaluation_bound_versions": [
+          "0.1.2"
+        ],
+        "version_bound_evaluation_confirmed": true,
+        "same_evaluation_record_as_oct15_snapshot": false,
+        "security_reports": {
+          "keen": {
+            "status": "benign"
+          },
+          "sanbu": {
+            "status": "benign"
+          }
+        },
+        "previous_evaluated_version": "0.1.1",
+        "previous_calculated_equal_item_mean": 4.793,
+        "previous_saved_precision": "rounded_to_3_decimals_in_baseline",
+        "calculated_equal_item_mean": 4.707,
+        "item_count": 15,
+        "mean_delta_display": -0.086,
+        "download_delta_since_baseline": 54,
+        "stats": {
+          "comments": 0,
+          "downloads": 183,
+          "installs": 0,
+          "stars": 1,
+          "versions": 3
+        },
+        "lowest_items": [
+          {
+            "dimension": "convention",
+            "item_key": "antiPatternFaq",
+            "score": 4.5
+          },
+          {
+            "dimension": "convention",
+            "item_key": "docQuality",
+            "score": 4.5
+          },
+          {
+            "dimension": "convention",
+            "item_key": "progressive",
+            "score": 4.5
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/car-buying-checklist?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-21T14:50:12.417437+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/car-buying-checklist/versions?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-21T14:50:12.624777+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/car-buying-checklist/evaluation?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-21T14:50:12.859901+08:00",
+            "http_status": 200
+          }
+        ]
+      },
+      {
+        "slug": "morning-briefing",
+        "target_version": "0.1.2",
+        "latest_version": "0.1.2",
+        "latest_created_at_beijing": "2026-10-15T14:47:46.961000+08:00",
+        "target_version_ids": [
+          437861
+        ],
+        "evaluation_version_id": 437861,
+        "evaluation_created_at_beijing": "2026-10-16T23:54:28.149000+08:00",
+        "evaluation_bound_versions": [
+          "0.1.2"
+        ],
+        "version_bound_evaluation_confirmed": true,
+        "same_evaluation_record_as_oct15_snapshot": false,
+        "security_reports": {
+          "keen": {
+            "status": "benign"
+          },
+          "sanbu": {
+            "status": "benign"
+          }
+        },
+        "previous_evaluated_version": "0.1.1",
+        "previous_calculated_equal_item_mean": 4.68,
+        "previous_saved_precision": "rounded_to_3_decimals_in_baseline",
+        "calculated_equal_item_mean": 4.84,
+        "item_count": 15,
+        "mean_delta_display": 0.16,
+        "download_delta_since_baseline": 25,
+        "stats": {
+          "comments": 0,
+          "downloads": 171,
+          "installs": 0,
+          "stars": 0,
+          "versions": 3
+        },
+        "lowest_items": [
+          {
+            "dimension": "convention",
+            "item_key": "progressive",
+            "score": 4.5
+          },
+          {
+            "dimension": "effectiveness",
+            "item_key": "creativity",
+            "score": 4.6
+          },
+          {
+            "dimension": "effectiveness",
+            "item_key": "usability",
+            "score": 4.7
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/morning-briefing?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-21T14:50:12.470008+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/morning-briefing/versions?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-21T14:50:12.678174+08:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://api.skillhub.cn/api/v1/skills/morning-briefing/evaluation?namespace=indiv-captain",
+            "queried_at_beijing": "2026-10-21T14:50:12.989369+08:00",
+            "http_status": 200
+          }
+        ]
+      }
+    ]
+  },
+  "github_feedback": {
+    "repo": "po-et/workbuddy-skills",
+    "checked_at_beijing": "2026-10-21T14:50:13.251896+08:00",
+    "completed_at_beijing": "2026-10-21T14:50:17.141438+08:00",
+    "coverage_complete": true,
+    "public_issue_count": 0,
+    "public_pr_count": 0,
+    "external_authored_records": 0,
+    "sources": [
+      {
+        "url": "https://api.github.com/repos/po-et/workbuddy-skills/issues?state=all&per_page=100&page=1",
+        "queried_at_beijing": "2026-10-21T14:50:13.251904+08:00",
+        "http_status": 200
+      }
+    ]
+  },
+  "community_articles": {
+    "checked_at_beijing": "2026-10-21T14:52:34+08:00",
+    "method": "Anonymous GET; public server-rendered articleInfo counters. No community mutation.",
+    "articles": [
+      {
+        "url": "https://cloud.tencent.com/developer/article/2759592",
+        "queried_at_beijing": "2026-10-21T14:52:34+08:00",
+        "anonymous": true,
+        "http_status": 200,
+        "public_article_verified": true,
+        "title": "WorkBuddy 实测：给接口差分技能做一次可复核验收",
+        "platform_displayed_counters": {
+          "showReadNum": 228,
+          "likeNum": 1,
+          "favNum": 0,
+          "commentNum": 0
+        },
+        "metric_source": "anonymous HTML __NEXT_DATA__.props.pageProps.fallback articleInfo",
+        "html_sha256": "e477461de0c163d6c5eb56a5115a8e0dce7214d2852bf3d16ce72e608428150f",
+        "body_sha256": "8aca2d5744b5904fd0eed9339a040ff25aa4541c76f6a581a016e3ebbd3655d7",
+        "limitations": [
+          "showReadNum is the platform displayed reading counter, not unique human readers",
+          "likeNum/favNum are counters; account identity, independence and real use cannot be inferred",
+          "anonymous server-rendered snapshot; counters may be delayed or cached",
+          "no comments visible does not prove nobody used the skill"
+        ]
+      },
+      {
+        "url": "https://cloud.tencent.com/developer/article/2761723",
+        "queried_at_beijing": "2026-10-21T14:52:34+08:00",
+        "anonymous": true,
+        "http_status": 200,
+        "public_article_verified": true,
+        "title": "WorkBuddy 实测：两份报价，缺项不能填成零",
+        "platform_displayed_counters": {
+          "showReadNum": 141,
+          "likeNum": 1,
+          "favNum": 0,
+          "commentNum": 0
+        },
+        "metric_source": "anonymous HTML __NEXT_DATA__.props.pageProps.fallback articleInfo",
+        "html_sha256": "75794380e35ed185f6cab3483f6e57a88106fb489cb5576c71a82e903fda4671",
+        "body_sha256": "9aaa5002d1b57491904998b3eac8c898cfc176d8a26474181aac55620abdc1cc",
+        "limitations": [
+          "showReadNum is the platform displayed reading counter, not unique human readers",
+          "likeNum/favNum are counters; account identity, independence and real use cannot be inferred",
+          "anonymous server-rendered snapshot; counters may be delayed or cached",
+          "no comments visible does not prove nobody used the skill"
+        ]
+      }
+    ],
+    "displayed_read_counter_sum": 369,
+    "deduplicated_readers": null,
+    "independent_human_reruns_confirmed": false
+  },
+  "interpretation_limits": [
+    "Download counters do not identify unique users or completed tasks; they can include maintainer acceptance downloads after baseline.",
+    "Aggregate growth cannot be causally attributed to the nine upgrades or either community article.",
+    "API installs=0 does not establish zero installations or zero users.",
+    "Nine target comment counters are zero; other SkillHub comments and private channels were not queried.",
+    "Three favorites do not establish three independent people or repeat usage.",
+    "Inventory count does not establish current quota or remaining publishing capacity.",
+    "Version-bound automated evaluations and benign scanner statuses do not establish actual user success or complete correctness/security.",
+    "Article showReadNum is a displayed counter, not unique readers. Article likes, favorites and comments do not prove independent user identity or task completion.",
+    "GitHub Discussions, private communication and WorkBuddy internal feedback were not covered.",
+    "This snapshot describes the observed times; later releases or visits can change versions and counters."
+  ]
+}

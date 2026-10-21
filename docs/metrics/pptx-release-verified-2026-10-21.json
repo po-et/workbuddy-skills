@@ -1,0 +1,154 @@
+{
+  "slug": "pptx-making",
+  "namespace_requested": "indiv-captain",
+  "wanted_version": "0.1.2",
+  "queried_at_utc": "2026-10-21T07:22:14.731568+00:00",
+  "queried_at_beijing": "2026-10-21T15:22:14.731568+08:00",
+  "detail_http_status": 200,
+  "detail_error": null,
+  "detail_top_level_keys": [
+    "contentZhAvailable",
+    "latestVersion",
+    "namespace",
+    "owner",
+    "securityReports",
+    "skill",
+    "slug"
+  ],
+  "skill": {
+    "createdAt": 1790218053298,
+    "displayName": "PPT 制作",
+    "slug": "pptx-making",
+    "updatedAt": 1792567244173
+  },
+  "namespace": {
+    "displayName": "user_a3a2e24a",
+    "handle": "indiv-captain"
+  },
+  "latest_version": {
+    "createdAt": 1792566381136,
+    "version": "0.1.2"
+  },
+  "versions_http_status": 200,
+  "versions_error": null,
+  "versions_top_level_keys": [
+    "namespace",
+    "slug",
+    "source",
+    "versions"
+  ],
+  "versions": [
+    {
+      "createdAt": 1792566381136,
+      "securityReports": {
+        "keen": {
+          "status": "benign"
+        },
+        "sanbu": {
+          "status": "benign"
+        }
+      },
+      "version": "0.1.2",
+      "versionId": 451138
+    },
+    {
+      "createdAt": 1790438191257,
+      "securityReports": {
+        "keen": {
+          "status": "benign"
+        },
+        "sanbu": {
+          "status": "benign"
+        }
+      },
+      "version": "0.1.1",
+      "versionId": 378392
+    },
+    {
+      "createdAt": 1790218053298,
+      "securityReports": {
+        "keen": {
+          "status": "benign"
+        },
+        "sanbu": {
+          "status": "benign"
+        }
+      },
+      "version": "0.1.0",
+      "versionId": 373095
+    }
+  ],
+  "latest_matches_requested": true,
+  "evaluation_http_status": 200,
+  "evaluation_error": null,
+  "evaluation": {
+    "createdAt": 1790627764796,
+    "versionId": 378392,
+    "explicit_version": null,
+    "fresh_evaluation_confirmed": false,
+    "overall_dimension_equal_weight": 4.657,
+    "overall_all_items_equal_weight": 4.613,
+    "item_count": 15,
+    "is_newer_than_target_latest": false,
+    "latest_createdAt_used": 1792566381136,
+    "latest_matches_target": true,
+    "evaluation_createdAt_utc": "2026-09-28T20:36:04.796000+00:00",
+    "latest_createdAt_utc": "2026-10-21T07:06:21.136000+00:00"
+  },
+  "package_verification": {
+    "http_status": 200,
+    "download_role": "agent_acceptance_verification_not_real_user",
+    "package_sha256": "1c174867d09219688cd05a71a7f651eb2369c3ea281d3c75691ece4845323a45",
+    "byte_count": 23279,
+    "downloaded_at": {
+      "queried_at_utc": "2026-10-21T07:22:15.804002+00:00",
+      "queried_at_beijing": "2026-10-21T15:22:15.804002+08:00"
+    },
+    "used_local_acceptance_archive": false,
+    "compared_files": [
+      {
+        "path": "SKILL.md",
+        "dist_sha256": "f095dc1e50c27d06036a74118e623b008dd7a0177dfd3e9c498984f4642d738a",
+        "download_sha256": "f095dc1e50c27d06036a74118e623b008dd7a0177dfd3e9c498984f4642d738a",
+        "match": true
+      },
+      {
+        "path": "examples/checker-run.md",
+        "dist_sha256": "cbe80e6a5000fc0fb4ff6b72d301560ad8ccd6cb8df7d3108244c31fd5c68de2",
+        "download_sha256": "cbe80e6a5000fc0fb4ff6b72d301560ad8ccd6cb8df7d3108244c31fd5c68de2",
+        "match": true
+      },
+      {
+        "path": "examples/one-slide-one-point.md",
+        "dist_sha256": "9a369e2daf730465559410ce86570b94113d87986708257eb17ad023e5fb9dd3",
+        "download_sha256": "9a369e2daf730465559410ce86570b94113d87986708257eb17ad023e5fb9dd3",
+        "match": true
+      },
+      {
+        "path": "references/outline-templates.md",
+        "dist_sha256": "016263637800e625c4eec8f2546a4b47b90fecb9f31d1ab391a7861a5a59071f",
+        "download_sha256": "016263637800e625c4eec8f2546a4b47b90fecb9f31d1ab391a7861a5a59071f",
+        "match": true
+      },
+      {
+        "path": "scripts/pptx_check.py",
+        "dist_sha256": "54161e35cabe50f427630c3e86c01ca2dcd982e5cc197225a5a29c4b039b7065",
+        "download_sha256": "54161e35cabe50f427630c3e86c01ca2dcd982e5cc197225a5a29c4b039b7065",
+        "match": true
+      }
+    ],
+    "missing_dist_files": [],
+    "unexpected_package_files": [
+      "_meta.json"
+    ],
+    "all_dist_files_match": true,
+    "platform_metadata": {
+      "slug": "pptx-making",
+      "version": "0.1.2",
+      "ownerId": "740899",
+      "publishedAt": 1792566381251,
+      "matches_requested_slug_and_version": true,
+      "namespace_field_present": false
+    }
+  }
+}

@@ -1,0 +1,45 @@
+# 真实退出码记录
+
+检查脚本：/Users/limit/AI/My-Research/workbuddy-skills/skills/pptx-making/scripts/pptx_check.py
+解释器：/Users/limit/.workbuddy/binaries/python/versions/3.13.12/bin/python3 (Python 3.13.12)
+字号底线：脚本默认 18 磅（未传位置参数，DEFAULT_MIN_PT = 18.0）
+输入目录：/Users/limit/AI/My-Research/workbuddy-skills/examples/pptx-fonts/inputs
+
+# run 1
+$ python3 .../scripts/pptx_check.py /Users/limit/AI/My-Research/workbuddy-skills/examples/pptx-fonts/inputs/before.pptx
+exit_code = 3
+stdout -> before.txt
+stderr = (empty, 0 bytes)
+
+# run 2
+$ python3 .../scripts/pptx_check.py /Users/limit/AI/My-Research/workbuddy-skills/examples/pptx-fonts/inputs/before.pptx --json
+exit_code = 3
+stdout -> before.json
+stderr = (empty, 0 bytes)
+
+# run 3
+$ python3 .../scripts/pptx_check.py /Users/limit/AI/My-Research/workbuddy-skills/examples/pptx-fonts/inputs/after.pptx
+exit_code = 0
+stdout -> after.txt
+stderr = (empty, 0 bytes)
+
+# run 4
+$ python3 .../scripts/pptx_check.py /Users/limit/AI/My-Research/workbuddy-skills/examples/pptx-fonts/inputs/after.pptx --json
+exit_code = 0
+stdout -> after.json
+stderr = (empty, 0 bytes)
+
+# 确定性复核（输出写系统临时目录，已删除；未覆盖上面 4 份产物）
+$ python3 .../scripts/pptx_check.py .../before.pptx --json
+exit_code = 3
+与 before.json 逐字节相同 (cmp)
+
+$ python3 .../scripts/pptx_check.py .../after.pptx --json
+exit_code = 0
+与 after.json 逐字节相同 (cmp)
+
+# 输入文件完整性（只读确认，未被本次操作改动）
+sha256  before.pptx = bd3c23c1ef0447fd7d22b07116735badb38ca26e13cd42c16af17871320adce2
+sha256  after.pptx  = e019418d9214219547d1a670b44f83939dd222788871ba284e20cb6cf73fe298
+与两份 JSON 报告中的 source.sha256 一致
+mtime   两者均为 2026-10-21 15:07（运行后复查未变）

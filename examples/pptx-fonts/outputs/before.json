@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "source": {
+    "name": "before.pptx",
+    "sha256": "bd3c23c1ef0447fd7d22b07116735badb38ca26e13cd42c16af17871320adce2"
+  },
+  "min_font_pt": 18.0,
+  "slide_count": 4,
+  "titles": [
+    {
+      "slide": 1,
+      "part": "ppt/slides/slide1.xml",
+      "text": "合成案例：本周完成原型搭建"
+    },
+    {
+      "slide": 2,
+      "part": "ppt/slides/slide2.xml",
+      "text": "合成案例：两项联调仍待确认"
+    },
+    {
+      "slide": 3,
+      "part": "ppt/slides/slide3.xml",
+      "text": "合成案例：完成验收再推进交付"
+    },
+    {
+      "slide": 4,
+      "part": "ppt/slides/slide4.xml",
+      "text": "合成案例：未知样式仍需人工查看"
+    }
+  ],
+  "status": "issues_found",
+  "issues": [
+    {
+      "code": "small_font",
+      "slide": 1,
+      "message": "第 1 页：1 处文字小于 18 磅（8 磅），例「原型已完成；接口联调和验」",
+      "evidence": [
+        {
+          "slide": 1,
+          "part": "ppt/slides/slide1.xml",
+          "kind": "run",
+          "text": "原型已完成；接口联调和验收记录待补。",
+          "text_path": "p:sld[1]/p:cSld[1]/p:spTree[1]/p:sp[2]/p:txBody[1]/a:p[1]/a:r[1]/a:t[1]",
+          "font_size_pt": 8.0,
+          "font_source": "paragraph",
+          "size_path": "p:sld[1]/p:cSld[1]/p:spTree[1]/p:sp[2]/p:txBody[1]/a:p[1]/a:pPr[1]/a:defRPr[1]/@sz",
+          "unresolved_reason": null
+        }
+      ]
+    },
+    {
+      "code": "small_font",
+      "slide": 2,
+      "message": "第 2 页：1 处文字小于 18 磅（8 磅），例「接口字段与错误处理仍需逐」",
+      "evidence": [
+        {
+          "slide": 2,
+          "part": "ppt/slides/slide2.xml",
+          "kind": "run",
+          "text": "接口字段与错误处理仍需逐项核对。",
+          "text_path": "p:sld[1]/p:cSld[1]/p:spTree[1]/p:sp[2]/p:txBody[1]/a:p[1]/a:r[1]/a:t[1]",
+          "font_size_pt": 8.0,
+          "font_source": "list_style",
+          "size_path": "p:sld[1]/p:cSld[1]/p:spTree[1]/p:sp[2]/p:txBody[1]/a:lstStyle[1]/a:lvl2pPr[1]/a:defRPr[1]/@sz",
+          "unresolved_reason": null
+        }
+      ]
+    }
+  ],
+  "font_size_coverage": {
+    "text_piece_count": 8,
+    "resolved_count": 7,
+    "unresolved_count": 1,
+    "small_count": 2,
+    "unreadable_slide_count": 0,
+    "source_counts": {
+      "run": 5,
+      "paragraph": 1,
+      "list_style": 1
+    },
+    "text_pieces": [
+      {
+        "slide": 1,
+        "part": "ppt/slides/slide1.xml",
+        "kind": "run",
+        "text": "合成案例：本周完成原型搭建",
+        "text_path": "p:sld[1]/p:cSld[1]/p:spTree[1]/p:sp[1]/p:txBody[1]/a:p[1]/a:r[1]/a:t[1]",
+        "font_size_pt": 34.0,
+        "font_source": "run",
+        "size_path": "p:sld[1]/p:cSld[1]/p:spTree[1]/p:sp[1]/p:txBody[1]/a:p[1]/a:r[1]/a:rPr[1]/@sz",
+        "unresolved_reason": null
+      },
+      {
+        "slide": 1,
+        "part": "ppt/slides/slide1.xml",
+        "kind": "run",
+        "text": "原型已完成；接口联调和验收记录待补。",
+        "text_path": "p:sld[1]/p:cSld[1]/p:spTree[1]/p:sp[2]/p:txBody[1]/a:p[1]/a:r[1]/a:t[1]",
+        "font_size_pt": 8.0,
+        "font_source": "paragraph",
+        "size_path": "p:sld[1]/p:cSld[1]/p:spTree[1]/p:sp[2]/p:txBody[1]/a:p[1]/a:pPr[1]/a:defRPr[1]/@sz",
+        "unresolved_reason": null
+      },
+      {
+        "slide": 2,
+        "part": "ppt/slides/slide2.xml",
+        "kind": "run",
+        "text": "合成案例：两项联调仍待确认",
+        "text_path": "p:sld[1]/p:cSld[1]/p:spTree[1]/p:sp[1]/p:txBody[1]/a:p[1]/a:r[1]/a:t[1]",
+        "font_size_pt": 34.0,
+        "font_source": "run",
+        "size_path": "p:sld[1]/p:cSld[1]/p:spTree[1]/p:sp[1]/p:txBody[1]/a:p[1]/a:r[1]/a:rPr[1]/@sz",
+        "unresolved_reason": null
+      },
+      {
+        "slide": 2,
+        "part": "ppt/slides/slide2.xml",
+        "kind": "run",
+        "text": "接口字段与错误处理仍需逐项核对。",
+        "text_path": "p:sld[1]/p:cSld[1]/p:spTree[1]/p:sp[2]/p:txBody[1]/a:p[1]/a:r[1]/a:t[1]",
+        "font_size_pt": 8.0,
+        "font_source": "list_style",
+        "size_path": "p:sld[1]/p:cSld[1]/p:spTree[1]/p:sp[2]/p:txBody[1]/a:lstStyle[1]/a:lvl2pPr[1]/a:defRPr[1]/@sz",
+        "unresolved_reason": null
+      },
+      {
+        "slide": 3,
+        "part": "ppt/slides/slide3.xml",
+        "kind": "run",
+        "text": "合成案例：完成验收再推进交付",
+        "text_path": "p:sld[1]/p:cSld[1]/p:spTree[1]/p:sp[1]/p:txBody[1]/a:p[1]/a:r[1]/a:t[1]",
+        "font_size_pt": 34.0,
+        "font_source": "run",
+        "size_path": "p:sld[1]/p:cSld[1]/p:spTree[1]/p:sp[1]/p:txBody[1]/a:p[1]/a:r[1]/a:rPr[1]/@sz",
+        "unresolved_reason": null
+      },
+      {
+        "slide": 3,
+        "part": "ppt/slides/slide3.xml",
+        "kind": "run",
+        "text": "核对任务、产物与结果，保留原始输入。",
+        "text_path": "p:sld[1]/p:cSld[1]/p:spTree[1]/p:sp[2]/p:txBody[1]/a:p[1]/a:r[1]/a:t[1]",
+        "font_size_pt": 24.0,
+        "font_source": "run",
+        "size_path": "p:sld[1]/p:cSld[1]/p:spTree[1]/p:sp[2]/p:txBody[1]/a:p[1]/a:r[1]/a:rPr[1]/@sz",
+        "unresolved_reason": null
+      },
+      {
+        "slide": 4,
+        "part": "ppt/slides/slide4.xml",
+        "kind": "run",
+        "text": "合成案例：未知样式仍需人工查看",
+        "text_path": "p:sld[1]/p:cSld[1]/p:spTree[1]/p:sp[1]/p:txBody[1]/a:p[1]/a:r[1]/a:t[1]",
+        "font_size_pt": 34.0,
+        "font_source": "run",
+        "size_path": "p:sld[1]/p:cSld[1]/p:spTree[1]/p:sp[1]/p:txBody[1]/a:p[1]/a:r[1]/a:rPr[1]/@sz",
+        "unresolved_reason": null
+      },
+      {
+        "slide": 4,
+        "part": "ppt/slides/slide4.xml",
+        "kind": "run",
+        "text": "这段文字使用继承样式；脚本不能确认最终字号。",
+        "text_path": "p:sld[1]/p:cSld[1]/p:spTree[1]/p:sp[2]/p:txBody[1]/a:p[1]/a:r[1]/a:t[1]",
+        "font_size_pt": null,
+        "font_source": null,
+        "size_path": null,
+        "unresolved_reason": "not_set_in_supported_slide_layers"
+      }
+    ]
+  },
+  "fonts": {
+    "PingFang SC": 192
+  },
+  "colors": {
+    "FFFFFF": 4,
+    "12304A": 48,
+    "254A66": 48
+  },
+  "limitations": [
+    "仅检查幻灯片 XML 中 a:r 与 a:fld 的非空文字；按 rPr、同段落 pPr/defRPr、同文本体 lstStyle 对应 lvlNpPr/defRPr 取字号。",
+    "不解析母版、版式和主题的继承字号；未确定不等于字号合格。",
+    "不计算实际渲染字号、字体替换、图表/图片内文字、重叠或裁切；自动缩小另列提示，仍需在演示软件中逐页复核。"
+  ]
+}

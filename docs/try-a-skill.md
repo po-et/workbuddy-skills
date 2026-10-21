@@ -12,8 +12,15 @@
 | 录屏太长，想用少量画面复盘 | [视频抽帧](https://skillhub.cn/skills/@indiv-captain/video-frame-extract)：`skillhub install video-frame-extract --namespace indiv-captain --dir "$HOME/.workbuddy/skills"` | 截图、时间点对照表、联系表；原视频保持不变 |
 | 多个 Excel 明细列顺序不同 | [Excel 处理](https://skillhub.cn/skills/@indiv-captain/excel-processing)：`skillhub install excel-processing --namespace indiv-captain --dir "$HOME/.workbuddy/skills"` | 按表头对齐的合并表、来源行、运行摘要；原件只读、结果防覆盖 |
 | 买车报价说不清费用范围 | [买车](https://skillhub.cn/skills/@indiv-captain/car-buying-checklist)：`skillhub install car-buying-checklist --namespace indiv-captain --dir "$HOME/.workbuddy/skills"` | [两份报价核对案例](../examples/car-quotes/)：Markdown/CSV/JSON，费用缺项保留待补，同本金再列费用差额 |
+| 已有 PPT 字太小、交付前需检查 | [PPT 制作](https://skillhub.cn/skills/@indiv-captain/pptx-making)：`skillhub install pptx-making --namespace indiv-captain --dir "$HOME/.workbuddy/skills"` | [四页字号对照](../examples/pptx-fonts/)：段落/列表字号、JSON 定位、未确定覆盖项；不代替实际渲染复核 |
 
 ## 可以直接复制的任务
+
+**PPT 交付前检查**
+
+> 使用本仓库的 PPT 制作 v0.1.2，先读 SKILL.md。实际检查 examples/pptx-fonts/inputs/before.pptx 与 after.pptx，用自带 pptx_check.py 和默认 18 磅底线，各保留人读与 JSON 输出到一个全新目录。列出真实退出码、字号来源、原件 SHA256、已确定和未确定数量，另写逐页复核说明。未知字号保持待确认，退出0不能写成整份合格；不修改原件、技能源码、记忆或配置，不安装依赖、不联网。缺文件或运行失败就报告实际缺口。
+
+[完整案例和独立复跑](../examples/pptx-fonts/)保留两份合成 PPT、四份脚本 stdout 及校订说明。平台安装版本以实际返回为准，源码可直接复跑；样本需打开本仓库取得。
 
 **接口迁移验收**
 
