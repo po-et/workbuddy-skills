@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-21T13:45:55.330624+00:00",
+  "release": "https://github.com/po-et/workbuddy-skills/releases/tag/task-kits-v0.1.0",
+  "published_at": "2026-10-21T13:44:12Z",
+  "source_commit": "566df0cda0de674bcb2502628f1061afe8a18a06",
+  "tag_commit": "566df0cda0de674bcb2502628f1061afe8a18a06",
+  "release_is_draft": false,
+  "runtime": {
+    "os": "Darwin",
+    "release": "25.6.0",
+    "python": "3.12.12"
+  },
+  "anonymous_downloads_verified": true,
+  "assets": [
+    {
+      "file": "api-diff-test-task-kit-0.1.0.zip",
+      "url": "https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.0/api-diff-test-task-kit-0.1.0.zip",
+      "bytes": 25576,
+      "sha256": "99f7785faba20a3c4523dedc5ce09b2ca537798551a3fad3b61af6c46c65b4b8",
+      "matches_local": true,
+      "anonymous": true,
+      "cache_reused": false,
+      "download_http_status": 200,
+      "packaged_file_count": 14,
+      "inner_hashes_match": true,
+      "skill_version": "0.1.1",
+      "source": {
+        "builder_sha256": "4216db0a6b8b69359ba05e7abab3dee2f5e497e974590c38f68f4275c2af61af",
+        "commit": "566df0cda0de674bcb2502628f1061afe8a18a06",
+        "included_files_clean": true,
+        "repository": "https://github.com/po-et/workbuddy-skills",
+        "skill_path": "skills/api-diff",
+        "snapshot": "commit"
+      }
+    },
+    {
+      "file": "car-buying-checklist-task-kit-0.1.0.zip",
+      "url": "https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.0/car-buying-checklist-task-kit-0.1.0.zip",
+      "bytes": 46452,
+      "sha256": "063190eb12e127feab59bba5ffabca3425fa806a944583b428f599da11cf80eb",
+      "matches_local": true,
+      "anonymous": true,
+      "cache_reused": false,
+      "download_http_status": 200,
+      "packaged_file_count": 19,
+      "inner_hashes_match": true,
+      "skill_version": "0.1.2",
+      "source": {
+        "builder_sha256": "4216db0a6b8b69359ba05e7abab3dee2f5e497e974590c38f68f4275c2af61af",
+        "commit": "566df0cda0de674bcb2502628f1061afe8a18a06",
+        "included_files_clean": true,
+        "repository": "https://github.com/po-et/workbuddy-skills",
+        "skill_path": "skills/car-buying-checklist",
+        "snapshot": "commit"
+      }
+    },
+    {
+      "file": "pptx-making-task-kit-0.1.0.zip",
+      "url": "https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.0/pptx-making-task-kit-0.1.0.zip",
+      "bytes": 71803,
+      "sha256": "436f0f8b5741bca91fa79c9c190c004294132cccadaf0759513563dba4b7dbff",
+      "matches_local": true,
+      "anonymous": true,
+      "cache_reused": false,
+      "download_http_status": 200,
+      "packaged_file_count": 15,
+      "inner_hashes_match": true,
+      "skill_version": "0.1.2",
+      "source": {
+        "builder_sha256": "4216db0a6b8b69359ba05e7abab3dee2f5e497e974590c38f68f4275c2af61af",
+        "commit": "566df0cda0de674bcb2502628f1061afe8a18a06",
+        "included_files_clean": true,
+        "repository": "https://github.com/po-et/workbuddy-skills",
+        "skill_path": "skills/pptx-making",
+        "snapshot": "commit"
+      }
+    },
+    {
+      "file": "SHA256SUMS.txt",
+      "url": "https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.0/SHA256SUMS.txt",
+      "bytes": 390,
+      "sha256": "e7a377852129ec81369b8583033309d30af51c2c629320dbf92abd9d5628e96b",
+      "matches_local": true,
+      "anonymous": true,
+      "cache_reused": false,
+      "download_http_status": 200
+    },
+    {
+      "file": "release-manifest.json",
+      "url": "https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.0/release-manifest.json",
+      "bytes": 1500,
+      "sha256": "e565004e5903ab4443e2fc54ace5d4c8f25f027da1364ca1c476f883a65b995f",
+      "matches_local": true,
+      "anonymous": true,
+      "cache_reused": false,
+      "download_http_status": 200
+    }
+  ],
+  "tests": {
+    "command": "python3 -B -m unittest discover -s tests -p test_task_kits.py -v",
+    "passed": 13,
+    "failed": 0,
+    "skipped": 0,
+    "loopback_test_executed": true
+  },
+  "independent_maintainer_ai_review": {
+    "scope": "Packaging source selection and exact source-byte provenance",
+    "checks_passed": 7,
+    "remaining_findings_in_scope": 0
+  },
+  "maintainer_ai_first_use": {
+    "api-diff-test": {
+      "checks": {
+        "demo_verified": true,
+        "source_recorded_clean": true,
+        "source_commit_matches": true,
+        "all_manifest_hashes_match": true,
+        "runtime_unchanged": true,
+        "no_unlisted_files": true,
+        "post_run_packaged_files_unchanged": true,
+        "unlisted_files": [],
+        "changed_files_after_run": [],
+        "four_expected_paths": true,
+        "real_exit_codes": [
+          1,
+          0
+        ],
+        "repaired_same": true,
+        "four_local_get_requests": true
+      },
+      "manifest_file_count": 13
+    },
+    "car-buying-checklist": {
+      "checks": {
+        "demo_verified": true,
+        "source_recorded_clean": true,
+        "source_commit_matches": true,
+        "all_manifest_hashes_match": true,
+        "runtime_unchanged": true,
+        "no_unlisted_files": true,
+        "post_run_packaged_files_unchanged": true,
+        "unlisted_files": [],
+        "changed_files_after_run": [],
+        "real_exit_codes": [
+          0,
+          0
+        ],
+        "missing_fee_null": true,
+        "missing_fee_incomplete": true,
+        "complete_delta_1500": true
+      },
+      "manifest_file_count": 18
+    },
+    "pptx-making": {
+      "checks": {
+        "demo_verified": true,
+        "source_recorded_clean": true,
+        "source_commit_matches": true,
+        "all_manifest_hashes_match": true,
+        "runtime_unchanged": true,
+        "no_unlisted_files": true,
+        "post_run_packaged_files_unchanged": true,
+        "unlisted_files": [],
+        "changed_files_after_run": [],
+        "real_exit_codes": [
+          3,
+          3,
+          0,
+          0
+        ],
+        "slide_counts": [
+          4,
+          4
+        ],
+        "small_counts": [
+          2,
+          0
+        ],
+        "unknown_counts": [
+          1,
+          1
+        ]
+      },
+      "manifest_file_count": 14
+    }
+  },
+  "own_input_checks": {
+    "car": {
+      "recorded_totals": [
+        "106",
+        "107"
+      ],
+      "difference": "1",
+      "invalid_input_exit_code": 1
+    },
+    "ppt": {
+      "small_count": 1,
+      "unresolved_count": 1,
+      "issues_exit_code": 3,
+      "invalid_input_exit_code": 2
+    },
+    "note": "Performed using previous review ZIP; final runner, original skills and instructions were byte-identical, with all three final demos independently rerun."
+  },
+  "preservation": {
+    "original_skill_files": 22,
+    "unchanged": true,
+    "preexisting_untracked_file_preserved": true,
+    "existing_empty_and_populated_output_directories_rejected": true
+  },
+  "adoption": {
+    "independent_users_confirmed": null,
+    "independent_task_completion_confirmed": null,
+    "independent_reuse_confirmed": null,
+    "maintainer_zip_acceptance_downloads": 3,
+    "note": "Maintainer/AI tests and acceptance downloads are not independent user adoption. No telemetry."
+  }
+}

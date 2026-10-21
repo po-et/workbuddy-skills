@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Captain 的可核验 AI 工作流：PPT 字号检查、两份报价核对、接口差分、Excel 到一页报告、录屏抽帧。复制安装与任务，对照公开合成案例检查交付。">
+  <meta name="description" content="下载可独立运行的 Skills 任务包：PPT 字号检查、两份报价核对、接口差分。自带脚本、合成样例和统一入口，支持自己的输入。">
   <meta name="theme-color" content="#EEF5FB">
   <title>Captain｜WorkBuddy 与 SkillHub 可核验工作流</title>
   <meta property="og:title" content="Captain｜可核验的 AI 工作流">
-  <meta property="og:description" content="从 PPT 检查、报价核对、接口差分、Excel报表与录屏复盘开始，查看输入、产物与验收，复制任务直接试用。">
+  <meta property="og:description" content="三个独立任务包，下载解压即可运行样例，再换成自己的输入。适用于本地 Python、WorkBuddy 或支持文件与命令的 AI 助手。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://po-et.github.io/workbuddy-skills/showcase/">
   <meta property="og:image" content="https://po-et.github.io/workbuddy-skills/assets/2026-10-12-client-case/02-four-business-differences.jpg">
@@ -21,6 +21,7 @@
     @media(max-width:780px){.wrap{width:calc(100% - 36px)}.header-inner{min-height:74px;gap:12px}.header-links{gap:14px;font-size:12px}.header-links a:first-child{display:none}.brand strong{font-size:20px}.hero{padding:38px 0 32px;grid-template-columns:1fr;gap:30px}.hero h1{font-size:43px}.hero-copy p{margin-top:18px;font-size:16px;max-width:42em}.hero-copy .byline{margin-top:14px}.comparison{max-width:620px}.bench-heading{padding:22px;align-items:start;flex-direction:column;gap:8px}.bench-heading h2{font-size:24px}.bench-layout{grid-template-columns:1fr}.task-rail{padding:12px;border-right:0;border-bottom:1px solid var(--line)}.task-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.task-tab{padding:13px 10px}.task-tab strong{font-size:13px}.task-tab span{font-size:11px;line-height:1.6}.task-tab[aria-selected="true"]:before{top:12px;bottom:12px}.rail-note{display:none}.task-panel{padding:24px 22px}.panel-heading h3{font-size:23px}.version{font-size:11px}.delivery-flow div{padding:13px 12px}.delivery-flow dd{font-size:13px}.evidence{grid-template-columns:1fr;gap:26px;padding:34px 4px}.evidence h2{font-size:23px}.evidence-row{grid-template-columns:116px 1fr}.feedback{padding:23px;align-items:start;flex-direction:column;gap:18px;margin-bottom:30px}.feedback h2{font-size:21px}.footer-inner{flex-direction:column;gap:12px}.footer-inner nav{gap:18px}.command-box,.task-box{padding:14px}.hero-actions .button{font-size:14px}.comparison td code{font-size:11px}}
     @media(max-width:420px){.wrap{width:calc(100% - 28px)}.brand span:last-child{font-size:11px}.brand-mark{width:30px;height:30px;font-size:20px}.header-links{gap:12px}.hero h1{font-size:36px}.comparison-top{padding:15px}.comparison-top h2{font-size:15px}.comparison-top span{font-size:11px}.comparison th:first-child,.comparison td:first-child{padding-left:12px}.comparison th:last-child,.comparison td:last-child{padding-right:12px}.comparison td,.comparison th{padding:11px 7px;font-size:11px}.comparison td code{font-size:10px}.comparison-meta,.comparison-bottom{padding-left:14px;padding-right:14px}.task-panel{padding:22px 16px}.task-tabs{grid-template-columns:1fr}.task-tab{padding:11px 14px}.task-tab strong{font-size:14px}.task-tab span{margin-top:3px}.task-tab[aria-selected="true"]:before{top:10px;bottom:10px}.delivery-flow{grid-template-columns:1fr}.delivery-flow div{display:grid;grid-template-columns:56px 1fr;gap:12px;border-right:0;border-bottom:1px solid var(--line)}.delivery-flow div:last-child{border-bottom:0}.delivery-flow dt{margin:0}.panel-heading{flex-direction:column;gap:8px}.block-heading{align-items:start}.copy-button{font-size:12px;padding:6px 10px}.evidence-row{grid-template-columns:100px 1fr;gap:12px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+    .kit-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:24px;padding:20px 0;border-bottom:1px solid var(--line)}.kit-row:first-child{padding-top:0}.kit-row p{margin-top:8px;font-size:14px;color:var(--muted)}.kit-row .button{white-space:nowrap}@media(max-width:780px){.kit-row{grid-template-columns:1fr;gap:14px}.kit-row .button{justify-self:start}}
   </style>
 </head>
 <body>
@@ -42,13 +43,13 @@
   <main id="main" class="wrap">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <h1 id="hero-title">把 AI 的结果，<br>放到证据旁。</h1>
-        <p>报价还缺哪些费用、接口哪里变了、报表数字从哪来。先完成一个具体任务，再用输入、结果和核对记录验收。</p>
+        <h1 id="hero-title">下载一个工具，<br>先完成一次任务。</h1>
+        <p>查 PPT 小字、核对两份报价、找接口字段变化。任务包包含 Skills、脚本和样例，解压后用本地 Python，或支持本地文件与命令的 AI 助手运行。</p>
         <div class="hero-actions">
-          <a class="button" href="#workbench">选一个任务</a>
-          <a class="button secondary" href="#evidence">查看已验证的范围</a>
+          <a class="button" href="#downloads">下载任务包</a>
+          <a class="button secondary" href="#workbench">查看更多工作流</a>
         </div>
-        <p class="byline">个人作者维护。公开样本可复跑，真实任务由你核对。</p>
+        <p class="byline">需要 Python 3.9+，无需 SkillHub 账号。个人作者维护，自带样例均为合成数据。</p>
       </div>
       <div class="comparison" aria-label="公开合成订单接口的差异与修正对照">
         <div class="comparison-top"><h2>一条订单接口，三份响应</h2><span>公开合成案例</span></div>
@@ -63,6 +64,18 @@
           </tbody>
         </table>
         <div class="comparison-bottom"><span class="verdict fail">发现 4 处差异 · 退出码 1</span><span class="verdict pass">修正后一致 · 退出码 0</span></div>
+      </div>
+    </section>
+    <section class="workbench" id="downloads" aria-labelledby="downloads-title" style="margin-bottom:32px">
+      <div class="bench-heading"><h2 id="downloads-title">先拿走一个能用的任务包</h2><p>三个包独立下载，带完整技能、脚本、样例和许可证。</p></div>
+      <div style="padding:24px 32px">
+        <div class="kit-row"><div><h3>PPT 字号检查</h3><p>输入自己的 PPTX，生成问题与字号来源报告；查不到的字号保留待确认。技能 v0.1.2。</p></div><a class="button" id="download-kit-ppt" href="https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.0/pptx-making-task-kit-0.1.0.zip">下载 PPT 任务包</a></div>
+        <div class="kit-row"><div><h3>两份报价核对</h3><p>按输入说明录入两份报价，交付 Markdown、CSV 和 JSON；缺失费用不填零。技能 v0.1.2。</p></div><a class="button" id="download-kit-car" href="https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.0/car-buying-checklist-task-kit-0.1.0.zip">下载报价任务包</a></div>
+        <div class="kit-row"><div><h3>接口迁移差分</h3><p>先用包内两个本机服务验证差异，再用原工具比较你已授权的接口。技能 v0.1.1。</p></div><a class="button" id="download-kit-api" href="https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.0/api-diff-test-task-kit-0.1.0.zip">下载接口任务包</a></div>
+        <div class="action-block"><div class="block-heading"><h4>解压后，在任务包目录运行</h4><button class="copy-button" type="button" data-copy="kit-demo-command" data-copy-label="任务包启动命令">复制启动命令</button></div><div class="command-box"><pre id="kit-demo-command"><code>python3 start.py --demo --out-dir result</code></pre></div><p class="block-note">result 必须是全新目录。报价 / PPT 可改用 --input 处理自己的文件，详见包内 START-HERE.md。无需 pip、克隆仓库或安装 SkillHub；接口样例只访问本机回环 HTTP，报价与 PPT 样例不发网络请求。</p></div>
+        <div class="action-block"><div class="block-heading"><h4>也可以交给你的 AI 助手</h4><button class="copy-button" type="button" data-copy="kit-agent-task" data-copy-label="任务包任务">复制任务</button></div><div class="task-box"><p id="kit-agent-task">在我打开的任务包目录中，先阅读 START-HERE.md 与 skill/SKILL.md，实际运行 start.py 的 --demo 模式，把 --out-dir 指向一个全新目录。核对 verification.json 与实际报告，说明任务是否完成、有没有未确定项。保留输入与源码，不安装依赖，不外发数据；不能运行就报告实际错误。随后告诉我如何替换成自己的输入，不把合成演示当成我的业务结果。</p></div></div>
+        <div class="case-links"><a href="https://github.com/po-et/workbuddy-skills/blob/main/docs/task-kits.md">完整用法与输入格式</a><a href="https://github.com/po-et/workbuddy-skills/releases/tag/task-kits-v0.1.0">版本、校验和与源码</a><a href="https://github.com/po-et/workbuddy-skills/issues/new?template=task-kit-feedback.md">反馈完成情况或卡点</a></div>
+        <p class="source-note" style="margin-top:16px">任务包 v0.1.0 复用上述技能版本，尚未确认独立用户复用。欢迎自愿反馈任务是否完成、哪里卡住、是否实际再次使用；程序不自动上报这些信息。</p>
       </div>
     </section>
     <section class="workbench" id="workbench" aria-labelledby="bench-title">

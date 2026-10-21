@@ -2,6 +2,28 @@
 
 **Captain · 可核验的 AI 工作流**：给 WorkBuddy 一项具体任务，交付能追溯输入、检查结果、重复运行的文件。由个人作者维护，面向腾讯 WorkBuddy / SkillHub；开源代码与示例不代表腾讯官方认证或真实客户案例。
 
+## 先下载一个能用的任务包
+
+不用先装 SkillHub，也不用克隆整个仓库。每个 ZIP 都含原技能、可运行脚本、合成样例、统一入口和许可证；已有 Python 3.9+ 即可开始，也可由支持本地文件和命令的 AI 助手执行。
+
+| 你手上的任务 | 下载 | 交付 |
+|---|---|---|
+| 交付前检查 PPT 小字 | [PPT 任务包](https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.0/pptx-making-task-kit-0.1.0.zip) | 人读 / JSON 报告，字号来源与未知项 |
+| 核对两份购车报价 | [报价任务包](https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.0/car-buying-checklist-task-kit-0.1.0.zip) | Markdown / CSV / JSON，缺项保持待补 |
+| 比较接口行为变化 | [接口任务包](https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.0/api-diff-test-task-kit-0.1.0.zip) | 字段差异、失败与修正后的复验报告 |
+
+解压后在包目录运行，`result` 使用新名字：
+
+```bash
+python3 start.py --demo --out-dir result
+```
+
+报价 / PPT 可用 `--input` 换成自己的文件；接口工具保留原有 CLI。查看[完整用法](docs/task-kits.md)和[版本 / SHA256](https://github.com/po-et/workbuddy-skills/releases/tag/task-kits-v0.1.0)。这是任务包 0.1.0，内含技能版本分别为 API 0.1.1、报价与 PPT 0.1.2。
+
+愿意反馈时，只需记录[任务是否完成、哪里卡住、是否实际再次使用](https://github.com/po-et/workbuddy-skills/issues/new?template=task-kit-feedback.md)。我们把完成和复用分别记录，不把下载计数当成用户数。[资产推进方向](docs/asset-plan.md)说明后续优先级。
+
+## 更多技能与实测
+
 [打开成果页](https://po-et.github.io/workbuddy-skills/showcase/)：选任务、复制安装与提示词、查看样本和验收。维护者已在真实 WorkBuddy 客户端完成[接口差分](docs/articles/09-WorkBuddy实测-接口差分验收.md)、[两份报价核对](docs/articles/10-WorkBuddy实测-两份报价核对.md)和 [PPT 字号检查](docs/articles/11-WorkBuddy实测-PPT字号与检查覆盖.md)，原始脚本产物可独立复跑。[最新发布记录](docs/releases/2026-10-21.md)保留测试、上线和验包证据。
 
 2026-10-13 新增[工程技能上手链路](docs/engineering-starter.md)：接手仓库、比较 Agent 评测、换会话交接。三个已有技能补齐离线脚本和 Markdown/JSON 产物，保留原有安装链接。

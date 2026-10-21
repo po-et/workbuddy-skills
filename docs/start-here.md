@@ -4,6 +4,12 @@
 
 [打开成果页](https://po-et.github.io/workbuddy-skills/showcase/)选择任务，查看样本并复制安装/任务说明。
 
+## 第一次使用：下载任务包
+
+先选[一个独立任务包](task-kits.md)：PPT 字号、两份报价或接口差分。解压后读取 START-HERE.md，在该目录运行 `python3 start.py --demo --out-dir result`，输出目录必须是新名字。只需已有 Python 3.9+；不需克隆本仓库、安装 SkillHub 或 pip 依赖。API 样例使用本机 HTTP，报价与 PPT 样例不发网络请求。
+
+跑通样例后，报价 / PPT 可以用 `--input` 处理自己的文件。需要在 Agent 中复用时，打开任务包目录并显式读取 `skill/SKILL.md`；也可按下方步骤从 SkillHub 安装维护中的技能。
+
 ## 1. 安装到正确位置
 
 已有 SkillHub CLI 时，安装命令同时指定作者和 WorkBuddy 技能目录：
