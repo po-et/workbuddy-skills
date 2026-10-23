@@ -3,8 +3,23 @@ import { SAMPLES, getSample } from './samples.js';
 
 const $ = (id) => document.getElementById(id);
 const DRAFT_KEY = 'quote-lens-draft-v1';
-const state = { a: null, b: null, comparison: null, sample: null, ready: false };
+const SIDES = ['a', 'b'];
+const FIELD_GROUPS = [['fields', FEE_KEYS, 'fee'], ['conditions', CONDITION_KEYS, 'condition']];
+
+// state.a / state.b：各侧报价（quote）对象，可能为 null（尚未提取/已清空）。
+// state.current.a / b：该侧 quote 是否与当前原文一致；原文一变即 false。
+// state.ready（计算属性）：两侧都有 quote 且均为当前内容，才允许比较与导出。
+const state = {
+  a: null,
+  b: null,
+  comparison: null,
+  sample: null,
+  current: { a: false, b: false },
+  get ready() { return Boolean(this.a) && Boolean(this.b) && this.current.a && this.current.b; },
+};
 let feedbackTimer;
+// select 当前应显示的样例 id；用户取消载入时用它把下拉框拨回原值。
+let selectAnchor = '';
 
 function el(tag, className, text) {
   const node = document.createElement(tag);
@@ -30,7 +45,7 @@ function ensureInput(field, kind) {
 }
 
 function clearEvidence() {
-  for (const side of ['a', 'b']) {
+  for (const side of SIDES) {
     const box = $(`evidence-${side}`);
     box.classList.remove('active');
     box.replaceChildren(el('span', 'evidence-label', '原文定位'), el('p', '', '点击下方金额，即可回到对应原文。'));
@@ -75,6 +90,10 @@ function buildEntry(side, key, kind) {
   confirm.type = 'button';
   const edit = el('button', 'text-button', '修改');
   edit.type = 'button';
+  const restore = el('button', 'text-button', '恢复原文');
+  restore.type = 'button';
+  restore.setAttribute('aria-label', `按当前原文恢复报价 ${side.toUpperCase()} 的${field.label}候选，不改动其他项`);
+  restore.addEventListener('click', () => restoreFieldFromRaw(side, key, kind));
   const note = el('p', 'entry-note');
   const editBox = el('div', 'edit-box');
   editBox.hidden = true;
@@ -105,7 +124,7 @@ function buildEntry(side, key, kind) {
   input.setAttribute('aria-describedby', error.id);
   const hint = el('p', 'edit-hint', '手工修改单独标记来源；不会沿用原文作为金额证据。');
   editBox.append(inputLabel, input, sourceWrap, error, hint);
-  tools.append(status, confirm, edit);
+  tools.append(status, confirm, edit, restore);
   cell.append(sideLabel, amount, tools, note, editBox);
 
   function refresh() {
@@ -121,6 +140,7 @@ function buildEntry(side, key, kind) {
     confirm.setAttribute('aria-label', `${confirmed ? '撤回确认' : '确认'}报价 ${side.toUpperCase()} 的${field.label}`);
     confirm.disabled = !canConfirm(field, kind);
     sourceWrap.hidden = field.source !== 'manual';
+    restore.hidden = field.source !== 'manual';
     note.textContent = field.source === 'manual' ? (field._manualSource ? `补充来源：${field._manualSource}` : '填写补充来源后才能确认。') : field.note;
     note.classList.toggle('warning', !valid);
     if (field._error) error.textContent = field._error;
@@ -171,6 +191,35 @@ function buildEntry(side, key, kind) {
   return cell;
 }
 
+// 单项「恢复原文」：只把该字段替换为按“当前原文”重新抽取的候选（未确认），
+// 其余字段、确认状态与人工补充一律不动。
+function restoreFieldFromRaw(side, key, kind) {
+  if (!state[side]) return;
+  const fresh = extractQuote($(`raw-${side}`).value);
+  const group = kind === 'fee' ? 'fields' : 'conditions';
+  const field = state[side][group][key];
+  const src = fresh[group][key];
+  for (const prop of Object.keys(field)) if (prop.startsWith('_')) delete field[prop];
+  for (const prop of Object.keys(src)) field[prop] = src[prop];
+  renderRows();
+  renderResult();
+  notify(`已按当前原文恢复「${field.label}」候选（其余项未动）；请确认后采用。`);
+}
+
+function staleEntry(side) {
+  const cell = el('div', 'entry unknown');
+  cell.append(
+    el('span', 'entry-side', `报价 ${side.toUpperCase()}`),
+    el('p', 'entry-note warning', '原文已变化或尚未提取。本侧人工补充草稿已保留；点「提取并核对」刷新本侧，另一侧不受影响。'),
+  );
+  return cell;
+}
+
+function entryFor(side, key, kind) {
+  if (state[side] && state.current[side]) return buildEntry(side, key, kind);
+  return staleEntry(side);
+}
+
 function buildRows(keys, labels, kind, target) {
   const fragment = document.createDocumentFragment();
   for (const key of keys) {
@@ -179,15 +228,15 @@ function buildRows(keys, labels, kind, target) {
     const label = el('div', 'row-label');
     label.append(el('span', '', labels[key]));
     if (kind === 'fee') label.append(el('span', 'zero-note', key === 'tax' ? '按报价录入，不推算政策' : key === 'service' ? '未报价 ≠ 0 元' : ''));
-    row.append(label, buildEntry('a', key, kind), buildEntry('b', key, kind));
+    row.append(label, entryFor('a', key, kind), entryFor('b', key, kind));
     fragment.append(row);
   }
   $(target).replaceChildren(fragment);
 }
 
 function renderRows() {
-  if (!state.ready) {
-    $('condition-rows').replaceChildren(el('p', 'empty-review', '原文已变化。请点击「提取并核对」，重新核对全部条件。'));
+  if (!state.a && !state.b) {
+    $('condition-rows').replaceChildren(el('p', 'empty-review', '原文已变化或尚未提取。请点击「提取并核对」，重新核对全部条件。'));
     $('fee-rows').replaceChildren(el('p', 'empty-review', '旧确认已失效，不再沿用旧金额。'));
     $('supplement-box').hidden = true;
     return;
@@ -217,13 +266,19 @@ function renderResult() {
     state.comparison = null;
     $('result-badge').className = 'status-badge pending';
     $('result-badge').textContent = '待重新提取';
-    $('result-verdict').textContent = '原文已更新，请重新核对。';
-    $('result-explanation').textContent = '旧确认和旧比较结论已失效。点击「提取并核对」取得新的候选值。';
+    const issues = [];
+    for (const side of SIDES) {
+      const label = side.toUpperCase();
+      if (!state[side]) issues.push(`报价 ${label} 尚未提取`);
+      else if (!state.current[side]) issues.push(`报价 ${label} 原文已变化`);
+    }
+    $('result-verdict').textContent = issues.length ? `${issues.join('；')}，暂不比较。` : '原文已更新，请重新核对。';
+    $('result-explanation').textContent = '修改原文只失效本侧确认（人工补充转为待确认草稿保留），另一侧的确认与人工补充不动。两侧都提取为当前内容后，才输出比较结论。';
     $('totals').replaceChildren();
     $('blockers').replaceChildren();
     $('blockers-details').hidden = true;
     $('diff-section').hidden = true;
-    $('questions').replaceChildren(el('li', '', '请先提取当前两份原文，再生成追问清单。'));
+    $('questions').replaceChildren(el('li', '', '请先把两侧原文都提取为当前内容，再生成追问清单。'));
     return;
   }
   const cmp = compareQuotes(state.a, state.b);
@@ -269,39 +324,106 @@ function renderResult() {
   $('questions').replaceChildren(...questions.map((text) => el('li', '', text)));
 }
 
-function extractCurrent(message = true) {
-  state.a = extractQuote($('raw-a').value);
-  state.b = extractQuote($('raw-b').value);
-  state.ready = true;
-  for (const side of ['a', 'b']) {
+// 提取单侧：preserveManual=true 时保留该侧人工补充（降级为待确认草稿），
+// 其余字段全部以当前原文的抽取结果为准；false 则整侧全新（载入样例/恢复草稿用）。
+function extractSide(side, preserveManual) {
+  const fresh = extractQuote($(`raw-${side}`).value);
+  const prev = state[side];
+  if (prev && preserveManual) {
+    for (const [group, keys, kind] of FIELD_GROUPS) {
+      for (const key of keys) {
+        const old = prev[group][key];
+        if (old.source === 'manual') {
+          fresh[group][key] = old;
+          old.status = isValid(old, kind) ? 'unconfirmed' : 'unknown';
+        }
+      }
+    }
+  }
+  state[side] = fresh;
+  state.current[side] = true;
+}
+
+// 提取并核对：默认只刷新“非当前”的一侧（另一侧的确认与人工补充原样保留）；
+// force=true 用于样例载入/草稿恢复等程序化替换原文的场景（不触发 input 事件，必须强制重提取）。
+function extractCurrent(opts = {}) {
+  const message = opts.message !== false;
+  const preserveManual = opts.preserveManual !== false;
+  const force = opts.force === true;
+  const touched = [];
+  for (const side of SIDES) {
+    if (force || !state[side] || !state.current[side]) {
+      extractSide(side, preserveManual);
+      touched.push(side);
+    }
+  }
+  for (const side of touched) {
     $(`source-${side}-state`).textContent = '候选已提取，尚需确认';
     $(`source-${side}-state`).classList.remove('dirty');
+  }
+  if (!touched.length) {
+    if (message) notify('两侧均已是当前原文的提取结果，未做改动；确认状态保持不变。');
+    return;
   }
   $('input-hint').textContent = '候选已重新提取。请按原文逐项确认；未报价保留为未知。';
   clearEvidence();
   renderRows();
   renderResult();
-  if (message) notify('已提取当前原文，全部确认状态重新开始。');
+  if (message) notify(preserveManual ? `已提取${touched.map((s) => `报价 ${s.toUpperCase()}`).join('、')}的当前原文；人工补充保留为待确认草稿，其余确认已重置。` : '已提取当前原文，全部确认状态重新开始。');
 }
 
 function loadSample(id, message = true) {
   const sample = getSample(id);
   if (!sample) return;
   state.sample = sample;
+  selectAnchor = sample.id;
   $('sample-select').value = sample.id;
   $('sample-label').textContent = `公开合成案例，非真实车价或税费政策。${sample.preset}`;
   $('raw-a').value = sample.textA;
   $('raw-b').value = sample.textB;
   $('include-original').checked = false;
   $('copy-fallback').hidden = true;
-  extractCurrent(false);
+  extractCurrent({ message: false, preserveManual: false, force: true });
   if (message) notify('已载入合成案例。请逐项核对，所有值仍需确认。');
 }
 
+// 是否存在“自有/已修改”的输入：样例被改动、非样例且有内容，或存在人工补充/手工修改。
+// 原文与样例完全一致但字段被手工补充过，同样算数——否则切换样例/演示会静默丢掉补充。
+function hasUnsavedInput() {
+  for (const side of SIDES) {
+    const quote = state[side];
+    if (!quote) continue;
+    for (const [group, keys] of [['fields', FEE_KEYS], ['conditions', CONDITION_KEYS]]) {
+      for (const key of keys) if (quote[group][key].source === 'manual') return true;
+    }
+  }
+  if (state.sample && $('raw-a').value === state.sample.textA && $('raw-b').value === state.sample.textB) return false;
+  return $('raw-a').value.trim() !== '' || $('raw-b').value.trim() !== '';
+}
+
+function guardOverwrite(action) {
+  if (!hasUnsavedInput()) return true;
+  return confirm(`${action}会覆盖当前输入与人工补充；未保存到本机草稿的修改将丢失。是否继续？`);
+}
+
+// 所有样例载入入口共用：取消时不改数据，并把下拉框拨回当前锚点。
+function tryLoadSample(id) {
+  if (!guardOverwrite('载入合成案例')) {
+    $('sample-select').value = selectAnchor;
+    return false;
+  }
+  loadSample(id);
+  return true;
+}
+
 function previewSample() {
+  if (!guardOverwrite('载入合成案例演示')) {
+    $('sample-select').value = selectAnchor;
+    return;
+  }
   loadSample($('sample-select').value, false);
-  for (const side of ['a', 'b']) {
-    for (const [group, keys, kind] of [['fields', FEE_KEYS, 'fee'], ['conditions', CONDITION_KEYS, 'condition']]) {
+  for (const side of SIDES) {
+    for (const [group, keys, kind] of FIELD_GROUPS) {
       for (const key of keys) {
         const field = state[side][group][key];
         if (field.source === 'extract' && field.candidates.length === 1 && field.evidence.length && isValid(field, kind)) field.status = 'confirmed';
@@ -309,20 +431,37 @@ function previewSample() {
     }
   }
   $('sample-label').textContent = '合成演示：金额与条件按样例预设，真正缺项仍保留。自己的输入、原文变化及手工修改后需重新确认。';
-  for (const side of ['a', 'b']) $(`source-${side}-state`).textContent = '合成案例 · 预设核对状态';
+  for (const side of SIDES) $(`source-${side}-state`).textContent = '合成案例 · 预设核对状态';
   renderRows();
   renderResult();
   notify('已载入预设核对演示，缺项仍为未知。可以补录合成回复后确认，查看复算。');
 }
 
-function markRawChanged() {
-  state.ready = false;
+// 原文输入事件：只失效被编辑的一侧；另一侧（含确认与人工补充）保持不动。
+function markRawChanged(side) {
+  state.current[side] = false;
+  $(`source-${side}-state`).textContent = '原文已变化，待重新提取';
+  $(`source-${side}-state`).classList.add('dirty');
+  $('input-hint').textContent = `报价 ${side.toUpperCase()} 原文已变化：本侧待重新提取；另一侧的确认与人工补充保留。`;
+  $('sample-label').textContent = state.sample
+    ? '原文已修改，与合成案例不同；修改侧待重新提取，另一侧不动。'
+    : '当前为自有输入；修改侧确认失效，人工补充转为草稿。建议每项费用单独一行，并注明元或万元。';
+  $('include-original').checked = false;
+  clearEvidence();
+  renderRows();
+  renderResult();
+}
+
+// 粘贴自己的报价：两侧清空重来（人工草稿一并丢弃）。
+function resetAll() {
   state.a = null;
   state.b = null;
+  state.current.a = false;
+  state.current.b = false;
   state.sample = null;
   $('include-original').checked = false;
   $('sample-label').textContent = '当前为自有输入；旧确认已失效。建议每项费用单独一行，并注明元或万元。';
-  for (const side of ['a', 'b']) {
+  for (const side of SIDES) {
     $(`source-${side}-state`).textContent = '原文已变化，待重新提取';
     $(`source-${side}-state`).classList.add('dirty');
   }
@@ -332,9 +471,15 @@ function markRawChanged() {
   renderResult();
 }
 
+const SYNTHETIC_SERVICE_SOURCE = '公开合成补充回复：B 报价服务费 1200 元（模拟答复，非真实数据）';
+
 function applySupplement() {
-  if (!state.ready || state.sample?.id !== 'sample-1') return;
+  if (!state.b || !state.current.b || state.sample?.id !== 'sample-1') return;
   const field = state.b.fields.service;
+  // 已存在不同内容的人工补充时，先确认再覆盖（重复点击同一合成补充不重复询问）。
+  const sameSynthetic = field.source === 'manual' && field.value === 120000 && field._manualSource === SYNTHETIC_SERVICE_SOURCE;
+  if (field.source === 'manual' && !sameSynthetic
+    && !confirm('B 服务费当前是人工补充；仍要用合成回复的 1,200 元覆盖吗？')) return;
   field.value = 120000;
   field.source = 'manual';
   field.status = 'unconfirmed';
@@ -342,7 +487,7 @@ function applySupplement() {
   field.candidates = [];
   field.amounts = [];
   field._input = '1200';
-  field._manualSource = '公开合成补充回复：B 报价服务费 1200 元（模拟答复，非真实数据）';
+  field._manualSource = SYNTHETIC_SERVICE_SOURCE;
   field.note = `人工补充来源：${field._manualSource}`;
   field._error = '';
   renderRows();
@@ -389,20 +534,40 @@ async function copyQuestions() {
   }
 }
 
-function draftPayload() {
+// 汇总当前两侧的人工补充（仅 source==='manual' 字段）；草稿保存与恢复比对共用。
+function collectSupplemental() {
   const supplemental = {};
-  if (state.ready) {
-    for (const side of ['a', 'b']) {
-      supplemental[side] = { fields: {}, conditions: {} };
-      for (const [group, keys] of [['fields', FEE_KEYS], ['conditions', CONDITION_KEYS]]) {
-        for (const key of keys) {
-          const field = state[side][group][key];
-          if (field.source === 'manual') supplemental[side][group][key] = { input: field._input ?? '', source: field._manualSource ?? '' };
-        }
+  for (const side of SIDES) {
+    supplemental[side] = { fields: {}, conditions: {} };
+    if (!state[side]) continue;
+    for (const [group, keys] of [['fields', FEE_KEYS], ['conditions', CONDITION_KEYS]]) {
+      for (const key of keys) {
+        const field = state[side][group][key];
+        if (field.source === 'manual') supplemental[side][group][key] = { input: field._input ?? '', source: field._manualSource ?? '' };
       }
     }
   }
-  return { version: 1, savedAt: new Date().toISOString(), rawA: $('raw-a').value, rawB: $('raw-b').value, supplemental };
+  return supplemental;
+}
+
+// 补充集合的稳定签名：按键排序、丢弃非法项后序列化，用于“内容是否有差异”的比对。
+function supplementalSignature(sup) {
+  const out = {};
+  for (const side of SIDES) {
+    out[side] = { fields: {}, conditions: {} };
+    for (const group of ['fields', 'conditions']) {
+      const src = sup?.[side]?.[group] ?? {};
+      for (const key of Object.keys(src).sort()) {
+        const item = src[key];
+        if (item && typeof item.input === 'string') out[side][group][key] = { input: item.input, source: typeof item.source === 'string' ? item.source : '' };
+      }
+    }
+  }
+  return JSON.stringify(out);
+}
+
+function draftPayload() {
+  return { version: 1, savedAt: new Date().toISOString(), rawA: $('raw-a').value, rawB: $('raw-b').value, supplemental: collectSupplemental() };
 }
 
 function saveDraft() {
@@ -415,45 +580,52 @@ function saveDraft() {
 }
 
 function restoreDraft() {
+  let draft;
   try {
     const stored = localStorage.getItem(DRAFT_KEY);
     if (!stored) { notify('这个浏览器还没有保存过草稿。'); return; }
-    const draft = JSON.parse(stored);
+    draft = JSON.parse(stored);
     if (draft.version !== 1 || typeof draft.rawA !== 'string' || typeof draft.rawB !== 'string') throw new Error('Invalid draft');
-    state.sample = null;
-    $('raw-a').value = draft.rawA;
-    $('raw-b').value = draft.rawB;
-    $('sample-label').textContent = '已恢复本机草稿。全部确认状态重新开始，人工补充仍需复核来源。';
-    $('include-original').checked = false;
-    extractCurrent(false);
-    for (const side of ['a', 'b']) {
-      for (const [group, keys] of [['fields', FEE_KEYS], ['conditions', CONDITION_KEYS]]) {
-        for (const key of keys) {
-          const saved = draft.supplemental?.[side]?.[group]?.[key];
-          if (!saved || typeof saved.input !== 'string') continue;
-          const field = state[side][group][key];
-          field._input = saved.input;
-          field._manualSource = typeof saved.source === 'string' ? saved.source : '';
-          field.source = 'manual';
-          field.evidence = [];
-          field.candidates = [];
-          if (group === 'fields') {
-            const parsed = parseMoney(saved.input);
-            field.amounts = [];
-            field.value = parsed.ok ? parsed.cents : null;
-            field._error = saved.input.trim() && !parsed.ok ? parsed.error : '';
-          } else field.value = saved.input.trim() || null;
-          field.status = isValid(field, group === 'fields' ? 'fee' : 'condition') ? 'unconfirmed' : 'unknown';
-          field.note = field._manualSource ? `人工补充来源：${field._manualSource}` : '人工补充，待填写来源';
-        }
-      }
-    }
-    renderRows();
-    renderResult();
-    notify('已恢复原文与补充信息。旧确认未恢复，请重新逐项核对。');
   } catch {
     notify('草稿读取失败或格式不正确。未改写已保存内容。');
+    return;
   }
+  // 原文相同但人工补充不同，同样会覆盖当前补充，必须守卫；取消则当前值原样保留。
+  const rawDiffers = $('raw-a').value !== draft.rawA || $('raw-b').value !== draft.rawB;
+  const supplementalDiffers = supplementalSignature(collectSupplemental()) !== supplementalSignature(draft.supplemental);
+  if (hasUnsavedInput() && (rawDiffers || supplementalDiffers)
+    && !confirm('恢复草稿会覆盖当前的原文或人工补充；未保存的修改将丢失。是否继续？')) return;
+  state.sample = null;
+  $('raw-a').value = draft.rawA;
+  $('raw-b').value = draft.rawB;
+  $('sample-label').textContent = '已恢复本机草稿。全部确认状态重新开始，人工补充仍需复核来源。';
+  $('include-original').checked = false;
+  extractCurrent({ message: false, preserveManual: false, force: true });
+  for (const side of SIDES) {
+    for (const [group, keys] of [['fields', FEE_KEYS], ['conditions', CONDITION_KEYS]]) {
+      for (const key of keys) {
+        const saved = draft.supplemental?.[side]?.[group]?.[key];
+        if (!saved || typeof saved.input !== 'string') continue;
+        const field = state[side][group][key];
+        field._input = saved.input;
+        field._manualSource = typeof saved.source === 'string' ? saved.source : '';
+        field.source = 'manual';
+        field.evidence = [];
+        field.candidates = [];
+        if (group === 'fields') {
+          const parsed = parseMoney(saved.input);
+          field.amounts = [];
+          field.value = parsed.ok ? parsed.cents : null;
+          field._error = saved.input.trim() && !parsed.ok ? parsed.error : '';
+        } else field.value = saved.input.trim() || null;
+        field.status = isValid(field, group === 'fields' ? 'fee' : 'condition') ? 'unconfirmed' : 'unknown';
+        field.note = field._manualSource ? `人工补充来源：${field._manualSource}` : '人工补充，待填写来源';
+      }
+    }
+  }
+  renderRows();
+  renderResult();
+  notify('已恢复原文与补充信息。旧确认未恢复，请重新逐项核对。');
 }
 
 for (const sample of SAMPLES) {
@@ -461,18 +633,18 @@ for (const sample of SAMPLES) {
   option.value = sample.id;
   $('sample-select').append(option);
 }
-$('sample-select').addEventListener('change', () => loadSample($('sample-select').value));
-$('load-sample').addEventListener('click', () => loadSample($('sample-select').value));
+$('sample-select').addEventListener('change', () => tryLoadSample($('sample-select').value));
+$('load-sample').addEventListener('click', () => tryLoadSample($('sample-select').value));
 $('preview-sample').addEventListener('click', previewSample);
 $('extract').addEventListener('click', () => extractCurrent());
 $('own-input').addEventListener('click', () => {
-  if (($('raw-a').value || $('raw-b').value) && !state.sample && !confirm('清空当前两份输入，开始新的核对？已保存的本机草稿会保留。')) return;
+  if (hasUnsavedInput() && !confirm('清空当前两份输入，开始新的核对？已保存的本机草稿会保留。')) return;
   $('raw-a').value = '';
   $('raw-b').value = '';
-  markRawChanged();
+  resetAll();
   $('raw-a').focus();
 });
-for (const side of ['a', 'b']) $(`raw-${side}`).addEventListener('input', markRawChanged);
+for (const side of SIDES) $(`raw-${side}`).addEventListener('input', () => markRawChanged(side));
 $('apply-supplement').addEventListener('click', applySupplement);
 $('export-md').addEventListener('click', () => downloadReport('md'));
 $('export-json').addEventListener('click', () => downloadReport('json'));

@@ -16,21 +16,21 @@
   ],
   "workbuddy_client_model": "Step-5-Preview",
   "workbuddy_client_task": "开发报价显微镜网页应用",
-  "assisted_work": "Codex-assisted frontend, independent logic acceptance, boundary/privacy fixes and publication. GLM-5.3 read-only frontend review in progress.",
-  "verification": "18 Node behavior tests passed; initial live sample supplementation and JSON export verified; remaining browser acceptance in progress.",
+  "assisted_work": "Step-5-Preview created engine/samples; Codex implemented frontend and independent logic fixes; WorkBuddy GLM-5.3 reviewed and repaired frontend state; free Step-5-Preview completed overwrite guards; maintainer independently reviewed and refined guards.",
+  "verification": "18 Node behavior checks passed for included engine; public baseline browser checks used independently specified synthetic inputs. State-repair build receives separate focused browser acceptance. No independent human adoption or organizer approval claimed.",
   "provenance_limit": "Maintainer-recorded provenance, not an organizer qualification or award determination.",
   "files": [
     {
       "path": "index.html",
-      "sha256": "4df612ff8dedc8ab3741d1c1ab330daa3ea78c406c78028bc0be241f461ddbeb"
+      "sha256": "cc2af1a141e85cd7b92c207a001061d736163ecdb1108811795ffbd2f48d8f5f"
     },
     {
       "path": "styles.css",
-      "sha256": "e66bebe68a1baed3770abfa3370954523d8fd09a004422db307abeafc2d12757"
+      "sha256": "f6be7eac2ed24547077f53987032824bc09d273d3ac7262aece958e363437a66"
     },
     {
       "path": "app.js",
-      "sha256": "e0ab3ea17328b5cc406c170df53978012015ac0fc528ff5b3b1557b214b070d2"
+      "sha256": "0a85580eb9c339ab33cf0c2a24ed51661005cea10374b7eb4dc244cfc442cb64"
     },
     {
       "path": "engine.js",
@@ -43,6 +43,15 @@
     {
       "path": "icon.svg",
       "sha256": "86d6a934ec1232673bc28679bef0bdad2e41c7fa9879059a21f36c9230e94dcc"
+    },
+    {
+      "path": "SKILL.md",
+      "sha256": "29e40b2f3907e6831c161d25cb57268b27a6ae37bef8afe218d1bb94581c6f3e"
+    },
+    {
+      "path": "README.md",
+      "sha256": "9aa59f97e6ee5d58c32be838c251f2dd7a222d8024b751682d091cc2bcb3ee59"
     }
-  ]
+  ],
+  "build": "20261023-state3"
 }
