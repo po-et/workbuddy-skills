@@ -17,7 +17,7 @@
   "workbuddy_client_model": "Step-5-Preview",
   "workbuddy_client_task": "开发报价显微镜网页应用",
   "assisted_work": "Step-5-Preview created engine/samples; Codex implemented frontend and independent logic fixes; WorkBuddy GLM-5.3 reviewed and repaired frontend state; free Step-5-Preview completed overwrite guards; maintainer independently reviewed and refined guards. Codex refined the page-level accessible confirmation dialog after browser acceptance exposed native-dialog automation blocking.",
-  "verification": "18 Node behavior checks passed for included engine; public baseline browser checks used independently specified synthetic inputs. State-repair build receives separate focused browser acceptance. No independent human adoption or organizer approval claimed.",
+  "verification": "Included engine passed18 Node behavior checks; state4 passed18 focused real-browser checks using independent synthetic inputs. Reports and actual Skill download reopened; 360px and page-dialog controls verified. See verification.json. No human adoption, submission or award claimed.",
   "provenance_limit": "Maintainer-recorded provenance, not an organizer qualification or award determination.",
   "files": [
     {
@@ -50,7 +50,23 @@
     },
     {
       "path": "README.md",
-      "sha256": "9aa59f97e6ee5d58c32be838c251f2dd7a222d8024b751682d091cc2bcb3ee59"
+      "sha256": "1e17d86cc63c80a380a864070dcdfe24cec7546b183bae642e504b40efa3b681"
+    },
+    {
+      "path": "verification.json",
+      "sha256": "451f66d4fb8f9eaa0205f3d2b0c13a3baaa63b5a07178f626156e6555abc3411"
+    },
+    {
+      "path": "screenshots/01-missing.png",
+      "sha256": "e278a9b2661074c92e1602453192610e5ad87aae7c77697bd1037150eca20f30"
+    },
+    {
+      "path": "screenshots/02-recomputed.png",
+      "sha256": "e7ecc3d47162c1dff56c0f6df2caa4f7e526a080d323fd004b25c45dfb59eba9"
+    },
+    {
+      "path": "screenshots/03-own-input-mobile.png",
+      "sha256": "a4c8214b2dcb22af5b9d5d565b767c38c3a61fdcc639b875768a6d41c3541455"
     }
   ],
   "build": "20261023-state4"

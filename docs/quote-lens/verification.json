@@ -1,0 +1,192 @@
+{
+  "build": "20261023-state4",
+  "commit": "77ac8283c70247948380961482e24db66193f1d4",
+  "appSha256": "f64839927b79f52ff8377b80378191b6881935fb346568fd3c6f5f46068eb6c1",
+  "url": "https://po-et.github.io/workbuddy-skills/quote-lens/",
+  "recordedAt": "2026-10-23T04:24:46.059Z",
+  "evidenceClass": "maintainer_real_browser_tests_synthetic_inputs",
+  "countsAsIndependentHumanAdoption": false,
+  "checks": [
+    {
+      "id": "missing-not-zero",
+      "pass": true
+    },
+    {
+      "id": "manual-only-select-cancel",
+      "pass": true,
+      "defaultFocusCancel": true
+    },
+    {
+      "id": "manual-only-重新载入-cancel",
+      "pass": true
+    },
+    {
+      "id": "manual-only-体验已核对案例-cancel",
+      "pass": true
+    },
+    {
+      "id": "manual-only-粘贴自己的报价-cancel",
+      "pass": true
+    },
+    {
+      "id": "per-field-restore-current-source",
+      "pass": true
+    },
+    {
+      "id": "one-sided-edit-and-extract-preserves-other-side",
+      "pass": true,
+      "whileDirty": {
+        "bConfirmed": 10,
+        "jsonDisabled": true,
+        "verdict": "报价 A 原文已变化，暂不比较。"
+      },
+      "afterExtract": {
+        "aConfirmed": 0,
+        "bConfirmed": 10,
+        "verdict": "数字已经摊开，逐项确认再比较。"
+      }
+    },
+    {
+      "id": "same-raw-different-manual-draft-cancel",
+      "pass": true
+    },
+    {
+      "id": "dirty-draft-save-and-restore-without-confirmation",
+      "pass": true,
+      "evidence": {
+        "confirmed": 0,
+        "rawA": "车型：示例车 标准版\n付款方式：全款\n费用范围：本清单全部一次性费用\n裸车价：132000元\n报价税费：11800元\n保险：4500元\n上牌：500元\n服务费：0元\n强制附加项：0元\n其他费用：0元\n合计：148800元\n备注：公开合成校对，不改变费用",
+        "service": "1,200元\n人工补充 · 待确认\n确认\n修改\n恢复原文\n\n补充来源：公开合成补充回复：B 报价服务费 1200 元（模拟答复，非真实数据）",
+        "verdict": "数字已经摊开，逐项确认再比较。"
+      }
+    },
+    {
+      "id": "own-input-complete-flow-20-confirmations",
+      "pass": true
+    },
+    {
+      "id": "skill-download-ui-exact-file",
+      "pass": true,
+      "bytes": 4018
+    },
+    {
+      "id": "reports-four-formats-and-original-switch",
+      "pass": true,
+      "reports": [
+        {
+          "format": "Markdown",
+          "includeOriginal": false,
+          "pass": true,
+          "path": "final-own-default.md"
+        },
+        {
+          "format": "JSON",
+          "includeOriginal": false,
+          "pass": true,
+          "path": "final-own-default.json"
+        },
+        {
+          "format": "Markdown",
+          "includeOriginal": true,
+          "pass": true,
+          "path": "final-own-full.md"
+        },
+        {
+          "format": "JSON",
+          "includeOriginal": true,
+          "pass": true,
+          "path": "final-own-full.json"
+        }
+      ]
+    },
+    {
+      "id": "mobile-360-no-overflow-and-single-column-totals",
+      "pass": true,
+      "proof": {
+        "resultTop": 21.890625,
+        "scrollWidth": 345,
+        "totals": [
+          {
+            "bottom": 352.765625,
+            "text": "报价 A · 完整录入合计\n\n148,570.52元\n\n7 项费用均已确认；是否可比请看核对结果。\n\n原文未申报总额或小计",
+            "top": 227.375,
+            "width": 283
+          },
+          {
+            "bottom": 494.15625,
+            "text": "报价 B · 完整录入合计\n\n148,697.12元\n\n7 项费用均已确认；是否可比请看核对结果。\n\n原文未申报总额或小计",
+            "top": 368.765625,
+            "width": 283
+          }
+        ],
+        "verdict": "录入范围内，B 比 A 高 126.60元。",
+        "viewportWidth": 345
+      }
+    },
+    {
+      "id": "mobile-confirm-dialog-and-escape",
+      "pass": true,
+      "proof": {
+        "buttons": [
+          {
+            "height": 44,
+            "text": "取消",
+            "width": 132
+          },
+          {
+            "height": 44,
+            "text": "确认覆盖",
+            "width": 132
+          }
+        ],
+        "dialogWidth": 311,
+        "focus": "取消",
+        "viewportWidth": 345
+      }
+    },
+    {
+      "id": "clear-zero-revokes-and-restore-reconfirms",
+      "pass": true
+    },
+    {
+      "id": "source-location-and-keyboard-focus",
+      "pass": true,
+      "proof": {
+        "evidence": "裸车价 · 报价 A 原文\n\n第 5 行：裸车价：132456.78 元",
+        "focus": "evidence-a",
+        "selected": "裸车价：132456.78 元"
+      }
+    },
+    {
+      "id": "confirmed-payment-mismatch-blocks-comparison",
+      "pass": true
+    },
+    {
+      "id": "console-no-errors-or-warnings",
+      "pass": true,
+      "logs": []
+    }
+  ],
+  "allPass": true,
+  "engineChecks": {
+    "count": 18,
+    "passed": 18,
+    "engineSha256": "9c5881da71a9f44174b50bb7c89227ce76389930ea2b35c406c48872096bf819",
+    "command": "node --test tests/quote-lens/*.test.mjs",
+    "source": "https://github.com/po-et/workbuddy-skills/tree/main/tests/quote-lens"
+  },
+  "screenshots": [
+    {
+      "path": "screenshots/01-missing.png",
+      "sha256": "e278a9b2661074c92e1602453192610e5ad87aae7c77697bd1037150eca20f30"
+    },
+    {
+      "path": "screenshots/02-recomputed.png",
+      "sha256": "e7ecc3d47162c1dff56c0f6df2caa4f7e526a080d323fd004b25c45dfb59eba9"
+    },
+    {
+      "path": "screenshots/03-own-input-mobile.png",
+      "sha256": "a4c8214b2dcb22af5b9d5d565b767c38c3a61fdcc639b875768a6d41c3541455"
+    }
+  ]
+}

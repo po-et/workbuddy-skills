@@ -20,7 +20,9 @@ python3 start.py --demo --out-dir result
 
 报价 / PPT 可用 `--input` 换成自己的文件；接口工具保留原有 CLI。查看[完整用法](docs/task-kits.md)和[版本 / SHA256](https://github.com/po-et/workbuddy-skills/releases/tag/task-kits-v0.1.0)。这是任务包 0.1.0，内含技能版本分别为 API 0.1.1、报价与 PPT 0.1.2。
 
-2026-10-23 新增[报价证据核对包 0.1.0](https://github.com/po-et/workbuddy-skills/releases/download/quote-evidence-check-v0.1.0/quote-evidence-check-0.1.0.zip)：结构化金额附确认状态与来源，车型、付款或范围不同则阻止排名，默认导出省略原文。包内有四份合成输入和19项行为测试；不调用模型或网络。它使用自己的脚本入口，见[完整用法](taskkits/quote-evidence-check.md)和[源码](skills/quote-evidence-check/)。这是独立本地工具，网页仍在开发，未上架 SkillHub，不代表已参赛。
+2026-10-23 新增[报价证据核对包 0.1.0](https://github.com/po-et/workbuddy-skills/releases/download/quote-evidence-check-v0.1.0/quote-evidence-check-0.1.0.zip)：结构化金额附确认状态与来源，车型、付款或范围不同则阻止排名，默认导出省略原文。包内有四份合成输入和19项行为测试；不调用模型或网络。它使用自己的脚本入口，见[完整用法](taskkits/quote-evidence-check.md)和[源码](skills/quote-evidence-check/)。这是独立本地工具，未上架 SkillHub，不代表已参赛。
+
+**免登录网页体验：[报价显微镜](https://po-et.github.io/workbuddy-skills/quote-lens/)**。先找不能比的地方，再算有依据的差额：粘贴两份报价，核对原文、缺项与条件，确认后导出报告。报价在浏览器本机处理；也可[直接下载自包含 SKILL.md](https://po-et.github.io/workbuddy-skills/quote-lens/SKILL.md)，复用同一套核对方法。演示数据均为合成案例。
 
 愿意反馈时，只需记录[任务是否完成、哪里卡住、是否实际再次使用](https://github.com/po-et/workbuddy-skills/issues/new?template=task-kit-feedback.md)。我们把完成和复用分别记录，不把下载计数当成用户数。[资产推进方向](docs/asset-plan.md)说明后续优先级。
 
