@@ -20,6 +20,7 @@ const state = {
 let feedbackTimer;
 // select 当前应显示的样例 id；用户取消载入时用它把下拉框拨回原值。
 let selectAnchor = '';
+let activeOverwriteDialog = null;
 
 function el(tag, className, text) {
   const node = document.createElement(tag);
@@ -34,6 +35,53 @@ function notify(message) {
   feedback.classList.add('visible');
   clearTimeout(feedbackTimer);
   feedbackTimer = setTimeout(() => feedback.classList.remove('visible'), 6500);
+}
+
+// 页面内确认框：弹窗期间其余页面不可交互；取消/Escape/异常关闭均不授权覆盖。
+function confirmOverwrite(message) {
+  if (activeOverwriteDialog) return Promise.resolve(false);
+  return new Promise((resolve) => {
+    const previousFocus = document.activeElement;
+    const dialog = el('dialog', 'overwrite-dialog');
+    const title = el('h2', '', '确认覆盖当前内容？');
+    title.id = 'overwrite-dialog-title';
+    const description = el('p', 'overwrite-description', message);
+    description.id = 'overwrite-dialog-description';
+    dialog.setAttribute('aria-labelledby', title.id);
+    dialog.setAttribute('aria-describedby', description.id);
+    dialog.setAttribute('aria-modal', 'true');
+    const actions = el('div', 'overwrite-actions');
+    const cancel = el('button', 'button secondary', '取消');
+    cancel.type = 'button';
+    cancel.autofocus = true;
+    const accept = el('button', 'button primary', '确认覆盖');
+    accept.type = 'button';
+    actions.append(cancel, accept);
+    dialog.append(title, description, actions);
+    let settled = false;
+    function finish(accepted) {
+      if (settled) return;
+      settled = true;
+      if (dialog.open) dialog.close();
+      dialog.remove();
+      activeOverwriteDialog = null;
+      if (previousFocus?.isConnected && typeof previousFocus.focus === 'function') previousFocus.focus({ preventScroll: true });
+      resolve(accepted);
+    }
+    cancel.addEventListener('click', () => finish(false));
+    accept.addEventListener('click', () => finish(true));
+    dialog.addEventListener('cancel', (event) => { event.preventDefault(); finish(false); });
+    dialog.addEventListener('close', () => finish(false));
+    activeOverwriteDialog = dialog;
+    document.body.append(dialog);
+    try {
+      dialog.showModal();
+      cancel.focus({ preventScroll: true });
+    } catch {
+      finish(false);
+      notify('浏览器无法显示覆盖确认框，已取消操作，当前内容保留。');
+    }
+  });
 }
 
 function moneyInput(cents) { return cents === null ? '' : (cents / 100).toFixed(cents % 100 ? 2 : 0); }
@@ -401,14 +449,14 @@ function hasUnsavedInput() {
   return $('raw-a').value.trim() !== '' || $('raw-b').value.trim() !== '';
 }
 
-function guardOverwrite(action) {
+async function guardOverwrite(action) {
   if (!hasUnsavedInput()) return true;
-  return confirm(`${action}会覆盖当前输入与人工补充；未保存到本机草稿的修改将丢失。是否继续？`);
+  return await confirmOverwrite(`${action}会覆盖当前输入与人工补充；未保存到本机草稿的修改将丢失。是否继续？`);
 }
 
 // 所有样例载入入口共用：取消时不改数据，并把下拉框拨回当前锚点。
-function tryLoadSample(id) {
-  if (!guardOverwrite('载入合成案例')) {
+async function tryLoadSample(id) {
+  if (!(await guardOverwrite('载入合成案例'))) {
     $('sample-select').value = selectAnchor;
     return false;
   }
@@ -416,8 +464,8 @@ function tryLoadSample(id) {
   return true;
 }
 
-function previewSample() {
-  if (!guardOverwrite('载入合成案例演示')) {
+async function previewSample() {
+  if (!(await guardOverwrite('载入合成案例演示'))) {
     $('sample-select').value = selectAnchor;
     return;
   }
@@ -473,13 +521,13 @@ function resetAll() {
 
 const SYNTHETIC_SERVICE_SOURCE = '公开合成补充回复：B 报价服务费 1200 元（模拟答复，非真实数据）';
 
-function applySupplement() {
+async function applySupplement() {
   if (!state.b || !state.current.b || state.sample?.id !== 'sample-1') return;
   const field = state.b.fields.service;
   // 已存在不同内容的人工补充时，先确认再覆盖（重复点击同一合成补充不重复询问）。
   const sameSynthetic = field.source === 'manual' && field.value === 120000 && field._manualSource === SYNTHETIC_SERVICE_SOURCE;
   if (field.source === 'manual' && !sameSynthetic
-    && !confirm('B 服务费当前是人工补充；仍要用合成回复的 1,200 元覆盖吗？')) return;
+    && !(await confirmOverwrite('B 服务费当前是人工补充；仍要用合成回复的 1,200 元覆盖吗？'))) return;
   field.value = 120000;
   field.source = 'manual';
   field.status = 'unconfirmed';
@@ -579,7 +627,7 @@ function saveDraft() {
   }
 }
 
-function restoreDraft() {
+async function restoreDraft() {
   let draft;
   try {
     const stored = localStorage.getItem(DRAFT_KEY);
@@ -594,7 +642,7 @@ function restoreDraft() {
   const rawDiffers = $('raw-a').value !== draft.rawA || $('raw-b').value !== draft.rawB;
   const supplementalDiffers = supplementalSignature(collectSupplemental()) !== supplementalSignature(draft.supplemental);
   if (hasUnsavedInput() && (rawDiffers || supplementalDiffers)
-    && !confirm('恢复草稿会覆盖当前的原文或人工补充；未保存的修改将丢失。是否继续？')) return;
+    && !(await confirmOverwrite('恢复草稿会覆盖当前的原文或人工补充；未保存的修改将丢失。是否继续？'))) return;
   state.sample = null;
   $('raw-a').value = draft.rawA;
   $('raw-b').value = draft.rawB;
@@ -633,12 +681,12 @@ for (const sample of SAMPLES) {
   option.value = sample.id;
   $('sample-select').append(option);
 }
-$('sample-select').addEventListener('change', () => tryLoadSample($('sample-select').value));
-$('load-sample').addEventListener('click', () => tryLoadSample($('sample-select').value));
+$('sample-select').addEventListener('change', async () => { await tryLoadSample($('sample-select').value); });
+$('load-sample').addEventListener('click', async () => { await tryLoadSample($('sample-select').value); });
 $('preview-sample').addEventListener('click', previewSample);
 $('extract').addEventListener('click', () => extractCurrent());
-$('own-input').addEventListener('click', () => {
-  if (hasUnsavedInput() && !confirm('清空当前两份输入，开始新的核对？已保存的本机草稿会保留。')) return;
+$('own-input').addEventListener('click', async () => {
+  if (hasUnsavedInput() && !(await confirmOverwrite('清空当前两份输入，开始新的核对？已保存的本机草稿会保留。'))) return;
   $('raw-a').value = '';
   $('raw-b').value = '';
   resetAll();
