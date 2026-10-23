@@ -51,7 +51,7 @@
  *   knownSubtotalCents:number, knownCount:number,
  *   completeTotalCents:number|null,   // 仅 7 项全部确认后非 null
  *   allConfirmed:boolean,
- *   declaredTotalCents:number|null,   // 原文申报合计（单一值时）
+ *   declaredTotalCents:number|null,   // 原文申报金额；优先单一总额，否则单一小计，类型见 declaredNote
  *   declaredNote:string
  * }
  * ─────────────────────────────────────────────────────────── */
@@ -379,18 +379,32 @@ function sideTotals(q) {
     if (validCents(f.value)) { known += f.value; count += 1; }
     if (!confirmedFee(f)) allConfirmed = false;
   }
-  const uniq = [...new Set(q.declaredTotals.map((d) => d.cents).filter(validCents))];
+  const declarations = q.declaredTotals.filter((d) => validCents(d.cents)).map((d) => {
+    const sourceLine = typeof q.lines?.[d.lineIndex] === 'string' ? q.lines[d.lineIndex] : '';
+    const label = /(?:已知\s*)?小计|合计|共计|总价|总额/.exec(sourceLine)?.[0];
+    return { cents: d.cents, kind: label?.includes('小计') ? 'subtotal' : label ? 'total' : 'unknown' };
+  });
+  const values = (kind) => [...new Set(declarations.filter((d) => d.kind === kind).map((d) => d.cents))];
+  const totals = values('total'), subtotals = values('subtotal'), unknown = values('unknown');
   let declaredTotalCents = null;
-  let declaredNote = '原文未申报合计';
-  if (uniq.length === 1) {
-    declaredTotalCents = uniq[0];
+  let declaredNote = '原文未申报总额或小计';
+  if (totals.length === 1) {
+    declaredTotalCents = totals[0];
     declaredNote = count === 7 && allConfirmed
       ? (known === declaredTotalCents ? '原文申报合计与 7 项已确认合计一致' : '原文申报合计与已录入 7 项不一致，请复核')
       : (declaredTotalCents > known
           ? `原文申报合计 ${formatCents(declaredTotalCents)} 大于已录入小计 ${formatCents(known)}；差额可能来自未报价项，不能据此补零`
           : '原文申报合计不大于已录入小计');
-  } else if (uniq.length > 1) {
-    declaredNote = `原文出现多个合计数（${uniq.map((c) => formatCents(c)).join('、')}），未采用`;
+    if (subtotals.length) declaredNote += `；原文另列小计 ${subtotals.map(formatCents).join('、')}，小计不是完整总额`;
+  } else if (totals.length > 1) {
+    declaredNote = `原文出现多个合计数（${totals.map(formatCents).join('、')}），未采用`;
+  } else if (subtotals.length) {
+    if (subtotals.length === 1) declaredTotalCents = subtotals[0];
+    declaredNote = `原文${subtotals.length === 1 ? '已知小计为' : '列出多个小计'} ${subtotals.map(formatCents).join('、')}；小计只反映原文当时已知的费用，不是完整总额`;
+    if (allConfirmed) declaredNote += `；当前七项已确认合计为 ${formatCents(known)}，按当前录入范围计算`;
+  } else if (unknown.length) {
+    if (unknown.length === 1) declaredTotalCents = unknown[0];
+    declaredNote = `原文申报金额 ${unknown.map(formatCents).join('、')} 的来源标签未辨明，不视为完整总额`;
   }
   return {
     knownSubtotalCents: known,
@@ -651,7 +665,7 @@ export function makeReport(qa, qb, cmp, opts = {}) {
   L.push(`| 七项已确认合计 | ${cmp.totals.a.completeTotalCents === null ? '未完整' : formatCents(cmp.totals.a.completeTotalCents)} | ${cmp.totals.b.completeTotalCents === null ? '未完整' : formatCents(cmp.totals.b.completeTotalCents)} | — | | |`);
   L.push('', '已知小计可以包含待确认候选，不等于完整总额，不能据此判断谁更便宜。');
   for (const [side, total] of [['A', cmp.totals.a], ['B', cmp.totals.b]]) {
-    L.push(`- ${side} 原文申报合计：${total.declaredTotalCents === null ? '无' : formatCents(total.declaredTotalCents)}（${total.declaredNote}）`);
+    L.push(`- ${side} 原文申报金额：${total.declaredTotalCents === null ? '无单一可用数值' : formatCents(total.declaredTotalCents)}（${total.declaredNote}）`);
   }
   L.push('', '## 三、差额说明', '');
   if (cmp.diff) {

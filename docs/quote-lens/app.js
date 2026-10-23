@@ -203,13 +203,15 @@ function totalBlock(side, total) {
   const full = total.completeTotalCents !== null;
   block.append(el('div', 'total-header', `报价 ${side} · ${full ? '完整录入合计' : '已知小计'}`));
   block.append(el('p', 'total-money', formatCents(full ? total.completeTotalCents : total.knownSubtotalCents)));
-  block.append(el('p', `total-caption ${full ? 'has-total' : ''}`, full ? '7 项费用均已确认；条件仍需另行核对。' : `${total.knownCount} / 7 项有有效金额，包含尚未确认候选。完整合计：暂不提供。`));
+  block.append(el('p', `total-caption ${full ? 'has-total' : ''}`, full ? '7 项费用均已确认；是否可比请看核对结果。' : `${total.knownCount} / 7 项有有效金额，包含尚未确认候选。完整合计：暂不提供。`));
   block.append(el('p', 'declared-note', total.declaredNote));
   return block;
 }
 
 function renderResult() {
   const ready = state.ready;
+  $('review-shortcuts').hidden = !ready;
+  $('jump-missing').hidden = true;
   for (const id of ['export-md', 'export-json', 'copy-questions']) $(id).disabled = !ready;
   if (!ready) {
     state.comparison = null;
@@ -226,6 +228,10 @@ function renderResult() {
   }
   const cmp = compareQuotes(state.a, state.b);
   state.comparison = cmp;
+  if (cmp.missing.length > 0) {
+    $('jump-missing').href = `#row-${cmp.missing[0].key}`;
+    $('jump-missing').hidden = false;
+  }
   $('result-badge').className = `status-badge ${cmp.status}`;
   $('result-badge').textContent = cmp.statusLabel;
   let verdict;
@@ -302,7 +308,7 @@ function previewSample() {
       }
     }
   }
-  $('sample-label').textContent = '当前为公开合成案例的预设核对演示：有唯一原文候选的费用和条件已预设确认，真正缺项仍保留。不是独立真人核对；自有输入、原文变化及手工修改均需重新确认。';
+  $('sample-label').textContent = '合成演示：金额与条件按样例预设，真正缺项仍保留。自己的输入、原文变化及手工修改后需重新确认。';
   for (const side of ['a', 'b']) $(`source-${side}-state`).textContent = '合成案例 · 预设核对状态';
   renderRows();
   renderResult();

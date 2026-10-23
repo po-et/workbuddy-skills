@@ -17,24 +17,24 @@
   "workbuddy_client_model": "Step-5-Preview",
   "workbuddy_client_task": "开发报价显微镜网页应用",
   "assisted_work": "Codex-assisted frontend, independent logic acceptance, boundary/privacy fixes and publication. GLM-5.3 read-only frontend review in progress.",
-  "verification": "17 Node behavior tests passed; live browser acceptance pending.",
+  "verification": "18 Node behavior tests passed; initial live sample supplementation and JSON export verified; remaining browser acceptance in progress.",
   "provenance_limit": "Maintainer-recorded provenance, not an organizer qualification or award determination.",
   "files": [
     {
       "path": "index.html",
-      "sha256": "55b67c7cb5afa04f562e1ae867125b96d55c4b78878eb957054baa15e5526eb4"
+      "sha256": "4df612ff8dedc8ab3741d1c1ab330daa3ea78c406c78028bc0be241f461ddbeb"
     },
     {
       "path": "styles.css",
-      "sha256": "8e92f0e931ecea0c077f78579ab679c3f334a52524ef9835240fd063f6c456dd"
+      "sha256": "e66bebe68a1baed3770abfa3370954523d8fd09a004422db307abeafc2d12757"
     },
     {
       "path": "app.js",
-      "sha256": "bc357a36b2068018a85bcd2f0f626c9eceb9e8627b0e93f0de0ed7a0a7353824"
+      "sha256": "e0ab3ea17328b5cc406c170df53978012015ac0fc528ff5b3b1557b214b070d2"
     },
     {
       "path": "engine.js",
-      "sha256": "36ba6437d09c85bf1f3912f70a13928f4328904948a4774176cfdb8fd5254aec"
+      "sha256": "9c5881da71a9f44174b50bb7c89227ce76389930ea2b35c406c48872096bf819"
     },
     {
       "path": "samples.js",
