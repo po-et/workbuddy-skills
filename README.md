@@ -4,7 +4,7 @@
 
 ## 先下载一个能用的任务包
 
-不用先装 SkillHub，也不用克隆整个仓库。每个 ZIP 都含原技能、可运行脚本、合成样例、统一入口和许可证；已有 Python 3.9+ 即可开始，也可由支持本地文件和命令的 AI 助手执行。
+不用先装 SkillHub，也不用克隆整个仓库。下表三个 ZIP 都含原技能、可运行脚本、合成样例、统一入口和许可证；已有 Python 3.9+ 即可开始，也可由支持本地文件和命令的 AI 助手执行。
 
 | 你手上的任务 | 下载 | 交付 |
 |---|---|---|
@@ -19,6 +19,8 @@ python3 start.py --demo --out-dir result
 ```
 
 报价 / PPT 可用 `--input` 换成自己的文件；接口工具保留原有 CLI。查看[完整用法](docs/task-kits.md)和[版本 / SHA256](https://github.com/po-et/workbuddy-skills/releases/tag/task-kits-v0.1.0)。这是任务包 0.1.0，内含技能版本分别为 API 0.1.1、报价与 PPT 0.1.2。
+
+2026-10-23 新增[报价证据核对包 0.1.0](https://github.com/po-et/workbuddy-skills/releases/download/quote-evidence-check-v0.1.0/quote-evidence-check-0.1.0.zip)：结构化金额附确认状态与来源，车型、付款或范围不同则阻止排名，默认导出省略原文。包内有四份合成输入和19项行为测试；不调用模型或网络。它使用自己的脚本入口，见[完整用法](taskkits/quote-evidence-check.md)和[源码](skills/quote-evidence-check/)。这是独立本地工具，网页仍在开发，未上架 SkillHub，不代表已参赛。
 
 愿意反馈时，只需记录[任务是否完成、哪里卡住、是否实际再次使用](https://github.com/po-et/workbuddy-skills/issues/new?template=task-kit-feedback.md)。我们把完成和复用分别记录，不把下载计数当成用户数。[资产推进方向](docs/asset-plan.md)说明后续优先级。
 
