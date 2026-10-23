@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#123f37">
+  <meta name="description" content="粘贴两份购车报价，逐项确认费用与原文，发现缺项、核对条件，并导出比较报告。未报价不等于零。">
+  <meta name="referrer" content="no-referrer">
+  <title>报价显微镜｜两份报价，核对清楚再比较</title>
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#workspace">跳到报价核对台</a>
+  <header class="site-header wrap">
+    <a class="brand" href="#" aria-label="报价显微镜首页"><span class="brand-symbol" aria-hidden="true">◎</span><span>报价显微镜</span></a>
+    <span class="local-tag"><span aria-hidden="true"></span>本机处理，无需登录</span>
+  </header>
+
+  <main class="wrap">
+    <section class="intro" aria-labelledby="page-title">
+      <div><h1 id="page-title">低了裸车价，<br>就真的少花钱吗？</h1><p>把两份报价摊开。看清缺了什么、每笔从哪来，<br class="desktop-break">再比较同条件下的费用。</p></div>
+      <div class="principle"><span class="not-equal" aria-hidden="true">≠</span><p><strong>未报价，不等于 0 元</strong><span>未知保留未知，差额才有依据。</span></p></div>
+    </section>
+
+    <section class="workspace" id="workspace" aria-label="报价核对台">
+      <div class="workspace-top">
+        <div><h2>开始核对</h2><p>先试合成案例，或粘贴你自己的两份报价。</p></div>
+        <button id="own-input" class="button secondary" type="button">粘贴自己的报价</button>
+      </div>
+      <div class="sample-toolbar">
+        <label for="sample-select">合成案例</label>
+        <select id="sample-select" aria-describedby="sample-label"></select>
+        <button id="preview-sample" class="button secondary" type="button">体验已核对案例</button>
+        <button id="load-sample" class="button quiet" type="button">重新载入</button>
+      </div>
+      <p id="sample-label" class="sample-note"></p>
+
+      <div class="source-grid" id="sources">
+        <section class="source-sheet" aria-labelledby="source-a-title">
+          <div class="sheet-heading"><h3 id="source-a-title"><span class="quote-letter">A</span> 报价原文</h3><span id="source-a-state" class="source-state">候选已提取</span></div>
+          <label class="sr-only" for="raw-a">报价 A 原文</label>
+          <textarea id="raw-a" rows="10" spellcheck="false" placeholder="粘贴报价 A。建议每行一项，例如：裸车价：132000元"></textarea>
+          <div id="evidence-a" class="evidence-preview" tabindex="-1"><span class="evidence-label">原文定位</span><p>点击下方金额，即可回到对应原文。</p></div>
+        </section>
+        <section class="source-sheet" aria-labelledby="source-b-title">
+          <div class="sheet-heading"><h3 id="source-b-title"><span class="quote-letter">B</span> 报价原文</h3><span id="source-b-state" class="source-state">候选已提取</span></div>
+          <label class="sr-only" for="raw-b">报价 B 原文</label>
+          <textarea id="raw-b" rows="10" spellcheck="false" placeholder="粘贴报价 B。没写的费用会保留为未知，不会自动补零。"></textarea>
+          <div id="evidence-b" class="evidence-preview" tabindex="-1"><span class="evidence-label">原文定位</span><p>人工补充会单独标记，不借用原文作依据。</p></div>
+        </section>
+      </div>
+      <div class="extract-bar"><p id="input-hint">提取只是候选。请按原文逐项确认，税费按报价录入。</p><button id="extract" class="button primary" type="button">提取并核对</button></div>
+
+      <section class="review-section" aria-labelledby="conditions-title">
+        <div class="section-heading"><div><span class="step">1</span><h2 id="conditions-title">先核对条件</h2></div><p>三项一致且确认，才有比较基础。</p></div>
+        <div class="column-heading" aria-hidden="true"><span>核对项目</span><span>报价 A</span><span>报价 B</span></div>
+        <div id="condition-rows"></div>
+      </section>
+
+      <section class="review-section" aria-labelledby="fees-title">
+        <div class="section-heading"><div><span class="step">2</span><h2 id="fees-title">逐笔核对费用</h2></div><p>点金额看来源；有修改，再确认。</p></div>
+        <div class="column-heading" aria-hidden="true"><span>费用项目</span><span>报价 A</span><span>报价 B</span></div>
+        <div id="fee-rows"></div>
+        <div id="supplement-box" class="supplement-box" hidden><div><span class="sample-pill">合成补充回复</span><p id="supplement-text"></p></div><button id="apply-supplement" class="button secondary" type="button">补录 B 服务费 1,200 元</button></div>
+      </section>
+
+      <section id="result" class="result-section" aria-labelledby="result-heading" aria-live="polite" aria-atomic="false">
+        <div class="result-title"><div><span class="step">3</span><h2 id="result-heading">核对结果</h2></div><span id="result-badge" class="status-badge pending">待确认</span></div>
+        <h3 id="result-verdict">先确认费用与条件。</h3>
+        <p id="result-explanation" class="result-explanation"></p>
+        <div class="totals-grid" id="totals"></div>
+        <details id="blockers-details"><summary id="blockers-summary">展开待办</summary><ul id="blockers"></ul></details>
+        <div id="diff-section" hidden><h4>差额从哪里来</h4><p class="muted">以下均为 B 减 A，正数表示 B 多收。</p><div id="diff-items"></div></div>
+        <p class="result-scope">仅比较录入的 7 项费用。明确的 0 元可以确认；未报价和待核对项不计作完整合计。</p>
+      </section>
+    </section>
+
+    <section class="takeaway" aria-labelledby="takeaway-title">
+      <div class="section-heading"><div><h2 id="takeaway-title">把核对结果带走</h2></div><p>追问清单与报告，都由当前数据生成。</p></div>
+      <div class="takeaway-grid">
+        <div class="questions-panel"><div class="panel-title"><h3>下一步，问清这些</h3><button id="copy-questions" type="button" class="text-button">复制清单</button></div><ol id="questions"></ol><textarea id="copy-fallback" readonly hidden aria-label="待手工复制的追问清单"></textarea></div>
+        <div class="export-panel"><h3>下载核对报告</h3><p>默认省略原文、摘录与自由文本条件。金额和核对状态仍会保留。</p><label class="check-line"><input id="include-original" type="checkbox"><span>包含原文、摘录与自由文本条件<br><small>请先检查是否含姓名、电话等信息。</small></span></label><div class="export-buttons"><button id="export-md" type="button" class="button primary">下载 Markdown</button><button id="export-json" type="button" class="button secondary">下载 JSON</button></div><a class="skill-link" href="https://github.com/po-et/workbuddy-skills/releases/tag/quote-evidence-check-v0.1.0" target="_blank" rel="noopener noreferrer">下载可复用的报价核对 Skill <span aria-hidden="true">↗</span></a><p class="fine-print">独立作品，非官方 Skill，未上架 SkillHub。</p></div>
+      </div>
+    </section>
+
+    <section class="draft-bar" aria-label="本机草稿"><div><strong>留到下次继续</strong><p>仅在你点击保存时写入本机。恢复后需要重新核对。</p></div><div class="draft-actions"><button id="save-draft" class="button quiet" type="button">保存到本机</button><button id="restore-draft" class="button quiet" type="button">恢复本机草稿</button><button id="clear-draft" class="text-button" type="button">清除本机草稿</button></div></section>
+    <div id="feedback" class="feedback" role="status" aria-live="polite" aria-atomic="true"></div>
+    <noscript><p class="noscript">请启用 JavaScript 使用本机报价核对功能。原文不会上传。</p></noscript>
+  </main>
+
+  <footer class="wrap site-footer"><span class="footer-brand">◎ 报价显微镜</span><p>所有示例与补充回复均为原创合成案例。报价只在本机处理。<br>工具核对录入范围，不提供购车、税务或贷款建议。</p><a href="./README.md" target="_blank" rel="noopener">使用说明</a></footer>
+</body>
+</html>

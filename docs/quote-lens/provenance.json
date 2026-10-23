@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "name": "报价显微镜",
+  "engine_version": 2,
+  "workbuddy_created_initial_files": [
+    {
+      "path": "engine.js",
+      "bytes": 28804,
+      "sha256": "4c55385a696f4c26b9864a4a92009fa4c58e426d7b006ba67df7139fcc3f28f7"
+    },
+    {
+      "path": "samples.js",
+      "bytes": 4063,
+      "sha256": "5c427b14b34a508634f938c19f3a7d0bb850b7fbe7f202703824cd4b5bbd7a4f"
+    }
+  ],
+  "workbuddy_client_model": "Step-5-Preview",
+  "workbuddy_client_task": "开发报价显微镜网页应用",
+  "assisted_work": "Codex-assisted frontend, independent logic acceptance, boundary/privacy fixes and publication. GLM-5.3 read-only frontend review in progress.",
+  "verification": "17 Node behavior tests passed; live browser acceptance pending.",
+  "provenance_limit": "Maintainer-recorded provenance, not an organizer qualification or award determination.",
+  "files": [
+    {
+      "path": "index.html",
+      "sha256": "55b67c7cb5afa04f562e1ae867125b96d55c4b78878eb957054baa15e5526eb4"
+    },
+    {
+      "path": "styles.css",
+      "sha256": "8e92f0e931ecea0c077f78579ab679c3f334a52524ef9835240fd063f6c456dd"
+    },
+    {
+      "path": "app.js",
+      "sha256": "bc357a36b2068018a85bcd2f0f626c9eceb9e8627b0e93f0de0ed7a0a7353824"
+    },
+    {
+      "path": "engine.js",
+      "sha256": "36ba6437d09c85bf1f3912f70a13928f4328904948a4774176cfdb8fd5254aec"
+    },
+    {
+      "path": "samples.js",
+      "sha256": "a6221a8fb5f3d907aa3dd5357d9da0c99876e0163277abd3143bc0ee4d57d2cc"
+    },
+    {
+      "path": "icon.svg",
+      "sha256": "86d6a934ec1232673bc28679bef0bdad2e41c7fa9879059a21f36c9230e94dcc"
+    }
+  ]
+}
