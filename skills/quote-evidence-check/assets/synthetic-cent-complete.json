@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "quotes": {
+    "A": {
+      "conditions": {
+        "model": {
+          "value": "样例晨露 标准款",
+          "confirmed": true,
+          "source": "【公开合成案例 3 / A】\n车型/配置：样例晨露 标准款"
+        },
+        "payment": {
+          "value": "现金全款",
+          "confirmed": true,
+          "source": "【公开合成案例 3 / A】\n付款方式：现金全款"
+        },
+        "scope": {
+          "value": "裸车价、报价税费、保险、上牌、服务费、强制装潢及附加项、其他费用",
+          "confirmed": true,
+          "source": "【公开合成案例 3 / A】\n费用范围：裸车价、报价税费、保险、上牌、服务费、强制装潢及附加项、其他费用"
+        }
+      },
+      "fees": {
+        "vehicle": {
+          "amount": "88888.88",
+          "confirmed": true,
+          "source": "【公开合成案例 3 / A】\n裸车价：88888.88 元"
+        },
+        "quoteTax": {
+          "amount": "8000.02",
+          "confirmed": true,
+          "source": "【公开合成案例 3 / A】\n报价税费：8000.02 元"
+        },
+        "insurance": {
+          "amount": "3999.10",
+          "confirmed": true,
+          "source": "【公开合成案例 3 / A】\n保险：3999.10 元"
+        },
+        "registration": {
+          "amount": "500.00",
+          "confirmed": true,
+          "source": "【公开合成案例 3 / A】\n上牌：500.00 元"
+        },
+        "service": {
+          "amount": "0.00",
+          "confirmed": true,
+          "source": "【公开合成案例 3 / A】\n服务费：0.00 元"
+        },
+        "mandatoryExtras": {
+          "amount": "0.00",
+          "confirmed": true,
+          "source": "【公开合成案例 3 / A】\n强制装潢及附加项：0.00 元"
+        },
+        "other": {
+          "amount": "0.00",
+          "confirmed": true,
+          "source": "【公开合成案例 3 / A】\n其他费用：0.00 元"
+        }
+      }
+    },
+    "B": {
+      "conditions": {
+        "model": {
+          "value": "样例晨露 标准款",
+          "confirmed": true,
+          "source": "【公开合成案例 3 / B】\n车型/配置：样例晨露 标准款"
+        },
+        "payment": {
+          "value": "现金全款",
+          "confirmed": true,
+          "source": "【公开合成案例 3 / B】\n付款方式：现金全款"
+        },
+        "scope": {
+          "value": "裸车价、报价税费、保险、上牌、服务费、强制装潢及附加项、其他费用",
+          "confirmed": true,
+          "source": "【公开合成案例 3 / B】\n费用范围：裸车价、报价税费、保险、上牌、服务费、强制装潢及附加项、其他费用"
+        }
+      },
+      "fees": {
+        "vehicle": {
+          "amount": "88888.88",
+          "confirmed": true,
+          "source": "【公开合成案例 3 / B】\n裸车价：88888.88 元"
+        },
+        "quoteTax": {
+          "amount": "8000.02",
+          "confirmed": true,
+          "source": "【公开合成案例 3 / B】\n报价税费：8000.02 元"
+        },
+        "insurance": {
+          "amount": "3999.11",
+          "confirmed": true,
+          "source": "【公开合成案例 3 / B】\n保险：3999.11 元"
+        },
+        "registration": {
+          "amount": "500.00",
+          "confirmed": true,
+          "source": "【公开合成案例 3 / B】\n上牌：500.00 元"
+        },
+        "service": {
+          "amount": "0.00",
+          "confirmed": true,
+          "source": "【公开合成案例 3 / B】\n服务费：0.00 元"
+        },
+        "mandatoryExtras": {
+          "amount": "0.00",
+          "confirmed": true,
+          "source": "【公开合成案例 3 / B】\n强制装潢及附加项：0.00 元"
+        },
+        "other": {
+          "amount": "0.00",
+          "confirmed": true,
+          "source": "【公开合成补充回复 / 案例 3 的 B】\n其他费用：0.00 元。其余报价及条件不变。"
+        }
+      }
+    }
+  }
+}

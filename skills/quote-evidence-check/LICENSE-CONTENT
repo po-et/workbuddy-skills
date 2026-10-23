@@ -1,0 +1,11 @@
+Documentation, SKILL.md prose, templates and reference material in this
+repository are licensed under Creative Commons Attribution 4.0 International
+(CC BY 4.0).
+
+https://creativecommons.org/licenses/by/4.0/
+
+Code (anything under scripts/ and *.py, *.sh, *.js) is licensed under MIT;
+see LICENSE.
+
+Rationale: Creative Commons advises against applying CC licenses to software.
+Splitting the two keeps both the prose and the code cleanly reusable.

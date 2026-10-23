@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "quotes": {
+    "A": {
+      "conditions": {
+        "model": {
+          "value": "样例山岚 标准款",
+          "confirmed": true,
+          "source": "【公开合成案例 2 / A】\n车型/配置：样例山岚 标准款"
+        },
+        "payment": {
+          "value": "现金全款",
+          "confirmed": true,
+          "source": "【公开合成案例 2 / A】\n付款方式：现金全款"
+        },
+        "scope": {
+          "value": "仅以下七项录入费用",
+          "confirmed": true,
+          "source": "【公开合成案例 2 / A】\n费用范围：仅以下七项录入费用"
+        }
+      },
+      "fees": {
+        "vehicle": {
+          "amount": "99800.00",
+          "confirmed": true,
+          "source": "【公开合成案例 2 / A】\n裸车价：99800.00 元"
+        },
+        "quoteTax": {
+          "amount": "9200.00",
+          "confirmed": true,
+          "source": "【公开合成案例 2 / A】\n报价税费：9200.00 元"
+        },
+        "insurance": {
+          "amount": "4800.00",
+          "confirmed": true,
+          "source": "【公开合成案例 2 / A】\n保险：4800.00 元"
+        },
+        "registration": {
+          "amount": "600.00",
+          "confirmed": true,
+          "source": "【公开合成案例 2 / A】\n上牌：600.00 元"
+        },
+        "service": {
+          "amount": "0.00",
+          "confirmed": true,
+          "source": "【公开合成案例 2 / A】\n服务费：0.00 元"
+        },
+        "mandatoryExtras": {
+          "amount": "0.00",
+          "confirmed": true,
+          "source": "【公开合成案例 2 / A】\n强制装潢及附加项：0.00 元"
+        },
+        "other": {
+          "amount": "0.00",
+          "confirmed": true,
+          "source": "【公开合成案例 2 / A】\n其他费用：0.00 元"
+        }
+      }
+    },
+    "B": {
+      "conditions": {
+        "model": {
+          "value": "样例山岚 标准款",
+          "confirmed": true,
+          "source": "【公开合成案例 2 / B】\n车型/配置：样例山岚 标准款"
+        },
+        "payment": {
+          "value": "贷款，24 期",
+          "confirmed": true,
+          "source": "【公开合成案例 2 / B】\n付款方式：贷款，24 期"
+        },
+        "scope": {
+          "value": "仅以下七项录入费用",
+          "confirmed": true,
+          "source": "【公开合成案例 2 / B】\n费用范围：仅以下七项录入费用"
+        }
+      },
+      "fees": {
+        "vehicle": {
+          "amount": "97800.00",
+          "confirmed": true,
+          "source": "【公开合成案例 2 / B】\n裸车价：97800.00 元"
+        },
+        "quoteTax": {
+          "amount": "9200.00",
+          "confirmed": true,
+          "source": "【公开合成案例 2 / B】\n报价税费：9200.00 元"
+        },
+        "insurance": {
+          "amount": "4800.00",
+          "confirmed": true,
+          "source": "【公开合成案例 2 / B】\n保险：4800.00 元"
+        },
+        "registration": {
+          "amount": "600.00",
+          "confirmed": true,
+          "source": "【公开合成案例 2 / B】\n上牌：600.00 元"
+        },
+        "service": {
+          "amount": "0.00",
+          "confirmed": true,
+          "source": "【公开合成案例 2 / B】\n服务费：0.00 元"
+        },
+        "mandatoryExtras": {
+          "amount": "0.00",
+          "confirmed": true,
+          "source": "【公开合成案例 2 / B】\n强制装潢及附加项：0.00 元"
+        },
+        "other": {
+          "amount": "0.00",
+          "confirmed": true,
+          "source": "【公开合成案例 2 / B】\n其他费用：0.00 元"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,767 @@
+{
+  "schemaVersion": "1.0.0",
+  "title": "报价显微镜独立验收合成算例",
+  "sourceDocument": "acceptance-oracle.md",
+  "authoredBeforeApplicationAcceptance": true,
+  "synthetic": true,
+  "containsRealCustomerOrInternalData": false,
+  "amountUnit": "CNY_cents",
+  "displayUnit": "CNY_yuan_two_decimals",
+  "differenceDefinition": "B_minus_A",
+  "unknownRepresentation": null,
+  "quotedTaxIsPolicyDerived": false,
+  "taxPolicyWarningCN": "全部报价税费只是合成录入数据，不是税率、税收政策或适用车型的计算结果。",
+  "scopeWarningCN": "仅比较已确认的录入范围费用，不宣称覆盖真实交易全部成本，不推荐车型、商家或融资方案。",
+  "confirmationSemantics": {
+    "extractedAmountsAreCandidates": true,
+    "conditionsRequireConfirmation": [
+      "model",
+      "payment",
+      "scope"
+    ],
+    "fullConfirmedTotalRequiresAllSevenKnownAndConfirmed": true,
+    "comparisonRequiresBothTotalsAndMatchingConfirmedConditions": true,
+    "beforeConfirmationKnownSubtotalIsArithmeticPreviewOnly": true,
+    "changesToSourceInvalidateAffectedConfirmation": true,
+    "zeroIsKnownAmount": true,
+    "nullIsUnknownNotZero": true
+  },
+  "feeFields": [
+    {
+      "key": "vehicle",
+      "labelCN": "裸车价"
+    },
+    {
+      "key": "quoteTax",
+      "labelCN": "报价税费"
+    },
+    {
+      "key": "insurance",
+      "labelCN": "保险"
+    },
+    {
+      "key": "registration",
+      "labelCN": "上牌"
+    },
+    {
+      "key": "service",
+      "labelCN": "服务费"
+    },
+    {
+      "key": "mandatoryExtras",
+      "labelCN": "强制装潢及附加项"
+    },
+    {
+      "key": "other",
+      "labelCN": "其他费用"
+    }
+  ],
+  "publicSyntheticCases": [
+    {
+      "id": "case-1-missing-service-then-complete",
+      "title": "服务费缺失，补充后录入范围结论反转",
+      "synthetic": true,
+      "rawA": "【公开合成案例 1 / A】\n车型/配置：样例星河 标准款\n付款方式：现金全款\n费用范围：裸车价、报价税费、保险、上牌、服务费、强制装潢及附加项、其他费用\n裸车价：100000.00 元\n报价税费：10000.00 元\n保险：5000.00 元\n上牌：500.00 元\n服务费：0.00 元\n强制装潢及附加项：0.00 元\n其他费用：0.00 元",
+      "rawB": "【公开合成案例 1 / B】\n车型/配置：样例星河 标准款\n付款方式：现金全款\n费用范围：裸车价、报价税费、保险、上牌、服务费、强制装潢及附加项、其他费用\n裸车价：97000.00 元\n报价税费：10000.00 元\n保险：5000.00 元\n上牌：500.00 元\n服务费：待销售确认\n强制装潢及附加项：0.00 元\n其他费用：0.00 元",
+      "amountsCents": {
+        "A": {
+          "vehicle": 10000000,
+          "quoteTax": 1000000,
+          "insurance": 500000,
+          "registration": 50000,
+          "service": 0,
+          "mandatoryExtras": 0,
+          "other": 0
+        },
+        "B": {
+          "vehicle": 9700000,
+          "quoteTax": 1000000,
+          "insurance": 500000,
+          "registration": 50000,
+          "service": null,
+          "mandatoryExtras": 0,
+          "other": 0
+        }
+      },
+      "conditions": {
+        "A": {
+          "model": "样例星河 标准款",
+          "payment": "现金全款",
+          "scope": "裸车价、报价税费、保险、上牌、服务费、强制装潢及附加项、其他费用"
+        },
+        "B": {
+          "model": "样例星河 标准款",
+          "payment": "现金全款",
+          "scope": "裸车价、报价税费、保险、上牌、服务费、强制装潢及附加项、其他费用"
+        }
+      },
+      "expectations": {
+        "afterExtractionBeforeConfirmation": {
+          "availableAmountsConfirmed": false,
+          "conditionsConfirmed": false,
+          "conditionMatches": {
+            "model": true,
+            "payment": true,
+            "scope": true
+          },
+          "knownSubtotalCents": {
+            "A": 11550000,
+            "B": 11250000
+          },
+          "fullConfirmedTotalCents": {
+            "A": null,
+            "B": null
+          },
+          "arithmeticKnownSubtotalDeltaCents": -300000,
+          "comparableDeltaCents": null,
+          "canCompare": false,
+          "blockers": [
+            "amounts_unconfirmed",
+            "conditions_unconfirmed",
+            "B.service_missing"
+          ],
+          "rankingAllowed": false,
+          "knownSubtotalMeaning": "arithmetic_preview_only_when_unconfirmed_or_incomplete"
+        },
+        "afterConfirmingAvailableFieldsAndConditions": {
+          "availableAmountsConfirmed": true,
+          "conditionsConfirmed": true,
+          "conditionMatches": {
+            "model": true,
+            "payment": true,
+            "scope": true
+          },
+          "knownSubtotalCents": {
+            "A": 11550000,
+            "B": 11250000
+          },
+          "fullConfirmedTotalCents": {
+            "A": 11550000,
+            "B": null
+          },
+          "arithmeticKnownSubtotalDeltaCents": -300000,
+          "comparableDeltaCents": null,
+          "canCompare": false,
+          "blockers": [
+            "B.service_missing"
+          ],
+          "rankingAllowed": false,
+          "knownSubtotalMeaning": "arithmetic_preview_only_when_unconfirmed_or_incomplete"
+        },
+        "afterSupplementAndConfirmation": {
+          "availableAmountsConfirmed": true,
+          "conditionsConfirmed": true,
+          "conditionMatches": {
+            "model": true,
+            "payment": true,
+            "scope": true
+          },
+          "knownSubtotalCents": {
+            "A": 11550000,
+            "B": 11850000
+          },
+          "fullConfirmedTotalCents": {
+            "A": 11550000,
+            "B": 11850000
+          },
+          "arithmeticKnownSubtotalDeltaCents": 300000,
+          "comparableDeltaCents": 300000,
+          "canCompare": true,
+          "blockers": [],
+          "rankingAllowed": true,
+          "knownSubtotalMeaning": "arithmetic_preview_only_when_unconfirmed_or_incomplete"
+        }
+      },
+      "supplement": {
+        "rawB": "【公开合成补充回复 / 案例 1 的 B】\n现金全款条件不变。服务费：6000.00 元。",
+        "changesCents": {
+          "B.service": 600000
+        },
+        "requiresConfirmation": true,
+        "sourceHandling": "retain_supplement_source_or_label_as_user_supplement; do_not_claim_it_was_in_initial_rawB",
+        "expectedAmountsCentsB": {
+          "vehicle": 9700000,
+          "quoteTax": 1000000,
+          "insurance": 500000,
+          "registration": 50000,
+          "service": 600000,
+          "mandatoryExtras": 0,
+          "other": 0
+        }
+      },
+      "expectedDifferenceComponentsCentsAfterSupplement": {
+        "vehicle": -300000,
+        "quoteTax": 0,
+        "insurance": 0,
+        "registration": 0,
+        "service": 600000,
+        "mandatoryExtras": 0,
+        "other": 0
+      },
+      "mustNotClaim": [
+        "B便宜3000元（服务费缺失时）",
+        "推荐某车型或商家",
+        "覆盖真实交易全部成本"
+      ],
+      "manualCalculation": [
+        "A: 100000 + 10000 + 5000 + 500 = 115500.00",
+        "B known: 97000 + 10000 + 5000 + 500 = 112500.00",
+        "B supplemented: 112500 + 6000 = 118500.00",
+        "B - A: 118500 - 115500 = +3000.00"
+      ]
+    },
+    {
+      "id": "case-2-payment-mismatch",
+      "title": "七项金额完整但现金与贷款条件不同",
+      "synthetic": true,
+      "rawA": "【公开合成案例 2 / A】\n车型/配置：样例山岚 标准款\n付款方式：现金全款\n费用范围：仅以下七项录入费用\n裸车价：99800.00 元\n报价税费：9200.00 元\n保险：4800.00 元\n上牌：600.00 元\n服务费：0.00 元\n强制装潢及附加项：0.00 元\n其他费用：0.00 元",
+      "rawB": "【公开合成案例 2 / B】\n车型/配置：样例山岚 标准款\n付款方式：贷款，24 期\n费用范围：仅以下七项录入费用\n裸车价：97800.00 元\n报价税费：9200.00 元\n保险：4800.00 元\n上牌：600.00 元\n服务费：0.00 元\n强制装潢及附加项：0.00 元\n其他费用：0.00 元\n备注：贷款利息与还款安排未提供，不包含在以上金额中。",
+      "amountsCents": {
+        "A": {
+          "vehicle": 9980000,
+          "quoteTax": 920000,
+          "insurance": 480000,
+          "registration": 60000,
+          "service": 0,
+          "mandatoryExtras": 0,
+          "other": 0
+        },
+        "B": {
+          "vehicle": 9780000,
+          "quoteTax": 920000,
+          "insurance": 480000,
+          "registration": 60000,
+          "service": 0,
+          "mandatoryExtras": 0,
+          "other": 0
+        }
+      },
+      "conditions": {
+        "A": {
+          "model": "样例山岚 标准款",
+          "payment": "现金全款",
+          "scope": "仅以下七项录入费用"
+        },
+        "B": {
+          "model": "样例山岚 标准款",
+          "payment": "贷款，24 期",
+          "scope": "仅以下七项录入费用"
+        }
+      },
+      "expectations": {
+        "afterExtractionBeforeConfirmation": {
+          "availableAmountsConfirmed": false,
+          "conditionsConfirmed": false,
+          "conditionMatches": {
+            "model": true,
+            "payment": false,
+            "scope": true
+          },
+          "knownSubtotalCents": {
+            "A": 11440000,
+            "B": 11240000
+          },
+          "fullConfirmedTotalCents": {
+            "A": null,
+            "B": null
+          },
+          "arithmeticKnownSubtotalDeltaCents": -200000,
+          "comparableDeltaCents": null,
+          "canCompare": false,
+          "blockers": [
+            "amounts_unconfirmed",
+            "conditions_unconfirmed",
+            "payment_mismatch"
+          ],
+          "rankingAllowed": false,
+          "knownSubtotalMeaning": "arithmetic_preview_only_when_unconfirmed_or_incomplete"
+        },
+        "afterConfirmingAvailableFieldsAndConditions": {
+          "availableAmountsConfirmed": true,
+          "conditionsConfirmed": true,
+          "conditionMatches": {
+            "model": true,
+            "payment": false,
+            "scope": true
+          },
+          "knownSubtotalCents": {
+            "A": 11440000,
+            "B": 11240000
+          },
+          "fullConfirmedTotalCents": {
+            "A": 11440000,
+            "B": 11240000
+          },
+          "arithmeticKnownSubtotalDeltaCents": -200000,
+          "comparableDeltaCents": null,
+          "canCompare": false,
+          "blockers": [
+            "payment_mismatch"
+          ],
+          "rankingAllowed": false,
+          "knownSubtotalMeaning": "arithmetic_preview_only_when_unconfirmed_or_incomplete"
+        }
+      },
+      "supplement": null,
+      "advisories": [
+        "loan_interest_and_repayment_unknown_and_outside_recorded_seven_item_scope",
+        "do_not_infer_APR_monthly_payment_or_financing_recommendation"
+      ],
+      "conditionVariants": [
+        {
+          "id": "model-mismatch",
+          "change": {
+            "B.payment": "现金全款",
+            "B.model": "样例山岚 旗舰款"
+          },
+          "expected": {
+            "availableAmountsConfirmed": true,
+            "conditionsConfirmed": true,
+            "conditionMatches": {
+              "model": false,
+              "payment": true,
+              "scope": true
+            },
+            "knownSubtotalCents": {
+              "A": 11440000,
+              "B": 11240000
+            },
+            "fullConfirmedTotalCents": {
+              "A": 11440000,
+              "B": 11240000
+            },
+            "arithmeticKnownSubtotalDeltaCents": -200000,
+            "comparableDeltaCents": null,
+            "canCompare": false,
+            "blockers": [
+              "model_mismatch"
+            ],
+            "rankingAllowed": false,
+            "knownSubtotalMeaning": "arithmetic_preview_only_when_unconfirmed_or_incomplete"
+          }
+        },
+        {
+          "id": "scope-mismatch",
+          "change": {
+            "B.payment": "现金全款",
+            "B.scope": "上牌另计，所列金额仅参考"
+          },
+          "expectedBlockers": [
+            "scope_mismatch"
+          ],
+          "canCompare": false,
+          "rankingAllowed": false
+        },
+        {
+          "id": "payment-missing",
+          "change": {
+            "B.payment": null
+          },
+          "expectedBlockers": [
+            "B.payment_missing"
+          ],
+          "canCompare": false,
+          "rankingAllowed": false
+        },
+        {
+          "id": "explicit-new-cash-quote",
+          "supplementRawB": "【公开合成补充回复 / 案例 2 的 B】\n现改为样例山岚标准款现金全款报价；费用范围与原七项一致，各项金额维持不变。",
+          "requiresConfirmation": true,
+          "sourceHandling": "new_supplement_not_a_fact_proven_by_original_loan_quote",
+          "expected": {
+            "availableAmountsConfirmed": true,
+            "conditionsConfirmed": true,
+            "conditionMatches": {
+              "model": true,
+              "payment": true,
+              "scope": true
+            },
+            "knownSubtotalCents": {
+              "A": 11440000,
+              "B": 11240000
+            },
+            "fullConfirmedTotalCents": {
+              "A": 11440000,
+              "B": 11240000
+            },
+            "arithmeticKnownSubtotalDeltaCents": -200000,
+            "comparableDeltaCents": -200000,
+            "canCompare": true,
+            "blockers": [],
+            "rankingAllowed": true,
+            "knownSubtotalMeaning": "arithmetic_preview_only_when_unconfirmed_or_incomplete"
+          }
+        }
+      ],
+      "mustNotClaim": [
+        "贷款利息为0",
+        "B总成本便宜2000元（原始条件不一致时）",
+        "已推荐最优融资方案"
+      ],
+      "manualCalculation": [
+        "A: 99800 + 9200 + 4800 + 600 = 114400.00",
+        "B: 97800 + 9200 + 4800 + 600 = 112400.00",
+        "arithmetic B - A = -2000.00; comparison is blocked by payment mismatch"
+      ]
+    },
+    {
+      "id": "case-3-explicit-zero-versus-missing",
+      "title": "明确零不等于未报价，一分钱差额不得丢失",
+      "synthetic": true,
+      "rawA": "【公开合成案例 3 / A】\n车型/配置：样例晨露 标准款\n付款方式：现金全款\n费用范围：裸车价、报价税费、保险、上牌、服务费、强制装潢及附加项、其他费用\n裸车价：88888.88 元\n报价税费：8000.02 元\n保险：3999.10 元\n上牌：500.00 元\n服务费：0.00 元\n强制装潢及附加项：0.00 元\n其他费用：0.00 元",
+      "rawB": "【公开合成案例 3 / B】\n车型/配置：样例晨露 标准款\n付款方式：现金全款\n费用范围：裸车价、报价税费、保险、上牌、服务费、强制装潢及附加项、其他费用\n裸车价：88888.88 元\n报价税费：8000.02 元\n保险：3999.11 元\n上牌：500.00 元\n服务费：0.00 元\n强制装潢及附加项：0.00 元\n其他费用：未报价",
+      "amountsCents": {
+        "A": {
+          "vehicle": 8888888,
+          "quoteTax": 800002,
+          "insurance": 399910,
+          "registration": 50000,
+          "service": 0,
+          "mandatoryExtras": 0,
+          "other": 0
+        },
+        "B": {
+          "vehicle": 8888888,
+          "quoteTax": 800002,
+          "insurance": 399911,
+          "registration": 50000,
+          "service": 0,
+          "mandatoryExtras": 0,
+          "other": null
+        }
+      },
+      "conditions": {
+        "A": {
+          "model": "样例晨露 标准款",
+          "payment": "现金全款",
+          "scope": "裸车价、报价税费、保险、上牌、服务费、强制装潢及附加项、其他费用"
+        },
+        "B": {
+          "model": "样例晨露 标准款",
+          "payment": "现金全款",
+          "scope": "裸车价、报价税费、保险、上牌、服务费、强制装潢及附加项、其他费用"
+        }
+      },
+      "expectations": {
+        "afterExtractionBeforeConfirmation": {
+          "availableAmountsConfirmed": false,
+          "conditionsConfirmed": false,
+          "conditionMatches": {
+            "model": true,
+            "payment": true,
+            "scope": true
+          },
+          "knownSubtotalCents": {
+            "A": 10138800,
+            "B": 10138801
+          },
+          "fullConfirmedTotalCents": {
+            "A": null,
+            "B": null
+          },
+          "arithmeticKnownSubtotalDeltaCents": 1,
+          "comparableDeltaCents": null,
+          "canCompare": false,
+          "blockers": [
+            "amounts_unconfirmed",
+            "conditions_unconfirmed",
+            "B.other_missing"
+          ],
+          "rankingAllowed": false,
+          "knownSubtotalMeaning": "arithmetic_preview_only_when_unconfirmed_or_incomplete"
+        },
+        "afterConfirmingAvailableFieldsAndConditions": {
+          "availableAmountsConfirmed": true,
+          "conditionsConfirmed": true,
+          "conditionMatches": {
+            "model": true,
+            "payment": true,
+            "scope": true
+          },
+          "knownSubtotalCents": {
+            "A": 10138800,
+            "B": 10138801
+          },
+          "fullConfirmedTotalCents": {
+            "A": 10138800,
+            "B": null
+          },
+          "arithmeticKnownSubtotalDeltaCents": 1,
+          "comparableDeltaCents": null,
+          "canCompare": false,
+          "blockers": [
+            "B.other_missing"
+          ],
+          "rankingAllowed": false,
+          "knownSubtotalMeaning": "arithmetic_preview_only_when_unconfirmed_or_incomplete"
+        },
+        "afterSupplementAndConfirmation": {
+          "availableAmountsConfirmed": true,
+          "conditionsConfirmed": true,
+          "conditionMatches": {
+            "model": true,
+            "payment": true,
+            "scope": true
+          },
+          "knownSubtotalCents": {
+            "A": 10138800,
+            "B": 10138801
+          },
+          "fullConfirmedTotalCents": {
+            "A": 10138800,
+            "B": 10138801
+          },
+          "arithmeticKnownSubtotalDeltaCents": 1,
+          "comparableDeltaCents": 1,
+          "canCompare": true,
+          "blockers": [],
+          "rankingAllowed": true,
+          "knownSubtotalMeaning": "arithmetic_preview_only_when_unconfirmed_or_incomplete"
+        }
+      },
+      "supplement": {
+        "rawB": "【公开合成补充回复 / 案例 3 的 B】\n其他费用：0.00 元。其余报价及条件不变。",
+        "changesCents": {
+          "B.other": 0
+        },
+        "requiresConfirmation": true,
+        "expectedAmountsCentsB": {
+          "vehicle": 8888888,
+          "quoteTax": 800002,
+          "insurance": 399911,
+          "registration": 50000,
+          "service": 0,
+          "mandatoryExtras": 0,
+          "other": 0
+        }
+      },
+      "expectedDifferenceComponentsCentsAfterSupplement": {
+        "vehicle": 0,
+        "quoteTax": 0,
+        "insurance": 1,
+        "registration": 0,
+        "service": 0,
+        "mandatoryExtras": 0,
+        "other": 0
+      },
+      "mustNotClaim": [
+        "未报价等于0",
+        "一分钱差异等于无差异"
+      ],
+      "manualCalculation": [
+        "A: 88888.88 + 8000.02 + 3999.10 + 500 = 101388.00",
+        "B known: 88888.88 + 8000.02 + 3999.11 + 500 = 101388.01",
+        "B - A after explicit zero supplement = +0.01"
+      ]
+    }
+  ],
+  "ownInputSyntheticCase": {
+    "id": "own-input-independent-synthetic",
+    "title": "不调用内置案例的自有文本输入验收",
+    "synthetic": true,
+    "countsAsRealUserAdoption": false,
+    "rawA": "【独立验收合成报价 / A】\n车型/配置：合成云杉 2026 标准款\n付款方式：现金全款\n费用范围：裸车价、报价税费、保险、上牌、服务费、强制装潢及附加项、其他费用\n裸车价：132456.78 元\n报价税费：10123.45 元\n保险：4567.89 元\n上牌：300.00 元\n服务费：123.40 元\n强制装潢及附加项：999.00 元\n其他费用：0.00 元",
+    "rawB": "【独立验收合成报价 / B】\n车型/配置：合成云杉 2026 标准款\n付款方式：现金全款\n费用范围：裸车价、报价税费、保险、上牌、服务费、强制装潢及附加项、其他费用\n裸车价：131456.78 元\n报价税费：10223.45 元\n保险：4667.89 元\n上牌：350.00 元\n服务费：0.00 元\n强制装潢及附加项：1999.00 元\n其他费用：0.00 元",
+    "amountsCents": {
+      "A": {
+        "vehicle": 13245678,
+        "quoteTax": 1012345,
+        "insurance": 456789,
+        "registration": 30000,
+        "service": 12340,
+        "mandatoryExtras": 99900,
+        "other": 0
+      },
+      "B": {
+        "vehicle": 13145678,
+        "quoteTax": 1022345,
+        "insurance": 466789,
+        "registration": 35000,
+        "service": 0,
+        "mandatoryExtras": 199900,
+        "other": 0
+      }
+    },
+    "conditions": {
+      "A": {
+        "model": "合成云杉 2026 标准款",
+        "payment": "现金全款",
+        "scope": "裸车价、报价税费、保险、上牌、服务费、强制装潢及附加项、其他费用"
+      },
+      "B": {
+        "model": "合成云杉 2026 标准款",
+        "payment": "现金全款",
+        "scope": "裸车价、报价税费、保险、上牌、服务费、强制装潢及附加项、其他费用"
+      }
+    },
+    "expectations": {
+      "afterExtractionBeforeConfirmation": {
+        "availableAmountsConfirmed": false,
+        "conditionsConfirmed": false,
+        "conditionMatches": {
+          "model": true,
+          "payment": true,
+          "scope": true
+        },
+        "knownSubtotalCents": {
+          "A": 14857052,
+          "B": 14869712
+        },
+        "fullConfirmedTotalCents": {
+          "A": null,
+          "B": null
+        },
+        "arithmeticKnownSubtotalDeltaCents": 12660,
+        "comparableDeltaCents": null,
+        "canCompare": false,
+        "blockers": [
+          "amounts_unconfirmed",
+          "conditions_unconfirmed"
+        ],
+        "rankingAllowed": false,
+        "knownSubtotalMeaning": "arithmetic_preview_only_when_unconfirmed_or_incomplete"
+      },
+      "afterConfirmingAvailableFieldsAndConditions": {
+        "availableAmountsConfirmed": true,
+        "conditionsConfirmed": true,
+        "conditionMatches": {
+          "model": true,
+          "payment": true,
+          "scope": true
+        },
+        "knownSubtotalCents": {
+          "A": 14857052,
+          "B": 14869712
+        },
+        "fullConfirmedTotalCents": {
+          "A": 14857052,
+          "B": 14869712
+        },
+        "arithmeticKnownSubtotalDeltaCents": 12660,
+        "comparableDeltaCents": 12660,
+        "canCompare": true,
+        "blockers": [],
+        "rankingAllowed": true,
+        "knownSubtotalMeaning": "arithmetic_preview_only_when_unconfirmed_or_incomplete"
+      }
+    },
+    "supplement": null,
+    "expectedDifferenceComponentsCents": {
+      "vehicle": -100000,
+      "quoteTax": 10000,
+      "insurance": 10000,
+      "registration": 5000,
+      "service": -12340,
+      "mandatoryExtras": 100000,
+      "other": 0
+    },
+    "transitions": [
+      {
+        "id": "manual-registration-supplement",
+        "action": {
+          "setAmountCents": {
+            "B.registration": 45000
+          },
+          "source": "user_supplement",
+          "confirmChangedAmount": true
+        },
+        "expected": {
+          "availableAmountsConfirmed": true,
+          "conditionsConfirmed": true,
+          "conditionMatches": {
+            "model": true,
+            "payment": true,
+            "scope": true
+          },
+          "knownSubtotalCents": {
+            "A": 14857052,
+            "B": 14879712
+          },
+          "fullConfirmedTotalCents": {
+            "A": 14857052,
+            "B": 14879712
+          },
+          "arithmeticKnownSubtotalDeltaCents": 22660,
+          "comparableDeltaCents": 22660,
+          "canCompare": true,
+          "blockers": [],
+          "rankingAllowed": true,
+          "knownSubtotalMeaning": "arithmetic_preview_only_when_unconfirmed_or_incomplete"
+        }
+      },
+      {
+        "id": "clear-previously-zero-service",
+        "action": {
+          "setAmountCents": {
+            "B.service": null
+          }
+        },
+        "expected": {
+          "availableAmountsConfirmed": true,
+          "conditionsConfirmed": true,
+          "conditionMatches": {
+            "model": true,
+            "payment": true,
+            "scope": true
+          },
+          "knownSubtotalCents": {
+            "A": 14857052,
+            "B": 14879712
+          },
+          "fullConfirmedTotalCents": {
+            "A": 14857052,
+            "B": null
+          },
+          "arithmeticKnownSubtotalDeltaCents": 22660,
+          "comparableDeltaCents": null,
+          "canCompare": false,
+          "blockers": [
+            "B.service_missing"
+          ],
+          "rankingAllowed": false,
+          "knownSubtotalMeaning": "arithmetic_preview_only_when_unconfirmed_or_incomplete"
+        },
+        "invariant": "known_subtotal_unchanged_but_comparison_must_be_revoked"
+      },
+      {
+        "id": "restore-explicit-zero-service",
+        "action": {
+          "setAmountCents": {
+            "B.service": 0
+          },
+          "source": "user_supplement",
+          "confirmChangedAmount": true
+        },
+        "expected": {
+          "availableAmountsConfirmed": true,
+          "conditionsConfirmed": true,
+          "conditionMatches": {
+            "model": true,
+            "payment": true,
+            "scope": true
+          },
+          "knownSubtotalCents": {
+            "A": 14857052,
+            "B": 14879712
+          },
+          "fullConfirmedTotalCents": {
+            "A": 14857052,
+            "B": 14879712
+          },
+          "arithmeticKnownSubtotalDeltaCents": 22660,
+          "comparableDeltaCents": 22660,
+          "canCompare": true,
+          "blockers": [],
+          "rankingAllowed": true,
+          "knownSubtotalMeaning": "arithmetic_preview_only_when_unconfirmed_or_incomplete"
+        }
+      }
+    ],
+    "manualCalculation": [
+      "A: 132456.78 + 10123.45 + 4567.89 + 300 + 123.40 + 999 = 148570.52",
+      "B: 131456.78 + 10223.45 + 4667.89 + 350 + 0 + 1999 = 148697.12",
+      "B - A: 148697.12 - 148570.52 = +126.60"
+    ]
+  },
+  "evidenceLimitsCN": "本文件是预期数据，不表示应用已通过，也不计为独立真人采用或真实成交。"
+}
