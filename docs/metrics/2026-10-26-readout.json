@@ -1,0 +1,244 @@
+{
+  "checked_at_beijing": "2026-10-26T10:29:41.150432+08:00",
+  "namespace": "indiv-captain",
+  "inventory": {
+    "complete": true,
+    "count": 200,
+    "unique_slugs": 200,
+    "namespace_verified": true,
+    "metric_coverage": {
+      "downloads": 200,
+      "stars": 200,
+      "installs": 200
+    },
+    "totals": {
+      "downloads": 22853,
+      "stars": 3,
+      "installs": 0
+    },
+    "reported_page_totals": [
+      {
+        "total": 200,
+        "totalDownloads": 22853,
+        "totalStars": 3,
+        "page": 1,
+        "pageSize": 100,
+        "count": 100
+      },
+      {
+        "total": 200,
+        "totalDownloads": 22853,
+        "totalStars": 3,
+        "page": 2,
+        "pageSize": 100,
+        "count": 100
+      },
+      {
+        "total": 200,
+        "totalDownloads": 22853,
+        "totalStars": 3,
+        "page": 3,
+        "pageSize": 100,
+        "count": 0
+      }
+    ],
+    "same_slug_set_as_oct21": true,
+    "delta_since_oct21": {
+      "downloads": 2641,
+      "stars": 0,
+      "installs": 0
+    },
+    "top_download_increments_since_oct21": [
+      {
+        "slug": "thesis-opening-report",
+        "baseline_downloads": 315,
+        "downloads": 435,
+        "increment": 120
+      },
+      {
+        "slug": "gov-doc-expert",
+        "baseline_downloads": 514,
+        "downloads": 603,
+        "increment": 89
+      },
+      {
+        "slug": "architect-expert",
+        "baseline_downloads": 367,
+        "downloads": 450,
+        "increment": 83
+      },
+      {
+        "slug": "pptx-making",
+        "baseline_downloads": 253,
+        "downloads": 326,
+        "increment": 73
+      },
+      {
+        "slug": "long-doc-summary",
+        "baseline_downloads": 134,
+        "downloads": 192,
+        "increment": 58
+      },
+      {
+        "slug": "word-formatting",
+        "baseline_downloads": 218,
+        "downloads": 276,
+        "increment": 58
+      },
+      {
+        "slug": "teach-workspace-zh",
+        "baseline_downloads": 447,
+        "downloads": 505,
+        "increment": 58
+      },
+      {
+        "slug": "vocab-memorization-plan",
+        "baseline_downloads": 164,
+        "downloads": 215,
+        "increment": 51
+      },
+      {
+        "slug": "math-problem-tutor",
+        "baseline_downloads": 203,
+        "downloads": 253,
+        "increment": 50
+      },
+      {
+        "slug": "markdown-conversion",
+        "baseline_downloads": 93,
+        "downloads": 139,
+        "increment": 46
+      }
+    ],
+    "favorite_skills": [
+      {
+        "slug": "video-frame-extract",
+        "downloads": 189,
+        "stars": 1
+      },
+      {
+        "slug": "api-diff-test",
+        "downloads": 178,
+        "stars": 1
+      },
+      {
+        "slug": "car-buying-checklist",
+        "downloads": 202,
+        "stars": 1
+      }
+    ]
+  },
+  "baseline": {
+    "checked_at_beijing": "2026-10-21T14:50:09.312602+08:00",
+    "source": "2026-10-21-inventory.json",
+    "totals": {
+      "downloads": 20212,
+      "installs": 0,
+      "stars": 3
+    }
+  },
+  "target_skills": [
+    {
+      "slug": "report-making",
+      "http_status": 200,
+      "queried_at_beijing": "2026-10-26T10:29:32.708603+08:00",
+      "namespace": "indiv-captain",
+      "latest_version": "0.1.1",
+      "latest_version_created_at_beijing": "2026-10-09T17:55:51.450000+08:00",
+      "stats": {
+        "comments": 0,
+        "downloads": 87,
+        "installs": 0,
+        "stars": 0,
+        "versions": 2
+      },
+      "baseline_oct21_stats": {
+        "downloads": 80,
+        "installs": 0,
+        "stars": 0
+      },
+      "delta_since_oct21": {
+        "downloads": 7,
+        "stars": 0,
+        "installs": 0
+      },
+      "security_statuses": {
+        "keen": "benign",
+        "sanbu": "benign"
+      },
+      "source": "https://api.skillhub.cn/api/v1/skills/report-making?namespace=indiv-captain"
+    },
+    {
+      "slug": "pptx-making",
+      "http_status": 200,
+      "queried_at_beijing": "2026-10-26T10:29:34.321323+08:00",
+      "namespace": "indiv-captain",
+      "latest_version": "0.1.2",
+      "latest_version_created_at_beijing": "2026-10-21T15:06:21.136000+08:00",
+      "stats": {
+        "comments": 0,
+        "downloads": 326,
+        "installs": 0,
+        "stars": 0,
+        "versions": 3
+      },
+      "baseline_oct21_stats": {
+        "downloads": 253,
+        "installs": 0,
+        "stars": 0
+      },
+      "delta_since_oct21": {
+        "downloads": 73,
+        "stars": 0,
+        "installs": 0
+      },
+      "security_statuses": {
+        "keen": "benign",
+        "sanbu": "benign"
+      },
+      "source": "https://api.skillhub.cn/api/v1/skills/pptx-making?namespace=indiv-captain"
+    },
+    {
+      "slug": "car-buying-checklist",
+      "http_status": 200,
+      "queried_at_beijing": "2026-10-26T10:29:35.915985+08:00",
+      "namespace": "indiv-captain",
+      "latest_version": "0.1.2",
+      "latest_version_created_at_beijing": "2026-10-15T14:18:40.570000+08:00",
+      "stats": {
+        "comments": 0,
+        "downloads": 202,
+        "installs": 0,
+        "stars": 1,
+        "versions": 3
+      },
+      "baseline_oct21_stats": {
+        "downloads": 183,
+        "installs": 0,
+        "stars": 1
+      },
+      "delta_since_oct21": {
+        "downloads": 19,
+        "stars": 0,
+        "installs": 0
+      },
+      "security_statuses": {
+        "keen": "benign",
+        "sanbu": "benign"
+      },
+      "source": "https://api.skillhub.cn/api/v1/skills/car-buying-checklist?namespace=indiv-captain"
+    }
+  ],
+  "sources": [
+    "https://api.skillhub.cn/api/v1/users/user_a3a2e24a/skills?page=1&pageSize=100",
+    "https://api.skillhub.cn/api/v1/users/user_a3a2e24a/skills?page=2&pageSize=100",
+    "https://api.skillhub.cn/api/v1/users/user_a3a2e24a/skills?page=3&pageSize=100"
+  ],
+  "limits": [
+    "Downloads are counters, not unique users or completed tasks.",
+    "Stars are favorites, not user ratings.",
+    "API installs=0 does not establish zero all-channel use.",
+    "This read-only snapshot performed no skill package downloads or installs.",
+    "No independent human task completion or repeat-use feedback verified."
+  ]
+}

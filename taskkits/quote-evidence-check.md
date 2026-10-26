@@ -25,6 +25,6 @@ python3 -m unittest discover -s tests -p '*_test.py' -v
 
 19项行为验证覆盖缺项与明确零、确认和来源、一分钱精度、条件差异、错误格式、导出范围、文件覆盖保护。另一次独立代理用新合成报价完成核对，准确保留缺项及付款差异；这些都不是独立真人采用证明。
 
-本包是“报价显微镜”开发期间产生的独立工具资产。网页仍在开发，本包不代表 WorkBuddy 原生创作、应用上线、已参赛或获奖。
+本包是“报价显微镜”开发期间产生的独立工具资产。[网页公开体验](https://po-et.github.io/workbuddy-skills/quote-lens/)已可使用，免费匿名，在浏览器本地处理报价。离线脚本按 `references/schema.md` 读取结构化 JSON，网页接收报价原文；两者输入格式不同，尚未实现互相导入。本包不代表 WorkBuddy 原生创作、已参赛或获奖。
 
 作者与来源：Captain，https://github.com/po-et/workbuddy-skills 。代码 MIT；正文和合成内容 CC BY 4.0，见随包许可。

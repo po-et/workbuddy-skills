@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="下载可独立运行的 Skills 任务包：PPT 字号检查、两份报价核对、接口差分。自带脚本、合成样例和统一入口，支持自己的输入。">
+  <meta name="description" content="免费匿名体验报价显微镜，在浏览器本地核对两份报价，缺项不等于 0。另有独立提示 Skill、Python 离线核对包，以及 PPT、报价和接口差分任务包。">
   <meta name="theme-color" content="#EEF5FB">
   <title>Captain｜WorkBuddy 与 SkillHub 可核验工作流</title>
   <meta property="og:title" content="Captain｜可核验的 AI 工作流">
-  <meta property="og:description" content="三个独立任务包，下载解压即可运行样例，再换成自己的输入。适用于本地 Python、WorkBuddy 或支持文件与命令的 AI 助手。">
+  <meta property="og:description" content="打开网页核对报价的来源、缺项与条件，确认后再比较差额；也可下载提示 Skill 或带脚本与合成样例的离线工具。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://po-et.github.io/workbuddy-skills/showcase/">
   <meta property="og:image" content="https://po-et.github.io/workbuddy-skills/assets/2026-10-12-client-case/02-four-business-differences.jpg">
@@ -43,13 +43,15 @@
   <main id="main" class="wrap">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <h1 id="hero-title">下载一个工具，<br>先完成一次任务。</h1>
-        <p>查 PPT 小字、核对两份报价、找接口字段变化。任务包包含 Skills、脚本和样例，解压后用本地 Python，或支持本地文件与命令的 AI 助手运行。</p>
+        <h1 id="hero-title">网页核对报价，<br>工具离线复跑。</h1>
+        <p>免费匿名体验报价显微镜，在浏览器本地核对两份购车报价，缺项不等于 0。也可下载 Python 离线核对包，或选择 PPT、报价和接口差分任务包。</p>
         <div class="hero-actions">
-          <a class="button" href="#downloads">下载任务包</a>
-          <a class="button secondary" href="#workbench">查看更多工作流</a>
+          <a class="button" href="../quote-lens/">直接体验报价显微镜</a>
+          <a class="button secondary" href="../quote-lens/SKILL.md" download="SKILL.md">下载报价 Skill</a>
+          <a class="button secondary" href="https://github.com/po-et/workbuddy-skills/releases/download/quote-evidence-check-v0.1.0/quote-evidence-check-0.1.0.zip">下载离线核对包</a>
+          <a class="button secondary" href="#downloads">查看三个任务包</a>
         </div>
-        <p class="byline">需要 Python 3.9+，无需 SkillHub 账号。个人作者维护，自带样例均为合成数据。</p>
+        <p class="byline">网页无需安装。报价 Skill 为独立提示模板，不含脚本；离线核对包需要 Python 3.9+。样例均为合成数据。</p>
       </div>
       <div class="comparison" aria-label="公开合成订单接口的差异与修正对照">
         <div class="comparison-top"><h2>一条订单接口，三份响应</h2><span>公开合成案例</span></div>
@@ -259,6 +261,7 @@ $.paid_amount</code></pre>
         <section class="task-panel" id="panel-car" role="tabpanel" aria-labelledby="tab-car" tabindex="0" hidden>
           <div class="panel-heading"><h3>先补齐费用，再看同一范围的差额</h3><span class="version">买车 v0.1.2</span></div>
           <p class="panel-lead">把两份书面报价并排列出，记录每个金额的出处。遗漏费用保留待补，补齐后再核对差额。</p>
+          <p class="block-note">无需安装也能先试：<a href="../quote-lens/">直接体验报价显微镜</a>，在浏览器本地核对原文、金额与条件。</p>
           <dl class="delivery-flow">
             <div><dt>输入</dt><dd>两份结构化报价<br>金额、费用范围与来源</dd></div>
             <div><dt>交付</dt><dd>核对表三份文件<br>Markdown + CSV + JSON</dd></div>
