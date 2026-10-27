@@ -40,6 +40,61 @@ class AnomalyCLITest(unittest.TestCase):
         self.assertTrue(all(not row['标记'] for row in rows[:-1]))
         self.assertEqual(rows[-1]['标记'], '▲')
 
+    def test_decimal_change_reaching_absolute_limit_is_flagged(self):
+        # Monthly example: |MoM| > 20% and absolute change >= 30, including equality.
+        for start, end, mark in (('100.20', '130.20', '▲'), ('130.20', '100.20', '▼')):
+            with self.subTest(start=start, end=end):
+                r = self.run_cli(f'期,值\nW01,{start}\nW02,{end}\n', '--pct', '20',
+                                 '--min-abs', '30', '--out', str(self.root / 'output.csv'))
+                self.assertEqual(r.returncode, 0, r.stderr)
+                self.assertEqual([row['标记'] for row in self.output_rows()], ['', mark])
+
+    def test_decimal_change_below_absolute_limit_is_not_flagged(self):
+        for start, end, threshold in (('100.20', '130.19', '30'),
+                                      ('130.20', '100.21', '30'),
+                                      ('100.20', '130.1999999999999999', '30'),
+                                      ('100.20', '130.20', '30.0000000000000001')):
+            with self.subTest(start=start, end=end, threshold=threshold):
+                r = self.run_cli(f'期,值\nW01,{start}\nW02,{end}\n', '--pct', '20',
+                                 '--min-abs', threshold, '--out', str(self.root / 'output.csv'))
+                self.assertEqual(r.returncode, 0, r.stderr)
+                self.assertTrue(all(not row['标记'] for row in self.output_rows()))
+
+    def test_decimal_percent_boundary_remains_strict(self):
+        # Exactly +/-7% must not trigger; a real excess must trigger.
+        for end, mark in (('1.07', ''), ('0.93', ''), ('1.0699', ''),
+                          ('1.0701', '▲'), ('0.9299', '▼')):
+            with self.subTest(end=end):
+                r = self.run_cli(f'期,值\nW01,1.00\nW02,{end}\n', '--pct', '7',
+                                 '--min-abs', '0', '--out', str(self.root / 'output.csv'))
+                self.assertEqual(r.returncode, 0, r.stderr)
+                self.assertEqual(self.output_rows()[-1]['标记'], mark)
+
+    def test_constant_decimal_history_respects_absolute_limit(self):
+        # --pct 50 disables rule one here, so these are rule-two acceptance cases.
+        for baseline, end, mark in (('100.20', '130.20', '▲'),
+                                    ('130.20', '100.20', '▼'),
+                                    ('100.20', '130.19', ''), ('100.20', '100.20', '')):
+            with self.subTest(baseline=baseline, end=end):
+                text = '期,值\n' + ''.join(f'W{i:02d},{baseline}\n' for i in range(1, 9)) + f'W09,{end}\n'
+                r = self.run_cli(text, '--pct', '50', '--min-abs', '30',
+                                 '--out', str(self.root / 'output.csv'))
+                self.assertEqual(r.returncode, 0, r.stderr)
+                rows = self.output_rows()
+                self.assertTrue(all(not row['标记'] for row in rows[:-1]))
+                self.assertEqual(rows[-1]['标记'], mark)
+
+    def test_variable_decimal_history_uses_exact_absolute_limit(self):
+        # Eight observations have mean 100.20; the last value is >=30 away only in case one.
+        for end, mark in (('130.20', '▲'), ('130.1999999999999999', '')):
+            with self.subTest(end=end):
+                history = ['100.19', '100.21'] * 4
+                text = '期,值\n' + ''.join(f'W{i:02d},{v}\n' for i, v in enumerate(history, 1)) + f'W09,{end}\n'
+                r = self.run_cli(text, '--pct', '50', '--min-abs', '30',
+                                 '--out', str(self.root / 'output.csv'))
+                self.assertEqual(r.returncode, 0, r.stderr)
+                self.assertEqual(self.output_rows()[-1]['标记'], mark)
+
     def test_nonfinite_values_are_skipped_without_polluting_history(self):
         for invalid in ('nan', 'NaN%', 'inf', '-inf', '1e999'):
             with self.subTest(invalid=invalid):

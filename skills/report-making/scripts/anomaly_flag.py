@@ -19,6 +19,7 @@
 
 import argparse
 import csv
+from decimal import Decimal, InvalidOperation
 import io
 import math
 import os
@@ -87,18 +88,26 @@ def read_rows(path):
     return header, rows
 
 
+def decimal_number(raw):
+    try:
+        value = Decimal(raw)
+    except InvalidOperation:
+        raise ValueError("不是数字") from None
+    # Preserve the former float parser's finite range and underflow-to-zero behavior.
+    if not value.is_finite() or not math.isfinite(value):
+        raise ValueError("不是有限数字")
+    return value if float(value) != 0 else Decimal(0)
+
+
 def to_number(raw):
     s = (raw or "").strip().replace(",", "").replace("，", "").replace(" ", "")
     if s.endswith("%"):
         s = s[:-1]
-    value = float(s)
-    if not math.isfinite(value):
-        raise ValueError("不是有限数字")
-    return value
+    return decimal_number(s)
 
 
 def fmt(v):
-    return ("%.2f" % v).rstrip("0").rstrip(".") if v is not None else "—"
+    return format(v, ".2f").rstrip("0").rstrip(".") if v is not None else "—"
 
 
 def flag_series(points, pct, min_abs, window, sigma):
@@ -146,10 +155,10 @@ def main(argv=None):
     p.add_argument("--period", help="期次列名，默认第一列")
     p.add_argument("--value", help="指标列名，默认最后一列")
     p.add_argument("--by", help="维度列名，如 区域；不给就当成一条序列")
-    p.add_argument("--pct", type=float, default=20, help="环比阈值（百分数），默认 20")
-    p.add_argument("--min-abs", type=float, help="绝对变化下限，小于它的波动不算异常；不给按 0 处理")
+    p.add_argument("--pct", type=decimal_number, default=Decimal("20"), help="环比阈值（百分数），默认 20")
+    p.add_argument("--min-abs", type=decimal_number, help="绝对变化下限，小于它的波动不算异常；不给按 0 处理")
     p.add_argument("--window", type=int, default=8, help="规则二看前几期，默认 8")
-    p.add_argument("--sigma", type=float, default=2, help="规则二的标准差倍数，默认 2")
+    p.add_argument("--sigma", type=decimal_number, default=Decimal("2"), help="规则二的标准差倍数，默认 2")
     p.add_argument("--out", help="另存一份带「环比、标记、触发规则」三列的 CSV")
     args = p.parse_args(argv)
     try:
@@ -165,7 +174,7 @@ def main(argv=None):
                 raise InputError(1, "%s 的列「%s」不在表头里；表头是：%s" % (name, col, "、".join(header)))
         if args.out and Path(args.out).resolve() == Path(args.file).resolve():
             raise InputError(1, "--out 不能和输入文件同名：原件只读，另存一份")
-        min_abs = args.min_abs if args.min_abs is not None else 0.0
+        min_abs = args.min_abs if args.min_abs is not None else Decimal(0)
 
         series, skipped, seen = {}, [], set()
         for line, r in rows:
@@ -202,7 +211,7 @@ def main(argv=None):
                 print("  %s 只有 %d 期，不足 %d 期，规则二跳过" % (group, len(points), args.window + 1))
             print("【%s】" % group)
             for period, value, mom, mark, why in result:
-                mom_s = "—" if mom is None else "%+.1f%%" % (mom * 100)
+                mom_s = "—" if mom is None else format(mom * 100, "+.1f") + "%"
                 print("  %s  %s  环比 %s  %s%s" % (period, fmt(value), mom_s, mark or " ", ("  ← " + why) if why else ""))
                 records.append([group, period, fmt(value), mom_s, mark, why])
                 if mark:
