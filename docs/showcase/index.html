@@ -71,7 +71,7 @@
     <section class="workbench" id="downloads" aria-labelledby="downloads-title" style="margin-bottom:32px">
       <div class="bench-heading"><h2 id="downloads-title">先拿走一个能用的任务包</h2><p>三个包独立下载，带完整技能、脚本、样例和许可证。</p></div>
       <div style="padding:24px 32px">
-        <div class="kit-row"><div><h3>PPT 字号检查</h3><p>输入自己的 PPTX，生成问题与字号来源报告；查不到的字号保留待确认。技能 v0.1.2。</p></div><a class="button" id="download-kit-ppt" href="https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.0/pptx-making-task-kit-0.1.0.zip">下载 PPT 任务包</a></div>
+        <div class="kit-row"><div><h3>PPT 字号检查</h3><p>输入自己的 PPTX，生成问题与字号来源报告；查不到的字号保留待确认。技能 v0.1.3，修正自动缩小误报。</p></div><a class="button" id="download-kit-ppt" href="https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.1/pptx-making-task-kit-0.1.1.zip">下载 PPT 任务包</a></div>
         <div class="kit-row"><div><h3>两份报价核对</h3><p>按输入说明录入两份报价，交付 Markdown、CSV 和 JSON；缺失费用不填零。技能 v0.1.2。</p></div><a class="button" id="download-kit-car" href="https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.0/car-buying-checklist-task-kit-0.1.0.zip">下载报价任务包</a></div>
         <div class="kit-row"><div><h3>接口迁移差分</h3><p>先用包内两个本机服务验证差异，再用原工具比较你已授权的接口。技能 v0.1.1。</p></div><a class="button" id="download-kit-api" href="https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.0/api-diff-test-task-kit-0.1.0.zip">下载接口任务包</a></div>
         <div class="action-block"><div class="block-heading"><h4>解压后，在任务包目录运行</h4><button class="copy-button" type="button" data-copy="kit-demo-command" data-copy-label="任务包启动命令">复制启动命令</button></div><div class="command-box"><pre id="kit-demo-command"><code>python3 start.py --demo --out-dir result</code></pre></div><p class="block-note">result 必须是全新目录。报价 / PPT 可改用 --input 处理自己的文件，详见包内 START-HERE.md。无需 pip、克隆仓库或安装 SkillHub；接口样例只访问本机回环 HTTP，报价与 PPT 样例不发网络请求。</p></div>
@@ -295,7 +295,7 @@ $.paid_amount</code></pre>
           <p class="source-note">2026-10-15，维护者侧代理在 WorkBuddy 5.8.2 / Space-Bunny 中显式读取本地技能、运行两组输入；六份输出经独立重跑逐字核对一致。市场自动触发和独立用户使用仍未确认。</p>
         </section>
         <section class="task-panel" id="panel-ppt" role="tabpanel" aria-labelledby="tab-ppt" tabindex="0" hidden>
-          <div class="panel-heading"><h3>8 磅藏在段落样式里，也要查出来</h3><span class="version">PPT 制作 v0.1.2</span></div>
+          <div class="panel-heading"><h3>8 磅藏在段落样式里，也要查出来</h3><span class="version">PPT 制作 v0.1.3</span></div>
           <p class="panel-lead">检查已有 PPT 的标题和字号，保留原文件。报告逐处说明字号从哪来，查不到就列为未确定，再到演示软件复核。</p>
           <dl class="delivery-flow">
             <div><dt>输入</dt><dd>原件与修正版 PPTX<br>同一套 4 页合成材料</dd></div>
@@ -321,11 +321,11 @@ $.paid_amount</code></pre>
           <div class="action-block">
             <div class="block-heading"><h4>1. 安装 PPT 制作</h4><button class="copy-button" type="button" data-copy="install-ppt" data-copy-label="PPT 安装命令">复制安装命令</button></div>
             <pre class="command-box" id="install-ppt"><code>skillhub install pptx-making --namespace indiv-captain --dir "$HOME/.workbuddy/skills"</code></pre>
-            <p class="block-note">需要已有 SkillHub CLI 和 Python 3；检查器只用标准库。保留已有修改，核对作者与 v0.1.2，再按官方说明重启 WorkBuddy。</p>
+            <p class="block-note">需要已有 SkillHub CLI 和 Python 3；检查器只用标准库。保留已有修改，核对作者与 v0.1.3，再按官方说明重启 WorkBuddy。若市场安装版本尚未更新，可先使用上方免安装任务包。</p>
           </div>
           <div class="action-block">
             <div class="block-heading"><h4>2. 交给 WorkBuddy</h4><button class="copy-button" type="button" data-copy="task-ppt" data-copy-label="PPT 检查任务">复制任务</button></div>
-            <div class="task-box"><p id="task-ppt">在我打开的 workbuddy-skills 仓库中，使用 indiv-captain 的“PPT 制作”v0.1.2，先阅读技能说明。对 examples/pptx-fonts/inputs/before.pptx 和 examples/pptx-fonts/inputs/after.pptx 实际运行 skills/pptx-making/scripts/pptx_check.py，使用默认 18 磅底线，分别保留人读输出和 --json 报告到一个全新的输出目录，目录已存在就停止。记录每次退出码、原件 SHA256、已确定和未确定字号数、偏小文字的页码与来源，交付 review.md 写逐页建议。未确定字号不能写成通过，也不要声称视觉验收完成。只读 PPTX，不修改原件、配置或记忆，不安装依赖、不联网。若未打开仓库或缺少文件、工具，先说明缺口。</p></div>
+            <div class="task-box"><p id="task-ppt">在我打开的 workbuddy-skills 仓库中，使用 indiv-captain 的“PPT 制作”v0.1.3，先阅读技能说明。对 examples/pptx-fonts/inputs/before.pptx 和 examples/pptx-fonts/inputs/after.pptx 实际运行 skills/pptx-making/scripts/pptx_check.py，使用默认 18 磅底线，分别保留人读输出和 --json 报告到一个全新的输出目录，目录已存在就停止。记录每次退出码、原件 SHA256、已确定和未确定字号数、偏小文字的页码与来源，交付 review.md 写逐页建议。未确定字号不能写成通过，也不要声称视觉验收完成。只读 PPTX，不修改原件、配置或记忆，不安装依赖、不联网。若未打开仓库或缺少文件、工具，先说明缺口。</p></div>
             <p class="block-note">先在 WorkBuddy 打开本仓库；技能包包含检查器，四页合成 PPT 与完整复跑案例需从下方 GitHub 链接取得。</p>
           </div>
           <div class="case-links">
@@ -342,6 +342,7 @@ $.paid_amount</code></pre>
               <figure class="video-figure"><img src="../assets/2026-10-21-pptx-case/after-slide-1.png" loading="lazy" alt="同一合成案例修正版第 1 页，正文段落默认字号改为 24 磅"><figcaption>ArtifactTool 渲染对照图，不是 PowerPoint 客户端截图；最终效果仍需在演示软件复核。</figcaption></figure>
             </div>
           </details>
+          <p class="block-note">2026-10-28 更新：0.1.3 修正 100% 字号误报与百分比写法漏报，无效比例明确提示待核对。<a href="https://github.com/po-et/workbuddy-skills/tree/main/examples/pptx-autofit">复跑 20 个 AutoFit 边界案例</a>；这是维护者侧脚本验证，未新增 WorkBuddy 客户端或视觉验收证据。</p>
           <p class="source-note" id="ppt-evidence-note">2026-10-21，维护者侧代理在真实 WorkBuddy 5.8.2 / Space-Bunny 中显式读取本地技能，完成四次检查；四份脚本输出经独立重跑逐字节一致。AI 说明经反馈另存校订稿，原件与技能源文件哈希未变。另检查 ArtifactTool 导入后的 8 张渲染图；未完成 PowerPoint GUI 验收，市场自动触发与独立用户采用仍未确认。<a href="../assets/2026-10-21-pptx-case/workbuddy-client.png">客户端原始截图</a></p>
         </section>
       </div>

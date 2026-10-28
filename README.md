@@ -8,7 +8,7 @@
 
 | 你手上的任务 | 下载 | 交付 |
 |---|---|---|
-| 交付前检查 PPT 小字 | [PPT 任务包](https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.0/pptx-making-task-kit-0.1.0.zip) | 人读 / JSON 报告，字号来源与未知项 |
+| 交付前检查 PPT 小字 | [PPT 任务包](https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.1/pptx-making-task-kit-0.1.1.zip) | 人读 / JSON 报告，字号来源与未知项；修正自动缩小误报 |
 | 核对两份购车报价 | [报价任务包](https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.0/car-buying-checklist-task-kit-0.1.0.zip) | Markdown / CSV / JSON，缺项保持待补 |
 | 比较接口行为变化 | [接口任务包](https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.0/api-diff-test-task-kit-0.1.0.zip) | 字段差异、失败与修正后的复验报告 |
 
@@ -18,7 +18,9 @@
 python3 start.py --demo --out-dir result
 ```
 
-报价 / PPT 可用 `--input` 换成自己的文件；接口工具保留原有 CLI。查看[完整用法](docs/task-kits.md)和[版本 / SHA256](https://github.com/po-et/workbuddy-skills/releases/tag/task-kits-v0.1.0)。这是任务包 0.1.0，内含技能版本分别为 API 0.1.1、报价与 PPT 0.1.2。
+报价 / PPT 可用 `--input` 换成自己的文件；接口工具保留原有 CLI。查看[完整用法](docs/task-kits.md)。PPT 任务包已更新为 0.1.1，内含 PPT 技能 0.1.3，校验值见 [Release](https://github.com/po-et/workbuddy-skills/releases/tag/task-kits-v0.1.1)；接口与报价入口仍使用任务包 0.1.0，内含技能分别为 0.1.1 与 0.1.2。
+
+2026-10-28，PPT 检查器修正了 100% 字号被误报成自动缩小、百分比写法的真实缩小被漏掉的问题。新增[20 个可复跑的 AutoFit 边界案例](examples/pptx-autofit/)，无效比例提示待核对；这是维护者侧合成验证，仍需在演示软件中检查渲染效果。
 
 2026-10-23 新增[报价证据核对包 0.1.0](https://github.com/po-et/workbuddy-skills/releases/download/quote-evidence-check-v0.1.0/quote-evidence-check-0.1.0.zip)：结构化金额附确认状态与来源，车型、付款或范围不同则阻止排名，默认导出省略原文。包内有四份合成输入和19项行为测试；不调用模型或网络。它使用自己的脚本入口，见[完整用法](taskkits/quote-evidence-check.md)和[源码](skills/quote-evidence-check/)。这是独立本地工具，未上架 SkillHub，不代表已参赛。
 

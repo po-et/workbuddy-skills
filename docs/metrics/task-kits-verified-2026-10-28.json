@@ -1,0 +1,87 @@
+{
+  "verified_at_beijing": "2026-10-28T10:13:10+08:00",
+  "release_url": "https://github.com/po-et/workbuddy-skills/releases/tag/task-kits-v0.1.1",
+  "tag": "task-kits-v0.1.1",
+  "source_commit": "4791e949ecf65612397a055f90d29c6770b05691",
+  "skill_version": "0.1.3",
+  "public_downloads": [
+    {
+      "file": "api-diff-test-task-kit-0.1.1.zip",
+      "url": "https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.1/api-diff-test-task-kit-0.1.1.zip",
+      "http_status": 200,
+      "sha256": "ff46ee490a31c0794d7d42f3b00f8687b13e8394ecb43c9c2d0992b265cd41cc",
+      "bytes": 25573,
+      "matches_candidate": true,
+      "maintainer_validation_download": true
+    },
+    {
+      "file": "car-buying-checklist-task-kit-0.1.1.zip",
+      "url": "https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.1/car-buying-checklist-task-kit-0.1.1.zip",
+      "http_status": 200,
+      "sha256": "bf05bbc0870304e685160bc29711f16400e13127d449151f2068a73b41cb90a3",
+      "bytes": 46452,
+      "matches_candidate": true,
+      "maintainer_validation_download": true
+    },
+    {
+      "file": "pptx-making-task-kit-0.1.1.zip",
+      "url": "https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.1/pptx-making-task-kit-0.1.1.zip",
+      "http_status": 200,
+      "sha256": "55339a6773f36ac72e6fce44b3efbf860447cd7f77b7926b8f7c4bae5f620636",
+      "bytes": 75266,
+      "matches_candidate": true,
+      "maintainer_validation_download": true
+    },
+    {
+      "file": "release-manifest.json",
+      "url": "https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.1/release-manifest.json",
+      "http_status": 200,
+      "sha256": "4277f55dd66449c18fa34dc07ef571309d8aba904705fcf1003437f60b0fef45",
+      "bytes": 1500,
+      "matches_candidate": true,
+      "maintainer_validation_download": true
+    },
+    {
+      "file": "SHA256SUMS.txt",
+      "url": "https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.1/SHA256SUMS.txt",
+      "http_status": 200,
+      "sha256": "9c088e85bee33e69875e67af437d5125699d7d9eab7e763bcb5bca39f75ce467",
+      "bytes": 390,
+      "matches_candidate": true,
+      "maintainer_validation_download": true
+    }
+  ],
+  "all_public_bytes_match_local_candidate": true,
+  "ppt_manifest_hashes_match": true,
+  "ppt_public_package_runs": [
+    {
+      "case": "demo",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "inputs_and_kit_unchanged": true
+    },
+    {
+      "case": "100-percent",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "inputs_and_kit_unchanged": true
+    },
+    {
+      "case": "62-5-percent",
+      "exit_code": 3,
+      "expected_exit_code": 3,
+      "inputs_and_kit_unchanged": true
+    },
+    {
+      "case": "unknown",
+      "exit_code": 3,
+      "expected_exit_code": 3,
+      "inputs_and_kit_unchanged": true
+    }
+  ],
+  "maintainer_github_asset_downloads": 5,
+  "independent_human_use_verified": false,
+  "local_task_kit_regression_tests_passed": 13,
+  "local_deterministic_rebuild_verified": true,
+  "validation_scope": "Anonymous public asset download and maintainer-agent synthetic execution; no independent human use or visual rendering claimed."
+}

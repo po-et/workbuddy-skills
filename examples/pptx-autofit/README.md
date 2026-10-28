@@ -12,7 +12,9 @@
 python3 -B examples/pptx-autofit/verify_case.py --out-dir /tmp/pptx-autofit-result
 ```
 
-脚本只使用 Python 标准库，从[既有四页合成修正版](../pptx-fonts/inputs/after.pptx)创建 20 份测试输入，每份只改第一页的 AutoFit 设置。它实际调用检查器，保存每份输入、人读可读的 JSON、stderr、退出码和 SHA256；输入和检查器保持不变。`verification.json` 对照预先声明的期望值，不能把执行过当作通过。
+脚本只使用 Python 标准库，从[既有四页合成修正版](../pptx-fonts/inputs/after.pptx)创建 20 份测试输入，每份只改第一页的 AutoFit 设置。它实际调用检查器，保存每份输入、JSON 报告、stderr、退出码和 SHA256；输入和检查器保持不变。`verification.json` 对照预先声明的期望值，不能把执行过当作通过。
+
+[2026-10-28 实际复跑记录](verification.json)为 20/20；其中的一处字号未知继续保留。记录与本次自行执行的输出应分别核对。
 
 | 输入设置 | 期望 |
 |---|---|
