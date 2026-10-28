@@ -224,6 +224,46 @@ class PptxCheckTest(unittest.TestCase):
         self.deck(slide(paragraph(run(size=2400)), title=None))
         self.assertEqual([i["code"] for i in self.inspect()["issues"]], ["missing_title_placeholder"])
 
+    def test_autofit_at_full_size_or_default_is_not_font_shrinkage(self):
+        settings = ('<a:normAutofit fontScale="100000"/>',
+                    '<a:normAutofit fontScale="100%"/>',
+                    '<a:normAutofit fontScale="100.000%"/>',
+                    '<a:normAutofit/>',
+                    '<a:normAutofit lnSpcReduction="20000"/>',
+                    '<a:normAutofit fontScale="100000" lnSpcReduction="20000"/>')
+        for fit in settings:
+            with self.subTest(fit=fit):
+                self.deck(slide(paragraph(run(size=2400)), body_pr=f'<a:bodyPr>{fit}</a:bodyPr>'))
+                result = self.cli("--json")
+                self.assertEqual(result.returncode, 0)
+                self.assertEqual(json.loads(result.stdout)["issues"], [])
+
+    def test_autofit_integer_and_percentage_forms_flag_only_actual_shrinkage(self):
+        # Expectations derive from 1000 = 1%, 100000 = 100%, and the documented percent-string form.
+        for raw, percentage in (("1000", "1"), ("1%", "1"), ("62500", "62.5"),
+                                ("62.500%", "62.5"), ("92.000%", "92"),
+                                ("99999", "99.999"), ("99.999%", "99.999")):
+            with self.subTest(fontScale=raw):
+                self.deck(slide(paragraph(run(size=2400)),
+                                body_pr=f'<a:bodyPr><a:normAutofit fontScale="{raw}"/></a:bodyPr>'))
+                result = self.cli("--json")
+                self.assertEqual(result.returncode, 3)
+                issues = json.loads(result.stdout)["issues"]
+                self.assertEqual([i["code"] for i in issues], ["auto_shrink"])
+                self.assertIn(percentage + "%", issues[0]["message"])
+
+    def test_unsupported_or_invalid_font_scale_is_not_claimed_as_font_shrinkage(self):
+        for raw in ("0", "999", "100001", "0%", "0.999%", "100.001%", "-62500", "-2%",
+                    "NaN", "NaN%", "Infinity", "Infinity%", "6.25e4", "6.25e1%", "", "n/a",
+                    "٦٢٥٠٠", "６２５００", "9" * 6000):
+            with self.subTest(fontScale=raw):
+                self.deck(slide(paragraph(run(size=2400)),
+                                body_pr=f'<a:bodyPr><a:normAutofit fontScale="{raw}"/></a:bodyPr>'))
+                result = self.cli("--json")
+                self.assertEqual(result.returncode, 3)
+                issues = json.loads(result.stdout)["issues"]
+                self.assertEqual([i["code"] for i in issues], ["unresolved_font_scale"])
+
     def test_existing_manual_font_and_color_statistics_remain(self):
         text = '<a:r><a:rPr sz="2400"><a:latin typeface="Arial"/><a:ea typeface="微软雅黑"/><a:solidFill><a:srgbClr val="305496"/></a:solidFill></a:rPr><a:t>合成正文</a:t></a:r>'
         self.deck(slide(paragraph(text)))

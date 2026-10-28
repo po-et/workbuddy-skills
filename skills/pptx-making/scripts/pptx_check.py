@@ -28,6 +28,7 @@ import sys
 import zipfile
 import xml.etree.ElementTree as ET
 from collections import Counter
+from decimal import Decimal
 from pathlib import Path
 
 A = "{http://schemas.openxmlformats.org/drawingml/2006/main}"
@@ -41,11 +42,31 @@ FONT_LIMITATIONS = [
     "仅检查幻灯片 XML 中 a:r 与 a:fld 的非空文字；按 rPr、同段落 pPr/defRPr、同文本体 lstStyle 对应 lvlNpPr/defRPr 取字号。",
     "不解析母版、版式和主题的继承字号；未确定不等于字号合格。",
     "不计算实际渲染字号、字体替换、图表/图片内文字、重叠或裁切；自动缩小另列提示，仍需在演示软件中逐页复核。",
+    "自动缩小只解释 normAutofit 的 fontScale：支持整数 1000–100000 或等价的 1%–100% 写法；缺省为 100%。无效或不支持的值列为未确定，不代表实际溢出或完整格式校验。",
 ]
 
 
 class CheckError(Exception):
     """文件读不了时抛出，带中文说明。"""
+
+
+def font_scale_percent(raw):
+    """按已支持的 fontScale 语法返回精确百分比；None 表示无法确定。"""
+    if raw is None:
+        return Decimal(100)   # 省略属性时，OOXML 的默认值是 100000 / 100%。
+    raw = raw.strip(" \t\r\n")
+    if re.fullmatch(r"[+]?[0-9]+", raw):
+        scale = Decimal(raw)
+        return scale / 1000 if 1000 <= scale <= 100000 else None
+    if re.fullmatch(r"[0-9]+(?:\.[0-9]+)?%", raw):
+        percentage = Decimal(raw[:-1])
+        return percentage if 1 <= percentage <= 100 else None
+    return None
+
+
+def percentage_text(value):
+    text = format(value, "f")
+    return text.rstrip("0").rstrip(".") if "." in text else text
 
 
 def slide_order(z):
@@ -188,9 +209,15 @@ def check_details(path, min_pt):
             if len(body) > 6 or chars > 120:
                 issue("dense_body", no, f"第 {no} 页：正文 {len(body)} 段、{chars} 字，偏满，考虑拆页或挪进备注")
             for fit in sld.iter(A + "normAutofit"):
-                scale = fit.get("fontScale")
-                if scale and scale.isdigit():
-                    issue("auto_shrink", no, f"第 {no} 页：文字被自动缩小到 {int(scale) / 1000:g}%，内容放不下了")
+                raw_scale = fit.get("fontScale")
+                scale = font_scale_percent(raw_scale)
+                if scale is None:
+                    shown = raw_scale[:40] + ("……" if len(raw_scale) > 40 else "")
+                    issue("unresolved_font_scale", no,
+                          f"第 {no} 页：fontScale「{shown}」无效或不在支持范围内，字体缩放未确定，请在演示软件中复核")
+                elif scale < 100:
+                    issue("auto_shrink", no,
+                          f"第 {no} 页：XML 设置了字体自动缩小到 {percentage_text(scale)}%，请复核字号与排版")
             slide_records = font_size_records(sld, no, name)
             records.extend(slide_records)
             small = [r for r in slide_records if r["font_size_pt"] is not None and r["font_size_pt"] < min_pt]
