@@ -9,7 +9,7 @@
 | 你手上的任务 | 下载 | 交付 |
 |---|---|---|
 | 交付前检查 PPT 小字 | [PPT 任务包](https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.1/pptx-making-task-kit-0.1.1.zip) | 人读 / JSON 报告，字号来源与未知项；修正自动缩小误报 |
-| 核对两份购车报价 | [报价任务包](https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.0/car-buying-checklist-task-kit-0.1.0.zip) | Markdown / CSV / JSON，缺项保持待补 |
+| 核对两份购车报价 | [报价任务包](https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.2/car-buying-checklist-task-kit-0.1.2.zip) | Markdown / CSV / JSON，缺项保持待补 |
 | 比较接口行为变化 | [接口任务包](https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.0/api-diff-test-task-kit-0.1.0.zip) | 字段差异、失败与修正后的复验报告 |
 
 解压后在包目录运行，`result` 使用新名字：
@@ -18,7 +18,9 @@
 python3 start.py --demo --out-dir result
 ```
 
-报价 / PPT 可用 `--input` 换成自己的文件；接口工具保留原有 CLI。查看[完整用法](docs/task-kits.md)。PPT 任务包已更新为 0.1.1，内含 PPT 技能 0.1.3，校验值见 [Release](https://github.com/po-et/workbuddy-skills/releases/tag/task-kits-v0.1.1)；接口与报价入口仍使用任务包 0.1.0，内含技能分别为 0.1.1 与 0.1.2。
+报价 / PPT 可用 `--input` 换成自己的文件；接口工具保留原有 CLI。查看[完整用法](docs/task-kits.md)。PPT 任务包已更新为 0.1.1，内含 PPT 技能 0.1.3，校验值见 [Release](https://github.com/po-et/workbuddy-skills/releases/tag/task-kits-v0.1.1)；报价任务包已更新为 [0.1.2](https://github.com/po-et/workbuddy-skills/releases/tag/task-kits-v0.1.2)，内含技能 0.1.3；接口入口仍使用任务包 0.1.0，内含技能 0.1.1。
+
+2026-10-29，报价包中的单份预算脚本保留角分与实际家充占比：`100000.01 − 100000` 显示费用 `0.01`，未知费用仍待补。[三组复跑说明](skills/car-buying-checklist/examples/decimal-display.md)、[公开下载验收](docs/metrics/task-kits-verified-2026-10-29.json)与[SkillHub 官方安装验证](docs/metrics/car-release-verified-2026-10-29.json)可核对；包内开始说明增加了直接核算单份贷款的命令。同日已完成 [PPT 0.1.3 官方安装与 20 项案例复验](docs/metrics/pptx-installed-verified-2026-10-29.json)。以上仍为维护者验证，未确认独立用户采用。
 
 2026-10-28，PPT 检查器修正了 100% 字号被误报成自动缩小、百分比写法的真实缩小被漏掉的问题。新增[20 个可复跑的 AutoFit 边界案例](examples/pptx-autofit/)，无效比例提示待核对；这是维护者侧合成验证，仍需在演示软件中检查渲染效果。
 

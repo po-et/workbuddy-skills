@@ -1,0 +1,72 @@
+{
+  "verified_at_beijing": "2026-10-29T10:14:48.273687+08:00",
+  "release_url": "https://github.com/po-et/workbuddy-skills/releases/tag/task-kits-v0.1.2",
+  "tag": "task-kits-v0.1.2",
+  "source_commit": "dbc21e75630e4774fb5d8bae49f57e905c4b6d4d",
+  "skill_version": "0.1.3",
+  "public_release_metadata_digests_match": 5,
+  "public_downloads": [
+    {
+      "file": "car-buying-checklist-task-kit-0.1.2.zip",
+      "url": "https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.2/car-buying-checklist-task-kit-0.1.2.zip",
+      "http_status": 200,
+      "sha256": "8d55bd632a58c84206be6864ac6af7e6c2763e8aa00f5af10696f418b94929bb",
+      "bytes": 48542,
+      "matches_candidate": true,
+      "maintainer_validation_download": true
+    },
+    {
+      "file": "release-manifest.json",
+      "url": "https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.2/release-manifest.json",
+      "http_status": 200,
+      "sha256": "1b04bd46c4575ab676ea4c7f3430439623b9226be487e0ad4f1ee6bd3960b518",
+      "bytes": 1500,
+      "matches_candidate": true,
+      "maintainer_validation_download": true
+    },
+    {
+      "file": "SHA256SUMS.txt",
+      "url": "https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.2/SHA256SUMS.txt",
+      "http_status": 200,
+      "sha256": "21d3c17bdc6dbd7303ee856f16fd3ee2e7685fe0aa1985a94c6d6d4b9193c814",
+      "bytes": 390,
+      "matches_candidate": true,
+      "maintainer_validation_download": true
+    }
+  ],
+  "all_public_downloads_match": true,
+  "car_manifest_hashes_match": true,
+  "car_public_package_runs": [
+    {
+      "case": "demo",
+      "exit_code": 0,
+      "passed": true
+    },
+    {
+      "case": "cent",
+      "exit_code": 0,
+      "passed": true
+    },
+    {
+      "case": "missing-fee",
+      "exit_code": 0,
+      "passed": true
+    },
+    {
+      "case": "purchase",
+      "exit_code": 0,
+      "passed": true
+    },
+    {
+      "case": "share",
+      "exit_code": 0,
+      "passed": true
+    }
+  ],
+  "package_sources_unchanged": true,
+  "maintainer_github_asset_downloads": 3,
+  "independent_human_use_verified": false,
+  "local_task_kit_tests_passed": 13,
+  "local_deterministic_rebuild_verified": true,
+  "scope": "Public package and checksums downloaded anonymously once; maintainer synthetic execution. API/PPT mirror ZIPs verified locally and via release metadata digests only."
+}
