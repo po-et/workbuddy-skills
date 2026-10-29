@@ -1,0 +1,67 @@
+name: 一次真实任务的简短反馈
+description: 说说是否完成、哪里卡住；无需上传原文件
+title: "[使用反馈] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢自愿反馈。此处内容会公开，请勿上传业务原件、个人信息或凭据。
+        只需填写下面前三项；样例试跑、自己的任务完成和再次使用分别记录。
+  - type: dropdown
+    id: task
+    attributes:
+      label: 这次用了什么输入？
+      options:
+        - PPT 检查：自己的真实任务
+        - PPT 检查：仅包内合成样例
+        - 接口差分：自己的真实任务
+        - 接口差分：仅包内合成样例
+        - 其他任务（请在下一项说明）
+    validations:
+      required: true
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: 任务完成了吗？
+      options:
+        - 已完成（已实际运行，并能理解报告结果）
+        - 部分完成
+        - 未完成
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: 想检查什么，结果或卡点是什么？
+      description: 一两句话即可，也请说明具体哪里有用、无实际价值或仍无法判断。没有问题可写“无卡点”；不要粘贴原文件内容。
+      placeholder: 例如：检查本周分享的 PPT，报告定位了小字；仍有未知字号，需要打开演示软件确认。
+    validations:
+      required: true
+  - type: dropdown
+    id: assistance
+    attributes:
+      label: 这次如何完成？（可选）
+      options:
+        - 独立完成
+        - 经他人指导
+        - 由他人代跑
+        - 未执行
+  - type: input
+    id: environment
+    attributes:
+      label: 版本与运行方式（可选）
+      placeholder: 如 PPT 任务包 0.1.1，macOS，直接 Python / WorkBuddy
+  - type: input
+    id: source
+    attributes:
+      label: 从哪里找到这个工具？（可选）
+      placeholder: 如 GitHub、SkillHub、某篇社区帖；不用填写个人身份
+  - type: dropdown
+    id: reuse
+    attributes:
+      label: 是否用于另一个真实任务？（可选）
+      options:
+        - 第一次使用
+        - 只对同一个任务重跑或复查
+        - 已用于另一个真实任务（请在结果中简述）
+        - 计划再用，尚未发生

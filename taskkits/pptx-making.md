@@ -30,7 +30,7 @@ python3 start.py --input ./my-deck.pptx --out-dir ./my-result
 
 ## 给 Agent 使用
 
-支持访问本地文件的 WorkBuddy 或其他 Agent，可读取 `skill/SKILL.md`，先跑合成案例，再处理你的 `.pptx`。可直接使用脚本，无需 Agent 或 SkillHub。全过程离线，无需网络。
+支持访问本地文件的 WorkBuddy 或其他 Agent，可读取 `skill/SKILL.md`，先跑合成案例，再处理你的 `.pptx`。可直接使用脚本，无需 Agent 或 SkillHub。直接运行 Python 检查脚本无需网络，不上传文件；云端 AI 助手读取的文本、提示词或命令输出可能发送给其服务方，不能据此声称 AI 对话全程离线。
 
 `--out-dir` 必须是不存在的新目录，空目录也会被拒绝。再次运行请换成 `./result-2`，不会覆盖输入或旧结果。
 

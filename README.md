@@ -2,6 +2,14 @@
 
 **Captain · 可核验的 AI 工作流**：给 WorkBuddy 一项具体任务，交付能追溯输入、检查结果、重复运行的文件。由个人作者维护，面向腾讯 WorkBuddy / SkillHub；开源代码与示例不代表腾讯官方认证或真实客户案例。
 
+## 下次交付 PPT 前，拿自己的文件试一次
+
+每周要做汇报、培训或技术分享？用现有 `.pptx` 找出小字号、定位字号来源，并列出仍需人工核对的未知项。工具只读原件；在电脑上用 Python 3.9+ 运行，无需安装 SkillHub。它不检查重叠、裁切或最终投影效果。
+
+**[从自己的 PPT 开始](docs/ppt-first-task.md)** · [直接下载任务包](https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.1/pptx-making-task-kit-0.1.1.zip) · 开发者可选[两个接口环境的响应差分](taskkits/api-diff-test.md)。
+
+用完只需自愿告诉我们：检查了什么、完成没有、哪里卡住。[简短反馈](https://github.com/po-et/workbuddy-skills/issues/new?template=first-task.yml)需要 GitHub 登录，不需要上传原文件。若后来用在另一份真实任务中，欢迎补充那次结果；试用、完成和再次使用分别记录。
+
 ## 先下载一个能用的任务包
 
 不用先装 SkillHub，也不用克隆整个仓库。下表三个 ZIP 都含原技能、可运行脚本、合成样例、统一入口和许可证；已有 Python 3.9+ 即可开始，也可由支持本地文件和命令的 AI 助手执行。

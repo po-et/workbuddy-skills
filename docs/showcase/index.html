@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="免费匿名体验报价显微镜，在浏览器本地核对两份报价，缺项不等于 0。另有独立提示 Skill、Python 离线核对包，以及 PPT、报价和接口差分任务包。">
+  <meta name="description" content="下次交付 PPT 前，用自己的文件检查小字号与未知项。下载本地只读工具，按说明运行并自愿反馈任务结果；开发者也可尝试接口差分。">
   <meta name="theme-color" content="#EEF5FB">
-  <title>Captain｜WorkBuddy 与 SkillHub 可核验工作流</title>
-  <meta property="og:title" content="Captain｜可核验的 AI 工作流">
-  <meta property="og:description" content="打开网页核对报价的来源、缺项与条件，确认后再比较差额；也可下载提示 Skill 或带脚本与合成样例的离线工具。">
+  <title>Captain｜交付 PPT 前，查一次小字</title>
+  <meta property="og:title" content="Captain｜交付 PPT 前，查一次小字">
+  <meta property="og:description" content="用自己的 PPTX 定位小字号、查看字号来源与未知项。免费本地只读工具，支持直接 Python 或本地 AI 助手执行。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://po-et.github.io/workbuddy-skills/showcase/">
-  <meta property="og:image" content="https://po-et.github.io/workbuddy-skills/assets/2026-10-12-client-case/02-four-business-differences.jpg">
+  <meta property="og:image" content="https://po-et.github.io/workbuddy-skills/assets/2026-10-21-pptx-case/before-slide-1.png">
   <style>
     :root{--paper:#fff;--desk:#eef5fb;--ink:#12304a;--blue:#1763cf;--teal:#067c7d;--red:#b74335;--muted:#506479;--line:#d7e3ed;--soft:#f7fafc;--font:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;--mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace}
     *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:28px}body{margin:0;color:var(--ink);background:var(--desk);font-family:var(--font);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}button,textarea{font:inherit}button,a{-webkit-tap-highlight-color:transparent}a{color:var(--blue);text-underline-offset:4px;text-decoration-thickness:1px}a:hover{text-decoration-thickness:2px}button{cursor:pointer}button:focus-visible,a:focus-visible,summary:focus-visible,textarea:focus-visible{outline:3px solid var(--blue);outline-offset:4px}button:disabled{cursor:wait}h1,h2,h3,p{margin:0}h1{font-size:clamp(36px,4.45vw,58px);line-height:1.18;letter-spacing:-.045em;font-weight:750}h2{font-size:28px;line-height:1.35;letter-spacing:-.025em}h3{font-size:20px;line-height:1.4}p{max-width:72ch}small{font-size:13px}code{font-family:var(--mono);font-size:.88em;overflow-wrap:anywhere}pre{margin:0;font-family:var(--mono);font-size:13px;line-height:1.75;white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word}pre code{font-size:inherit}
@@ -43,29 +43,28 @@
   <main id="main" class="wrap">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <h1 id="hero-title">网页核对报价，<br>工具离线复跑。</h1>
-        <p>免费匿名体验报价显微镜，在浏览器本地核对两份购车报价，缺项不等于 0。也可下载 Python 离线核对包，或选择 PPT、报价和接口差分任务包。</p>
+        <h1 id="hero-title">交付 PPT 前，<br>查一次小字。</h1>
+        <p>周会汇报、培训或技术分享要交稿了？用自己的 PPTX 找出小字号、定位字号来源，把未知项留给人工确认。工具只读原件，用完欢迎告诉我们结果或卡点。</p>
         <div class="hero-actions">
-          <a class="button" href="../quote-lens/">直接体验报价显微镜</a>
-          <a class="button secondary" href="../quote-lens/SKILL.md" download="SKILL.md">下载报价 Skill</a>
-          <a class="button secondary" href="https://github.com/po-et/workbuddy-skills/releases/download/quote-evidence-check-v0.1.0/quote-evidence-check-0.1.0.zip">下载离线核对包</a>
-          <a class="button secondary" href="#downloads">查看三个任务包</a>
+          <a class="button" href="https://github.com/po-et/workbuddy-skills/blob/main/docs/ppt-first-task.md">从自己的 PPT 开始</a>
+          <a class="button secondary" href="https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.1/pptx-making-task-kit-0.1.1.zip">直接下载 PPT 工具</a>
+          <a class="button secondary" href="https://github.com/po-et/workbuddy-skills/blob/main/taskkits/api-diff-test.md">开发者：试接口差分</a>
         </div>
-        <p class="byline">网页无需安装。报价 Skill 为独立提示模板，不含脚本；离线核对包需要 Python 3.9+。样例均为合成数据。</p>
+        <p class="byline">在电脑运行，需要 Python 3.9+；无需 SkillHub 或第三方依赖。也可交给支持本地命令的 AI 助手。小字号检查不替代演示软件中的逐页预览。</p>
       </div>
-      <div class="comparison" aria-label="公开合成订单接口的差异与修正对照">
-        <div class="comparison-top"><h2>一条订单接口，三份响应</h2><span>公开合成案例</span></div>
-        <p class="comparison-meta">同一 GET 请求，实际发送到两个本地服务</p>
+      <div class="comparison" aria-label="公开合成 PPT 原件与修正版的字号检查结果">
+        <div class="comparison-top"><h2>四页 PPT，哪些地方还要看？</h2><span>公开合成案例</span></div>
+        <p class="comparison-meta">自带原件与修正版的检查对照；工具不修改 PPT</p>
         <table>
-          <thead><tr><th scope="col">字段</th><th scope="col">旧响应</th><th scope="col">回归响应</th><th scope="col">修正后</th></tr></thead>
+          <thead><tr><th scope="col">文字来源</th><th scope="col">原件</th><th scope="col">修正版</th><th scope="col">还要做什么</th></tr></thead>
           <tbody>
-            <tr><td><code>paid_amount</code></td><td>19900</td><td class="changed">18900</td><td class="fixed">19900</td></tr>
-            <tr><td><code>quantity</code></td><td>2</td><td class="changed">3</td><td class="fixed">2</td></tr>
-            <tr><td><code>can_refund</code></td><td><code>true</code></td><td class="changed"><code>1</code></td><td class="fixed"><code>true</code></td></tr>
-            <tr><td><code>note</code></td><td><code>null</code></td><td class="changed">字段缺失</td><td class="fixed"><code>null</code></td></tr>
+            <tr><td>段落默认样式</td><td class="changed">8 磅</td><td class="fixed">24 磅</td><td>预览排版</td></tr>
+            <tr><td>列表默认样式</td><td class="changed">8 磅</td><td class="fixed">24 磅</td><td>预览排版</td></tr>
+            <tr><td>片段显式字号</td><td>24 磅</td><td>24 磅</td><td>不被父级小字误报</td></tr>
+            <tr><td>未确定字号</td><td>1 处未知</td><td>1 处未知</td><td class="changed">人工核对</td></tr>
           </tbody>
         </table>
-        <div class="comparison-bottom"><span class="verdict fail">发现 4 处差异 · 退出码 1</span><span class="verdict pass">修正后一致 · 退出码 0</span></div>
+        <div class="comparison-bottom"><span class="verdict fail">原件发现 2 处小字 · 退出码 3</span><span>未知项保留，不算通过</span></div>
       </div>
     </section>
     <section class="workbench" id="downloads" aria-labelledby="downloads-title" style="margin-bottom:32px">
@@ -319,16 +318,18 @@ $.paid_amount</code></pre>
             <li>技能提供只读检查器，不生成 PPTX；母版、版式和主题继承、图片内文字及实际渲染仍需人工核对。</li>
           </ul>
           <div class="action-block">
-            <div class="block-heading"><h4>1. 安装 PPT 制作</h4><button class="copy-button" type="button" data-copy="install-ppt" data-copy-label="PPT 安装命令">复制安装命令</button></div>
-            <pre class="command-box" id="install-ppt"><code>skillhub install pptx-making --namespace indiv-captain --dir "$HOME/.workbuddy/skills"</code></pre>
-            <p class="block-note">需要已有 SkillHub CLI 和 Python 3；检查器只用标准库。保留已有修改，核对作者与 v0.1.3，再按官方说明重启 WorkBuddy。若市场安装版本尚未更新，可先使用上方免安装任务包。</p>
+            <div class="block-heading"><h4>1. 下载解压，检查自己的 PPT</h4><button class="copy-button" type="button" data-copy="install-ppt" data-copy-label="自己的 PPT 检查命令">复制检查命令</button></div>
+            <p class="block-note">先<a href="https://github.com/po-et/workbuddy-skills/releases/download/task-kits-v0.1.1/pptx-making-task-kit-0.1.1.zip">下载独立任务包</a>并解压，在包目录放入你有权处理的 PPTX，按实际文件名修改下方命令。</p>
+            <pre class="command-box" id="install-ppt"><code>python3 start.py --input "./my-deck.pptx" --out-dir "./my-result"</code></pre>
+            <p class="block-note">需要 Python 3.9+，无需 SkillHub CLI、第三方依赖或克隆仓库。my-result 必须是不存在的新目录；读 input.txt 查看结果。退出码 3 表示发现问题，0 仍不代表完成视觉验收。</p>
           </div>
           <div class="action-block">
             <div class="block-heading"><h4>2. 交给 WorkBuddy</h4><button class="copy-button" type="button" data-copy="task-ppt" data-copy-label="PPT 检查任务">复制任务</button></div>
-            <div class="task-box"><p id="task-ppt">在我打开的 workbuddy-skills 仓库中，使用 indiv-captain 的“PPT 制作”v0.1.3，先阅读技能说明。对 examples/pptx-fonts/inputs/before.pptx 和 examples/pptx-fonts/inputs/after.pptx 实际运行 skills/pptx-making/scripts/pptx_check.py，使用默认 18 磅底线，分别保留人读输出和 --json 报告到一个全新的输出目录，目录已存在就停止。记录每次退出码、原件 SHA256、已确定和未确定字号数、偏小文字的页码与来源，交付 review.md 写逐页建议。未确定字号不能写成通过，也不要声称视觉验收完成。只读 PPTX，不修改原件、配置或记忆，不安装依赖、不联网。若未打开仓库或缺少文件、工具，先说明缺口。</p></div>
-            <p class="block-note">先在 WorkBuddy 打开本仓库；技能包包含检查器，四页合成 PPT 与完整复跑案例需从下方 GitHub 链接取得。</p>
+            <div class="task-box"><p id="task-ppt">在我打开的 PPT 任务包解压目录中，先阅读 START-HERE.md 和 skill/SKILL.md，检查我指定的 PPTX。实际运行 start.py 的 --input 模式，将 --out-dir 指向一个不存在的新目录；保留原件，不安装依赖。读取真实 input.txt、input.json 和 verification.json，说明小字号位置、未知项与检查范围，退出码 3 要解释为发现问题。不能运行时报告实际错误，不手写结果。不要上传 PPT 或业务原文，不把未知项写成通过；最后告诉我哪些地方仍需在演示软件中预览。</p></div>
+            <p class="block-note">在 WorkBuddy 打开解压目录即可，无需整个仓库。直接 Python 检查无需联网；云端 AI 助手仍可能发送读取的文本或命令输出，请按数据规则使用。</p>
           </div>
           <div class="case-links">
+            <a href="https://github.com/po-et/workbuddy-skills/blob/main/docs/ppt-first-task.md">自己的 PPT：完整试用说明</a>
             <a href="https://github.com/po-et/workbuddy-skills/tree/main/examples/pptx-fonts">四页 PPT、检查报告与复跑记录</a>
             <a href="https://skillhub.cn/skills/@indiv-captain/pptx-making">SkillHub 技能页</a>
             <a href="https://github.com/po-et/workbuddy-skills/blob/main/examples/pptx-fonts/verification.json">结构化核对记录</a>
@@ -368,8 +369,8 @@ $.paid_amount</code></pre>
       </dl>
     </section>
     <section class="feedback" aria-labelledby="feedback-title">
-      <div><h2 id="feedback-title">用完后，留下一件具体的事</h2><p>写下技能版本、最小公开输入、结果或失败步骤。完成任务、遇到问题、确实再次使用，都值得记录。</p></div>
-      <a class="button" href="https://github.com/po-et/workbuddy-skills/issues/new?template=skill-feedback.md">提交使用反馈</a>
+      <div><h2 id="feedback-title">这次任务，完成了吗？</h2><p>自愿告诉我们输入类型、完成情况和卡点；无需上传原文件。反馈需要 GitHub 登录，下载和运行不需要。另一次真实任务的复用也欢迎补充。</p></div>
+      <a class="button" href="https://github.com/po-et/workbuddy-skills/issues/new?template=first-task.yml">留下简短反馈</a>
     </section>
   </main>
   <footer class="site-footer"><div class="wrap footer-inner"><p>Captain｜个人作者维护<br>PPT 客户端实测 2026-10-21；报价 2026-10-15；接口 2026-10-12</p><nav aria-label="页脚"><a href="https://github.com/po-et/workbuddy-skills">源码与完整目录</a><a href="https://skillhub.cn/install/skillhub.md">官方安装指引</a><a href="https://open.workbuddy.cn/docs/skill">官方技能说明</a></nav></div></footer>
