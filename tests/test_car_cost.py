@@ -64,6 +64,43 @@ class SingleCarTest(unittest.TestCase):
         self.assertEqual(result.returncode, 0)
         self.assertIn('| **录入范围费用合计** | 12,000 |', result.stdout)
 
+    def test_loan_display_keeps_cents_and_smallest_supported_fraction(self):
+        for principal, repay, fee, expected in (
+            ('100000', '100000.01', '0', '0.01'),
+            ('100000.000000000001', '100000.000000000002', '0', '0.000000000001'),
+            ('100000', '100000.0100', '0.0200', '0.03'),
+        ):
+            with self.subTest(principal=principal, repay=repay, fee=fee):
+                result = self.cli('--loan-principal', principal, '--loan-total', repay, '--loan-fees', fee)
+                self.assertEqual(result.returncode, 0)
+                self.assertIn('| **录入范围费用合计** | %s |' % expected, result.stdout)
+        self.assertIn('| 总还款额 | 100,000.01 |', result.stdout)
+        self.assertIn('| 另收的手续费、服务费 | 0.02 |', result.stdout)
+
+    def test_missing_loan_fees_keep_exact_known_subtotal(self):
+        result = self.cli('--loan-principal', '100000', '--loan-total', '100000.01')
+        self.assertEqual(result.returncode, 0)
+        self.assertIn('[待补：另收费用]（已知小计 0.01）', result.stdout)
+
+    def test_purchase_rows_and_total_preserve_fractional_amounts(self):
+        result = self.cli('--price', '150000.49', '--tax', '1000.49', '--insurance', '5000.25',
+                          '--plate', '500.1', '--addons', '0.001')
+        self.assertEqual(result.returncode, 0)
+        for label, amount in (('裸车价（发票价）', '150,000.49'), ('购置税', '1,000.49'),
+                              ('首年保险', '5,000.25'), ('上牌等费用', '500.1'),
+                              ('加装', '0.001'), ('**落地价合计**', '156,501.331')):
+            self.assertIn('| %s | %s |' % (label, amount), result.stdout)
+
+    def test_partial_purchase_total_keeps_cents_and_pending_items(self):
+        result = self.cli('--price', '150000.49')
+        self.assertEqual(result.returncode, 0)
+        self.assertIn('| **落地价合计** | 150,000.49 起（另有 4 项待补/待确认） |', result.stdout)
+
+    def test_loan_input_error_does_not_hide_the_conflicting_cent(self):
+        result = self.cli('--loan-principal', '100000.01', '--loan-total', '100000')
+        self.assertEqual(result.returncode, 1)
+        self.assertIn('总还款额 100,000 比贷款本金 100,000.01 还少', result.stderr)
+
     def test_no_implicit_tax_or_insurance(self):
         result = self.cli('--price', '150000')
         self.assertEqual(result.returncode, 0)
@@ -93,6 +130,20 @@ class SingleCarTest(unittest.TestCase):
         result = self.cli('--km', '15000', '--consumption', '15', '--home-price', '0.6', '--fast-price', '1.5', '--home-share', '80%')
         self.assertEqual(result.returncode, 0)
         self.assertIn('| 能耗 | 1,755 |', result.stdout)
+
+    def test_annual_energy_and_formula_preserve_fractional_mileage(self):
+        result = self.cli('--km', '12345.67', '--consumption', '7.5', '--unit-price', '8.25',
+                          '--insurance', '0', '--maintenance', '0', '--parking', '0', '--misc', '0')
+        self.assertEqual(result.returncode, 0)
+        self.assertIn('| 能耗 | 7,638.8833125 | 12,345.67 ÷ 100 × 7.5 × 8.25 |', result.stdout)
+        self.assertIn('| **每年合计** | 7,638.8833125 |', result.stdout)
+
+    def test_annual_energy_and_formula_preserve_fractional_shares(self):
+        result = self.cli('--km', '15000', '--consumption', '15', '--home-price', '0.6',
+                          '--fast-price', '1.5', '--home-share', '80.5%')
+        self.assertEqual(result.returncode, 0)
+        self.assertIn('| 能耗 | 1,744.875 |', result.stdout)
+        self.assertIn('家充 0.6 × 80.5% + 快充 1.5 × 19.5%', result.stdout)
 
     def test_zero_mileage_and_explicit_free_energy(self):
         for km, unit in (('0', '8'), ('15000', '0')):

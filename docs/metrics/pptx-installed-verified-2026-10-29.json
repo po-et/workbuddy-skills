@@ -1,0 +1,25 @@
+{
+  "verified_at_beijing": "2026-10-29T10:07:04.231029+08:00",
+  "asset": "pptx-making",
+  "canonical_name": "@indiv-captain/pptx-making",
+  "version": "0.1.3",
+  "reviewed_source_commit": "4791e949ecf65612397a055f90d29c6770b05691",
+  "official_install_version": "0.1.3",
+  "all_candidate_files_match": true,
+  "candidate_file_count": 6,
+  "checker_sha256": "d740c4f3f6ce1d98f13c893d9b8281255c2f8b22eec2cd66c114bc608e3d3a05",
+  "extra_installed_files": [
+    "_meta.json"
+  ],
+  "synthetic_cases_passed": 20,
+  "synthetic_cases_total": 20,
+  "inputs_and_checker_unchanged": true,
+  "maintainer_installs_this_run": 1,
+  "maintainer_installs_for_release_total": 2,
+  "prior_install_2026_10_28_version": "0.1.2",
+  "visual_rendering_verified": false,
+  "independent_user_adoption_verified": false,
+  "new_security_scan_version_verified": false,
+  "same_version_republished": false,
+  "scope": "Normal official CLI installation after public latestVersion changed, byte comparison with reviewed upload candidate and maintainer synthetic replay; not a new feature release or human adoption."
+}

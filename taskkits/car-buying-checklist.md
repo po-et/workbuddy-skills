@@ -1,6 +1,6 @@
 # 两份报价：缺项保留，费用算清
 
-适合把两份已取得的报价整理为可核对表格。此包包含买车清单技能 **0.1.2**、原始离线脚本与两组合成报价。
+适合把两份已取得的报价整理为可核对表格。此包包含买车清单技能 **0.1.3**、原始离线脚本与两组合成报价。
 
 ## 跑一个完整案例
 
@@ -25,6 +25,18 @@ python3 start.py --input ./my-quotes.json --out-dir ./my-result
 结果在 `my-result/comparison/comparison.md`、`.csv`、`.json`。`my-result/verification.json` 记录原脚本退出码与输入哈希，不会把你的输入标记为合成案例验收通过。无效输入会保留错误并返回原脚本非零退出码。
 
 脚本仅整理录入范围和缺项，不核验报价真实性、不查税费政策、不计算 APR、不排序或推荐车型。合成报价不代表任何地区政策、真实商家或车型。
+
+## 核对单份预算或贷款金额
+
+包内另有 `car_cost.py`，用于按你录入的金额输出预算表。下面全部是合成演示数字：
+
+```sh
+python3 skill/scripts/car_cost.py --loan-principal 100000 --loan-total 100000.01 --loan-fees 0 --out ./loan-check.md
+```
+
+核对 `loan-check.md`：总还款额为 **100,000.01**，已知还款差额与录入范围费用合计均为 **0.01** 元。0.1.3 保留计算结果的非零小数，不再静默显示为零或整数；这不表示预测价格、能耗或输入本身更准确。若不知道另收费用，省略 `--loan-fees`，合计必须保持待补。
+
+`--out` 只接受新文件，不覆盖旧报告。更多参数运行 `python3 skill/scripts/car_cost.py --help`；两份报价比较仍使用上面的 `start.py --input`。
 
 ## 给 Agent 使用
 

@@ -89,7 +89,9 @@ def parse_share(text):
 
 
 def yuan(v):
-    return "{:,.0f}".format(v)
+    """不对展示金额额外舍入；整数保留千位分隔，小数仅去掉末尾 0。"""
+    text = format(v, ',f')
+    return text.rstrip('0').rstrip('.') if '.' in text else text
 
 
 def num(v):
@@ -182,8 +184,8 @@ def build(args):
             all_home, all_fast = km / 100 * cons * home, km / 100 * cons * fast
             if share is not None:
                 mixed = km / 100 * cons * (home * share + fast * (1 - share))
-                rows.append(("能耗", yuan(mixed), "%s ÷ 100 × %s ×（家充 %s × %.0f%% + 快充 %s × %.0f%%）"
-                             % (yuan(km), num(cons), num(home), share * 100, num(fast), (1 - share) * 100)))
+                rows.append(("能耗", yuan(mixed), "%s ÷ 100 × %s ×（家充 %s × %s%% + 快充 %s × %s%%）"
+                             % (yuan(km), num(cons), num(home), num(share * 100), num(fast), num((1 - share) * 100))))
                 known += mixed
             else:
                 rows.append(("能耗", "[待确认：家充占比]", "全家充约 %s；全靠快充约 %s" % (yuan(all_home), yuan(all_fast))))
@@ -223,7 +225,8 @@ def build(args):
 
     if warnings:
         lines += ["", "## 需要先确认"] + ["- [待确认] " + w for w in warnings]
-    lines += ["", "说明：以上只是按你给的参数算出的结果，不代表任何车型、地区的实际价格。"]
+    lines += ["", "显示保留计算结果的小数，仅省略小数末尾的 0；年度金额仍是按输入参数估算。",
+              "说明：以上只是按你给的参数算出的结果，不代表任何车型、地区的实际价格。"]
     return "\n".join(lines) + "\n", warnings
 
 

@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 REPOSITORY = 'https://github.com/po-et/workbuddy-skills'
 KITS = (
     {'id': 'api-diff-test', 'skill': 'api-diff', 'skill_version': '0.1.1', 'inputs': ()},
-    {'id': 'car-buying-checklist', 'skill': 'car-buying-checklist', 'skill_version': '0.1.2', 'inputs': ()},
+    {'id': 'car-buying-checklist', 'skill': 'car-buying-checklist', 'skill_version': '0.1.3', 'inputs': ()},
     {'id': 'pptx-making', 'skill': 'pptx-making', 'skill_version': '0.1.3',
      'inputs': ('examples/pptx-fonts/inputs/before.pptx', 'examples/pptx-fonts/inputs/after.pptx')},
 )

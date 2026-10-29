@@ -4,7 +4,7 @@ description: "买车——决策清单：需求盘点、预算拆分（车价、
 author: Captain
 homepage: "https://github.com/po-et/workbuddy-skills"
 license: "CC-BY-4.0 AND MIT"
-version: 0.1.2
+version: 0.1.3
 display_name: "买车"
 display_name_en: "Car Buying Checklist"
 description_zh: "买车决策清单：先盘点用途、人数、通勤里程与停车充电条件，再把预算拆成车价、税费、保险和每年的养车钱；用几道判断题定新车还是二手车、燃油还是新能源；附看车试驾检查表、合同与交付核对项、常见销售套路。不推荐车型和经销商，不做投资理财建议，价格以当地实际为准。"
@@ -100,6 +100,8 @@ python3 scripts/car_cost.py --price 15万 --insurance 5000 --plate 500 --km 1500
 python3 scripts/car_cost.py --price 15万 --ev --km 15000 --consumption 15 --home-price 0.6 --fast-price 1.5 --home-share 80%
 python3 scripts/car_cost.py --loan-principal 10万 --loan-total 11.2万 --loan-fees 3000   # 按录入范围核对贷款费用
 ```
+
+金额和公式中的里程、家充占比保留非零小数，显示时不额外取整；例如贷款本金 100000、总还款 100000.01、另收费用 0，应显示录入范围费用 **0.01 元**。整数仍按千位分隔，小数末尾的 0 可省略。年度养车金额只是按输入参数估算，更多小数不代表实际账单更准确。[小数显示复跑案例](examples/decimal-display.md)给出三组可检查的合成输入。
 
 询价时先把书面明细要到手：发给两三家店的询价话术见 [references/templates.md](references/templates.md)。
 
